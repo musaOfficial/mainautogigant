@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="28.636" viewBox="0 0 35 28.636">
+  <defs>
+    <filter id="visibility_FILL0_wght400_GRAD0_opsz48" x="0" y="0" width="35" height="28.636" filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.251"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#visibility_FILL0_wght400_GRAD0_opsz48)">
+    <path id="visibility_FILL0_wght400_GRAD0_opsz48-2" data-name="visibility_FILL0_wght400_GRAD0_opsz48" d="M12,18.682a3.841,3.841,0,0,0,3.864-3.864A3.841,3.841,0,0,0,12,10.955a3.841,3.841,0,0,0-3.864,3.864A3.841,3.841,0,0,0,12,18.682Zm0-1.318a2.555,2.555,0,0,1-1.807-4.352,2.579,2.579,0,0,1,3.614,0A2.545,2.545,0,0,1,12,17.364Zm0,4.273A10.186,10.186,0,0,1,6,19.75a11.492,11.492,0,0,1-4-4.932A11.492,11.492,0,0,1,6,9.886,10.186,10.186,0,0,1,12,8a10.186,10.186,0,0,1,6,1.886,11.492,11.492,0,0,1,4,4.932,11.492,11.492,0,0,1-4,4.932A10.186,10.186,0,0,1,12,21.636Zm0-6.818Zm0,5.455a9.139,9.139,0,0,0,5.057-1.489,9.66,9.66,0,0,0,3.511-3.966,9.66,9.66,0,0,0-3.511-3.966,9.333,9.333,0,0,0-10.114,0,9.822,9.822,0,0,0-3.534,3.966,9.822,9.822,0,0,0,3.534,3.966A9.139,9.139,0,0,0,12,20.273Z" transform="translate(5.5 -5.5)" fill="#f1f2f3"/>
+  </g>
+</svg>
