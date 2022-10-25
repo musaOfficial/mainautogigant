@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Expand from './../../../public/expand.svg';
 import { useState } from 'react';
 import Settingson from './../../../public/settingson.svg'
+import Settingsoff from './../../../public/settingsoff.svg'
 import Settingsclosebtn from './../../../public/Settingsclosebtn.svg'
 import Facebook from './../../../public/facebook.svg'
 import Youtube from './../../../public/youtube.svg'
@@ -13,8 +14,12 @@ import Linkedin from './../../../public/linkedin.svg'
 import Tiktok from './../../../public/tiktok.svg'
 import Clip from './../../../public/Clip.svg';
 import Paperplane from './../../../public/Paperplane.svg';
+import Toggle from '../../ui/Toggle';
+import Avatar from '../../ui/Avatar';
+import Image from 'next/image'
+import DragDrop from './../../ui/dragdrop/DragDrop'
 export default function ProfileSettings(){
-    
+
     const [profilbildopened, setprofilbildopened] = useState(false);
     const [profilDataOpened, setProfileDataOpened] = useState(false);
     const [kontoSicherheitOpened, setKontoSicherheitOpened] = useState(false);
@@ -26,8 +31,205 @@ export default function ProfileSettings(){
     const benachrichtigungenClassname = benachrichtigungenOpened ? `${classes.profileopen}` : `${classes.profileclosed}`;
     const blockierteBenutzerClassname = blockierteBenutzerOpened ? `${classes.profileopen}` : `${classes.profileclosed}`;
 
+    const [avatarSelectionPopup, setAvatarSelectionPopup] = useState(false);
+
+    const [selectedAvatar, setSelectedAvatar] = useState("/../public/avatars/m1.jpg");
+
+    const [ImagesToggleOn, setImagesToggleOn] = useState(false);
+    const [t1, setT1] = useState(false);
+    const [t2, setT2] = useState(false);
+    const [t3, setT3] = useState(false);
+    const [t4, setT4] = useState(false);
+    const [t5, setT5] = useState(false);
+    const [t6, setT6] = useState(false);
+    const [t7, setT7] = useState(false);
     return (
         <div className={classes.container}>
+            {avatarSelectionPopup == true && <div className={classes.avatarselectionbackground}>
+                <div className={classes.avatarselectionbox}>
+                    <div className={classes.clsbtn} onClick={() => setAvatarSelectionPopup(false)}>
+x
+                    </div>
+                    <div>
+                    <div className={classes.linebelow}>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/m1.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/m1.jpg" value="/../public/avatars/m1.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/m2.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/m2.jpg" value="/../public/avatars/m2.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/m3.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/m3.jpg" value="/../public/avatars/m3.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/m4.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/m4.jpg" value="/../public/avatars/m4.jpg" />
+                        </span>
+
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/m5.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/m5.jpg" value="/../public/avatars/m5.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/m6.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/m6.jpg" value="/../public/avatars/m6.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/m7.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/m7.jpg" value="/../public/avatars/m7.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/m8.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/m8.jpg" value="/../public/avatars/m8.jpg" />
+                        </span>
+
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/m9.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/m9.jpg" value="/../public/avatars/m9.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/m10.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/m10.jpg" value="/../public/avatars/m10.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/m11.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/m11.jpg" value="/../public/avatars/m11.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/m12.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/m12.jpg" value="/../public/avatars/m12.jpg" />
+                        </span>
+                    </div>
+                    <div className={classes.linebelow}>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/w1.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/w1.jpg" value="/../public/avatars/w1.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/w2.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/w2.jpg" value="/../public/avatars/w2.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/w3.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/w3.jpg" value="/../public/avatars/w3.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/w4.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/w4.jpg" value="/../public/avatars/w4.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/w5.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/w5.jpg" value="/../public/avatars/w5.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/w6.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/w6.jpg" value="/../public/avatars/w6.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/w7.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/w7.jpg" value="/../public/avatars/w7.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/w8.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/w8.jpg" value="/../public/avatars/w8.jpg" />
+                        </span>
+                    </div>
+                    <div className={classes.linebelow}>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/c1.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/c1.jpg" value="/../public/avatars/c1.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/c2.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/c2.jpg" value="/../public/avatars/c2.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/c3.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/c3.jpg" value="/../public/avatars/c3.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/c4.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/c4.jpg" value="/../public/avatars/c4.jpg" />
+                        </span>
+                    </div>
+                    <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/a1.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/a1.jpg" value="/../public/avatars/a1.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/a2.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/a2.jpg" value="/../public/avatars/a2.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/a3.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/a3.jpg" value="/../public/avatars/a3.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/../public/avatars/a4.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/../public/avatars/a4.jpg" value="/../public/avatars/a4.jpg" />
+                    </span>
+                    </div>
+                </div>
+            </div>}
             <h1 className={classes.heading}>PROFIL & EINSTELLUNGEN</h1>
             <div className={classes.row}>
                 <div className={classes.c1}>
@@ -36,7 +238,7 @@ export default function ProfileSettings(){
                 <div className={classes.c2}>
                     Deine öffentlichen Daten werden in deinem Händlerprofil angezeigt. <br />
                     Verkäufer mti einem Profilbild wecken bei anderen Usern mehr Vertrauen. <br />
-                    <Link href="">
+                    <Link href="/dashboard">
                         <a className={classes.haendlerlink}>
                             Hier geht&apos;s zu deinem Händlerprofil.
                         </a>
@@ -60,14 +262,16 @@ export default function ProfileSettings(){
                     <div className={classes.row1}>
                         <div className={classes.haendlerbereich}>
                             <div className={classes.profileImg}>
-                                <div className={classes.img}></div>
+                                <div className={classes.img}>
+                                    <Image className={classes.avt} src={selectedAvatar} alt="Avatar"  width={145}  height={145} objectFit="contain"/>
+                                </div>
                             </div>
                             <div className={classes.profileupdate}>
                                 <div className={classes.sectionheading}>PROFILBILD ODER AVATAR AKTUALISIEREN</div>
                                 <p>Profilbild Größe: 154x154 Pixel</p>
                                 <button className={classes.haendlerbereichbtn}>Profilbild auswählen</button>
                                 <p>oder</p>
-                                <button className={classes.haendlerbereichbtn}>Avatar auswählen</button>
+                                <button className={classes.haendlerbereichbtn} onClick={() => setAvatarSelectionPopup(d => !d)}>Avatar auswählen</button>
                             </div>
                         </div>
                         <div className={classes.bildhochladen}>
@@ -90,8 +294,11 @@ export default function ProfileSettings(){
                     <div className={classes.row3}>
                         <div className={classes.desc}>
                             <p className={classes.desctext}>Hier können Sie zusätzlich noch 5 Fotos von Ihrem Unternehmen zu Ihrer Profilseite hinzufügen.<br/>Foto Größe: 550x350 Pixel</p>
-                            <Settingson className={classes.settingson}/>
+                            <Toggle toggle={() => setImagesToggleOn(d => !d)} toggleOn={ImagesToggleOn} />
                         </div>
+                        <br/>
+                        {ImagesToggleOn == true && <div>
+                            <DragDrop />
                         <div className={classes.bizimages}>
                             <div className={classes.bizimage}>
                                 <div className={classes.bizimg}><Settingsclosebtn className={classes.settingsclosebtn}/></div>
@@ -118,12 +325,14 @@ export default function ProfileSettings(){
                                 <button className={classes.fotoauswahlbtn}>Foto auswählen</button>
                                 <button className={classes.fotohochladenbtn}>Foto hochladen</button>
                             </div>
-                        </div>
+                        </div>    
+                        </div>}
+
                     </div>
                     <div className={classes.row4}>
                         <div className={classes.desc}>
                             <p className={classes.desctext}>Öffnen Sie das gewünschte Social Media Profil und kopieren Sie den in der Adresszeile<br/>Ihres Browsers angegebenen Link (also die URL) und fügen Sie es hier ein.</p>
-                            <Settingson className={classes.settingson}/>
+                            <Toggle />
                         </div>
                         <div className={classes.socialmedia}>
                             <div className={classes.socialrow1}>
@@ -211,7 +420,7 @@ export default function ProfileSettings(){
                 <hr />
                 <div className={classes.datadesc}>
                     <p className={classes.sectionheading}>ÜBER UNS TEXT</p>
-                    <Settingson className={classes.settingson}/>
+                    <Toggle />
                 </div>
                 <textarea className={classes.ueberunstextarea} placeholder="Der Text, den Sie hier eingeben, wird auf ihrem öffentlichen Profil angezeigt"/>
                 <button className={classes.saveueberunschanges}>Änderungen Speichern</button>
@@ -302,31 +511,31 @@ export default function ProfileSettings(){
                 <div className={classes.benachrichtigungseinstellungen}>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Alle Benachrichtigungen per E-Mail an die gespeicherte Adresse senden.</div>
-                        <Settingson className={classes.settingson}/>
+                        <Toggle toggle={() => setT1(t => !t)} toggleOn={t1}/>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Erinnerungsbenachrichtigung vor Ablauf eines Inserates.</div>
-                        <Settingson className={classes.settingson}/>
+                        <Toggle toggle={() => setT2(t => !t)} toggleOn={t2}/>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Erinnerungsbenachrichtigung vor Ablauf eines Giga Powers.</div>
-                        <Settingson className={classes.settingson}/>
+                        <Toggle toggle={() => setT3(t => !t)} toggleOn={t3}/>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Benachrichtigung, dass der Preis des favorisierten Inserates gesunken ist.</div>
-                        <Settingson className={classes.settingson}/>
+                        <Toggle toggle={() => setT4(t => !t)} toggleOn={t4}/>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Erinnerungsbenachrichtigung vor Ablauf eines Abos.</div>
-                        <Settingson className={classes.settingson}/>
+                        <Toggle toggle={() => setT5(t => !t)} toggleOn={t5}/>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Erinnerungsbenachrichtigung für Suchaufträge.</div>
-                        <Settingson className={classes.settingson}/>
+                        <Toggle toggle={() => setT6(t => !t)} toggleOn={t6}/>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Newsletter an-/abmelden.</div>
-                        <Settingson className={classes.settingson}/>
+                        <Toggle toggle={() => setT7(t => !t)} toggleOn={t7}/>
                     </div>
                 </div>
             </div>}
@@ -344,7 +553,7 @@ export default function ProfileSettings(){
                             <div className={classes.profileimg}></div>
                             <div className={classes.username}>Max Mustermann</div>
                         </div>
-                        <Link href="">
+                        <Link href="/">
                             <a className={classes.link}>Blockierung aufheben</a>
                         </Link>
                     </div>
@@ -353,7 +562,7 @@ export default function ProfileSettings(){
                             <div className={classes.profileimg}></div>
                             <div className={classes.username}>Max Mustermann</div>
                         </div>
-                        <Link href="">
+                        <Link href="/">
                             <a className={classes.link}>Blockierung aufheben</a>
                         </Link>
                     </div>
@@ -362,7 +571,7 @@ export default function ProfileSettings(){
                             <div className={classes.profileimg}></div>
                             <div className={classes.username}>Max Mustermann</div>
                         </div>
-                        <Link href="">
+                        <Link href="/">
                             <a className={classes.link}>Blockierung aufheben</a>
                         </Link>
                     </div>

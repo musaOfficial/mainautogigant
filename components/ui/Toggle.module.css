@@ -1,0 +1,11 @@
+.settingson{
+    height: 26px;
+    width: 58px;
+    cursor: pointer;
+}
+
+.settingsoff{
+    width: 58px;
+    height: 26px;
+    cursor: pointer;
+}

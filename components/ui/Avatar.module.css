@@ -1,0 +1,25 @@
+.avatar{
+    position: relative;
+    background-color: #6C757D;
+    box-shadow: 1px 1px 1px #000;
+    width: 75px;
+    height: 75px;
+    border-radius: 999px;
+    margin: 5px;
+    display: inline-block;
+    border: 2px solid #F1F2F3;
+    transition: .2s ease-in;
+    object-fit: scale-down;
+    cursor: pointer;
+}
+
+.avatar:hover{
+    box-shadow: 1px 3px 5px #000;
+    transform: translateY(-5px);
+    border: 2px solid #FBB900;
+}
+
+.img{
+    height: 75px;
+    border-radius: 999px;
+}

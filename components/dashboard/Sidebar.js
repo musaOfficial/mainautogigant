@@ -101,7 +101,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/make-ads">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/make-ads"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -130,7 +130,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/my-ads">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/my-ads"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -156,7 +156,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/drafts">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/drafts"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -185,7 +185,7 @@ export default function Sidebar() {
         <div className="p-6 border-b border-opacity-25 border-theme-gray-3">
           <Link href="/dashboard/calender">
             <a
-              className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/calender"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -266,7 +266,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/messages">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/messages"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -295,7 +295,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/notifications">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/notifications"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -325,7 +325,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/settings">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/ideas"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -354,7 +354,7 @@ export default function Sidebar() {
         <div className="p-6 border-b border-opacity-25 border-theme-gray-3">
           <Link href="/dashboard/favourites">
             <a
-              className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/favourites"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -383,7 +383,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/search-orders">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/search-orders"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -412,7 +412,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/saved-searches">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/saved-searches"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -441,7 +441,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/latest-advertisements">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/latest-advertisements"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -473,7 +473,7 @@ export default function Sidebar() {
         <div className="p-6">
           <Link href="/dashboard/giga-power">
             <a
-              className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/giga-power"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -502,7 +502,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/recharge-giga-coins">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/recharge-giga-coins"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md"
                   : ""
@@ -531,7 +531,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/my-subscriptions">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/my-subscriptions"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -560,7 +560,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/bills">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/bills"
                   ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
                   : ""
@@ -588,7 +588,7 @@ export default function Sidebar() {
         </div>
         <div className="p-6 bg-opacity-15 bg-theme-gray-6">
           <button
-            className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-6 hover:text-theme-yellow-2 hover:shadow-md`}
+            className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
