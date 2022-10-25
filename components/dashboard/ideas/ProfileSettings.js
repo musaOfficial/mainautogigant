@@ -4,13 +4,11 @@ import Zahnradgrau from './../../../public/Zahnradgrau.svg'
 import Link from 'next/link';
 import Expand from './../../../public/expand.svg';
 import { useState } from 'react';
-import Settingson from './../../../public/settingson.svg'
-import Settingsoff from './../../../public/settingsoff.svg'
 import Settingsclosebtn from './../../../public/Settingsclosebtn.svg'
 import Facebook from './../../../public/facebook.svg'
 import Youtube from './../../../public/youtube.svg'
 import Instagram from './../../../public/instagram.svg'
-import Linkedin from './../../../public/linkedin.svg'
+import Linkedin from './../../../public/Linkedin.svg'
 import Tiktok from './../../../public/tiktok.svg'
 import Clip from './../../../public/Clip.svg';
 import Paperplane from './../../../public/Paperplane.svg';
@@ -43,6 +41,23 @@ export default function ProfileSettings(){
     const [t5, setT5] = useState(false);
     const [t6, setT6] = useState(false);
     const [t7, setT7] = useState(false);
+
+    const handleFileSelect = (e) => {
+        // get files from event on the input element as an array
+        let files = [...e.target.files];
+    
+        // ensure a file or files are selected
+        if (files && files.length > 0) {
+          // loop over existing files
+          const existingFiles = data.fileList.map((f) => f.name);
+          // check if file already exists, if so, don't add to fileList
+          // this is to prevent duplicates
+          files = files.filter((f) => !existingFiles.includes(f.name));
+    
+          // dispatch action to add selected file or files to fileList
+          dispatch({ type: "ADD_FILE_TO_LIST", files });
+        }
+      };
     return (
         <div className={classes.container}>
             {avatarSelectionPopup == true && <div className={classes.avatarselectionbackground}>
@@ -447,7 +462,14 @@ x
                 <br />
                 <div className={classes.maxdateigroesse}>Maximale Dateigröße 5 MB</div>
                 <div className={classes.twobuttons}>
-                    <button className={classes.dateihinzufuegenbtn}> <Clip className={classes.clip}/>{" "}Datei hinzufügen</button>
+                 <Clip className={classes.clip}/>{" "}  <input
+          id="fileSelect"
+          type="file"
+          multiple
+          onChange={(e) => handleFileSelect(e)}
+          className={classes.dateihinzufuegenbtn}
+          
+        />
                     <button className={classes.sendenbtn}><Paperplane className={classes.paperplane}/>{"    "}Senden</button>
                 </div>
             </div>}

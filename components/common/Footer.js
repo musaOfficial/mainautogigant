@@ -170,22 +170,22 @@ export default function Footer() {
                   <span className="text-theme-yellow-2">.</span>
                 </h4>
                 <div className="flex mt-2">
-                  <button className="w-8 xl:w-8 rounded-full overflow-hidden hover:opacity-90 ease-linear duration-300 brightness-150">
+                  <button className="w-8 xl:w-8 rounded-full overflow-hidden hover:border-2 hover:border-yellow-600 brightness-150">
                     <Link href="https://www.facebook.com/Autogigant.at">
                       <img src="/images/icons/facebook.png" />
                     </Link>
                   </button>
-                  <button className="w-8 xl:w-8 ml-3 rounded-full overflow-hidden hover:opacity-90 ease-linear duration-300 brightness-150">
+                  <button className="w-8 xl:w-8 ml-3 rounded-full overflow-hidden hover:border-2 hover:border-yellow-600 brightness-150">
                     <Link href="https://www.instagram.com/autogigant.at/">
                       <img src="/images/icons/instagram.png" />
                     </Link>
                   </button>
-                  <button className="w-8 xl:w-8 ml-3 rounded-full overflow-hidden hover:opacity-90 ease-linear duration-300 brightness-150">
+                  <button className="w-8 xl:w-8 ml-3 rounded-full overflow-hidden hover:border-2 hover:border-yellow-600  brightness-150">
                     <Link href="https://www.youtube.com/channel/UCvCGl8oqdgGhaGD5bDDvUYw">
                       <img src="/images/icons/youtube.png" />
                     </Link>
                   </button>
-                  <button className="w-8 xl:w-8 ml-3 rounded-full overflow-hidden hover:opacity-90 ease-linear duration-300 brightness-150">
+                  <button className="w-8 xl:w-8 ml-3 rounded-full overflow-hidden hover:border-2 hover:border-yellow-600 brightness-150">
                     <Link href="https://www.tiktok.com/@autogigant.at">
                       <img src="/images/icons/tiktok.png" />
                     </Link>
