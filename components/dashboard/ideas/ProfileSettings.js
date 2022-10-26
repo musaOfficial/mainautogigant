@@ -68,78 +68,78 @@ x
                     <div>
                     <div className={classes.linebelow}>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/m1.jpg");
+                            setSelectedAvatar("/avatars/m1.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Image src={"/../public/avatars/m1.jpg"} value="/../public/avatars/m1.jpg" />
+                            <Avatar path={"/avatars/m1.jpg"} value="/avatars/m1.jpg" layout='fill' />
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/m2.jpg");
+                            setSelectedAvatar("/avatars/m2.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m2.jpg" value="/../public/avatars/m2.jpg" />
+                            <Avatar path="/avatars/m2.jpg" value="/avatars/m2.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/m3.jpg");
+                            setSelectedAvatar("/avatars/m3.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m3.jpg" value="/../public/avatars/m3.jpg" />
+                            <Avatar path="/avatars/m3.jpg" value="/avatars/m3.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/m4.jpg");
+                            setSelectedAvatar("/avatars/m4.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m4.jpg" value="/../public/avatars/m4.jpg" />
+                            <Avatar path="/avatars/m4.jpg" value="/avatars/m4.jpg" layout='fill'/>
                         </span>
 
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/m5.jpg");
+                            setSelectedAvatar("/avatars/m5.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m5.jpg" value="/../public/avatars/m5.jpg" />
+                            <Avatar path="/avatars/m5.jpg" value="/avatars/m5.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
                             setSelectedAvatar("/../public/avatars/m6.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m6.jpg" value="/../public/avatars/m6.jpg" />
+                            <Avatar path="/../public/avatars/m6.jpg" value="/../public/avatars/m6.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
                             setSelectedAvatar("/../public/avatars/m7.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m7.jpg" value="/../public/avatars/m7.jpg" />
+                            <Avatar path="/../public/avatars/m7.jpg" value="/../public/avatars/m7.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
                             setSelectedAvatar("/../public/avatars/m8.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m8.jpg" value="/../public/avatars/m8.jpg" />
+                            <Avatar path="/../public/avatars/m8.jpg" value="/../public/avatars/m8.jpg" layout='fill'/>
                         </span>
 
                         <span onClick={() => {
                             setSelectedAvatar("/../public/avatars/m9.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m9.jpg" value="/../public/avatars/m9.jpg" />
+                            <Avatar path="/../public/avatars/m9.jpg" value="/../public/avatars/m9.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
                             setSelectedAvatar("/../public/avatars/m10.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m10.jpg" value="/../public/avatars/m10.jpg" />
+                            <Avatar path="/../public/avatars/m10.jpg" value="/../public/avatars/m10.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
                             setSelectedAvatar("/../public/avatars/m11.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m11.jpg" value="/../public/avatars/m11.jpg" />
+                            <Avatar path="/../public/avatars/m11.jpg" value="/../public/avatars/m11.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
                             setSelectedAvatar("/../public/avatars/m12.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m12.jpg" value="/../public/avatars/m12.jpg" />
+                            <Avatar path="/../public/avatars/m12.jpg" value="/../public/avatars/m12.jpg" layout='fill'/>
                         </span>
                     </div>
                     <div className={classes.linebelow}>
