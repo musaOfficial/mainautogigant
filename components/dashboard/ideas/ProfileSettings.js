@@ -99,148 +99,148 @@ x
                             <Avatar path="/avatars/m5.jpg" value="/avatars/m5.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/m6.jpg");
+                            setSelectedAvatar("/avatars/m6.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m6.jpg" value="/../public/avatars/m6.jpg" layout='fill'/>
+                            <Avatar path="/avatars/m6.jpg" value="/avatars/m6.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/m7.jpg");
+                            setSelectedAvatar("/avatars/m7.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m7.jpg" value="/../public/avatars/m7.jpg" layout='fill'/>
+                            <Avatar path="/avatars/m7.jpg" value="/avatars/m7.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
                             setSelectedAvatar("/../public/avatars/m8.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m8.jpg" value="/../public/avatars/m8.jpg" layout='fill'/>
+                            <Avatar path="/avatars/m8.jpg" value="/avatars/m8.jpg" layout='fill'/>
                         </span>
 
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/m9.jpg");
+                            setSelectedAvatar("/avatars/m9.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m9.jpg" value="/../public/avatars/m9.jpg" layout='fill'/>
+                            <Avatar path="/avatars/m9.jpg" value="/avatars/m9.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/m10.jpg");
+                            setSelectedAvatar("/avatars/m10.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m10.jpg" value="/../public/avatars/m10.jpg" layout='fill'/>
+                            <Avatar path="/avatars/m10.jpg" value="/avatars/m10.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/m11.jpg");
+                            setSelectedAvatar("/avatars/m11.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m11.jpg" value="/../public/avatars/m11.jpg" layout='fill'/>
+                            <Avatar path="/avatars/m11.jpg" value="/avatars/m11.jpg" layout='fill'/>
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/m12.jpg");
+                            setSelectedAvatar("/avatars/m12.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m12.jpg" value="/../public/avatars/m12.jpg" layout='fill'/>
-                        </span>
-                    </div>
-                    <div className={classes.linebelow}>
-                        <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/w1.jpg");
-                            setAvatarSelectionPopup(d => !d);
-                        }}>
-                            <Avatar path="/../public/avatars/w1.jpg" value="/../public/avatars/w1.jpg" />
-                        </span>
-                        <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/w2.jpg");
-                            setAvatarSelectionPopup(d => !d);
-                        }}>
-                            <Avatar path="/../public/avatars/w2.jpg" value="/../public/avatars/w2.jpg" />
-                        </span>
-                        <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/w3.jpg");
-                            setAvatarSelectionPopup(d => !d);
-                        }}>
-                            <Avatar path="/../public/avatars/w3.jpg" value="/../public/avatars/w3.jpg" />
-                        </span>
-                        <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/w4.jpg");
-                            setAvatarSelectionPopup(d => !d);
-                        }}>
-                            <Avatar path="/../public/avatars/w4.jpg" value="/../public/avatars/w4.jpg" />
-                        </span>
-                        <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/w5.jpg");
-                            setAvatarSelectionPopup(d => !d);
-                        }}>
-                            <Avatar path="/../public/avatars/w5.jpg" value="/../public/avatars/w5.jpg" />
-                        </span>
-                        <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/w6.jpg");
-                            setAvatarSelectionPopup(d => !d);
-                        }}>
-                            <Avatar path="/../public/avatars/w6.jpg" value="/../public/avatars/w6.jpg" />
-                        </span>
-                        <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/w7.jpg");
-                            setAvatarSelectionPopup(d => !d);
-                        }}>
-                            <Avatar path="/../public/avatars/w7.jpg" value="/../public/avatars/w7.jpg" />
-                        </span>
-                        <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/w8.jpg");
-                            setAvatarSelectionPopup(d => !d);
-                        }}>
-                            <Avatar path="/../public/avatars/w8.jpg" value="/../public/avatars/w8.jpg" />
+                            <Avatar path="/avatars/m12.jpg" value="/avatars/m12.jpg" layout='fill'/>
                         </span>
                     </div>
                     <div className={classes.linebelow}>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/c1.jpg");
+                            setSelectedAvatar("/avatars/w1.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/c1.jpg" value="/../public/avatars/c1.jpg" />
+                            <Avatar path="/avatars/w1.jpg" value="/avatars/w1.jpg" />
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/c2.jpg");
+                            setSelectedAvatar("/avatars/w2.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/c2.jpg" value="/../public/avatars/c2.jpg" />
+                            <Avatar path="/avatars/w2.jpg" value="/avatars/w2.jpg" />
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/c3.jpg");
+                            setSelectedAvatar("/avatars/w3.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/c3.jpg" value="/../public/avatars/c3.jpg" />
+                            <Avatar path="/avatars/w3.jpg" value="/avatars/w3.jpg" />
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/c4.jpg");
+                            setSelectedAvatar("/avatars/w4.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/c4.jpg" value="/../public/avatars/c4.jpg" />
+                            <Avatar path="/avatars/w4.jpg" value="/avatars/w4.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/avatars/w5.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/avatars/w5.jpg" value="/avatars/w5.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/avatars/w6.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/avatars/w6.jpg" value="/avatars/w6.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/avatars/w7.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/avatars/w7.jpg" value="/avatars/w7.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/avatars/w8.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/avatars/w8.jpg" value="/avatars/w8.jpg" />
+                        </span>
+                    </div>
+                    <div className={classes.linebelow}>
+                        <span onClick={() => {
+                            setSelectedAvatar("/avatars/c1.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/avatars/c1.jpg" value="/avatars/c1.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/avatars/c2.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/avatars/c2.jpg" value="/avatars/c2.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/avatars/c3.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/avatars/c3.jpg" value="/avatars/c3.jpg" />
+                        </span>
+                        <span onClick={() => {
+                            setSelectedAvatar("/avatars/c4.jpg");
+                            setAvatarSelectionPopup(d => !d);
+                        }}>
+                            <Avatar path="/avatars/c4.jpg" value="/avatars/c4.jpg" />
                         </span>
                     </div>
                     <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/a1.jpg");
+                            setSelectedAvatar("/avatars/a1.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/a1.jpg" value="/../public/avatars/a1.jpg" />
+                            <Avatar path="/avatars/a1.jpg" value="/avatars/a1.jpg" />
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/a2.jpg");
+                            setSelectedAvatar("/avatars/a2.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/a2.jpg" value="/../public/avatars/a2.jpg" />
+                            <Avatar path="/avatars/a2.jpg" value="/avatars/a2.jpg" />
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/a3.jpg");
+                            setSelectedAvatar("/avatars/a3.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/a3.jpg" value="/../public/avatars/a3.jpg" />
+                            <Avatar path="/avatars/a3.jpg" value="/avatars/a3.jpg" />
                         </span>
                         <span onClick={() => {
-                            setSelectedAvatar("/../public/avatars/a4.jpg");
+                            setSelectedAvatar("/avatars/a4.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/a4.jpg" value="/../public/avatars/a4.jpg" />
+                            <Avatar path="/avatars/a4.jpg" value="/avatars/a4.jpg" />
                     </span>
                     </div>
                 </div>
