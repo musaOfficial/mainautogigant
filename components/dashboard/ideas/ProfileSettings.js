@@ -68,10 +68,10 @@ x
                     <div>
                     <div className={classes.linebelow}>
                         <span onClick={() => {
-                            setSelectedAvatar("/avatars/m1.jpg");
+                            setSelectedAvatar("/m1.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path={"/avatars/m1.jpg"} value="/avatars/m1.jpg" layout='fill' />
+                            <Avatar path={"/m1.jpg"} value="/m1.jpg" layout='fill' />
                         </span>
                         <span onClick={() => {
                             setSelectedAvatar("/avatars/m2.jpg");
