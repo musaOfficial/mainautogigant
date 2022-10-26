@@ -71,7 +71,7 @@ x
                             setSelectedAvatar("/../public/avatars/m1.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
-                            <Avatar path="/../public/avatars/m1.jpg" value="/../public/avatars/m1.jpg" />
+                            <Image src={"/../public/avatars/m1.jpg"} value="/../public/avatars/m1.jpg" />
                         </span>
                         <span onClick={() => {
                             setSelectedAvatar("/../public/avatars/m2.jpg");
@@ -461,15 +461,16 @@ x
                 <p className={classes.gewerbeberechtigungtext}>Sie müssen innerhalb von 3 Tagen nach der Registrierung Ihre Gewerbeberechtigung hochladen.<br/>Anderenfalls wird Ihr Profil automatisch<br/>gesperrt und Ihre Anzeigen werden nicht mehr angezeigt.<br/>Für die Entsperrung werden &#8364; 35 ,- verrechnet und kann bis zu 48 Stunden dauern.</p>
                 <br />
                 <div className={classes.maxdateigroesse}>Maximale Dateigröße 5 MB</div>
-                <div className={classes.twobuttons}>
-                 <Clip className={classes.clip}/>{" "}  <input
+                <div className={classes.twobuttons}><label className={classes.dateihinzufuegenbtn}>
+                <Clip className={classes.clip}/>{" "}Datei hinzufügen
+                 <input
           id="fileSelect"
           type="file"
           multiple
           onChange={(e) => handleFileSelect(e)}
-          className={classes.dateihinzufuegenbtn}
-          
+          className={classes.selectFile}
         />
+                 </label>
                     <button className={classes.sendenbtn}><Paperplane className={classes.paperplane}/>{"    "}Senden</button>
                 </div>
             </div>}

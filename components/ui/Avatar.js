@@ -3,7 +3,7 @@ import Image from 'next/image';
 function Avatar(props){
     return (
         <div className={classes.avatar}>
-            <Image className={classes.img} src={props.path} alt="Avatar" layout="fill"/>
+            <img className={classes.img} src={props.path} alt="Avatar" layout="fill"/>
         </div>
     )
 }

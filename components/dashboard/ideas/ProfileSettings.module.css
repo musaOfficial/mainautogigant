@@ -776,3 +776,7 @@
     left: 50%;
     bottom: 50%;
 }
+
+.selectFile{
+    display: none;
+}
