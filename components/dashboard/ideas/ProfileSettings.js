@@ -16,7 +16,10 @@ import Toggle from '../../ui/Toggle';
 import Avatar from '../../ui/Avatar';
 import Image from 'next/image'
 import DragDrop from './../../ui/dragdrop/DragDrop'
+
+
 export default function ProfileSettings(){
+
 
     const [profilbildopened, setprofilbildopened] = useState(false);
     const [profilDataOpened, setProfileDataOpened] = useState(false);
@@ -42,22 +45,11 @@ export default function ProfileSettings(){
     const [t6, setT6] = useState(false);
     const [t7, setT7] = useState(false);
 
-    const handleFileSelect = (e) => {
-        // get files from event on the input element as an array
-        let files = [...e.target.files];
-    
-        // ensure a file or files are selected
-        if (files && files.length > 0) {
-          // loop over existing files
-          const existingFiles = data.fileList.map((f) => f.name);
-          // check if file already exists, if so, don't add to fileList
-          // this is to prevent duplicates
-          files = files.filter((f) => !existingFiles.includes(f.name));
-    
-          // dispatch action to add selected file or files to fileList
-          dispatch({ type: "ADD_FILE_TO_LIST", files });
+    const onImageChange = (event) => {
+        if(event.target.files && event.target.files[0]){
+            setSelectedAvatar(URL.createObjectURL(event.target.files[0]))
         }
-      };
+    }
     return (
         <div className={classes.container}>
             {avatarSelectionPopup == true && <div className={classes.avatarselectionbackground}>
@@ -284,7 +276,18 @@ x
                             <div className={classes.profileupdate}>
                                 <div className={classes.sectionheading}>PROFILBILD ODER AVATAR AKTUALISIEREN</div>
                                 <p>Profilbild Größe: 154x154 Pixel</p>
-                                <button className={classes.haendlerbereichbtn}>Profilbild auswählen</button>
+                                <form>
+                                    <label className={classes.haendlerbereichbtn}>
+                                    Profilbild auswählen
+                                        <input
+                                            id="fileSelect"
+                                            type="file"
+                                            multiple
+                                            onChange={onImageChange}
+                                            className={classes.selectFile}
+                                            />
+                                    </label>
+                                </form>
                                 <p>oder</p>
                                 <button className={classes.haendlerbereichbtn} onClick={() => setAvatarSelectionPopup(d => !d)}>Avatar auswählen</button>
                             </div>
@@ -295,13 +298,14 @@ x
                             <button className={classes.einverstaendnisbtn}>Zustimmen und Bild hochladen</button>
                         </div>
                     </div>
+                    <h1 className={classes.titelbildheading}>TITELBILD AKTUALISIEREN</h1>
                     <div className={classes.row2}>
+
                         <div className={classes.titelbild}>Titelbild</div>
                         <div className={classes.titelbildupdate}>
-                            <h1 className={classes.titelbildheading}>TITELBILD AKTUALISIEREN</h1>
                             <div className={classes.titelbildauswahl}>
                                 <div className={classes.titelbildauswahlbtn}>Titelbild auswählen</div>
-                                <div>Titelbild Größe:<br />955x300</div>
+                                <div className={classes.titelbildeigenschaften}>Titelbild Größe:<span className={classes.breaktitelbildgroesse}></span>955x300</div>
                             </div>
                             <div className={classes.titelbildhochladenbtn}>Titelbild hochladen</div>
                         </div>

@@ -134,6 +134,7 @@
     flex-direction: row;
     padding-bottom: 20px;
     border-bottom: 1px solid #F1F2F3;
+
 }
 
 .haendlerbereich{
@@ -155,6 +156,8 @@
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 10px;
+    width: 90%;
+    cursor: pointer;
 }
 
 .bildhochladen{
@@ -219,11 +222,13 @@
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: bold;
+    transform: translateY(12px);
 }
 
 .titelbildauswahl{
     display: flex;
     margin-top: 10px;
+    flex-direction: column;
 }
 
 .titelbildauswahlbtn{
@@ -233,7 +238,16 @@
     padding-top: 10px;
     background-color: #F1F2F3;
     border-radius: 10px;
-    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    width: 100%;
+    order: 1;
+}
+
+.breaktitelbildgroesse{
+    display: inline;
+    margin-right: 5px;
 }
 
 .titelbildhochladenbtn{
@@ -246,7 +260,11 @@
     color: #fff;
     font-size: 16px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 15px;
+}
+
+.titelbildeigenschaften{
+    transform: translateY(-10px);
 }
 
 .settingson{
@@ -441,7 +459,7 @@
     font-weight: bold;
     height: 40px;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .datarow{
@@ -497,6 +515,7 @@
     font-weight: bold;
     height: 40px;
     border-radius: 10px;
+    font-size: 14px;
 }
 
 .datadesc{
@@ -529,6 +548,7 @@
     margin-left: 50%;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-size: 14px;
 }
 
 .radiobuttons{
@@ -779,4 +799,76 @@
 
 .selectFile{
     display: none;
+}
+
+@media (max-width: 1350px) {
+    .titelbildauswahl{
+        flex-direction: column;
+    }
+
+    .titelbildauswahlbtn{
+        order: 1;
+        font-weight: bold;
+    }
+
+    .breaktitelbildgroesse{
+        display: inline;
+        margin-right: 5px;
+    }
+
+    .titelbild{
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 1250px){
+    .row1{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #F1F2F3;
+    }
+
+    .haendlerbereich{
+        display: flex;
+        justify-content: space-between;
+        padding-right: none;
+        margin-right: none;
+        border-right: none;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 1150px){
+    .row2{
+        flex-direction: column;
+    }
+
+    .titelbild{
+        margin: 0 auto;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 650px){
+    .c1{
+        padding-right: 0;
+        margin-right: 0;
+        border-right: none;
+        flex-basis: 0%;
+        display: inline;
+        float: left;
+        padding: 10px;
+    }
+
+    .c2{
+        flex-basis: 80%;
+    }
+
+    .zahnrad{
+        display: inline;
+        float: left;
+    }
 }
