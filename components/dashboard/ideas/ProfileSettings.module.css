@@ -39,6 +39,11 @@
     flex-basis: 0%;
 }
 
+.responsivec1{
+    display: flex;
+    flex-direction: row;
+}
+
 .c2{
     flex-basis: 80%;
 }
@@ -801,6 +806,81 @@
     display: none;
 }
 
+.drop{
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.dropzone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    border: dashed 3px #ccc;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 100%;
+  }
+  
+  .active {
+    border: dashed 3px dodgerblue;
+  }
+  
+  .uploadMessage h3 {
+    margin-top: 1rem;
+  }
+  
+  .files {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+  }
+  
+  .files + label {
+    margin-top: 1rem;
+    background-color: #0d6efd;
+    border-radius: 4rem;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    text-align: center;
+    user-select: none;
+  }
+  
+  .files + label:focus,
+  .files + label:hover {
+    background-color: #0a58ca;
+    color: #fff;
+  }
+  
+  .files + label:focus {
+    outline: 1px dotted #fff;
+  }
+  
+  .uploadBtn {
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    margin: 2rem;
+    background-color: #0d6efd;
+    border-radius: 4rem;
+    cursor: pointer;
+    padding: 0.75rem;
+    text-align: center;
+  }
+
 @media (max-width: 1350px) {
     .titelbildauswahl{
         flex-direction: column;
@@ -853,22 +933,35 @@
 }
 
 @media (max-width: 650px){
+    .responsivec1{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     .c1{
-        padding-right: 0;
-        margin-right: 0;
-        border-right: none;
-        flex-basis: 0%;
-        display: inline;
-        float: left;
-        padding: 10px;
+        border: none;
+        margin-bottom: 20px;
     }
 
     .c2{
-        flex-basis: 80%;
+        border: none;
     }
 
-    .zahnrad{
-        display: inline;
-        float: left;
+    .haendlerbereich{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .haendlerbereichbtn{
+        width: 100%;
+    }
+
+    .profileImg{
+        margin-bottom: 20px;
+    }
+
+    .container{
+        margin: 0;
     }
 }
