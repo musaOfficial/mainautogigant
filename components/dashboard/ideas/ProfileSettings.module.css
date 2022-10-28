@@ -469,7 +469,7 @@
 
 .datarow{
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
 }
 
@@ -963,5 +963,148 @@
 
     .container{
         margin: 0;
+
+    }
+
+    .spaceforbutton{
+        display: none;
+    }
+
+    .radiobuttons{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fdatainput{
+        padding-left: 10px;
+        width: 100%;
+        border: 2px solid #F1F2F3;
+        margin-right: 0;
+        margin-bottom: 20px;
+        height: 40px;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+    
+    .sdatainput{
+        padding-left: 10px;
+        width: 100%;
+        border: 2px solid #F1F2F3;
+        margin-right: 0;
+        margin-bottom: 20px;
+        height: 40px;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    .datainput{
+        padding-left: 10px;
+        width: 100%;
+        border: 2px solid #F1F2F3;
+        margin-bottom: 20px;
+        height: 40px;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    .securitykontodeaktivierungsbtn{
+        height: 40px;
+        background-color: #6C757D;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        width: 100%;
+    }
+    
+    .securitykontoloeschenbtn{
+        height: 40px;
+        background-color: #FB0000;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .desc{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .socialactive{
+        order: 1;
+    }
+    
+    .desctext{
+        margin-bottom: 10px;
+    }
+
+    .socialrow1{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+    
+    .socialrow2{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        
+    }
+    
+    .socialrow3{
+        display: flex;
+        margin-top: 0;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+   
+    .socialc1{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 20px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .socialc2{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .socialc3{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .securitytwocolumns{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .securityfirstcolumn{
+        margin-right: 0px;
+        padding-right: 0px;
+        border-right: none;
+        order: 1;
+    }
+    
+    .securitysecondcolumn{
+        flex-basis: 100%;
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 10px;
     }
 }

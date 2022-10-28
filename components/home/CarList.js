@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import classes from './CarList.module.css';
 
 export default function CarListBrands() { 
   const [showGoTop, setShowGoTop] = useState(false);
@@ -28,22 +29,22 @@ export default function CarListBrands() {
         <div className="md:w-1/2 md:mb-6">
           <h3 className="mb-6 text-xl font-bold text-black">Audi</h3>
           <ul className="text-black opacity-90 leading-7">
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Audi A1</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Audi A3</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Audi A4</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Audi A6</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Audi Q3</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Mehr Audi Modelle</Link>
             </li>
           </ul>
@@ -51,22 +52,22 @@ export default function CarListBrands() {
         <div className="md:w-1/2 md:mb-6">
           <h3 className="mb-6 text-xl font-bold text-black">BMW</h3>
           <ul className="text-black opacity-90 leading-7">
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">BMW 1er</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">BMW 3er</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">BMW 5er</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">BMW x1</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">BMW x3</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Mehr BMW Modelle</Link>
             </li>
           </ul>
@@ -74,22 +75,22 @@ export default function CarListBrands() {
         <div className="md:w-1/2 md:mb-6">
           <h3 className="mb-6 text-xl font-bold text-black">VW</h3>
           <ul className="text-black opacity-90 leading-7">
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">VW Caddy</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">VW Golf</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">VW Polo</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">VW Tiguan</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">VW Touran</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Mehr VW Modelle</Link>
             </li>
           </ul>
@@ -97,22 +98,22 @@ export default function CarListBrands() {
         <div className="md:w-1/2 md:mb-6">
           <h3 className="mb-6 text-xl font-bold text-black">Mercedes</h3>
           <ul className="text-black opacity-90 leading-7">
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Mercedes A-Klasse</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Mercedes B-Klasse</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Mercedes C-Klasse</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Mercedes E-Klasse</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Mercedes S-Klasse</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Mehr Mercedes Modelle</Link>
             </li>
           </ul>
@@ -120,22 +121,22 @@ export default function CarListBrands() {
         <div className="md:w-1/2 md:mb-6">
           <h3 className="mb-6 text-xl font-bold text-black">Weitere Marken</h3>
           <ul className="text-black opacity-90 leading-7">
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Ford</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Hyundai</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Opel</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Peugeot</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Skoda</Link>
             </li>
-            <li>
+            <li className="transition-all hover:text-yellow-600">
               <Link href="/">Mehr Marken</Link>
             </li>
           </ul>

@@ -44,7 +44,7 @@ export default function FooterLinks({ title, links }) {
         <ul className={`${active ? "pt-2" : ""}`}>
           {links &&
             links.map((link, i) => (
-              <li key={i} className="py-1 text-13">
+              <li key={i} className="text-13 hover:text-yellow-600">
                 <a href={link.url}>{link.linkTitle}</a>
               </li>
             ))}

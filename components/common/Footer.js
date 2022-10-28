@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { useState } from "react";
 import { SwiperSlide } from "swiper/react";
 import FooterCarousel from "./Carousel";
 import FooterLinks from "./FooterLinks";
-
+import classes from './Footer.module.css'
 export default function Footer() {
 
   const links1 = [
@@ -29,6 +30,8 @@ export default function Footer() {
     { linkTitle: "KFZ VORSCHRIFTEN", url: "#" },
     { linkTitle: "KFZ KAUFVERTRAG", url: "#" },
   ];
+
+  const [openLanguagesBar, setOpenLanguagesBar] = useState(false);
   return (
     <footer className="md:!px-0">
       <div className="bg-theme-gray-6">
@@ -98,7 +101,7 @@ export default function Footer() {
                     className="cursor-pointer w-60 lg:mr-auto xl:w-32 2xl:w-40"
                     src="/images/icons/footer-logo.png"
                   />
-                  <p className="text-xs text-white mt-2">
+                  <p className={classes.logodesc}>
                     A COMPANY OF THE GIGANT GROUP
                   </p>
                 </div>
@@ -194,17 +197,43 @@ export default function Footer() {
               </div>
             </div>
           </div>
+          {openLanguagesBar == true && <div className={classes.langcontainer}>
+          <div className="w-10/12 max-w-ag-container lg:w-full mx-auto flex justify-end">
+            <div className={classes.languagesbar}>
+              <div className={classes.language}>
+                <Link href="http://autogigant.at">
+                    DEUTSCH / ÖSTERREICH
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="https://autogigant.de">
+                    DEUTSCH / DEUTSCHLAND
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="https://autogigant.ch">
+                    DEUTSCH / SCHWEIZ
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="https://autogigant.tr">
+                    TÜRKCE / TÜRKIYE
+                </Link>
+              </div>
+            </div>  
+          </div>  
+          </div>}
         </div>
         <div className="w-10/12 max-w-ag-container lg:w-full mx-auto shadow-1">
           <div className="flex items-center justify-between py-2 text-white text-13 bg-black border-t border-theme-gray-3 leading-5 xl:flex-wrap md:justify-center">
-            <p className="md:px-2">© 2022 AUTO GIGANT.</p>
-            <p className="flex items-center md:px-2">MADE WITH <img className="scale-75 py-px" src="/images/icons/copyright-fav.png" />IN AUSTRIA</p>
-            <p className="md:px-2">IMPRESSUM</p>
-            <p className="md:px-2">DATENSCHUTZ</p>
-            <p className="md:px-2">COOKIE HINWEISE</p>
-            <p className="md:px-2">NUTZUNGSBEDINGNUNGEN</p>
-            <p className="md:px-2">KONTAKT</p>
-            <p className="flex items-center"><img className="w-4 mr-1 md:px-2 scale-90" src="/images/icons/copyright-world.png" />DEUTSCH | ÖSTERREICH</p>
+            <p className="md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all">© 2022 AUTO GIGANT.</p>
+            <p className="flex items-center md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all">MADE WITH <img className="scale-75 py-px" src="/images/icons/copyright-fav.png" />IN AUSTRIA</p>
+            <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">IMPRESSUM</p>
+            <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">DATENSCHUTZ</p>
+            <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">COOKIE HINWEISE</p>
+            <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">NUTZUNGSBEDINGNUNGEN</p>
+            <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">KONTAKT</p>
+            <p className="flex items-center cursor-pointer hover:transition-all hover:text-yellow-600" onClick={() => setOpenLanguagesBar(d => !d)}><img className="w-4 mr-1 md:px-2 scale-90" src="/images/icons/copyright-world.png" />DEUTSCH | ÖSTERREICH</p>
           </div>
         </div>
       </div>

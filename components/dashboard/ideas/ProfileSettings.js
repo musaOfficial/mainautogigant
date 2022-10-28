@@ -86,7 +86,7 @@ export default function ProfileSettings(){
         }
       };
 
-    
+      
     //   // to handle file uploads
     //   const uploadFiles = async () => {
     //     // get the files from the fileList as an array
@@ -137,9 +137,7 @@ export default function ProfileSettings(){
     const [t7, setT7] = useState(false);
 
     const onImageChange = (event) => {
-        if(event.target.files && event.target.files[0]){
-            setSelectedAvatar(URL.createObjectURL(event.target.files[0]))
-        }
+        console.log(event)
     }
 
     const reducer = (state, action) => {
@@ -158,6 +156,16 @@ export default function ProfileSettings(){
         inDropZone: false,
         fileList: [],
       });
+
+      var profilseiteImages = [];
+
+      const [Image1Profilseite, setImage1Profilseite] = useState(null);
+      const [Image2Profilseite, setImage2Profilseite] = useState(null);
+      const [Image3Profilseite, setImage3Profilseite] = useState(null);
+      const [Image4Profilseite, setImage4Profilseite] = useState(null);
+      const [Image5Profilseite, setImage5Profilseite] = useState(null);
+
+      const [socialMediaSectionActive, setSocialMediaSectionActive] = useState(false);
 
     return (
         <div className={classes.container}>
@@ -393,6 +401,7 @@ x
                                         <input
                                             id="fileSelect"
                                             type="file"
+                                            accept='image/png, image/jpg, image/jpeg'
                                             multiple
                                             onChange={onImageChange}
                                             className={classes.selectFile}
@@ -451,9 +460,15 @@ x
                                 or drag &amp; drop your files here
                                 </h3>
                             </div>
-                            {/* Pass the selectect or dropped files as props */}
-                            <FilePreview fileData={data} />
-                            {/* Only show upload button after selecting atleast 1 file */}
+                           {data.fileList.map((e) => {
+                                if(data.fileList.length == 5){
+                                    var FileListLengthMessage = "Sie können maximal 5 Fotos hochladen";
+                                } else {
+                                    var imgURL = URL.createObjectURL(e);
+                                    profilseiteImages.push(imgURL)
+                                }
+                           })}
+                            {profilseiteImages[0] != null && <Image src={profilseiteImages[0]} layout='fill' />}
                             </div>  
                         </div>}
                         
@@ -462,9 +477,9 @@ x
                     <div className={classes.row4}>
                         <div className={classes.desc}>
                             <p className={classes.desctext}>Öffnen Sie das gewünschte Social Media Profil und kopieren Sie den in der Adresszeile<br/>Ihres Browsers angegebenen Link (also die URL) und fügen Sie es hier ein.</p>
-                            <Toggle />
+                            <Toggle toggle={() => setSocialMediaSectionActive(t => !t)} toggleOn={socialMediaSectionActive} className={classes.socialactive}/>
                         </div>
-                        <div className={classes.socialmedia}>
+                       {socialMediaSectionActive == true &&  <div className={classes.socialmedia}>
                             <div className={classes.socialrow1}>
                                 <div className={classes.socialc1}>
                                     <Facebook className={classes.facebook}/>
@@ -472,7 +487,7 @@ x
                                 </div>
                                 <div className={classes.socialc2}>
                                     <Instagram className={classes.instagram}/>
-                                    <input className={classes.instagraminputurl} placeholder="Instagram Profil-URL"/>
+                                    <input className={classes.instagraminputurl} placeholder={"Instagram Profil-URL"}/>
                                 </div>
                             </div>
                             <div className={classes.socialrow2}>
@@ -495,7 +510,7 @@ x
                                     <button className={classes.savechanges}>Änderungen Speichern</button>
                                 </div>
                             </div>
-                        </div>
+                        </div>}
                     </div>
                 </div>}
             <div className={profileDataClassname} onClick={() => setProfileDataOpened(profilDataOpened => !profilDataOpened)}>
@@ -534,7 +549,8 @@ x
                 </div>
                 <div className={classes.sectionheading}>ANSPRECHPARTNER</div>
                 <br/>
-                <div className={classes.datarow}>
+                <div className={classes.ansprechpartnerbereich}>
+                    <div className={classes.datarow}>
                     <input className={classes.datainput} placeholder="Anrede"/>
                     <input className={classes.datainput} placeholder="Titel"/>
                 </div>
@@ -547,6 +563,7 @@ x
                     <input className={classes.sdatainput} placeholder="Telefon Mobil"/>
                     <button className={classes.savedatachanges}>Änderungen Speichern</button>
                 </div>
+                    </div>
                 <hr />
                 <div className={classes.datadesc}>
                     <p className={classes.sectionheading}>ÜBER UNS TEXT</p>

@@ -1,0 +1,36 @@
+.langcontainer{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transform: translateY(-130px);
+    display: flex;
+    justify-content: center;
+}
+
+.langcontent{
+    background-color: blue;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10000px;
+}
+
+.languagesbar{
+    background-color: #fff;
+    width: 220px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 0;
+}
+
+.language{
+    transition: all .09s ease-in;
+}
+
+.language:hover{
+    color: #FBB900;
+}
+
+.logodesc{
+    font-size: 13.6px;
+    color: #fff;
+}
