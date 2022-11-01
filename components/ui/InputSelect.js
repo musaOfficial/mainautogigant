@@ -34,16 +34,24 @@ const style2 = {
     ...styles,
     backgroundColor: state.isSelected ? "#fbb900" : "",
     "&:active": "#fbb90080",
-    fontSize: '16px'
+    fontSize: '16px',
   }),
 };
+
+
 export default function InputSelect({
   options,
   placeholder,
   styleType,
   regYear,
   onChange,
+  disabled,
+  value,
+  defaultValue
 }) {
+
+
+  
   const renderSelect = regYear ? (
     <Select
       instanceId={placeholder}
@@ -55,6 +63,10 @@ export default function InputSelect({
       menuPortalTarget={
         typeof window !== "undefined" ? document.querySelector("body") : ""
       }
+      isDisabled={disabled}
+      value={value}
+      defaultValue={defaultValue}
+      defaultInputValue={defaultValue}
     />
   ) : (
     <Select
@@ -67,6 +79,8 @@ export default function InputSelect({
       menuPortalTarget={
         typeof window !== "undefined" ? document.querySelector("body") : ""
       }
+      isSearchable={disabled}
+      openMenuOnClick={disabled}
     />
   );
   return renderSelect;

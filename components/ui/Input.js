@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Input({ inputType, sublabel, placeholder }) {
+export default function Input({ inputType, sublabel, placeholder, onChange, value }) {
   const [inType, setInType] = useState(inputType);
 
   return (
@@ -14,8 +14,10 @@ export default function Input({ inputType, sublabel, placeholder }) {
       <div className="relative">
         <input
           className="w-full rounded-10 text-base p-3 bg-white"
+          onChange={onChange}
           placeholder={placeholder}
           type={inputType === "password" ? inType : inputType}
+          value={value}
         />
         {inputType === "password" ? (
           <button

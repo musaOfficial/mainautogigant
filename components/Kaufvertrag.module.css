@@ -1,0 +1,132 @@
+.container{
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+ 
+}
+
+.contentcontainer{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    box-shadow: 0.1px 0 15px -4px #000;
+    box-shadow: -0.1px 0 15px 4px #000;;
+}
+
+.content{
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
+    background-color: #F1F2F3;
+}
+
+.desc{
+    margin-bottom: 10px;
+}
+.secondcontent{
+    width: 100%;
+    height: 100%;
+}
+
+.heading{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.sectionheading{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.inputfields{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 40px;
+    padding-left: 20px;
+}
+
+.inputfields::-webkit-inner-spin-button,
+.inputfields::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.a{
+    width: 80%;
+    margin-right: 20px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+
+.b{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+
+.generatekaufvertragbtn{
+    height: 40px;
+    background-color: #FBB900;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.scdesc{
+    margin-top: 20px;
+}
+
+.img{
+    background-image: url('./../public/images/car-1.jpg');
+    width: 100%;
+    height: 300px;
+    padding: 20px;
+    font-size: 30px;
+    color: #000;
+    font-weight: bold;
+}
+
+.yellowbackground{
+    background-color: #FBB900;
+}
+
+.downloadtemplate{
+    height: 40px;
+    background-color: #DFDFDF;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.first{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 20px;
+    margin-right: 20px;
+}
+
+.second{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 20px;
+}

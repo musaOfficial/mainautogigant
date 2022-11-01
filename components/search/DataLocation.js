@@ -28,9 +28,10 @@ import {
 } from "./selectOptions";
 
 export default function DataLocation() {
-  const [expanded, setExpanded] = useState(false);
-  const [brandName, setBrandName] = useState("Marke");
-  const [modelName, setModelName] = useState("");
+  const [expanded, setExpanded] = useState(true);
+  const [brandName, setBrandName] = useState({}); 
+  const [varient, setVarient] = useState("");
+  const [modelName, setModelName] = useState({});
   const [modelItems, setModelItems] = useState([]);
 
 
@@ -38,11 +39,17 @@ export default function DataLocation() {
     setModelItems([
       ...modelItems,
       {
-        brandName: brandName,
-        modelName: modelName,
-        varient: ".B. Avantgarde, TDI, 320, usw",
+        brandName: brandName.value,
+        modelName: modelName.value,
+        varient: varient,
       },
     ]);
+
+    setBrandName({value: "", label: ""});
+    setVarient("");
+    setModelName({value: "", label: ""});
+    setBrandNameInputValue("");
+    setBrandSelected(false);
   };
 
   const deleteHandler = (id) => {
@@ -51,13 +58,18 @@ export default function DataLocation() {
     setModelItems([...newArr]);
   }
 
+  const [brandSelected, setBrandSelected] = useState();
+
+  const [modelInputValue, setModelInputValue] = useState();
+  const [brandNameInputValue, setBrandNameInputValue] = useState();
+
   return (
     <div className="text-base border-b-2 pt-6">
       <button
         onClick={() => setExpanded(!expanded)}
         className="w-full inline-flex items-center justify-between font-bold md:pt-6 text-theme-gray-4"
       >
-        Basisdaten & Standort
+        Basisdaten &amp; Standort
         <img
           src="/images/icons/expand-arrow.png"
           className={`w-8 opacity-50 ${expanded ? "rotate-0" : "rotate-180"}`}
@@ -85,17 +97,30 @@ export default function DataLocation() {
             <InputSelect
               options={marke1}
               placeholder={marke1[0].label}
-              onChange={(e) => setBrandName(e.value)}
+              onChange={(e) => {
+                setBrandSelected(true);
+                if(e.value == "alle"){
+                  setBrandSelected(false);
+                }
+                setBrandName(e);
+              }}
+              name={"Marke"}
+              value={brandName || marke1[0].label}
               regYear
             />
           </div>
           {/* <div className="w-8"></div> */}
           <div className="w-300 lg:w-200 md:!w-full md:mb-4">
-            <p className="mb-1">Marke</p>
+            <p className="mb-1">Modell</p>
             <InputSelect
               options={marke2}
               placeholder={marke1[0].label}
-              onChange={(e) => setModelName(e.value)}
+              onChange={(e) => {
+                setModelName(e)
+              }}
+              value={modelName || marke1[0].label}
+              name={"Modell"}
+              disabled={!brandSelected}
               regYear
             />
           </div>
@@ -104,7 +129,9 @@ export default function DataLocation() {
             <div className="mr-4 md:mr-0 md:w-full">
               <p className="mb-1">Variante</p>
               <Input
-                placeholder="z.B. Avantgarde, TDI, 320, usw."
+                placeholder={marke1[0].label}
+                onChange={(e) => setVarient(e.target.value)}
+                value={varient}
               />
             </div>
             {/* <div className="w-8"></div> */}
@@ -142,6 +169,7 @@ export default function DataLocation() {
                 classes="pr-4"
               />
             </div>
+            <span className="mr-3"></span>
             <div className="w-1/2">
               <InputSelect options={bis1} placeholder={bis1[1].label} regYear />
             </div>
@@ -157,6 +185,7 @@ export default function DataLocation() {
                 classes="pr-4"
               />
             </div>
+            <span className="mr-3"></span>
             <div className="w-1/2">
               <InputSelect options={bis2} placeholder={bis2[1].label} regYear />
             </div>
@@ -210,6 +239,7 @@ export default function DataLocation() {
                 classes="pr-4"
               />
             </div>
+            <span className="mr-3"></span>
             <div className="w-1/2">
               <InputSelect
                 options={kilo2}
@@ -240,6 +270,7 @@ export default function DataLocation() {
                   classes="pr-4"
                 />
               </div>
+              <span className="mr-3"></span>
               <div className="w-1/2">
                 <p className="mb-1">bis</p>
                 <InputSelect options={bis} placeholder={bis[1].label} regYear />
@@ -281,6 +312,7 @@ export default function DataLocation() {
                 classes="pr-4"
               />
             </div>
+            <span className="mr-3"></span>
             <div className="w-1/2">
               <InputSelect options={bis4} placeholder={bis4[1].label} regYear />
             </div>

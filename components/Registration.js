@@ -15,8 +15,8 @@ export default function Registration() {
     { value: "marken", label: "Alle Marken" },
   ];
   return (
-    <div className="bg-theme-gray-3 overflow-hidden lg:px-6 md:!px-0">
-      <div className="relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6">
+    <div className="bg-theme-gray-3 overflow-hidden lg:px-6 md:!px-0 pb-max-h-full ">
+      <div className="relative w-10/12 lg:w-full max-w-ag-container max-h-full md:!w-full mx-auto flex lg:flex-col bg-white p-6">
         <div className="w-1/2 lg:w-full relative before:lg:w-full mr-3 flex flex-col text-theme-gray-4 text-15 md:text-xs lg:flex-col">
           <div className="p-6 rounded-10 bg-theme-gray-4">
             <div className="flex items-center justify-between text-3xl md:text-xl font-bold text-white mb-4">
@@ -476,9 +476,9 @@ export default function Registration() {
             THREE ENDS HERE */}
           </div>
         </div>
-        <div className="relative w-1/2 lg:w-auto lg:ml-0 lg:mt-4 ml-3">
+        <div className="relative w-1/2 lg:w-auto lg:ml-0 lg:mt-4 ml-3 h-full">
           <img
-            className="w-full h-full rounded-10"
+            className="w-full rounded-10"
             src={`/images/${
               isStepActive === 1
                 ? "reg-car"

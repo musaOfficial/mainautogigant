@@ -28,7 +28,7 @@ export default function Footer() {
     { linkTitle: "AUTOMARKEN", url: "#" },
     { linkTitle: "FAHRSCHULEN", url: "#" },
     { linkTitle: "KFZ VORSCHRIFTEN", url: "#" },
-    { linkTitle: "KFZ KAUFVERTRAG", url: "#" },
+    { linkTitle: "KFZ KAUFVERTRAG", url: "/kaufvertrag" },
   ];
 
   const [openLanguagesBar, setOpenLanguagesBar] = useState(false);
