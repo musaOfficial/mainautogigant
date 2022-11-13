@@ -1,17 +1,18 @@
+.container{
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    object-fit: cover;
+}
 .content{
     height: 400px;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
     width: 100%;
-}
-.container{
-    width: 80%;
-    border-radius: 10px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 520px;
+    object-fit: cover;
 }
 
 .right{
@@ -47,6 +48,10 @@
     align-items: center;
     justify-content: center;
     border-radius: 0 0 0 10px;
+}
+
+.border{
+    border: 2px solid #FBB900;
 }
 
 .selectslider{
@@ -131,3 +136,14 @@
     border-radius: 10px;
     overflow: hidden;
 }
+
+@media(max-width: 1140px){
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+}
+

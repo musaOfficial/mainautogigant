@@ -28,9 +28,15 @@
     margin-left: 10px;
 }
 
+.r1c1{
+    width: 49%;
+    margin-right: 10px;
+}
+
 .typeanddate{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     align-items: center;
     color: #0067B8;
 }
@@ -38,14 +44,13 @@
 .row1{
     display: flex;
     margin-bottom: 20px;
-}
-
-.r1c1{
-    margin-right: 20px;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .r1c2{
-    width: 100%;
+    width: 50%;
+    margin-left: 10px;
 }
 
 .dealerinfocontainer{
@@ -96,7 +101,7 @@
 }
 
 .price{
-    width: 55%;
+    width: 80%;
     height: 70px;
     background-color: #FBB900;
     color: #fff;
@@ -110,7 +115,7 @@
 }
 .nexttoprice{
     display: flex;
-    width: 45%;
+    width: 60%;
     height: 70px;
 }
 
@@ -344,6 +349,30 @@
     width: 50%;
 }
 
+.infoabout sub{
+    position: relative;
+    vertical-align: sub;
+    bottom: -18px;
+}
+
+.infoabout sup{
+    position: relative;
+    vertical-align: sub;
+    margin-top: 8px;
+}
+
+.actualinfo sub{
+    position: relative;
+    vertical-align: sub;
+    bottom: -18px;
+}
+
+.actualinfo sup{
+    position: relative;
+    vertical-align: sub;
+    bottom: 18px;
+}
+
 .actualinfo{
     font-weight: bold;
     display: flex;
@@ -371,4 +400,34 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.sub{
+    margin-left: 8px;
+}
+
+@media (max-width: 1140px){
+    .row1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .r1c2{
+        width: auto;
+        margin-bottom: 20px;
+    }
+
+    .r1c1{
+        width: 100%;
+        margin: 0;
+    }
+
+    .row2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .r2c1{
+        margin-bottom: 20px;
+    }
 }

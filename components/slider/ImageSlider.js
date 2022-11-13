@@ -9,12 +9,17 @@ function ImageSlider({
     images
 }){
 
+    const [selectedImage1, setSelectedImage1] = useState(0);
+    const [selectedImage2, setSelectedImage2] = useState(0);
+    const [selectedImage3, setSelectedImage3] = useState(0);
+    const [selectedImage4, setSelectedImage4] = useState(0);
+    const [selectedImage5, setSelectedImage5] = useState(0);
     const [currentImage, setCurrentImage] = useState(0);
     const [sliderState, setSliderState] = useState(0);
     return (
         <div className={classes.container}>
             <div className={classes.content}>
-                <Image src={images[currentImage]} layout='fill'/>
+                <Image src={images[currentImage]} layout='fill' objectFit="cover"/>
                 <ImageSliderArrow className={classes.right} onClick={(e) => {
                     if(currentImage != images.length - 1){
                         if(currentImage == sliderState + 4){
@@ -43,25 +48,55 @@ function ImageSlider({
                         }
                     }}/> 
                     <div className={classes.slider}>
-                        <div className={classes.singleSliderSelectImage} onClick={(e) => {
+                        <div className={`${classes.singleSliderSelectImage} ${selectedImage1 == true && classes.border}`} onClick={(e) => {
                             setCurrentImage(sliderState)
+                            setSelectedImage5(false);
+                            setSelectedImage4(false);
+                            setSelectedImage3(false);
+                            setSelectedImage2(false);
+                            setSelectedImage1(true);
                         }}>
                             <Image className={classes.image} src={images[sliderState]} layout='fill'/>
                         </div>
-                        <div className={classes.singleSliderSelectImage} onClick={(e) => {
+                        <div className={`${classes.singleSliderSelectImage} ${selectedImage2 == true && classes.border}`} onClick={(e) => {
                             setCurrentImage(sliderState + 1);
+                            setSelectedImage5(false);
+                            setSelectedImage4(false);
+                            setSelectedImage3(false);
+                            setSelectedImage2(true);
+                            setSelectedImage1(false);
                         }}>
                             <Image className={classes.image} src={images[sliderState + 1]} layout='fill' />
                         </div>
-                        <div className={classes.singleSliderSelectImage} onClick={(e) => {
+                        <div className={`${classes.singleSliderSelectImage} ${selectedImage3 == true && classes.border}`} onClick={(e) => {
                             setCurrentImage(sliderState + 2);
+                            setSelectedImage5(false);
+                            setSelectedImage4(false);
+                            setSelectedImage3(true);
+                            setSelectedImage2(false);
+                            setSelectedImage1(false);
                         }}>
                             <Image className={classes.image} src={images[sliderState + 2]} layout='fill' />
                         </div>
-                        <div className={classes.singleSliderSelectImage} onClick={(e) => setCurrentImage(sliderState + 3)}>
+                        <div className={`${classes.singleSliderSelectImage} ${selectedImage4 == true && classes.border}`} onClick={(e) => {
+                            setCurrentImage(sliderState + 3);
+                            setSelectedImage5(false);
+                            setSelectedImage4(true);
+                            setSelectedImage3(false);
+                            setSelectedImage2(false);
+                            setSelectedImage1(false);
+                        }}>
                             <Image className={classes.image} src={images[sliderState + 3]} layout='fill' />
                         </div>
-                        <div className={classes.singleSliderSelectImage} onClick={(e) => setCurrentImage(sliderState + 4)}>
+                        <div className={`${classes.singleSliderSelectImage} ${selectedImage5 == true && classes.border}`} onClick={(e) => {
+                            setCurrentImage(sliderState + 4);
+                            setSelectedImage5(true);
+                            setSelectedImage4(false);
+                            setSelectedImage3(false);
+                            setSelectedImage2(false);
+                            setSelectedImage1(false);
+                            
+                        }}>
                             <Image className={classes.image} src={images[sliderState + 4]} layout='fill' />
                         </div>
                     </div>

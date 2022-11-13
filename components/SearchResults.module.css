@@ -1,0 +1,20 @@
+.container{
+    width: 100%;
+    min-height: 80vh;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.contentcontainer{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}

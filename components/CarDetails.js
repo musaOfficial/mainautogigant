@@ -31,6 +31,77 @@ function CarDetails(){
         "/images/logo.png",
         "/images/lamborghini.jpg",
         "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/lamborghini.jpg",
+        "/images/logo.png",
     ];
 
     const [openBasisdaten, setOpenBasisdaten] = useState(false);
@@ -39,9 +110,78 @@ function CarDetails(){
     const [openEnergieverbrauch, setOpenEnergieverbrauch] = useState(false);
     const [openAusstattung, setOpenAusstattung] = useState(false);
     const [openFarbeUndInnenAusstattung, setOpenFarbeUndInnenAusstattung] = useState(false);
-    const [openFahrzeugbeschreibung, setOpenFahrzeugbeschreibung] = useState(false);
-    const [openPreisbewertung, setOpenPreisbewertung] = useState(false);
+    const [openFinanzierung, setOpenFinanzierung] = useState(false);
     const [openVersicherung, setOpenVersicherung] = useState(false);
+
+    const ausstattungKomfort = [
+        "Armlehne",
+        "Berganfahrassistent",
+        "Einparkhilfe Kamera",
+        "Einparkhilfe Sensoren hinten",
+        "Einparkhilfe Sensoren vorne",
+        "Einparkhilfe selbstlenkendes",
+        "System",
+        "Elektr. Fensterheber",
+        "Elektrische Seitenspiegel",
+        "Elektrische Sitze",
+        "Klimaanlage",
+        "Klimaautomatik",
+        "Lederlenkrad",
+        "Lichtsensor",
+        "Multifunktionslenkrad",
+        "Navigationssystem",
+        "Regensensor",
+        "Sitzheizung",
+        "Tempomat"
+    ]
+
+    const ausstattungSicherheit = [
+        "ABS",
+        "Alarmanlage",
+        "Beifahrerairbag",
+        "Bi-Xenon Scheinwerfer",
+        "ESP",
+        "Fahrerairbag",
+        "Fernlichtassistent",
+        "Isofix",
+        "Kopfairbag",
+        "..."
+    ]
+
+    const ausstattungUnterhaltung = [
+        "Bluethoot",
+        "Bordcomputer",
+        "CD",
+        "Freisprechereinrichtung",
+        "MP3",
+        "Radio",
+        "Soundsystem",
+        "USB"
+    ]
+
+    const ausstattungExtras = [
+        'Alufelgen (20")',
+        "Sportspitze",
+        "Sprachsteuerung"
+    ]
+
+    const karosserieform = "Kleinwagen";
+    const zustand = "Gebraucht";
+    const antriebsart = "Front";
+    const anzahlsitzplaetze = 2;
+    const anzahltuere = 3;
+
+    const kilometerstand = 1220;
+    const erstzulassung = "08/2015";
+    const produktionsjahr = 2015;
+    const hu = "08/2015";
+    const scheckheftgepflegt = true;
+
+    // const leistung = 
+    const getriebe = "Automatik";
+    const hubraum = 2993;
+    const gaenge = 8;
+
 
     return (
         <div className={classes.container}>
@@ -99,19 +239,19 @@ function CarDetails(){
                             </div>
                             {openBasisdaten == true && <div className={classes.basiscontainer}>
                                 <div>
-                                    <div className={classes.infoabout}>Karosserieform</div><div className={classes.actualinfo}>Kleinwagen</div>
+                                    <div className={classes.infoabout}>Karosserieform</div><div className={classes.actualinfo}>{karosserieform}</div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>Zustand</div><div className={classes.actualinfo}>Gebraucht</div>
+                                    <div className={classes.infoabout}>Zustand</div><div className={classes.actualinfo}>{zustand}</div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>Antriebsart</div><div className={classes.actualinfo}>Front</div>
+                                    <div className={classes.infoabout}>Antriebsart</div><div className={classes.actualinfo}>{antriebsart}</div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>Sitzplätze</div><div className={classes.actualinfo}>2</div>
+                                    <div className={classes.infoabout}>Sitzplätze</div><div className={classes.actualinfo}>{anzahlsitzplaetze}</div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>Türen</div><div className={classes.actualinfo}>3</div>
+                                    <div className={classes.infoabout}>Türen</div><div className={classes.actualinfo}>{anzahltuere}</div>
                                 </div>
                             </div>}
                             <div className={classes.section} onClick={() => setOpenFahrzeughistorie(d => !d)}>
@@ -120,19 +260,19 @@ function CarDetails(){
                             </div>
                             {openFahrzeughistorie == true && <div className={classes.basiscontainer}>
                                 <div>
-                                    <div className={classes.infoabout}>Kilometerstand</div><div className={classes.actualinfo}>99 500 km</div>
+                                    <div className={classes.infoabout}>Kilometerstand</div><div className={classes.actualinfo}>{kilometerstand} km</div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>Erstzulassung</div><div className={classes.actualinfo}>08/2015</div>
+                                    <div className={classes.infoabout}>Erstzulassung</div><div className={classes.actualinfo}>{erstzulassung}</div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>Produktionsjahr</div><div className={classes.actualinfo}>2015</div>
+                                    <div className={classes.infoabout}>Produktionsjahr</div><div className={classes.actualinfo}>{produktionsjahr}</div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>HU</div><div className={classes.actualinfo}>08/2023</div>
+                                    <div className={classes.infoabout}>HU</div><div className={classes.actualinfo}>{hu}</div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>Scheckheftgepflegt</div><div className={classes.actualinfo}>Ja</div>
+                                    <div className={classes.infoabout}>Scheckheftgepflegt</div><div className={classes.actualinfo}>{scheckheftgepflegt == true ? "Ja" : "Nein"}</div>
                                 </div>
                             </div>}
                             <div className={classes.section} onClick={() => setOpenTechnischeDaten(e => !e)}>
@@ -144,13 +284,13 @@ function CarDetails(){
                                     <div className={classes.infoabout}>Leistung</div><div className={classes.actualinfo}>230 kW (313 PS)</div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>Getriebe</div><div className={classes.actualinfo}>Automatik</div>
+                                    <div className={classes.infoabout}>Getriebe</div><div className={classes.actualinfo}>{getriebe}</div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>Hubraum</div><div className={classes.actualinfo}>2 993 cm<sub>3</sub></div>
+                                    <div className={classes.infoabout}>Hubraum</div><div className={classes.actualinfo}>{hubraum} cm<sub className={classes.sub}>3</sub></div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>Gänge</div><div className={classes.actualinfo}>8</div>
+                                    <div className={classes.infoabout}>Gänge</div><div className={classes.actualinfo}>{gaenge}</div>
                                 </div>
                             </div>}
                             <div className={classes.section} onClick={() => setOpenEnergieverbrauch(e => !e)}>
@@ -169,11 +309,54 @@ function CarDetails(){
                                     </div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>CO<sub><sub>2</sub></sub></div><div className={classes.actualinfo}></div>
+                                    <div className={classes.infoabout}>CO<sub>2</sub>-Emissionen<sup>2</sup></div><div className={classes.actualinfo}>0 g/km (komb.)</div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>Gänge</div><div className={classes.actualinfo}>8</div>
+                                    <div className={classes.infoabout}>Schadstoffklasse</div><div className={classes.actualinfo}>Euro 6</div>
                                 </div>
+                                <div>
+                                    <div className={classes.infoabout}>Umweltplakette</div><div className={classes.actualinfo}>1 (Keine Feinstaubplakette)</div>
+                                </div>
+                            </div>}
+                            <div className={classes.section} onClick={() => setOpenAusstattung(e => !e)}>
+                                <h1 className={openAusstattung == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Ausstattung</h1>
+                                {openAusstattung == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
+                            </div>
+                            {openAusstattung == true && <div className={classes.basiscontainer}>
+                                <div>
+                                    <div className={classes.infoabout}>Komfort</div><div className={classes.actualinfo}>
+                                        {ausstattungKomfort.map((property) => <div key={property}>{property}</div>)}
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className={classes.infoabout}>Unterhaltung/Media</div><div className={classes.actualinfo}>
+                                        {ausstattungUnterhaltung.map((e) => <div key={e}>{e}</div>)}
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className={classes.infoabout}>Sicherheit</div><div className={classes.actualinfo}>
+                                        {ausstattungSicherheit.map((e) => <div key={e}>{e}</div>)}
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className={classes.infoabout}>Extras</div><div className={classes.actualinfo}>
+                                        {ausstattungExtras.map((e) => <div key={e}>{e}</div>)}
+                                    </div>
+                                </div>
+                            </div>}
+                            <div className={classes.section} onClick={() => setOpenFarbeUndInnenAusstattung(e => !e)}>
+                                <h1 className={openFarbeUndInnenAusstattung == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Farbe und Innenausstattung</h1>
+                                {openFarbeUndInnenAusstattung == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
+                            </div>
+                            {openFarbeUndInnenAusstattung == true && <div className={classes.basiscontainer}>
+                                
+                            </div>}
+                            <div className={classes.section} onClick={() => setOpenFinanzierung(e => !e)}>
+                                <h1 className={openFinanzierung == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Finanzierung</h1>
+                                {openFinanzierung == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
+                            </div>
+                            {openFinanzierung == true && <div className={classes.basiscontainer}>
+                                
                             </div>}
                         </div>
                         <div className={classes.r2c2}>
