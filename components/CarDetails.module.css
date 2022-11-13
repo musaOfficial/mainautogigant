@@ -3,12 +3,6 @@
     background-color: #333;
     display: flex;
     justify-content: center;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .contentcontainer{
@@ -28,6 +22,11 @@
     margin-left: 10px;
 }
 
+.bluetext:hover{
+    color: #FBB900;
+    cursor: pointer;
+}
+
 .r1c1{
     width: 49%;
     margin-right: 10px;
@@ -35,10 +34,14 @@
 
 .typeanddate{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     align-items: center;
     color: #0067B8;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.mg{
+    margin: 0 10px;
 }
 
 .row1{
@@ -367,6 +370,12 @@
     bottom: -18px;
 }
 
+.hubraumsub{
+    top: -20px;
+    position: static;
+    left: 45px;
+}
+
 .actualinfo sup{
     position: relative;
     vertical-align: sub;
@@ -404,6 +413,10 @@
 
 .sub{
     margin-left: 8px;
+}
+
+.hubraumsub{
+    margin-left: 20px;
 }
 
 @media (max-width: 1140px){

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="zoom_out_map_FILL0_wght400_GRAD0_opsz48_3_" data-name="zoom_out_map_FILL0_wght400_GRAD0_opsz48 (3)" class="cls-1" d="M6,36V26.417H8.5v5.292l6.167-6.167,1.792,1.792L10.292,33.5h5.292V36Zm20.417,0V33.5h5.292l-6.125-6.125,1.792-1.792L33.5,31.708V26.417H36V36ZM14.625,16.417,8.5,10.292v5.292H6V6h9.583V8.5H10.292l6.125,6.125Zm12.75,0-1.792-1.792L31.708,8.5H26.417V6H36v9.583H33.5V10.292Z" transform="translate(-6 -6)"/>
+</svg>

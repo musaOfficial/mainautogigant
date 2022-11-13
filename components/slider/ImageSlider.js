@@ -4,7 +4,8 @@ import ImageSliderArrow from './../../public/imageSliderArrow.svg'
 import SelectSliderArrow from './../../public/selectSliderArrow.svg'
 import { useState } from "react";
 import CompanyName from './../../public/svgs/companyname.svg';
-import CompanyLocation from './../../public/svgs/companylocation.svg'
+import CompanyLocation from './../../public/svgs/companylocation.svg';
+import ZoomOut from './../../public/images/zoomout.svg'
 function ImageSlider({
     images
 }){
@@ -16,8 +17,36 @@ function ImageSlider({
     const [selectedImage5, setSelectedImage5] = useState(0);
     const [currentImage, setCurrentImage] = useState(0);
     const [sliderState, setSliderState] = useState(0);
+    const [zoomout, setZoomout] = useState(false);
     return (
         <div className={classes.container}>
+            {zoomout == true && <div className={classes.showimg}>
+                <div className={classes.imgboxbackground}>
+                    <div className={classes.imgboxbig}>
+                        <Image className={classes.bigimage} src={images[currentImage]} layout='fill'/>
+                        <ImageSliderArrow className={classes.rightbig} onClick={(e) => {
+                            if(currentImage != images.length - 1){
+                                if(currentImage == sliderState + 4){
+                                    setSliderState(f => f + 1)
+                                }
+                                setCurrentImage(f => f + 1);
+                            }
+                        }} />
+                        <ImageSliderArrow className={classes.leftbig} onClick={(e) => {
+                            if(currentImage != 0){
+                                if(currentImage == sliderState){
+                                    setSliderState(f => f - 1)
+                                }
+                                setCurrentImage(f => f - 1);
+                            }
+                        }}/>
+                        <div className={classes.zoomout} onClick={() => setZoomout(true)}><ZoomOut className={classes.zoomoutsvgbig}/></div>
+                            <div className={classes.counterbackground}>
+                            <span>{currentImage + 1}</span> / <span>{images.length}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>}
             <div className={classes.content}>
                 <Image src={images[currentImage]} layout='fill' objectFit="cover"/>
                 <ImageSliderArrow className={classes.right} onClick={(e) => {
@@ -36,6 +65,7 @@ function ImageSlider({
                         setCurrentImage(f => f - 1);
                     }
                 }}/>
+                <div className={classes.zoomout} onClick={() => setZoomout(true)}><ZoomOut className={classes.zoomoutsvg}/></div>
                 <div className={classes.counterbackground}>
                     <span>{currentImage + 1}</span> / <span>{images.length}</span>
                 </div>
