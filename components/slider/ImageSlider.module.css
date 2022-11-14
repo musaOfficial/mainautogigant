@@ -176,6 +176,14 @@
     z-index: 1100;
 }
 
+.companyname{
+    font-size: 13px;
+}
+
+.companylocation{
+    font-size: 13px;
+}
+
 @media (max-width: 879px){
     .imgboxbig{
         height: 400px;

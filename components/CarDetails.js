@@ -10,8 +10,34 @@ import WhiteShare from './../public/svgs/whiteshare.svg';
 import Expand from './../public/expand.svg'
 import { useState } from 'react';
 import { pdf } from '@react-pdf/renderer';
+import { useEffect } from 'react';
+
+const useDeviceSize = () => {
+
+    const [width, setWidth] = useState(0)
+    const [height, setHeight] = useState(0)
+  
+    const handleWindowResize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    }
+  
+    useEffect(() => {
+      // component is mounted and window is available
+      handleWindowResize();
+      window.addEventListener('resize', handleWindowResize);
+      // unsubscribe from the event on component unmount
+      return () => window.removeEventListener('resize', handleWindowResize);
+    }, []);
+  
+    return [width, height]
+  
+  }
+
+
 function CarDetails(){
 
+    const [width, height] = useDeviceSize();
 
     const images = [
         "/images/car1.jpg",
@@ -158,13 +184,14 @@ function CarDetails(){
         setTel("");
         setNewsletter(false);
     }
-
     return (
         <div className={classes.container}>
             <div className={`${classes.contentcontainer} w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
                 <div>
                     <div className={classes.image}>
-                        <Image src={"/images/space.gif"} width={980} height={120} className={classes.platzhalter}/>
+                        {width >= 1141 && 
+                            <Image src={"/images/space.gif"} width={980} height={120} className={classes.platzhalter}/>
+                        }
                     </div>
                     <div className={classes.typeanddate}>
                         <div className={classes.backtoresults}><Backtoresults/><span className={classes.bluetext}>zurück zur Ergebnisliste</span></div>
@@ -424,11 +451,12 @@ Neuigkeiten der AUTOGIGANT. GmbH per E-Mail erhalten. Ich kann
 diese Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.</p>
                             </div>
                             <button type='submit' className={classes.yellowbtn} >Nachricht senden</button>
+                            </form>
                             <p className={classes.contactdesc}>Wir verwenden Deine E-Mail-Adresse gemäß unseren 
 Datenschutzbestimmungen, z.B. für Fahrzeug-Empfehlungen ähnlich Deiner 
 Suche. Wenn Du keine weiteren Fahrzeug-Empfehlungen mehr erhalten willst,
  kannst Du jederzeit hier widersprechen.</p>
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
