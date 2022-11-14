@@ -164,10 +164,10 @@ function CarDetails(){
             <div className={`${classes.contentcontainer} w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
                 <div>
                     <div className={classes.image}>
-                        <Image src={"/images/ads-card-2.png"} width={1300} height={200}/>
+                        <Image src={"/images/space.gif"} width={980} height={120} className={classes.platzhalter}/>
                     </div>
                     <div className={classes.typeanddate}>
-                        <div className={classes.backtoresults}><Backtoresults/><span className={classes.bluetext}>zurück zur Ergebnisliste</span> <span className={classes.mg}>|</span> <span>Gebrauchtwagen / Mercedes / CLS</span></div>
+                        <div className={classes.backtoresults}><Backtoresults/><span className={classes.bluetext}>zurück zur Ergebnisliste</span></div>
                         <div>Zuletz geändert: 26.10.2022, 20:57 Uhr</div>
                     </div>
                     <div className={classes.row1}>
@@ -208,7 +208,16 @@ function CarDetails(){
                     </div>
                     <div className={classes.row2}>
                         <div className={classes.r2c1}>
-                            <div className={classes.section} onClick={() => setOpenBasisdaten(d => !d)}>
+                            <div className={classes.sectiontop} onClick={() => {
+                                setOpenBasisdaten(d => !d)
+                                setOpenAusstattung(false);
+                                setOpenEnergieverbrauch(false);
+                                setOpenFahrzeughistorie(false);
+                                setOpenFarbeUndInnenAusstattung(false);
+                                setOpenFinanzierung(false);
+                                setOpenTechnischeDaten(false);
+                                setOpenVersicherung(false);
+                            }}>
                                 <h1 className={openBasisdaten == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Basisdaten</h1>
                                 {openBasisdaten == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
                             </div>
@@ -229,7 +238,16 @@ function CarDetails(){
                                     <div className={classes.infoabout}>Türen</div><div className={classes.actualinfo}>{anzahltuere}</div>
                                 </div>
                             </div>}
-                            <div className={classes.section} onClick={() => setOpenFahrzeughistorie(d => !d)}>
+                            <div className={classes.section} onClick={() => {
+                                setOpenFahrzeughistorie(d => !d)
+                                setOpenBasisdaten(false)
+                                setOpenAusstattung(false);
+                                setOpenEnergieverbrauch(false);
+                                setOpenFarbeUndInnenAusstattung(false);
+                                setOpenFinanzierung(false);
+                                setOpenTechnischeDaten(false);
+                                setOpenVersicherung(false);
+                            }}>
                                 <h1 className={openFahrzeughistorie == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Fahrzeughistorie</h1>
                                 {openFahrzeughistorie == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
                             </div>
@@ -250,7 +268,16 @@ function CarDetails(){
                                     <div className={classes.infoabout}>Scheckheftgepflegt</div><div className={classes.actualinfo}>{scheckheftgepflegt == true ? "Ja" : "Nein"}</div>
                                 </div>
                             </div>}
-                            <div className={classes.section} onClick={() => setOpenTechnischeDaten(e => !e)}>
+                            <div className={classes.section} onClick={() => {
+                                setOpenTechnischeDaten(e => !e)
+                                setOpenFahrzeughistorie(false);
+                                setOpenBasisdaten(false)
+                                setOpenAusstattung(false);
+                                setOpenEnergieverbrauch(false);
+                                setOpenFarbeUndInnenAusstattung(false);
+                                setOpenFinanzierung(false);
+                                setOpenVersicherung(false);
+                            }}>
                                 <h1 className={openTechnischeDaten == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Technische Daten</h1>
                                 {openTechnischeDaten == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
                             </div>
@@ -268,7 +295,16 @@ function CarDetails(){
                                     <div className={classes.infoabout}>Gänge</div><div className={classes.actualinfo}>{gaenge}</div>
                                 </div>
                             </div>}
-                            <div className={classes.section} onClick={() => setOpenEnergieverbrauch(e => !e)}>
+                            <div className={classes.section} onClick={() => {
+                                setOpenEnergieverbrauch(e => !e);
+                                setOpenTechnischeDaten(false)
+                                setOpenBasisdaten(false)
+                                setOpenAusstattung(false);
+                                setOpenFarbeUndInnenAusstattung(false);
+                                setOpenFahrzeughistorie(false);
+                                setOpenFinanzierung(false);
+                                setOpenVersicherung(false);
+                            }}>
                                 <h1 className={openEnergieverbrauch == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Energieverbrauch</h1>
                                 {openEnergieverbrauch == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
                             </div>
@@ -291,7 +327,16 @@ function CarDetails(){
                                     <div className={classes.infoabout}>Umweltplakette</div><div className={classes.actualinfo}>{umweltplakette}</div>
                                 </div>
                             </div>}
-                            <div className={classes.section} onClick={() => setOpenAusstattung(e => !e)}>
+                            <div className={classes.section} onClick={() => {
+                                setOpenAusstattung(e => !e);
+                                setOpenEnergieverbrauch(false);
+                                setOpenTechnischeDaten(false)
+                                setOpenBasisdaten(false)
+                                setOpenFarbeUndInnenAusstattung(false);
+                                setOpenFinanzierung(false);
+                                setOpenVersicherung(false);
+                                setOpenFahrzeughistorie(false);
+                            }}>
                                 <h1 className={openAusstattung == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Ausstattung</h1>
                                 {openAusstattung == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
                             </div>
@@ -317,7 +362,16 @@ function CarDetails(){
                                     </div>
                                 </div>
                             </div>}
-                            <div className={classes.section} onClick={() => setOpenFarbeUndInnenAusstattung(e => !e)}>
+                            <div className={classes.section} onClick={() => {
+                                setOpenFarbeUndInnenAusstattung(e => !e);
+                                setOpenAusstattung(false);
+                                setOpenEnergieverbrauch(false);
+                                setOpenTechnischeDaten(false)
+                                setOpenBasisdaten(false)
+                                setOpenFinanzierung(false);
+                                setOpenVersicherung(false);
+                                setOpenFahrzeughistorie(false);
+                            }}>
                                 <h1 className={openFarbeUndInnenAusstattung == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Farbe und Innenausstattung</h1>
                                 {openFarbeUndInnenAusstattung == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
                             </div>
@@ -332,7 +386,16 @@ function CarDetails(){
                                     <div className={classes.infoabout}>Farbe der Innenausstattung</div><div className={classes.actualinfo}>{farbeinnenausstattung}</div>
                                 </div>
                             </div>}
-                            <div className={classes.section} onClick={() => setOpenFinanzierung(e => !e)}>
+                            <div className={classes.section} onClick={() => {
+                                setOpenFinanzierung(e => !e);
+                                setOpenFarbeUndInnenAusstattung(false);
+                                setOpenAusstattung(false);
+                                setOpenEnergieverbrauch(false);
+                                setOpenTechnischeDaten(false)
+                                setOpenBasisdaten(false)
+                                setOpenVersicherung(false);
+                                setOpenFahrzeughistorie(false);
+                            }}>
                                 <h1 className={openFinanzierung == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Finanzierung</h1>
                                 {openFinanzierung == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
                             </div>

@@ -1,3 +1,15 @@
+.platzhalter{
+    background-color: #6C757D;
+    width: 980px;
+    height: 120px;
+}
+
+.image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container{
     width: 100%;
     background-color: #333;
@@ -28,7 +40,7 @@
 }
 
 .r1c1{
-    width: 49%;
+    width: 50%;
     margin-right: 10px;
 }
 
@@ -209,7 +221,7 @@
 }
 
 .whiteback{
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: #F1F2F3;
     width: 100%;
     padding: 30px;
     display: flex;
@@ -236,7 +248,8 @@
 }
 
 .greyback{
-    background-color: #F1F2F3;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-top: 7px;
     padding-left: 30px;
     height: 100%;
     padding-bottom: 7px;
@@ -400,7 +413,7 @@
 }
 
 .sectionheadingbig{
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
     transition: .1s ease-in;
     -webkit-touch-callout: none;
@@ -418,6 +431,22 @@
 .hubraumsub{
     margin-left: 20px;
 }
+
+.sectiontop{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.section{
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
 
 @media (max-width: 1140px){
     .row1{
