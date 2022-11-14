@@ -188,14 +188,17 @@ function CarDetails(){
         <div className={classes.container}>
             <div className={`${classes.contentcontainer} w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
                 <div>
-                    <div className={classes.image}>
-                        {width >= 1141 && 
-                            <Image src={"/images/space.gif"} width={980} height={120} className={classes.platzhalter}/>
-                        }
+                    <div className={classes.middle}>
+                        <div className={classes.image}>
+                            <div className={classes.werbungtext}>Werbeanzeige</div>
+                            {width >= 1141 && 
+                                <Image src={"/images/space.gif"} width={980} height={120} className={classes.platzhalter}/>
+                            }
+                        </div>
                     </div>
                     <div className={classes.typeanddate}>
                         <div className={classes.backtoresults}><Backtoresults/><span className={classes.bluetext}>zurück zur Ergebnisliste</span></div>
-                        <div>Zuletz geändert: 26.10.2022, 20:57 Uhr</div>
+                        <div className={classes.zl}><span className={classes.zl1}>Zuletz geändert:</span> <span className={classes.zl2}>26.10.2022, 20:57 Uhr</span></div>
                     </div>
                     <div className={classes.row1}>
                         <div className={classes.r1c1}>

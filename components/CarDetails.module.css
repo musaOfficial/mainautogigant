@@ -2,11 +2,41 @@
     background-color: #6C757D;
     width: 980px;
     height: 120px;
+    position: relative;
+
+}
+
+.zl{
+    display: flex;
+    font-size: 12px;
+}
+
+.zl1{
+    margin-right: 5px;
+}
+
+@media (max-width: 555px){
+    .zl{
+        flex-direction: column
+    }
 }
 
 .image{
+    position: relative;
+    margin-bottom: 20px;
+    width: 980px;
+}
+
+.werbungtext{
+    position: absolute;
+    top: -17px;
+    right: 0;
+    font-size: 12px;
+    color: #6C757D;
+}
+
+.middle{
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -32,6 +62,7 @@
 
 .bluetext{
     margin-left: 10px;
+    font-size: 12px;
 }
 
 .bluetext:hover{
@@ -489,5 +520,24 @@
 @media (max-width: 370px){
     .price{
         font-size: 20px;
+    }
+}
+
+@media (max-width: 515px){
+    .call{
+        font-size: 13px;
+    }
+    .sendmail{
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 432px){
+    .call{
+        font-size: 11px;
+    }
+
+    .sendmail{
+        font-size: 11px;
     }
 }
