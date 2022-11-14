@@ -8,11 +8,36 @@ import CompanyLocation from './../../public/svgs/companylocation.svg';
 import ZoomOut from './../../public/images/zoomout.svg';
 import Closex from './../../public/images/closedetail.svg';
 import { stringify } from "postcss";
+import { useEffect } from "react";
+
+const useDeviceSize = () => {
+
+    const [width, setWidth] = useState(0)
+    const [height, setHeight] = useState(0)
+  
+    const handleWindowResize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    }
+  
+    useEffect(() => {
+      // component is mounted and window is available
+      handleWindowResize();
+      window.addEventListener('resize', handleWindowResize);
+      // unsubscribe from the event on component unmount
+      return () => window.removeEventListener('resize', handleWindowResize);
+    }, []);
+  
+    return [width, height]
+  
+  }
+
+
 function ImageSlider({
     images
 }){
 
-    const [width, setWidth] = useState(0);
+    const [width, height] = useDeviceSize();
 
     const [selectedImage1, setSelectedImage1] = useState(0);
     const [selectedImage2, setSelectedImage2] = useState(0);
@@ -26,11 +51,6 @@ function ImageSlider({
     const [currentImage, setCurrentImage] = useState(0);
     const [sliderState, setSliderState] = useState(0);
     const [zoomout, setZoomout] = useState(false);
-
-    window.addEventListener('resize', () => {
-        setWidth(window.innerWidth);
-    })
-
     return (
         <div className={classes.container}>
             {zoomout == true && <div className={classes.closebackground} onClick={() => setZoomout(false)}></div>}
