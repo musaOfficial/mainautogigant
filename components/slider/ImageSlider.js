@@ -51,6 +51,8 @@ function ImageSlider({
     const [currentImage, setCurrentImage] = useState(0);
     const [sliderState, setSliderState] = useState(0);
     const [zoomout, setZoomout] = useState(false);
+
+    const [styleSingleImage, setStyleSingleImage] = useState(0);
     return (
         <div className={classes.container}>
             {zoomout == true && <div className={classes.closebackground} onClick={() => setZoomout(false)}></div>}
@@ -128,8 +130,8 @@ function ImageSlider({
                                 <Image className={classes.image} src={images[sliderState + 3]} layout='fill' />
                             </div>
                         }
-                        {window.innerWidth >= 837 && 
-                            <div className={`${classes.singleSliderSelectImage} ${selectedImage5 == true && classes.border}`} onClick={(e) => {
+                        {window.innerWidth >= 837 && setStyleSingleImage(1) &&
+                            <div className={`${classes.singleSliderSelectImage}  ${selectedImage5 == true && classes.border}`} onClick={(e) => {
                                 setCurrentImage(sliderState + 4);
                                 setSelectedImage5(true);
                                 setSelectedImage4(false);
@@ -143,8 +145,8 @@ function ImageSlider({
                                 <Image className={classes.image} src={images[sliderState + 4]} layout='fill' />
                             </div>
                         }
-                        {width >= 965 && 
-                            <div className={`${classes.singleSliderSelectImage} ${selectedImage6 == true && classes.border}`} onClick={(e) => {
+                        {width >= 965 && setStyleSingleImage(2) &&
+                            <div className={`${classes.singleSliderSelectImage} ${styleSingleImage == 2 && classes.specialborderright} ${selectedImage6 == true && classes.border}`} onClick={(e) => {
                                 setCurrentImage(sliderState + 5);
                                 setSelectedImage5(false);
                                 setSelectedImage4(false);
@@ -159,8 +161,9 @@ function ImageSlider({
                                 <Image className={classes.image} src={images[sliderState + 5]} layout='fill' />
                             </div>
                         }
-                        {width >= 1136 && 
-                            <div className={`${classes.singleSliderSelectImage} ${selectedImage7 == true && classes.border}`} onClick={(e) => {
+                        {width >= 1136 && setStyleSingleImage(3) && 
+                            
+                            <div className={`${classes.singleSliderSelectImage} ${styleSingleImage == 3 && classes.specialborderright} ${selectedImage7 == true && classes.border}`} onClick={(e) => {
                                 setCurrentImage(sliderState + 6);
                                 setSelectedImage5(false);
                                 setSelectedImage4(false);
@@ -189,22 +192,26 @@ function ImageSlider({
             </div>}
             <div className={classes.content}>
                 <Image src={images[currentImage]} layout='fill' objectFit="cover"/>
-                <ImageSliderArrow className={classes.right} onClick={(e) => {
-                    if(currentImage != images.length - 1){
-                        if(currentImage == sliderState + 4){
-                            setSliderState(f => f + 1)
+                <div className={classes.leftbox}>
+                    <ImageSliderArrow className={classes.left} onClick={(e) => {
+                        if(currentImage != images.length - 1){
+                            if(currentImage == sliderState + 4){
+                                setSliderState(f => f + 1)
+                            }
+                            setCurrentImage(f => f + 1);
                         }
-                        setCurrentImage(f => f + 1);
-                    }
-                }} />
-                <ImageSliderArrow className={classes.left} onClick={(e) => {
-                    if(currentImage != 0){
-                        if(currentImage == sliderState){
-                            setSliderState(f => f - 1)
+                    }} />
+                </div>
+                <div className={classes.rightbox}>
+                    <ImageSliderArrow className={classes.right} onClick={(e) => {
+                        if(currentImage != 0){
+                            if(currentImage == sliderState){
+                                setSliderState(f => f - 1)
+                            }
+                            setCurrentImage(f => f - 1);
                         }
-                        setCurrentImage(f => f - 1);
-                    }
-                }}/>
+                    }}/>
+                </div>
                 {width > 1140 && 
                     <div className={classes.zoomout} onClick={() => setZoomout(true)}><ZoomOut className={classes.zoomoutsvg}/></div>
                 }
@@ -220,7 +227,7 @@ function ImageSlider({
                         }
                     }}/> 
                     <div className={classes.slider}>
-                        <div className={`${classes.singleSliderSelectImage} ${selectedImage1 == true && classes.border}`} onClick={(e) => {
+                        <div className={`${classes.singleSliderSelectImage} ${classes.specialborderleft} ${selectedImage1 == true && classes.border}`} onClick={(e) => {
                             setCurrentImage(sliderState)
                             setSelectedImage5(false);
                             setSelectedImage4(false);
@@ -274,8 +281,8 @@ function ImageSlider({
                                 <Image className={classes.image} src={images[sliderState + 3]} layout='fill' />
                             </div>
                         }
-                        {width <= 1140 && width >= 655 &&  
-                            <div className={`${classes.singleSliderSelectImage} ${selectedImage5 == true && classes.border}`} onClick={(e) => {
+                        {width >= 655 &&  
+                            <div className={`${classes.singleSliderSelectImage} ${classes.specialborderright} ${selectedImage5 == true && classes.border}`} onClick={(e) => {
                                 setCurrentImage(sliderState + 4);
                                 setSelectedImage5(true);
                                 setSelectedImage4(false);

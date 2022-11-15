@@ -76,9 +76,10 @@ function CarDetails(){
     const [openFinanzierung, setOpenFinanzierung] = useState(false);
     const [openVersicherung, setOpenVersicherung] = useState(false);
 
-
-    const preis = 37990;
     
+    const preis = 37990;
+    var preisFormatted = preis.toLocaleString();
+
     const ausstattungKomfort = [
         "Armlehne",
         "Berganfahrassistent",
@@ -137,7 +138,8 @@ function CarDetails(){
     const anzahlsitzplaetze = 2;
     const anzahltuere = 3;
 
-    const kilometerstand = 1220;
+    const kilometerstand = 144000;
+    var kilometerstandFormatted = kilometerstand.toLocaleString();
     const erstzulassung = "08/2015";
     const produktionsjahr = 2015;
     const hu = "08/2015";
@@ -168,6 +170,8 @@ function CarDetails(){
     const aussenfarbe = "Blau";
     const aussenfarbelauthersteller = "BLAU";
     const farbeinnenausstattung = "sonstige";
+    const leistung = "190 kW (258 PS)";
+    const verkaeufer = "Privat";
 
     function handleSubmit(e){
         e.preventDefault();
@@ -190,7 +194,9 @@ function CarDetails(){
                 <div>
                     <div className={classes.middle}>
                         <div className={classes.image}>
-                            <div className={classes.werbungtext}>Werbeanzeige</div>
+                            {width >= 1141 && 
+                                <div className={classes.werbungtext}>Werbeanzeige</div>
+                            }
                             {width >= 1141 && 
                                 <Image src={"/images/space.gif"} width={980} height={120} className={classes.platzhalter}/>
                             }
@@ -207,7 +213,7 @@ function CarDetails(){
                         <div className={classes.r1c2}>
                             <div className={classes.carinfocontainer}>
                                 <div className={classes.pricerow}>
-                                    <div className={classes.price}>€ 234234,-</div>
+                                    <div className={classes.price}>€ {preisFormatted},-</div>
                                     <div className={classes.nexttoprice}>
                                         <div className={classes.favorite}><WhiteFavorites className={classes.svg}/></div>
                                         <div className={classes.share}><WhiteShare className={classes.svg}/></div>
@@ -220,12 +226,12 @@ function CarDetails(){
                                         <div className={classes.cardesc}>d BlueEff. Autom. NUR 38.600km / 1.Besitz / Garantie</div>
                                         <div className={classes.companylocation}><CompanyLocation className={classes.companylocation}/> 2700 Wiener Neustadt | AT</div>
                                     </div>
-                                    <div className={classes.l}><span className={classes.infoabt}>Kilometerstand</span><span className={classes.actinfo}>5 300 km</span></div>
-                                    <div className={classes.g}><span className={classes.infoabt}>Getriebe</span><span className={classes.actinfo}>Automatik</span></div>
-                                    <div className={classes.l}><span className={classes.infoabt}>Erstzulassung</span><span className={classes.actinfo}>07/2020</span></div>
-                                    <div className={classes.g}><span className={classes.infoabt}>Kraftstoff</span><span className={classes.actinfo}>Benzin</span></div>
-                                    <div className={classes.l}><span className={classes.infoabt}>Leistung</span><span className={classes.actinfo}>225 kW (306 PS)</span></div>
-                                    <div className={classes.g}><span className={classes.infoabt}>Verkäufer</span><span className={classes.actinfo}>Privat</span></div>
+                                    <div className={classes.l}><span className={classes.infoabt}>Kilometerstand</span><span className={classes.actinfo}>{kilometerstandFormatted} km</span></div>
+                                    <div className={classes.g}><span className={classes.infoabt}>Getriebe</span><span className={classes.actinfo}>{getriebe}</span></div>
+                                    <div className={classes.l}><span className={classes.infoabt}>Erstzulassung</span><span className={classes.actinfo}>{erstzulassung}</span></div>
+                                    <div className={classes.g}><span className={classes.infoabt}>Kraftstoff</span><span className={classes.actinfo}>{kraftstoff}</span></div>
+                                    <div className={classes.l}><span className={classes.infoabt}>Leistung</span><span className={classes.actinfo}>{leistung}</span></div>
+                                    <div className={classes.g}><span className={classes.infoabt}>Verkäufer</span><span className={classes.actinfo}>{verkaeufer}</span></div>
                                     <div className={classes.greyback}>Finanzierung berechnen</div>
                                     <div className={classes.greyback}>Versicherung berechnen</div>
                                     <div className={classes.whiteback}>
