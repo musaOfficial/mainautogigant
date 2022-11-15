@@ -195,10 +195,10 @@ function CarDetails(){
                     <div className={classes.middle}>
                         <div className={classes.image}>
                             {width >= 1141 && 
-                                <div className={classes.werbungtext}>Werbeanzeige</div>
+                                <div className={classes.werbungtext}>Anzeige</div>
                             }
                             {width >= 1141 && 
-                                <Image src={"/images/space.gif"} width={980} height={120} className={classes.platzhalter}/>
+                                <Image src={"/images/panorama.jpg"} width={980} height={120} />
                             }
                         </div>
                     </div>

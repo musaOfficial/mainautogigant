@@ -140,6 +140,10 @@
     transition: .1s ease-in;
 }
 
+.zoomout:hover{
+    background-color: #FBB900;
+}
+
 
 .border{
     border: 2px solid #FBB900;
