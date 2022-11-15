@@ -253,7 +253,7 @@ function ImageSlider({
                         }}>
                             <Image className={classes.image} src={images[sliderState + 1]} layout='fill' />
                         </div>
-                        <div className={`${classes.singleSliderSelectImage} ${selectedImage3 == true && classes.border}`} onClick={(e) => {
+                        <div className={`${classes.singleSliderSelectImage} ${width <= 554 && classes.specialborderright} ${selectedImage3 == true && classes.border}`} onClick={(e) => {
                             setCurrentImage(sliderState + 2);
                             setSelectedImage5(false);
                             setSelectedImage4(false);
@@ -267,7 +267,7 @@ function ImageSlider({
                             <Image className={classes.image} src={images[sliderState + 2]} layout='fill' />
                         </div>
                         {width >= 555 && 
-                            <div className={`${classes.singleSliderSelectImage} ${selectedImage4 == true && classes.border}`} onClick={(e) => {
+                            <div className={`${classes.singleSliderSelectImage} ${width >= 555 && width <= 654 && classes.specialborderright} ${selectedImage4 == true && classes.border}`} onClick={(e) => {
                                 setCurrentImage(sliderState + 3);
                                 setSelectedImage5(false);
                                 setSelectedImage4(true);
@@ -282,7 +282,7 @@ function ImageSlider({
                             </div>
                         }
                         {width >= 655 &&  
-                            <div className={`${classes.singleSliderSelectImage} ${classes.specialborderright} ${selectedImage5 == true && classes.border}`} onClick={(e) => {
+                            <div className={`${classes.singleSliderSelectImage} ${(width >= 655 && width <= 749) || width > 1140 && classes.specialborderright} ${selectedImage5 == true && classes.border}`} onClick={(e) => {
                                 setCurrentImage(sliderState + 4);
                                 setSelectedImage5(true);
                                 setSelectedImage4(false);
@@ -297,7 +297,7 @@ function ImageSlider({
                             </div>
                         }
                         {width <= 1140 && width >= 755 && 
-                            <div className={`${classes.singleSliderSelectImage} ${selectedImage6 == true && classes.border}`} onClick={(e) => {
+                            <div className={`${classes.singleSliderSelectImage} ${width >= 755 && width <= 854 && classes.specialborderright} ${selectedImage6 == true && classes.border}`} onClick={(e) => {
                                 setCurrentImage(sliderState + 5);
                                 setSelectedImage5(false);
                                 setSelectedImage4(false);
@@ -313,7 +313,7 @@ function ImageSlider({
                             </div>
                         }
                         {width <= 1140 && width >= 855 &&  
-                            <div className={`${classes.singleSliderSelectImage} ${selectedImage7 == true && classes.border}`} onClick={(e) => {
+                            <div className={`${classes.singleSliderSelectImage} ${width >= 855 && classes.specialborderright} ${selectedImage7 == true && classes.border}`} onClick={(e) => {
                                 setCurrentImage(sliderState + 6);
                                 setSelectedImage5(false);
                                 setSelectedImage4(false);
