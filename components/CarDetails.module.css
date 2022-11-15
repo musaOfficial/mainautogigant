@@ -69,7 +69,7 @@
 
 .bluetext{
     margin-left: 10px;
-    font-size: 13px;
+    font-size: 13 px;
 }
 
 .bluetext:hover{
@@ -81,7 +81,7 @@
     min-width: calc(55% - 10px);
     width: calc(55% - 10px);
 }
-
+ 
 .typeanddate{
     display: flex;
     align-items: center;
@@ -171,7 +171,7 @@
 }
 
 .favorite{
-    background-color: #C3C3C3;
+    background-color: #6C757D;
     width: 33%;
     display: flex;
     align-items: center;
@@ -187,7 +187,7 @@
 }
 
 .share{
-    background-color: #C3C3C3;
+    background-color: #6C757D;
     width: 33%;
     display: flex;
     align-items: center;
@@ -202,7 +202,7 @@
 }
 
 .print{
-    background-color: #C3C3C3;
+    background-color: #6C757D;
     width: 33%;
     display: flex;
     align-items: center;

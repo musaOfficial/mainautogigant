@@ -9,7 +9,8 @@ import ZoomOut from './../../public/images/zoomout.svg';
 import Closex from './../../public/images/closedetail.svg';
 import { stringify } from "postcss";
 import { useEffect } from "react";
-
+import Slider from 'react-touch-drag-slider'
+import X from './../../public/images/x.svg';
 const useDeviceSize = () => {
 
     const [width, setWidth] = useState(0)
@@ -53,162 +54,74 @@ function ImageSlider({
     const [zoomout, setZoomout] = useState(false);
 
     const [styleSingleImage, setStyleSingleImage] = useState(0);
+    const [selectedImage, setSelectedImage] = useState(0);
     return (
         <div className={classes.container}>
-            {zoomout == true && <div className={classes.closebackground} onClick={() => setZoomout(false)}></div>}
-            {zoomout == true && <div className={classes.showimg}>
-                <div className={classes.imgboxbackground}>
-                    <Closex onClick={() => setZoomout(false)} className={classes.close}/>
-                    <div className={classes.imgboxbig}>
-                        <Image className={classes.bigimage} src={images[currentImage]} layout='fill'/>
-                        <ImageSliderArrow className={classes.rightbig} onClick={(e) => {
-                            if(currentImage != images.length - 1){
-                                if(currentImage == sliderState + 4){
-                                    setSliderState(f => f + 1)
-                                }
-                                setCurrentImage(f => f + 1);
-                            }
-                        }} />
-                        <ImageSliderArrow className={classes.leftbig} onClick={(e) => {
+            {zoomout == true && <div className={classes.zoombackground}>
+                <div>
+                    <img src={images[currentImage]} alt="Image" className={classes.img} />
+                    <SelectSliderArrow className={classes.leftbig} onClick={
+                        () => {
                             if(currentImage != 0){
                                 if(currentImage == sliderState){
                                     setSliderState(f => f - 1)
                                 }
                                 setCurrentImage(f => f - 1);
+                                setSelectedImage(f => f - 1);
                             }
-                        }}/>
-                        <div className={classes.counter}>{currentImage} / {images.length}</div>
-                    </div>
-                    <div>
-                    <div className={classes.sliderbig}>
-                        <div className={classes.sliderarrowbackground}>
-                            <SelectSliderArrow className={classes.leftsliderarrowbig} onClick={(e) => {
-                                if(sliderState != 0){
-                                    setSliderState(d => d - 1)
-                                }
-                            }}/> 
-                        </div>
-                        <div className={`${classes.singleSliderSelectImage} ${selectedImage1 == true && classes.border}`} onClick={(e) => {
-                            setCurrentImage(sliderState)
-                            setSelectedImage5(false);
-                            setSelectedImage4(false);
-                            setSelectedImage3(false);
-                            setSelectedImage2(false);
-                            setSelectedImage1(true);
-                        }}>
-                            <Image className={classes.image} src={images[sliderState]} layout='fill'/>
-                        </div>
-                        <div className={`${classes.singleSliderSelectImage} ${selectedImage2 == true && classes.border}`} onClick={(e) => {
-                            setCurrentImage(sliderState + 1);
-                            setSelectedImage5(false);
-                            setSelectedImage4(false);
-                            setSelectedImage3(false);
-                            setSelectedImage2(true);
-                            setSelectedImage1(false);
-                        }}>
-                            <Image className={classes.image} src={images[sliderState + 1]} layout='fill' />
-                        </div>
-                        <div className={`${classes.singleSliderSelectImage} ${selectedImage3 == true && classes.border}`} onClick={(e) => {
-                            setCurrentImage(sliderState + 2);
-                            setSelectedImage5(false);
-                            setSelectedImage4(false);
-                            setSelectedImage3(true);
-                            setSelectedImage2(false);
-                            setSelectedImage1(false);
-                        }}>
-                            <Image className={classes.image} src={images[sliderState + 2]} layout='fill' />
-                        </div>
-                        {window.innerWidth >= 679 && 
-                            <div className={`${classes.singleSliderSelectImage} ${selectedImage4 == true && classes.border}`} onClick={(e) => {
-                                setCurrentImage(sliderState + 3);
-                                setSelectedImage5(false);
-                                setSelectedImage4(true);
-                                setSelectedImage3(false);
-                                setSelectedImage2(false);
-                                setSelectedImage1(false);
-                            }}>
-                                <Image className={classes.image} src={images[sliderState + 3]} layout='fill' />
-                            </div>
                         }
-                        {window.innerWidth >= 837 && setStyleSingleImage(1) &&
-                            <div className={`${classes.singleSliderSelectImage}  ${selectedImage5 == true && classes.border}`} onClick={(e) => {
-                                setCurrentImage(sliderState + 4);
-                                setSelectedImage5(true);
-                                setSelectedImage4(false);
-                                setSelectedImage3(false);
-                                setSelectedImage2(false);
-                                setSelectedImage1(false);
-                                setSelectedImage6(false);
-                                setSelectedImage7(false);
-                                setSelectedImage8(false);
-                            }}>
-                                <Image className={classes.image} src={images[sliderState + 4]} layout='fill' />
-                            </div>
+                    }/>
+                    <SelectSliderArrow className={classes.rightbig} onClick={() => {
+                        if(currentImage != images.length - 1){
+                            if(currentImage == sliderState + 4){
+                                setSliderState(f => f + 1)
+                            }
+                            setCurrentImage(f => f + 1);
+                            setSelectedImage(f => f + 1);
                         }
-                        {width >= 965 && setStyleSingleImage(2) &&
-                            <div className={`${classes.singleSliderSelectImage} ${styleSingleImage == 2 && classes.specialborderright} ${selectedImage6 == true && classes.border}`} onClick={(e) => {
-                                setCurrentImage(sliderState + 5);
-                                setSelectedImage5(false);
-                                setSelectedImage4(false);
-                                setSelectedImage3(false);
-                                setSelectedImage2(false);
-                                setSelectedImage1(false);
-                                setSelectedImage6(true);
-                                setSelectedImage7(false);
-                                setSelectedImage8(false);
-                                
-                            }}>
-                                <Image className={classes.image} src={images[sliderState + 5]} layout='fill' />
-                            </div>
-                        }
-                        {width >= 1136 && setStyleSingleImage(3) && 
-                            
-                            <div className={`${classes.singleSliderSelectImage} ${styleSingleImage == 3 && classes.specialborderright} ${selectedImage7 == true && classes.border}`} onClick={(e) => {
-                                setCurrentImage(sliderState + 6);
-                                setSelectedImage5(false);
-                                setSelectedImage4(false);
-                                setSelectedImage3(false);
-                                setSelectedImage2(false);
-                                setSelectedImage1(false);
-                                setSelectedImage6(false);
-                                setSelectedImage7(true);
-                                setSelectedImage8(false);
-                                
-                            }}>
-                                <Image className={classes.image} src={images[sliderState + 6]} layout='fill' />
-                            </div>
-                        }
-                        <div className={classes.sliderarrowbackgroundright}>
-                            <SelectSliderArrow className={classes.rightsliderarrowbig} onClick={(e) => {
-                                if(sliderState + 7 != images.length){
-                                    setSliderState(d => d + 1)
-                                }
-                            }}/>
-                        </div>
-                    </div>
-
+                    }}/>
+                    <X className={classes.close} onClick={() => setZoomout(false)}/>
                 </div>
+                <div className={classes.ImageSliderContainer}>
+                    <ImageSliderArrow className={classes.leftImageSliderArrowBig} onClick={() => {
+                        if(currentImage != 0){
+                            setCurrentImage(f => f - 1);
+                            setSelectedImage(f => f - 1);
+                        }
+                    }}/>
+                    <div className={classes.slidercontainer}>
+                        {images.map((image, index) => <img key={index} src={image} className={`${classes.slimg} ${selectedImage == index && classes.selectedslider}`} onClick={() => {
+                            setCurrentImage(index);
+                            setSelectedImage(index);
+                        }} /> )}
+                    </div>
+                    <ImageSliderArrow className={classes.rightImageSliderArrowBig} onClick={() => {
+                        if(currentImage != images.length){
+                            setCurrentImage(f => f + 1);
+                            setSelectedImage(f => f + 1);
+                        }
+                    }}/>
                 </div>
             </div>}
             <div className={classes.content}>
                 <Image src={images[currentImage]} layout='fill' objectFit="cover"/>
                 <div className={classes.leftbox}>
                     <ImageSliderArrow className={classes.left} onClick={(e) => {
-                        if(currentImage != images.length - 1){
-                            if(currentImage == sliderState + 4){
-                                setSliderState(f => f + 1)
-                            }
-                            setCurrentImage(f => f + 1);
-                        }
-                    }} />
-                </div>
-                <div className={classes.rightbox}>
-                    <ImageSliderArrow className={classes.right} onClick={(e) => {
                         if(currentImage != 0){
                             if(currentImage == sliderState){
                                 setSliderState(f => f - 1)
                             }
                             setCurrentImage(f => f - 1);
+                        }
+                    }} />
+                </div>
+                <div className={classes.rightbox}>
+                    <ImageSliderArrow className={classes.right} onClick={(e) => {
+                        if(currentImage != images.length - 1){
+                            if(currentImage == sliderState + 4){
+                                setSliderState(f => f + 1)
+                            }
+                            setCurrentImage(f => f + 1);
                         }
                     }}/>
                 </div>

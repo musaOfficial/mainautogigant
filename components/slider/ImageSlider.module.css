@@ -1,3 +1,39 @@
+.zoombackground{
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.img{
+    height: 600px;
+    z-index: 10000;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.close{
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+    transition: all .1s ease-in;
+    color: #6C757D;
+}
+
+.close:hover{
+    transform: translateY(-1px);
+    color: #fff;
+}
+
 .container{
     width: 100%;
     border-radius: 10px;
@@ -24,7 +60,84 @@
     width: 25px;
 }
 
+.slidercontainer{
+    width: 80%;
+    height: 68px;
+    display: flex;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    height: auto;
+}
 
+.slidercontainer::-webkit-scrollbar{
+    overflow-y: scroll;
+}
+
+.slimg{
+    height: 125px;
+    width: 200px;
+    text-align:justify;
+    object-fit: cover;
+    margin-right: 10px;
+    box-sizing: content-box;
+    border: 2px solid transparent;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.slimg:hover{
+    border: 2px solid #FBB900;
+    cursor: pointer;
+}
+
+.ImageSliderContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 20px;
+    margin-top: 20px;
+    height: 150px;
+}
+
+.leftImageSliderArrowBig{
+    background-color: #6C757D;
+    height: 125px;
+    margin-bottom: 18px;
+    margin-left: 10px;
+    width: 4%;
+    padding: 25px;
+    border-radius: 10px 0px 0px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all .05s ease-in;
+}
+
+.leftImageSliderArrowBig:hover{
+    background-color: #FBB900;
+}
+
+.rightImageSliderArrowBig{
+    transform: rotate(180deg);
+    height: 125px;
+    background-color: #6C757D;
+    margin-bottom: 18px;
+    margin-left: 10px;
+    width: 4%;
+    padding: 25px;
+    border-radius: 10px 0px 0px 10px;
+    cursor: pointer;
+
+}
+
+.rightImageSliderArrowBig:hover{
+    background-color: #FBB900;
+}
+
+.selectedslider{
+    border: 2px solid #FBB900;
+}
 
 .right{
     z-index: 100;
@@ -66,7 +179,6 @@
 }
 
 .rightbig{
-    z-index: 1100;
     position: absolute;
     right: 20px;
     top: calc(50% - 20px);
@@ -78,6 +190,8 @@
     border-radius: 10px;
     cursor: pointer;
     transition: all .05s ease-in;
+    color: #fff;
+    z-index: 100000;
 }
 
 .rightbig:hover{
@@ -96,6 +210,8 @@
     border-radius: 10px;
     cursor: pointer;
     transition: all .05s ease-in;
+    color: #fff;
+    z-index: 10000;
 }
 
 .leftbig:hover{
@@ -351,7 +467,6 @@
     background-color: #6C757D;
     width: 5%;
     display: flex;
-    align-items: center;
     justify-content: center;
     margin-right: 10px;
     
@@ -361,7 +476,6 @@
     background-color: #6C757D;
     width: 5%;
     display: flex;
-    align-items: center;
     justify-content: center;
     margin-left: 10px;
     border-radius: 0 10px 10px 0;
@@ -376,7 +490,6 @@
     height: 100%;
     color: #FBB900;
     width: 20px;
-
 }
 
 .counter{
@@ -405,9 +518,12 @@
     justify-content: center;
     height: 100%;
     color: #FBB900;
-    width: 20px;
+    width: 40px;
     border-radius: 0 10px 10px 0;
     overflow: hidden;
+    background-color: #6C757D;
+    padding: 10px;
+    
 }
 
 .dealerinfocontainer{
