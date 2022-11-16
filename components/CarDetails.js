@@ -14,7 +14,8 @@ import { useEffect } from 'react';
 import MailIcon from './../public/images/email.svg';
 import LinkIcon from './../public/images/link.svg';
 import FacebookIcon from './../public/images/facebik.svg';
-import WhatsAppIcon from './../public/images/WhatsApp.svg'
+import WhatsAppIcon from './../public/images/WhatsApp.svg';
+
 
 const useDeviceSize = () => {
 
@@ -213,7 +214,7 @@ function CarDetails(){
                     </div>
                     <div className={classes.typeanddate}>
                         <div className={classes.backtoresults}><Backtoresults/><span className={classes.bluetext}>zurück zur Ergebnisliste</span></div>
-                        <div className={classes.zl}><span className={classes.zl1}>Zuletz geändert:</span> <span className={classes.zl2}>26.10.2022, 20:57 Uhr</span></div>
+                        <div className={classes.zl}><span className={classes.zl1}>Zuletzt geändert:</span> <span className={classes.zl2}>26.10.2022, 20:57 Uhr</span></div>
                     </div>
                     <div className={classes.row1}>
                         <div className={classes.r1c1}>
@@ -237,6 +238,7 @@ function CarDetails(){
                                                 <div className={classes.linebottom}><MailIcon className={classes.svgicon}/> E-Mail</div>
                                                 <div className={classes.linebottom}><LinkIcon className={classes.svgicon}/> Link kopieren</div>
                                                 <div className={classes.linebottom}><FacebookIcon className={classes.svgicon}/> Facebook</div>
+                                                <div className={classes.linebottom}> Instagram</div>
                                                 <div><WhatsAppIcon className={classes.svgicon}/> WhatsApp</div>
                                             </div>}
                                             {svgOpen2 == true && <div className={classes.triangle}></div>}     

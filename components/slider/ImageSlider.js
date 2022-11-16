@@ -11,6 +11,7 @@ import { stringify } from "postcss";
 import { useEffect } from "react";
 import Slider from 'react-touch-drag-slider'
 import X from './../../public/images/x.svg';
+import { reforwardRef } from "react-chartjs-2/dist/utils";
 const useDeviceSize = () => {
 
     const [width, setWidth] = useState(0)
@@ -61,7 +62,7 @@ function ImageSlider({
             {zoomout == true && width >= 1140 && <div className={classes.zoombackground}>
                 <div className={classes.werbeflaeche}></div>
                 <div className={classes.bigimg}>
-                    <img src={images[currentImage]} alt="Image" className={width <= 1300 ? classes.img : classes.imgbig} />
+                    <img src={images[currentImage]} alt="Image" className={width < 2000 ? classes.img : classes.imgbig} />
                     <SelectSliderArrow className={classes.leftbig} onClick={
                         () => {
                             if(currentImage != 0){
@@ -98,10 +99,12 @@ function ImageSlider({
                         }} /> )}
                     </div>
                     <ImageSliderArrow className={classes.rightImageSliderArrowBig} onClick={() => {
-                        if(currentImage != images.length){
+                        if(currentImage != images.length - 1){
                             setCurrentImage(f => f + 1);
                             setSelectedImage(f => f + 1);
                         }
+                        
+                        
                     }}/>
                 </div>
             </div>}
