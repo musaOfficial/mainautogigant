@@ -14,7 +14,7 @@
 }
 
 .img{
-    height: 600px;
+    max-width: 970px;
     z-index: 10000;
     user-select: none;
     -webkit-user-select: none;
@@ -74,8 +74,8 @@
 }
 
 .slimg{
-    height: 125px;
-    width: 200px;
+    height: 90px;
+    width: 140px;
     text-align:justify;
     object-fit: cover;
     margin-right: 10px;
@@ -98,12 +98,12 @@
     background-color: rgba(0,0,0,0.5);
     padding-top: 20px;
     margin-top: 20px;
-    height: 150px;
+    height: 130px;
 }
 
 .leftImageSliderArrowBig{
     background-color: #6C757D;
-    height: 125px;
+    height: 90px;
     margin-bottom: 18px;
     margin-left: 10px;
     width: 4%;
@@ -120,7 +120,7 @@
 
 .rightImageSliderArrowBig{
     transform: rotate(180deg);
-    height: 125px;
+    height: 90px;
     background-color: #6C757D;
     margin-bottom: 18px;
     margin-left: 10px;
@@ -387,6 +387,13 @@
 
 .companylocation{
     font-size: 13px;
+}
+
+.werbeflaeche{
+    width: 970px;
+    height: 90px;
+    background-color: #6C757D;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 879px){

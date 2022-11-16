@@ -186,6 +186,55 @@
     background-color: #FBB900;
 }
 
+.svgcontainer{
+    position: absolute;
+    font-size: 13px;
+    color: #0067B8;
+    background-color: #fff;
+    margin-top: 90px;
+    padding: 0px 5px;
+    z-index: 11;
+    font-weight: bold;
+}
+
+.svgcontainershare{
+    position: absolute;
+    font-size: 13px;
+    color: #0067B8;
+    background-color: #fff;
+    margin-top: 170px;
+    padding: 0px 5px;
+    z-index: 11;
+    font-weight: bold;
+}
+
+.downbutton{
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.linebottom{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #F1F2F3;
+}
+
+.svgicon{
+    display: inline-block;
+}
+
+.triangle{
+    position: absolute;
+    background-color: #000;
+    margin-top: 75px;
+    background-color: #fff;
+    z-index: 10;
+    transform: rotate(45deg);
+    height: 20px;
+    width: 20px;
+}
+
+
 .share{
     background-color: #6C757D;
     width: 33%;

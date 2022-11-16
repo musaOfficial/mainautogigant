@@ -11,6 +11,10 @@ import Expand from './../public/expand.svg'
 import { useState } from 'react';
 import { pdf } from '@react-pdf/renderer';
 import { useEffect } from 'react';
+import MailIcon from './../public/images/email.svg';
+import LinkIcon from './../public/images/link.svg';
+import FacebookIcon from './../public/images/facebik.svg';
+import WhatsAppIcon from './../public/images/WhatsApp.svg'
 
 const useDeviceSize = () => {
 
@@ -75,7 +79,10 @@ function CarDetails(){
     const [openFarbeUndInnenAusstattung, setOpenFarbeUndInnenAusstattung] = useState(false);
     const [openFinanzierung, setOpenFinanzierung] = useState(false);
     const [openVersicherung, setOpenVersicherung] = useState(false);
-
+    
+    const [svgOpen1, setSvgOpen1] = useState(false);
+    const [svgOpen2, setSvgOpen2] = useState(false);
+    const [svgOpen3, setSvgOpen3] = useState(false);
     
     const preis = 37990;
     var preisFormatted = preis.toLocaleString();
@@ -173,6 +180,8 @@ function CarDetails(){
     const leistung = "190 kW (258 PS)";
     const verkaeufer = "Privat";
 
+
+
     function handleSubmit(e){
         e.preventDefault();
         console.log({
@@ -215,9 +224,30 @@ function CarDetails(){
                                 <div className={classes.pricerow}>
                                     <div className={classes.price}>€ {preisFormatted},-</div>
                                     <div className={classes.nexttoprice}>
-                                        <div className={classes.favorite}><WhiteFavorites className={classes.svg}/></div>
-                                        <div className={classes.share}><WhiteShare className={classes.svg}/></div>
-                                        <div className={classes.print}><WhitePrinter className={classes.svg}/></div>
+                                        <div className={classes.favorite} onMouseEnter={() => setSvgOpen1(true)} onMouseLeave={() => setSvgOpen1(false)}>
+                                            <WhiteFavorites className={classes.svg}/>                      
+                                            {svgOpen1 == true && <div className={classes.svgcontainer}>
+                                                Als Favorit speichern
+                                            </div>}
+                                            {svgOpen1 == true && <div className={classes.triangle}></div>}                           
+                                        </div>
+                                        <div className={classes.share} onMouseEnter={() => setSvgOpen2(true)} onMouseLeave={() => setSvgOpen2(false)}>
+                                            <WhiteShare className={classes.svg}/>
+                                            {svgOpen2 == true && <div className={classes.svgcontainershare}>
+                                                <div className={classes.linebottom}><MailIcon className={classes.svgicon}/> E-Mail</div>
+                                                <div className={classes.linebottom}><LinkIcon className={classes.svgicon}/> Link kopieren</div>
+                                                <div className={classes.linebottom}><FacebookIcon className={classes.svgicon}/> Facebook</div>
+                                                <div classes={classes.linebottom}><WhatsAppIcon className={classes.svgicon}/> WhatsApp</div>
+                                            </div>}
+                                            {svgOpen2 == true && <div className={classes.triangle}></div>}     
+                                        </div>
+                                        <div className={classes.print} onMouseEnter={() => setSvgOpen3(true)} onMouseLeave={() => setSvgOpen3(false)}>
+                                            <WhitePrinter className={classes.svg}/>
+                                            {svgOpen3 == true && <div className={classes.svgcontainer}>
+                                                Drucken
+                                            </div>}
+                                            {svgOpen3 == true && <div className={classes.triangle}></div>}     
+                                        </div>
                                     </div>
                                 </div>
                                 <div className={classes.carinfocontent}>

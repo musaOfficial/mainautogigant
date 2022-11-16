@@ -55,9 +55,11 @@ function ImageSlider({
 
     const [styleSingleImage, setStyleSingleImage] = useState(0);
     const [selectedImage, setSelectedImage] = useState(0);
+
     return (
         <div className={classes.container}>
-            {zoomout == true && <div className={classes.zoombackground}>
+            {zoomout == true && width >= 1140 && <div className={classes.zoombackground}>
+                <div className={classes.werbeflaeche}></div>
                 <div>
                     <img src={images[currentImage]} alt="Image" className={classes.img} />
                     <SelectSliderArrow className={classes.leftbig} onClick={
