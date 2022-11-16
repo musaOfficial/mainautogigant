@@ -60,8 +60,8 @@ function ImageSlider({
         <div className={classes.container}>
             {zoomout == true && width >= 1140 && <div className={classes.zoombackground}>
                 <div className={classes.werbeflaeche}></div>
-                <div>
-                    <img src={images[currentImage]} alt="Image" className={classes.img} />
+                <div className={classes.bigimg}>
+                    <img src={images[currentImage]} alt="Image" className={width <= 1300 ? classes.img : classes.imgbig} />
                     <SelectSliderArrow className={classes.leftbig} onClick={
                         () => {
                             if(currentImage != 0){

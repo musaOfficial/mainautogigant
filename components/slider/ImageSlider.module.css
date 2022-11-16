@@ -14,7 +14,17 @@
 }
 
 .img{
-    max-width: 970px;
+    max-width: 60%;
+    margin: 0 auto;
+    z-index: 10000;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.imgbig{
+    width: 50%;
+    margin: 0 auto;
     z-index: 10000;
     user-select: none;
     -webkit-user-select: none;
