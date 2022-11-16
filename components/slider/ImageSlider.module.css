@@ -1,3 +1,20 @@
+.container{
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    object-fit: cover;
+    height: 100%;
+}
+.content{
+    height: 400px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
+    height: 100%;
+}
+
 .zoombackground{
     background-color: rgba(0,0,0,0.8);
     position: absolute;
@@ -31,6 +48,13 @@
     -moz-user-select: none;
 }
 
+
+.slider{
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
 .close{
     width: 30px;
     height: 30px;
@@ -42,23 +66,6 @@
 .close:hover{
     transform: translateY(-1px);
     color: #fff;
-}
-
-.container{
-    width: 100%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    object-fit: cover;
-    height: 100%;
-}
-.content{
-    height: 400px;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    object-fit: cover;
-    height: 100%;
 }
 
 .close{

@@ -204,7 +204,7 @@ function CarDetails(){
                     <div className={classes.middle}>
                         <div className={classes.image}>
                             {width >= 1141 && 
-                                <div className={classes.werbungtext}>Anzeige</div>
+                                <div className={classes.werbungtext}>Werbung</div>
                             }
                             {width >= 1141 && 
                                 <Image src={"/images/panorama.jpg"} width={980} height={120} />
@@ -237,7 +237,7 @@ function CarDetails(){
                                                 <div className={classes.linebottom}><MailIcon className={classes.svgicon}/> E-Mail</div>
                                                 <div className={classes.linebottom}><LinkIcon className={classes.svgicon}/> Link kopieren</div>
                                                 <div className={classes.linebottom}><FacebookIcon className={classes.svgicon}/> Facebook</div>
-                                                <div classes={classes.linebottom}><WhatsAppIcon className={classes.svgicon}/> WhatsApp</div>
+                                                <div><WhatsAppIcon className={classes.svgicon}/> WhatsApp</div>
                                             </div>}
                                             {svgOpen2 == true && <div className={classes.triangle}></div>}     
                                         </div>
