@@ -354,7 +354,7 @@
 }
 
 .r2c2{
-    width: 80%; /** Hier eine Veränderung notwendig **/
+    width: 100%; /** Hier eine Veränderung notwendig **/
     background-color: #F1F2F3;
     padding: 20px;
     border-radius: 10px;

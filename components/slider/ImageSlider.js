@@ -88,25 +88,69 @@ function ImageSlider({
                     <X className={classes.close} onClick={() => setZoomout(false)}/>
                 </div>
                 <div className={classes.ImageSliderContainer}>
-                    <ImageSliderArrow className={classes.leftImageSliderArrowBig} onClick={() => {
-                        if(currentImage != 0){
-                            setCurrentImage(f => f - 1);
-                            setSelectedImage(f => f - 1);
+                        <SelectSliderArrow className={classes.leftsliderarrowzoom} onClick={(e) => {
+                            if(sliderState != 0){
+                                setSliderState(d => d - 1)
+                            }
+                        }}/>
+                        <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState)
+                            setSelectedImage(sliderState)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState == selectedImage && classes.zoomborder}`} src={images[sliderState]} />
+                        </div>
+                        <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState + 1)
+                            setSelectedImage(sliderState + 1)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState + 1 == selectedImage && classes.zoomborder}`} src={images[sliderState + 1]} />
+                        </div>
+                        <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState + 2)
+                            setSelectedImage(sliderState + 2)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState + 2 == selectedImage && classes.zoomborder}`} src={images[sliderState + 2]} />
+                        </div>
+                        <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState + 3)
+                            setSelectedImage(sliderState + 3)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState + 3 == selectedImage && classes.zoomborder}`} src={images[sliderState + 3]} />
+                        </div>
+                        <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState + 4)
+                            setSelectedImage(sliderState + 4)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState + 4 == selectedImage && classes.zoomborder}`} src={images[sliderState + 4]} />
+                        </div>
+                        <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState + 5)
+                            setSelectedImage(sliderState + 5)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState + 5 == selectedImage && classes.zoomborder}`} src={images[sliderState + 5]} />
+                        </div>
+                        <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState + 6)
+                            setSelectedImage(sliderState + 6)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState + 6 == selectedImage && classes.zoomborder}`} src={images[sliderState + 6]} />
+                        </div>
+                        <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState + 7)
+                            setSelectedImage(sliderState + 7)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState + 7 == selectedImage && classes.zoomborder}`} src={images[sliderState + 7]} />
+                        </div>
+                        <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState + 8)
+                            setSelectedImage(sliderState + 8)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState + 8 == selectedImage && classes.zoomborder}`} src={images[sliderState + 8]} />
+                        </div>
+                        <SelectSliderArrow className={classes.rightsliderarrowzoom} onClick={(e) => {
+                        if(sliderState + 8 != images.length - 1){
+                            setSliderState(d => d + 1)
                         }
-                    }}/>
-                    <div className={classes.slidercontainer}>
-                        {images.map((image, index) => <img key={index} src={image} className={`${classes.slimg} ${selectedImage == index && classes.selectedslider}`} onClick={() => {
-                            setCurrentImage(index);
-                            setSelectedImage(index);
-                        }} /> )}
-                    </div>
-                    <ImageSliderArrow className={classes.rightImageSliderArrowBig} onClick={() => {
-                        if(currentImage != images.length - 1){
-                            setCurrentImage(f => f + 1);
-                            setSelectedImage(f => f + 1);
-                        }
-                        
-                        
                     }}/>
                 </div>
             </div>}
