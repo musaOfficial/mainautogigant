@@ -11,7 +11,6 @@ import { stringify } from "postcss";
 import { useEffect } from "react";
 import Slider from 'react-touch-drag-slider'
 import X from './../../public/images/x.svg';
-import { reforwardRef } from "react-chartjs-2/dist/utils";
 const useDeviceSize = () => {
 
     const [width, setWidth] = useState(0)
