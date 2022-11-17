@@ -64,7 +64,10 @@ function ImageSlider({
                     <div className={classes.werbeflaeche}></div>
                 </div>
                 <div className={classes.bigimg}>
-                    <img src={images[currentImage]} alt="Image" className={width < 2000 ? classes.img : classes.imgbig} />
+                    <div className={classes.imagingbox}>
+                        <img src={images[currentImage]} alt="Image" className={width < 2000 ? classes.img : classes.imgbig} />
+                    </div>
+                    
                     <SelectSliderArrow className={classes.leftbig} onClick={
                         () => {
                             if(currentImage != 0){
@@ -117,36 +120,66 @@ function ImageSlider({
                         }}>
                             <img className={`${classes.zoomimage} ${sliderState + 3 == selectedImage && classes.zoomborder}`} src={images[sliderState + 3]} />
                         </div>
-                        <div className={classes.zoomimg} onClick={() => {
+                        {width >= 1000 && <div className={classes.zoomimg} onClick={() => {
                             setCurrentImage(sliderState + 4)
                             setSelectedImage(sliderState + 4)
                         }}>
                             <img className={`${classes.zoomimage} ${sliderState + 4 == selectedImage && classes.zoomborder}`} src={images[sliderState + 4]} />
-                        </div>
-                        <div className={classes.zoomimg} onClick={() => {
+                        </div>}
+                        {width >= 1200 && <div className={classes.zoomimg} onClick={() => {
                             setCurrentImage(sliderState + 5)
                             setSelectedImage(sliderState + 5)
                         }}>
                             <img className={`${classes.zoomimage} ${sliderState + 5 == selectedImage && classes.zoomborder}`} src={images[sliderState + 5]} />
-                        </div>
-                        <div className={classes.zoomimg} onClick={() => {
+                        </div>}
+                        {width >= 1400 && <div className={classes.zoomimg} onClick={() => {
                             setCurrentImage(sliderState + 6)
                             setSelectedImage(sliderState + 6)
                         }}>
                             <img className={`${classes.zoomimage} ${sliderState + 6 == selectedImage && classes.zoomborder}`} src={images[sliderState + 6]} />
-                        </div>
-                        <div className={classes.zoomimg} onClick={() => {
+                        </div>}
+                        {width >= 1600 && <div className={classes.zoomimg} onClick={() => {
                             setCurrentImage(sliderState + 7)
                             setSelectedImage(sliderState + 7)
                         }}>
                             <img className={`${classes.zoomimage} ${sliderState + 7 == selectedImage && classes.zoomborder}`} src={images[sliderState + 7]} />
-                        </div>
-                        <div className={classes.zoomimg} onClick={() => {
+                        </div>}
+                        {width >= 1800 && <div className={classes.zoomimg} onClick={() => {
                             setCurrentImage(sliderState + 8)
                             setSelectedImage(sliderState + 8)
                         }}>
                             <img className={`${classes.zoomimage} ${sliderState + 8 == selectedImage && classes.zoomborder}`} src={images[sliderState + 8]} />
-                        </div>
+                        </div>}
+                        {width >= 2000 && <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState + 9)
+                            setSelectedImage(sliderState + 9)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState + 9 == selectedImage && classes.zoomborder}`} src={images[sliderState + 9]} />
+                        </div>}
+                        {width >= 2200 && <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState + 10)
+                            setSelectedImage(sliderState + 10)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState + 10 == selectedImage && classes.zoomborder}`} src={images[sliderState + 10]} />
+                        </div>}
+                        {width >= 2400 && <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState + 11)
+                            setSelectedImage(sliderState + 11)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState + 11 == selectedImage && classes.zoomborder}`} src={images[sliderState + 11]} />
+                        </div>}
+                        {width >= 2600 && <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState + 12)
+                            setSelectedImage(sliderState + 12)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState + 12 == selectedImage && classes.zoomborder}`} src={images[sliderState + 12]} />
+                        </div>}
+                        {width >= 2800 && <div className={classes.zoomimg} onClick={() => {
+                            setCurrentImage(sliderState + 13)
+                            setSelectedImage(sliderState + 13)
+                        }}>
+                            <img className={`${classes.zoomimage} ${sliderState + 13 == selectedImage && classes.zoomborder}`} src={images[sliderState + 13]} />
+                        </div>}
                         <SelectSliderArrow className={classes.rightsliderarrowzoom} onClick={(e) => {
                         if(sliderState + 8 != images.length - 1){
                             setSliderState(d => d + 1)
