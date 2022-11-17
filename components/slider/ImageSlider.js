@@ -65,7 +65,7 @@ function ImageSlider({
                     <div className={classes.werbeflaeche}></div>
                 </div>
                 <div className={classes.bigimg}>
-                    <div className={classes.imagingbox}>
+                    <div className={`${width <= 2000 ? classes.imagingbox : classes.imagingboxbig}`}>
                         <img src={images[currentImage]} alt="Image" className={width < 2000 ? classes.img : classes.imgbig} />
                         <Wasserzeichen className={classes.wasserzeichen} />
                     </div>

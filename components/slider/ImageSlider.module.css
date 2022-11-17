@@ -31,6 +31,7 @@
 }
 
 .img{
+    width: 100%;
     margin: 0 auto;
     z-index: 10000;
     user-select: none;
@@ -42,7 +43,6 @@
 .imgbig{
     box-shadow: 0 10px 40px #000;
     max-width: 1140px;
-    margin: 0 auto;
     z-index: 10000;
     user-select: none;
     -webkit-user-select: none;
@@ -159,6 +159,17 @@
     -moz-user-select: none;
 }
 
+.imagingboxbig{
+    position: relative;
+    width: 70%;
+    box-shadow: 0 10px 40px #000;
+    max-width: 1140px;
+    z-index: 10000;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
 .wasserzeichen{
     position: absolute;
     z-index: 1000;
@@ -175,6 +186,15 @@
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
+}
+
+.zoomimagebig{
+    box-shadow: 0 10px 40px #000;
+    max-width: 1140px;
+    z-index: 10000;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 .leftImageSliderArrowBig{
