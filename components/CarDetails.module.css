@@ -566,6 +566,7 @@
 
     .r2c1{
         margin-bottom: 20px;
+        width: 100%;
     }
 
     .r2c2{
@@ -591,6 +592,9 @@
     }
     .sendmail{
         font-size: 13px;
+    }
+    .companyname{
+        font-size: 20px;
     }
 }
 

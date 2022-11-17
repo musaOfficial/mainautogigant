@@ -737,5 +737,12 @@
     .content{
         height: 600px;
     }
-}
 
+    .companyname{
+        font-size: 11px;
+    }
+
+    .companylocation{
+        font-size: 11px;
+    }
+}
