@@ -11,6 +11,7 @@ import { stringify } from "postcss";
 import { useEffect } from "react";
 import Slider from 'react-touch-drag-slider'
 import X from './../../public/images/x.svg';
+import Wasserzeichen from './../../public/agwasserzeichen.svg';
 const useDeviceSize = () => {
 
     const [width, setWidth] = useState(0)
@@ -66,6 +67,7 @@ function ImageSlider({
                 <div className={classes.bigimg}>
                     <div className={classes.imagingbox}>
                         <img src={images[currentImage]} alt="Image" className={width < 2000 ? classes.img : classes.imgbig} />
+                        <Wasserzeichen className={classes.wasserzeichen} />
                     </div>
                     
                     <SelectSliderArrow className={classes.leftbig} onClick={

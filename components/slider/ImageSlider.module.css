@@ -31,7 +31,6 @@
 }
 
 .img{
-    max-width: 45%;
     margin: 0 auto;
     z-index: 10000;
     user-select: none;
@@ -151,11 +150,23 @@
 
 .imagingbox{
     position: relative;
+    background-color: green;
+    width: 45%;
+    margin: 0 auto;
+    z-index: 10000;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
-.autowasserzeichen{
+.wasserzeichen{
     position: absolute;
     z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100px;
+    margin: 20px;
 }
 
 .zoomimage{
