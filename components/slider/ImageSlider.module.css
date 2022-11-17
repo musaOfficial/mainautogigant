@@ -153,6 +153,9 @@
 .zoomimage{
     height: 120px;
     width: 170px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 .leftImageSliderArrowBig{
