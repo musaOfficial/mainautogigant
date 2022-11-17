@@ -429,7 +429,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .expand{
@@ -444,6 +444,7 @@
 }
 
 .basiscontainer div{
+    font-size: 13px;
     margin-bottom: 10px;
     display: flex;
     -webkit-touch-callout: none;
@@ -495,6 +496,7 @@
 }
 
 .sectionheadingsmall{
+    height: 100%;
     font-weight: bold;
     transition: .1s ease-in;
     -webkit-touch-callout: none;
@@ -530,7 +532,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
     cursor: pointer;
 }
 
