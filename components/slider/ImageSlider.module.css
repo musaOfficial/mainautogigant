@@ -37,9 +37,11 @@
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
+    box-shadow: 0 10px 40px #000;
 }
 
 .imgbig{
+    box-shadow: 0 10px 40px #000;
     max-width: 1140px;
     margin: 0 auto;
     z-index: 10000;
@@ -408,6 +410,16 @@
 }
 
 .companylocation{
+    font-size: 13px;
+}
+
+.werbung{
+    display: flex;
+    flex-direction: column;
+}
+
+.werbungtext{
+    align-self: flex-end;
     font-size: 13px;
 }
 

@@ -59,7 +59,10 @@ function ImageSlider({
     return (
         <div className={classes.container}>
             {zoomout == true && width >= 1140 && <div className={classes.zoombackground}>
-                <div className={classes.werbeflaeche}></div>
+                <div className={classes.werbung}>
+                    <div className={classes.werbungtext}>Werbung</div>
+                    <div className={classes.werbeflaeche}></div>
+                </div>
                 <div className={classes.bigimg}>
                     <img src={images[currentImage]} alt="Image" className={width < 2000 ? classes.img : classes.imgbig} />
                     <SelectSliderArrow className={classes.leftbig} onClick={
