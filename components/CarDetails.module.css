@@ -456,7 +456,7 @@
 }
 
 @media (max-width: 1140px){
-    .basiscontainer{
+    .basiscontainer div{
         font-size: 13px;
     }
 }
