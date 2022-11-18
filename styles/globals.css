@@ -124,3 +124,70 @@ input {
   color: #6C757D;
   font-size: 16px;
 }
+
+.row {
+  display: flex;
+  background: #000;
+  border-radius: 100px;
+  border: 3px solid #FFB900;
+}
+.row input {
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  padding: 0;
+  width: 0;
+  outline: none;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin: 4px;
+  border-radius: 50%;
+  background: #000;
+}
+.icon i {
+  position: absolute;
+  color: #222222;
+}
+.icon .fa-xmark {
+  opacity: 0;
+}
+
+.container:hover input,
+input:focus,
+input:not(:placeholder-shown) {
+  width: 250px;
+  padding-left: 1.5rem;
+}
+
+.white{
+  color: #fff;
+}
+
+.searchicon{
+  height: 15px;
+  width: 15px;
+}
+
+.container:hover .fa-xmark,
+input:focus ~ .icon .fa-xmark,
+input:not(:placeholder-shown) ~ .icon .fa-xmark {
+  opacity: 1;
+  font-size: 20px;
+}
+
+.container:hover .fa-search,
+input:focus ~ .icon .fa-search,
+input:not(:placeholder-shown) ~ .icon .fa-search {
+  opacity: 0;
+}

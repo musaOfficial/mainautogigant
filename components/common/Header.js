@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import classes from './Header.module.css';
+import X from './../../public/images/x.svg';
 export default function Header() {
   const [collapse, setCollapse] = useState({
     dealerArea: false,
@@ -34,8 +35,16 @@ export default function Header() {
         </Link>
         <div className="flex items-center md:mt-2 md:w-full md:justify-between">
           <div className="flex md:ml-6 lg:mr-0">
-            <button className="w-8 md:w-6 mr-4">
-              <img src="/images/icons/header-search.png" />
+            <button className="mr-4">
+              <div className="container">
+                <div className="row">
+                  <input type={"text"} placeholder={"Suchen"} />
+                  <div className="icon w-8 md:w-6 mr-4">
+                    <i><img src="/images/icons/header-search.png" className={"fa fa-search searchicon"} /></i>
+                    <i><img src="/images/icons/header-search.png" className={"fa-solid fa-xmark searchicon"} /></i>
+                  </div>
+                </div>
+              </div>
             </button>
             <button className="w-8 md:w-6 mr-4">
               <img src="/images/icons/header-notification.png" />
