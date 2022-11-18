@@ -444,7 +444,7 @@
 }
 
 .basiscontainer div{
-    font-size: 13px;
+    font-size: 16px;
     margin-bottom: 10px;
     display: flex;
     -webkit-touch-callout: none;
@@ -455,8 +455,18 @@
     user-select: none;
 }
 
+@media (max-width: 1140px){
+    .basiscontainer{
+        font-size: 13px;
+    }
+}
+
 .infoabout{
     width: 50%;
+}
+
+.paragraph{
+    font-size: 13px;
 }
 
 .infoabout sub{
@@ -607,5 +617,17 @@
 
     .sendmail{
         font-size: 11px;
+    }
+}
+
+@media (max-width: 560px){
+    .zl1{
+        display: block;
+        align-self: flex-end;
+    }
+
+    .bl1{
+        display: block;
+        align-self: flex-start;
     }
 }

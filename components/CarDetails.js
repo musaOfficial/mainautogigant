@@ -15,7 +15,7 @@ import MailIcon from './../public/images/email.svg';
 import LinkIcon from './../public/images/link.svg';
 import FacebookIcon from './../public/images/facebik.svg';
 import WhatsAppIcon from './../public/images/WhatsApp.svg';
-
+import InstagramIcon from './../public/images/instagramAG.svg'
 
 const useDeviceSize = () => {
 
@@ -213,7 +213,7 @@ function CarDetails(){
                         </div>
                     </div>
                     <div className={classes.typeanddate}>
-                        <div className={classes.backtoresults}><Backtoresults/><span className={classes.bluetext}>zurück zur Ergebnisliste</span></div>
+                        <div className={classes.backtoresults}><Backtoresults/><span className={classes.bluetext}><span className={classes.bl1}>zurück zur </span><span className={classes.bl2}>Ergebnisliste</span></span></div>
                         <div className={classes.zl}><span className={classes.zl1}>Zuletzt geändert:</span> <span className={classes.zl2}>26.10.2022, 20:57 Uhr</span></div>
                     </div>
                     <div className={classes.row1}>
@@ -238,7 +238,7 @@ function CarDetails(){
                                                 <div className={classes.linebottom}><MailIcon className={classes.svgicon}/> E-Mail</div>
                                                 <div className={classes.linebottom}><LinkIcon className={classes.svgicon}/> Link kopieren</div>
                                                 <div className={classes.linebottom}><FacebookIcon className={classes.svgicon}/> Facebook</div>
-                                                <div className={classes.linebottom}> Instagram</div>
+                                                <div className={classes.linebottom}><InstagramIcon className={classes.svgicon} /> Instagram</div>
                                                 <div><WhatsAppIcon className={classes.svgicon}/> WhatsApp</div>
                                             </div>}
                                             {svgOpen2 == true && <div className={classes.triangle}></div>}     
@@ -415,7 +415,7 @@ function CarDetails(){
                                     </div>
                                 </div>
                                 <div>
-                                    <div className={classes.infoabout}>Unterhaltung/Media</div><div className={classes.actualinfo}>
+                                    <div className={classes.infoabout}>Unterhaltung</div><div className={classes.actualinfo}>
                                         {ausstattungUnterhaltung.map((e) => <div key={e}>{e}</div>)}
                                     </div>
                                 </div>
@@ -487,7 +487,7 @@ Mit freundlichen Grüßen`} onChange={(e) => setMessage(e.target.value)} value={
                             <input className={classes.input} placeholder={"Telefonnummer (optional)"} onChange={(e) => setTel(e.target.value)} value={tel}/>
                             <div className={classes.checkcontainer}>
                                 <input className={classes.checkinput} type={"checkbox"} onChange={() => setNewsletter(e => !e)} value={newsletter}/>
-                                <p>Ich möchte auf meine Interessen zugeschnittene Angebote und 
+                                <p className={classes.paragraph}>Ich möchte auf meine Interessen zugeschnittene Angebote und 
 Neuigkeiten der AUTOGIGANT. GmbH per E-Mail erhalten. Ich kann 
 diese Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.</p>
                             </div>
