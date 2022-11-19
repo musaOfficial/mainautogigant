@@ -411,7 +411,7 @@ function CarDetails(){
                             {openAusstattung == true && <div className={classes.basiscontainer}>
                                 <div>
                                     <div className={classes.infoabout}>Komfort</div><div className={classes.actualinfo}>
-                                        {ausstattungKomfort.map((property) => <div key={property}>{property}</div>)}
+                                        {ausstattungKomfort.map((e) => <div key={e}>{e}</div>)}
                                     </div>
                                 </div>
                                 <div>

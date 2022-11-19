@@ -461,6 +461,12 @@
     }
 }
 
+@media (max-width: 450px){
+    .basiscontainer div{
+        font-size: 10px;
+    }
+}
+
 .infoabout{
     width: 50%;
 }
