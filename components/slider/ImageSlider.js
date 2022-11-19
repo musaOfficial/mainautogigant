@@ -222,7 +222,8 @@ function ImageSlider({
                 <div>
                     <SelectSliderArrow className={classes.leftsliderarrow} onClick={(e) => {
                         if(sliderState != 0){
-                            setSliderState(d => d - 1)
+                            setSliderState(d => d - 1);
+                            setCurrentImage(d => d - 1);
                         }
                     }}/> 
                     <div className={classes.slider}>
@@ -329,7 +330,8 @@ function ImageSlider({
                     </div>
                     <SelectSliderArrow className={classes.rightsliderarrow} onClick={(e) => {
                         if(sliderState + 5 != images.length){
-                            setSliderState(d => d + 1)
+                            setSliderState(d => d + 1);
+                            setCurrentImage(d => d + 1);
                         }
                     }}/>
                 </div>

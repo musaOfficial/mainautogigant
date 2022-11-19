@@ -465,6 +465,16 @@
     .basiscontainer div{
         font-size: 10px;
     }
+    .hubraumsub{
+        top: -15px !important;
+        left: 20px !important;
+        margin-left: 20px !important;
+    }
+
+    .infoabout sub{
+        position: relative !important;
+        bottom: -14px !important;
+    }
 }
 
 .infoabout{
@@ -481,6 +491,7 @@
     bottom: -18px;
 }
 
+
 .infoabout sup{
     position: relative;
     vertical-align: sub;
@@ -494,9 +505,10 @@
 }
 
 .hubraumsub{
+    position: relative;
     top: -20px;
-    position: static;
     left: 45px;
+    margin-left: 20px;
 }
 
 .actualinfo sup{
@@ -537,10 +549,6 @@
 
 .sub{
     margin-left: 8px;
-}
-
-.hubraumsub{
-    margin-left: 20px;
 }
 
 .sectiontop{
@@ -589,6 +597,10 @@
 
     .r2c2{
         height: auto;
+    }
+
+    .hubraumsub{
+        margin-left: 8px;
     }
 }
 

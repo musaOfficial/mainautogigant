@@ -2,7 +2,34 @@ import Link from "next/link";
 import { useState } from "react";
 import classes from './Header.module.css';
 import X from './../../public/images/x.svg';
+import { useEffect } from "react";
+
+
+const useDeviceSize = () => {
+
+  const [width, setWidth] = useState(0)
+  const [height, setHeight] = useState(0)
+
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  }
+
+  useEffect(() => {
+    // component is mounted and window is available
+    handleWindowResize();
+    window.addEventListener('resize', handleWindowResize);
+    // unsubscribe from the event on component unmount
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
+
+  return [width, height]
+
+}
+
 export default function Header() {
+
+  const [width, height] = useDeviceSize();
   const [collapse, setCollapse] = useState({
     dealerArea: false,
     cooperations: false,
@@ -23,8 +50,18 @@ export default function Header() {
     }
   }
 
+  const [openTextarea, setOpenTextarea] = useState(false);
+
   return (
-    <header className="bg-black shadow-1 relative z-40 lg:px-6">
+    <header className={`bg-black shadow-1 relative z-40 lg:px-6 ${width < 950 && classes.searchmargin}`}>
+      {openTextarea && <div className={classes.textareasearch}>
+        <div className={classes.relative}>
+          <textarea placeholder={"Fahrzeug suchen"} className={classes.textarea}></textarea>
+          <img className={classes.searchicon} src="/images/icons/header-search.png" />
+          <button className={classes.searchbutton}>Suchen</button>
+          <X className={classes.searchx} onClick={() => setOpenTextarea(false)}/>
+        </div>
+      </div>}
       <div className="max-w-ag-container w-10/12 lg:w-full mx-auto flex justify-between items-end py-6 md:py-4 md:pb-2 md:items-start">
         <Link href="/">
           <img
@@ -33,10 +70,10 @@ export default function Header() {
             alt="logo"
           />
         </Link>
-        <div className="flex items-center md:mt-2 md:w-full md:justify-between">
+        <div className={`flex items-center ${classes.margintop}`}>
           <div className="flex md:ml-6 lg:mr-0">
             <button className="mr-4">
-              <div className="container">
+              {width >= 950 && <div className="container">
                 <div className="row">
                   <input type={"text"} placeholder={"Suchen"} />
                   <div className="icon w-8 md:w-6 mr-4">
@@ -44,7 +81,10 @@ export default function Header() {
                     <i><img src="/images/icons/header-search.png" className={"fa-solid fa-xmark searchicon"} /></i>
                   </div>
                 </div>
-              </div>
+              </div>}
+            {width < 950 && <img src="/images/icons/header-search.png" onClick={() => {
+              setOpenTextarea(d => !d);
+            }} />}
             </button>
             <button className="w-8 md:w-6 mr-4">
               <img src="/images/icons/header-notification.png" />
@@ -53,7 +93,7 @@ export default function Header() {
               <img src="/images/icons/header-favourite.png" />
             </button>
           </div>
-          <div className="w-60 md:w-auto relative group flex items-center md:justify-end md:flex-1 h-14 rounded-tl-20 rounded-tr-20 hover:bg-theme-gray-10 px-2 pb-2 md:pb-0">
+          <div className={`w-60 ${classes.widthauto} relative group flex items-center justify-end md:flex-1 h-14 rounded-tl-20 rounded-tr-20 hover:bg-theme-gray-10 px-2 pb-2 pb-0`}>
             <button className="w-full md:w-6 inline-flex justify-end">
               <img src="/images/icons/header-user.png" />
             </button>
