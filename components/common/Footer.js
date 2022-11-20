@@ -169,7 +169,7 @@ export default function Footer() {
               </div>
               <div className="md:items-start md:mt-8">
                 <h4 className="font-bold text-white">
-                  <span className="text-theme-yellow-2">EINFACH</span>GIGANTISCH
+                  <span className="text-theme-yellow-2">EINFACH{" "}</span>GIGANTISCH
                   <span className="text-theme-yellow-2">.</span>
                 </h4>
                 <div className="flex mt-2">

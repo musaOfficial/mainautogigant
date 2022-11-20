@@ -5,7 +5,8 @@ import X from './../../public/images/x.svg';
 import { useEffect } from "react";
 
 
-const useDeviceSize = () => {
+
+export default function Header() {
 
   const [width, setWidth] = useState(0)
   const [height, setHeight] = useState(0)
@@ -23,13 +24,7 @@ const useDeviceSize = () => {
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
-  return [width, height]
-
-}
-
-export default function Header() {
-
-  const [width, height] = useDeviceSize();
+  
   const [collapse, setCollapse] = useState({
     dealerArea: false,
     cooperations: false,
@@ -53,8 +48,8 @@ export default function Header() {
   const [openTextarea, setOpenTextarea] = useState(false);
 
   return (
-    <header className={`bg-black shadow-1 relative z-40 lg:px-6 ${width < 950 && classes.searchmargin}`}>
-      {openTextarea && <div className={classes.textareasearch}>
+    <header className={`bg-black shadow-1 py-3 relative z-40 lg:px-6 ${width < 950 && classes.searchmargin}`}>
+      {openTextarea && width < 950 && <div className={classes.textareasearch}>
         <div className={classes.relative}>
           <textarea placeholder={"Fahrzeug suchen"} className={classes.textarea}></textarea>
           <img className={classes.searchicon} src="/images/icons/header-search.png" />
