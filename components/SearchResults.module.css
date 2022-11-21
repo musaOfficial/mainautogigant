@@ -1,6 +1,6 @@
 .container{
     width: 100%;
-    min-height: 80vh;
+    min-height: 100vh;
     background-color: #333;
     display: flex;
     justify-content: center;
@@ -18,6 +18,7 @@
     flex-direction: column;
     align-items: center;
     padding: 30px;
+    min-height: 100vh;
 }
 
 .topimg{
@@ -25,6 +26,7 @@
     width: 930px;
     height: 130px;
     margin-bottom: 30px;
+    
 }
 
 .row{
@@ -35,12 +37,12 @@
 
 .c1{
     width: 250px;
-    min-height: 100%;
+    min-height: 400vh;
     margin-right: 20px;
 }
 
 .c1r1{
-    height: 80px;
+    height: 70px;
     width: 250px;
     background-color: #F1F2F3;
     border-radius: 10px;
@@ -588,11 +590,12 @@
 
 .c2r1{
     background-color: #F1F2F3;
-    height: 110px;
+    height: 70px;
     border-radius: 10px;
-    padding: 20px;
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -600,21 +603,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 .c2r1top div{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
-.c2r2bottom{
+.c2r1bottom{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 .backarrow{
     color: #0067B8;
+    transform: rotate(90deg);
 }
 
 .backarrowtext{
@@ -630,14 +637,27 @@
 
 .direktsuchecontainer{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
 }
 
 .direktsuche{
-    height: 40px;
-    border-radius: 10px;
+    max-width: 200px;
     padding-left: 20px !important;
-    min-width: 80%;
-    margin-right: 5px;
+    height: 40px;
+    width: 80%;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.direktsuche:focus{
+    padding-left: 20px !important;
+    padding-right: 0 !important;
+    height: 40px;
+    width: 80%;
+    margin-right: 10px;
+    border-radius: 10px;
 }
 
 .suchenbtn{
@@ -646,7 +666,21 @@
     color: #fff;
     font-weight: bold;
     font-size: 16px;
-    min-width: 40%;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    height: 40px;
+}
+
+.suchenbtn{
+    background-color: #FFB900;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    max-width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -664,9 +698,86 @@
 .gridview{
     height: 20px;
     width: 20px;
+    color: #fff;
+    z-index: 1000;
+    cursor: pointer;
 }
 
 .listview{
     height: 20px;
     width: 20px;
+    color: #fff;
+    z-index: 1000;
+    cursor: pointer;
 }
+
+.view{
+    display: flex;
+    background-color: #6C757D;
+    align-items: center;
+    height: 70px;
+    min-width: 100px;
+    justify-content: center;
+    position: relative;
+    border-radius: 0px 10px 10px 0px;
+    transition: all .1 ease-in;
+}
+
+.viewtype{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    background-color: #FFB900;
+    left: 12px;
+    transition: all 1s ease-in !important;
+    -moz-transition: background 0.5s linear; /* Firefox 4 */
+    -webkit-transition: background 0.5s linear; /* Safari and Chrome */
+    -o-transition: background 0.5s linear; /* Opera */
+    -ms-transition: background 0.5s linear; /* Explorer 10 */
+}
+
+.viewleft{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    background-color: #FFB900;
+    left: 12px;
+    transition: all 1s ease-in !important;
+    -moz-transition: background 0.5s linear; /* Firefox 4 */
+    -webkit-transition: background 0.5s linear; /* Safari and Chrome */
+    -o-transition: background 0.5s linear; /* Opera */
+    -ms-transition: background 0.5s linear; /* Explorer 10 */
+}
+
+.viewright{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    background-color: #FFB900;
+    right: 12px;
+    transition: all 1s ease-in !important;
+    -moz-transition: background 0.5s linear; /* Firefox 4 */
+    -webkit-transition: background 0.5s linear; /* Safari and Chrome */
+    -o-transition: background 0.5s linear; /* Opera */
+    -ms-transition: background 0.5s linear; /* Explorer 10 */
+}
+
+.erweitertselect{
+    min-width: 50%;
+    width: 250px;
+    margin-right: 20px;
+}
+
+/* CAR LIST CONTAINER */
+
+.carlistcontainer{
+    margin-top: 20px;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 390vh;
+}
+

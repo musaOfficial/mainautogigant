@@ -14,6 +14,7 @@ import Question from './../public/question.svg';
 import SearchIcon from './../public/searchicon.svg';
 import GridView from './../public/gridview.svg';
 import ListView from './../public/listview.svg';
+import AdCard from './dashboard/ads/AdCard';
 import {
     marke1,
     marke2,
@@ -47,7 +48,8 @@ function SearchResults(){
           ...base,
           boxShadow: "none",
           border: "none",
-          fontSize: '16px'
+          fontSize: '16px',
+          borderRadius: '10px',
         }),
         option: (styles, state) => ({
           ...styles,
@@ -296,11 +298,219 @@ function SearchResults(){
         setBrandNameInputValue("");
         setBrandSelected(false);
       };
+
+
+    const angebote = [
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+    ]
+
+    const [gridView, setGridView] = useState(false);
     return (
         <div className={classes.container}>
             <div className={`${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
                 <div className={classes.topimg}>
                     <Image src={'/images/reg-car.png'} layout='fill' objectFit='cover'/>
+                </div>
+                <div className={classes.c2r1top}>
+                    <div>
+                        <Expand className={classes.backarrow} />
+                        <span className={classes.backarrowtext}>zurück zur Startseite</span>
+                    </div>
+                    <div>
+                        <Question className={classes.question} />
+                        <span className={classes.questiontext}>Infos zur Reihung der Anzeigen</span>
+                    </div>
                 </div>
             <div className={classes.row}>
                 <div className={classes.c1}>
@@ -923,19 +1133,9 @@ function SearchResults(){
             </div>
                 <div className={classes.c2}>
                     <div className={classes.c2r1}>
-                        <div className={classes.c2r1top}>
-                            <div>
-                                <Expand className={classes.backarrow} />
-                                <span className={classes.backarrowtext}>zurück zur Startseite</span>
-                            </div>
-                            <div>
-                                <Question className={classes.question} />
-                                <span className={classes.questiontext}>Infos zur Reihung der Anzeigen</span>
-                            </div>
-                        </div>
-                        <div className={classes.c2r2bottom}>
+                        <div className={classes.c2r1bottom}>
                             <div className={classes.direktsuchecontainer}>
-                                <input className={classes.direktsuche} placeholder="Direktsuche" />
+                                <input type={"text"} className={classes.direktsuche} placeholder="Direktsuche" />
                                 <button className={classes.suchenbtn}><SearchIcon className={classes.searchicon} /> SUCHEN</button>
                             </div>
                             <div className={classes.sortierungcontainer}>
@@ -943,12 +1143,28 @@ function SearchResults(){
                                     styles={style}
                                     options={land}
                                     placeholder="Erweiterte Sortierung"
-                                    className='mr-4'
+                                    className={classes.erweitertselect}
                                 />
-                                <GridView className={`${"mr-4"} ${classes.gridview}`}/>
-                                <ListView className={classes.listview}/>
+                                <div className={classes.view}>
+                                    <GridView className={`${"mr-4"} ${classes.gridview}`} onClick={() => setGridView(true)}/>
+                                    <ListView className={classes.listview} onClick={() => setGridView(false)}/>
+                                    <div className={`${gridView == true ? classes.viewleft : classes.viewright}`}></div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div className={classes.c2r2}>
+                            {gridView == false ? <div className={classes.carlistcontainer}>
+                                {angebote.map((item, index) => <AdCard
+                                    title={item.title}
+                                    price="45.520"
+                                    adNo="#123456789"
+                                    start="01/01/2020"
+                                    end="01/01/2020"
+                                    imgSrc="/images/draft-card-img-car-1.png"
+                                    cardView={gridView}
+                                />)}
+                            </div> : null}
                     </div>
                 </div>
         </div>
