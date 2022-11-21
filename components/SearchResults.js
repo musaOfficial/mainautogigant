@@ -1156,6 +1156,7 @@ function SearchResults(){
                     <div className={classes.c2r2}>
                             {gridView == false ? <div className={classes.carlistcontainer}>
                                 {angebote.map((item, index) => <AdCard
+                                    key={index}
                                     title={item.title}
                                     price="45.520"
                                     adNo="#123456789"
