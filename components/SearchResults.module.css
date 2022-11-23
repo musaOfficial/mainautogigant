@@ -23,8 +23,8 @@
 
 .topimg{
     position: relative;
-    width: 930px;
-    height: 130px;
+    width: 970px;
+    height: 250px;
     margin-bottom: 30px;
     
 }
@@ -713,7 +713,7 @@
 
 .view{
     display: flex;
-    background-color: #6C757D;
+    background-color: #FFB900;
     align-items: center;
     height: 70px;
     min-width: 100px;
@@ -728,7 +728,7 @@
     height: 40px;
     width: 40px;
     border-radius: 5px;
-    background-color: #FFB900;
+    background-color: rgb(108, 117, 125);
     left: 12px;
     transition: all 1s ease-in !important;
     -moz-transition: background 0.5s linear; /* Firefox 4 */
@@ -742,7 +742,7 @@
     height: 40px;
     width: 40px;
     border-radius: 5px;
-    background-color: #FFB900;
+    background-color: #6C757D;
     left: 12px;
     transition: all 1s ease-in !important;
     -moz-transition: background 0.5s linear; /* Firefox 4 */
@@ -756,7 +756,7 @@
     height: 40px;
     width: 40px;
     border-radius: 5px;
-    background-color: #FFB900;
+    background-color: #6C757D;
     right: 12px;
     transition: all 1s ease-in !important;
     -moz-transition: background 0.5s linear; /* Firefox 4 */

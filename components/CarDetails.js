@@ -15,7 +15,7 @@ import MailIcon from './../public/images/email.svg';
 import LinkIcon from './../public/images/link.svg';
 import FacebookIcon from './../public/images/facebik.svg';
 import WhatsAppIcon from './../public/images/WhatsApp.svg';
-import InstagramIcon from './../public/images/instagramAG.svg'
+import InstagramIcon from './../public/icons/instagram.svg'
 import InputSelect from './ui/InputSelect';
 const useDeviceSize = () => {
 

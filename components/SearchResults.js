@@ -41,6 +41,7 @@ import {
     fahrz,
     schads,
   } from "./search/selectOptions";
+import Angebot from './ui/Angebot';
 
 function SearchResults(){
     const style = {
@@ -1146,15 +1147,15 @@ function SearchResults(){
                                     className={classes.erweitertselect}
                                 />
                                 <div className={classes.view}>
-                                    <GridView className={`${"mr-4"} ${classes.gridview}`} onClick={() => setGridView(true)}/>
-                                    <ListView className={classes.listview} onClick={() => setGridView(false)}/>
+                                    <ListView className={`${classes.listview} ${"mr-4"}`} onClick={() => setGridView(true)}/>
+                                    <GridView className={` ${classes.gridview}`} onClick={() => setGridView(false)}/>
                                     <div className={`${gridView == true ? classes.viewleft : classes.viewright}`}></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className={classes.c2r2}>
-                            {gridView == false ? <div className={classes.carlistcontainer}>
+                            {gridView == true ? <div className={classes.carlistcontainer}>
                                 {angebote.map((item, index) => <AdCard
                                     key={index}
                                     title={item.title}
@@ -1165,7 +1166,9 @@ function SearchResults(){
                                     imgSrc="/images/draft-card-img-car-1.png"
                                     cardView={gridView}
                                 />)}
-                            </div> : null}
+                            </div> : <div className={classes.carlistcontainer}>
+                                {angebote.map((item, index) => <Angebot />)}
+                            </div>}
                     </div>
                 </div>
         </div>

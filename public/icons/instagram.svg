@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="141.732" height="141.732" viewBox="0 0 141.732 141.732">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #6c757d;
+      }
+    </style>
+  </defs>
+  <g id="instagram" transform="translate(-70.334 -71.117)">
+    <circle id="Ellipse_123" data-name="Ellipse 123" class="cls-1" cx="18.464" cy="18.464" r="18.464" transform="translate(122.735 123.519)"/>
+    <path id="Path_1122" data-name="Path 1122" class="cls-1" d="M141.2,71.117a70.866,70.866,0,1,0,70.866,70.866A70.866,70.866,0,0,0,141.2,71.117Zm43.216,97.074A17.058,17.058,0,0,1,167.408,185.2H114.992a17.058,17.058,0,0,1-17.008-17.008V115.775a17.058,17.058,0,0,1,17.008-17.008h52.416a17.058,17.058,0,0,1,17.008,17.008Z"/>
+    <circle id="Ellipse_124" data-name="Ellipse 124" class="cls-1" cx="6.496" cy="6.496" r="6.496" transform="translate(161.95 108.955)"/>
+  </g>
+</svg>
