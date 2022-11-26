@@ -165,7 +165,7 @@
 }
 
 .margin{
-    margin-right: 30px;
+    margin-right: 47px;
 }
 
 .notcardview{
@@ -175,4 +175,9 @@
     color: green;
     margin-left: 1000px;
     min-height: 1000px;
+}
+
+.notamargin{
+    margin: 0px;
+    padding: 0;
 }

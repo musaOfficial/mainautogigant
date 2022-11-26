@@ -6,6 +6,7 @@ import Print from './../../public/icons/favorite.svg';
 import Share from './../../public/icons/share.svg';
 import CompanyName from './../../public/icons/companyname.svg';
 import CompanyLocation from './../../public/icons/companylocation.svg'
+import { useEffect } from 'react';
 function Angebot({
     title,
     price,
@@ -18,15 +19,25 @@ function Angebot({
     details,
     location,
     companyname,
-    index
+    index,
+    key
 }){
 
     // erstzulassung, kraftstoff, leistung, kilometerstand, getriebe, fahrzeugzustand
     var displayDesc = description.substring(0, 50) + "...";
     var cardDisplayDesc = description.substring(0, 27) + "...";
-    console.log(index + 1)
+    
+    var ind = index;
+    var pl = ind + 1;
+    if(pl % 3 == 0){
+        console.log(true)
+    } else {
+        console.log(false);
+    }
+
+
     return (
-        <span className={`${cardView == false && index + 1 % 3 != 0 && classes.margin} `}>{cardView == true ? <div className={`${classes.container} ${index + 1 % 3 == 0 && classes.notcardview}`}>
+        <span className={`${cardView == false && classes.margin} ${cardView == false && pl % 3 == 0 && classes.notamargin} ${classes.marginbottom} `}>{cardView == true ? <div className={`${classes.container}`}>
         <div className={classes.actioncontainer}>
             <div className={`${classes.lefticon} ${classes.top}`}>
                 <Visible />

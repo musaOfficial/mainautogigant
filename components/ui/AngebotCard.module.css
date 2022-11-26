@@ -6,8 +6,11 @@
 
 .container{
     width: 225px !important;
-    height: 305px !important;
     display: inline-block;
+    margin-bottom: 35px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.514);
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .bottom{
