@@ -778,6 +778,10 @@
     background-color: #F1F2F3;
     border-radius: 10px;
     padding: 20px;
-    min-height: 390vh;
+    height: 7350px;
 }
 
+.cardviewwrapper{
+    display: flex;
+    justify-content: center;
+}

@@ -1,7 +1,178 @@
 .container{
-    margin-top: 20px;
     background-color: #F1F2F3;
-    min-height: 390vh;
     padding: 20px;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.carimg{
+    width: 208px;
+    height: 168px;
+    position: relative; 
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.lefticon{
+    color: #F1F2F3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #F1F2F3;
+    width: 100%;
+    height: 100%;
+}
+
+.lastlefticon{
+    color: #F1F2F3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: none;
+    width: 100%;
+    height: 100%;
+    transition: all .1s ease-in;
+}
+
+.lefticon:hover, .lastlefticon:hover{
+    background-color: #FFB900;
+    overflow: hidden;
+}
+
+.top:hover{
+    background-color: #FFB900;
+    border-radius: 10px 0 0 0px;
+    cursor: pointer;
+}
+.middle:hover{
+    background-color: #FFB900;
+    border-radius: 0;
+    cursor: pointer;
+}
+.bottom:hover{
+    background-color: #FFB900;
+    border-radius: 0 0 0 10px;
+    cursor: pointer;
+}
+
+.actioncontainer{
+    width: 40px;
+    height: 145px;
+    background-color: #6C757D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 0 0 10px;
+    justify-content: space-between;
+}
+
+.rightside{
+    width: 100%;
+}
+
+.carinfocontainer{
+    display: flex;
+    background-color: #fff;
+    border-radius: 0 10px 10px 0;
+    padding: 10px;
+    width: 70%;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    height: 145px;
+}
+
+.carprice{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 160px;
+    height: 40px;
+    background-color: #FFB900;
+    border-radius: 0 10px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cardesc{
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.cardetails{
+    display: flex;
+    border-top: 1px solid #F1F2F3;
+    border-bottom: 1px solid #F1F2F3;
+    width: 100%;
+}
+
+.detail{
+    border-right: 1px solid #F1F2F3;
+    padding: 7px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lastdetail{
+    border-right: none;
+    padding: 5px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.companyinfo{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #0067B8;
+}
+
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+}
+
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+}
+
+.companyicon{
+    margin-right: 3px;
+}
+
+.margin{
+    margin-right: 30px;
+}
+
+.notcardview{
+    margin-right: 0;
+    background-color: green;
+    position: absolute;
+    color: green;
+    margin-left: 1000px;
+    min-height: 1000px;
 }

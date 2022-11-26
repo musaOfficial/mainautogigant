@@ -496,7 +496,7 @@ function SearchResults(){
         },
     ]
 
-    const [gridView, setGridView] = useState(false);
+    const [gridView, setGridView] = useState(true);
     return (
         <div className={classes.container}>
             <div className={`${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
@@ -1156,18 +1156,56 @@ function SearchResults(){
                     </div>
                     <div className={classes.c2r2}>
                             {gridView == true ? <div className={classes.carlistcontainer}>
-                                {angebote.map((item, index) => <AdCard
+                                {angebote.map((item, index) => <Angebot
                                     key={index}
                                     title={item.title}
-                                    price="45.520"
+                                    description="This is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long description"
+                                    price="€ 45.520,-"
                                     adNo="#123456789"
                                     start="01/01/2020"
                                     end="01/01/2020"
                                     imgSrc="/images/draft-card-img-car-1.png"
                                     cardView={gridView}
+                                    details={
+                                        {
+                                            erstzulassung: "01/2022",
+                                            kraftstoff: "Benzin",
+                                            leistung: "125 PS",
+                                            kilometerstand: "412.000 KM",
+                                            getriebe: "Automatik",
+                                            fahrzeugzustand: "Gebraucht",
+                                        }
+                                    }
+                                    location = "2700 Wiener Neustadt | AT"
+                                    companyname = "Gigant Group Teknoloji A.S"
                                 />)}
-                            </div> : <div className={classes.carlistcontainer}>
-                                {angebote.map((item, index) => <Angebot />)}
+                            </div> : <div className={`${classes.carlistcontainer} ${gridView == false && classes.cardviewwrapper}`}>
+                                <span className={classes.mid}>
+                                    {angebote.map((item, index) => <Angebot
+                                        key={index}
+                                        title={item.title}
+                                        description="This is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long description"
+                                        price="€ 45.520,-"
+                                        adNo="#123456789"
+                                        start="01/01/2020"
+                                        end="01/01/2020"
+                                        imgSrc="/images/draft-card-img-car-1.png"
+                                        cardView={gridView}
+                                        details={
+                                            {
+                                                erstzulassung: "01/2022",
+                                                kraftstoff: "Benzin",
+                                                leistung: "125 PS",
+                                                kilometerstand: "412.000 KM",
+                                                getriebe: "Automatik",
+                                                fahrzeugzustand: "Gebraucht",
+                                            }
+                                        }
+                                        location = "2700 Wiener Neustadt | AT"
+                                        companyname = "Gigant Group Teknoloji A.S"
+                                        index={index}
+                                    />)}
+                                </span>
                             </div>}
                     </div>
                 </div>

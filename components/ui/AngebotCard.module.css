@@ -1,0 +1,70 @@
+.top{
+    width: 226px;
+    height: 148px;
+    position: relative;
+}
+
+.container{
+    width: 225px !important;
+    height: 305px !important;
+    display: inline-block;
+}
+
+.bottom{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.desc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    margin-top: -3px;
+    border-bottom: 1px solid #f1f2f3;
+    width: 100%;
+}
+
+.top{
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.details{
+    border-bottom: 1px solid #f1f2f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+
+.row{
+    display: flex;
+}
+
+.companylocation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #0067B8;
+}
+
+.companyname{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #0067B8;
+}
+
