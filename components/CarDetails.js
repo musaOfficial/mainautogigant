@@ -239,7 +239,7 @@ function CarDetails(){
                                                 <div className={classes.linebottom}><LinkIcon className={classes.svgicon}/> Link kopieren</div>
                                                 <div className={classes.linebottom}><FacebookIcon className={classes.svgicon}/> Facebook</div>
                                                 <div className={classes.linebottom}><InstagramIcon className={classes.svgicon} /> Instagram</div>
-                                                <div><WhatsAppIcon className={classes.svgicon}/> WhatsApp</div>
+                                                <div className={classes.linebottomw}><WhatsAppIcon className={classes.svgicon}/> WhatsApp</div>
                                             </div>}
                                             {svgOpen2 == true && <div className={classes.triangle}></div>}     
                                         </div>

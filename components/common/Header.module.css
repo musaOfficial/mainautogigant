@@ -240,6 +240,7 @@
 
 .widthauto{
     z-index: 1000000000000000000000000;
+
 }
 
 .headericon{
@@ -280,4 +281,8 @@
 
 .opacityhover:hover p{
     opacity: 100%;
+}
+
+.md{
+    margin-top: 30px;
 }

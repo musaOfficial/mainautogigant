@@ -69,7 +69,7 @@ export default function Header() {
           />
         </Link>
         <div className={`flex items-center ${classes.margintop}`}>
-          <div className="flex md:ml-6 lg:mr-0">
+          <div className={`flex md:ml-6 lg:mr-0`}>
             <button className="mr-4">
               {width >= 950 && <div className="container">
                 <div className={`row ${classes.searchhover}`}>
