@@ -3,8 +3,11 @@ import { useState } from "react";
 import classes from './Header.module.css';
 import X from './../../public/images/x.svg';
 import { useEffect } from "react";
-
-
+import FavoriteIcon from './../../public/icons/favorite.svg';
+import SearchIcon from './../../public/icons/search.svg';
+import AccountIcon from './../../public/icons/account.svg';
+import NotificationsIcon from './../../public/icons/notifications.svg';
+import SettingsIcon from './../../public/icons/settingsicon.svg';
 
 export default function Header() {
 
@@ -72,20 +75,20 @@ export default function Header() {
                 <div className="row">
                   <input type={"text"} placeholder={"Suchen"} />
                   <div className="icon w-8 md:w-6 mr-4">
-                    <i><img src="/images/icons/header-search.png" className={"fa fa-search searchicon"} /></i>
-                    <i><img src="/images/icons/header-search.png" className={"fa-solid fa-xmark searchicon"} /></i>
+                    <i><SearchIcon className={"fa fa-search searchicon"} /></i>
+                    <i><SearchIcon className={"fa-solid fa-xmark searchicon"} /></i>
                   </div>
                 </div>
               </div>}
-            {width < 950 && <img src="/images/icons/header-search.png" onClick={() => {
+            {width < 950 && <SearchIcon onClick={() => {
               setOpenTextarea(d => !d);
             }} />}
             </button>
             <button className="w-8 md:w-6 mr-4">
-              <img src="/images/icons/header-notification.png" />
+              <NotificationsIcon className={classes.noticon}/>
             </button>
             <button className="w-8 md:w-6 mr-4">
-              <img src="/images/icons/header-favourite.png" />
+              <FavoriteIcon className={classes.headericon}/>
             </button>
           </div>
           <div className={`w-60 ${classes.widthauto} ${classes.headerbtn} relative group flex items-center justify-end md:flex-1 h-14 rounded-tl-20 rounded-tr-20 hover:bg-theme-gray-10 px-2 pb-2 pb-0 `}>
@@ -166,6 +169,12 @@ export default function Header() {
                     </g>
                   </svg>
                   MEINE ANZEIGEN
+                </a>
+              </Link>
+              <Link href="/dashboard/settings">
+                <a className={`${classes.settingscontainer} px-4 py-2 md:px-1 ease-in duration-300 hover:bg-theme-yellow hover:fill-black hover:text-black fill-white inline-flex items-center`}>
+                  <SettingsIcon className={classes.settingsicon} />
+                  Einstellungen
                 </a>
               </Link>
               <button onClick={() => onMenuClick('dealer')} className="px-4 py-2 md:px-1 ease-in duration-300 hover:bg-theme-yellow hover:fill-black hover:text-black fill-white inline-flex items-center border-y border-opacity-60 hover:border-opacity-0 border-white">

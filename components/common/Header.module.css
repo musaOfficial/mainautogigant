@@ -241,3 +241,26 @@
 .widthauto{
     z-index: 1000000000000000000000000;
 }
+
+.headericon{
+    width: 32px;
+    height: 32px;
+    color: #FBB900;
+}
+
+.noticon{
+    width: 50px;
+    height: 50px;
+}
+
+.settingsicon{
+    color: #fff;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    transition: all .1s ease-in;
+}
+
+.settingscontainer:hover .settingsicon{
+    color: #000;
+}
