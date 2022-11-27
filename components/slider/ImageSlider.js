@@ -183,10 +183,60 @@ function ImageSlider({
                             <img className={`${classes.zoomimage} ${sliderState + 13 == selectedImage && classes.zoomborder}`} src={images[sliderState + 13]} />
                         </div>}
                         <SelectSliderArrow className={classes.rightsliderarrowzoom} onClick={(e) => {
-                        if(sliderState + 8 != images.length - 1){
-                            setSliderState(d => d + 1)
+                        if(width >= 2800){
+                            if(sliderState + 14 != images.length - 1){
+                                setSliderState(d => d + 1)
+                            }
+                        } 
+                        else if(width >= 2600){
+                            if(sliderState + 13 != images.length - 1){
+                                setSliderState(d => d + 1)
+                            }
                         }
-                    }}/>
+                        else if(width >= 2400){
+                            if(sliderState + 12 != images.length - 1){
+                                setSliderState(d => d + 1)
+                            }
+                        }
+                        else if(width >= 2200){
+                            if(sliderState + 11 != images.length - 1){
+                                setSliderState(d => d + 1)
+                            }
+                        }
+                        else if(width >= 2000){
+                            if(sliderState + 10 != images.length - 1){
+                                setSliderState(d => d + 1)
+                            }
+                        }
+                        else if(width >= 1800){
+                            if(sliderState + 9 != images.length - 1){
+                                setSliderState(d => d + 1)
+                            }
+                        }
+                        else if(width >= 1600){
+                            if(sliderState + 8 != images.length - 1){
+                                setSliderState(d => d + 1)
+                            }
+                        }
+                        else if(width >= 1400){
+                            if(sliderState + 7 != images.length - 1){
+                                setSliderState(d => d + 1)
+                            }
+                        }
+                        else if(width >= 1200){
+                            if(sliderState + 6 != images.length - 1){
+                                setSliderState(d => d + 1)
+                            }
+                        }
+                        else if(width >= 1000){
+                            if(sliderState + 5 != images.length - 1){
+                                setSliderState(d => d + 1)
+                            }
+                        }
+                    }
+
+                        
+                    }/>
                 </div>
             </div>}
             <div className={classes.content}>

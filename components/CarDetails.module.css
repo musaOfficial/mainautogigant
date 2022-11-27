@@ -368,6 +368,11 @@
     width: 45%;
     border-radius: 10px;
     font-weight: bold;
+    transition: all .1s ease-in;
+}
+
+.sendmail:hover{
+    background-color: rgba(251, 185, 0, 0.5);
 }
 
 .call{
@@ -377,6 +382,11 @@
     width: 50%;
     border-radius: 10px;
     font-weight: bold;
+    transition: all .1s ease-in;
+}
+
+.call:hover{
+    background-color: rgba(251, 185, 0, 0.5);
 }
 
 .greyback{
@@ -449,6 +459,11 @@
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 20px;
+    transition: all .1s ease-in;
+}
+
+.yellowbtn:hover{
+    background-color: rgba(251, 185, 0, 0.5);
 }
 
 .contactdesc{

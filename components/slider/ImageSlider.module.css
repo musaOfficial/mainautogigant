@@ -16,7 +16,7 @@
 }
 
 .zoombackground{
-    background-color: #333;
+    background-color: #6C757D;
     position: absolute;
     left: 0;
     top: 0;
@@ -99,6 +99,7 @@
     scroll-behavior: smooth;
     overflow-y: auto;
     height: auto;
+    background-color: #6C757D;
 }
 
 .slidercontainer::-webkit-scrollbar{
@@ -116,6 +117,7 @@
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
+    background-color: #6C757D;
 }
 
 .slimg:hover{
@@ -133,6 +135,7 @@
     position: relative;
     width: 97.5%;
     justify-content: space-between;
+    background-color: #6C757D;
 }
 
 .zoomimg{
@@ -535,7 +538,7 @@
 .werbeflaeche{
     width: 970px;
     height: 90px;
-    background-color: #6C757D;
+    background-color: #fff;
     margin-bottom: 20px;
 }
 
