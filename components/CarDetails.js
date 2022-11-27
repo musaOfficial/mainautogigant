@@ -245,7 +245,7 @@ function CarDetails(){
                                         </div>
                                         <div className={classes.print} onMouseEnter={() => setSvgOpen3(true)} onMouseLeave={() => setSvgOpen3(false)}>
                                             <WhitePrinter className={classes.svg}/>
-                                            {svgOpen3 == true && <div className={classes.svgcontainer}>
+                                            {svgOpen3 == true && <div className={classes.svgcontainerlast}>
                                                 Drucken
                                             </div>}
                                             {svgOpen3 == true && <div className={classes.triangle}></div>}     

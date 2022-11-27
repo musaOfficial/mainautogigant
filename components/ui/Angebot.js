@@ -37,7 +37,7 @@ function Angebot({
 
 
     return (
-        <span className={`${cardView == false && classes.margin} ${cardView == false && pl % 3 == 0 && classes.notamargin} ${classes.marginbottom} `}>{cardView == true ? <div className={`${classes.container}`}>
+        <span className={`${cardView == false && classes.margin} ${cardView == false && pl % 3 == 0 && classes.notamargin} ${classes.marginbottom}  `}>{cardView == true ? <div className={`${classes.container}`}>
         <div className={classes.actioncontainer}>
             <div className={`${classes.lefticon} ${classes.top}`}>
                 <Visible />
@@ -79,14 +79,14 @@ function Angebot({
                 <Image className={styles.img} src={imgSrc} layout='fill' objectFit='cover' />
                 <div className={styles.price}>{price}</div>
                 <div className={styles.actioncontainer}>
-                    <div>
-                        <Visible />
+                    <div className={classes.borderright}>
+                        <Visible className={classes.sicon} />
                     </div>
-                    <div>
-                        <Print />
+                    <div className={classes.borderright}>
+                        <Print  className={classes.sicon}/>
                     </div>
-                    <div>
-                        <Share />
+                    <div className={`${classes.borderright} ${classes.last}`}>
+                        <Share  className={classes.sicon}/>
                     </div>
                 </div>
             </div>
@@ -95,14 +95,14 @@ function Angebot({
                 <p className={styles.desc}>{cardDisplayDesc}</p>
                 <div className={styles.details}>
                     <div className={styles.row}>
-                        <div>{details.erstzulassung}</div>
-                        <div>{details.kraftstoff}</div>
-                        <div>{details.leistung}</div>
+                        <div className={styles.detail}>{details.erstzulassung}</div>
+                        <div className={styles.detail}>{details.kraftstoff}</div>
+                        <div className={styles.detaillast}>{details.leistung}</div>
                     </div>
                     <div className={styles.row}>
-                        <div>{details.kilometerstand}</div>
-                        <div>{details.getriebe}</div>
-                        <div>{details.fahrzeugzustand}</div>
+                        <div className={styles.detail}>{details.kilometerstand}</div>
+                        <div className={styles.detail}>{details.getriebe}</div>
+                        <div className={styles.detaillast}>{details.fahrzeugzustand}</div>
                     </div>
                 </div>
                 <div className={styles.companylocation}><CompanyLocation className={classes.companyicon}/>{location}</div>

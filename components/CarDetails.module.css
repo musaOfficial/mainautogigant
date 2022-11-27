@@ -192,21 +192,38 @@
 }
 
 .svgcontainer{
-    border-radius: 10px;
+    border-radius: 5px;
     position: absolute;
     font-size: 13px;
     color: #0067B8;
     background-color: #fff;
-    margin-top: 90px;
+    margin-top: 95px;
     padding: 0px 5px;
     z-index: 11;
-    font-weight: bold;
     padding: 1px 5px;
+}
+
+.svgcontainerlast{
+    border-radius: 5px;
+    position: absolute;
+    font-size: 13px;
+    color: #0067B8;
+    background-color: #fff;
+    margin-top: 94px;
+    padding: 0px 5px;
+    z-index: 11;
+    font-weight: normal;
+    padding: 1px 5px;
+    transition: all .06s ease-in;
+}
+
+.svgcontainerlast:hover, .svgcontainer:hover, .svgcontainershare{
+    font-weight: bold;
 }
 
 .svgcontainershare{
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     position: absolute;
     font-size: 13px;
     color: #0067B8;
@@ -214,7 +231,6 @@
     margin-top: 215px;
     padding: 0px 5px;
     z-index: 11;
-    font-weight: bold;
 }
 
 .downbutton{
@@ -226,6 +242,13 @@
     padding-top: 3px;
     padding-bottom: 3px;
     border-bottom: 1px solid #F1F2F3;
+    font-weight: normal;
+    font-size: 13px;
+
+}
+
+.linebottom:hover{
+    font-weight: bold;
 }
 
 .svgicon{

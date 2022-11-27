@@ -500,8 +500,12 @@ function SearchResults(){
     return (
         <div className={classes.container}>
             <div className={`${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
-                <div className={classes.topimg}>
-                    <Image src={'/images/reg-car.png'} layout='fill' objectFit='cover'/>
+               
+                <div>
+                    <p className={classes.werbungtext}>Werbung</p>
+                    <div className={classes.topimg}>
+                        <Image src={'/images/reg-car.png'} layout='fill' objectFit='cover'/>
+                    </div>
                 </div>
                 <div className={classes.c2r1top}>
                     <div>
@@ -811,13 +815,18 @@ function SearchResults(){
                                         {console.log(item.selected)}
                                     </div>)} */}
 
-                                    {ausstattungList.map((item, index) => <div key={index} className={classes.ausstattung}>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller} onChange={() => {
-                                            ausstattungList[index].selected = !ausstattungList[index].selected;
-                                        }}/>
-                                        {item.selected == true ? "true" : "false"} 
+                                    {ausstattungsKriterienOpen == true && ausstattungList.map((item, index) => <div key={index} className={classes.ausstattung}>
+                                        <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.makemid}`} />
+                                        <span className={classes.value}>{item.value}</span>
                                     </div>)}
-                                    
+                                    {ausstattungsKriterienOpen == false && ausstattungList.map((item, index) => <div key={index} className={classes.ausstattung}>
+                                        <div className={classes.ausstattung}>
+                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.makemid}`} />
+                                            <span className={classes.value}>{item.value}</span>
+                                        </div>
+                                        {console.log(ausstattungList)}
+                                    </div>)}
+
                                     <div className={classes.ausblendencontainer} onClick={() => setAusstattungsKriterienOpen(d => !d)}>
                                         <RemoveCircle className={classes.removecircle} /> <span>{ausstattungsKriterienOpen == true ? "Ungenutzte Filter ausblenden" : "mehr Ausstattungskriterien"}</span>
                                     </div>
