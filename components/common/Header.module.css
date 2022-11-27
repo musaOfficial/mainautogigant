@@ -2,6 +2,9 @@
     .logo{
         width: 180px;
     }
+    .headerbtn{
+        box-shadow: 0 2px 8px #000;
+    }
 }
 
 @media (max-width: 800px){
@@ -12,6 +15,9 @@
         margin-top: 2px;
         width: 90%;
         justify-content: space-between;
+    }
+    .headerbtn{
+        box-shadow: 0 2px 8px #000;
     }
 }
 
@@ -81,6 +87,9 @@
     .searchmargin{
         margin-bottom: 30px;
     }
+    .headerbtn{
+        box-shadow: 0 2px 8px #000;
+    }
 }
 
 @media (max-width: 780px){
@@ -148,6 +157,9 @@
 
     .searchmargin{
         margin-bottom: 30px;
+    }
+    .headerbtn{
+        box-shadow: 0 2px 8px #000;
     }
 }
 
@@ -217,4 +229,15 @@
     .searchmargin{
         margin-bottom: 30px;
     }
+    .headerbtn{
+        box-shadow: 0 2px 8px #000;
+    }
+}
+
+.headerbtn{
+    box-shadow: 7px 25px 20px rgb(0, 0, 0, 0.2);
+}
+
+.widthauto{
+    z-index: 1000000000000000000000000;
 }
