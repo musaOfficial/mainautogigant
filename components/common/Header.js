@@ -76,7 +76,7 @@ export default function Header() {
                   <input type={"text"} placeholder={"Suchen"} />
                   <div className="icon w-8 md:w-6 mr-4">
                     <i><SearchIcon className={` ${classes.search} text-theme-yellow fa fa-search searchicon`} /></i>
-                    <i><SearchIcon className={` ${classes.search} fa-solid fa-xmark searchicon`} /></i>
+                    <i><SearchIcon className={` ${classes.search} text-theme-yellow fa-solid fa-xmark searchicon`} /></i>
                   </div>
                 </div>
               </div>}
