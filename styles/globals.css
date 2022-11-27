@@ -125,12 +125,18 @@ input {
   font-size: 16px;
 }
 
+
 .row {
   display: flex;
   background: #000;
   border-radius: 100px;
   border: 3px solid #FFB900;
 }
+
+.row:hover{
+  border: 3px solid #fff;
+}
+
 .row input {
   background: transparent;
   color: #fff;

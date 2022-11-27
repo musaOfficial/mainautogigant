@@ -72,15 +72,15 @@ export default function Header() {
           <div className="flex md:ml-6 lg:mr-0">
             <button className="mr-4">
               {width >= 950 && <div className="container">
-                <div className="row">
+                <div className={`row ${classes.searchhover}`}>
                   <input type={"text"} placeholder={"Suchen"} />
                   <div className="icon w-8 md:w-6 mr-4">
-                    <i><SearchIcon className={"fa fa-search searchicon"} /></i>
-                    <i><SearchIcon className={"fa-solid fa-xmark searchicon"} /></i>
+                    <i><SearchIcon className={` ${classes.search} text-theme-yellow fa fa-search searchicon`} /></i>
+                    <i><SearchIcon className={` ${classes.search} fa-solid fa-xmark searchicon`} /></i>
                   </div>
                 </div>
               </div>}
-            {width < 950 && <SearchIcon onClick={() => {
+            {width < 950 && <SearchIcon className={classes.searchiconf} onClick={() => {
               setOpenTextarea(d => !d);
             }} />}
             </button>
