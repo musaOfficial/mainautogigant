@@ -265,14 +265,19 @@
     transition: all .1s ease-in;
 }
 
-.settingscontainer:hover .settingsicon{
-    color: #000;
-}
-
 .searchhover:hover div i .search{
     color: #fff;
 }
 
 .widthauto:hover button .headericon{
     color: #fff;
+}
+
+.opacityhover{
+    transition: all .1s ease-in;
+    color: #fff;
+}
+
+.opacityhover:hover p{
+    opacity: 100%;
 }
