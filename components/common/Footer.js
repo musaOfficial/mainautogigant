@@ -52,9 +52,9 @@ export default function Footer() {
               <FooterCarousel
               >
                 <SwiperSlide>
-                  <div className="w-full h-full rounded-t-20 relative z-10 flex items-center p-6 bg-white">
-                    <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10"></div>
-                    <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4">
+                  <div className="w-full h-full rounded-t-20 relative z-10 flex items-center p-6 bg-white overflow-hidden">
+                    <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10 overflow-hidden"></div>
+                    <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4 overflow-hidden">
                       <img className="rounded-full" src="/images/logo.png" />
                     </div>
                     <div className="flex-1 relative z-30">
@@ -65,22 +65,22 @@ export default function Footer() {
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="w-full h-full rounded-t-20 relative z-10 flex items-center p-6 bg-white">
-                  <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10"></div>
-                    <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4">
+                  <div className="w-full h-full rounded-t-20 relative z-10 flex items-center p-6 bg-white overflow-hidden">
+                  <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10 overflow-hidden"></div>
+                    <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4 overflow-hidden">
                       <img className="rounded-full" src="/images/logo.png" />
                     </div>
                     <div className="flex-1 relative z-30">
-                      <h4 className="text-base font-bold">HGMEDIA WERBEAGENTUR</h4>
+                      <h4 className="text-base font-bold overflow-hidden">HGMEDIA WERBEAGENTUR</h4>
                       <p className="text-13 py-2">WIENER STRASSE 90 2700 WIENER NEUSTADT</p>
                       <button className="inline-block px-2 py-2 text-13 sm:px-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white font-bold ease-linear duration-300 hover:bg-theme-yellow-3">PROFIL BESUCHEN</button>
                     </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="w-full h-full rounded-t-20 relative z-10 flex items-center p-6 bg-white">
-                  <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10"></div>
-                    <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4">
+                  <div className="w-full h-full rounded-t-20 relative z-10 flex items-center p-6 bg-white overflow-hidden">
+                  <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10 overflow-hidden"></div>
+                    <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4 overflow-hidden">
                       <img className="rounded-full" src="/images/logo.png" />
                     </div>
                     <div className="flex-1 relative z-30">
@@ -114,7 +114,7 @@ export default function Footer() {
                 <h4 className="text-base font-bold">GIGANT WORLD</h4>
                 <div className="mt-1">
                   <Link href="https://www.egigant.at">
-                    <a className="flex items-center text-13 mb-1" target='_blank' rel='noreferer'>
+                    <a className="flex items-center text-13 mb-1 duration-100 hover:text-yellow-600" target='_blank' rel='noreferer'>
                       <img
                         className="mr-1"
                         src="/images/icons/footer-link-expand.png"
@@ -123,7 +123,7 @@ export default function Footer() {
                     </a>
                   </Link>
                   <Link href="https://www.immo-gigant.at">
-                    <a className="flex items-center text-13 mb-1" target='_blank' rel='noreferer'>
+                    <a className="flex items-center text-13 mb-1 duration-100 hover:text-yellow-600" target='_blank' rel='noreferer'>
                       <img
                         className="mr-1"
                         src="/images/icons/footer-link-expand.png"
@@ -132,7 +132,7 @@ export default function Footer() {
                     </a>
                   </Link>
                   <Link href="https://www.gastrogigant.at">
-                    <a className="flex items-center text-13 mb-1" target='_blank' rel='noreferer'>
+                    <a className="flex items-center text-13 mb-1 duration-100 hover:text-yellow-600" target='_blank' rel='noreferer'>
                       <img
                         className="mr-1"
                         src="/images/icons/footer-link-expand.png"
@@ -140,8 +140,8 @@ export default function Footer() {
                       GASTRO GIGANT.
                     </a>
                   </Link>
-                  <Link href="https://www.hosting-gigant.at">
-                    <a className="flex items-center text-13 mb-1" target='_blank' rel='noreferer'>
+                  <Link href="https://www.hosting-gigant.at duration-100 hover:text-yellow-600">
+                    <a className="flex items-center text-13 mb-1 duration-100 hover:text-yellow-600" target='_blank' rel='noreferer'>
                       <img
                         className="mr-1"
                         src="/images/icons/footer-link-expand.png"
@@ -150,7 +150,7 @@ export default function Footer() {
                     </a>
                   </Link>
                   <Link href="https://www.gigant.shop">
-                    <a className="flex items-center text-13" target='_blank' rel='noreferer'>
+                    <a className="flex items-center text-13 duration-100 hover:text-yellow-600" target='_blank' rel='noreferer'>
                       <img
                         className="mr-1"
                         src="/images/icons/footer-link-expand.png"

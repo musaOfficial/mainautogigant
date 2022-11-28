@@ -176,7 +176,7 @@ function CarDetails(){
     const [newsletter, setNewsletter] = useState(false);
 
     const aussenfarbe = "Blau";
-    const aussenfarbelauthersteller = "BLAU";
+    const aussenfarbelauthersteller = "Blau";
     const farbeinnenausstattung = "sonstige";
     const leistung = "190 kW (258 PS)";
     const verkaeufer = "Privat";

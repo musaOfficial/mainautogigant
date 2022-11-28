@@ -21,7 +21,7 @@ export default function FooterCarousel({ children }) {
           loopFillGroupWithBlank={true}
           navigation={false}
           autoplay={{ delay: 3000 }}
-          className="footer-swiper"
+          className="footer-swiper overflow-hidden"
         >
           {children}
         </Swiper>

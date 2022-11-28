@@ -10,7 +10,7 @@ export default function FooterLinks({ title, links }) {
   }, []);
 
   return (
-    <div className="w-full bg-white md:bg-transparent rounded-t-20 p-6 text-13 text-theme-gray-4 md:px-0 md:py-2">
+    <div className="w-full bg-white md:bg-transparent rounded-t-20 p-6 text-13 text-theme-gray-600 duration-100 hover:text-color-yellow-600 md:px-0 md:py-2">
       <div
         className={`md:flex justify-between items-center md:border-b border-theme-gray-2 ${
           active ? "" : "pb-3"
@@ -44,7 +44,7 @@ export default function FooterLinks({ title, links }) {
         <ul className={`${active ? "pt-2" : ""}`}>
           {links &&
             links.map((link, i) => (
-              <li key={i} className="text-13 hover:text-yellow-600">
+              <li key={i} className="text-13 hover:text-theme-yellow">
                 <a href={link.url}>{link.linkTitle}</a>
               </li>
             ))}
