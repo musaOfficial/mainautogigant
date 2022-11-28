@@ -865,7 +865,7 @@ function SearchResults(){
                                         <div className={classes.farbencolumn}>
                                             <div>
                                                 <input id='farsch' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.schwarz}`} />
-                                                <label classlabelame={classes.colortext1} htmlFor="farsch">Schwarz</label>
+                                                <label className={classes.colortext1} htmlFor="farsch">Schwarz</label>
                                             </div>
                                             <div>
                                                 <input id='farbei' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.beige}`} />
