@@ -188,7 +188,7 @@
 .checkboxgiga{
     height: 20px !important;
     width: 20px !important;
-    margin-right: 20px;
+    margin-right: 10px;
     border-radius: 10px;
     outline: none !important;
     border: none !important;
@@ -334,6 +334,7 @@
     padding-left: 10px !important;
     box-sizing: border-box;
     border-radius: 5px;
+    
 }
 
 .numvonbis:focus{
@@ -638,6 +639,36 @@
 .belowtext{
     display: block;
     font-size: 13px;
+}
+
+.farbecol1 div, .farbecol2 div, .farbecol3 div{
+    margin-bottom: 5px;
+}
+
+.spantransformation{
+    transform: translateY(1.5px);
+}
+
+.transformtocenter{
+    transform: translateY(2.5px);
+}
+
+.linebottom{
+    padding-bottom: 20px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid #fff;
+}
+
+.noline{
+    border: none;
+}
+
+.label{
+    font-size: 13px;    
+}
+
+.marginbottomnone{
+    margin-bottom: 0 !important;
 }
 
 .marginbottom{
