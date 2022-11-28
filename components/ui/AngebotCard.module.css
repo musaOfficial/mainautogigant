@@ -16,7 +16,7 @@
 }
 
 .container:hover{
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.514);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.314);
     cursor: pointer;
 }
 
@@ -43,7 +43,7 @@
     font-size: 13px;
     margin-top: -3px;
     border-bottom: 1px solid #f1f2f3;
-    width: 100%;
+    width: 81.1%;
     cursor: text;
 }
 
@@ -61,13 +61,13 @@
     font-size: 13px;
     user-select: auto;
     cursor: text;
-    width: 100%;
+    width: 90%;
 }
 
 .row{
     display: flex;
     border-bottom: 1px solid #f1f2f3;
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,7 +104,7 @@
     user-select: auto;
     cursor: text;
     padding: 3px;
-    
+
 }
 
 .detaillast{

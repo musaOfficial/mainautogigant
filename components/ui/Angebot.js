@@ -40,13 +40,13 @@ function Angebot({
         <span className={`${cardView == false && classes.margin} ${cardView == false && pl % 3 == 0 && classes.notamargin} ${classes.marginbottom}  `}>{cardView == true ? <div className={`${classes.container}`}>
         <div className={classes.actioncontainer}>
             <div className={`${classes.lefticon} ${classes.top}`}>
-                <Visible />
+                <Visible className={classes.whiteicon} />
             </div>
             <div className={`${classes.lefticon} ${classes.middle}`}>
-                <Print />
+                <Print className={classes.whiteicon} />
             </div>
             <div className={`${classes.lastlefticon} ${classes.bottom}`}>
-                <Share />
+                <Share className={classes.whiteicon} />
             </div>
         </div>
             <div className={classes.carimg}>
@@ -60,7 +60,7 @@ function Angebot({
                 <h1 className={classes.title}>{title}</h1>
                 <p className={classes.cardesc}>{displayDesc}</p>
                 <div className={classes.cardetails}>
-                    <div className={classes.detail}>{details.erstzulassung}</div>
+                    <div className={`${classes.detail} ${classes.firstdetail}`}>{details.erstzulassung}</div>
                     <div className={classes.detail}>{details.kraftstoff}</div>
                     <div className={classes.detail}>{details.leistung}</div>
                     <div className={classes.detail}>{details.kilometerstand}</div>
@@ -96,10 +96,10 @@ function Angebot({
                 <div className={styles.details}>
                     <div className={styles.row}>
                         <div className={styles.detail}>{details.erstzulassung}</div>
-                        <div className={styles.detail}>{details.kraftstoff}</div>
-                        <div className={styles.detaillast}>{details.leistung}</div>
+                        <div className={styles.detaillast}>{details.kraftstoff}</div>
                     </div>
                     <div className={styles.row}>
+                        <div className={styles.detail}>{details.leistung}</div>
                         <div className={styles.detail}>{details.fahrzeugzustand}</div>
                         <div className={styles.detaillast}>{details.getriebe}</div>
                     </div>

@@ -617,7 +617,7 @@ function SearchResults(){
                                             placeholder={"Alle"}/>
                                     </div>
                                     <div className={classes.marginbottom}>
-                                        <label>Erstzulassung</label>
+                                        <label className={classes.smalltext}>Erstzulassung</label>
                                         <div className={classes.halfselect}>
                                            <Select className={classes.halfselect1} options={van1} styles={halfSelectStyle1} placeholder="Von"/>
                                            <Select className={classes.halfselect2} options={van2} styles={halfSelectStyle2} placeholder="Bis"/>
@@ -850,36 +850,36 @@ function SearchResults(){
                             </div>
                             {openFarbe == true && <div className={classes.basiscontainer}>
                                 <div>
-                                    <label>Außenfarbe</label>
+                                    <label className='text-sm font-semibold'>Außenfarbe</label>
                                     <div className={classes.farben}>
                                         <div className={classes.farbencolumn}>
                                             <div>
-                                                <span className={classes.colortext1}>Schwarz</span>
                                                 <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.schwarz}`} />
+                                                <span className={classes.colortext1}>Schwarz</span>
                                             </div>
                                             <div>
-                                                <span className={classes.colortext1}>Beige</span>
                                                 <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.beige}`} />
+                                                <span className={classes.colortext1}>Beige</span>
                                             </div>
                                             <div>
-                                                <span className={classes.colortext1}>Gold</span>
                                                 <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.gold}`} />
+                                                <span className={classes.colortext1}>Gold</span>
                                             </div>
                                             <div>
-                                                <span className={classes.colortext1}>Grau</span>
                                                 <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.grau}`} />
+                                                <span className={classes.colortext1}>Grau</span>
                                             </div>
                                             <div>
-                                                <span className={classes.colortext1}>Gelb</span>
                                                 <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.gelb}`} />
+                                                <span className={classes.colortext1}>Gelb</span>
                                             </div>
                                             <div>
-                                                <span className={classes.colortext1}>Rot</span>
                                                 <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.rot}`} />
+                                                <span className={classes.colortext1}>Rot</span>
                                             </div>
                                             <div>
-                                                <span className={classes.colortext1}>Silber</span>
                                                 <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.silber}`} />
+                                                <span className={classes.colortext1}>Silber</span>
                                             </div>
                                         </div>
                                         <div className={classes.farbencolumn2}>
@@ -913,7 +913,7 @@ function SearchResults(){
                                             </div>
                                         </div>
                                     </div>
-                                    <label>Lackierungsart</label>
+                                    <label className='text-sm font-semibold'>Lackierungsart</label>
                                     <div className={classes.colorrow}>
                                         <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.weiss}`}/>
                                         <span>Metallic</span>
@@ -1146,7 +1146,7 @@ function SearchResults(){
                         <div className={classes.c2r1bottom}>
                             <div className={classes.direktsuchecontainer}>
                                 <input type={"text"} className={classes.direktsuche} placeholder="Direktsuche" />
-                                <button className={classes.suchenbtn}><SearchIcon className={classes.searchicon} /> SUCHEN</button>
+                                <button className={classes.suchenbtn}>SUCHEN</button>
                             </div>
                             <div className={classes.sortierungcontainer}>
                                 <Select 

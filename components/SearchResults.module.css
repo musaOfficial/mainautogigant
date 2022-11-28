@@ -72,8 +72,8 @@
     position: relative;
     height: 25px;
     width: 100px;
-    background-color: #DFDFDF;
-    border-radius: 20px;
+    background-color: #fff;
+    border-radius: 10px;
     font-size: 13px;
     display: flex;
     padding-left: 10px;
@@ -86,10 +86,10 @@
 
 .delx{
     position: absolute;
-    top: calc(50% - 9.6px);
+    top: calc(50% - 7.6px);
     right: 3px;
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
     cursor: pointer;
 }
 
@@ -103,6 +103,7 @@
     font-weight: bold;
     margin-bottom: 10px;
     transition: all .1s ease-in;
+    
 }
 
 .werbungtext{
@@ -114,7 +115,7 @@
 .delfilters:hover{
     width: 100%;
     height: 40px;
-    background-color: rgba(251, 185, 0, 0.7);
+    background-color: #FFE497;
     border-radius: 10px;
     margin-top: 10px;
     color: #fff;
@@ -134,7 +135,7 @@
 .savesearch:hover{
     width: 100%;
     height: 40px;
-    background-color: rgba(251, 185, 0, 0.7);
+    background-color: #FFE497;
     color: #fff;
     font-weight: bold;
     border-radius: 10px;
@@ -210,11 +211,13 @@
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    font-size: 13px;
 }
 
 .selectmodel{
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 13px;
 }
 
 .varientinput{
@@ -268,6 +271,7 @@
 
 .marginbottom{
     margin-top: 10px;
+    font-size: 13px !important;
 }
 
 .halfselect{
@@ -277,14 +281,21 @@
     max-width: 100% !important;
     justify-content: space-between;
     margin-bottom: -15px;
+    font-size: 13px;
+}
+
+.smalltext{
+    font-size: 13px;
 }
 
 .mgb{
     margin-bottom: 10px;
+    font-size: 13px;
 }
 
 .locdiv{
     position: relative;
+    font-size: 13px;
 }
 
 .mylocation{
@@ -334,6 +345,7 @@
 .vonbisps{
     display: flex;
     justify-content: space-between;
+    font-size: 13px;
 }
 
 .block{
@@ -532,7 +544,7 @@
 }
 
 .colortext{
-    transform: translateY(-20px);
+    transform: translateY(-10px);
 }
 
 .farben{
@@ -542,23 +554,32 @@
 }
 
 
+
 .colortext{
     margin-right: 5px;
+}
+
+.farbencolumn{
+    height: 165px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .farbencolumn div{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .farbencolumn span {
     margin-right: 10px;
+    font-size: 13px;
 }
 
 .farbencolumn2 span{
     margin-left: 10px;
+    font-size: 13px;
 }
 
 .farbencolumn2 input{
@@ -674,19 +695,20 @@
 }
 
 .direktsuche{
-    max-width: 200px;
     padding-left: 20px !important;
     height: 40px;
-    width: 80%;
+    width: 100%;
     margin-right: 10px;
     border-radius: 10px;
+    min-width: 95%;
 }
 
 .direktsuche:focus{
     padding-left: 20px !important;
     padding-right: 0 !important;
     height: 40px;
-    width: 80%;
+    width: 95%;
+    min-width: 95%;
     margin-right: 10px;
     border-radius: 10px;
 }
@@ -696,25 +718,19 @@
     border-radius: 10px;
     color: #fff;
     font-weight: bold;
-    font-size: 16px;
-    max-width: 50%;
+    font-size: 15px;
+    width: 80px;
+    max-width: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 5px 20px;
     height: 40px;
+    transition: all .1s eain;
 }
 
-.suchenbtn{
-    background-color: #FFB900;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    max-width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.suchenbtn:hover{
+    background-color: #FFE497;
 }
 
 .searchicon{
@@ -809,7 +825,9 @@
     background-color: #F1F2F3;
     border-radius: 10px;
     padding: 20px;
+    padding-top: 0;
     height: 7350px;
+
 }
 
 .cardviewwrapper{
