@@ -660,8 +660,8 @@ function SearchResults(){
                                             />
                                     </div>
                                     <div className={`${classes.grnzcheck} ${classes.marginbottom}`} >
-                                        <input className={classes.checkboxgiga} type={"checkbox"} />
-                                        <span>Grenzübergreifend</span>
+                                        <input id='grenz' className={classes.checkboxgiga} type={"checkbox"} />
+                                        <label className={classes.colortext1} htmlFor="grenz">Grenzübergreifend</label>
                                     </div>
                                     <div className={`${classes.marginbottom}`}>
                                         <label>Kilometerstand</label>
@@ -705,38 +705,38 @@ function SearchResults(){
                                             className='mt-1 mb-1'
                                         />
                                     </div>
-                                    <div className={classes.anzahltuerencontainer}>
-                                        <label className={classes.block}>Verkäufer</label>
-                                        <div className={classes.flexverkaeuferart}>
+                                    <div className={`${classes.anzahltuerencontainer} ${classes.marginbottom}`}>
+                                        <label className={classes.block}>Anzahl Türen</label>
+                                        <div className={`${classes.flexverkaeuferart} mt-1`}>
                                         <div className={classes.verkaeuferart}>
                                                 <div className={classes.checkcenter}>
-                                                    <input type={"checkbox"} className={classes.varientinputsmaller} />
-                                                    <span>Alle</span>
+                                                    <input id='turalle' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className='!font-normal cursor-pointer' htmlFor='turalle'>Alle</label>
                                                 </div>
                                             </div>
                                             <div className={classes.verkaeuferart}>
                                                 <div className={classes.checkcenter}>
-                                                    <input type={"checkbox"} className={classes.varientinputsmaller} />
-                                                    <span>2/3</span>
+                                                    <input id='tur23' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className='!font-normal cursor-pointer' htmlFor='tur23'>2/3</label>
                                                 </div>
                                             </div>
                                             <div className={classes.verkaeuferart}>
                                                 <div className={classes.checkcenter}>
-                                                    <input type={"checkbox"} className={classes.varientinputsmaller} />
-                                                    <span>4/5</span>
+                                                    <input id='tur45' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className='!font-normal cursor-pointer' htmlFor='tur45'>4/5</label>
                                                 </div>
                                             </div>
                                             <div className={classes.verkaeuferart}>
                                                 <div className={classes.checkcenter}>
-                                                    <input type={"checkbox"} className={classes.varientinputsmaller} />
-                                                    <span>6/7</span>
+                                                    <input id='tur67' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className='!font-normal cursor-pointer' htmlFor='tur67'>6/7</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div className={classes.marginbottom}>
                                         <label>Sitzplätze</label>
-                                        <div className={classes.halfselect}>
+                                        <div className={`${classes.halfselect} mt-1`}>
                                             <Select className={classes.halfselect1} options={van1} styles={halfSelectStyle1} placeholder="Von"/>
                                             <Select className={classes.halfselect2} options={van2} styles={halfSelectStyle2} placeholder="Bis"/>
                                         </div>
@@ -746,20 +746,20 @@ function SearchResults(){
                                         <div className={classes.flexverkaeuferart}>
                                             <div className={classes.verkaeuferart}>
                                                 <div className={classes.checkcenter}>
-                                                    <input type={"checkbox"} className={classes.varientinputsmaller} />
-                                                    <span className={`${classes.spantransformation} text-sm ml-1`}>Alle</span>
+                                                    <input id='veralle' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className={`${classes.spantransformation} !font-normal text-sm ml-1 cursor-pointer`} htmlFor="veralle">Alle</label>
                                                 </div>
                                             </div>
                                             <div className={classes.verkaeuferart}>
                                                 <div className={classes.checkcenter}>
-                                                    <input type={"checkbox"} className={classes.varientinputsmaller} />
-                                                    <span className={`${classes.spantransformation} text-sm ml-1`}>Händler</span>
+                                                    <input id='verhaendler' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className={`${classes.spantransformation} !font-normal text-sm ml-1 cursor-pointer`} htmlFor="verhaendler">Händler</label>
                                                 </div>
                                             </div>
                                             <div className={classes.verkaeuferart}>
                                                 <div className={classes.checkcenter}>
-                                                    <input type={"checkbox"} className={classes.varientinputsmaller} />
-                                                    <span className={`${classes.spantransformation} text-sm ml-1`}>Privat</span>
+                                                    <input id='verprivat' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className={`${classes.spantransformation} !font-normal text-sm ml-1 cursor-pointer`} htmlFor="verprivat">Privat</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -767,24 +767,24 @@ function SearchResults(){
                                     <div className={classes.fahrzeugzustandcontainer}>
                                         <label className='font-bold'>Fahrzeugzustand</label>
                                         <div>
-                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
-                                            <span className={`text-sm ml-1`}>Alle</span>
+                                            <input id='fahalle' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
+                                            <label className={`text-sm ml-1 cursor-pointer`} htmlFor="fahalle">Alle</label>
                                         </div>
                                         <div>
-                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
-                                            <span className='text-sm ml-1'>Gebraucht</span>
+                                            <input id='fahgeb' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
+                                            <label className='text-sm ml-1 cursor-pointer' htmlFor="fahgeb">Gebraucht</label>
                                         </div>
                                         <div>
-                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
-                                            <span className='text-sm ml-1'>Jahreswagen</span>
+                                            <input id='fahjah' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
+                                            <label className='text-sm ml-1 cursor-pointer' htmlFor="fahjah">Jahreswagen</label>
                                         </div>
                                         <div>
-                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
-                                            <span className='text-sm ml-1'>Vorführwagen</span>
+                                            <input id='fahvor' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
+                                            <label className='text-sm ml-1 cursor-pointer' htmlFor="fahvor">Vorführwagen</label>
                                         </div>
                                         <div>
-                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
-                                            <span className='text-sm ml-1'>Tageszulassung</span>
+                                            <input id='fahtag' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
+                                            <label className='text-sm ml-1 cursor-pointer' htmlFor="fahtag">Tageszulassung</label>
                                         </div>
                                     </div>
                                 </div>
@@ -864,62 +864,62 @@ function SearchResults(){
                                     <div className={classes.farben}>
                                         <div className={classes.farbencolumn}>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.schwarz}`} />
-                                                <span className={classes.colortext1}>Schwarz</span>
+                                                <input id='farsch' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.schwarz}`} />
+                                                <label classlabelame={classes.colortext1} htmlFor="farsch">Schwarz</label>
                                             </div>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.beige}`} />
-                                                <span className={classes.colortext1}>Beige</span>
+                                                <input id='farbei' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.beige}`} />
+                                                <label className={classes.colortext1} htmlFor="farbei">Beige</label>
                                             </div>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.gold}`} />
-                                                <span className={classes.colortext1}>Gold</span>
+                                                <input id='fargol' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.gold}`} />
+                                                <label className={classes.colortext1} htmlFor="fargol">Gold</label>
                                             </div>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.grau}`} />
-                                                <span className={classes.colortext1}>Grau</span>
+                                                <input id='fargra' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.grau}`} />
+                                                <label className={classes.colortext1} htmlFor="fargra">Grau</label>
                                             </div>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.gelb}`} />
-                                                <span className={classes.colortext1}>Gelb</span>
+                                                <input id='fargel' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.gelb}`} />
+                                                <label className={classes.colortext1} htmlFor="fargel">Gelb</label>
                                             </div>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.rot}`} />
-                                                <span className={classes.colortext1}>Rot</span>
+                                                <input id='farrot' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.rot}`} />
+                                                <label className={classes.colortext1} htmlFor="farrot">Rot</label>
                                             </div>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.silber}`} />
-                                                <span className={classes.colortext1}>Silber</span>
+                                                <input id='farsil' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.silber}`} />
+                                                <label className={classes.colortext1} htmlFor="farsil">Silber</label>
                                             </div>
                                         </div>
                                         <div className={classes.farbencolumn2}>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.weiss}`} />
-                                                <span className={classes.colortext}>Weiss</span>
+                                                <input id='farwei' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.weiss}`} />
+                                                <label className={classes.colortext1} htmlFor="farwei">Weiss</label>
                                             </div>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.blau}`} />
-                                                <span className={classes.colortext}>Blau</span>
+                                                <input id='farbla' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.blau}`} />
+                                                <label className={classes.colortext1} htmlFor="farbla">Blau</label>
                                             </div>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.braun}`} />
-                                                <span className={classes.colortext}>Braun</span>
+                                                <input id='farbra' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.braun}`} />
+                                                <label className={classes.colortext1} htmlFor="farbra">Braun</label>
                                             </div>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.orange}`} />
-                                                <span className={classes.colortext}>Orange</span>
+                                                <input id='farora' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.orange}`} />
+                                                <label className={classes.colortext1} htmlFor="farora">Orange</label>
                                             </div>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.violett}`} />
-                                                <span className={classes.colortext}>Violett</span>
+                                                <input id='farvio' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.violett}`} />
+                                                <label className={classes.colortext1} htmlFor="farvio">Violett</label>
                                             </div>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.gruen}`} />
-                                                <span className={classes.colortext}>Grün</span>
+                                                <input id='fargru' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.gruen}`} />
+                                                <label className={classes.colortext1} htmlFor="fargru">Grün</label>
                                             </div>
                                             <div>
-                                                <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.bronze}`} />
-                                                <span className={classes.colortext}>Bronze</span>
+                                                <input id='farbro' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.bronze}`} />
+                                                <label className={classes.colortext1} htmlFor="farbro">Bronze</label>
                                             </div>
                                         </div>
                                     </div>
@@ -1001,28 +1001,28 @@ function SearchResults(){
                                 <label className={classes.materiallabel}>Material</label>
                                 <div className={classes.materialcontainer}>
                                     <div>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label className='text-sm ml-1'>Alcantara</label>
+                                        <input id='matalc' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='matalc'>Alcantara</label>
                                     </div>
                                     <div>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label className='text-sm ml-1'>Stoff</label>
+                                        <input id='matsto' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='matsto'>Stoff</label>
                                     </div>
                                     <div>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label className='text-sm ml-1'>Vollleder</label>
+                                        <input id='matvol' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='matvol'>Vollleder</label>
                                     </div>
                                     <div>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label className='text-sm ml-1'>Teilleder</label>
+                                        <input id='mattei' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='mattei'>Teilleder</label>
                                     </div>
                                     <div>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label className='text-sm ml-1'>Velours</label>
+                                        <input id='matvel' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='matvel'>Velours</label>
                                     </div>
                                     <div>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label className='text-sm ml-1'>Sonstiges</label>
+                                        <input id='matson' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='matson'>Sonstiges</label>
                                     </div>
                                 </div>
                             </div>}
@@ -1043,12 +1043,13 @@ function SearchResults(){
                             </div>
                             {openFahrzeugzustand == true && <div className={classes.basiscontainer}>
                                 <div className={classes.marginbottom}>
-                                    <label className={`${classes.fontsize13} ${classes.label}`}>Fahrzeughalter (max.)</label>
+                                    <label htmlFor='selfahrz' className={`${classes.fontsize13} ${classes.label}`}>Fahrzeughalter (max.)</label>
                                     <Select 
                                         styles={style}
                                         options={fahrz}
                                         placeholder="Nicht anzeigen"
                                         className='mt-1 mb-1'
+                                        id='selfahrz'
                                         />
                                 </div>
                                 <div className={classes.marginbottom}>
@@ -1062,20 +1063,20 @@ function SearchResults(){
                                 </div>
                                 <div className={`${classes.materialcontainer}`}>
                                     <div>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label className='ml-1 text-sm'>Nichtraucherfahrzeug</label>
+                                        <input id='matnic' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='ml-1 text-sm cursor-pointer' htmlFor='matnic'>Nichtraucherfahrzeug</label>
                                     </div>
                                     <div>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label className='ml-1 text-sm'>Garantie</label>
+                                        <input id='matgar' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='ml-1 text-sm cursor-pointer' htmlFor='matgar'>Garantie</label>
                                     </div>
                                     <div>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label className='ml-1 text-sm'>Scheckhaftgepflegt</label>
+                                        <input id='matsch' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='ml-1 text-sm cursor-pointer' htmlFor='matsch'>Scheckhaftgepflegt</label>
                                     </div>
                                     <div>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label className='ml-1 text-sm'>Herstellerzertifizerung<div className={classes.belowtext}>(Technisch geprüfte{"\n"}Fahrzeuge mit Garantie)</div></label>
+                                        <input id='mather' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='ml-1 text-sm cursor-pointer' htmlFor='mather'>Herstellerzertifizerung<div className={classes.belowtext}>(Technisch geprüfte{"\n"}Fahrzeuge mit Garantie)</div></label>
                                     </div>
                                 </div>
                             </div>}
@@ -1115,8 +1116,8 @@ function SearchResults(){
                                 </div>
                                 <div className={`${classes.materialcontainer}`}>
                                     <div>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <span className='text-sm ml-1'>Rußpartikelfilter</span>
+                                        <input id='matruss' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='!font-normal text-sm ml-1 cursor-pointer' htmlFor='matruss'>Rußpartikelfilter</label>
                                     </div>
                                 </div>
                             </div>}
@@ -1147,8 +1148,8 @@ function SearchResults(){
                                 </div>
                                 <div className={`${classes.materialcontainer} mt-2`}>
                                     <div>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <span className='text-sm ml-1'>MwST. ausweisbar</span>
+                                        <input id='matmwst' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='matmwst'>MwST. ausweisbar</label>
                                     </div>
                                 </div>
                             </div>}

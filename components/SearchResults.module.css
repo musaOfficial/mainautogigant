@@ -680,6 +680,11 @@
     margin-bottom: 0 !important;
 }
 
+.colortext1{
+    cursor: pointer;
+    font-weight: normal !important;
+}
+
 .marginbottom{
     padding-bottom: 20px;
     margin-bottom: 20px;
