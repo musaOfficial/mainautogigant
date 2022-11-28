@@ -1,7 +1,7 @@
 .container{
     width: 100%;
     min-height: 100vh;
-    background-color: #333;
+    background-color: #6C757D;
     display: flex;
     justify-content: center;
 }
@@ -47,7 +47,7 @@
 }
 
 .centeritems1{
-    margin: 0 auto;
+    margin-left: 20px;
     line-height: 18px;
 }
 
@@ -644,17 +644,26 @@
 .backarrow{
     color: #0067B8;
     transform: rotate(90deg);
+    margin-bottom: 5px;
 }
 
 .backarrowtext{
     margin-left: 10px;
     color: #0067B8;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.question{
+    margin-bottom: 5px;
 }
 
 .questiontext{
     margin-left: 10px;
     color: #0067B8;
     text-decoration: underline;
+    font-size: 15px;
+    margin-bottom: 5px;
 }
 
 .direktsuchecontainer{

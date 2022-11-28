@@ -10,7 +10,7 @@
 }
 
 .borderright{
-    border-right: 2px solid #fff ;
+    border-right: 1px solid #fff ;
     padding-right: 5px;
     padding-left: 5px;
 }
@@ -90,10 +90,6 @@
     color: #fff;
     cursor: pointer;
     transition: all .1s ease-in;
-}
-
-.sicon:hover{
-    color: #6C757D;
 }
 
 .carinfocontainer{
@@ -203,4 +199,23 @@
 .notamargin{
     margin: 0px;
     padding: 0;
+}
+
+.borderright{
+    height: 25px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6C757D;
+}
+
+.first{
+    border-radius: 0 0 0 10px;
+}
+
+.borderright:hover{
+    background-color: #FBB900;
+    overflow: hidden;
+    cursor: pointer;
 }

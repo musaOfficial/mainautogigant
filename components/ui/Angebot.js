@@ -79,7 +79,7 @@ function Angebot({
                 <Image className={styles.img} src={imgSrc} layout='fill' objectFit='cover' />
                 <div className={styles.price}>{price}</div>
                 <div className={styles.actioncontainer}>
-                    <div className={classes.borderright}>
+                    <div className={`${classes.borderright} ${classes.first}`}>
                         <Visible className={classes.sicon} />
                     </div>
                     <div className={classes.borderright}>
@@ -100,9 +100,11 @@ function Angebot({
                         <div className={styles.detaillast}>{details.leistung}</div>
                     </div>
                     <div className={styles.row}>
-                        <div className={styles.detail}>{details.kilometerstand}</div>
-                        <div className={styles.detail}>{details.getriebe}</div>
-                        <div className={styles.detaillast}>{details.fahrzeugzustand}</div>
+                        <div className={styles.detail}>{details.fahrzeugzustand}</div>
+                        <div className={styles.detaillast}>{details.getriebe}</div>
+                    </div>
+                    <div className={styles.row}>
+                        <div className={styles.detaillast}>{details.kilometerstand}</div>
                     </div>
                 </div>
                 <div className={styles.companylocation}><CompanyLocation className={classes.companyicon}/>{location}</div>
