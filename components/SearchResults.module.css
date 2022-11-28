@@ -65,6 +65,7 @@
     background-color: #F1F2F3;
     border-radius: 10px;
     padding: 20px;
+    padding-top: 10px;
     margin-bottom: 20px;
 }
 
@@ -226,7 +227,11 @@
     max-width: 100% !important;
     padding-left: 10px !important;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 10px;
+}
+
+.marginbottom label{
+    font-weight: bold;
 }
 
 .varientinputsmaller{
@@ -262,8 +267,8 @@
 }
 
 .addmodalsvg{
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
     margin-right: 10%;
 }
 
@@ -294,6 +299,10 @@
 .mgb{
     margin-bottom: 10px;
     font-size: 13px;
+}
+
+.mgb label{
+    font-weight: bold;
 }
 
 .locdiv{
@@ -354,6 +363,7 @@
 
 .block{
     display: block;
+    font-weight: bold;
 }
 
 .checkcenter{

@@ -556,7 +556,7 @@ function SearchResults(){
                                 </div>
                                 <div className={classes.selectcar}>
                                     <div>
-                                        <label>Marke</label>
+                                        <label className='font-bold'>Marke</label>
                                         <Select 
                                             options={marke1} 
                                             styles={style}
@@ -574,7 +574,7 @@ function SearchResults(){
                                         ></Select>
                                     </div>
                                     <div className={classes.selectmodel}>
-                                        <label>Modell</label>
+                                        <label className='font-bold'>Modell</label>
                                         <Select 
                                             options={marke2} 
                                             styles={style}
@@ -588,14 +588,14 @@ function SearchResults(){
                                         ></Select>
                                     </div>
                                     <div>
-                                        <p className="mb-1">Variante</p>
+                                        <p className="mb-1 font-bold">Variante</p>
                                         <input className={classes.varientinput} onChange={(e) => setVarient(e.target.value)} placeholder="z.B CLS 320, E 220, usw."/>
                                     </div>
                                     <div className={`${classes.addmodal} ${classes.marginbottom}`} onClick={addModel}>
                                         <AddCircle className={classes.addmodalsvg} /> <span className={classes.addmodaltext}>Weitere Marken/<br/>Modelle hinzufügen</span>
                                     </div>
                                     <div className={classes.marginbottom}>
-                                        <label>Karosserieform</label>
+                                        <label className='font-bold'>Karosserieform</label>
                                         <Select 
                                             options={karo} 
                                             styles={style}
@@ -609,7 +609,7 @@ function SearchResults(){
                                             
                                     </div>
                                     <div className={classes.marginbottom}>
-                                        <label>Kraftstoff</label>
+                                        <label className='font-bold'>Kraftstoff</label>
                                         <Select                                             
                                             options={van1} 
                                             styles={style}
@@ -671,7 +671,7 @@ function SearchResults(){
                                     </div>
                                     <div className={classes.flex}>
                                         <div className={classes.flex1}>
-                                            <label>Leistung</label>
+                                            <label className='font-bold'>Leistung</label>
                                             <Select
                                             options={van1} 
                                             styles={style}
@@ -764,7 +764,7 @@ function SearchResults(){
                                         </div>
                                     </div>
                                     <div className={classes.fahrzeugzustandcontainer}>
-                                        <label>Fahrzeugzustand</label>
+                                        <label className='font-bold'>Fahrzeugzustand</label>
                                         <div>
                                             <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
                                             <span className={`text-sm ml-1`}>Alle</span>
@@ -1136,7 +1136,7 @@ function SearchResults(){
                             </div>
                             {openAngebotDetails == true && <div className={classes.basiscontainer}>
                                 <div>
-                                    <label className='text-sm'>Online seit</label>
+                                    <label className='text-sm font-bold'>Online seit</label>
                                     <Select 
                                         styles={style}
                                         options={schads}
