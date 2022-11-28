@@ -4,6 +4,10 @@ import { SwiperSlide } from "swiper/react";
 import FooterCarousel from "./Carousel";
 import FooterLinks from "./FooterLinks";
 import classes from './Footer.module.css'
+import YouTubeIcon from './../../public/icons/youtube.svg';
+import InstagramIcon from './../../public/icons/instagram.svg';
+import TikTokIcon from './../../public/icons/tiktok.svg';
+import FaceBookIcon from './../../public/icons/facebook.svg';
 export default function Footer() {
 
   const links1 = [
@@ -34,7 +38,7 @@ export default function Footer() {
   const [openLanguagesBar, setOpenLanguagesBar] = useState(false);
   return (
     <footer className="md:!px-0">
-      <div className="bg-theme-gray-6">
+      <div className={`${classes.backgroundfooterlinks}`}>
         <div className="w-10/12 max-w-ag-container lg:w-full mx-auto">
           <div className="flex md:flex-col bg-theme-gray-4 p-6 pb-0">
             <div className="w-2/3 md:mb-6 md:w-full flex flex-1 md:flex-col">
@@ -173,24 +177,24 @@ export default function Footer() {
                   <span className="text-theme-yellow-2">.</span>
                 </h4>
                 <div className="flex mt-2">
-                  <button className="w-8 xl:w-8 rounded-full overflow-hidden hover:border-2 hover:border-yellow-600 brightness-150">
+                  <button className="w-8 xl:w-8 rounded-full overflow-hidden brightness-150">
                     <Link href="https://www.facebook.com/Autogigant.at">
-                      <img src="/images/icons/facebook.png" />
+                      <FaceBookIcon className={classes.footericon} />
                     </Link>
                   </button>
-                  <button className="w-8 xl:w-8 ml-3 rounded-full overflow-hidden hover:border-2 hover:border-yellow-600 brightness-150">
+                  <button className="w-8 xl:w-8 ml-3 rounded-full overflow-hidden brightness-150">
                     <Link href="https://www.instagram.com/autogigant.at/">
-                      <img src="/images/icons/instagram.png" />
+                      <InstagramIcon className={classes.footericon}/>
                     </Link>
                   </button>
-                  <button className="w-8 xl:w-8 ml-3 rounded-full overflow-hidden hover:border-2 hover:border-yellow-600  brightness-150">
+                  <button className="w-8 xl:w-8 ml-3 rounded-full overflow-hidden brightness-150">
                     <Link href="https://www.youtube.com/channel/UCvCGl8oqdgGhaGD5bDDvUYw">
-                      <img src="/images/icons/youtube.png" />
+                      <YouTubeIcon className={classes.footericon}/>
                     </Link>
                   </button>
-                  <button className="w-8 xl:w-8 ml-3 rounded-full overflow-hidden hover:border-2 hover:border-yellow-600 brightness-150">
+                  <button className="w-8 xl:w-8 ml-3 rounded-full overflow-hidden brightness-150">
                     <Link href="https://www.tiktok.com/@autogigant.at">
-                      <img src="/images/icons/tiktok.png" />
+                      <TikTokIcon className={classes.footericon}/>
                     </Link>
                   </button>
                 </div>

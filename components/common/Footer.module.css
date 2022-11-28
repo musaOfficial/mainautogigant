@@ -34,3 +34,19 @@
     font-size: 13.6px;
     color: #fff;
 }
+
+.footericon{
+    height: 30px;
+    width: 30px;
+    opacity: 100%;
+    color: #6C757D;
+    transition: all .1s ease-in;
+}
+
+.footericon:hover{
+    color: #fff;
+}
+
+.backgroundfooterlinks{
+    background-color: rgba(108, 117, 125, 0.85);
+}

@@ -37,11 +37,11 @@
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
-    box-shadow: 0 10px 40px #000;
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.514);
 }
 
 .imgbig{
-    box-shadow: 0 7px 15px #000;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.514);
     max-width: 1140px;
     z-index: 10000;
     user-select: none;
@@ -127,15 +127,25 @@
 
 .ImageSliderContainer{
     display: flex;
-    background-color: rgba(0,0,0,0.5);
     margin-top: 20px;
     border-radius: 10px;
     height: 120px;
     align-items: center;
     position: relative;
-    width: 97.5%;
+    width: 95.5%;
     justify-content: space-between;
-    background-color: #6C757D;
+}
+
+.slctainer{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 20px;
 }
 
 .zoomimg{
@@ -165,7 +175,7 @@
 .imagingboxbig{
     position: relative;
     width: 70%;
-    box-shadow: 0 10px 40px #000;
+    box-shadow: 7px 25px 20px rgb(0, 0, 0, 0.2);
     max-width: 1140px;
     z-index: 10000;
     user-select: none;

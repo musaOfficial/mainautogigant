@@ -92,6 +92,7 @@ function ImageSlider({
                     }}/>
                     <X className={classes.close} onClick={() => setZoomout(false)}/>
                 </div>
+                <div className={classes.slctainer}>
                 <div className={classes.ImageSliderContainer}>
                         <SelectSliderArrow className={classes.leftsliderarrowzoom} onClick={(e) => {
                             if(sliderState != 0){
@@ -235,8 +236,8 @@ function ImageSlider({
                         }
                     }
 
-                        
                     }/>
+                </div>
                 </div>
             </div>}
             <div className={classes.content}>

@@ -372,7 +372,7 @@
 }
 
 .sendmail:hover{
-    background-color: rgba(251, 185, 0, 0.5);
+    background-color: #FFE497;
 }
 
 .call{
@@ -386,7 +386,7 @@
 }
 
 .call:hover{
-    background-color: rgba(251, 185, 0, 0.5);
+    background-color: #FFE497;
 }
 
 .greyback{
@@ -463,7 +463,7 @@
 }
 
 .yellowbtn:hover{
-    background-color: rgba(251, 185, 0, 0.5);
+    background-color: #FFE497;
 }
 
 .contactdesc{
