@@ -197,3 +197,7 @@ input:focus ~ .icon .fa-search,
 input:not(:placeholder-shown) ~ .icon .fa-search {
   opacity: 0;
 }
+
+.fontsize13{
+  font-size: 13px;
+}

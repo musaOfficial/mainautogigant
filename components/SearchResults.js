@@ -49,7 +49,7 @@ function SearchResults(){
           ...base,
           boxShadow: "none",
           border: "none",
-          fontSize: '16px',
+          fontSize: '13px',
           borderRadius: '10px',
         }),
         option: (styles, state) => ({
@@ -916,7 +916,7 @@ function SearchResults(){
                                     <label className='text-sm font-semibold'>Lackierungsart</label>
                                     <div className={classes.colorrow}>
                                         <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.weiss}`}/>
-                                        <span>Metallic</span>
+                                        <span className={classes.fontsize13}>Metallic</span>
                                     </div>
                                 </div>
                             </div>}
@@ -1032,14 +1032,6 @@ function SearchResults(){
                                 <Expand className={openFahrzeugzustand == false ? classes.openedExpand : classes.closedExpand}/>
                             </div>
                             {openFahrzeugzustand == true && <div className={classes.basiscontainer}>
-                                <div>
-                                    <label>Unfallfahrzeug</label>
-                                    <Select 
-                                        styles={style}
-                                        options={unfall}
-                                        placeholder="Nicht anzeigen"
-                                        />
-                                </div>
                                 <div className={classes.marginbottom}>
                                     <label>Fahrzeughalter (max.)</label>
                                     <Select 
@@ -1048,22 +1040,30 @@ function SearchResults(){
                                         placeholder="Nicht anzeigen"
                                         />
                                 </div>
-                                <div className={`${classes.materialcontainer} ${classes.marginbottom}`}>
+                                <div className={classes.marginbottom}>
+                                    <label className={classes.fontsize13}>Unfallfahrzeug</label>
+                                    <Select 
+                                        styles={style}
+                                        options={unfall}
+                                        placeholder="Nicht anzeigen"
+                                        />
+                                </div>
+                                <div className={`${classes.materialcontainer}`}>
                                     <div>
                                         <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label>Nichtraucherfahrzeug</label>
+                                        <label className='ml-1 text-sm'>Nichtraucherfahrzeug</label>
                                     </div>
                                     <div>
                                         <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label>Garantie</label>
+                                        <label className='ml-1 text-sm'>Garantie</label>
                                     </div>
                                     <div>
                                         <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label>Scheckhaftgepflegt</label>
+                                        <label className='ml-1 text-sm'>Scheckhaftgepflegt</label>
                                     </div>
                                     <div>
                                         <input type={"checkbox"} className={classes.varientinputsmaller}/>
-                                        <label>Herstellerzertifizerung<div className={classes.belowtext}>(Technisch geprüfte{"\n"}Fahrzeuge mit Garantie)</div></label>
+                                        <label className='ml-1 text-sm'>Herstellerzertifizerung<div className={classes.belowtext}>(Technisch geprüfte{"\n"}Fahrzeuge mit Garantie)</div></label>
                                     </div>
                                 </div>
                             </div>}
@@ -1083,23 +1083,23 @@ function SearchResults(){
                                 <Expand className={openUmwelt == false ? classes.openedExpand : classes.closedExpand}/>
                             </div>
                             {openUmwelt == true && <div className={classes.basiscontainer}>
-                                <div>
-                                    <label>Schadstoffklasse (mind.)</label>
+                                <div className={classes.marginbottom}>
+                                    <label className='text-sm'>Schadstoffklasse (mind.)</label>
                                     <Select 
                                         styles={style}
                                         options={schads}
                                         placeholder="Alle"
                                         />
                                 </div>
-                                <div>
-                                    <label>Feinstaubplakette (mind.)</label>
+                                <div className={classes.marginbottom}>
+                                    <label className='text-sm'>Feinstaubplakette (mind.)</label>
                                     <Select 
                                         styles={style}
                                         options={fahrz}
                                         placeholder="Alle"
                                         />
                                 </div>
-                                <div className={`${classes.materialcontainer} ${classes.marginbottom}`}>
+                                <div className={`${classes.materialcontainer}`}>
                                     <div>
                                         <input type={"checkbox"} className={classes.varientinputsmaller}/>
                                         <span>Rußpartikelfilter</span>

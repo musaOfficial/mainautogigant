@@ -10,7 +10,7 @@ export default function CheckBoxItem({ title, wAuto, marginBottom, sublabel }) {
       />
       <div className={`${sublabel ? 'flex flex-col' : ''}`}>
         <label htmlFor={title}>{title}</label>
-        {sublabel && <span className="inline-block leading-3 text-10">
+        {sublabel && <span className={`inline-block leading-3 fontsize13`}>
           (Technisch geprüfte Fahrzeuge mit Garantie)
         </span>}
       </div>

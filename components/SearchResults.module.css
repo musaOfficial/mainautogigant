@@ -168,7 +168,7 @@
     cursor: pointer;
     padding-top: 20px;
     padding-bottom: 20px;
-    
+    border-bottom: 1px solid rgba(108, 117, 125, 0.5);
 }
 
 .sectioncontainerclosed{
@@ -176,7 +176,7 @@
     cursor: pointer;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #DFDFDF;
+    border-bottom: 1px solid rgba(108, 117, 125, 0.5);
 }
 
 .headingcontainer{
@@ -559,8 +559,8 @@
     justify-content: space-between;
     align-items: flex-end;
     border-bottom: 1px solid #fff;
-    padding-bottom: 5px;
-    margin-bottom: 2px;
+    padding-bottom: 20px;
+    margin-bottom: 17px;
 }
 
 
@@ -616,6 +616,9 @@
     display: flex;
     justify-content: space-between;
     font-size: 13px;
+    padding-bottom: 20px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid #fff;
 }
 
 .polsterfarben div div input{
@@ -634,7 +637,13 @@
 
 .belowtext{
     display: block;
-    font-size: 10px;
+    font-size: 13px;
+}
+
+.marginbottom{
+    padding-bottom: 20px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid #fff;
 }
 
 .sectioncontainerclosed2{
