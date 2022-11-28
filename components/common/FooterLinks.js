@@ -10,7 +10,7 @@ export default function FooterLinks({ title, links }) {
   }, []);
 
   return (
-    <div className="w-full bg-white md:bg-transparent rounded-t-20 p-6 text-13 text-theme-gray-600 duration-100 hover:text-color-yellow-600 md:px-0 md:py-2">
+    <div className="w-full bg-white md:bg-transparent rounded-t-10 p-6 text-13 text-theme-gray-600 duration-100 hover:text-color-yellow-600 md:px-0 md:py-2">
       <div
         className={`md:flex justify-between items-center md:border-b border-theme-gray-2 ${
           active ? "" : "pb-3"
