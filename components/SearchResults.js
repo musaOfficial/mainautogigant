@@ -605,7 +605,7 @@ function SearchResults(){
                                             }}
                                             value={inputKarosserieformChanged == false ? brandName : marke1[0].label}
                                             placeholder={"Alle"}
-                                            className="mt-1"/>
+                                            className="mt-1 mb-1"/>
                                             
                                     </div>
                                     <div className={classes.marginbottom}>
@@ -619,7 +619,7 @@ function SearchResults(){
                                             }}
                                             value={inputKraftstoffChanged == false ? brandName : marke1[0].label}
                                             placeholder={"Alle"}
-                                            className="mt-1"/>
+                                            className="mt-1 mb-1"/>
                                     </div>
                                     <div className={classes.marginbottom}>
                                         <label className={classes.smalltext}>Erstzulassung</label>
@@ -627,6 +627,7 @@ function SearchResults(){
                                            <Select className={classes.halfselect1} options={van1} styles={halfSelectStyle1} placeholder="Von" />
                                            <Select className={classes.halfselect2} options={van2} styles={halfSelectStyle2} placeholder="Bis"/>
                                         </div>
+                                        <div className={classes.marginbottom}></div>
                                         <label>Preis</label>
                                         <div className={`${classes.halfselect} mt-1`}>
                                             <Select className={classes.halfselect1} options={van1} styles={halfSelectStyle1} placeholder="Von"/>
@@ -658,7 +659,7 @@ function SearchResults(){
                                             className='mt-1'
                                             />
                                     </div>
-                                    <div className={classes.grnzcheck} >
+                                    <div className={`${classes.grnzcheck} ${classes.marginbottom}`} >
                                         <input className={classes.checkboxgiga} type={"checkbox"} />
                                         <span>Grenzübergreifend</span>
                                     </div>
@@ -669,7 +670,7 @@ function SearchResults(){
                                             <Select className={classes.halfselect2} options={van2} styles={halfSelectStyle2} placeholder="Bis"/>
                                         </div>
                                     </div>
-                                    <div className={classes.flex}>
+                                    <div className={`${classes.flex} ${classes.marginbottom}`}>
                                         <div className={classes.flex1}>
                                             <label className='font-bold'>Leistung</label>
                                             <Select
@@ -681,7 +682,7 @@ function SearchResults(){
                                             }}
                                             value={inputKraftstoffChanged == false ? brandName : marke1[0].label}
                                             placeholder={"Alle"}
-                                            className="mt-1"
+                                            className="mt-1 mb-1"
                                             />
                                         </div>
                                         <div className={`${classes.vonbisps}`}>
@@ -701,7 +702,7 @@ function SearchResults(){
                                             styles={style}
                                             options={getri}
                                             placeholder="Getriebe"
-                                            className='mt-1'
+                                            className='mt-1 mb-1'
                                         />
                                     </div>
                                     <div className={classes.anzahltuerencontainer}>
@@ -1047,7 +1048,7 @@ function SearchResults(){
                                         styles={style}
                                         options={fahrz}
                                         placeholder="Nicht anzeigen"
-                                        className='mt-1'
+                                        className='mt-1 mb-1'
                                         />
                                 </div>
                                 <div className={classes.marginbottom}>
@@ -1056,7 +1057,7 @@ function SearchResults(){
                                         styles={style}
                                         options={unfall}
                                         placeholder="Nicht anzeigen"
-                                        className='mt-1'
+                                        className='mt-1 mb-1'
                                         />
                                 </div>
                                 <div className={`${classes.materialcontainer}`}>
@@ -1100,7 +1101,7 @@ function SearchResults(){
                                         styles={style}
                                         options={schads}
                                         placeholder="Alle"
-                                        className='mt-1'
+                                        className='mt-1 mb-1'
                                         />
                                 </div>
                                 <div className={classes.marginbottom}>
@@ -1109,7 +1110,7 @@ function SearchResults(){
                                         styles={style}
                                         options={fahrz}
                                         placeholder="Alle"
-                                        className='mt-1'
+                                        className='mt-1 mb-1'
                                         />
                                 </div>
                                 <div className={`${classes.materialcontainer}`}>
@@ -1141,7 +1142,7 @@ function SearchResults(){
                                         styles={style}
                                         options={schads}
                                         placeholder="Alle"
-                                        className='mt-1'
+                                        className='mt-1 mb-1'
                                         />
                                 </div>
                                 <div className={`${classes.materialcontainer} mt-2`}>
