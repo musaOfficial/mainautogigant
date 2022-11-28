@@ -850,7 +850,7 @@ function SearchResults(){
                             </div>
                             {openFarbe == true && <div className={classes.basiscontainer}>
                                 <div>
-                                    <label className='text-sm font-semibold'>Außenfarbe</label>
+                                    <label className={`${classes.fontsize13} font-semibold`}>Außenfarbe</label>
                                     <div className={classes.farben}>
                                         <div className={classes.farbencolumn}>
                                             <div>

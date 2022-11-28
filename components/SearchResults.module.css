@@ -235,8 +235,11 @@
     max-width: 15px !important;
     padding-left: 10px !important;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 3px;
     margin-right: 4px !important;
+    outline: none !important;
+    border: none !important;
+    border: 1px solid #fff !important;
 }
 
 .varientinput:focus{
@@ -456,11 +459,11 @@
 }
 
 .silber:checked{
-    border: solid #000 !important;
+    border: 1px solid #000 !important;
 }
 
 .weiss:checked{
-    border: solid #000 !important;
+    border: 1px solid #000 !important;
 }
 
 .grau{
@@ -471,6 +474,10 @@
     color: #BCBCBC !important;
     cursor: pointer;
     outline: 1px solid #CCCCCC;
+}
+
+.fontsize13{
+    font-size: 13px;
 }
 
 .weiss{
@@ -551,6 +558,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 
@@ -566,20 +576,30 @@
     justify-content: space-between;
 }
 
+.farbencolumn2{
+    height: 165px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .farbencolumn div{
     width: 100%;
     display: flex;
     align-items: center;
 }
 
+.farbencolumn span{
+    transform: translateX(5px);
+}
+
 .farbencolumn span {
-    margin-right: 10px;
     font-size: 13px;
 }
 
 .farbencolumn2 span{
-    margin-left: 10px;
     font-size: 13px;
+    margin-left: 5px;
 }
 
 .farbencolumn2 input{
