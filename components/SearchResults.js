@@ -497,6 +497,8 @@ function SearchResults(){
         },
     ]
 
+    const [gigaInfoOpen, setGigaInfoOpen] = useState(false);
+
     const [gridView, setGridView] = useState(true);
     return (
         <div className={classes.container}>
@@ -550,9 +552,15 @@ function SearchResults(){
                             </div>
                             {openBasisdaten == true && <div className={classes.basiscontainer}>
                                 <div className={`${classes.inputrowgiga} ${classes.marginbottom}`}>
-                                    <input className={classes.checkboxgiga} type={"checkbox"} />
-                                    <img className={classes.gigadraftimg} src={"/images/draft-card-giga-logo.png"} />
-                                    <img src={"/images/info.svg"} />
+                                    <input id='gigacheckbox' className={classes.checkboxgiga} type={"checkbox"} />
+                                    <label className='cursor-pointer' htmlFor='gigacheckbox'>
+                                     <img className={classes.gigadraftimg} src={"/images/draft-card-giga-logo.png"} />
+                                    </label>
+                                    <img src={"/images/info.svg"} onMouseOver={() => setGigaInfoOpen(true)} onMouseLeave={() => setGigaInfoOpen(false)} />
+                                    {gigaInfoOpen == true && <div className={classes.gigaexplanation}>
+                                        <div className={classes.triangle}></div>
+                                        Lorem ipsum dolor sit Amet, InsecteturLorem
+                                    </div>}
                                 </div>
                                 <div className={classes.selectcar}>
                                     <div>
@@ -741,7 +749,7 @@ function SearchResults(){
                                             <Select className={classes.halfselect2} options={van2} styles={halfSelectStyle2} placeholder="Bis"/>
                                         </div>
                                     </div>
-                                    <div className={`${classes.mgb}`}>
+                                    <div className={`${classes.mgb} ${classes.marginbottom}`}>
                                         <label className={classes.block}>Verkäufer</label>
                                         <div className={classes.flexverkaeuferart}>
                                             <div className={classes.verkaeuferart}>
@@ -764,7 +772,7 @@ function SearchResults(){
                                             </div>
                                         </div>
                                     </div>
-                                    <div className={classes.fahrzeugzustandcontainer}>
+                                    <div className={`${classes.fahrzeugzustandcontainer}`}>
                                         <label className='font-bold'>Fahrzeugzustand</label>
                                         <div>
                                             <input id='fahalle' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>

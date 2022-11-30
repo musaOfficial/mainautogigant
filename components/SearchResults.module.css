@@ -202,6 +202,7 @@
 .inputrowgiga{
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .gigadraftimg{
@@ -633,6 +634,31 @@
 
 .polsterfarben div div input{
     transform: translateY(3px);
+}
+
+.gigaexplanation{
+    position: absolute;
+    background-color: white;
+    width: 200px;
+    height: 70px;
+    right: -100px;
+    top: -80px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.triangle{
+    width: 20px;
+    height: 20px;
+    z-index: 50;
+    background-color: #fff;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    position: absolute;
+    left: 10px;
+    bottom: -6px;
 }
 
 .materiallabel{
