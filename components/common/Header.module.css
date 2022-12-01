@@ -234,13 +234,16 @@
     }
 }
 
+.header{
+    z-index: 100000000;
+}
+
 .headerbtn{
     box-shadow: 7px 25px 20px rgb(0, 0, 0, 0.2);
 }
 
 .widthauto{
-    z-index: 1000000000000000000000000;
-
+    z-index: 10000;
 }
 
 .headericon{

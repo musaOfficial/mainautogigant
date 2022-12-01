@@ -7,6 +7,7 @@
     margin-left: -20px;
     margin-right: -20px;
     margin-bottom: -20px;
+    margin-top: -20px;
     transition: all .1s ease-in;
 }
 
@@ -235,4 +236,81 @@
     background-color: #FBB900;
     overflow: hidden;
     cursor: pointer;
+}
+
+.svgcontainer{
+    position: absolute;
+    background-color: #fff;
+    color: #0067B8;
+    width: 150px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -20px;
+}
+
+
+.favoritesvgcontainer{
+    position: absolute;
+    width: 170px; 
+    background-color: #fff;
+    color: #0067B8;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    top: 24px;
+    
+}
+
+.sharesvgcontainer{
+    position: absolute;
+    width: 155px;
+    background-color: #fff;
+    color: #0067B8;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    bottom: -140px;
+    padding: 10px 0;
+}
+
+.instaicon{
+    color: #6C757D;
+}
+
+.triangle1{
+    width: 20px; 
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: #fff;
+    position: absolute;
+    top: -10px;
+}
+
+.triangle2{
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: #fff;
+    position: absolute;
+    top: 34px;
+}
+
+.triangle3{
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: #fff;
+    position: absolute;
+    bottom: -10px;
+}
+
+.borderbottom{
+    border-bottom: 1px solid rgba(108, 117, 125, 0.2);
 }

@@ -42,6 +42,7 @@ import {
     schads,
   } from "./search/selectOptions";
 import Angebot from './ui/Angebot';
+import PageSearch from './pagesearch/PageSearch';
 
 function SearchResults(){
     const style = {
@@ -1187,8 +1188,8 @@ function SearchResults(){
                             </div>
                         </div>
                     </div>
-                    <div className={classes.c2r2}>
-                            {gridView == true ? <div className={classes.carlistcontainer}>
+                    <div className={`${classes.c2r2}`}>
+                            {gridView == true ? <div className={`${classes.carlistcontainer}`}>
                                 {angebote.map((item, index) => <Angebot
                                     key={index}
                                     title={item.title}
@@ -1240,6 +1241,9 @@ function SearchResults(){
                                     />)}
                                 </span>
                             </div>}
+                    </div>
+                    <div className={classes.c2r3}>
+                        <PageSearch totalAds={200} />
                     </div>
                 </div>
         </div>

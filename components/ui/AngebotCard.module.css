@@ -142,3 +142,82 @@
 .borderright:hover{
     background-color: #0067B8;
 }
+
+.svgcontainer{
+    width: 145px;
+    background-color: #fff;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    top: 25px;
+    z-index: 10000;
+    color: #0067B8;
+    cursor: pointer;
+}
+
+.svgcontainer:hover{
+    font-weight: bold;
+}
+
+.triangle1{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: rotate(45deg);
+    background-color: #fff;
+    bottom: -20px;
+}
+
+.favoritesvgcontainer{
+    width: 160px;
+    background-color: #fff;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    top: 25px;
+    z-index: 1000;
+    color: #0067B8;
+    cursor: pointer;
+    left: -60px;
+}
+
+.triangle2{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: rotate(45deg);
+    background-color: #fff;
+    bottom: -20px;
+}
+
+.favoritesvgcontainer:hover{
+    font-weight: bold;
+}
+
+.sharesvgcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #fff; 
+    width: 170px;
+    border-radius: 10px;
+    right: 0;
+    top: 25px;
+    z-index: 1000;
+    color: #0067B8;
+}
+
+
+.triangle3{
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    position: absolute;
+    background-color: #fff;
+    top: 25px;
+}
