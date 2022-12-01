@@ -1,3 +1,9 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .pagecounter{
     display: flex;
     flex-direction: row;
@@ -30,4 +36,16 @@
 .selected{
     background-color: #F1F2F3;
     border: 1px solid #6C757D;
+}
+
+.shownadsperpage{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    z-index: 10000;
+}
+
+.shownadsperpage span{
+    margin-right: 10px;
+    font-size: 13px;
 }

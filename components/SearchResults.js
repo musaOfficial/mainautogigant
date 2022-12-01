@@ -1243,7 +1243,7 @@ function SearchResults(){
                             </div>}
                     </div>
                     <div className={classes.c2r3}>
-                        <PageSearch totalAds={200} />
+                        <PageSearch totalAds={5000} />
                     </div>
                 </div>
         </div>
