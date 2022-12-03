@@ -49,185 +49,450 @@ function PageSearch({
     return (
         <div className={classes.container}>
             <div className={classes.pagecounter}>
-                <p className={classes.back}>Zurück</p>
-                <button onClick={
-                    () => {
-                        setCurrentEl(1);
-                        setValue(1);
-                        if(currentEl <= 5){
-                            setBtn1(true)
-                            setBtn2(false)
-                            setBtn3(false)
-                            setBtn4(false)
-                            setBtn5(false)
-                            setBtn6(false)
-                            setBtn7(false)
-                            setBtn8(false)
-                            setBtn9(false)
-                            setBtn10(false)
-                        }
-                    }} className={btn1 == true && classes.selected}>
+                <button className={classes.back} onClick={() => {
+                    setBtn1(false);
+                    setBtn2(false);
+                    setBtn3(false);
+                    setBtn4(false);
+                    setBtn5(false);
+                    setBtn6(false);
+                    setBtn7(false);
+                    setBtn8(false);
+                    setBtn9(false);
+                    setBtn10(false);
+                    if(currentEl != 1){
+                        setCurrentEl(d => d - 1)
+                    }
+                    if(currentEl == 1){
+                        setBtn1(true);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                    if(currentEl == 2){
+                        setBtn1(false);
+                        setBtn2(true);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                    if(currentEl == 3){
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(true);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                    if(currentEl == 4){
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(true);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                    if(currentEl == 6){
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(true);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                }} >Zurück</button>
+                <button onClick={() => {
+                    setCurrentEl(1);
+                    setBtn1(false);
+                    setBtn2(false);
+                    setBtn3(false);
+                    setBtn4(false);
+                    setBtn5(false);
+                    setBtn6(false);
+                    setBtn7(false);
+                    setBtn8(false);
+                    setBtn9(false);
+                    setBtn10(false);
+                    if(currentEl < 6){
+                        setBtn1(true);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                }} className={btn1 == true && classes.selected} >
                     1
                 </button>
                 <button onClick={() => {
-                        currentEl <= 5 ? setCurrentEl(2) : null;
-                        setValue(2);
-                        if(currentEl <= 5){
-                            setBtn1(false)
-                            setBtn2(true)
-                            setBtn3(false)
-                            setBtn4(false)
-                            setBtn5(false)
-                            setBtn6(false)
-                            setBtn7(false)
-                            setBtn8(false)
-                            setBtn9(false)
-                            setBtn10(false)
-                        } else{
-                            setBtn1(false)
-                            setBtn2(false)
-                            setBtn3(false)
-                            setBtn4(false)
-                            setBtn5(false)
-                            setBtn6(false)
-                            setBtn7(false)
-                            setBtn8(false)
-                            setBtn9(false)
-                            setBtn10(false)
-                        }
-                    }} className={currentEl <= 5 && btn2 == true && classes.selected}>
-                    {currentEl <= 5 ? 2 : "..."}
-                </button>
-                <button onClick={() => {
-                        currentEl <= 5 ? setCurrentEl(3) : setCurrentEl(currentEl - 3);
-                        setValue(currentEl - 3);
-                        if(currentEl <= 5){
-                            setBtn1(false)
-                            setBtn2(false)
-                            setBtn3(true)
-                            setBtn4(false)
-                            setBtn5(false)
-                            setBtn6(false)
-                            setBtn7(false)
-                            setBtn8(false)
-                            setBtn9(false)
-                            setBtn10(false)
-                        } else{
-                            setBtn1(false)
-                            setBtn2(false)
-                            setBtn3(false)
-                            setBtn4(false)
-                            setBtn5(false)
-                            setBtn6(false)
-                            setBtn7(false)
-                            setBtn8(false)
-                            setBtn9(false)
-                            setBtn10(false)
-                        }
-                    }} className={btn3 == true && classes.selected}>
-                    {currentEl <= 5 ? 3 : currentEl - 3}
-                </button>
-                <button onClick={() => {
-                        currentEl <= 5 ? setCurrentEl(4) : setCurrentEl(currentEl - 2);
-                        setValue(currentEl - 2);
-                        if(currentEl <= 5){
-                            setBtn1(false)
-                            setBtn2(false)
-                            setBtn3(false)
-                            setBtn4(true)
-                            setBtn5(false)
-                            setBtn6(false)
-                            setBtn7(false)
-                            setBtn8(false)
-                            setBtn9(false)
-                            setBtn10(false)
-                        }
-                    }} className={btn4 == true && classes.selected}>
-                    {currentEl <= 5 ? 4 : currentEl - 2}
-                </button>
-                <button onClick={() => {
-                        currentEl <= 5 ? setCurrentEl(5) : setCurrentEl(currentEl - 1);
-                        setValue(currentEl - 1);
-                        if(currentEl <= 5){
-                            setBtn1(false)
-                            setBtn2(false)
-                            setBtn3(false)
-                            setBtn4(false)
-                            setBtn5(true)
-                            setBtn6(false)
-                            setBtn7(false)
-                            setBtn8(false)
-                            setBtn9(false)
-                            setBtn10(false)
-                        }
-                    }} className={btn5 == true && classes.selected}>
-                    {currentEl <= 5 ? 5 : currentEl - 1}
-                </button>
-                <button onClick={() => {
-                        currentEl <= 5 ? setCurrentEl(6) : setCurrentEl(currentEl);
-                        setValue(currentEl);
-                        if(currentEl <= 5){
-                            setBtn1(false)
-                            setBtn2(false)
-                            setBtn3(false)
-                            setBtn4(false)
-                            setBtn5(false)
-                            setBtn6(true)
-                            setBtn7(false)
-                            setBtn8(false)
-                            setBtn9(false)
-                            setBtn10(false)
-                        }
-
-                    }} className={currentEl > 5 && currentEl < amountPages - 4 && classes.selected} >
-                    {currentEl <= 5 ? 6 : currentEl}
-
-                </button>
-                <button onClick={() => {
-                        if(currentEl < amountPages - 4){
-                            currentEl >= amountPages - 4 ? setCurrentEl(amountPages - 4) : setCurrentEl(currentEl + 1);
-                        }
-                        setValue(currentEl + 1);
-                        if(currentEl >= amountPages - 4){
-                            setBtn1(false)
-                            setBtn2(false)
-                            setBtn3(false)
-                            setBtn4(false)
-                            setBtn5(false)
-                            setBtn6(false)
-                            setBtn7(true)
-                            setBtn8(false)
-                            setBtn9(false)
-                            setBtn10(false)
-                        }
-                    }} className={currentEl >= amountPages - 4 && classes.selected} >
-                    {currentEl >= amountPages - 4 ? amountPages - 1 : currentEl + 1}
-                </button>
-                <button onClick={() => {
-                    if(currentEl < amountPages - 4){
-                        currentEl >= amountPages - 4 ? setCurrentEl(amountPages - 4) : setCurrentEl(currentEl + 2);
+                    if(currentEl <= 6){
+                        setCurrentEl(2);
                     }
-                    setValue(currentEl + 2);
-                    }}>
-                    {currentEl >= amountPages - 4 ? amountPages - 2 : currentEl + 2}
+                    setBtn1(false);
+                    setBtn2(false);
+                    setBtn3(false);
+                    setBtn4(false);
+                    setBtn5(false);
+                    setBtn6(false);
+                    setBtn7(false);
+                    setBtn8(false);
+                    setBtn9(false);
+                    setBtn10(false);
+                    if(currentEl < 6){
+                        setBtn1(false);
+                        setBtn2(true);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                }} className={btn2 == true && classes.selected} >
+                    {currentEl <= 6 ? 2 : "..."}
                 </button>
                 <button onClick={() => {
-                        if(currentEl < amountPages - 4){
-                            currentEl >= amountPages - 4 ? setCurrentEl(9) : setCurrentEl(currentEl + 3);
-                        }
-                        setValue(currentEl + 3)
-                    }} >
-                    {currentEl >= amountPages - 4 ? amountPages - 3 : currentEl + 3}
+                    currentEl <= 6 ? setCurrentEl(3) : setCurrentEl(currentEl - 3);
+                    currentEl > amountPages - 4 ? setCurrentEl(amountPages - 7) : setCurrentEl(currentEl - 3);
+                    setBtn1(false);
+                    setBtn2(false);
+                    setBtn3(false);
+                    setBtn4(false);
+                    setBtn5(false);
+                    setBtn6(false);
+                    setBtn7(false);
+                    setBtn8(false);
+                    setBtn9(false);
+                    setBtn10(false);
+                    if(currentEl < 6){
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(true);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                }} className={btn3 == true && classes.selected}>
+                    {currentEl <= 6 ? 3 : currentEl < amountPages - 4 ? currentEl - 3 : amountPages - 7}
                 </button>
                 <button onClick={() => {
-                        if(currentEl < amountPages - 4){
-                            currentEl <= 5 ? setCurrentEl(10) : setCurrentEl(currentEl + 4)
-                        }
-                        setValue(currentEl + 4)
-                    }}>
-                    {currentEl >= amountPages - 4 ? amountPages - 4 : currentEl + 4}
+                    currentEl <= 6 ? setCurrentEl(4) : setCurrentEl(currentEl - 2);
+                    currentEl > amountPages - 4 ? setCurrentEl(amountPages - 6) : setCurrentEl(currentEl - 2);
+                    setBtn1(false);
+                    setBtn2(false);
+                    setBtn3(false);
+                    setBtn4(false);
+                    setBtn5(false);
+                    setBtn6(false);
+                    setBtn7(false);
+                    setBtn8(false);
+                    setBtn9(false);
+                    setBtn10(false);
+                    if(currentEl < 6){
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(true);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                }} className={btn4 == true && classes.selected} >
+                    {currentEl <= 6 ? 4 : currentEl < amountPages - 4 ? currentEl - 2 : amountPages - 6}
                 </button>
-                <p className={classes.forward}>Weiter</p>
+                <button onClick={() => {
+                    currentEl <= 6 ? setCurrentEl(5) : setCurrentEl(currentEl - 1);
+                    currentEl > amountPages - 4 ? setCurrentEl(amountPages - 5) : setCurrentEl(currentEl - 1);
+                    setBtn1(false);
+                    setBtn2(false);
+                    setBtn3(false);
+                    setBtn4(false);
+                    setBtn5(false);
+                    setBtn6(false);
+                    setBtn7(false);
+                    setBtn8(false);
+                    setBtn9(false);
+                    setBtn10(false);
+                    if(currentEl < 6){
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(true);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                }} className={btn5 == true && classes.selected} >
+                    {currentEl <= 6 ? 5 : currentEl < amountPages - 4 ? currentEl - 1 : amountPages - 5}
+                </button>
+                <button onClick={() => {
+                    if(currentEl <= 6){
+                        setCurrentEl(6);
+                    }
+                    setBtn1(false);
+                    setBtn2(false);
+                    setBtn3(false);
+                    setBtn4(false);
+                    setBtn5(false);
+                    setBtn6(false);
+                    setBtn7(false);
+                    setBtn8(false);
+                    setBtn9(false);
+                    setBtn10(false);
+                    if(currentEl >= amountPages - 4){
+                        setCurrentEl(amountPages - 4)
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                }} className={currentEl >= 6 && currentEl <= amountPages - 4  && classes.selected} >
+                    {currentEl > 6 ? currentEl < amountPages - 4 ? currentEl : amountPages - 4 : 6}
+                </button>
+                <button onClick={() => {
+                    setCurrentEl(currentEl + 1)
+                    setBtn1(false);
+                    setBtn2(false);
+                    setBtn3(false);
+                    setBtn4(false);
+                    setBtn5(false);
+                    setBtn6(false);
+                    setBtn7(false);
+                    setBtn8(false);
+                    setBtn9(false);
+                    setBtn10(false);
+                    if(currentEl <= 6){
+                        setCurrentEl(7)
+                    }
+                    if(currentEl >= amountPages - 4){
+                        setCurrentEl(amountPages - 3)
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(true);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                }} className={btn7 == true && classes.selected} >
+                    {currentEl > 6 ? currentEl < amountPages - 4 ? currentEl + 1 : amountPages - 3 : 7}
+                </button>
+                <button onClick={() => {
+                    setCurrentEl(currentEl + 2)
+                    setBtn1(false);
+                    setBtn2(false);
+                    setBtn3(false);
+                    setBtn4(false);
+                    setBtn5(false);
+                    setBtn6(false);
+                    setBtn7(false);
+                    setBtn8(false);
+                    setBtn9(false);
+                    setBtn10(false);
+                    if(currentEl <= 6){
+                        setCurrentEl(8)
+                    }
+                    if(currentEl >= amountPages - 4){
+                        setCurrentEl(amountPages - 2)
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(true);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                }} className={btn8 == true && classes.selected} >
+                    {currentEl > 6 ? currentEl < amountPages - 4 ? currentEl + 2 : amountPages - 2 : 8}
+                </button>
+                <button onClick={() => {
+                    setCurrentEl(currentEl + 3)
+                    setBtn1(false);
+                    setBtn2(false);
+                    setBtn3(false);
+                    setBtn4(false);
+                    setBtn5(false);
+                    setBtn6(false);
+                    setBtn7(false);
+                    setBtn8(false);
+                    setBtn9(false);
+                    setBtn10(false);
+                    if(currentEl <= 6){
+                        setCurrentEl(9);
+                    }
+                    if(currentEl >= amountPages - 4){
+                        setCurrentEl(amountPages - 1)
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(true);
+                        setBtn10(false);
+                    }
+                }} className={btn9 == true && classes.selected} >
+                    {currentEl > 6 ? currentEl < amountPages - 4 ? currentEl + 3 : amountPages - 1 : 9}
+                </button>
+                <button onClick={() => {
+                    setCurrentEl(currentEl + 4)
+                    setBtn1(false);
+                    setBtn2(false);
+                    setBtn3(false);
+                    setBtn4(false);
+                    setBtn5(false);
+                    setBtn6(false);
+                    setBtn7(false);
+                    setBtn8(false);
+                    setBtn9(false);
+                    setBtn10(false);
+                    if(currentEl <= 6){
+                        setCurrentEl(10)
+                    }
+                    if(currentEl >= amountPages - 4){
+                        setCurrentEl(amountPages)
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(true);
+                    }
+                }} className={btn10 == true && classes.selected} >
+                    {currentEl > 6 ? currentEl < amountPages - 4 ? currentEl + 4 : amountPages  : 10}
+                </button>
+                <button className={classes.forward} onClick={() => {
+                    setBtn1(false);
+                    setBtn2(false);
+                    setBtn3(false);
+                    setBtn4(false);
+                    setBtn5(false);
+                    setBtn6(false);
+                    setBtn7(false);
+                    setBtn8(false);
+                    setBtn9(false);
+                    setBtn10(false);
+                    if(currentEl != amountPages){
+                        setCurrentEl(d => d + 1)
+                    }
+                    if(currentEl == amountPages - 4){
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(true);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                    if(currentEl == amountPages - 3){
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(true);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                    if(currentEl == amountPages - 2){
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(true);
+                        setBtn9(false);
+                        setBtn10(false);
+                    }
+                    if(currentEl == amountPages - 1){
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(true);
+                        setBtn10(false);
+                    }
+                    if(currentEl == amountPages){
+                        setBtn1(false);
+                        setBtn2(false);
+                        setBtn3(false);
+                        setBtn4(false);
+                        setBtn5(false);
+                        setBtn6(false);
+                        setBtn7(false);
+                        setBtn8(false);
+                        setBtn9(false);
+                        setBtn10(true);
+                    }
+                }} >Weiter</button>
             </div>
             <div className={classes.shownadsperpage}>
                 <span>Anzeigen pro Seite</span>

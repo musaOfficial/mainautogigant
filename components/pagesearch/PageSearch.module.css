@@ -13,6 +13,7 @@
 
 .back{
     margin-right: 10px;
+    width: 60px !important;
 }
 
 .pagecounter button{
@@ -31,6 +32,7 @@
 
 .forward{
     margin-left: 5px;
+    width: 60px !important;
 }
 
 .selected{
