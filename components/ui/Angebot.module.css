@@ -183,6 +183,11 @@
     justify-content: center;
     align-items: center;
     height: 20px;
+    transition: all .1s ease-in;
+}
+
+.left:hover{
+    text-decoration: underline;
 }
 
 .firstdetail{
@@ -195,6 +200,10 @@
     justify-content: center;
     align-items: center;
     height: 20px;
+}
+
+.right:hover{
+    text-decoration: underline;
 }
 
 .companyicon{
