@@ -1,0 +1,609 @@
+#back-img {
+  position: relative;
+  width: 320px;
+  height: 100px;
+  background-image: url(https://autogigant.at/ads/egigant/320x100.png);
+  overflow: hidden;
+}
+.parent-div {
+  overflow: hidden;
+}
+#landing-page-url {
+  position: absolute;
+  z-index: 1;
+  width: 320px;
+  height: 100px;
+}
+.logo {
+  display: none;
+}
+.mascot {
+  display: none;
+}
+.button {
+  display: none;
+}
+.heading {
+  display: none;
+}
+.heading-2 {
+  display: none;
+}
+.logo.start {
+  display: inline;
+  position: absolute;
+  width: 79px;
+  height: 23.42px;
+  top: 62px;
+  left: 13px;
+  transform: translate3d(-95px, 0, 0);
+  animation: 0.5s linear 0.5s 1 normal forwards running
+    gwd-gen-6trebgwdanimation_gwd-keyframes;
+}
+@keyframes gwd-gen-6trebgwdanimation_gwd-keyframes {
+  0% {
+    transform: translate3d(-95px, 0, 0);
+    animation-timing-function: ease;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    animation-timing-function: linear;
+  }
+}
+.heading.start {
+  display: inline;
+  position: absolute;
+  width: 180px;
+  height: 39.54px;
+  top: 14px;
+  left: 12px;
+  transform: translate3d(-73px, 0, 0);
+  opacity: 0;
+  clip-path: inset(-2.57px calc(-149.14px + 100%) calc(-19.71px + 100%) -4px);
+  animation: 0.5s linear 1s 1 normal forwards running
+    gwd-gen-u6bwgwdanimation_gwd-keyframes;
+}
+.heading-2.start {
+  display: inline;
+  position: absolute;
+  width: 180px;
+  height: 39.54px;
+  top: 14px;
+  left: 12px;
+  transform: translate3d(-73px, 0, 0);
+  opacity: 0;
+  clip-path: inset(
+    19.71px calc(-181.14px + 100%) calc(-42.57px + 100%) -1.14px
+  );
+  animation: 0.5s linear 1.1s 1 normal forwards running
+    gwd-gen-u6bwgwdanimation_gwd-keyframes;
+}
+@keyframes gwd-gen-u6bwgwdanimation_gwd-keyframes {
+  0% {
+    transform: translate3d(-73px, 0, 0);
+    opacity: 0;
+    animation-timing-function: ease;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    animation-timing-function: linear;
+  }
+}
+.icons {
+  display: none;
+}
+.button.start {
+  display: inline;
+  position: absolute;
+  width: 97px;
+  height: 19.11px;
+  top: 65px;
+  left: 103px;
+  transform: scale3d(0.37, 0.37, 0.37);
+  opacity: 0;
+  animation: 2.1s linear 2s 1 normal forwards running
+    gwd-gen-19y3gwdanimation_gwd-keyframes;
+}
+@keyframes gwd-gen-19y3gwdanimation_gwd-keyframes {
+  0% {
+    transform: scale3d(0.37, 0.37, 0.37);
+    opacity: 0;
+    animation-timing-function: ease;
+  }
+  14.2857% {
+    transform: scale3d(1.17, 1.17, 1.17);
+    opacity: 1;
+    animation-timing-function: ease;
+  }
+  28.5714% {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+    animation-timing-function: ease;
+  }
+  71.4286% {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+    animation-timing-function: ease;
+  }
+  85.7143% {
+    transform: scale3d(1.17, 1.17, 1.17);
+    opacity: 1;
+    animation-timing-function: ease;
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+    animation-timing-function: linear;
+  }
+}
+.fb {
+  display: none;
+}
+.insta {
+  display: none;
+}
+.tiktok {
+  display: none;
+}
+.yt {
+  display: none;
+}
+@media screen and (min-width: 600px) and (max-width: 966px) {
+  #back-img {
+    position: relative;
+    width: 728px;
+    height: 90px;
+    background-image: url(https://autogigant.at/ads/egigant/728x90.png);
+    overflow: hidden;
+  }
+  .parent-div {
+    overflow: hidden;
+  }
+  #landing-page-url {
+    position: absolute;
+    z-index: 1;
+    width: 728px;
+    height: 90px;
+  }
+  .logo.start {
+    position: absolute;
+    width: 176.43px;
+    height: 52.31px;
+    left: 536px;
+    top: 19px;
+    transform: translate3d(171px, 0, 0) scale3d(0.67, 0.67, 0.67);
+    animation: 0.5s linear 0.5s 1 normal forwards running
+      gwd-gen-18awgwdanimation_gwd-keyframes;
+  }
+  @keyframes gwd-gen-18awgwdanimation_gwd-keyframes {
+    0% {
+      transform: translate3d(171px, 0, 0) scale3d(0.67, 0.67, 0.67);
+      animation-timing-function: ease;
+    }
+    100% {
+      transform: translate3d(29px, 0, 0) scale3d(0.67, 0.67, 0.67);
+      animation-timing-function: linear;
+    }
+  }
+  .heading.start {
+    display: inline;
+    position: absolute;
+    width: 243.13px;
+    height: 51.66px;
+    left: 18px;
+    top: 19px;
+    transform: translate3d(-73px, 0, 0);
+    opacity: 0;
+    clip-path: inset(-1px calc(-202.67px + 100%) calc(-27px + 100%) -0.67px);
+    animation: 0.5s linear 1s 1 normal forwards running
+      gwd-gen-oywwgwdanimation_gwd-keyframes;
+  }
+  .heading-2.start {
+    display: inline;
+    position: absolute;
+    width: 243.13px;
+    height: 51.66px;
+    left: 18px;
+    top: 19px;
+    transform: translate3d(-73px, 0, 0);
+    opacity: 0;
+    clip-path: inset(
+      26.33px calc(-249.33px + 100%) calc(-55.67px + 100%) -2.67px
+    );
+    animation: 0.5s linear 1.1s 1 normal forwards running
+      gwd-gen-oywwgwdanimation_gwd-keyframes;
+  }
+  @keyframes gwd-gen-oywwgwdanimation_gwd-keyframes {
+    0% {
+      transform: translate3d(-73px, 0, 0);
+      opacity: 0;
+      animation-timing-function: ease;
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+  }
+  .icons.start {
+    display: inline;
+    position: absolute;
+    width: 122px;
+    height: 27.11px;
+    top: 15px;
+    left: 287px;
+    opacity: 0;
+    animation: 0.5s linear 2s 1 normal forwards running
+      gwd-gen-4hv7gwdanimation_gwd-keyframes;
+  }
+  @keyframes gwd-gen-4hv7gwdanimation_gwd-keyframes {
+    0% {
+      opacity: 0;
+      animation-timing-function: ease;
+    }
+    100% {
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+  }
+  .button.start {
+    display: inline;
+    position: absolute;
+    width: 132px;
+    height: 26px;
+    top: 48px;
+    left: 284px;
+    transform: scale3d(0.4, 0.4, 0.4);
+    opacity: 0;
+    animation: 2.1s linear 2.5s 1 normal forwards running
+      gwd-gen-1ty5gwdanimation_gwd-keyframes;
+  }
+  @keyframes gwd-gen-1ty5gwdanimation_gwd-keyframes {
+    0% {
+      transform: scale3d(0.4, 0.4, 0.4);
+      opacity: 0;
+      animation-timing-function: ease;
+    }
+    14.2857% {
+      transform: scale3d(1.24, 1.24, 1.24);
+      opacity: 1;
+      animation-timing-function: ease;
+    }
+    28.5714% {
+      transform: scale3d(1, 1, 1);
+      opacity: 1;
+      animation-timing-function: ease;
+    }
+    71.4286% {
+      transform: scale3d(1, 1, 1);
+      opacity: 1;
+      animation-timing-function: ease;
+    }
+    85.7143% {
+      transform: scale3d(1.24, 1.24, 1.24);
+      opacity: 1;
+      animation-timing-function: ease;
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+  }
+  .fb {
+    display: inline;
+    position: absolute;
+    width: 122px;
+    height: 27.11px;
+    top: 15px;
+    left: 287px;
+    clip-path: inset(-2.33px calc(-29px + 100%) calc(-27.67px + 100%) -4.33px);
+    opacity: 0;
+  }
+  .insta {
+    display: inline;
+    position: absolute;
+    width: 122px;
+    height: 27.11px;
+    top: 15px;
+    left: 287px;
+    clip-path: inset(-3px calc(-60.33px + 100%) calc(-29.67px + 100%) 29px);
+    opacity: 0;
+  }
+  .tiktok {
+    display: inline;
+    position: absolute;
+    width: 122px;
+    height: 27.11px;
+    top: 15px;
+    left: 287px;
+    clip-path: inset(
+      -2.33px calc(-92.33px + 100%) calc(-28.33px + 100%) 59.67px
+    );
+    opacity: 0;
+  }
+  .yt {
+    display: inline;
+    position: absolute;
+    width: 122px;
+    height: 27.11px;
+    top: 15px;
+    left: 287px;
+    clip-path: inset(-1.67px calc(-125.67px + 100%) calc(-29px + 100%) 92.33px);
+    opacity: 0;
+  }
+  .fb-link {
+    position: absolute;
+    z-index: 2;
+    width: 122px;
+    height: 27.11px;
+    top: 15px;
+    left: 287px;
+    clip-path: inset(-2.33px calc(-29px + 100%) calc(-27.67px + 100%) -4.33px);
+  }
+  .insta-link {
+    position: absolute;
+    z-index: 2;
+    width: 122px;
+    height: 27.11px;
+    top: 15px;
+    left: 287px;
+    clip-path: inset(-3px calc(-60.33px + 100%) calc(-29.67px + 100%) 29px);
+  }
+  .tiktok-link {
+    position: absolute;
+    z-index: 2;
+    width: 122px;
+    height: 27.11px;
+    top: 15px;
+    left: 287px;
+    clip-path: inset(
+      -2.33px calc(-92.33px + 100%) calc(-28.33px + 100%) 59.67px
+    );
+  }
+  .yt-link {
+    position: absolute;
+    z-index: 2;
+    width: 122px;
+    height: 27.11px;
+    top: 15px;
+    left: 287px;
+    clip-path: inset(-1.67px calc(-125.67px + 100%) calc(-29px + 100%) 92.33px);
+  }
+}
+@media screen and (min-width: 970px) {
+  #back-img {
+    position: relative;
+    width: 970px;
+    height: 90px;
+    background-image: url(https://autogigant.at/ads/egigant/970x90.png);
+    overflow: hidden;
+  }
+  .parent-div {
+    overflow: hidden;
+  }
+  #landing-page-url {
+    position: absolute;
+    z-index: 1;
+    width: 970px;
+    height: 90px;
+  }
+  .logo.start {
+    position: absolute;
+    width: 129px;
+    height: 38.24px;
+    transform: translate3d(970px, -35px, 0);
+    animation: 0.5s linear 0.5s 1 normal forwards running
+      gwd-gen-1yswgwdanimation_gwd-keyframes;
+  }
+  @keyframes gwd-gen-1yswgwdanimation_gwd-keyframes {
+    0% {
+      transform: translate3d(970px, -35px, 0);
+      animation-timing-function: ease;
+    }
+    100% {
+      transform: translate3d(815px, -35px, 0);
+      animation-timing-function: linear;
+    }
+  }
+  .mascot.start {
+    display: inline;
+    position: absolute;
+    width: 181px;
+    height: 272.39px;
+    transform: translate3d(480px, 93px, 0);
+    animation: 0.5s linear 0.5s 1 normal forwards running
+      gwd-gen-1mzvdgwdanimation_gwd-keyframes;
+  }
+  @keyframes gwd-gen-1mzvdgwdanimation_gwd-keyframes {
+    0% {
+      transform: translate3d(480px, 93px, 0);
+      animation-timing-function: ease;
+    }
+    100% {
+      transform: translate3d(480px, 0, 0);
+      animation-timing-function: linear;
+    }
+  }
+  .heading.start {
+    display: inline;
+    position: absolute;
+    width: 257.93px;
+    height: 54.81px;
+    top: 18px;
+    left: 25px;
+    transform: translate3d(-107px, 0, 0);
+    opacity: 0;
+    clip-path: inset(-5px calc(-212px + 100%) calc(-27px + 100%) -4px);
+    animation: 0.5s linear 0.9s 1 normal forwards running
+      gwd-gen-1mzvgwdanimation_gwd-keyframes;
+  }
+  .heading-2.start {
+    display: inline;
+    position: absolute;
+    width: 257.93px;
+    height: 54.81px;
+    top: 18px;
+    left: 25px;
+    transform: translate3d(-107px, 0, 0);
+    opacity: 0;
+    clip-path: inset(28px calc(-262px + 100%) calc(-61px + 100%) -5px);
+    animation: 0.5s linear 1s 1 normal forwards running
+      gwd-gen-1mzvgwdanimation_gwd-keyframes;
+  }
+  @keyframes gwd-gen-1mzvgwdanimation_gwd-keyframes {
+    0% {
+      transform: translate3d(-107px, 0, 0);
+      opacity: 0;
+      animation-timing-function: ease;
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+  }
+  .icons.start {
+    display: inline;
+    position: absolute;
+    width: 129px;
+    height: 29px;
+    top: 12px;
+    left: 320px;
+    opacity: 0;
+    animation: 0.5s linear 2s 1 normal forwards running
+      gwd-gen-4hv7gwdanimation_gwd-keyframes;
+  }
+  @keyframes gwd-gen-4hv7gwdanimation_gwd-keyframes {
+    0% {
+      opacity: 0;
+      animation-timing-function: ease;
+    }
+    100% {
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+  }
+  .button.start {
+    display: inline;
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    transform-origin: 50% 50% 0;
+    top: 48px;
+    left: 310px;
+    transform: scale3d(0.4, 0.4, 0.4);
+    opacity: 0;
+    animation: 2.1s linear 2.5s 1 normal forwards running
+      gwd-gen-1os4gwdanimation_gwd-keyframes;
+  }
+  @keyframes gwd-gen-1os4gwdanimation_gwd-keyframes {
+    0% {
+      transform: scale3d(0.4, 0.4, 0.4);
+      opacity: 0;
+      animation-timing-function: ease;
+    }
+    14.2857% {
+      transform: scale3d(1.23, 1.23, 1.23);
+      opacity: 1;
+      animation-timing-function: ease;
+    }
+    28.5714% {
+      transform: scale3d(1, 1, 1);
+      opacity: 1;
+      animation-timing-function: ease;
+    }
+    71.4286% {
+      transform: scale3d(1, 1, 1);
+      opacity: 1;
+      animation-timing-function: ease;
+    }
+    85.7143% {
+      transform: scale3d(1.23, 1.23, 1.23);
+      opacity: 1;
+      animation-timing-function: ease;
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+  }
+  .fb {
+    display: inline;
+    position: absolute;
+    width: 129px;
+    height: 29px;
+    top: 12px;
+    left: 320px;
+    clip-path: inset(-1.5px calc(-31px + 100%) calc(-29.5px + 100%) -4px);
+    opacity: 0;
+  }
+  .insta {
+    display: inline;
+    position: absolute;
+    width: 129px;
+    height: 29px;
+    top: 12px;
+    left: 320px;
+    clip-path: inset(-3px calc(-65.5px + 100%) calc(-31.5px + 100%) 30px);
+    opacity: 0;
+  }
+  .tiktok {
+    display: inline;
+    position: absolute;
+    width: 129px;
+    height: 29px;
+    top: 12px;
+    left: 320px;
+    clip-path: inset(-2px calc(-98.5px + 100%) calc(-30.5px + 100%) 64px);
+    opacity: 0;
+  }
+  .yt {
+    display: inline;
+    position: absolute;
+    width: 129px;
+    height: 29px;
+    top: 12px;
+    left: 320px;
+    clip-path: inset(-1.5px calc(-131px + 100%) calc(-29.5px + 100%) 98px);
+    opacity: 0;
+  }
+  .fb-link {
+    position: absolute;
+    z-index: 2;
+    width: 129px;
+    height: 29px;
+    top: 12px;
+    left: 320px;
+    clip-path: inset(-1.5px calc(-31px + 100%) calc(-29.5px + 100%) -4px);
+  }
+  .insta-link {
+    position: absolute;
+    z-index: 2;
+    width: 129px;
+    height: 29px;
+    top: 12px;
+    left: 320px;
+    clip-path: inset(-3px calc(-65.5px + 100%) calc(-31.5px + 100%) 30px);
+  }
+  .tiktok-link {
+    position: absolute;
+    z-index: 2;
+    width: 129px;
+    height: 29px;
+    top: 12px;
+    left: 320px;
+    clip-path: inset(-2px calc(-98.5px + 100%) calc(-30.5px + 100%) 64px);
+  }
+  .yt-link {
+    position: absolute;
+    z-index: 2;
+    width: 129px;
+    height: 29px;
+    top: 12px;
+    left: 320px;
+    clip-path: inset(-1.5px calc(-131px + 100%) calc(-29.5px + 100%) 98px);
+  }
+}

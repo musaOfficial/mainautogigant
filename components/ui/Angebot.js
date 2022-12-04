@@ -49,7 +49,7 @@ function Angebot({
 
 
     return (
-        <span className={`${cardView == false && classes.margin} ${cardView == false && pl % 3 == 0 && classes.notamargin} ${classes.marginbottom}  `}>{cardView == true ? <div className={`${classes.container}`}>
+        cardView == true ? <div className={`${classes.container}`}>
         <div className={classes.actioncontainer}>
             <div className={`${classes.lefticon} ${classes.top}`} onMouseEnter={() => setVisibleOpen(true)} onMouseLeave={() => setVisibleOpen(false)}  >
                 <Visible className={classes.whiteicon} />
@@ -167,11 +167,6 @@ function Angebot({
                 <div className={styles.companyname}><CompanyLocation className={classes.companyicon}/>  {companyname}</div>
             </div>
         </div>
-
-
-
-
-    }</span>
     )
 }
 

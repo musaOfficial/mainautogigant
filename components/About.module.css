@@ -1,0 +1,18 @@
+.background{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #6C757D;
+    display: flex;
+    justify-content: center;
+}
+
+.contentcontainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.imgcontainer{
+    position: relative;
+    width: 100%;
+    height: 350px;
+}

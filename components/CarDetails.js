@@ -208,7 +208,7 @@ function CarDetails(){
                                 <div className={classes.werbungtext}>Werbung</div>
                             }
                             {width >= 1141 && 
-                                <Image src={"/images/panorama.jpg"} width={980} height={120} />
+                                <iframe src="/banners/banner1/index.html" scrolling="no" width="100%" height="90px"></iframe>
                             }
                         </div>
                     </div>

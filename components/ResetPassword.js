@@ -31,6 +31,7 @@ export default function ResetPassword() {
                 <h3 className="text-2xl md:text-xl font-bold pt-6 pb-2">
                   Passwort vergessen
                 </h3>
+
                 <p className="mt-1">
                   Bitte geben Sie hier Ihre E-Mail-Adresse ein, mit der Sie sich
                   registriert haben.

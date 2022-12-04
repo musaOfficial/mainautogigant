@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #6c757d;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #f1f2f3;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Gruppe_2167" data-name="Gruppe 2167" transform="translate(-631 -2130)">
+    <rect id="Rectangle_4715" data-name="Rectangle 4715" class="cls-1" width="20" height="20" rx="5" transform="translate(631 2130)"/>
+    <g id="Group_2166" data-name="Group 2166" transform="translate(31.5 0.5)">
+      <line id="Line_1007" data-name="Line 1007" class="cls-2" y2="12" transform="translate(609.5 2133.5)"/>
+      <line id="Line_1008" data-name="Line 1008" class="cls-2" x2="12" transform="translate(603.5 2139.5)"/>
+    </g>
+  </g>
+</svg>

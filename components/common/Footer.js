@@ -232,9 +232,9 @@ export default function Footer() {
           <div className="flex items-center justify-between py-2 text-white text-13 bg-black border-t border-theme-gray-3 leading-5 xl:flex-wrap md:justify-center">
             <p className="md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all">© 2023 AUTO GIGANT.</p>
             <p className="flex items-center md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all">MADE WITH <img className="scale-75 py-px" src="/images/icons/copyright-fav.png" />IN AUSTRIA</p>
+            <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">ÜBER UNS</p>
             <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">IMPRESSUM</p>
             <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">DATENSCHUTZ</p>
-            <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">COOKIE HINWEISE</p>
             <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">NUTZUNGSBEDINGNUNGEN</p>
             <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">KONTAKT</p>
             <p className="flex items-center cursor-pointer hover:transition-all hover:text-yellow-600" onClick={() => setOpenLanguagesBar(d => !d)}><img className="w-4 mr-1 md:px-2 scale-90" src="/images/icons/copyright-world.png" />DEUTSCH | ÖSTERREICH</p>

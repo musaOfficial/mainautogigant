@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
-import UeberUns from "../components/ueberuns";
+import About from "../components/About";
 
 function UeberUnsPage(){
     return (
@@ -12,7 +12,7 @@ function UeberUnsPage(){
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Header />
-            <UeberUns />
+            <About />
         <Footer/>
       </div>
     )

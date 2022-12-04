@@ -191,7 +191,7 @@ export default function Registration() {
                       placeholder="Passwort wiederholen"
                       inputType="password"
                     />
-                    <div className="flex justify-between items-end md:flex-col">
+                    <div className="flex justify-between items-center md:flex-col">
                       <div className="w-1/2 md:!w-full mr-2 md:mr-0 whitespace-nowrap">
                         <InputSelect
                           options={option1}
@@ -199,7 +199,7 @@ export default function Registration() {
                           regYear
                         />
                       </div>
-                      <div className="w-1/2 md:!w-full ml-2 h-14 flex text-11 flex-col justify-between pt-2">
+                      <div className="w-1/2 md:!w-full ml-2 h-10 flex text-11 flex-col justify-between mb-5">
                         <div
                           className="flex items-center"
                           onClick={() => setNewsLaterChecked(!newsLaterChecked)}

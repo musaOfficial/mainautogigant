@@ -15,6 +15,8 @@ import SearchIcon from './../public/searchicon.svg';
 import GridView from './../public/gridview.svg';
 import ListView from './../public/listview.svg';
 import AdCard from './dashboard/ads/AdCard';
+import PlusIcon from './../public/icons/ausstattungPlus.svg'
+import Closex from './../public/closex.svg'
 import {
     marke1,
     marke2,
@@ -57,7 +59,7 @@ function SearchResults(){
           ...styles,
           backgroundColor: state.isSelected ? "#fbb900" : "",
           "&:active": "#fbb90080",
-          fontSize: '16px',
+          fontSize: '13px',
         }),
       };
 
@@ -113,145 +115,7 @@ function SearchResults(){
             "&:active": "#fbb90080",
             fontSize: '13px',
         }),
-        };
-
-
-    var ausstattungList = [
-        {value: "2-Zonen-Klimaautomatik", selected: false, showAlways: false},
-        {value: "3-Zonen-Klimaautomatik", selected: false, showAlways: false},
-        {value: "360° Kamera", selected: false, showAlways: false},
-        {value: "4-Zonen-Klimaautomatik", selected: false, showAlways: false},
-        {value: "ABS", selected: false, showAlways: true},
-        {value: "Abstandstempomat", selected: false, showAlways: true},
-        {value: "Abstandswarner", selected: false, showAlways: false},
-        {value: "Airbag hinten", selected: false, showAlways: false},
-        {value: "Alarmanlage", selected: false, showAlways: false},
-        {value: "Allrad", selected: false, showAlways: true},
-        {value: "Allwetterreifen", selected: false, showAlways: false},
-        {value: "Alufelgen", selected: false, showAlways: false},
-        {value: "Ambientebeleuchtung", selected: false, showAlways: false},
-        {value: "Android Auto", selected: false, showAlways: false},
-        {value: "Anhängerkupplung", selected: false, showAlways: true},
-        {value: "Apple CarPlay", selected: false, showAlways: false},
-        {value: "Armlehne", selected: false, showAlways: false},
-        {value: "Beheizbare Frontscheibe", selected: false, showAlways: false},
-        {value: "Beheizbares Lenkrad", selected: false, showAlways: false},
-        {value: "Behindertengerecht", selected: false, showAlways: false},
-        {value: "Beifahrerairbag", selected: false, showAlways: false},
-        {value: "Berganfahrassistent", selected: false, showAlways: false},
-        {value: "Bi-Xenon Scheinwerfer", selected: false, showAlways: false},
-        {value: "Biodieselumrüstung", selected: false, showAlways: false},
-        {value: "Blendfreies Fernlicht", selected: false, showAlways: false},
-        {value: "Bluethoot", selected: false, showAlways: false},
-        {value: "Bordcomputer", selected: false, showAlways: false},
-        {value: "CD", selected: false, showAlways: false},
-        {value: "DAB-Radio", selected: false, showAlways: false},
-        {value: "Dachreling", selected: false, showAlways: false},
-        {value: "E10-geeignet", selected: false, showAlways: false},
-        {value: "Einparkhilfe", selected: false, showAlways: false},
-        {value: "Einparkhilfe Kamera", selected: false, showAlways: false},
-        {value: "Einparkhilfe selbstlenkendes System", selected: false, showAlways: false},
-        {value: "Einparkhilfe Sensoren hinten", selected: false, showAlways: false},
-        {value: "Einparkhilfe Sensoren vorne", selected: false, showAlways: false},
-        {value: "Elektr. Fensterheber", selected: false, showAlways: true},
-        {value: "Elektr. Sitzeinstellung hinten", selected: false, showAlways: false},
-        {value: "Elektrische Heckklappe", selected: false, showAlways: false},
-        {value: "Elektrische Seitenspiegel", selected: false, showAlways: false},
-        {value: "Elektrische Sitze", selected: false, showAlways: false},
-        {value: "Elektronische Parkbremse", selected: false, showAlways: false},
-        {value: "ESP", selected: false, showAlways: false},
-        {value: "Fahrerairbag", selected: false, showAlways: false},
-        {value: "Fernlichassistent", selected: false, showAlways: false},
-        {value: "Freisprecheinrichtung", selected: false, showAlways: false},
-        {value: "Gebäckraumabtrennung", selected: false, showAlways: false},
-        {value: "Geschwindigkeits-\nbegrenzungsanlage", selected: false, showAlways: false},
-        {value: "Getönte Scheiben", selected: false, showAlways: false},
-        {value: "Head-up display", selected: false, showAlways: false},
-        {value: "Induktionsladen für Smartphones", selected: false, showAlways: false},
-        {value: "Innenspiegel automatisch abblendend", selected: false, showAlways: false},
-        {value: "Isofix", selected: false, showAlways: false},
-        {value: "Katalysator", selected: false, showAlways: false},
-        {value: "Klimaanlage", selected: false, showAlways: true},
-        {value: "Klimaautomatik", selected: false, showAlways: true},
-        {value: "Kopfairbag", selected: false, showAlways: false},
-        {value: "Kurvenlicht", selected: false, showAlways: false},
-        {value: "Laserlicht", selected: false, showAlways: false},
-        {value: "LED-Scheinwerfer", selected: false, showAlways: true},
-        {value: "LED-Tagfahrlicht", selected: false, showAlways: false},
-        {value: "Lederausstattung", selected: false, showAlways: false},
-        {value: "Lederlenkrad", selected: false, showAlways: false},
-        {value: "Lichtsensor", selected: false, showAlways: false},
-        {value: "Lordosenstütze", selected: false, showAlways: false},
-        {value: "Luftfederung", selected: false, showAlways: false},
-        {value: "Markise", selected: false, showAlways: false},
-        {value: "Massagesitze", selected: false, showAlways: false},
-        {value: "MP3", selected: false, showAlways: false},
-        {value: "Müdigkeitswarnsystem", selected: false, showAlways: false},
-        {value: "Multifunktionslenkrad", selected: false, showAlways: true},
-        {value: "Musikstreaming integriert", selected: false, showAlways: false},
-        {value: "Nachtsicht-Assistent", selected: false, showAlways: false},
-        {value: "Navigationssystem", selected: false, showAlways: true},
-        {value: "Nebelscheinwerfer", selected: false, showAlways: false},
-        {value: "Notbremsassistent", selected: false, showAlways: false},
-        {value: "Notrad", selected: false, showAlways: false},
-        {value: "Notrufsystem", selected: false, showAlways: false},
-        {value: "Pannenkit", selected: false, showAlways: false},
-        {value: "Panoramadach", selected: false, showAlways: false},
-        {value: "Radio", selected: false, showAlways: false},
-        {value: "Raucherpaket", selected: false, showAlways: false},
-        {value: "Rechtslenker", selected: false, showAlways: false},
-        {value: "Regensensor", selected: false, showAlways: false},
-        {value: "Reichweitenverlängerer", selected: false, showAlways: false},
-        {value: "Reifendruckkontrollsystem", selected: false, showAlways: false},
-        {value: "Reserverad", selected: false, showAlways: false},
-        {value: "Schaltwippen", selected: false, showAlways: false},
-        {value: "Scheinwerferreinigung", selected: false, showAlways: false},
-        {value: "Schiebedach", selected: false, showAlways: false},
-        {value: "Schiebetür", selected: false, showAlways: false},
-        {value: "Schiebetür links", selected: false, showAlways: false},
-        {value: "Schiebetür rechts", selected: false, showAlways: false},
-        {value: "Schlüssellose Zentralverriegelung", selected: false, showAlways: false},
-        {value: "Seitenairbag", selected: false, showAlways: false},
-        {value: "Servolenkung", selected: false, showAlways: false},
-        {value: "Sitzbelüftung", selected: false, showAlways: false},
-        {value: "Sitzheizung", selected: false, showAlways: true},
-        {value: "Skisack", selected: false, showAlways: false},
-        {value: "Sommerreifen", selected: false, showAlways: false},
-        {value: "Soundsystem", selected: false, showAlways: false},
-        {value: "Spoiler", selected: false, showAlways: false},
-        {value: "Sportfahrwerk", selected: false, showAlways: false},
-        {value: "Sportpaket", selected: false, showAlways: false},
-        {value: "Sportsitze", selected: false, showAlways: false},
-        {value: "Sprachsteuerung", selected: false, showAlways: false},
-        {value: "Spurhalteassistent", selected: false, showAlways: false},
-        {value: "Stahlfelgen", selected: false, showAlways: false},
-        {value: "Standheizung", selected: false, showAlways: false},
-        {value: "Start/Stop-Automatik", selected: false, showAlways: false},
-        {value: "Tagfahrlicht", selected: false, showAlways: false},
-        {value: "Taxi oder Mietwagen", selected: false, showAlways: false},
-        {value: "teilb. Rücksitzbank", selected: false, showAlways: false},
-        {value: "Tempomat", selected: false, showAlways: true},
-        {value: "Totwinkel-Assistent", selected: false, showAlways: false},
-        {value: "Touchscreen", selected: false, showAlways: false},
-        {value: "Traktionskontrolle", selected: false, showAlways: false},
-        {value: "Tuning", selected: false, showAlways: false},
-        {value: "TV", selected: false, showAlways: false},
-        {value: "Umklappbarer Beifahrersitz", selected: false, showAlways: false},
-        {value: "USB", selected: false, showAlways: false},
-        {value: "Verkehrszeichenerkennung", selected: false, showAlways: false},
-        {value: "Voll-LED Scheinwerfer", selected: false, showAlways: false},
-        {value: "Volldigitales Kombiinstrument", selected: false, showAlways: false},
-        {value: "W-Lan / Wifi Hotspot", selected: false, showAlways: false},
-        {value: "Wegfahrsperre", selected: false, showAlways: false},
-        {value: "Windschott(für Cabrio)", selected: false, showAlways: false},
-         {value: "Winterpaket", selected: false, showAlways: false},
-        {value: "Winterreifen", selected: false, showAlways: false},
-        {value: "Xenonscheinwerfer", selected: false, showAlways: true},
-        {value: "Zentralverriegelung", selected: false, showAlways: false},
-        {value: "Zentralverriegelung mit Funkfernbedienung", selected: false, showAlways: false},
-    ]
-
-    const ausstattungSelectedItems = [];    
+        }; 
 
     const [expanded, setExpanded] = useState(true);
     const [brandName, setBrandName] = useState({}); 
@@ -499,12 +363,169 @@ function SearchResults(){
     ]
 
     const [gigaInfoOpen, setGigaInfoOpen] = useState(false);
-
     const [gridView, setGridView] = useState(true);
 
+    const [zweizonenKlima, setZweizonenKlima] = useState(false)
+    const [dreizonenKlima, setDreizonenKlima] = useState(false)
+    const [drei60kamera, setDrei60kamera] = useState(false)
+    const [vierzonenKlima, setVierzonenKlima] = useState(false)
+    const [ABS, setABS] = useState(false);
+    const [abstandsTempomat, setAbstandsTempomat] = useState(false);
+    const [abstandsWarner, setAbstandsWarner] = useState(false)
+    const [airbagHinten, setAirbagHinten] = useState(false)
+    const [alarmanlage, setAlarmanlage] = useState(false)
+    const [allrad, setAllrad] = useState(false)
+    const [allwetterReifen, setAllwetterReifen] = useState(false)
+    const [alufelgen, setAlufelgen] = useState(false)
+    const [ambientebeleuchtung, setAmbientebeleuchtung] = useState(false)
+    const [androidauto, setAndroidauto] = useState(false)
+    const [anhaengerkupplung, setAnhaengerkupplung] = useState(false)
+    const [applecarplay, setApplecarplay] = useState(false)
+    const [armlehne, setArmlehne] = useState(false)
+    const [beheizbareFrontscheibe, setBeheizbareFrontscheibe] = useState(false)
+    const [beheizbaresLenkrad, setBeheizbaresLenkrad] = useState(false)
+    const [behindertenGerecht, setBehindertenGerecht] = useState(false)
+    const [beifahrerairbag, setBeifahrerairbag] = useState(false)
+    const [berganfahrassistent, setBerganfahrassistent] = useState(false)
+    const [bixenonscheinwerfer, setBixenonscheinwerfer] = useState(false)
+    const [biodieselumruestung, setBiodieselumruestung] = useState(false)
+    const [blendfreiesFernlicht, setBlendfreiesFernlicht] = useState(false)
+    const [bluethoot, setBluethoot] = useState(false)
+    const [bordcomputer, setBordcomputer] = useState(false)
+    const [cd, setCd] = useState(false)
+    const [dabradio, setDabradio] = useState(false)
+    const [dachreling, setDachreling] = useState(false)
+    const [ezehngeeignet, setEzehngeeignet] = useState(false)
+    const [einparkhilfe, setEinparkhilfe] = useState(false)
+    const [einparkhilfeKamera, setEinparkhilfeKamera] = useState(false)
+    const [einparkhilfeSelbst, setEinparkhilfeSelbst] = useState(false)
+    const [einparkhilfeSensorenVorne, setEinparkhilfeSensorenVorne] = useState(false)
+    const [einparkhilfeSensorenHinten, setEinparkhilfeSensorenHinten] = useState(false)
+    const [elektrfensterheber, setElektrfensterheber] = useState(false)
+    const [elektrsitzhinten, setElektrsitzhinten] = useState(false)
+    const [elektrheckklappe, setElektrheckklappe] = useState(false)
+    const [elektrseitenspiegel, setElektrseitenspiegel] = useState(false)
+    const [elektrsitze, setElektrsitze] = useState(false)
+    const [elektrparkbremse, setElektrparkbremse] = useState(false)
+    const [esp, setEsp] = useState(false)
+    const [fahrerairbag, setFahrerairbag] = useState(false)
+    const [fernlichassistent, setFernlichassistent] = useState(false)
+    const [freisprecheinrichtung, setFreisprecheinrichtung] = useState(false)
+    const [gepaeckraum, setGepaeckraum] = useState(false)
+    const [geschwindigkeitsbegrenz, setGeschwindigkeitsbegrenz] = useState(false)
+    const [getonteScheiben, setGetonteScheiben] = useState(false)
+    const [headupDisplay, setHeadupDisplay] = useState(false)
+    const [induktionsladen, setInduktionsladen] = useState(false)
+    const [innenspiegelauto, setInnenspiegelauto] = useState(false)
+    const [isofix, setIsofix] = useState(false)
+    const [katalysator, setKatalysator] = useState(false)
+    const [klimaanlage, setKlimaanlage] = useState(false)
+    const [klimaautomatik, setKlimaautomatik] = useState(false)
+    const [kopfairbag, setKopfairbag] = useState(false)
+    const [kurvenlicht, setKurvenlicht] = useState(false)
+    const [laserlicht, setLaserlicht] = useState(false)
+    const [ledscheinwerfer, setLedscheinwerfer] = useState(false)
+    const [ledtagfahrlicht, setLedtagfahrlicht] = useState(false)
+    const [lederausstattung, setLederausstattung] = useState(false)
+    const [lederlenkrad, setLederlenkrad] = useState(false)
+    const [lichtsensor, setLichtsensor] = useState(false)
+    const [lordosenstuetze, setLordoesenstuetze] = useState(false)
+    const [luftfederung, setLuftfederung] = useState(false)
+    const [markise, setMarkise] = useState(false)
+    const [massageSitze, setMassageSitze] = useState(false)
+    const [mp3, setMp3] = useState(false)
+    const [muedigkeitswarn, setMuedigkeitswarn] = useState(false)
+    const [multifunktionslenkrad, setMultifunktionslenkrad] = useState(false)
+    const [musikstreamingIntegriert, setMusikstreamingIntegriert] = useState(false)
+    const [nachtsichtAssistent, setNachtsichtAssistent] = useState(false)
+    const [navigationssystem, setNavigationssystem] = useState(false);
+    const [nebelscheinwerfer, setNebelscheinwerfer] = useState(false);
+    const [notbremsassistent, setNotbremsassistent] = useState(false);
+    const [notrad, setNotrad] = useState(false);
+    const [notrufsystem, setNotrufsystem] = useState(false);
+    const [pannenkit, setPannenkit] = useState(false);
+    const [panoramadach, setPanoramadach] = useState(false);
+    const [radio, setRadio] = useState(false);
+    const [raucherpaket, setRaucherpaket] = useState(false);
+    const [rechtslenker, setRechtslenker] = useState(false);
+    const [regensensor, setRegensensor] = useState(false);
+    const [reichweitenverlaengerer, setReichweitenverlaengerer] = useState(false);
+    const [reifendruckkontrollsystem, setReifendruckkontrollsystem] = useState(false);
+    const [reserverad, setReserverad] = useState(false);
+    const [schaltwippen, setSchaltwippen] = useState(false);
+    const [scheinwerferreinigung, setScheinwerferreinigung] = useState(false);
+    const [schiebedach, setSchiebedach] = useState(false);
+    const [schiebetuer, setSchiebetuer] = useState(false);
+    const [schieblinks, setSchieblinks] = useState(false);
+    const [schiebrechts, setSchiebrechts] = useState(false);
+    const [schluessellose, setSchluessellose] = useState(false);
+    const [seitenairbag, setSeitenairbag] = useState(false);
+    const [servolenkung, setServolenkung] = useState(false);
+    const [sitzbelueftung, setSitzbelueftung] = useState(false);
+    const [sitzheizung, setSitzheizung] = useState(false);
+    const [skisack, setSkisack] = useState(false);
+    const [sommerreifen, setSommerreifen] = useState(false);
+    const [soundsystem, setSoundsystem] = useState(false);
+    const [spoiler, setSpoiler] = useState(false);
+    const [sportfahrwerk, setSportfahrwerk] = useState(false);
+    const [sportpaket, setSportpaket] = useState(false);
+    const [sportsitze, setSportsitze] = useState(false);
+    const [sprachsteuerung, setSprachsteuerung] = useState(false);
+    const [spurhalteassistent, setSpurhalteassistent] = useState(false);
+    const [stahlfelgen, setStahlfelgen] = useState(false);
+    const [standheizung, setStandheizung] = useState(false);
+    const [startstopauto, setStartstopauto] = useState(false);
+    const [tagfahrlicht, setTagfahrlicht] = useState(false);
+    const [taximietwage, setTaximietwagen] = useState(false);
+    const [teilbruecksitzbank, setTeilbruecksitzbank] = useState(false);
+    const [tempomat, setTempomat] = useState(false);
+    const [totwinkelAssistent, setTotwinkelAssitent] = useState(false);
+    const [touchscreen, setTouchscreen] = useState(false);
+    const [traktionskontrolle, setTraktionskontrolle] = useState(false);
+    const [tuning, setTuning] = useState(false);
+    const [tv, setTv] = useState(false);
+    const [umklappbeifahrer, setUmklappbeifahrer] = useState(false);
+    const [usb, setUsb] = useState(false);
+    const [verkehrszeichenErkennung, setVerkehrszeichenErkennung] = useState(false);
+    const [vollledscheinwerfer, setVollledscheinwerfer] = useState(false);
+    const [volldigitalesKombiinstrument, setVolldigitalesKombiinstrument] = useState(false);
+    const [wlan, setWlan] = useState(false);
+    const [wegfahrsperre, setWegfahrsperre] = useState(false);
+    const [windschott, setWindschott] = useState(false);
+    const [winterpaket, setWinterpaket] = useState(false);
+    const [winterreifen, setWinterreifen] = useState(false);
+    const [xenonscheinwerfer, setXenonscheinwerfer] = useState(false);
+    const [zentralverriegelung, setZentralverriegelung] = useState(false);
+    const [zentralFunkfern, setZentralFunkfern] = useState(false);
+
     return (
-        <div className={classes.container}>
-            <div className={`${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
+        <div className={`${classes.container} ${openAusstattung == true && "overflow-y-hidden"}`}>
+                {openAusstattung == true && <div className={classes.ausstattungContainer} >
+                    <Closex className={classes.closex} onClick={() => setOpenAusstattung(false)} />
+                    <div className={classes.ausstattungencon}>
+                        <div>
+                            <input className={`${classes.varientinputsmaller} cursor-pointer`} id="zweizoneklima" type="checkbox" checked={zweizonenKlima} onChange={() => setZweizonenKlima(d => !d)} />
+                            <span className='ml-2' htmlFor="zweizoneklima" >2-Zonen-Klimaautomatik</span>
+                        </div>
+                        <div>
+                            <input className={`${classes.varientinputsmaller} cursor-pointer`} id="ABS" type="checkbox" checked={ABS} onChange={() => setABS(d => !d)} />
+                            <span className='ml-2' htmlFor="ABS" >ABS</span>
+                        </div>
+                        <div>
+                            <input className={`${classes.varientinputsmaller} cursor-pointer`} id="ABS" type="checkbox" checked={ABS} onChange={() => setABS(d => !d)} />
+                            <span className='ml-2' htmlFor="ABS" >ABS</span>
+                        </div>
+                        <div>
+                            <input className={`${classes.varientinputsmaller} cursor-pointer`} id="ABS" type="checkbox" checked={ABS} onChange={() => setABS(d => !d)} />
+                            <span className='ml-2' htmlFor="ABS" >ABS</span>
+                        </div>
+                        <div>
+                            
+                        </div>
+                    </div>
+                </div>}
+               
+            <div className={`${classes.contentcontainer} overflow-y-hidden relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
                 <div>
                     <p className={classes.werbungtext}>Werbung</p>
                     <div className={classes.topimg}>
@@ -802,58 +823,9 @@ function SearchResults(){
                             }
                         </div>
                         {/* AUSSTATTUNG */}
-                        <div className={openAusstattung == true ? classes.sectioncontainer : classes.sectioncontainerclosed} onClick={() => {
-                            if(openAusstattung == false){
-                                setOpenAusstattung(true);
-                            }
-                        }}>
-                            <div className={classes.headingcontainer} onClick={() => {
-                            if(openAusstattung == true){
-                                setOpenAusstattung(false);
-                            }
-                        }}>
-                                <div className={classes.sectionheading}>AUSSTATTUNG</div>
-                                <Expand className={openBasisdaten == false ? classes.openedExpand : classes.closedExpand}/>
-                            </div>
-                            {openAusstattung == true && <div className={classes.basiscontainer}>
-                                <div className={classes.flexausstattung}>
-                                    {/* {ausstattungsKriterienOpen == true && ausstattungList.map((item, index) => <div key={index} className={classes.ausstattung}>
-                                        <input type={"checkbox"} className={classes.varientinputsmaller} onChange={() => {
-                                            ausstattungList[index].selected = !ausstattungList[index].selected;
-                                            console.log(item.selected)
-                                        }}/>
-                                        <span className={classes.value}>{item.value}</span>
-                                    </div>)}
-                                    {ausstattungsKriterienOpen == false && ausstattungList.map((item, index) => <div key={index} className={classes.ausstattung}>
-                                        {item.selected == true ? <div className={classes.ausstattung}>
-                                            <input type={"checkbox"} onChange={() => {
-                                                console.log(ausstattungList[index].selected);
-                                                ausstattungList[index].selected = true;
-                                            }} checked={item.selected == true ? true : false} className={classes.varientinputsmaller}/>
-                                            <span className={classes.value}>{item.value}</span>
-                                        </div> : null}
-                                        {console.log(item.selected)}
-                                    </div>)} */}
-
-                                    {ausstattungsKriterienOpen == true && ausstattungList.map((item, index) => <div key={index} className={classes.ausstattung}>
-                                        <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.makemid}`} />
-                                        <span className={classes.value}>{item.value}</span>
-                                    </div>)}
-                                    {ausstattungsKriterienOpen == false && ausstattungList.map((item, index) => <div key={index} className={classes.ausstattung}>
-                                        <div className={classes.ausstattung}>
-                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.makemid}`} />
-                                            <span className={classes.value}>{item.value}</span>
-                                        </div>
-                                        {console.log(ausstattungList)}
-                                    </div>)}
-
-                                    <div className={classes.ausblendencontainer} onClick={() => setAusstattungsKriterienOpen(d => !d)}>
-                                        <RemoveCircle className={classes.removecircle} /> <span>{ausstattungsKriterienOpen == true ? "Ungenutzte Filter ausblenden" : "mehr Ausstattungskriterien"}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            }
-                    </div>
+                        <div className={classes.ausstattung} onClick={() => setOpenAusstattung(true)}>
+                            <span className=''>AUSSTATTUNG</span><PlusIcon className={classes.plusicon} />
+                        </div>
                             {/* FARBE */}
                         <div className={openFarbe == true ? classes.sectioncontainer : classes.sectioncontainerclosed} onClick={() => {
                             if(openFarbe == false){
@@ -1190,7 +1162,7 @@ function SearchResults(){
                         </div>
                     </div>
                     <div className={`${classes.c2r2}`}>
-                            <div className={`${classes.carlistcontainer}`}>
+                            <div className={`${gridView == true ? classes.carlistcontainer : classes.gridlayout}`}>
                                 {angebote.map((item, index) => <Angebot
                                     key={index}
                                     title={item.title}
