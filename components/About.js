@@ -1,6 +1,8 @@
 import classes from './About.module.css'
 import Image from 'next/image'
-
+import Rectangle from './../public/aboutus/rectangle.svg';
+import Union from './../public/aboutus/union.svg'
+import SwiperComponent from './ui/Swiper';
 function About(){
     return (
         <div className={` ${classes.background} overflow-hidden lg:px-6 md:!px-0`}>
@@ -24,15 +26,72 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                     </div>
                 </div>
                 <div className={classes.middlecontainer}>
+                    <div className={classes.ceo}>
+                        <Image src={'/people/hasangueler.png'} layout='fill' objectFit='cover'/>
+                    </div>
                     <div className={classes.left}>
-                        <h1 className={classes.leftheading} >Unser CEO sagt</h1>
-                        <p className={classes.lefttext} >Qualität ist nie ein Zufall; 
-sie ist immer das Ergebnis 
-einer hohen Absicht.</p>
-                        <button className={classes.contactbtn}>Kontaktieren Sie uns</button>
+                        <div>
+                            <h1 className={classes.leftheading} >Unser CEO sagt</h1>
+                            <p className={classes.lefttext} >Qualität ist nie ein Zufall; 
+    sie ist immer das Ergebnis 
+    einer hohen Absicht.</p>
+                            <button className={classes.leftbtn}>Kontaktieren Sie uns</button> 
+                        </div>
                     </div>
                     <div className={classes.right}>
                         <Image src={'/aboutus/abr.png'} layout='fill' /> 
+                    </div>
+                </div>
+                <div className={classes.ourteam}>
+                    <div className={classes.leftteam}>
+                        <h1 className={classes.teamheading}>UNSER TEAM</h1>
+                        <div className={classes.points}>
+                            <div className={classes.aligncenter}>
+                                <div className={classes.rectangle}>
+                                    <Union />
+                                </div>
+                                <span>Persönliche Betreuung</span>
+                            </div>
+                            <div className={classes.aligncenter}>
+                                <div className={classes.rectangle}>
+                                    <Union />
+                                </div>
+                                <span>Kundenverständnis</span>
+                            </div>
+                            <div className={classes.aligncenter}>
+                                <div className={classes.rectangle}>
+                                    <Union />
+                                </div>
+                                <span>Mehrsprachigkeit</span>
+                            </div>
+                            <div className={classes.aligncenter}>
+                                <div className={classes.rectangle}>
+                                    <Union />
+                                </div>
+                                <span>Beratung und Überzeugung</span>
+                            </div>
+                            <div className={classes.aligncenter}>
+                                <div className={classes.rectangle}>
+                                    <Union />
+                                </div>
+                                <span>Persönliche Betreuung</span>
+                            </div>
+                            <div className={classes.aligncenter}>
+                                <div className={classes.rectangle}>
+                                    <Union />
+                                </div>
+                                <span>Kundenverständnis</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={classes.rightteam}>
+                        <SwiperComponent />
+                    </div>
+                </div>
+                <div className={classes.fragencontainer}>
+                    <h1 className={classes.fragenheading}>HÄUFIG GESTELLTE FRAGEN</h1>
+                    <div className={classes.fragecontainer}>
+
                     </div>
                 </div>
             </div>

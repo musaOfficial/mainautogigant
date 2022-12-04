@@ -52,7 +52,7 @@ export default function Footer() {
               <FooterCarousel
               >
                 <SwiperSlide>
-                  <div className="w-full h-full rounded-t-20 relative z-10 flex items-center p-6 bg-white overflow-hidden">
+                  <div className="w-full h-full relative z-10 flex items-center p-6 bg-white overflow-hidden">
                     <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10 overflow-hidden"></div>
                     <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4 overflow-hidden">
                       <img className="rounded-full" src="/images/logo.png" />
@@ -65,7 +65,7 @@ export default function Footer() {
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="w-full h-full rounded-t-20 relative z-10 flex items-center p-6 bg-white overflow-hidden">
+                  <div className="w-full h-full relative z-10 flex items-center p-6 bg-white overflow-hidden">
                   <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10 overflow-hidden"></div>
                     <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4 overflow-hidden">
                       <img className="rounded-full" src="/images/logo.png" />
@@ -78,7 +78,7 @@ export default function Footer() {
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="w-full h-full rounded-t-20 relative z-10 flex items-center p-6 bg-white overflow-hidden">
+                  <div className="w-full h-full relative z-10 flex items-center p-6 bg-white overflow-hidden">
                   <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10 overflow-hidden"></div>
                     <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4 overflow-hidden">
                       <img className="rounded-full" src="/images/logo.png" />

@@ -11,13 +11,13 @@ function PageSearch({
           border: "1px solid #6C757D",
           fontSize: '13px',
           borderRadius: '10px',
-          color: '#6C757D'
+          color: '#6C757D',
         }),
         option: (styles, state) => ({
           ...styles,
           backgroundColor: state.isSelected ? "#fbb900" : "",
           "&:active": "#fbb90080",
-          fontSize: '16px',
+          fontSize: '13px',
           color: '#6C757D',
         }),
       };
@@ -501,6 +501,7 @@ function PageSearch({
                     styles={style}
                     placeholder="25"
                     onChange={(e) => setShownAds(e.value)}
+                    className={classes.select}
                 />
             </div>
         </div>

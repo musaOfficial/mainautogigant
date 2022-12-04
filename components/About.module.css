@@ -64,6 +64,10 @@
 .middlecontainer{
     display: flex;
     margin-top: 20px;
+    height: 278px;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
 }
 
 .left{
@@ -72,6 +76,17 @@
     background-color: #F1F2F3;
     border-radius: 10px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.left div{
+    width: 60%;
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
 }
 
 .right{
@@ -82,3 +97,90 @@
     margin-left: 20px;
     height: 200px;
 }
+
+.leftheading{
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.lefttext{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.leftbtn{
+    background-color: #FBB900;
+    margin-top: 20px;
+    height: 40px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all .1s ease-in;
+}
+
+.leftbtn:hover{
+    background-color: #FFE497;
+}
+
+.ceo{
+    position: absolute;
+    height: 262px;
+    width: 182px;
+}
+
+.ourteam{
+    background-color: #F1F2F3;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.teamheading{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.rectangle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FBB900;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.aligncenter{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+
+.rightteam{
+    width: 70%;
+}
+
+
+/* FRAGEN */
+
+.fragencontainer{
+    background-color: #F1F2F3;
+    min-height: 50vh;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.fragenheading{
+    font-size: 30px;
+    font-weight: bold;   
+}
+

@@ -50,8 +50,11 @@ export default function SearchDetail() {
           <Offer />
           <div className="relative">
             <div className="flex justify-center pt-6 pb-10 md:pb-16">
-            <button className="w-80 inline-block px-10 py-3 sm:px-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3">
+            <button className="w-80 mr-2 inline-block px-10 py-3 sm:px-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-100 hover:bg-theme-yellow-3">
                 Suchen
+              </button>
+            <button className="w-80 inline-block px-10 py-3 sm:px-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-100 hover:bg-theme-yellow-3">
+                Suchen & Speichern
               </button>
             </div>
           </div>

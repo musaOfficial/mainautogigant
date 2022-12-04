@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1000000000000000000000000000000000000000000000000000000000000000;
 }
 
 .pagecounter{
@@ -44,7 +45,7 @@
     display: flex;
     align-items: center;
     margin-top: 20px;
-    z-index: 10000;
+    z-index: 1000000000000000000;
 }
 
 .shownadsperpage span{

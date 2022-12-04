@@ -4,7 +4,7 @@ import DraftCard from "./DraftCard";
 
 export default function MyDrafts() {
   const [cardView, setCardView] = useState("list");
-  const [cards, setCards] = useState(4);
+  const [cards, setCards] = useState(10);
 
   useEffect(() => {
     if (window.innerWidth <= 1023) {

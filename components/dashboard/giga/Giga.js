@@ -1,6 +1,6 @@
 import GigaCard from "./GigaCard";
 
-export default function Giga() {
+export default function  Giga() {
   return (
     <>
       <div className="flex-1">

@@ -171,12 +171,9 @@ export default function ProfileSettings(){
         <div className={classes.container}>
             {avatarSelectionPopup == true && <div className={classes.avatarselectionbackground}>
                 <div className={classes.avatarselectionbox}>
-                    <div className={classes.clsbtn} onClick={() => setAvatarSelectionPopup(false)}>
-x
-                    </div>
-                    <div>
-                    <div className={classes.linebelow}>
-                        <span onClick={() => {
+                    <div className={classes.clsbtn} onClick={() => setAvatarSelectionPopup(false)}>x</div>
+                    <div className={classes.grid}>
+                    <span onClick={() => {
                             setSelectedAvatar("/m1.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>
@@ -250,8 +247,6 @@ x
                         }}>
                             <Avatar path="/avatars/m12.jpg" value="/avatars/m12.jpg" layout='fill'/>
                         </span>
-                    </div>
-                    <div className={classes.linebelow}>
                         <span onClick={() => {
                             setSelectedAvatar("/avatars/w1.jpg");
                             setAvatarSelectionPopup(d => !d);
@@ -300,8 +295,6 @@ x
                         }}>
                             <Avatar path="/avatars/w8.jpg" value="/avatars/w8.jpg" />
                         </span>
-                    </div>
-                    <div className={classes.linebelow}>
                         <span onClick={() => {
                             setSelectedAvatar("/avatars/c1.jpg");
                             setAvatarSelectionPopup(d => !d);
@@ -326,8 +319,7 @@ x
                         }}>
                             <Avatar path="/avatars/c4.jpg" value="/avatars/c4.jpg" />
                         </span>
-                    </div>
-                    <span onClick={() => {
+                        <span onClick={() => {
                             setSelectedAvatar("/avatars/a1.jpg");
                             setAvatarSelectionPopup(d => !d);
                         }}>

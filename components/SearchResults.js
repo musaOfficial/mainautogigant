@@ -17,6 +17,7 @@ import ListView from './../public/listview.svg';
 import AdCard from './dashboard/ads/AdCard';
 import PlusIcon from './../public/icons/ausstattungPlus.svg'
 import Closex from './../public/closex.svg'
+import PageSearch from './pagesearch/PageSearch';
 import {
     marke1,
     marke2,
@@ -44,7 +45,7 @@ import {
     schads,
   } from "./search/selectOptions";
 import Angebot from './ui/Angebot';
-import PageSearch from './pagesearch/PageSearch';
+import Page from './pagesearch/PageSearch';
 
 function SearchResults(){
     const style = {

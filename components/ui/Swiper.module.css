@@ -1,0 +1,61 @@
+.contactcontainer{
+    height: 260px;
+    width: 180px;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.imgsection{
+    height: 180px;
+    width: 100%;
+    background-color: #6C757D;
+    border-radius: 10px 10px 0 0;
+}
+
+.sectionbelow{
+    height: 80px;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.sectionbelow h1{
+    font-weight: bold;
+    line-height: 15px;
+}
+
+.call{
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    border-radius: 5px;
+    background-color: #FBB900;
+    top: 155px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mail{
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    border-radius: 5px;
+    background-color: #FBB900;
+    top: 155px;
+    left: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutussvg{
+    height: 23px;
+    width: 23px;
+}
+

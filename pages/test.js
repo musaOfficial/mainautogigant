@@ -1,8 +1,9 @@
+import SwiperComponent from "../components/ui/Swiper";
 
 
 function Test(){
     return (
-        <iframe src="banners/banner1/index.html" scrolling="no" width="100%"></iframe>
+        <SwiperComponent />
     )
 }
 
