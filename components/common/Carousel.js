@@ -3,6 +3,8 @@ import { Swiper } from "swiper/react";
 import SwiperCore, { Autoplay } from 'swiper';
 
 
+import classes from './Carousel.module.css';
+
 export default function FooterCarousel({ children }) {
   const [domLoaded, setDomLoaded] = useState(false);
   SwiperCore.use([Autoplay])
@@ -21,7 +23,7 @@ export default function FooterCarousel({ children }) {
           loopFillGroupWithBlank={true}
           navigation={false}
           autoplay={{ delay: 3000 }}
-          className="footer-swiper overflow-hidden rounded-t-3xl"
+          className={`footer-swiper overflow-hidden ${classes.borderradius} `}
         >
           {children}
         </Swiper>
