@@ -253,11 +253,11 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                             </div>}
                         </div>
                         <div className={classes.fragecontainer}>
-                            <div className={`${classes.frageheading} ${question10 == false && classes.marginbottom}`} onClick={() => setQuestion10(d => !d)}>
+                            <div className={`${classes.frageheading} `} onClick={() => setQuestion10(d => !d)}>
                                 <span className={classes.question}>Ich kann mich nicht anmelden, wie kann ich das tun?</span>
                                 <Expand className={question10 == true ? classes.expandopen : classes.expandclosed} />
                             </div>
-                            {question10 == true &&  <div className={classes.fragedesc}>
+                            {question10 == true &&  <div className={classes.fragedesclast}>
                             Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich &quot;Login&quot; auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
 
     Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
