@@ -10,6 +10,7 @@ function UeberUnsPage(){
           <title>Auto Gigant - Search Details</title>
           <meta name="description" content="Auto Gigant" />
           <link rel="icon" href="/favicon.ico" />
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         </Head>
         <Header />
             <About />
