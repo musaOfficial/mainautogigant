@@ -49,13 +49,13 @@
 }
 
 .desc3, .desc5{
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 300;
     padding-bottom: 20px;
 }
 
 .desc6{
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 300;
 }
 
@@ -163,11 +163,43 @@
     font-weight: 300;
 }
 
+.leftteam{
+    width: 40%;
+}
 
 .rightteam{
     width: 70%;
 }
 
+@media (max-width: 1250px){
+    .rightteam{
+        width: 65%;
+    }
+}
+
+@media(max-width: 1150px){
+    .rightteam{
+        width: 65%;
+    }
+}
+
+@media (max-width: 1020px){
+    .rightteam{
+        width: 70%;
+    }
+}
+
+@media(max-width: 1100px){
+    .aligncenter{
+        font-size: 17px;
+    }
+}
+
+@media(max-width: 926px){
+    .rightteam{
+        width: 55%;
+    }
+}
 
 /* FRAGEN */
 
@@ -217,4 +249,63 @@
 .marginbottom{
     margin-bottom: 20px;
     border: none !important;
+}
+
+/* Team */
+
+@media(min-width: 1000){
+    .rightteam{
+        width: 30%;
+    }
+}
+
+@media(max-width: 700px){
+    .ourteam{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .leftteam{
+        width: unset;
+    }
+
+    .rightteam{
+        width: 100%;
+    }
+}
+
+@media (max-width: 1186px){
+    .left{
+        width: 100% !important;
+    }
+
+    .right{
+        display: none;
+    }
+
+    .middlecontainer{
+        margin-top: 20px;
+        height: 278px;
+        align-items: flex-end;
+        position: relative;
+        width: 100% !important;
+    }
+}
+
+@media(max-width: 560px){
+    .ceo{
+        display: none;
+    }
+
+    .middlecontainer{
+        height: unset;
+    }
+
+    .left div{
+        display: flex;
+        align-content: flex-start;
+        justify-content: flex-start;
+        width: unset;
+        
+    }
 }

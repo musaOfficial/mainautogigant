@@ -39,6 +39,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all .1s ease-in;
+}
+
+.call:hover{
+    background-color: #FFE497;
+    cursor: pointer;
 }
 
 .mail{
@@ -52,6 +58,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all .1s ease-in;
+}
+
+.mail:hover{
+    background-color: #FFE497;
+    cursor: pointer;
 }
 
 .aboutussvg{

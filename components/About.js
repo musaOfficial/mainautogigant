@@ -5,8 +5,34 @@ import Union from './../public/aboutus/union.svg'
 import SwiperComponent from './ui/Swiper';
 import { useState } from 'react';
 import Expand from './../public/expand.svg'
+import { useEffect } from 'react';
+
+const useDeviceSize = () => {
+
+    const [width, setWidth] = useState(0)
+    const [height, setHeight] = useState(0)
+  
+    const handleWindowResize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    }
+  
+    useEffect(() => {
+      // component is mounted and window is available
+      handleWindowResize();
+      window.addEventListener('resize', handleWindowResize);
+      // unsubscribe from the event on component unmount
+      return () => window.removeEventListener('resize', handleWindowResize);
+    }, []);
+  
+    return [width, height]
+  
+  }
+
+
 function About(){
 
+    const [width, height] = useDeviceSize();
 
     const [question1, setQuestion1] = useState(false);
     const [question2, setQuestion2] = useState(false);
@@ -41,11 +67,13 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                     </div>
                 </div>
                 <div className={classes.middlecontainer}>
+
                     <div className={classes.ceo}>
-                        <Image src={'/people/hasangueler.png'} layout='fill' objectFit='cover'/>
+                        {width >= 560 && <Image src={'/people/hasangueler.png'} className={classes.imgceo} layout='fill' objectFit='cover'/>}
                     </div>
                     <div className={classes.left}>
                         <div>
+
                             <h1 className={classes.leftheading} >Unser CEO sagt</h1>
                             <p className={classes.lefttext} >Qualität ist nie ein Zufall; 
     sie ist immer das Ergebnis 
@@ -54,7 +82,7 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                         </div>
                     </div>
                     <div className={classes.right}>
-                        <Image src={'/aboutus/abr.png'} layout='fill' /> 
+                        {width >= 1186 && <Image src={'/aboutus/abr.png'} layout='fill' /> }
                     </div>
                 </div>
                 <div className={classes.ourteam}>

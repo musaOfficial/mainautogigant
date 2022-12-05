@@ -8,12 +8,17 @@
 @import "swiper/css/pagination";
 @import "swiper/css/navigation";
 
+:root{
+  --swiper-navigation-color: #ccc;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif;
   color: #808080;
+  --swiper-navigation-color: #ccc;
 }
 
 a {
@@ -222,12 +227,4 @@ input[type=number]::-webkit-outer-spin-button {
 
 .swiper::before{
   display: none;
-}
-
-.swiper-button-prev{
-  padding-left: 20px;
-}
-
-.swiper-button-next{
-  padding-right: 20px;
 }

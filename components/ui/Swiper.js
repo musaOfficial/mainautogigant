@@ -12,19 +12,64 @@ import MailSvg from './../../public/aboutus/mail.svg'
 
 
 
+
 function SwiperComponent(){
+
     return (
         <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={50}
+        spaceBetween={-45}
         slidesPerView={3}
-        navigation
+        navigation={true}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
         setWrapperSize={250}
         slidePrevClass={classes.slideprev}
         slideNestClass={classes.slideprev}
-        slideClass={classes.slider}
+        breakpoints={
+            {
+
+                0: {
+                    spaceBetween: 20,
+                    slidesPerView: 1,
+                },
+
+                451: {
+                    slidesPerView: 2
+                },
+
+                571: {
+                    slidesPerView: 3
+                },
+
+                700:{
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+
+                701:{
+                    spaceBetween: 60,
+                    slidesPerView: 2,
+                    setWrapperSize: 100
+                },
+
+                
+                800:{
+                    spaceBetween: -5,
+                    slidesPerView: 2
+                },
+                
+                960:{
+                    spaceBetween: 30,
+                    slidesPerView: 3,
+                },
+
+                1270:{
+                    slidesPerView: 3,
+                    spaceBetween: -45
+                }
+            }
+        }
       >
         <SwiperSlide>
             <div className={classes.contactcontainer}>
