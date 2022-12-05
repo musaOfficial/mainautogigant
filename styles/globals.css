@@ -176,8 +176,8 @@ input {
 }
 
 .container:hover input,
-input:focus,
-input:not(:placeholder-shown) {
+.in:focus,
+.in:not(:placeholder-shown) {
   width: 250px;
   padding-left: 1.5rem;
 }
@@ -227,4 +227,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .swiper::before{
   display: none;
+}
+
+input:checked{
+    width: 100%;
 }

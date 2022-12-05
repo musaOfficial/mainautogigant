@@ -4,13 +4,13 @@ export default function Input({ inputType, sublabel, placeholder, onChange, valu
   const [inType, setInType] = useState(inputType);
 
   return (
-    <div className="mb-6">
+    <div className="mb-6 w-full">
       {/* <label
         className={`text-sm font-bold inline-block ${sublabel ? "" : "mb-1"}`}
       >
         {label}
       </label> */}
-      {sublabel ? <p className="text-xs mb-1">{sublabel}</p> : null}
+      {sublabel ? <p className="w-full text-xs mb-1">{sublabel}</p> : null}
       <div className="relative">
         <input
           className="w-full rounded-10 text-base p-3 bg-white"
