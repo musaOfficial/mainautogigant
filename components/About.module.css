@@ -122,7 +122,8 @@
 }
 
 .leftbtn:hover{
-    background-color: #FFE497;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
 }
 
 .ceo{
@@ -305,9 +306,8 @@
 
 .gigantgroupcontainer{
     background-color: #F1F2F3;
-    margin-top: 20px;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     display: flex;
     justify-content: space-between;
 }
@@ -322,21 +322,22 @@
 .gigantright{
     position: relative;
     min-height: 75px !important;
-    min-width: 75px !important;
     max-height: 75px !important;
-    max-width: 75px !important;
     border-radius: 10px;
     overflow: hidden;
     justify-self: flex-start;
     align-self: flex-start;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
 }
 
 .blackbg{
     width: 100%;
     background-color: #000;
     height: 75px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border-radius: 10px 10px 0 0;
+    margin-top: 20px;
 }
 
 .gigantdesc{
@@ -354,6 +355,7 @@
     justify-self: flex-start;
     display: inline-block;
     width: 300px;
+    margin-left: -2px;
 }
 
 @media(min-width: 1000){

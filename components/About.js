@@ -280,13 +280,13 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                             <Image src={'/aboutus/ab3.png'} layout='fill' objectFit='cover' />
                         </div>
                     </div>
-                <div className={classes.gigantgroupcontainer}>
-                        <div className={classes.gigantleft}>
-                        <div className={classes.blackbg}>
+                    <div className={classes.blackbg}>
                             <div className={classes.gigantright}>
-                                <Image src={'/aboutus/gigantlogo.png'} layout='fill' objectFit='cover' />
+                                <Image src={'/aboutus/giglogo.png'} height={35} width={141.72} objectFit='cover' />
                             </div>
                         </div>
+                <div className={classes.gigantgroupcontainer}>
+                        <div className={classes.gigantleft}>
                             <h4 className={classes.gigantheading}>ÜBER GIGANT GROUP.</h4>
                             <p className={classes.gigantdesc}>
                             Das Unternehmen kennzeichnet sich durch technologische Innovationen, 
