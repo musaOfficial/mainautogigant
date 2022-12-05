@@ -35,11 +35,11 @@ function SwiperComponent(){
                 },
 
                 451: {
-                    slidesPerView: 2
+                    slidesPerView: 1
                 },
 
                 571: {
-                    slidesPerView: 3
+                    slidesPerView: 2
                 },
 
                 700:{
