@@ -112,11 +112,11 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                                 <Expand className={question1 == true ? classes.expandopen : classes.expandclosed} />
                             </div>
                             {question1 == true &&  <div className={classes.fragedesc}>
-                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich &quot;Login&quot; auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
 
     Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
     das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
-    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+    können Sie über die Option &quot;Passwort vergessen&quot; ein neues Passwort anfordern.
                             </div>}
                         </div>
                         <div className={classes.fragecontainer}>
@@ -125,11 +125,11 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                                 <Expand className={question2 == true ? classes.expandopen : classes.expandclosed} />
                             </div>
                             {question2 == true &&  <div className={classes.fragedesc}>
-                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich &quot;Login&quot; auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
 
     Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
     das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
-    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+    können Sie über die Option &quot;Passwort vergessen&quot; ein neues Passwort anfordern.
                             </div>}
                         </div>
                         <div className={classes.fragecontainer}>
@@ -138,11 +138,11 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                                 <Expand className={question3 == true ? classes.expandopen : classes.expandclosed} />
                             </div>
                             {question3 == true &&  <div className={classes.fragedesc}>
-                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich &quot;Login&quot; auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
 
     Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
     das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
-    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+    können Sie über die Option &quot;Passwort vergessen&quot; ein neues Passwort anfordern.
                             </div>}
                         </div>
                         <div className={classes.fragecontainer}>
@@ -151,11 +151,11 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                                 <Expand className={question4 == true ? classes.expandopen : classes.expandclosed} />
                             </div>
                             {question4 == true &&  <div className={classes.fragedesc}>
-                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich &quot;Login&quot; auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
 
     Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
     das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
-    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+    können Sie über die Option &quot;Passwort vergessen&quot; ein neues Passwort anfordern.
                             </div>}
                         </div>
                         <div className={classes.fragecontainer}>
@@ -164,11 +164,11 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                                 <Expand className={question5 == true ? classes.expandopen : classes.expandclosed} />
                             </div>
                             {question5 == true &&  <div className={classes.fragedesc}>
-                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich &quot;Login&quot; auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
 
     Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
     das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
-    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+    können Sie über die Option &quot;Passwort vergessen&quot; ein neues Passwort anfordern.
                             </div>}
                         </div>
                         <div className={classes.fragecontainer}>
@@ -177,11 +177,11 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                                 <Expand className={question6 == true ? classes.expandopen : classes.expandclosed} />
                             </div>
                             {question6 == true &&  <div className={classes.fragedesc}>
-                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich &quot;Login&quot; auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
 
     Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
     das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
-    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+    können Sie über die Option &quot;Passwort vergessen&quot; ein neues Passwort anfordern.
                             </div>}
                         </div>
                         <div className={classes.fragecontainer}>
@@ -190,11 +190,11 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                                 <Expand className={question7 == true ? classes.expandopen : classes.expandclosed} />
                             </div>
                             {question7 == true &&  <div className={classes.fragedesc}>
-                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich &quot;Login&quot; auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
 
     Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
     das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
-    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+    können Sie über die Option &quot;Passwort vergessen&quot; ein neues Passwort anfordern.
                             </div>}
                         </div>
                         <div className={classes.fragecontainer}>
@@ -203,11 +203,11 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                                 <Expand className={question8 == true ? classes.expandopen : classes.expandclosed} />
                             </div>
                             {question8 == true &&  <div className={classes.fragedesc}>
-                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich &quot;Login&quot; auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
 
     Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
     das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
-    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+    können Sie über die Option &quot;Passwort vergessen&quot; ein neues Passwort anfordern.
                             </div>}
                         </div>
 
@@ -217,11 +217,11 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                                 <Expand className={question9 == true ? classes.expandopen : classes.expandclosed} />
                             </div>
                             {question9 == true &&  <div className={classes.fragedesc}>
-                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich &quot;Login&quot; auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
 
     Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
     das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
-    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+    können Sie über die Option &quot;Passwort vergessen&quot; ein neues Passwort anfordern.
                             </div>}
                         </div>
                         <div className={classes.fragecontainer}>
@@ -230,11 +230,11 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                                 <Expand className={question10 == true ? classes.expandopen : classes.expandclosed} />
                             </div>
                             {question10 == true &&  <div className={classes.fragedesc}>
-                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich &quot;Login&quot; auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
 
     Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
     das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
-    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+    können Sie über die Option &quot;Passwort vergessen&quot; ein neues Passwort anfordern.
                             </div>}
                         </div>
 
