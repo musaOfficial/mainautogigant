@@ -225,8 +225,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .swiper-button-prev{
-  padding-right: 100px;
-  position: absolute;
+  padding-left: 20px;
 }
 
-.swiper-button-next { color: red !important; }
+.swiper-button-next{
+  padding-right: 20px;
+}

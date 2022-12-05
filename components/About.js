@@ -3,7 +3,22 @@ import Image from 'next/image'
 import Rectangle from './../public/aboutus/rectangle.svg';
 import Union from './../public/aboutus/union.svg'
 import SwiperComponent from './ui/Swiper';
+import { useState } from 'react';
+import Expand from './../public/expand.svg'
 function About(){
+
+
+    const [question1, setQuestion1] = useState(false);
+    const [question2, setQuestion2] = useState(false);
+    const [question3, setQuestion3] = useState(false);
+    const [question4, setQuestion4] = useState(false);
+    const [question5, setQuestion5] = useState(false);
+    const [question6, setQuestion6] = useState(false);
+    const [question7, setQuestion7] = useState(false);
+    const [question8, setQuestion8] = useState(false);
+    const [question9, setQuestion9] = useState(false);
+    const [question10, setQuestion10] = useState(false);
+
     return (
         <div className={` ${classes.background} overflow-hidden lg:px-6 md:!px-0`}>
             <div className={` ${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
@@ -90,9 +105,140 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                 </div>
                 <div className={classes.fragencontainer}>
                     <h1 className={classes.fragenheading}>HÄUFIG GESTELLTE FRAGEN</h1>
-                    <div className={classes.fragecontainer}>
+                    {/* FRAGEN - bottom */}
+                        <div className={classes.fragecontainer}>
+                            <div className={`${classes.frageheading} ${question1 == false && classes.marginbottom}`} onClick={() => setQuestion1(d => !d)}>
+                                <span className={classes.question}>Ich kann mich nicht anmelden, wie kann ich das tun?</span>
+                                <Expand className={question1 == true ? classes.expandopen : classes.expandclosed} />
+                            </div>
+                            {question1 == true &&  <div className={classes.fragedesc}>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
 
-                    </div>
+    Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
+    das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
+    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+                            </div>}
+                        </div>
+                        <div className={classes.fragecontainer}>
+                            <div className={`${classes.frageheading} ${question2 == false && classes.marginbottom}`} onClick={() => setQuestion2(d => !d)}>
+                                <span className={classes.question}>Ich kann mich nicht anmelden, wie kann ich das tun?</span>
+                                <Expand className={question2 == true ? classes.expandopen : classes.expandclosed} />
+                            </div>
+                            {question2 == true &&  <div className={classes.fragedesc}>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+
+    Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
+    das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
+    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+                            </div>}
+                        </div>
+                        <div className={classes.fragecontainer}>
+                            <div className={`${classes.frageheading} ${question3 == false && classes.marginbottom}`} onClick={() => setQuestion3(d => !d)}>
+                                <span className={classes.question}>Ich kann mich nicht anmelden, wie kann ich das tun?</span>
+                                <Expand className={question3 == true ? classes.expandopen : classes.expandclosed} />
+                            </div>
+                            {question3 == true &&  <div className={classes.fragedesc}>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+
+    Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
+    das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
+    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+                            </div>}
+                        </div>
+                        <div className={classes.fragecontainer}>
+                            <div className={`${classes.frageheading} ${question4 == false && classes.marginbottom}`} onClick={() => setQuestion4(d => !d)}>
+                                <span className={classes.question}>Ich kann mich nicht anmelden, wie kann ich das tun?</span>
+                                <Expand className={question4 == true ? classes.expandopen : classes.expandclosed} />
+                            </div>
+                            {question4 == true &&  <div className={classes.fragedesc}>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+
+    Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
+    das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
+    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+                            </div>}
+                        </div>
+                        <div className={classes.fragecontainer}>
+                            <div className={`${classes.frageheading} ${question5 == false && classes.marginbottom}`} onClick={() => setQuestion5(d => !d)}>
+                                <span className={classes.question}>Ich kann mich nicht anmelden, wie kann ich das tun?</span>
+                                <Expand className={question5 == true ? classes.expandopen : classes.expandclosed} />
+                            </div>
+                            {question5 == true &&  <div className={classes.fragedesc}>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+
+    Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
+    das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
+    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+                            </div>}
+                        </div>
+                        <div className={classes.fragecontainer}>
+                            <div className={`${classes.frageheading} ${question6 == false && classes.marginbottom}`} onClick={() => setQuestion6(d => !d)}>
+                                <span className={classes.question}>Ich kann mich nicht anmelden, wie kann ich das tun?</span>
+                                <Expand className={question6 == true ? classes.expandopen : classes.expandclosed} />
+                            </div>
+                            {question6 == true &&  <div className={classes.fragedesc}>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+
+    Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
+    das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
+    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+                            </div>}
+                        </div>
+                        <div className={classes.fragecontainer}>
+                            <div className={`${classes.frageheading} ${question7 == false && classes.marginbottom}`} onClick={() => setQuestion7(d => !d)}>
+                                <span className={classes.question}>Ich kann mich nicht anmelden, wie kann ich das tun?</span>
+                                <Expand className={question7 == true ? classes.expandopen : classes.expandclosed} />
+                            </div>
+                            {question7 == true &&  <div className={classes.fragedesc}>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+
+    Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
+    das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
+    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+                            </div>}
+                        </div>
+                        <div className={classes.fragecontainer}>
+                            <div className={`${classes.frageheading} ${question8 == false && classes.marginbottom}`} onClick={() => setQuestion8(d => !d)}>
+                                <span className={classes.question}>Ich kann mich nicht anmelden, wie kann ich das tun?</span>
+                                <Expand className={question8 == true ? classes.expandopen : classes.expandclosed} />
+                            </div>
+                            {question8 == true &&  <div className={classes.fragedesc}>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+
+    Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
+    das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
+    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+                            </div>}
+                        </div>
+
+                        <div className={classes.fragecontainer}>
+                            <div className={`${classes.frageheading} ${question9 == false && classes.marginbottom}`} onClick={() => setQuestion9(d => !d)}>
+                                <span className={classes.question}>Ich kann mich nicht anmelden, wie kann ich das tun?</span>
+                                <Expand className={question9 == true ? classes.expandopen : classes.expandclosed} />
+                            </div>
+                            {question9 == true &&  <div className={classes.fragedesc}>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+
+    Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
+    das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
+    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+                            </div>}
+                        </div>
+                        <div className={classes.fragecontainer}>
+                            <div className={`${classes.frageheading} ${question10 == false && classes.marginbottom}`} onClick={() => setQuestion10(d => !d)}>
+                                <span className={classes.question}>Ich kann mich nicht anmelden, wie kann ich das tun?</span>
+                                <Expand className={question10 == true ? classes.expandopen : classes.expandclosed} />
+                            </div>
+                            {question10 == true &&  <div className={classes.fragedesc}>
+                            Sie können sich mit Ihren aktuellen Mitgliedsdaten im Bereich "Login" auf der Startseite unserer Website in unserer Anwendung anmelden.<br/><br/>
+
+    Wenn Sie sich anmelden, müssen Sie sicherstellen, dass Ihre E-Mail, Ihr Mobiltelefon und Ihr Passwort, 
+    das Sie bei der Anmeldung angegeben haben, korrekt sind. Wenn Sie Ihr Passwort vergessen haben, 
+    können Sie über die Option "Passwort vergessen" ein neues Passwort anfordern.
+                            </div>}
+                        </div>
+
+                    {/* FRAGEN - top */}
                 </div>
             </div>
         </div> 
