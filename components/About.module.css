@@ -279,6 +279,7 @@
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+    font-weight: normal;
 }
 
 
@@ -320,10 +321,22 @@
 
 .gigantright{
     position: relative;
-    min-height: 227px !important;
-    min-width: 307px !important;
+    min-height: 75px !important;
+    min-width: 75px !important;
+    max-height: 75px !important;
+    max-width: 75px !important;
     border-radius: 10px;
     overflow: hidden;
+    justify-self: flex-start;
+    align-self: flex-start;
+}
+
+.blackbg{
+    width: 100%;
+    background-color: #000;
+    height: 75px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .gigantdesc{

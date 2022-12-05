@@ -282,6 +282,11 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                     </div>
                 <div className={classes.gigantgroupcontainer}>
                         <div className={classes.gigantleft}>
+                        <div className={classes.blackbg}>
+                            <div className={classes.gigantright}>
+                                <Image src={'/aboutus/gigantlogo.png'} layout='fill' objectFit='cover' />
+                            </div>
+                        </div>
                             <h4 className={classes.gigantheading}>ÜBER GIGANT GROUP.</h4>
                             <p className={classes.gigantdesc}>
                             Das Unternehmen kennzeichnet sich durch technologische Innovationen, 
@@ -294,9 +299,6 @@ Besonders wichtig ist den Machern des Unternehmens die Produktionstechnik,
 die effizienter gestaltet ist und dadurch Kosten spart.
 Darüber hinaus setzt das Unternehmen auf Mitarbeiter mit langjähriger Erfahrung sowie auf ein positives Arbeitsklima.
                             </p>
-                        </div>
-                        <div className={classes.gigantright}>
-                            <Image src={'/aboutus/gigantlogo.png'} layout='fill' objectFit='cover' />
                         </div>
                     </div>
             </div>
