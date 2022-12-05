@@ -253,7 +253,7 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                             </div>}
                         </div>
                         <div className={classes.fragecontainer}>
-                            <div className={`${classes.frageheading} `} onClick={() => setQuestion10(d => !d)}>
+                            <div className={`${classes.frageheading} ${question10 == false && classes.noborderbottom} `} onClick={() => setQuestion10(d => !d)}>
                                 <span className={classes.question}>Ich kann mich nicht anmelden, wie kann ich das tun?</span>
                                 <Expand className={question10 == true ? classes.expandopen : classes.expandclosed} />
                             </div>
@@ -265,9 +265,40 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
     können Sie über die Option &quot;Passwort vergessen&quot; ein neues Passwort anfordern.
                             </div>}
                         </div>
-
                     {/* FRAGEN - top */}
+
+                    {/* */}
                 </div>
+                <div className={classes.images}>
+                        <div className={classes.ab1}>
+                            <Image src={'/aboutus/ab1.png'} layout='fill' objectFit='cover' />
+                        </div>
+                        <div className={classes.ab2}>
+                            <Image src={'/aboutus/ab2.png'} layout='fill' objectFit='cover' />
+                        </div>
+                        <div className={classes.ab3}>
+                            <Image src={'/aboutus/ab3.png'} layout='fill' objectFit='cover' />
+                        </div>
+                    </div>
+                <div className={classes.gigantgroupcontainer}>
+                        <div className={classes.gigantleft}>
+                            <h4 className={classes.gigantheading}>ÜBER GIGANT GROUP.</h4>
+                            <p className={classes.gigantdesc}>
+                            Das Unternehmen kennzeichnet sich durch technologische Innovationen, 
+die von eigenen Marken und Produkten bis hin zu Vermarktung und Gestaltung der Technologie reichen. <br></br><br></br>
+
+Die Technologie soll dem Endkunden in jeder Form einen Nutzen bieten.
+Das Unternehmen investiert in Start-up Projekte, um neue Ideen zu verwirklichen und diese am Markt zu etablieren.<br></br><br></br>
+ 
+Besonders wichtig ist den Machern des Unternehmens die Produktionstechnik, 
+die effizienter gestaltet ist und dadurch Kosten spart.
+Darüber hinaus setzt das Unternehmen auf Mitarbeiter mit langjähriger Erfahrung sowie auf ein positives Arbeitsklima.
+                            </p>
+                        </div>
+                        <div className={classes.gigantright}>
+                            <Image src={'/aboutus/gigantlogo.png'} layout='fill' objectFit='cover' />
+                        </div>
+                    </div>
             </div>
         </div> 
     )

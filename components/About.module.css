@@ -176,9 +176,44 @@
     justify-content: space-between;
 }
 
+.noborderbottom{
+    border-bottom: none !important;
+}
+
 .rightteam{
     width: 70%;
     height: 100%;
+}
+
+.images{
+    display: flex;
+    margin-top: 20px;
+}
+
+.ab1{
+    position: relative;
+    width: 538px;
+    height: 251px;
+    margin-right: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ab2{
+    position: relative;
+    height: 251px;
+    width: 251px;
+    margin-right: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ab3{
+    position: relative;
+    height: 251px;
+    width: 251px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 @media (max-width: 1250px){
@@ -267,6 +302,47 @@
 
 /* Team */
 
+.gigantgroupcontainer{
+    background-color: #F1F2F3;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gigantleft{
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gigantright{
+    position: relative;
+    min-height: 227px !important;
+    min-width: 307px !important;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gigantdesc{
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+.gigantheading{
+    font-size: 30px;
+    font-weight: 300;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+    justify-self: flex-start;
+    display: inline-block;
+    width: 300px;
+}
+
 @media(min-width: 1000){
     .rightteam{
         width: 30%;
@@ -323,3 +399,4 @@
         
     }
 }
+
