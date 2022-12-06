@@ -385,6 +385,7 @@
     border-radius: 10px;
     font-weight: bold;
     transition: all .1s ease-in;
+    z-index: 100;
 }
 
 .call:hover{

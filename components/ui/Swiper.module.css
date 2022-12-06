@@ -6,6 +6,8 @@
 }
 
 .imgsection{
+    position: relative;
+    overflow: hidden;
     height: 160px;
     width: 100%;
     background-color: #6C757D;
@@ -25,10 +27,12 @@
 .sectionbelow h1{
     font-weight: light;
     line-height: 15px;
+    font-size: 15px;
 }
 
 .sectionbelow p{
     font-weight: 300;
+    font-size: 13px;
 }
 
 .call{
@@ -43,11 +47,13 @@
     align-items: center;
     justify-content: center;
     transition: all .1s ease-in;
+    z-index: 100;
 }
 
 .call:hover{
     background-color: #FFE497;
     cursor: pointer;
+
 }
 
 .mail{
@@ -62,6 +68,7 @@
     align-items: center;
     justify-content: center;
     transition: all .1s ease-in;
+    z-index: 100;
 }
 
 .mail:hover{

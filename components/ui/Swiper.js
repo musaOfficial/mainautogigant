@@ -4,6 +4,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 // Import Swiper styles
 import 'swiper/css';
 
+import Image from 'next/image'
 
 import classes from './Swiper.module.css';
 
@@ -80,7 +81,24 @@ function SwiperComponent(){
                     <MailSvg className={classes.aboutussvg} />
                 </div>
                 <div className={classes.imgsection}>
-
+                    <Image src="/images/logo.png" layout='fill' objectFit='cover' />
+                </div>
+                <div className={classes.sectionbelow}>
+                    <h1>Max Mustermann</h1>
+                    <p>Kundenbetreuung</p>
+                </div>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className={classes.contactcontainer}>
+                <div className={classes.call}>
+                    <CallSvg className={classes.aboutussvg} />
+                </div>
+                <div className={classes.mail}>
+                    <MailSvg className={classes.aboutussvg}  />
+                </div>
+                <div className={classes.imgsection}>
+                    <Image src="/images/logo.png" layout='fill' objectFit='cover' />
                 </div>
                 <div className={classes.sectionbelow}>
                     <h1>Max Mustermann</h1>
@@ -97,24 +115,7 @@ function SwiperComponent(){
                     <MailSvg className={classes.aboutussvg} />
                 </div>
                 <div className={classes.imgsection}>
-
-                </div>
-                <div className={classes.sectionbelow}>
-                    <h1>Max Mustermann</h1>
-                    <p>Kundenbetreuung</p>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div className={classes.contactcontainer}>
-                <div className={classes.call}>
-                    <CallSvg className={classes.aboutussvg} />
-                </div>
-                <div className={classes.mail}>
-                    <MailSvg className={classes.aboutussvg} />
-                </div>
-                <div className={classes.imgsection}>
-
+                    <Image src="/images/logo.png" layout='fill' objectFit='cover' />
                 </div>
                 <div className={classes.sectionbelow}>
                     <h1>Max Mustermann</h1>

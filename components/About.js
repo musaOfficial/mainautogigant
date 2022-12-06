@@ -78,7 +78,7 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                             <p className={classes.lefttext} >Qualität ist nie ein Zufall; 
     sie ist immer das Ergebnis 
     einer hohen Absicht.</p>
-                            <button className={classes.leftbtn}>Kontaktieren Sie uns</button> 
+                            <button className={classes.leftbtn}>KONTAKTIEREN SIE UNS</button> 
                         </div>
                     </div>
                     <div className={classes.right}>
@@ -91,37 +91,37 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                         <div className={classes.points}>
                             <div className={classes.aligncenter}>
                                 <div className={classes.rectangle}>
-                                    <Union />
+                                    <Union className={classes.union} />
                                 </div>
                                 <span>Persönliche Betreuung</span>
                             </div>
                             <div className={classes.aligncenter}>
                                 <div className={classes.rectangle}>
-                                    <Union />
+                                    <Union  className={classes.union}/>
                                 </div>
                                 <span>Kundenverständnis</span>
                             </div>
                             <div className={classes.aligncenter}>
                                 <div className={classes.rectangle}>
-                                    <Union />
+                                    <Union  className={classes.union}/>
                                 </div>
                                 <span>Mehrsprachigkeit</span>
                             </div>
                             <div className={classes.aligncenter}>
                                 <div className={classes.rectangle}>
-                                    <Union />
+                                    <Union className={classes.union} />
                                 </div>
                                 <span>Beratung und Überzeugung</span>
                             </div>
                             <div className={classes.aligncenter}>
                                 <div className={classes.rectangle}>
-                                    <Union />
+                                    <Union className={classes.union} />
                                 </div>
                                 <span>Persönliche Betreuung</span>
                             </div>
                             <div className={classes.aligncenter}>
                                 <div className={classes.rectangle}>
-                                    <Union />
+                                    <Union className={classes.union} />
                                 </div>
                                 <span>Kundenverständnis</span>
                             </div>

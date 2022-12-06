@@ -232,3 +232,18 @@ input[type=number]::-webkit-outer-spin-button {
 input:checked{
     width: 100%;
 }
+
+.swiper-button-next {
+  background-image: url('../public/arrows/arrowright.png');
+  background-repeat: no-repeat;
+  background-size: 52% auto;
+  background-position: center;
+  cursor: pointer;
+}
+.swiper-button-prev {
+  background-image: url('../public/arrows/arrowleft.png');
+  background-repeat: no-repeat;
+  background-size: 52% auto;
+  background-position: center;
+  cursor: pointer;
+}

@@ -1,0 +1,14 @@
+.container{
+    width: 100%;
+    background-color: #6C757D;
+    display: flex;
+    justify-content: center;
+}
+
+.contentcontainer{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    width: 100%;
+}
