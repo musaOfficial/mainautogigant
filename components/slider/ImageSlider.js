@@ -60,7 +60,6 @@ function ImageSlider({
     return (
         <div className={classes.container}>
             {zoomout == true && width >= 1140 && <div className={classes.zoombackground}>
-               <div>
                <div className={classes.werbung}>
                     <div className={classes.werbungtext}>Werbung</div>
                     <div className={classes.werbeflaeche}></div>
@@ -238,7 +237,6 @@ function ImageSlider({
                     }
 
                     }/>
-                </div>
                 </div>
                </div>
             </div>}

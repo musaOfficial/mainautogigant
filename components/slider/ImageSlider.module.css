@@ -17,7 +17,7 @@
 
 .zoombackground{
     background-color: #333;
-    position: static;
+    position: absolute;
     left: 0;
     top: 0;
     width: 100%;
@@ -32,7 +32,7 @@
 } 
 
 .zoombackground div{
-    z-index: 9999999999999999999999999 !important;
+    z-index: 9999999999999999999999998 !important;
 }
 
 .img{
