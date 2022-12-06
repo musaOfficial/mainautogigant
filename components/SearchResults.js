@@ -44,7 +44,7 @@ import {
     fahrz,
     schads,
   } from "./search/selectOptions";
-import Angebot from './ui/Angebot';
+import Angebot from './ui/ads/Angebot';
 import Page from './pagesearch/PageSearch';
 
 function SearchResults(){
@@ -166,6 +166,18 @@ function SearchResults(){
         setBrandNameInputValue("");
         setBrandSelected(false);
       };
+
+
+    const bezahlteAngebote = [
+        {
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+        },
+    ]
 
 
     const angebote = [
@@ -1164,6 +1176,7 @@ function SearchResults(){
                     </div>
                     <div className={`${classes.c2r2}`}>
                             <div className={`${gridView == true ? classes.carlistcontainer : classes.gridlayout}`}>
+                                
                                 {angebote.map((item, index) => <Angebot
                                     key={index}
                                     title={item.title}
