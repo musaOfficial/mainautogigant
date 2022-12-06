@@ -377,6 +377,7 @@
 
 .selectslider{
     margin-top: 20px;
+    z-index: 0;
 }
 
 .selectslider > div{
