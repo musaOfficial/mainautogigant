@@ -31,10 +31,6 @@
     
 } 
 
-.zoombackground div{
-    z-index: 9999999999999999999999998 !important;
-}
-
 .img{
     width: 100%;
     margin: 0 auto;
@@ -139,6 +135,7 @@
     position: relative;
     width: 95.5%;
     justify-content: space-between;
+    z-index: 0 !important;
 }
 
 .slctainer{
