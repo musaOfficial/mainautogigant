@@ -23,6 +23,33 @@
     
 }
 
+.sponsored{
+    position: relative;
+    margin-bottom: 20px;
+    background-color: #fff;
+    height: 200px;
+    padding-top: 10px;
+}
+
+.sponsorcard{
+    position: relative;
+    height: 368.5px;
+}
+
+.werbeanzeige{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 13px;
+}
+
+.werbeanzeigecard{
+    position: absolute;
+    right: 0;
+    top: -18px;
+    font-size: 13px;
+}
+
 .row{
     display: flex;
     width: 100%;
@@ -109,7 +136,7 @@
 
 .werbungtext{
     margin-left: 919px;
-    margin-bottom: -2px;
+    margin-bottom: 0px;
     font-size: 13px;
 }
 
@@ -959,7 +986,7 @@
     grid-template-columns: repeat(3, 1fr);
     border-radius: 10px;
     place-items: center;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 /* AUSSTATTUNG */

@@ -1175,8 +1175,33 @@ function SearchResults(){
                         </div>
                     </div>
                     <div className={`${classes.c2r2}`}>
-                            <div className={`${gridView == true ? classes.carlistcontainer : classes.gridlayout}`}>
-                                
+                            <div className={`${gridView == true ? classes.carlistcontainer : classes.gridlayout} `}>
+                                {bezahlteAngebote.map((item, index) => <div className={gridView == true ? classes.sponsored : classes.sponsorcard}>
+                                    <Angebot 
+                                        key={index}
+                                        title={"Sponsored"}
+                                        description="This is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long description"
+                                        price="€ 45.520,-"
+                                        adNo="#123456789"
+                                        start="01/01/2020"
+                                        end="01/01/2020"
+                                        imgSrc="/images/draft-card-img-car-1.png"
+                                        cardView={gridView == true}
+                                        details={
+                                            {
+                                                erstzulassung: "01/2022",
+                                                kraftstoff: "Benzin",
+                                                leistung: "125 PS",
+                                                kilometerstand: "412.000 KM",
+                                                getriebe: "Automatik",
+                                                fahrzeugzustand: "Gebraucht",
+                                            }
+                                        }
+                                        location = "2700 Wiener Neustadt | AT"
+                                        companyname = "Gigant Group Teknoloji A.S"
+                                    />
+                                    <div className={gridView == true ? classes.werbeanzeige : classes.werbeanzeigecard}>Werbeanzeige</div >
+                                </div>)}
                                 {angebote.map((item, index) => <Angebot
                                     key={index}
                                     title={item.title}

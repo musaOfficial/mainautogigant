@@ -234,7 +234,7 @@ export default function Footer() {
             <p className="flex items-center md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all">MADE WITH <img className="scale-75 py-px" src="/images/icons/copyright-fav.png" />IN AUSTRIA</p>
             <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">NUTZUNGSBEDINGNUNGEN</p>
             <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">DATENSCHUTZ</p>
-            <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">ÜBER UNS</p>
+            <Link href={"/about-us"}><p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">ÜBER UNS</p></Link>
             <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">IMPRESSUM</p>
             <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">KONTAKT</p>
             <p className="flex items-center cursor-pointer hover:transition-all hover:text-yellow-600" onClick={() => setOpenLanguagesBar(d => !d)}><img className="w-4 mr-1 md:px-2 scale-90" src="/images/icons/copyright-world.png" />DEUTSCH | ÖSTERREICH</p>
