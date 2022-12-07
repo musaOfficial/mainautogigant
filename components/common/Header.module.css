@@ -234,10 +234,6 @@
     }
 }
 
-.header{
-    z-index: 2500;
-}
-
 .headerbtn{
     box-shadow: 7px 25px 20px rgb(0, 0, 0, 0.2);
 }
