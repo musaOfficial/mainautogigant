@@ -58,10 +58,11 @@ function ImageSlider({
     const [selectedImage, setSelectedImage] = useState(0);
 
     return (
-        <div className={classes.container}>
-            {zoomout == true && width >= 1140 && <div className={classes.zoombackground}>
+        <>
+        {zoomout == true && width >= 1140 && <div className={classes.zoombackground}>
                
-            </div>}
+               </div>}
+        <div className={classes.container}>
             <div className={classes.content}>
                 <Image src={images[currentImage]} layout='fill' objectFit="cover"/>
                 <div className={classes.leftbox}>
@@ -218,6 +219,7 @@ function ImageSlider({
                 </div>
             </div>
         </div>
+        </>
     )
 }
 
