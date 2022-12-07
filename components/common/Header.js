@@ -52,7 +52,7 @@ export default function Header() {
   const [openTextarea, setOpenTextarea] = useState(false);
 
   return (
-    <header className={`bg-black shadow-1 py-3 relative z-40 lg:px-6 ${classes.header} ${width < 950 && classes.searchmargin}`}>
+    <header className={`bg-black shadow-1 py-3 relative lg:px-6 ${classes.header} ${width < 950 && classes.searchmargin}`}>
       {openTextarea && width < 950 && <div className={classes.textareasearch}>
         <div className={classes.relative}>
           <textarea placeholder={"Fahrzeug suchen"} className={classes.textarea}></textarea>

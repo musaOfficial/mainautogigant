@@ -1176,7 +1176,7 @@ function SearchResults(){
                     </div>
                     <div className={`${classes.c2r2}`}>
                             <div className={`${gridView == true ? classes.carlistcontainer : classes.gridlayout} `}>
-                                {bezahlteAngebote.map((item, index) => <div className={gridView == true ? classes.sponsored : classes.sponsorcard}>
+                                {bezahlteAngebote.map((item, index) => <div key={index} className={gridView == true ? classes.sponsored : classes.sponsorcard}>
                                     <Angebot 
                                         key={index}
                                         title={"Sponsored"}
