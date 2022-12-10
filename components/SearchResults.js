@@ -549,7 +549,7 @@ function SearchResults(){
                 <div>
                     <p className={classes.werbungtext}>Werbung</p>
                     <div className={classes.topimg}>
-                        <Image src={'/images/reg-car.png'} layout='fill' objectFit='cover'/>
+                        
                     </div>
                 </div>
                 <div className={classes.c2r1top}>

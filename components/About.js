@@ -131,10 +131,10 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                         <SwiperComponent />
                     </div>
                 </div>
-                <div className={classes.fragencontainer}>
+                {/* <div className={classes.fragencontainer}>
                     <h1 className={classes.fragenheading}>HÄUFIG GESTELLTE FRAGEN</h1>
                     {/* FRAGEN - bottom */}
-                        <div className={classes.fragecontainer}>
+                {/*        <div className={classes.fragecontainer}>
                             <div className={`${classes.frageheading} ${question1 == false && classes.marginbottom}`} onClick={() => setQuestion1(d => !d)}>
                                 <span className={classes.question}>Ich kann mich nicht anmelden, wie kann ich das tun?</span>
                                 <Expand className={question1 == true ? classes.expandopen : classes.expandclosed} />
@@ -265,10 +265,10 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
     können Sie über die Option &quot;Passwort vergessen&quot; ein neues Passwort anfordern.
                             </div>}
                         </div>
-                    {/* FRAGEN - top */}
+                    {/* FRAGEN - top 
 
-                    {/* */}
-                </div>
+                    
+                </div> */}
                 <div className={classes.images}>
                         <div className={classes.ab1}>
                             <Image src={'/aboutus/ab1.png'} layout='fill' objectFit='cover' />

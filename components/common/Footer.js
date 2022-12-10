@@ -8,6 +8,9 @@ import YouTubeIcon from './../../public/icons/youtube.svg';
 import InstagramIcon from './../../public/icons/instagram.svg';
 import TikTokIcon from './../../public/icons/tiktok.svg';
 import FaceBookIcon from './../../public/icons/facebook.svg';
+
+
+
 export default function Footer() {
 
   const links1 = [
@@ -36,6 +39,19 @@ export default function Footer() {
   ];
 
   const [openLanguagesBar, setOpenLanguagesBar] = useState(false);
+
+  if(typeof window == 'object'){
+    const concernedElement = document.querySelector(".langBar");
+
+    document.addEventListener("mousedown", (event) => {
+      if (concernedElement.contains(event.target)) {
+        
+      } else {
+        setOpenLanguagesBar(false);
+      }
+    });
+  }
+
   return (
     <footer className="md:!px-0">
       <div className={`${classes.backgroundfooterlinks}`}>
@@ -95,7 +111,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-black">
+      <div className="bg-black pb-10">
         <div className="w-10/12 max-w-ag-container lg:w-full mx-auto lg:px-6">
           <div className="flex justify-between md:flex-col lg:justify-around items-start xl:items-center py-4 md:py-8 bg-black">
             <div className="flex w-1/2 lg:w-auto md:mr-auto items-start lg:flex-col lg:items-start">
@@ -232,7 +248,7 @@ export default function Footer() {
           <div className="flex items-center flex-column justify-between py-2 text-white text-13 bg-black border-t border-theme-gray-3 xl:flex-wrap md:justify-center">
               <div className={classes.linkscontainer}>
                 <div className={classes.links}>
-                  <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>© 2023 AUTO GIGANT.</p>
+                  <p className={`md:px-2 ${classes.linkprop} ${classes.linkpropfirst} cursor-pointer hover:text-yellow-600 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>© 2023 AUTO GIGANT.</p>
                   <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>ALLE RECHTE VORBEHALTEN.</p>
                   <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>COOKIE HINWEISE</p>
                   <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>DATENSCHUTZ</p>
@@ -241,14 +257,14 @@ export default function Footer() {
                   <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>IMPRESSUM</p>
                   <Link href={"/contact-us"}><p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all`}>KONTAKT</p></Link>
                 </div>
-                <div className={classes.languages}>
+                <div className={`${classes.languages} langBar`}>
                   <p className="flex items-center cursor-pointer hover:transition-all hover:text-yellow-600" onClick={() => setOpenLanguagesBar(d => !d)}><img className="w-4 mr-1 md:px-2 scale-90" src="/images/icons/copyright-world.png" />DEUTSCH</p>
                 </div>
               </div>              
           </div>
           <div className={classes.belowfootercontainer}>
-            <p className={`flex items-center ${classes.linkprop} md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all border-r-2 border-theme-gray-3`}>MADE WITH <img className={`${classes.worldicon}`} src="/images/icons/copyright-fav.png" />IN AUSTRIA</p>
-            <Link href={"https://www.hgmedia.at/"}><p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 text-12 hover:transition-all `}>IN COOPERATION WITH HGMEDIA ADVERTISING AGENCY</p></Link>
+            <p className={`flex items-center ${classes.linkpropfirst} md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all border-r-2 border-theme-gray-3`}>MADE WITH <img className={`${classes.worldicon}`} src="/images/icons/copyright-fav.png" />IN AUSTRIA</p>
+            <Link href={"https://www.hgmedia.at/"}><p className={`md:px-2 ${classes.linkprop} cursor-pointer text-12  `}>IN COOPERATION WITH <span className="hover:text-yellow-600">HGMEDIA ADVERTISING AGENCY</span></p></Link>
           </div>
         </div>
       </div>

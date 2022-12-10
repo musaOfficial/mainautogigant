@@ -196,7 +196,7 @@
 
 .svgcontainer{
     width: 150px;
-    border-radius: 5px;
+    border-radius: 10px;
     padding-left: 15px;
     position: absolute;
     font-size: 13px;
@@ -209,7 +209,7 @@
 }
 
 .svgcontainerlast{
-    border-radius: 5px;
+    border-radius: 10px;
     position: absolute;
     font-size: 13px;
     color: #0067B8;
