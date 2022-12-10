@@ -12,7 +12,7 @@ export default function Dealer(){
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <ContactUs />
+      
       <Footer />
     </>
     );
