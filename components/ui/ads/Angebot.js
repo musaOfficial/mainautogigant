@@ -147,7 +147,7 @@ function Angebot({
                 </div>
             </div>
             <div className={styles.bottom}>
-                <h1 className={styles.title}>Porsche Cayenne</h1>
+                <h1 className={styles.title}>{title}</h1>
                 <p className={styles.desc}>{cardDisplayDesc}</p>
                 <div className={styles.details}>
                     <div className={styles.row}>

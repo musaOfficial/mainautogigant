@@ -11,7 +11,7 @@ export default function DashboardLayout({ children }) {
         userThumb="/images/db-profile-thumb.png"
         userFullName="Hasan Güler"
       />
-      <div className="bg-theme-gray-3 md:bg-white">
+      <div className="bg-theme-gray-10 md:bg-white">
         <div className="w-16/170 max-w-ag-container lg:w-full mx-auto flex md:flex-wrap justify-between bg-white">
           <div className="flex w-full">
             <Sidebar />

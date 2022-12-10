@@ -1,0 +1,289 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    color: #6C757D;
+}
+
+/* 
+<div className={classes.container}>
+<div className={classes.c1}>
+  <h1 className={classes.heading}>GIGA POWER</h1>
+  <p className={classes.description}>GIGA POWER-Pakete bestehen aus Zusatzleistungen, mit denen Ihr Fahrzeug schneller verkauft werden kann. 
+Wenn Sie wissen möchten, welcher Service für Sie geeignet ist, können Sie die Paketdetails unten überprüfen.</p>
+  <div className={classes.gridcards}>
+    
+  </div>
+</div>
+<div className={classes.c2}></div>
+</div> */
+
+.c1{
+    background-color: #F1F2F3;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.heading{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.description{
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.gridcards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* <div className={classes.cardcontainer}>
+<h2 className={classes.cardheading}>STARTSEITE SCHAUFENSTER</h2>
+<p className={classes.carddescription}>Sichern Sie sich Ihren Platz im Schaufenster
+auf der Startseite und sorgen Sie dafür, 
+dass Ihr Inserat sofort gesehen wird.</p>
+<p className={classes.showexample}>Wie sieht mein Inserat aus?</p>
+<button className={classes.addtocart}>Zum Warenkorb hinzufügen</button>
+</div> */
+
+.cardcontainer{
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    min-height: 215px;
+    max-height: 400px;
+}
+
+.cardheading{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.carddescription{
+    font-size: 13px;
+}
+
+.showexample{
+    text-decoration: underline;
+    color: #0067B8;
+    font-size: 13px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.addtocart{
+    font-size: 13px;
+    font-weight: bold;
+    color: #0067B8;
+}
+
+/* <div className={classes.products}>
+<div className={classes.product}>
+  <div className={classes.productname}>1 Woche</div>
+  <div className={classes.productprice}>25,00 €</div>
+</div>
+<div className={classes.product}>
+  <div className={classes.productname}>1 Woche</div>
+  <div className={classes.productprice}>25,00 €</div>
+</div>
+<div className={classes.product}>
+  <div className={classes.productname}>1 Woche</div>
+  <div className={classes.productprice}>25,00 €</div>
+</div>
+<div className={classes.product}>
+  <div className={classes.productname}>1 Woche</div>
+  <div className={classes.productprice}>25,00 €</div>
+</div>
+</div> */
+
+
+.products{
+    position: absolute;
+    background-color: #6C757D;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 50px;
+}
+
+.padding{
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+/* {typeOpen1 == false ? <div className={classes.productsclosed}>
+                  <div className={classes.productnameclosed}>1 Woche</div>
+                  <div className={classes.productpriceclosed}>25,00 €</div>
+                  <Expand className={classes.expand} />
+                </div> : <div></div>} */
+
+
+.productsclosed{
+    background-color: #6C757D;
+    width: 100%;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all .09s ease-in;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.productsclosed:hover{
+    background-color: #FBB900;
+}
+
+.productnameclosed{
+    margin-left: 20px;
+}
+
+.expandright{
+    display: flex;
+    align-items: center;
+}
+
+.productpriceclosed{
+    margin-right: 10px;
+}
+
+.expand{
+    margin-right: 20px;
+}
+
+.productsopen{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #FBB900;
+    color: #333;
+}
+
+.toprow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+
+.closer{
+    cursor: pointer;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    transition: all .09s ease-in;
+    font-weight: bold;
+    padding: 0 20px;
+}
+
+.rowlight{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    transition: all .09s ease-in;
+    font-weight: bold;
+    padding: 0 20px;
+    background-color: #FFE497;
+}
+
+.rowlight:hover{
+    background-color: #333;
+    color: #FFE497;
+    cursor: pointer;
+}
+
+.row:hover{
+    background-color: #333;
+    color: #FBB900;
+    cursor: pointer;
+}
+
+.grid{
+    display: flex;
+}
+
+
+/* WARENKORB */
+
+.c2{
+    background-color: #FBB900;
+    color: #333;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.orderleft{
+    width: 70%;
+}
+
+.ordercontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.purchasebtn{
+    background-color: #fff;
+    min-height: 50px;
+    min-width: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.total{
+    font-size: 16px;
+}
+
+.totalprice{
+    font-size: 25px;
+}
+
+.last{
+    display: flex;
+    align-items: center;
+}
+
+.orderprice{
+    margin-right: 10px;
+    font-weight: normal;
+    width: 70px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.ordername{
+    font-weight: normal;
+    margin-right: 50px;
+}
+
+.deleter{
+    cursor: pointer;
+    transform: translateY(-1px);
+}

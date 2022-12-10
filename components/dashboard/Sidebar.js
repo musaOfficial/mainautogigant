@@ -103,7 +103,7 @@ export default function Sidebar() {
             <a
               className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/make-ads"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -130,9 +130,9 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/my-ads">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-100 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/my-ads"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -156,9 +156,9 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/drafts">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
+              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-100 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/drafts"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -187,7 +187,7 @@ export default function Sidebar() {
             <a
               className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/calender"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -268,7 +268,7 @@ export default function Sidebar() {
             <a
               className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/messages"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -297,7 +297,7 @@ export default function Sidebar() {
             <a
               className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/notifications"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -327,7 +327,7 @@ export default function Sidebar() {
             <a
               className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/ideas"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -356,7 +356,7 @@ export default function Sidebar() {
             <a
               className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/favourites"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -385,7 +385,7 @@ export default function Sidebar() {
             <a
               className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/search-orders"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -414,7 +414,7 @@ export default function Sidebar() {
             <a
               className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/saved-searches"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -443,7 +443,7 @@ export default function Sidebar() {
             <a
               className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/latest-advertisements"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -475,7 +475,7 @@ export default function Sidebar() {
             <a
               className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/giga-power"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -504,7 +504,7 @@ export default function Sidebar() {
             <a
               className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/recharge-giga-coins"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md"
                   : ""
               }`}
             >
@@ -533,7 +533,7 @@ export default function Sidebar() {
             <a
               className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/my-subscriptions"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -562,7 +562,7 @@ export default function Sidebar() {
             <a
               className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
                 active === "/dashboard/bills"
-                  ? "bg-theme-gray-6 text-theme-yellow-2 shadow-md font-bold"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
             >
@@ -586,7 +586,7 @@ export default function Sidebar() {
             </a>
           </Link>
         </div>
-        <div className="p-6 bg-opacity-15 bg-theme-gray-6">
+        <div className="p-6 bg-opacity-15 bg-theme-gray-10">
           <button
             className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md`}
           >

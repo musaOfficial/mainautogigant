@@ -132,7 +132,8 @@ function SearchResults(){
     const anzahlAngebote = 5000;
     const displayAnzahlAngebote = anzahlAngebote.toLocaleString();
 
-    const filters = ["Österreich", "Mercedes", "CLS 320"];
+    const [filters, setFilters] = useState(["Österreich","Mercedes", "CLS 320","Österreichh","Mercedess", "CLS 3200"]);
+
     const [openBasisdaten, setOpenBasisdaten] = useState(false);
     const [openAusstattung, setOpenAusstattung] = useState(false);
     const [openFarbe, setOpenFarbe] = useState(false);
@@ -510,6 +511,12 @@ function SearchResults(){
     const [xenonscheinwerfer, setXenonscheinwerfer] = useState(false);
     const [zentralverriegelung, setZentralverriegelung] = useState(false);
     const [zentralFunkfern, setZentralFunkfern] = useState(false);
+    
+    function handleDeleteFilter(index){
+        var reducedFilters = [...filters];
+        reducedFilters.splice(index, 1);
+        setFilters(reducedFilters);
+    }
 
     return (
         <div className={`${classes.container} ${openAusstattung == true && "overflow-y-hidden"}`}>
@@ -565,7 +572,9 @@ function SearchResults(){
                     </div>
                     <div className={classes.c1r2}>
                         <div className={classes.centeritems2}>
-                            {filters.map((filter, index) => <div key={filter} className={classes.filter}>{filter}<DelX className={classes.delx}/></div>)}
+                            {filters.map((filter, index) => <div key={index} className={classes.filter}>{filter}<DelX onClick={(e) => {
+                                handleDeleteFilter(index);
+                            }} className={classes.delx}/></div>)}
                         </div>
                         <div>
                             <button className={classes.delfilters}>FILTER LÖSCHEN</button>
@@ -1166,12 +1175,12 @@ function SearchResults(){
                                     placeholder="Erweiterte Sortierung"
                                     className={classes.erweitertselect}
                                 />
-                                <div className={classes.view}>
-                                    <ListView className={`${classes.listview} ${"mr-4"}`} onClick={() => setGridView(true)}/>
-                                    <GridView className={` ${classes.gridview}`} onClick={() => setGridView(false)}/>
-                                    <div className={`${gridView == true ? classes.viewleft : classes.viewright}`}></div>
-                                </div>
                             </div>
+                        </div>
+                        <div className={classes.view}>
+                            <ListView className={`${classes.listview} ${"mr-4"}`} onClick={() => setGridView(true)}/>
+                            <GridView className={` ${classes.gridview}`} onClick={() => setGridView(false)}/>
+                            <div className={`${gridView == true ? classes.viewleft : classes.viewright}`}></div>
                         </div>
                     </div>
                     <div className={`${classes.c2r2}`}>

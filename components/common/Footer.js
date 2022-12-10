@@ -27,12 +27,12 @@ export default function Footer() {
     { linkTitle: "AUTOAUFBEREITUNG", url: "#" },
   ];
   const links3 = [
+    { linkTitle: "KFZ KAUFVERTRAG", url: "/kaufvertrag" },
+    { linkTitle: "UNFALLBERICHT", url: "#" },
     { linkTitle: "NOVA RECHNER", url: "#" },
     { linkTitle: "DIGITALE VIGNETTE", url: "#" },
-    { linkTitle: "AUTOMARKEN", url: "#" },
     { linkTitle: "FAHRSCHULEN", url: "#" },
-    { linkTitle: "KFZ VORSCHRIFTEN", url: "#" },
-    { linkTitle: "KFZ KAUFVERTRAG", url: "/kaufvertrag" },
+    { linkTitle: "AUTOMARKEN", url: "#" },
   ];
 
   const [openLanguagesBar, setOpenLanguagesBar] = useState(false);
@@ -229,15 +229,26 @@ export default function Footer() {
           </div>}
         </div>
         <div className="w-10/12 max-w-ag-container lg:w-full mx-auto shadow-1">
-          <div className="flex items-center justify-between py-2 text-white text-13 bg-black border-t border-theme-gray-3 leading-5 xl:flex-wrap md:justify-center">
-            <p className="md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all">© 2023 AUTO GIGANT.</p>
-            <p className="flex items-center md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all">MADE WITH <img className="scale-75 py-px" src="/images/icons/copyright-fav.png" />IN AUSTRIA</p>
-            <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">NUTZUNGSBEDINGNUNGEN</p>
-            <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">DATENSCHUTZ</p>
-            <Link href={"/about-us"}><p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">ÜBER UNS</p></Link>
-            <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">IMPRESSUM</p>
-            <p className="md:px-2 cursor-pointer hover:transition-all hover:text-yellow-600">KONTAKT</p>
-            <p className="flex items-center cursor-pointer hover:transition-all hover:text-yellow-600" onClick={() => setOpenLanguagesBar(d => !d)}><img className="w-4 mr-1 md:px-2 scale-90" src="/images/icons/copyright-world.png" />DEUTSCH | ÖSTERREICH</p>
+          <div className="flex items-center flex-column justify-between py-2 text-white text-13 bg-black border-t border-theme-gray-3 xl:flex-wrap md:justify-center">
+              <div className={classes.linkscontainer}>
+                <div className={classes.links}>
+                  <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>© 2023 AUTO GIGANT.</p>
+                  <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>ALLE RECHTE VORBEHALTEN.</p>
+                  <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>COOKIE HINWEISE</p>
+                  <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>DATENSCHUTZ</p>
+                  <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>NUTZUNGSBEDINGUNGEN</p>
+                  <Link href={"/about-us"}><p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>ÜBER UNS</p></Link>
+                  <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>IMPRESSUM</p>
+                  <Link href={"/contact-us"}><p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all`}>KONTAKT</p></Link>
+                </div>
+                <div className={classes.languages}>
+                  <p className="flex items-center cursor-pointer hover:transition-all hover:text-yellow-600" onClick={() => setOpenLanguagesBar(d => !d)}><img className="w-4 mr-1 md:px-2 scale-90" src="/images/icons/copyright-world.png" />DEUTSCH</p>
+                </div>
+              </div>              
+          </div>
+          <div className={classes.belowfootercontainer}>
+            <p className={`flex items-center ${classes.linkprop} md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all border-r-2 border-theme-gray-3`}>MADE WITH <img className={`${classes.worldicon}`} src="/images/icons/copyright-fav.png" />IN AUSTRIA</p>
+            <Link href={"https://www.hgmedia.at/"}><p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 text-12 hover:transition-all `}>IN COOPERATION WITH HGMEDIA ADVERTISING AGENCY</p></Link>
           </div>
         </div>
       </div>
