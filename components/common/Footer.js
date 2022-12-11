@@ -54,7 +54,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="md:!px-0">
+    <footer className="md:!px-0 relative">
       <div className={`${classes.backgroundfooterlinks}`}>
         <div className="w-10/12 max-w-ag-container lg:w-full mx-auto">
           <div className="flex md:flex-col bg-theme-gray-4 p-6 pb-0">
@@ -67,9 +67,9 @@ export default function Footer() {
             </div>
             <div className="w-1/3 ml-4 md:w-1/2 md:mx-auto sm:!w-full">
               <FooterCarousel
-              >
+              className={"z-0"}>
                 <SwiperSlide>
-                  <div className="w-full h-full relative z-10 flex items-center p-6 bg-white overflow-hidden">
+                  <div className="w-full h-full relative flex items-center p-6 bg-white overflow-hidden">
                     <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10 overflow-hidden"></div>
                     <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4 overflow-hidden">
                       <img className="rounded-full" src="/images/logo.png" />
@@ -82,7 +82,7 @@ export default function Footer() {
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="w-full h-full relative z-10 flex items-center p-6 bg-white  overflow-hidden">
+                  <div className="w-full h-full relative flex items-center p-6 bg-white  overflow-hidden">
                   <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10 overflow-hidden"></div>
                     <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4 overflow-hidden">
                       <img className="rounded-full" src="/images/logo.png" />
@@ -95,7 +95,7 @@ export default function Footer() {
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="w-full h-full relative z-10 flex items-center p-6 bg-white overflow-hidden">
+                  <div className="w-full h-full relative  flex items-center p-6 bg-white overflow-hidden">
                   <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10 overflow-hidden"></div>
                     <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4 overflow-hidden">
                       <img className="rounded-full" src="/images/logo.png" />
@@ -223,22 +223,77 @@ export default function Footer() {
             <div className={classes.languagesbar}>
               <div className={classes.language}>
                 <Link href="http://autogigant.at">
-                    DEUTSCH / ÖSTERREICH
+                    DEUTSCH
                 </Link>
               </div>
               <div className={classes.language}>
-                <Link href="https://autogigant.de">
-                    DEUTSCH / DEUTSCHLAND
+                <Link href="http://autogigant.at">
+                    RUMÄNISCH
                 </Link>
               </div>
               <div className={classes.language}>
-                <Link href="https://autogigant.ch">
-                    DEUTSCH / SCHWEIZ
+                <Link href="http://autogigant.at">
+                    SERBISCH
                 </Link>
               </div>
               <div className={classes.language}>
-                <Link href="https://autogigant.tr">
-                    TÜRKCE / TÜRKIYE
+                <Link href="http://autogigant.at">
+                    TÜRKISCH
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="http://autogigant.at">
+                    BOSNISCH
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="http://autogigant.at">
+                    KROATISCH
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="http://autogigant.at">
+                    UNGARISCH
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="http://autogigant.at">
+                    ARABISCH
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="http://autogigant.at">
+                    POLNISCH
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="http://autogigant.at">
+                    UKRAINISCH
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="http://autogigant.at">
+                    SLOWAKISCH
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="http://autogigant.at">
+                    PERSISCH
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="http://autogigant.at">
+                    BULGARISCH
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="http://autogigant.at">
+                    ITALIENISCH
+                </Link>
+              </div>
+              <div className={classes.language}>
+                <Link href="http://autogigant.at">
+                    RUSSISCH
                 </Link>
               </div>
             </div>  

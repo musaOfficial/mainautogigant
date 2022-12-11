@@ -23,7 +23,7 @@ export default function FooterCarousel({ children }) {
           loopFillGroupWithBlank={true}
           navigation={false}
           autoplay={{ delay: 3000 }}
-          className={`footer-swiper overflow-hidden ${classes.borderradius} `}
+          className={`footer-swiper overflow-hidden z-0 ${classes.borderradius} `}
         >
           {children}
         </Swiper>

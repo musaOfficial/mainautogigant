@@ -78,6 +78,8 @@ function ContactUs(){
         {value: "allgemeineAnfrage" ,label: "Allgemeine Anfrage"},
     ];
 
+    const [showTelNum, setShowTelNum] = useState(false);
+
     return (
         <div className={classes.container}>
             <div className={`${classes.contentcontainer} overflow-y-hidden relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
@@ -94,8 +96,14 @@ function ContactUs(){
                         </div>
                     </div>
                     <div className={classes.contacter}>
-                        <div className={`${classes.con} ${haendler == false && "transition-all duration-100 opacity-0"}`}>
+                        <div className={`${classes.con} ${haendler == false && "transition-all duration-100 opacity-0"}`} onMouseEnter={() => setShowTelNum(true)} onMouseLeave={() => setShowTelNum(false)}>
                             <CallIcon className={classes.consvg} />
+                           {showTelNum == true && <div className={classes.numcontainer}>
+                                <div className={classes.conhover}>
+                                    <span className={classes.num}>+43 (0) 699 19778899</span>
+                                </div>
+                                <div className={classes.contriangle}></div>
+                            </div>}
                         </div>
                         <div className={classes.con}>
                             <MailIcon className={classes.consvg} />
@@ -119,7 +127,7 @@ function ContactUs(){
                                             setGender(e.value)
                                         }}
                                         className="mr-2"
-                                        placeholder="Herr"
+                                        placeholder="Anrede"
                                     ></Select>
                                 </div>
                                 <div className='w-full'></div>
@@ -156,16 +164,19 @@ function ContactUs(){
                     </div>}
                     {haendler == true && <div className={classes.privatcontainer}>
                         <div className={classes.privatleft}>
-                            <div className={classes.genderselector}>
-                                <Select 
-                                    options={genders} 
-                                    styles={style}
-                                    onChange={(e) => {
-                                        setGender(e.value)
-                                    }}
-                                    className="mr-2"
-                                    placeholder="Anrede"
-                                ></Select>
+                            <div className={classes.parent}>
+                                <div className={classes.genderselector}>
+                                    <Select 
+                                        options={genders} 
+                                        styles={style}
+                                        onChange={(e) => {
+                                            setGender(e.value)
+                                        }}
+                                        className="mr-2"
+                                        placeholder="Anrede"
+                                    ></Select>
+                                </div>
+                                <div className='w-full'></div>
                             </div>
                             <input type={"text"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Vorname *" />
                             <input type={"text"} className={classes.input} onChange={(e) => setNachname(e.target.value)} placeholder="Nachname *"/>
@@ -185,10 +196,10 @@ function ContactUs(){
                                 <input type={"number"} className={classes.input} onChange={(e) => setTelnum(e.target.value)} placeholder="Telefonnummer *" />
                             </div>
                             <input type={"text"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Firma" />
-                            <input type={"text"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Postleitzahl" />
+                            <input type={"number"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Postleitzahl" />
                         </div>
                         <div className={classes.privatright}>
-                            <input type={"text"} className={classes.haendlerinput} onChange={(e) => setVorname(e.target.value)} placeholder="Kundennummer" />
+                            <input type={"number"} className={classes.haendlerinput} onChange={(e) => setVorname(e.target.value)} placeholder="Kundennummer" />
                             <Select 
                                 options={bereiche} 
                                 styles={style}
