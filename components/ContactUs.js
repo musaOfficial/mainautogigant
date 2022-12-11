@@ -5,7 +5,7 @@ import AccountIcon from './../public/aboutus/account.svg';
 import ShopIcon from './../public/aboutus/shop.svg';
 import { useState } from 'react';
 import Select from 'react-select';
-import { setTouched } from 'react-advanced-form';
+import Link from 'next/link'
 
 function ContactUs(){
 
@@ -14,7 +14,7 @@ function ContactUs(){
           ...base,
           boxShadow: "none",
           border: "none",
-          fontSize: '13px',
+          fontSize: '15px',
           borderRadius: '10px',
           height: '40px',
         }),
@@ -26,14 +26,14 @@ function ContactUs(){
           "&:hover": {
             backgroundColor: "#fbb900"
           },
-          fontSize: '13px',
+          fontSize: '15px',
         }),
       };
 
     const [haendler, setHaendler] = useState(false);
     const genders = [
-        {value: "maennlich", label: "Männlich"},
-        {value: "weiblich", label: "Weiblich"},
+        {value: "herr", label: "Herr"},
+        {value: "frau", label: "Frau"},
     ]
 
     const [gender, setGender] = useState(genders[0]);
@@ -46,6 +46,7 @@ function ContactUs(){
     const [firma, setFirma] = useState();
     const [postleitzahl, setPostleitzahl] = useState();
     const [thema, setThema] = useState();
+    const [bereich, setBereich] = useState();
 
     const vorwahle = [
         {value: "+43", label: "+43"},
@@ -68,6 +69,15 @@ function ContactUs(){
         {value: "sonstiges", label: "Sonstiges"},
     ]
 
+    const bereiche = [
+        {value: "" ,label: "Bitte wählen"},
+        {value: "ihrVertrag" ,label: "Ihr Vertrag"},
+        {value: "problemMelden" ,label: "Probleme & Inserate melden"},
+        {value: "schnittstellenService" ,label: "Schnittstellen-Service"},
+        {value: "aenderungKundendaten" ,label: "Änderung Ihrer Kundendaten"},
+        {value: "allgemeineAnfrage" ,label: "Allgemeine Anfrage"},
+    ];
+
     return (
         <div className={classes.container}>
             <div className={`${classes.contentcontainer} overflow-y-hidden relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
@@ -75,20 +85,20 @@ function ContactUs(){
                 <div className={classes.toprow}>
                     <div className={classes.selector}>
                         <div className={`${haendler == false ? classes.privat : classes.privatselected}`} onClick={() => setHaendler(false)} >
-                            PRIVAT <AccountIcon className={classes.account} />
+                            <span>PRIVAT</span> <AccountIcon className={classes.account} />
                         </div>
                         <div className={`${haendler == true ? classes.haendler : classes.haendlernotselected}`} onClick={() => {
                             setHaendler(true);
                         }}>
-                            <ShopIcon className={classes.shop} /> HÄNDLER
+                            <ShopIcon className={classes.shop} /> <span>HÄNDLER</span>
                         </div>
                     </div>
                     <div className={classes.contacter}>
                         <div className={classes.con}>
-                            <CallIcon  />
+                            <CallIcon className={classes.consvg} />
                         </div>
                         <div className={classes.con}>
-                            <MailIcon />
+                            <MailIcon className={classes.consvg} />
                         </div>
                         <div className={classes.conlast}>
                             FAQ
@@ -98,20 +108,24 @@ function ContactUs(){
                 <div className={classes.form}>
                     {haendler == false && <div className={classes.privatcontainer}>
                         <div className={classes.privatleft}>
-                            <div className={classes.genderselector}>
-                                <Select 
-                                    options={genders} 
-                                    styles={style}
-                                    onChange={(e) => {
-                                        setGender(e.value)
-                                    }}
-                                    className="mr-2"
-                                    placeholder="Männlich"
-                                ></Select>
+                            <div className={classes.parent}>
+                                <div className={classes.genderselector}>
+                                    <Select 
+                                        options={genders} 
+                                        styles={style}
+                                        onChange={(e) => {
+                                            setGender(e.value)
+                                        }}
+                                        className="mr-2"
+                                        placeholder="Herr"
+                                    ></Select>
+                                </div>
+                                <div className='w-full'></div>
                             </div>
-                            <input type={"text"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Vorname*" />
-                            <input type={"text"} className={classes.input} onChange={(e) => setNachname(e.target.value)} placeholder="Nachname*"/>
-                            <input type={"text"} className={classes.input} onChange={(e) => setMail(e.target.value)} placeholder="E-Mail*"/>
+                            
+                            <input type={"text"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Vorname *" />
+                            <input type={"text"} className={classes.input} onChange={(e) => setNachname(e.target.value)} placeholder="Nachname *"/>
+                            <input type={"text"} className={classes.input} onChange={(e) => setMail(e.target.value)} placeholder="E-Mail *"/>
                             <div className={classes.telcontainer}>
                                 <div className={classes.genderselector}>
                                     <Select 
@@ -124,25 +138,28 @@ function ContactUs(){
                                         placeholder="+43"
                                     ></Select>
                                 </div>
-                                <input type={"number"} className={classes.input} onChange={(e) => setTelnum(e.target.value)} placeholder="Telefonnummer*" />
+                                <input type={"number"} className={classes.input} onChange={(e) => setTelnum(e.target.value)} placeholder="Telefonnummer *" />
                             </div>
-                            <p className={classes.text}>Durch Ihre Kontaktaufnahme speichern wir personenbezogene Daten. 
-Dies sind jene Daten, die Sie im Kontaktformular freiwillig angeben sowie Ihre IP-Adresse, 
-Zeit Stempel, App-Version, Handy-Modell und dein jeweiliges Betriebssystem. 
-Wir speichern diese Daten, um Ihre Anfrage komplett und so schnell wie möglich 
-beantworten zu können.</p>
                         </div>
                         <div className={classes.privatright}>
+                            <Select 
+                                options={bereiche} 
+                                styles={style}
+                                onChange={(e) => {
+                                    setBereich(e.value)
+                                }}
+                                placeholder={`Bereich *`}
+                            ></Select>
                             <Select 
                                 options={themen} 
                                 styles={style}
                                 onChange={(e) => {
                                     setVorwahl(e.value)
                                 }}
-                                placeholder="Thema*"
+                                placeholder="Thema *"
+                                className={classes.margintop}
                             ></Select>
-                            <textarea className={classes.anliegenarea} rows="9" placeholder='Mein Anliegen*' ></textarea>
-                            <button className={classes.sendbtn}>NACHRICHT SENDEN</button>
+                            <textarea className={classes.anliegenarea} rows="9" placeholder='Mein Anliegen *' ></textarea>
                         </div>
                     </div>}
                     {haendler == true && <div className={classes.privatcontainer}>
@@ -158,9 +175,9 @@ beantworten zu können.</p>
                                     placeholder="Männlich"
                                 ></Select>
                             </div>
-                            <input type={"text"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Vorname*" />
-                            <input type={"text"} className={classes.input} onChange={(e) => setNachname(e.target.value)} placeholder="Nachname*"/>
-                            <input type={"text"} className={classes.input} onChange={(e) => setMail(e.target.value)} placeholder="E-Mail*"/>
+                            <input type={"text"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Vorname *" />
+                            <input type={"text"} className={classes.input} onChange={(e) => setNachname(e.target.value)} placeholder="Nachname *"/>
+                            <input type={"text"} className={classes.input} onChange={(e) => setMail(e.target.value)} placeholder="E-Mail *"/>
                             <div className={classes.telcontainer}>
                                 <div className={classes.genderselector}>
                                     <Select 
@@ -173,33 +190,44 @@ beantworten zu können.</p>
                                         placeholder="+43"
                                     ></Select>
                                 </div>
-                                <input type={"number"} className={classes.input} onChange={(e) => setTelnum(e.target.value)} placeholder="Telefonnummer*" />
+                                <input type={"number"} className={classes.input} onChange={(e) => setTelnum(e.target.value)} placeholder="Telefonnummer *" />
                             </div>
                             <input type={"text"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Firma" />
                             <input type={"text"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Postleitzahl" />
-                            <p className={classes.text}>Durch Ihre Kontaktaufnahme speichern wir personenbezogene Daten. 
-Dies sind jene Daten, die Sie im Kontaktformular freiwillig angeben sowie Ihre IP-Adresse, 
-Zeit Stempel, App-Version, Handy-Modell und dein jeweiliges Betriebssystem. 
-Wir speichern diese Daten, um Ihre Anfrage komplett und so schnell wie möglich 
-beantworten zu können.</p>
                         </div>
                         <div className={classes.privatright}>
                             <input type={"text"} className={classes.haendlerinput} onChange={(e) => setVorname(e.target.value)} placeholder="Kundennummer" />
+                            <Select 
+                                options={bereiche} 
+                                styles={style}
+                                onChange={(e) => {
+                                    setBereich(e.value)
+                                }}
+                                placeholder={`Bereich *`}
+                            ></Select>
                             <Select 
                                 options={themen} 
                                 styles={style}
                                 onChange={(e) => {
                                     setThema(e.value)
                                 }}
-                                placeholder="Thema*"
+                                placeholder="Thema *"
+                                className={classes.margintop}
                             ></Select>
-                            <textarea className={classes.haendleranliegenarea} rows="9" placeholder='Mein Anliegen*' ></textarea>
-                            <button className={classes.sendbtn}>NACHRICHT SENDEN</button>
+                            <textarea className={classes.haendleranliegenarea} rows="9" placeholder='Mein Anliegen *' ></textarea>
                         </div>
                     </div>}
+                    <div className={classes.bottomcontainer}>
+                        <p className={classes.text}>Durch Ihre Kontaktaufnahme speichern wir personenbezogene Daten. 
+    Dies sind jene Daten, die Sie im Kontaktformular freiwillig angeben sowie Ihre IP-Adresse, 
+    Zeit Stempel, App-Version, Handy-Modell und dein jeweiliges Betriebssystem. 
+    Wir speichern diese Daten, um Ihre Anfrage komplett und so schnell wie möglich 
+    beantworten zu können.</p>
+                        <button className={classes.sendbtn}>NACHRICHT SENDEN</button>
+                    </div>
                 </div>
                 <p className={classes.contactdesc}>
-                    Wenn Sie Fragen zu AUTO GIGANT. haben, finden Sie schnelle Antworten in unserem <a>Hilfebereich.</a>{" "}
+                    Wenn Sie Fragen zu Autogigant.at haben, finden Sie schnelle Antworten in unserem <Link href="/help">Hilfebereich.</Link><br></br>
  Unser Support-Team steht Ihnen gerne für weitere Fragen, Wünsche und Anregungen zur Verfügung. Sie erreichen uns Montag bis Freitag von 09:00 bis 17:00 Uhr.
                     </p>
             </div>

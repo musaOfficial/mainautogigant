@@ -1,6 +1,6 @@
 .container{
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     background-color: #6C757D;
     display: flex;
     justify-content: center;
@@ -47,6 +47,11 @@
     color: #fff;
 }
 
+.consvg{
+    width: 20px;
+    height: 20px;
+}
+
 .toprow{
     display: flex;
     align-items: center;
@@ -59,7 +64,6 @@
     background-color: none;
     border: 3px solid rgba(251, 185, 0, 0.5);
     border-radius: 5px;
-    height: 40px;
     padding: 2px;
 }
 
@@ -74,6 +78,7 @@
     color: #fff;
     cursor: default;
     transition: all .1s ease-in;
+    height: 40px;
 }
 
 .privatselected{
@@ -85,6 +90,7 @@
     font-weight: bold;
     cursor: pointer;
     transition: all .1s ease-in;
+    height: 40px;
 }
 
 .haendler{
@@ -98,18 +104,19 @@
     background-color: #FBB900;
     border-radius: 5px;
     transition: all .1s ease-in;
+    height: 40px;
 }
 
 .shop{
-    height: 21px;
-    width: 21px;
+    height: 30px;
+    width: 30px;
     margin-right: 5px;
 }
 
 .account{
     margin-left: 5px;
-    height: 21px;
-    width: 21px;
+    height: 30px;
+    width: 30px;
 }
 
 .haendlernotselected{
@@ -121,6 +128,7 @@
     font-weight: bold;
     cursor: pointer;
     transition: all .1s ease-in;
+    height: 40px;
 }
 
 .form{
@@ -147,6 +155,10 @@
     position: relative;
 }
 
+.parent{
+    display: flex;
+}
+
 .genderselector{
     width: 30%;
 }
@@ -163,11 +175,11 @@
     margin-top: 20px;
     padding-left: 10px;
     line-height: 40px;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .input::placeholder{
-    font-size: 13px;
+    font-size: 15px;
     color: #6C757D;
 }
 
@@ -193,21 +205,21 @@
 
 .anliegenarea{
     margin-top: 20px;
-    height: 220px;
+    height: 160px;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
-    font-size: 13px;
+    font-size: 15px;
     resize: none;
 }
 
 .haendleranliegenarea{
     margin-top: 20px;
-    height: 280px;
+    height: 220px;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
-    font-size: 13px;
+    font-size: 15px;
     resize: none;
 }
 
@@ -217,20 +229,41 @@
 }
 
 .anliegenarea::placeholder{
-    font-size: 13px;
+    font-size: 15px;
+    color: #6C757D;
+}
+
+.haendleranliegenarea::placeholder{
+    font-size: 15px;
+    color: #6C757D;
+}
+
+.haendleranliegenarea:focus{
+    font-size: 15px;
+    color: #6C757D;
+    outline: none;
+}
+
+.haendlerinput{
+    font-size: 15px;
+    color: #6C757D;
+}
+.haendlerinput::placeholder{
+    font-size: 15px;
     color: #6C757D;
 }
 
 .sendbtn{
-    height: 80px;
-    width: 100%;
+    width: 50%;
     background-color: #FBB900;
-    margin-top: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
     transition: all .1s ease-in;
+    margin-left: 20px;
+    min-height: 200%;
+    height: 100px;
 }
 
 .sendbtn:hover{
@@ -251,4 +284,18 @@
 .contactdesc a{
     color: #0067B8;
     cursor: pointer;
+}
+
+.bottomcontainer{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+.text{
+    width: 50%;
+    height: 100%;
+    line-height: 17px;
+    margin: 0;
 }

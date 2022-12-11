@@ -8,6 +8,7 @@ import YouTubeIcon from './../../public/icons/youtube.svg';
 import InstagramIcon from './../../public/icons/instagram.svg';
 import TikTokIcon from './../../public/icons/tiktok.svg';
 import FaceBookIcon from './../../public/icons/facebook.svg';
+import { useEffect } from "react";
 
 
 
@@ -40,7 +41,7 @@ export default function Footer() {
 
   const [openLanguagesBar, setOpenLanguagesBar] = useState(false);
 
-  if(typeof window == 'object'){
+  if(typeof window == 'object' && openLanguagesBar == true){
     const concernedElement = document.querySelector(".langBar");
 
     document.addEventListener("mousedown", (event) => {
