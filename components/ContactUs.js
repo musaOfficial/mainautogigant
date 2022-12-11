@@ -94,15 +94,17 @@ function ContactUs(){
                         </div>
                     </div>
                     <div className={classes.contacter}>
-                        <div className={classes.con}>
+                        <div className={`${classes.con} ${haendler == false && "transition-all duration-100 opacity-0"}`}>
                             <CallIcon className={classes.consvg} />
                         </div>
                         <div className={classes.con}>
                             <MailIcon className={classes.consvg} />
                         </div>
-                        <div className={classes.conlast}>
-                            FAQ
-                        </div>
+                        <Link href={"/faq"}>
+                            <div className={classes.conlast}>
+                                FAQ
+                            </div>
+                        </Link>
                     </div>
                 </div> 
                 <div className={classes.form}>
@@ -122,7 +124,6 @@ function ContactUs(){
                                 </div>
                                 <div className='w-full'></div>
                             </div>
-                            
                             <input type={"text"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Vorname *" />
                             <input type={"text"} className={classes.input} onChange={(e) => setNachname(e.target.value)} placeholder="Nachname *"/>
                             <input type={"text"} className={classes.input} onChange={(e) => setMail(e.target.value)} placeholder="E-Mail *"/>
@@ -143,21 +144,12 @@ function ContactUs(){
                         </div>
                         <div className={classes.privatright}>
                             <Select 
-                                options={bereiche} 
-                                styles={style}
-                                onChange={(e) => {
-                                    setBereich(e.value)
-                                }}
-                                placeholder={`Bereich *`}
-                            ></Select>
-                            <Select 
                                 options={themen} 
                                 styles={style}
                                 onChange={(e) => {
                                     setVorwahl(e.value)
                                 }}
                                 placeholder="Thema *"
-                                className={classes.margintop}
                             ></Select>
                             <textarea className={classes.anliegenarea} rows="9" placeholder='Mein Anliegen *' ></textarea>
                         </div>
@@ -172,7 +164,7 @@ function ContactUs(){
                                         setGender(e.value)
                                     }}
                                     className="mr-2"
-                                    placeholder="Männlich"
+                                    placeholder="Anrede"
                                 ></Select>
                             </div>
                             <input type={"text"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Vorname *" />
