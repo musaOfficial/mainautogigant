@@ -1,4 +1,5 @@
 import { useState } from "react";
+import classes from './Input.module.css'
 
 export default function Checkbox({ label, varient }) {
   const [isChecked, setIsChecked] = useState(false);
@@ -41,7 +42,7 @@ export default function Checkbox({ label, varient }) {
           </g>
         </svg>
       </div>
-      <label className={`${varient === "sm" ? "text-13" : "text-base"} font-normal`}>
+      <label className={`${varient === "sm" ? "text-13" : "text-base"} ${classes.fontsize13}  font-normal`}>
         {label}
       </label>
     </div>

@@ -435,7 +435,7 @@ einem farbigen Hintergrund statt.<br></br><br></br>
                   <div className={classes.productsopen}>
                     <div className={classes.toprow}>
                       <div className={classes.cardheading}>
-                        FETTER TEXT UND FARBIGER RAHMEN
+                        FARBIGER RAHMEN UND FARBIGER HINTERGRUND
                       </div>
                       <Closer
                         className={classes.closer}

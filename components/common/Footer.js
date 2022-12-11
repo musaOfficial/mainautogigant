@@ -8,11 +8,34 @@ import YouTubeIcon from './../../public/icons/youtube.svg';
 import InstagramIcon from './../../public/icons/instagram.svg';
 import TikTokIcon from './../../public/icons/tiktok.svg';
 import FaceBookIcon from './../../public/icons/facebook.svg';
+import WorldIcon from './../../public/world.svg';
 import { useEffect } from "react";
 
+const useDeviceSize = () => {
 
+  const [width, setWidth] = useState(0)
+  const [height, setHeight] = useState(0)
+
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  }
+
+  useEffect(() => {
+    // component is mounted and window is available
+    handleWindowResize();
+    window.addEventListener('resize', handleWindowResize);
+    // unsubscribe from the event on component unmount
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
+
+  return [width, height]
+
+}
 
 export default function Footer() {
+
+  const [width, height] = useDeviceSize();
 
   const links1 = [
     { linkTitle: "ANMELDEN", url: "/login" },
@@ -53,6 +76,8 @@ export default function Footer() {
     });
   }
 
+  const [language, setLanguage] = useState("DEUTSCH");
+
   return (
     <footer className="md:!px-0 relative">
       <div className={`${classes.backgroundfooterlinks}`}>
@@ -67,7 +92,7 @@ export default function Footer() {
             </div>
             <div className="w-1/3 ml-4 md:w-1/2 md:mx-auto sm:!w-full">
               <FooterCarousel
-              className={"z-0"}>
+              className={"z-0 w-full"}>
                 <SwiperSlide>
                   <div className="w-full h-full relative flex items-center p-6 bg-white overflow-hidden">
                     <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10 overflow-hidden"></div>
@@ -221,80 +246,50 @@ export default function Footer() {
           {openLanguagesBar == true && <div className={classes.langcontainer}>
           <div className="w-10/12 max-w-ag-container lg:w-full mx-auto flex justify-end">
             <div className={classes.languagesbar}>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
-                    DEUTSCH
-                </Link>
+              <div className={classes.language} onClick={() => setLanguage("DEUTSCH")}>
+                  DEUTSCH
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("RUMÄNISCH")}>
                     RUMÄNISCH
-                </Link>
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("SERBISCH")}>
                     SERBISCH
-                </Link>
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("TÜRKISCH")}>
                     TÜRKISCH
-                </Link>
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("BOSNISCH")}>
                     BOSNISCH
-                </Link>
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("KROATISCH")}>
                     KROATISCH
-                </Link>
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("UNGARISCH")}>
                     UNGARISCH
-                </Link>
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("ARABISCH")}>
                     ARABISCH
-                </Link>
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("POLNISCH")}>
                     POLNISCH
-                </Link>
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("UKRAINISCH")}>
                     UKRAINISCH
-                </Link>
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("SLOWAKISCH")}>
                     SLOWAKISCH
-                </Link>
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("PERSISCH")}>
                     PERSISCH
-                </Link>
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("BULGARISCH")}>
                     BULGARISCH
-                </Link>
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("ITALIENISCH")}>
                     ITALIENISCH
-                </Link>
               </div>
-              <div className={classes.language}>
-                <Link href="http://autogigant.at">
+              <div className={classes.language} onClick={() => setLanguage("RUSSISCH")}>
                     RUSSISCH
-                </Link>
               </div>
             </div>  
           </div>  
@@ -304,22 +299,35 @@ export default function Footer() {
           <div className="flex items-center flex-column justify-between py-2 text-white text-13 bg-black border-t border-theme-gray-3 xl:flex-wrap md:justify-center">
               <div className={classes.linkscontainer}>
                 <div className={classes.links}>
-                  <p className={`md:px-2 ${classes.linkprop} ${classes.linkpropfirst} cursor-pointer hover:text-yellow-600 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>© 2023 AUTO GIGANT.</p>
-                  <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>ALLE RECHTE VORBEHALTEN.</p>
-                  <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>COOKIE HINWEISE</p>
-                  <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>DATENSCHUTZ</p>
-                  <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>NUTZUNGSBEDINGUNGEN</p>
-                  <Link href={"/about-us"}><p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>ÜBER UNS</p></Link>
-                  <p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>IMPRESSUM</p>
-                  <Link href={"/contact-us"}><p className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all`}>KONTAKT</p></Link>
+                  <span className={`${classes.linkgroup1}`}>
+                    <div className="flex">
+                      <Link href={"#"}><span className={`md:px-2 ${classes.linkprop} ${classes.linkpropfirst} cursor-pointer hover:text-yellow-600 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>© 2023 AUTO GIGANT.</span></Link>
+                      <span className={`md:px-2 ${classes.linkprop} cursor-default pl-4 pr-4 text-12 border-r-2 border-theme-gray-3`}>ALLE RECHTE VORBEHALTEN.</span>
+                      <span className={`md:px-2 ${classes.linkprop} ${classes.linkpropperfirst} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>COOKIE HINWEISE</span>
+                    </div>
+                  </span>
+                  <span className={`${classes.linkgroup2}`}>
+                    <div className="flex">
+                      <span className={`md:px-2 ${classes.linkprop} ${classes.linkpropmiddle} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>DATENSCHUTZ</span>
+                      <span className={`md:px-2 ${classes.linkprop} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>NUTZUNGSBEDINGUNGEN</span>
+                      <Link href={"/about-us"}><span className={`md:px-2 ${classes.linkprop} ${classes.linkpropper} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>ÜBER UNS</span></Link>
+                    </div>
+                  </span>
+                  <span className={`${classes.linkgroup3}`}>
+                    <div className="flex">
+                      <span className={`md:px-2 ${classes.linkprop} ${classes.linkproplast} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>IMPRESSUM</span>
+                      <Link href={"/contact-us"}><span className={`md:px-2 ${classes.linkprop} ${classes.borderright} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all`}>KONTAKT</span></Link>
+                      {width < 575 && <p className="flex items-center cursor-pointer hover:transition-all hover:text-yellow-600" onClick={() => setOpenLanguagesBar(d => !d)}><WorldIcon className={classes.world} />{language}</p>}
+                    </div>
+                  </span>
                 </div>
                 <div className={`${classes.languages} langBar`}>
-                  <p className="flex items-center cursor-pointer hover:transition-all hover:text-yellow-600" onClick={() => setOpenLanguagesBar(d => !d)}><img className="w-4 mr-1 md:px-2 scale-90" src="/images/icons/copyright-world.png" />DEUTSCH</p>
+                  {width >= 575 && <p className="flex items-center cursor-pointer hover:transition-all hover:text-yellow-600" onClick={() => setOpenLanguagesBar(d => !d)}><WorldIcon className={classes.world} />{language}</p>}
                 </div>
               </div>              
           </div>
           <div className={classes.belowfootercontainer}>
-            <p className={`flex items-center ${classes.linkpropfirst} md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all border-r-2 border-theme-gray-3`}>MADE WITH <img className={`${classes.worldicon}`} src="/images/icons/copyright-fav.png" />IN AUSTRIA</p>
+            <p className={`flex items-center ${classes.linkpropfirst} ${width < 1024 && classes.noborderright} md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all border-r-2 border-theme-gray-3`}>MADE WITH <img className={`${classes.worldicon}`} src="/images/icons/copyright-fav.png" />IN AUSTRIA</p>
             <Link href={"https://www.hgmedia.at/"}><p className={`md:px-2 ${classes.linkprop} cursor-pointer text-12  `}>IN COOPERATION WITH <span className="hover:text-yellow-600">HGMEDIA ADVERTISING AGENCY</span></p></Link>
           </div>
         </div>

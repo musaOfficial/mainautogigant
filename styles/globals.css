@@ -21,6 +21,11 @@ body {
   --swiper-navigation-color: #ccc;
 }
 
+::selection{
+  background-color: #FFB900;
+  color: #6C757D;
+}
+
 a {
   color: inherit;
   text-decoration: none;

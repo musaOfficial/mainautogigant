@@ -1,0 +1,41 @@
+.fontsize{
+    font-size: 15px;
+}
+
+.fontsize::placeholder{
+    font-size: 15px;
+}
+
+.fontsize13{
+    font-size: 13px;
+}
+
+.fontsize13{
+    font-size: 13px;
+}
+
+.fontsize20{
+    font-size: 20px;
+}
+
+.loginbtn{
+    width: 330px;
+}
+
+.lineheight{
+    line-height: 14px;
+}
+
+.haendlerloginbtn{
+    margin-left: 8px;
+}
+
+@media (max-width: 400px){
+    .loginbtn{
+        width: 279px;
+    }
+
+    .haendlerloginbtn{
+        margin-top: 10pxgi;
+    }
+}

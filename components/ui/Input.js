@@ -1,6 +1,7 @@
 import { useState } from "react";
+import classes from './Input.module.css'
 
-export default function Input({ inputType, sublabel, placeholder, onChange, value }) {
+export default function Input({ inputType, sublabel, placeholder, onChange, value, name }) {
   const [inType, setInType] = useState(inputType);
 
   return (
@@ -13,15 +14,16 @@ export default function Input({ inputType, sublabel, placeholder, onChange, valu
       {sublabel ? <p className="w-full text-xs mb-1">{sublabel}</p> : null}
       <div className="relative">
         <input
-          className="w-full rounded-10 text-base p-3 bg-white"
+          className={`w-full ${classes.input} rounded-10 text-base p-3 bg-white`}
           onChange={onChange}
           placeholder={placeholder}
           type={inputType === "password" ? inType : inputType}
           value={value}
+          name={name}
         />
         {inputType === "password" ? (
           <button
-            className="absolute right-3 top-4 mt-px opacity-50"
+            className="absolute right-3 top-3 mt-px opacity-50"
             onClick={() =>
               inType === "password" ? setInType("text") : setInType("password")
             }

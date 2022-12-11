@@ -1,0 +1,24 @@
+.input{
+    height: 40px;
+    font-size: 15px;
+}
+
+.input::placeholder{
+    font-size: 15px;
+}
+
+.fontsize{
+    font-size: 15px;
+}
+
+.fontsize::placeholder{
+    font-size: 15px;
+}
+
+.fontsize13{
+    font-size: 13px;
+}
+
+.fontsize13::placeholder{
+    font-size: 13px;
+}

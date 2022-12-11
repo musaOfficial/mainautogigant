@@ -34,6 +34,7 @@ export default function DataLocation() {
   const [modelName, setModelName] = useState({});
   const [modelItems, setModelItems] = useState([]);
 
+  
 
   const addModel = () => {
     setModelItems([
@@ -202,7 +203,7 @@ export default function DataLocation() {
               <p className="mb-1">Stadt/PLZ</p>
               <div className="relative">
                 <Input
-                  placeholder="z.B. Avantgarde, TDI, 320, usw. "
+                  placeholder="z.B Wien oder 1010 "
                 />
                 <button className="w-6 bg-white absolute right-2 bottom-3">
                   <img className="opacity-50" src="/images/icons/location-mark.png" />
