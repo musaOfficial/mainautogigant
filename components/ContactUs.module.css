@@ -1,0 +1,254 @@
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #6C757D;
+    display: flex;
+    justify-content: center;
+}
+
+.contentcontainer{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+.heading{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.contacter{
+    display: flex;
+
+}
+
+.con{
+    background-color: #FBB900;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.conlast{
+    background-color: #FBB900;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.toprow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.selector{
+    display: flex;
+    background-color: none;
+    border: 3px solid rgba(251, 185, 0, 0.5);
+    border-radius: 5px;
+    height: 40px;
+    padding: 2px;
+}
+
+.privat{
+    display: flex;
+    align-items: center;
+    width: 260px;
+    justify-content: center;
+    background-color: #FBB900;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+    cursor: default;
+    transition: all .1s ease-in;
+}
+
+.privatselected{
+    width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(251, 185, 0, 0.5);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.haendler{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    color: #fff;
+    font-weight: bold;
+    cursor: default;
+    background-color: #FBB900;
+    border-radius: 5px;
+    transition: all .1s ease-in;
+}
+
+.shop{
+    height: 21px;
+    width: 21px;
+    margin-right: 5px;
+}
+
+.account{
+    margin-left: 5px;
+    height: 21px;
+    width: 21px;
+}
+
+.haendlernotselected{
+    width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(251, 185, 0, 0.5);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.form{
+    margin-top: 20px;
+    background-color: #f1f2f3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.privatcontainer{
+    display: flex;
+    position: relative;
+}
+
+.privatleft{
+    width: 50%;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.privatright{
+    width: 50%;
+    position: relative;
+}
+
+.genderselector{
+    width: 30%;
+}
+
+.telcontainer{
+    display: flex;
+    align-items: center;
+}
+
+.input{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding-left: 10px;
+    line-height: 40px;
+    font-size: 13px;
+}
+
+.input::placeholder{
+    font-size: 13px;
+    color: #6C757D;
+}
+
+.haendlerinput{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    line-height: 40px;
+    font-size: 13px;
+}
+
+.haendlerinput::placeholder{
+    font-size: 13px;
+    color: #6C757D;
+}
+
+.margintop{
+    margin-top: 20px;
+    height: 40px;
+}
+
+.anliegenarea{
+    margin-top: 20px;
+    height: 220px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 13px;
+    resize: none;
+}
+
+.haendleranliegenarea{
+    margin-top: 20px;
+    height: 280px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 13px;
+    resize: none;
+}
+
+.anliegenarea:focus{
+    border: none;
+    outline: none;
+}
+
+.anliegenarea::placeholder{
+    font-size: 13px;
+    color: #6C757D;
+}
+
+.sendbtn{
+    height: 80px;
+    width: 100%;
+    background-color: #FBB900;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.sendbtn:hover{
+    background-color: #FFE497;
+}
+
+.text{
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.contactdesc{
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.contactdesc a{
+    color: #0067B8;
+    cursor: pointer;
+}
