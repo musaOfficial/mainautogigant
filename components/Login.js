@@ -36,12 +36,8 @@ export default function Login() {
                   </button>
                   <Link href={`/registration/user`}>
                     <div className={`w-1/2 sm:w-full sm:mb-4 sm:ml-0 ml-2 flex items-center cursor-pointer text-13`}>
-                      <img
-                        className={`opacity-50 mr-2`}
-                        src={`/images/icons/login-user.png`}
-                      />
                       <div className={`${classes.lineheight}`}>
-                        <p className={``}>Du bist noch nicht registriert?</p>
+                        <p className={`cursor-default`}>Du bist noch nicht registriert?</p>
                         <p className={`text-theme-blue  ${classes.fontsize13}`}>
                           Jetzt neu registrieren
                         </p>

@@ -5,7 +5,7 @@ export default function Checkbox({ label, varient }) {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
-    <div onClick={() => setIsChecked(!isChecked)} className="flex">
+    <div onClick={() => setIsChecked(!isChecked)} className="flex cursor-pointer">
       <div
         className={`bg-white ${
           varient === "sm" ? "w-4 h-4" : "w-6 h-6"
@@ -42,7 +42,7 @@ export default function Checkbox({ label, varient }) {
           </g>
         </svg>
       </div>
-      <label className={`${varient === "sm" ? "text-13" : "text-base"} ${classes.fontsize13}  font-normal`}>
+      <label className={`${varient === "sm" ? "text-13" : "text-base"} ${classes.fontsize13} cursor-pointer  font-normal`}>
         {label}
       </label>
     </div>
