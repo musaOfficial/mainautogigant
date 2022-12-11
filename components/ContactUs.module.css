@@ -1,17 +1,16 @@
 .container{
     width: 100%;
-    min-height: 100%;
     background-color: #6C757D;
     display: flex;
     justify-content: center;
-}
+} 
 
 .contentcontainer{
     background-color: #fff;
     display: flex;
     flex-direction: column;
     padding: 30px;
-    min-height: 100vh;
+    min-height: 10vh;
 }
 
 .heading{
