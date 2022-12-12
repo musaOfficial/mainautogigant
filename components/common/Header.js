@@ -70,7 +70,7 @@ export default function Header() {
           />
         </Link>
         <div className={`flex items-center ${classes.margintop}`}>
-          <div className={`flex md:ml-6 lg:mr-0`}>
+          <div className={`flex md:ml-6 lg:mr-0 ${classes.threeicons}`}>
             <button className="mr-4">
               {width >= 950 && <div className="container">
                 <div className={`row ${classes.searchhover}`}>
@@ -93,7 +93,7 @@ export default function Header() {
             </button>
           </div>
           <div className={`w-60 ${classes.widthauto} ${classes.headerbtn} relative group flex items-center justify-end md:flex-1 h-14 rounded-tl-20 rounded-tr-20 hover:bg-theme-gray-10 px-2 pb-2 pb-0 `}>
-            <button className="w-full md:w-6 inline-flex justify-end">
+            <button className="inline-flex justify-end">
               <AccountIcon className={classes.headericon} />
             </button>
             <div className={`${classes.headerbtn} w-full sm:!w-40 md:pl-4 sm:rounded-tl-20 md:text-10 absolute z-50 uppercase invisible opacity-0 py-10 md:py-6 group-hover:visible group-hover:opacity-100 flex flex-col top-full overflow-hidden -mt-2 right-0 text-white rounded-bl-20 bg-theme-gray-10 ease-linear`}>
