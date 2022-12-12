@@ -21,14 +21,22 @@
     }
 }
 
+.textareasearch{
+    position: absolute;
+
+}
+
 @media (max-width: 950px){
     .textareasearch{
         position: absolute;
+        background-color: #000;
+        z-index: 10000;
         top: 151px;
         left: 0;
         width: 100%;
         padding-left: 30px;
         padding-right: 30px;
+
     }
 
     .textarea{
@@ -95,6 +103,8 @@
 @media (max-width: 780px){
     .textareasearch{
         position: absolute;
+        background-color: #000;
+        z-index: 10000;
         top: 131px;
         left: 0;
         width: 100%;
@@ -166,6 +176,8 @@
 @media (max-width: 767px){
     .textareasearch{
         position: absolute;
+        background-color: #000;
+        z-index: 10000;
         top: 107px;
         left: 0;
         width: 100%;
@@ -284,4 +296,15 @@
 
 .md{
     margin-top: 30px;
+}
+
+.searchiconf{
+    height: 30px;
+    width: 30px;
+    color: #FBB900;
+    margin-right: -8px;
+}
+
+.searchiconf:hover{
+    color: #fff;
 }

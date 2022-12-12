@@ -53,11 +53,11 @@ export default function Header() {
 
   return (
     <header className={`bg-black shadow-1 py-3 relative lg:px-6 ${classes.header} ${width < 950 && classes.searchmargin}`}>
-      {openTextarea && width < 950 && <div className={classes.textareasearch}>
+      {openTextarea == true && width < 950 && <div className={classes.textareasearch}>
         <div className={classes.relative}>
           <textarea placeholder={"Fahrzeug suchen"} className={classes.textarea}></textarea>
           <img className={classes.searchicon} src="/images/icons/header-search.png" />
-          <button className={classes.searchbutton}>Suchen</button>
+          <button className={classes.searchbutton} onClick={() => setOpenTextarea(false)}>Suchen</button>
           <X className={classes.searchx} onClick={() => setOpenTextarea(false)}/>
         </div>
       </div>}
