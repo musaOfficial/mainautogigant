@@ -73,6 +73,8 @@ function ImageSlider({
     return (
         <>
         {zoomout == true && width >= 1140 && <div className={classes.zoombackground}>
+                <X className={classes.x} onClick={() => setZoomout(false)}/>
+                <div className={classes.swipercontainer}>
                 <Swiper
                     style={{
                     "--swiper-navigation-color": "#fff",
@@ -103,6 +105,7 @@ function ImageSlider({
                         <img src={img}></img>
                     </SwiperSlide>)}
                 </Swiper>
+                </div>
             
         </div>}
         <div className={classes.container}>

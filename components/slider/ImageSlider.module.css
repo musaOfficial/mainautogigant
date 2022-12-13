@@ -66,6 +66,20 @@
     width: 80%;
 }
 
+.x{
+    position: absolute;
+    color: #fff;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.x:hover{
+    transform: translateY(-2px);
+}
 .slider{
     user-select: none;
     -webkit-user-select: none;
@@ -97,6 +111,11 @@
     padding: 10px;
     border-radius: 10px;
 
+}
+
+.swipercontainer{
+    width: 100%;
+    height: 90%;
 }
 
 .slidercontainer{
