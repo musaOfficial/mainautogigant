@@ -12,10 +12,22 @@ import { useEffect } from "react";
 import Slider from 'react-touch-drag-slider'
 import X from './../../public/images/x.svg';
 import Wasserzeichen from './../../public/agwasserzeichen.svg';
+import { useRef } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+
+// import required modules
+import { FreeMode, Navigation, Thumbs } from "swiper";
 const useDeviceSize = () => {
 
-    const [width, setWidth] = useState(0)
-    const [height, setHeight] = useState(0)
+    const [width, setWidth] = useState(0);
+    const [height, setHeight] = useState(0);
   
     const handleWindowResize = () => {
       setWidth(window.innerWidth);
@@ -38,6 +50,7 @@ const useDeviceSize = () => {
 function ImageSlider({
     images
 }){
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     const [width, height] = useDeviceSize();
 
@@ -60,8 +73,38 @@ function ImageSlider({
     return (
         <>
         {zoomout == true && width >= 1140 && <div className={classes.zoombackground}>
-               
-               </div>}
+                <Swiper
+                    style={{
+                    "--swiper-navigation-color": "#fff",
+                    "--swiper-pagination-color": "#fff",
+                    }}
+                    loop={true}
+                    spaceBetween={0}
+                    navigation={true}
+                    thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+                    modules={[FreeMode, Navigation, Thumbs]}
+                    className="mySwiper2"
+                >
+                    {images.map((img) => <SwiperSlide key={img}>
+                        <img src={img}></img>
+                    </SwiperSlide>)}
+                </Swiper>
+                <Swiper
+                    onSwiper={setThumbsSwiper}
+                    loop={true}
+                    spaceBetween={10}
+                    slidesPerView={8}
+                    freeMode={true}
+                    watchSlidesProgress={true}
+                    modules={[FreeMode, Navigation, Thumbs]}
+                    className="mySwiper"
+                >
+                    {images.map((img) => <SwiperSlide key={img}>
+                        <img src={img}></img>
+                    </SwiperSlide>)}
+                </Swiper>
+            
+        </div>}
         <div className={classes.container}>
             <div className={classes.content}>
                 <Image src={images[currentImage]} layout='fill' objectFit="cover"/>

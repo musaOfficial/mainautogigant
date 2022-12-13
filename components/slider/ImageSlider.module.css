@@ -27,7 +27,15 @@
     align-items: center;
     justify-content: center;
     z-index: 5000;
+    padding: 100px;
+    padding-top: 100px;
+    padding-bottom: 20px;
 } 
+
+.zoomcontainer{
+    width: 50%;
+    height: 100%;
+}
 
 .img{
     width: 100%;
