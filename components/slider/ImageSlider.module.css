@@ -118,6 +118,12 @@
     height: 90%;
 }
 
+.swiperopener{
+    height: 500px;
+    width: 585px;
+    margin-bottom: 20px;
+}
+
 .slidercontainer{
     width: 80%;
     height: 68px;

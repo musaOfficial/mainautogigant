@@ -79,8 +79,10 @@
 }
 
 .r1c1{
+    position: relative;
     min-width: calc(55% - 10px);
     width: calc(55% - 10px);
+    width: 50%;
 }
  
 .typeanddate{
