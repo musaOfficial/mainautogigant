@@ -344,3 +344,51 @@
     line-height: 17px;
     margin: 0;
 }
+
+@media(max-width: 830px){
+    .privatcontainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .input{
+        width: 200%;
+    }
+
+    .parent{
+        width: 200%;
+    }
+
+    .anliegenarea{
+        width: 100%;
+    }
+
+    .bottomcontainer{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .telcontainer{
+        margin-bottom: 20px;
+        width: 200%;
+    }
+
+    .privatright{
+        width: 100%;
+    }
+
+    .text{
+        width: 100%;
+    }
+
+    .sendbtn{
+        margin: 0;
+        width: 100%;
+        height: 40px;
+        margin-top: 20px;
+    }
+}
+
+

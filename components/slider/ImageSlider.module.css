@@ -140,8 +140,16 @@
 }
 
 .aglogo{
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
+}
+
+.zoomcloser{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .slidercontainer{
@@ -173,8 +181,8 @@
 }
 
 .zoomer{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-color: #6C757D;
     position: absolute;
     right: 0;
@@ -189,14 +197,14 @@
 }
 
 .zoomericon{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     transition: all .1s ease-in;
 }
 
 .zoomer:hover .zoomericon{
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
 }
 
 .slimg:hover{
@@ -771,19 +779,20 @@
 }
 
 .dealerinfocontainer{
-    height: 100px;
+    height: 80px;
     background-color: #F1F2F3;
     border-radius: 10px;
     margin-top: 20px;
     padding: 10px;
     display: flex;
     width: 100%;
+    align-items: center;
 }
 
 .dealerimg{
     background-color: #6C757D;
     height: 100%;
-    width: 150px;
+    width: 100px;
     border-radius: 10px;
     margin-right: 20px;
     overflow: hidden;

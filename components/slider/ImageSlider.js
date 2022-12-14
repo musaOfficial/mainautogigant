@@ -75,6 +75,9 @@ function ImageSlider({
     return (
         <>
         {zoomout == true && width >= 1140 && <div className={classes.zoombackground}>
+        {zoomout == true && width >= 1140 && <div className={classes.zoomcloser} onClick={() => setZoomout(false)}>
+            
+            </div>}
                 <X className={classes.x} onClick={() => setZoomout(false)}/>
                 <iframe src="/banners/banner1/index.html" scrolling="no" width="100%" height="90px" className={classes.zoomerbanner}></iframe>
                 <div className={classes.swipercontainer}>
