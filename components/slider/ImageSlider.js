@@ -20,10 +20,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css/thumbs";
 
 // import required modules
-import { FreeMode, Navigation, Thumbs } from "swiper";
+import { FreeMode, Navigation, Pagination, Thumbs } from "swiper";
 const useDeviceSize = () => {
 
     const [width, setWidth] = useState(0);
@@ -84,8 +85,9 @@ function ImageSlider({
                     loop={true}
                     spaceBetween={0}
                     navigation={true}
+                    pagination={{ type: "fraction" }}
                     thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
-                    modules={[FreeMode, Navigation, Thumbs]}
+                    modules={[FreeMode, Pagination, Navigation, Thumbs]}
                     className="mySwiper2"
                 >
                     {images.map((img) => <SwiperSlide key={img}>
@@ -110,21 +112,31 @@ function ImageSlider({
         </div>}
         <div className={classes.container}>
         <div className={classes.swiperopener}>
-                <Swiper
-                    style={{
-                    "--swiper-navigation-color": "#fff",
-                    "--swiper-pagination-color": "#fff",
-                    }}
-                    spaceBetween={0}
-                    navigation={true}
-                    thumbs={{ swiper: carSwiper && !carSwiper.destroyed ? carSwiper : null }}
-                    modules={[FreeMode, Navigation, Thumbs]}
-                    className="mySwiper2"
-                >
-                    {images.map((img) => <SwiperSlide key={img}>
-                        <img src={img}></img>
-                    </SwiperSlide>)}
-                </Swiper>
+                <div className="relative bg-theme-gray w-1000">
+                    <Swiper
+                        style={{
+                        "--swiper-navigation-color": "#fff",
+                        "--swiper-pagination-color": "#fff",
+                        }}
+                        spaceBetween={0}
+                        navigation={true}
+                        pagination={{ 
+                            type: "fraction",
+                            color: '#fff'
+                        }}
+                        thumbs={{ swiper: carSwiper && !carSwiper.destroyed ? carSwiper : null }}
+                        modules={[FreeMode, Pagination, Navigation, Thumbs]}
+                        className="mySwiper2 cursor-pointer"
+                    >
+                        {images.map((img) => <SwiperSlide key={img}>
+                            <img src={img}></img>
+                        </SwiperSlide>)}
+                    
+                    </Swiper>
+                    <div className={classes.zoomer} onClick={() => setZoomout(true)}>
+                        <ZoomOut className={classes.zoomericon} />
+                     </div>
+                </div>
                 <Swiper
                     onSwiper={setCarSwiper}
                     spaceBetween={10}
