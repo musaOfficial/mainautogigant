@@ -339,6 +339,16 @@
     height: 40px;
     align-items: center;
     padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+}
+
+.liner{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(108, 117, 125, 0.1);
+    height: 40px;
 }
 
 .g{
@@ -359,16 +369,18 @@
 .whiteback{
     background-color: #F1F2F3;
     width: 100%;
-    padding: 30px;
     display: flex;
     justify-content: space-between;
     height: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 20px;
 }
 
 .sendmail{
     background-color: #FBB900;
     color: #fff;
-    height: 40px;
+    height: 60px;
     width: 45%;
     border-radius: 10px;
     font-weight: bold;
@@ -382,7 +394,7 @@
 .call{
     background-color: rgb(251, 185, 0);
     color: #fff;
-    height: 40px;
+    height: 60px;
     width: 50%;
     border-radius: 10px;
     font-weight: bold;
@@ -397,11 +409,40 @@
 .greyback{
     background-color: rgba(255, 255, 255, 0.5);
     padding-top: 7px;
-    padding-left: 30px;
     height: 100%;
     padding-bottom: 7px;
     color: #0067B8;
 }
+
+.bottominfocontent{
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.bottominfo{
+    color: #0067B8;
+    cursor: pointer;
+    transition: all 2s ease-in;
+}
+
+.bottominfo:hover{
+    text-decoration: underline;
+}
+
+.bottominfowarn{
+    color: #0067B8;
+    cursor: pointer;
+    transition: all 2s ease-in;
+}
+
+.bottominfowarn:hover{
+    text-decoration: underline;
+}it 
+
 
 .row2{
     display: flex;

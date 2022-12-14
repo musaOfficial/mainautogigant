@@ -165,7 +165,6 @@ function ImageSlider({
             <div className={classes.dealerinfocontainer}>
                 <div className={classes.dealerimg}></div>
                 <div className={classes.dealerinfo}>
-                    <div className={classes.dealer}><strong>Verkäufer</strong>{" "} Händler</div>
                     <div className={classes.companyname}><CompanyName className={classes.companyname}/> Gigant Group Teknoloji A.S.</div>
                     <div className={classes.companylocation}><CompanyLocation className={classes.companylocation}/> Wiener Straße 215, 3100 St. Pölten, AT</div>
                 </div>

@@ -258,17 +258,23 @@ function CarDetails(){
                                         <div className={classes.cardesc}>d BlueEff. Autom. NUR 38.600km / 1.Besitz / Garantie</div>
                                         <div className={classes.companylocation}><CompanyLocation className={classes.companylocation}/> 2700 Wiener Neustadt | AT</div>
                                     </div>
-                                    <div className={classes.l}><span className={classes.infoabt}>Kilometerstand</span><span className={classes.actinfo}>{kilometerstandFormatted} km</span></div>
-                                    <div className={classes.g}><span className={classes.infoabt}>Getriebe</span><span className={classes.actinfo}>{getriebe}</span></div>
-                                    <div className={classes.l}><span className={classes.infoabt}>Erstzulassung</span><span className={classes.actinfo}>{erstzulassung}</span></div>
-                                    <div className={classes.g}><span className={classes.infoabt}>Kraftstoff</span><span className={classes.actinfo}>{kraftstoff}</span></div>
-                                    <div className={classes.l}><span className={classes.infoabt}>Leistung</span><span className={classes.actinfo}>{leistung}</span></div>
-                                    <div className={classes.g}><span className={classes.infoabt}>Verkäufer</span><span className={classes.actinfo}>{verkaeufer}</span></div>
-                                    <div className={classes.greyback}>Finanzierung berechnen</div>
-                                    <div className={classes.greyback}>Versicherung berechnen</div>
+                                    <div className={classes.l}><span className={classes.liner}><span className={classes.infoabt}>Kilometerstand</span><span className={classes.actinfo}>{kilometerstandFormatted} km</span></span></div>
+                                    <div className={classes.l}><span className={classes.liner}><span className={classes.infoabt}>Getriebe</span><span className={classes.actinfo}>{getriebe}</span></span></div>
+                                    <div className={classes.l}><span className={classes.liner}><span className={classes.infoabt}>Erstzulassung</span><span className={classes.actinfo}>{erstzulassung}</span></span></div>
+                                    <div className={classes.l}><span className={classes.liner}><span className={classes.infoabt}>Kraftstoff</span><span className={classes.actinfo}>{kraftstoff}</span></span></div>
+                                    <div className={classes.l}><span className={classes.liner}><span className={classes.infoabt}>Leistung</span><span className={classes.actinfo}>{leistung}</span></span></div>
+                                    <div className={classes.l}><span className={classes.liner}><span className={`${classes.greyback}`}>Finanzierung berechnen</span></span></div>
+                                    <div className={classes.l}><span className={classes.liner}><span className={`${classes.greyback}`}>Finanzierung berechnen</span></span></div>
                                     <div className={classes.whiteback}>
                                         <button className={classes.sendmail}>E-mail senden</button>
                                         <button className={classes.call}>+43 (0) 699 19778899</button>
+                                    </div>
+                                    <div className={classes.bottominfocontent}>
+                                        <div className={classes.bottominfo}>Alle Fahrzeuge des Anbieters</div>
+                                        |
+                                        <div className={classes.bottominfo}>Händlerprofil</div>
+                                        |
+                                        <div className={classes.bottominfowarn}>Angebot melden</div>
                                     </div>
                                 </div>
                             </div>
