@@ -78,10 +78,15 @@ function ImageSlider({
                 <X className={classes.x} onClick={() => setZoomout(false)}/>
                 <iframe src="/banners/banner1/index.html" scrolling="no" width="100%" height="90px" className={classes.zoomerbanner}></iframe>
                 <div className={classes.swipercontainer}>
+                <div className={classes.autogigantlogo}>
+                    <Wasserzeichen className={classes.aglogo} />
+                </div>
+
                 <Swiper
                     style={{
                     "--swiper-navigation-color": "#fff",
                     "--swiper-pagination-color": "#fff",
+                    "--swiper-navigation-size": "80px"
                     }}
                     loop={true}
                     spaceBetween={0}
@@ -95,6 +100,7 @@ function ImageSlider({
                         <img src={img}></img>
                     </SwiperSlide>)}
                 </Swiper>
+
                 <Swiper
                     onSwiper={setThumbsSwiper}
                     spaceBetween={10}
@@ -118,6 +124,7 @@ function ImageSlider({
                         style={{
                         "--swiper-navigation-color": "#fff",
                         "--swiper-pagination-color": "#fff",
+                        "--swiper-navigation-size": "50px"
                         }}
                         spaceBetween={0}
                         navigation={true}
