@@ -51,6 +51,7 @@ function ImageSlider({
     images
 }){
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [carSwiper, setCarSwiper] = useState(null);
 
     const [width, height] = useDeviceSize();
 
@@ -93,7 +94,6 @@ function ImageSlider({
                 </Swiper>
                 <Swiper
                     onSwiper={setThumbsSwiper}
-                    loop={true}
                     spaceBetween={10}
                     slidesPerView={6}
                     freeMode={true}
@@ -117,7 +117,7 @@ function ImageSlider({
                     }}
                     spaceBetween={0}
                     navigation={true}
-                    thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+                    thumbs={{ swiper: carSwiper && !carSwiper.destroyed ? carSwiper : null }}
                     modules={[FreeMode, Navigation, Thumbs]}
                     className="mySwiper2"
                 >
@@ -126,14 +126,15 @@ function ImageSlider({
                     </SwiperSlide>)}
                 </Swiper>
                 <Swiper
-                    onSwiper={setThumbsSwiper}
+                    onSwiper={setCarSwiper}
                     spaceBetween={10}
                     slidesPerView={4}
+                    freeMode={true}
                     watchSlidesProgress={true}
-                    modules={[Navigation, Thumbs]}
+                    modules={[FreeMode, Navigation, Thumbs]}
                     className="mySwiper"
                 >
-                    {images.map((img) => <SwiperSlide key={img}>
+                    {images.map((img) => <SwiperSlide className="cursor-pointer" key={img}>
                         <img src={img}></img>
                     </SwiperSlide>)}
                 </Swiper>

@@ -119,9 +119,10 @@
 }
 
 .swiperopener{
-    height: 500px;
+    height: 550px;
     width: 585px;
-    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .slidercontainer{
