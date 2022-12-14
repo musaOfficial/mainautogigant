@@ -113,8 +113,13 @@
 
 }
 
+.zoomerbanner{
+    margin-top: -60px;
+    margin-bottom: 20px;
+}
+
 .swipercontainer{
-    width: 100%;
+    width: 70%;
     height: 90%;
 }
 
