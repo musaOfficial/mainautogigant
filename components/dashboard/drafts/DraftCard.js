@@ -16,6 +16,7 @@ import styles from './DraftCard.module.css';
 import PublishIcon from './../../../public/publish.svg'
 import BinIcon from './../../../public/bin.svg';
 import GigaPowerIcon from './../../../public/gigapower.svg';
+import EditIcon from './../../../public/edit.svg'
 
 function DraftCard({
     title,
@@ -63,9 +64,9 @@ function DraftCard({
                 {visibleOpen == true && <div className={classes.triangle1}></div>}
             </div>
             <div className={`${classes.lefticon} ${classes.middle}`} onMouseEnter={() => setPrintOpen(true)} onMouseLeave={() => setPrintOpen(false)}>
-                <Print className={classes.whiteicon}/>
+                <EditIcon className={classes.whiteicon}/>
                 {printOpen == true && <div className={`${classes.favoritesvgcontainer} p-1 hover:text-yellow-600`}>
-                    Als Favorit speichern
+                    Inserat bearbeiten
                 </div>}
                 {printOpen == true && <div className={classes.triangle2}></div>}
             </div>

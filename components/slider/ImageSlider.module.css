@@ -132,6 +132,15 @@
     margin-bottom: -40px;
 }
 
+
+@media(max-width: 650px){
+    .swiperopener{
+        height: 350px;
+        width: 385px;
+        margin-bottom: 0px;
+    }
+}
+
 .autogigantlogo{
     position: absolute;
     left: 30px;
@@ -792,7 +801,7 @@
 .dealerimg{
     background-color: #6C757D;
     height: 100%;
-    width: 100px;
+    width: 130px;
     border-radius: 10px;
     margin-right: 20px;
     overflow: hidden;

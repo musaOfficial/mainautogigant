@@ -23,6 +23,10 @@
     
 }
 
+.viewactive{
+    color: #fff !important;
+}
+
 .sponsored{
     position: relative;
     margin-bottom: 20px;
@@ -914,17 +918,19 @@
 .gridview{
     height: 20px;
     width: 20px;
-    color: #fff;
+    color: #FFE497;
     z-index: 1000;
     cursor: pointer;
+    transition: all .1s ease-in;
 }
 
 .listview{
     height: 20px;
     width: 20px;
-    color: #fff;
+    color: #FFE497;
     z-index: 1000;
     cursor: pointer;
+    transition: all .1s ease-in;
 }
 
 .view{
@@ -932,7 +938,7 @@
     background-color: #FFB900;
     align-items: center;
     min-height: 70px;
-    min-width: 100px;
+    min-width: 90px;
     justify-content: center;
     position: relative;
     border-radius: 0px 10px 10px 0px;

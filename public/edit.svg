@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: currentColor;
+      }
+    </style>
+  </defs>
+  <path id="edit_FILL0_wght400_GRAD0_opsz48" class="cls-1" d="M7.637,23.713h1.2L20.925,11.626l-1.2-1.2L7.637,22.512ZM24.39,10.452,20.9,6.96l1.146-1.146a1.648,1.648,0,0,1,2.292,0l1.2,1.2a1.648,1.648,0,0,1,0,2.292ZM23.244,11.6,9.492,25.35H6V21.858L19.752,8.106Zm-2.92-.573-.6-.6,1.2,1.2Z" transform="translate(-6 -5.35)"/>
+</svg>

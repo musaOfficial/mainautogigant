@@ -1178,9 +1178,8 @@ function SearchResults(){
                             </div>
                         </div>
                         <div className={classes.view}>
-                            <ListView className={`${classes.listview} ${"mr-4"}`} onClick={() => setGridView(true)}/>
-                            <GridView className={` ${classes.gridview}`} onClick={() => setGridView(false)}/>
-                            <div className={`${gridView == true ? classes.viewleft : classes.viewright}`}></div>
+                            <ListView className={`${classes.listview} ${gridView == true && classes.viewactive} ${"mr-4"}`} onClick={() => setGridView(true)}/>
+                            <GridView className={` ${classes.gridview} ${gridView == false && classes.viewactive} `} onClick={() => setGridView(false)}/>
                         </div>
                     </div>
                     <div className={`${classes.c2r2}`}>

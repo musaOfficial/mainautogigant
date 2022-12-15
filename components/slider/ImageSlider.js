@@ -139,7 +139,7 @@ function ImageSlider({
                         modules={[FreeMode, Pagination, Navigation, Thumbs]}
                         className="mySwiper2 cursor-pointer"
                     >
-                        {images.map((img) => <SwiperSlide key={img}>
+                        {images.map((img, index) => <SwiperSlide key={index}>
                             <img src={img}></img>
                         </SwiperSlide>)}
                     

@@ -6,5 +6,10 @@
       }
     </style>
   </defs>
-  <path id="grid_view_FILL0_wght500_GRAD0_opsz48" class="cls-1" d="M5.7,14.88V5.7h9.18v9.18Zm0,10.82V16.52h9.18V25.7ZM16.52,14.88V5.7H25.7v9.18Zm0,10.82V16.52H25.7V25.7ZM7.558,13.022h5.464V7.558H7.558Zm10.82,0h5.464V7.558H18.378Zm0,10.82h5.464V18.378H18.378Zm-10.82,0h5.464V18.378H7.558ZM18.378,13.022ZM18.378,18.378ZM13.022,18.378ZM13.022,13.022Z" transform="translate(-5.7 -5.7)"/>
+  <g id="Group_2233" data-name="Group 2233" transform="translate(-1420 -448)">
+    <rect id="Rectangle_4933" data-name="Rectangle 4933" class="cls-1" width="9" height="9" rx="2" transform="translate(1431 448)"/>
+    <rect id="Rectangle_4934" data-name="Rectangle 4934" class="cls-1" width="9" height="9" rx="2" transform="translate(1420 448)"/>
+    <rect id="Rectangle_4935" data-name="Rectangle 4935" class="cls-1" width="9" height="9" rx="2" transform="translate(1420 459)"/>
+    <rect id="Rectangle_4936" data-name="Rectangle 4936" class="cls-1" width="9" height="9" rx="2" transform="translate(1431 459)"/>
+  </g>
 </svg>
