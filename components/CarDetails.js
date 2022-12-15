@@ -208,7 +208,7 @@ function CarDetails(){
                                 <div className={classes.werbungtext}>Werbung</div>
                             }
                             {width >= 1141 && 
-                                <iframe src="/banners/banner1/index.html" scrolling="no" width="100%" height="90px"></iframe>
+                                <iframe src="/banners/banner1/index.html" scrolling="yes" width="100%" height="100px"></iframe>
                             }
                         </div>
                     </div>
@@ -263,6 +263,7 @@ function CarDetails(){
                                     <div className={classes.l}><span className={classes.liner}><span className={classes.infoabt}>Erstzulassung</span><span className={classes.actinfo}>{erstzulassung}</span></span></div>
                                     <div className={classes.l}><span className={classes.liner}><span className={classes.infoabt}>Kraftstoff</span><span className={classes.actinfo}>{kraftstoff}</span></span></div>
                                     <div className={classes.l}><span className={classes.liner}><span className={classes.infoabt}>Leistung</span><span className={classes.actinfo}>{leistung}</span></span></div>
+                                    <div className={classes.l}><span className={classes.liner}><span className={classes.infoabt}>Verkäufer</span><span className={classes.actinfo}>{verkaeufer}</span></span></div>
                                     <div className={classes.l}><span className={classes.liner}><span className={`${classes.greyback}`}>Finanzierung berechnen</span></span></div>
                                     <div className={classes.l}><span className={classes.linerb}><span className={`${classes.greyback}`}>Finanzierung berechnen</span></span></div>
                                     <div className={classes.whiteback}>
