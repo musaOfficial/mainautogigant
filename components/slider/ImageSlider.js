@@ -94,6 +94,7 @@ function ImageSlider({
                     loop={true}
                     spaceBetween={0}
                     navigation={true}
+                    freeMode={true}
                     pagination={{ type: "fraction" }}
                     thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                     modules={[FreeMode, Pagination, Navigation, Thumbs]}

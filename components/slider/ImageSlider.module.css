@@ -116,6 +116,7 @@
 .zoomerbanner{
     margin-top: -60px;
     margin-bottom: 20px;
+    z-index: 100;
 }
 
 .swipercontainer{
