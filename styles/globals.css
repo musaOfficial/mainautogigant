@@ -234,10 +234,6 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
 }
 
-input:checked{
-    width: 100%;
-}
-
 .swiper-button-next {
   background-repeat: no-repeat;
   background-size: 52% auto;
@@ -326,3 +322,4 @@ input:checked{
   height: 100%;
   object-fit: cover;
 }
+

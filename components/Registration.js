@@ -21,8 +21,7 @@ export default function Registration() {
           <div className="p-6 rounded-10 bg-theme-gray-4">
             <div className="flex items-center justify-between text-3xl md:text-xl font-bold text-white mb-4">
               <button
-                onClick={() => setIsStepActive(1)}
-                className={`h-14 w-14 md:w-10 md:h-10 flex items-center justify-center rounded-full ${
+                className={`h-14 w-14 md:w-10 md:h-10 flex items-center cursor-default justify-center rounded-full ${
                   isStepActive == 1 ? "bg-theme-yellow-2" : "bg-theme-gray-8"
                 }`}
               >
@@ -30,8 +29,7 @@ export default function Registration() {
               </button>
               <span className="w-32 md:w-12 h-px p-px rounded-md bg-theme-gray-8"></span>
               <button
-                onClick={() => setIsStepActive(2)}
-                className={`h-14 w-14 md:w-10 md:h-10 flex items-center justify-center rounded-full ${
+                className={`h-14 w-14 md:w-10 md:h-10 flex items-center cursor-default justify-center rounded-full ${
                   isStepActive == 2 ? "bg-theme-yellow-2" : "bg-theme-gray-8"
                 }`}
               >
@@ -39,8 +37,7 @@ export default function Registration() {
               </button>
               <span className="w-32 md:w-12 h-px p-px rounded-md bg-theme-gray-8"></span>
               <button
-                onClick={() => setIsStepActive(3)}
-                className={`h-14 w-14 md:w-10 md:h-10 flex items-center justify-center rounded-full ${
+                className={`h-14 w-14 md:w-10 md:h-10 flex cursor-default items-center justify-center rounded-full ${
                   isStepActive == 3 ? "bg-theme-yellow-2" : "bg-theme-gray-8"
                 }`}
               >
