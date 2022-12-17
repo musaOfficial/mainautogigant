@@ -267,15 +267,15 @@ function CarDetails(){
                                     <div className={classes.l}><span className={classes.liner}><span className={classes.infoabt}>Leistung</span><span className={classes.actinfo}>{leistung}</span></span></div>
                                     <div className={classes.l}><span className={classes.liner}><span className={classes.infoabt}>Verkäufer</span><span className={classes.actinfo}>{verkaeufer}</span></span></div>
                                     <div className={classes.l}><span className={classes.liner}><span className={`${classes.greyback}`}>Finanzierung berechnen</span></span></div>
-                                    <div className={classes.l}><span className={classes.linerb}><span className={`${classes.greyback}`}>Finanzierung berechnen</span></span></div>
+                                    <div className={classes.l}><span className={classes.linerb}><span className={`${classes.greyback}`}>Versicherung berechnen</span></span></div>
                                     <div className={classes.whiteback}>
                                         <button className={classes.sendmail}>E-mail senden</button>
                                         <button className={classes.call}>+43 (0) 699 19778899</button>
                                     </div>
                                     <div className={classes.bottominfocontent}>
-                                        <div className={classes.bottominfo}>Alle Fahrzeuge des Anbieters</div>
-                                        |
                                         <div className={classes.bottominfo}>Händlerprofil</div>
+                                        |
+                                        <div className={classes.bottominfo}>Alle Fahrzeuge des Anbieters</div>
                                         |
                                         <div className={classes.bottominfowarn}>Angebot melden</div>
                                     </div>
