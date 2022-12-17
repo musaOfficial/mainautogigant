@@ -217,6 +217,10 @@
     height: 35px;
 }
 
+.zoomer:hover{
+    background-color: #FBB900;
+}
+
 .slimg:hover{
     border: 2px solid #FBB900;
     cursor: pointer;

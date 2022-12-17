@@ -210,7 +210,7 @@ function CarDetails(){
                                 <div className={classes.werbungtext}>Werbung</div>
                             }
                             {width >= 1141 && 
-                                <iframe src="/banners/banner1/index.html" scrolling="yes" width="100%" height="100px"></iframe>
+                                <iframe src="/banners/banner1/index.html" scrolling="no" width="100%" height="100px"></iframe>
                             }
                         </div>
                     </div>

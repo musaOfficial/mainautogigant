@@ -79,7 +79,7 @@ function ImageSlider({
             
             </div>}
                 <X className={classes.x} onClick={() => setZoomout(false)}/>
-                <iframe src="/banners/banner1/index.html" scrolling="no" width="100%" height="90px" className={classes.zoomerbanner}></iframe>
+                <iframe src="/banners/banner1/index.html" scrolling="no" width="100%" height="120px" className={classes.zoomerbanner}></iframe>
                 <div className={classes.swipercontainer}>
                 <div className={classes.autogigantlogo}>
                     <Wasserzeichen className={classes.aglogo} />
