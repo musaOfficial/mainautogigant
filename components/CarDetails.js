@@ -283,200 +283,126 @@ function CarDetails(){
                     </div>
                     <div className={classes.row2}>
                         <div className={classes.r2c1}>
-                            <div className={classes.sectiontop} onClick={() => {
-                                setOpenBasisdaten(d => !d)
-                                setOpenAusstattung(false);
-                                setOpenEnergieverbrauch(false);
-                                setOpenFahrzeughistorie(false);
-                                setOpenFarbeUndInnenAusstattung(false);
-                                setOpenFinanzierung(false);
-                                setOpenTechnischeDaten(false);
-                                setOpenVersicherung(false);
-                            }}>
-                                <h1 className={openBasisdaten == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Basisdaten</h1>
-                                {openBasisdaten == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
+                            <div className={classes.headsectionf} onClick={() => setOpenBasisdaten(d => !d)}>
+                                <div className={classes.fhead}>Basisdaten</div>
+                                <div className={classes.lhead}><span>Fahrzeughistorie</span><span><Expand className={`${openBasisdaten == true && classes.transformedexpand} ${classes.expand}` } /></span></div>
                             </div>
-                            {openBasisdaten == true && <div className={classes.basiscontainer}>
-                                <div>
-                                    <div className={classes.infoabout}>Karosserieform</div><div className={classes.actualinfo}>{karosserieform}</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Zustand</div><div className={classes.actualinfo}>{zustand}</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Antriebsart</div><div className={classes.actualinfo}>{antriebsart}</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Sitzplätze</div><div className={classes.actualinfo}>{anzahlsitzplaetze}</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Türen</div><div className={classes.actualinfo}>{anzahltuere}</div>
-                                </div>
-                            </div>}
-                            <div className={classes.section} onClick={() => {
-                                setOpenFahrzeughistorie(d => !d)
-                                setOpenBasisdaten(false)
-                                setOpenAusstattung(false);
-                                setOpenEnergieverbrauch(false);
-                                setOpenFarbeUndInnenAusstattung(false);
-                                setOpenFinanzierung(false);
-                                setOpenTechnischeDaten(false);
-                                setOpenVersicherung(false);
-                            }}>
-                                <h1 className={openFahrzeughistorie == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Fahrzeughistorie</h1>
-                                {openFahrzeughistorie == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
-                            </div>
-                            {openFahrzeughistorie == true && <div className={classes.basiscontainer}>
-                                <div>
-                                    <div className={classes.infoabout}>Kilometerstand</div><div className={classes.actualinfo}>{kilometerstand} km</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Erstzulassung</div><div className={classes.actualinfo}>{erstzulassung}</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Produktionsjahr</div><div className={classes.actualinfo}>{produktionsjahr}</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>HU</div><div className={classes.actualinfo}>{hu}</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Scheckheftgepflegt</div><div className={classes.actualinfo}>{scheckheftgepflegt == true ? "Ja" : "Nein"}</div>
-                                </div>
-                            </div>}
-                            <div className={classes.section} onClick={() => {
-                                setOpenTechnischeDaten(e => !e)
-                                setOpenFahrzeughistorie(false);
-                                setOpenBasisdaten(false)
-                                setOpenAusstattung(false);
-                                setOpenEnergieverbrauch(false);
-                                setOpenFarbeUndInnenAusstattung(false);
-                                setOpenFinanzierung(false);
-                                setOpenVersicherung(false);
-                            }}>
-                                <h1 className={openTechnischeDaten == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Technische Daten</h1>
-                                {openTechnischeDaten == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
-                            </div>
-                            {openTechnischeDaten == true && <div className={classes.basiscontainer}>
-                                <div>
-                                    <div className={classes.infoabout}>Leistung</div><div className={classes.actualinfo}>230 kW (313 PS)</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Getriebe</div><div className={classes.actualinfo}>{getriebe}</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Hubraum</div><div className={classes.actualinfo}>{hubraum} cm<sub className={classes.hubraumsub}>3</sub></div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Gänge</div><div className={classes.actualinfo}>{gaenge}</div>
-                                </div>
-                            </div>}
-                            <div className={classes.section} onClick={() => {
-                                setOpenEnergieverbrauch(e => !e);
-                                setOpenTechnischeDaten(false)
-                                setOpenBasisdaten(false)
-                                setOpenAusstattung(false);
-                                setOpenFarbeUndInnenAusstattung(false);
-                                setOpenFahrzeughistorie(false);
-                                setOpenFinanzierung(false);
-                                setOpenVersicherung(false);
-                            }}>
-                                <h1 className={openEnergieverbrauch == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Energieverbrauch</h1>
-                                {openEnergieverbrauch == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
-                            </div>
-                            {openEnergieverbrauch == true && <div className={classes.basiscontainer}>
-                                <div>
-                                    <div className={classes.infoabout}>Kraftstoff</div><div className={classes.actualinfo}>{kraftstoff}</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Kraftstoffverbrauch<sub>2</sub></div><div className={classes.actualinfo}>
-                                        {kraftstoffverbrauch.map((kv) => <div key={kv}>{kv}</div>)}
+                            {openBasisdaten == true && <div className={classes.infocontainer}>
+                                <div className={classes.fhalf}>
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Karosserieform</span><span className={classes.information}>{karosserieform}</span>
+                                    </div>
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Zustand</span><span className={classes.information}>{zustand}</span>
+                                    </div>
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Antriebsart</span><span className={classes.information}>{antriebsart}</span>
+                                    </div>
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Sitzplätze</span><span className={classes.information}>{anzahlsitzplaetze}</span>
+                                    </div>
+                                    <div className={classes.linfo}>
+                                        <span className={classes.label}>Türen</span><span className={classes.information}>{anzahltuere}</span>
                                     </div>
                                 </div>
-                                <div>
-                                    <div className={classes.infoabout}>CO<sub>2</sub>-Emissionen<sup>2</sup></div><div className={classes.actualinfo}>{coemissionen}</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Schadstoffklasse</div><div className={classes.actualinfo}>{schadstoffklasse}</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Umweltplakette</div><div className={classes.actualinfo}>{umweltplakette}</div>
-                                </div>
-                            </div>}
-                            <div className={classes.section} onClick={() => {
-                                setOpenAusstattung(e => !e);
-                                setOpenEnergieverbrauch(false);
-                                setOpenTechnischeDaten(false)
-                                setOpenBasisdaten(false)
-                                setOpenFarbeUndInnenAusstattung(false);
-                                setOpenFinanzierung(false);
-                                setOpenVersicherung(false);
-                                setOpenFahrzeughistorie(false);
-                            }}>
-                                <h1 className={openAusstattung == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Ausstattung</h1>
-                                {openAusstattung == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
-                            </div>
-                            {openAusstattung == true && <div className={classes.basiscontainer}>
-                                <div>
-                                    <div className={classes.infoabout}>Komfort</div><div className={classes.actualinfo}>
-                                        {ausstattungKomfort.map((e) => <div key={e}>{e}</div>)}
+                                <div className={classes.lhalf}>
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Kilometerstand</span><span className={classes.information}>{kilometerstand}</span>
                                     </div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Unterhaltung</div><div className={classes.actualinfo}>
-                                        {ausstattungUnterhaltung.map((e) => <div key={e}>{e}</div>)}
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Erstzulassung</span><span className={classes.information}>{erstzulassung}</span>
                                     </div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Sicherheit</div><div className={classes.actualinfo}>
-                                        {ausstattungSicherheit.map((e) => <div key={e}>{e}</div>)}
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Produktionsjahr</span><span className={classes.information}>{produktionsjahr}</span>
                                     </div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Extras</div><div className={classes.actualinfo}>
-                                        {ausstattungExtras.map((e) => <div key={e}>{e}</div>)}
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>HU</span><span className={classes.information}>{hu}</span>
+                                    </div>
+                                    <div className={classes.linfo}>
+                                        <span className={classes.label}>Scheckhaftgepflegt</span><span className={classes.information}>{scheckheftgepflegt == true ? "Ja" : "Nein"}</span>
                                     </div>
                                 </div>
                             </div>}
-                            <div className={classes.section} onClick={() => {
-                                setOpenFarbeUndInnenAusstattung(e => !e);
-                                setOpenAusstattung(false);
-                                setOpenEnergieverbrauch(false);
-                                setOpenTechnischeDaten(false)
-                                setOpenBasisdaten(false)
-                                setOpenFinanzierung(false);
-                                setOpenVersicherung(false);
-                                setOpenFahrzeughistorie(false);
-                            }}>
-                                <h1 className={openFarbeUndInnenAusstattung == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Farbe und Innenausstattung</h1>
-                                {openFarbeUndInnenAusstattung == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
+                            <div className={classes.headsection} onClick={() => setOpenEnergieverbrauch(d => !d)}>
+                                <div className={classes.fhead}>Technische Daten</div>
+                                <div className={classes.lhead}><span>Energieverbrauch</span><span><Expand className={`${openEnergieverbrauch == true && classes.transformedexpand} ${classes.expand}` } /></span></div>
                             </div>
-                            {openFarbeUndInnenAusstattung == true && <div className={classes.basiscontainer}>
-                                <div>
-                                    <div className={classes.infoabout}>Außenfarbe</div><div className={classes.actualinfo}>{aussenfarbe}</div>
+                            {openEnergieverbrauch == true && <div className={classes.infocontainer}>
+                            <div className={classes.fhalf}>
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Karosserieform</span><span className={classes.information}>{karosserieform}</span>
+                                    </div>
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Zustand</span><span className={classes.information}>{zustand}</span>
+                                    </div>
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Antriebsart</span><span className={classes.information}>{antriebsart}</span>
+                                    </div>
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Sitzplätze</span><span className={classes.information}>{anzahlsitzplaetze}</span>
+                                    </div>
+                                    <div className={classes.linfo}>
+                                        <span className={classes.label}>Türen</span><span className={classes.information}>{anzahltuere}</span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div className={classes.infoabout}>Außenfarbe laut Hersteller</div><div className={classes.actualinfo}>{aussenfarbelauthersteller}</div>
-                                </div>
-                                <div>
-                                    <div className={classes.infoabout}>Farbe der Innenausstattung</div><div className={classes.actualinfo}>{farbeinnenausstattung}</div>
+                                <div className={classes.lhalf}>
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Kilometerstand</span><span className={classes.information}>{kilometerstand}</span>
+                                    </div>
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Erstzulassung</span><span className={classes.information}>{erstzulassung}</span>
+                                    </div>
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>Produktionsjahr</span><span className={classes.information}>{produktionsjahr}</span>
+                                    </div>
+                                    <div className={classes.info}>
+                                        <span className={classes.label}>HU</span><span className={classes.information}>{hu}</span>
+                                    </div>
+                                    <div className={classes.linfo}>
+                                        <span className={classes.label}>Scheckhaftgepflegt</span><span className={classes.information}>{scheckheftgepflegt == true ? "Ja" : "Nein"}</span>
+                                    </div>
                                 </div>
                             </div>}
-                            <div className={classes.section} onClick={() => {
-                                setOpenFinanzierung(e => !e);
-                                setOpenFarbeUndInnenAusstattung(false);
-                                setOpenAusstattung(false);
-                                setOpenEnergieverbrauch(false);
-                                setOpenTechnischeDaten(false)
-                                setOpenBasisdaten(false)
-                                setOpenVersicherung(false);
-                                setOpenFahrzeughistorie(false);
-                            }}>
-                                <h1 className={openFinanzierung == true ? classes.sectionheadingbig : classes.sectionheadingsmall}>Finanzierung</h1>
-                                {openFinanzierung == false ? <Expand className={classes.expand}/> : <Expand className={classes.expandnot}/>}
+                            <div className={classes.longheadsection} onClick={() => setOpenAusstattung(d => !d)}>
+                                <div className={classes.headcontent}>
+                                    <span>Ausstattung</span>
+                                    <Expand className={`${openAusstattung == true && classes.transformedexpand} ${classes.expand}` } />
+                                </div>
                             </div>
-                            {openFinanzierung == true && <div className={classes.basiscontainer}>
-                                
+                            {openAusstattung == true && <div className={classes.twogrid}>
+                                <div className={classes.gridinfocontainer}>
+                                    <div className={classes.infoheading}>Komfort</div>
+                                    {ausstattungKomfort.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
+                                </div>
+                                <div className={classes.gridinfocontainer}>
+                                    <div className={classes.infoheading}>Unterhaltung/Media</div>
+                                    {ausstattungUnterhaltung.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
+                                </div>
+                                <div className={classes.gridinfocontainer}>
+                                    <div className={classes.infoheading}>Unterhaltung/Media</div>
+                                    {ausstattungUnterhaltung.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
+                                </div>
+                                <div className={classes.gridinfocontainer}>
+                                    <div className={classes.infoheading}>Sicherheit</div>
+                                    {ausstattungSicherheit.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
+                                </div>
+                                <div className={classes.gridinfocontainer}>
+                                    <div className={classes.infoheading}>Extras</div>
+                                    {ausstattungExtras.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
+                                </div>
                             </div>}
+                            <div className={classes.longheadsection} onClick={() => setOpenFarbeUndInnenAusstattung(d => !d)}>
+                                <div className={classes.headcontent}>
+                                    <span>Farbe und Innenausstattung</span>
+                                    <Expand className={`${openFarbeUndInnenAusstattung == true && classes.transformedexpand} ${classes.expand}` } />
+                                </div>
+                            </div>
+                            <div className={classes.longheadsection} onClick={() => setOpenFinanzierung(d => !d)}>
+                                <div className={classes.headcontent}>
+                                    <span>Finanzierung</span>
+                                    <Expand className={`${openFinanzierung == true && classes.transformedexpand} ${classes.expand}` } />
+                                </div>
+                            </div>
                         </div>
                         <div className={classes.r2c2}>
                             <form onSubmit={handleSubmit}>
