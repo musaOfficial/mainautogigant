@@ -166,9 +166,8 @@ function CarDetails(){
     ];
     const coemissionen = "0 g/km (komb.)"
     const schadstoffklasse = "Euro 6";
-    const umweltplakette = "1 (Keine Feinstaubplakette)"
+    const umweltplakette = "1 (Keine Feinstaubplakette)";
 
-    
     const [message, setMessage] = useState("");
     const [name, setName] = useState("");
     const [mail, setMail] = useState("");
@@ -176,8 +175,11 @@ function CarDetails(){
     const [newsletter, setNewsletter] = useState(false);
 
     const aussenfarbe = "Blau";
-    const aussenfarbelauthersteller = "Blau";
-    const farbeinnenausstattung = "sonstige";
+    const farbeLautHersteller = "SPEKTRALBLAU-METALLICLACK"
+    const lackierung = "Metallic"
+    const farbeinnenausstattung = "Schwarz";
+    const innenausstattung = "Volleder";
+
     const leistung = "190 kW (258 PS)";
     const verkaeufer = "Privat";
 
@@ -397,6 +399,25 @@ function CarDetails(){
                                     <Expand className={`${openFarbeUndInnenAusstattung == true && classes.transformedexpand} ${classes.expand}` } />
                                 </div>
                             </div>
+                            {openFarbeUndInnenAusstattung == true && <div className={classes.infocontainer}>
+                                <div className={classes.flong}>
+                                    <div className={classes.longinfo}>
+                                        <span className={classes.longlabel}>Außenfarbe</span><span className={classes.information}>{aussenfarbe}</span>
+                                    </div>
+                                    <div className={classes.longinfo}>
+                                        <span className={classes.longlabel}>Farbe laut Hersteller</span><span className={classes.information}>{farbeLautHersteller}</span>
+                                    </div>
+                                    <div className={classes.longinfo}>
+                                        <span className={classes.longlabel}>Lackierung</span><span className={classes.information}>{lackierung}</span>
+                                    </div>
+                                    <div className={classes.longinfo}>
+                                        <span className={classes.longlabel}>Farbe der Innenausstattung</span><span className={classes.information}>{farbeinnenausstattung}</span>
+                                    </div>
+                                    <div className={classes.longlinfo}>
+                                        <span className={classes.longlabel}>Innenausstattung</span><span className={classes.information}>{innenausstattung}</span>
+                                    </div>
+                                </div>
+                            </div>}
                             <div className={classes.longheadsection} onClick={() => setOpenFinanzierung(d => !d)}>
                                 <div className={classes.headcontent}>
                                     <span>Finanzierung</span>
