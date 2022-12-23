@@ -493,32 +493,32 @@ function CarDetails(){
                                 </div>
                                 <div className={classes.companyrow3}>
                                     <div className={classes.oeffnungszeiten}>Öffnungszeiten:</div>
-                                    <div className={classes.oeffnungszeitenrow}>
+                                    <div className={`${classes.oeffnungszeitenrow} ${today == "monday" && "font-bold"}`}>
                                         <div className={classes.tag}>Montag</div>
                                         <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
                                         <div className={classes.link}>Alle Fahrzeuge des Anbieters</div>
                                     </div>
-                                    <div className={classes.oeffnungszeitenrow}>
+                                    <div className={`${classes.oeffnungszeitenrow} ${today == "tuesday" && "font-bold"}`}>
                                         <div className={classes.tag}>Dienstag</div>
                                         <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
                                         <div className={classes.link}>Firmenwebseite</div>
                                     </div>
-                                    <div className={classes.oeffnungszeitenrow}>
+                                    <div className={`${classes.oeffnungszeitenrow} ${today == "wednesday" && "font-bold"}`}>
                                         <div className={classes.tag}>Mittwoch</div>
                                         <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
                                         <div className={classes.link}>Händlerprofil</div>
                                     </div>
-                                    <div className={classes.oeffnungszeitenrow}>
+                                    <div className={`${classes.oeffnungszeitenrow} ${today == "thursday" && "font-bold"}`}>
                                         <div className={classes.tag}>Donnerstag</div>
                                         <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
                                         <div className={classes.link}>Angebot melden</div>
                                     </div>
-                                    <div className={classes.oeffnungszeitenrow}>
+                                    <div className={`${classes.oeffnungszeitenrow} ${today == "friday" && "font-bold"}`}>
                                         <div className={classes.tag}>Freitag</div>
                                         <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
                                         <div className={classes.link}>Impressum &</div>
                                     </div>
-                                    <div className={classes.oeffnungszeitenrow}>
+                                    <div className={`${classes.oeffnungszeitenrow} ${today == "saturday" && "font-bold"}`}>
                                         <div className={classes.tag}>Samstag</div>
                                         <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
                                         <div className={classes.link}>Datenschutz des Anbieters</div>
