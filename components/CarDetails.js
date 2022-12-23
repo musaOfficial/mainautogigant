@@ -16,7 +16,13 @@ import LinkIcon from './../public/images/link.svg';
 import FacebookIcon from './../public/images/facebik.svg';
 import WhatsAppIcon from './../public/images/WhatsApp.svg';
 import InstagramIcon from './../public/icons/instagram.svg'
+import Facebook from './../public/icons/facebook.svg'
+import Youtube from './../public/icons/youtube.svg'
+import Linkedin from './../public/linkedin.svg'
+import Tiktok from './../public/icons/tiktok.svg'
 import InputSelect from './ui/InputSelect';
+import Clock from './../public/clock.svg'
+
 const useDeviceSize = () => {
 
     const [width, setWidth] = useState(0)
@@ -152,6 +158,8 @@ function CarDetails(){
     const produktionsjahr = 2015;
     const hu = "08/2015";
     const scheckheftgepflegt = true;
+    const leergewicht = 1980;
+    var leergewichtDisplay = leergewicht.toLocaleString();
 
     // const leistung = 
     const getriebe = "Automatik";
@@ -182,7 +190,7 @@ function CarDetails(){
 
     const leistung = "190 kW (258 PS)";
     const verkaeufer = "Privat";
-
+    const zylinder = 6;
 
 
     function handleSubmit(e){
@@ -200,10 +208,39 @@ function CarDetails(){
         setTel("");
         setNewsletter(false);
     }
+
+
+    var today = new Date().getDay();
+    
+    switch(today){
+        case 0:
+            today = "sunday";
+            break;
+        case 1:
+            today = "monday";
+            break;
+        case 2:
+            today = "tuesday";
+            break;
+        case 3:
+            today = "wednesday";
+            break;
+        case 4:
+            today = "thursday";
+            break;
+        case 5:
+            today = "friday";
+            break;
+        case 6:
+            today = "saturday";
+            break;
+        case err:
+            console.log(err);
+    }
     return (
         <div className={classes.container}>
             <div className={`${classes.contentcontainer} w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
-                <div>
+                <div className={classes.fullwidth}>
                     <div className={classes.middle}>
                         <div className={classes.image}>
                             {width >= 1141 && 
@@ -218,11 +255,11 @@ function CarDetails(){
                         <div className={classes.backtoresults}><Backtoresults/><span className={classes.bluetext}><span className={classes.bl1}>zurück zur </span><span className={classes.bl2}>Ergebnisliste</span></span></div>
                         <div className={classes.zl}><span className={classes.zl1}>Zuletzt geändert:</span> <span className={classes.zl2}>26.10.2022, 20:57 Uhr</span></div>
                     </div>
-                    <div className={classes.row1}>
-                        <div className={classes.r1c1}>
+                    <div className={classes.row}>
+                        <div className={classes.left}>
                             <ImageSlider images={images}/>
                         </div>
-                        <div className={classes.r1c2}>
+                        <div className={classes.right}>
                             <div className={classes.carinfocontainer}>
                                 <div className={classes.pricerow}>
                                     <div className={classes.price}>€ {preisFormatted},-</div>
@@ -283,175 +320,211 @@ function CarDetails(){
                             </div>
                         </div>
                     </div>
-                    <div className={classes.row2}>
-                        <div className={classes.r2c1}>
-                            <div className={classes.headsectionf} onClick={() => setOpenBasisdaten(d => !d)}>
-                                <div className={classes.fhead}>Basisdaten</div>
-                                <div className={classes.lhead}><span>Fahrzeughistorie</span><span><Expand className={`${openBasisdaten == true && classes.transformedexpand} ${classes.expand}` } /></span></div>
-                            </div>
-                            {openBasisdaten == true && <div className={classes.infocontainer}>
+                    <div className={classes.row}>
+                        <div className={`${classes.firstcolumn}`}>
+                            <div className={classes.bottomleftnomargin}>
+                                <div className={classes.headsectionf} onClick={() => setOpenBasisdaten(d => !d)}>
+                                    <div className={classes.fhead}>Basisdaten</div>
+                                    <div className={classes.lhead}><span>Fahrzeughistorie</span><span><Expand className={`${openBasisdaten == true && classes.transformedexpand} ${classes.expand}` } /></span></div>
+                                </div>
+                                {openBasisdaten == true && <div className={classes.infocontainer}>
+                                    <div className={classes.fhalf}>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Karosserieform</span><span className={classes.information}>{karosserieform}</span>
+                                        </div>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Zustand</span><span className={classes.information}>{zustand}</span>
+                                        </div>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Antriebsart</span><span className={classes.information}>{antriebsart}</span>
+                                        </div>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Sitzplätze</span><span className={classes.information}>{anzahlsitzplaetze}</span>
+                                        </div>
+                                        <div className={classes.linfo}>
+                                            <span className={classes.label}>Türen</span><span className={classes.information}>{anzahltuere}</span>
+                                        </div>
+                                    </div>
+                                    <div className={classes.lhalf}>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Kilometerstand</span><span className={classes.information}>{kilometerstand}</span>
+                                        </div>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Erstzulassung</span><span className={classes.information}>{erstzulassung}</span>
+                                        </div>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Produktionsjahr</span><span className={classes.information}>{produktionsjahr}</span>
+                                        </div>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>HU</span><span className={classes.information}>{hu}</span>
+                                        </div>
+                                        <div className={classes.linfo}>
+                                            <span className={classes.label}>Scheckhaftgepflegt</span><span className={classes.information}>{scheckheftgepflegt == true ? "Ja" : "Nein"}</span>
+                                        </div>
+                                    </div>
+                                </div>}
+                                <div className={classes.headsection} onClick={() => setOpenEnergieverbrauch(d => !d)}>
+                                    <div className={classes.fhead}>Technische Daten</div>
+                                    <div className={classes.lhead}><span>Energieverbrauch</span><span><Expand className={`${openEnergieverbrauch == true && classes.transformedexpand} ${classes.expand}` } /></span></div>
+                                </div>
+                                {openEnergieverbrauch == true && <div className={classes.infocontainer}>
                                 <div className={classes.fhalf}>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Karosserieform</span><span className={classes.information}>{karosserieform}</span>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Karosserieform</span><span className={classes.information}>{karosserieform}</span>
+                                        </div>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Zustand</span><span className={classes.information}>{zustand}</span>
+                                        </div>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Antriebsart</span><span className={classes.information}>{antriebsart}</span>
+                                        </div>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Sitzplätze</span><span className={classes.information}>{anzahlsitzplaetze}</span>
+                                        </div>
+                                        <div className={classes.linfo}>
+                                            <span className={classes.label}>Türen</span><span className={classes.information}>{anzahltuere}</span>
+                                        </div>
                                     </div>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Zustand</span><span className={classes.information}>{zustand}</span>
+                                    <div className={classes.lhalf}>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Kilometerstand</span><span className={classes.information}>{kilometerstand}</span>
+                                        </div>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Erstzulassung</span><span className={classes.information}>{erstzulassung}</span>
+                                        </div>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>Produktionsjahr</span><span className={classes.information}>{produktionsjahr}</span>
+                                        </div>
+                                        <div className={classes.info}>
+                                            <span className={classes.label}>HU</span><span className={classes.information}>{hu}</span>
+                                        </div>
+                                        <div className={classes.linfo}>
+                                            <span className={classes.label}>Scheckhaftgepflegt</span><span className={classes.information}>{scheckheftgepflegt == true ? "Ja" : "Nein"}</span>
+                                        </div>
                                     </div>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Antriebsart</span><span className={classes.information}>{antriebsart}</span>
-                                    </div>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Sitzplätze</span><span className={classes.information}>{anzahlsitzplaetze}</span>
-                                    </div>
-                                    <div className={classes.linfo}>
-                                        <span className={classes.label}>Türen</span><span className={classes.information}>{anzahltuere}</span>
-                                    </div>
-                                </div>
-                                <div className={classes.lhalf}>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Kilometerstand</span><span className={classes.information}>{kilometerstand}</span>
-                                    </div>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Erstzulassung</span><span className={classes.information}>{erstzulassung}</span>
-                                    </div>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Produktionsjahr</span><span className={classes.information}>{produktionsjahr}</span>
-                                    </div>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>HU</span><span className={classes.information}>{hu}</span>
-                                    </div>
-                                    <div className={classes.linfo}>
-                                        <span className={classes.label}>Scheckhaftgepflegt</span><span className={classes.information}>{scheckheftgepflegt == true ? "Ja" : "Nein"}</span>
-                                    </div>
-                                </div>
-                            </div>}
-                            <div className={classes.headsection} onClick={() => setOpenEnergieverbrauch(d => !d)}>
-                                <div className={classes.fhead}>Technische Daten</div>
-                                <div className={classes.lhead}><span>Energieverbrauch</span><span><Expand className={`${openEnergieverbrauch == true && classes.transformedexpand} ${classes.expand}` } /></span></div>
-                            </div>
-                            {openEnergieverbrauch == true && <div className={classes.infocontainer}>
-                            <div className={classes.fhalf}>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Karosserieform</span><span className={classes.information}>{karosserieform}</span>
-                                    </div>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Zustand</span><span className={classes.information}>{zustand}</span>
-                                    </div>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Antriebsart</span><span className={classes.information}>{antriebsart}</span>
-                                    </div>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Sitzplätze</span><span className={classes.information}>{anzahlsitzplaetze}</span>
-                                    </div>
-                                    <div className={classes.linfo}>
-                                        <span className={classes.label}>Türen</span><span className={classes.information}>{anzahltuere}</span>
+                                </div>}
+                                <div className={classes.longheadsection} onClick={() => setOpenAusstattung(d => !d)}>
+                                    <div className={classes.headcontent}>
+                                        <span>Ausstattung</span>
+                                        <Expand className={`${openAusstattung == true && classes.transformedexpand} ${classes.expand}` } />
                                     </div>
                                 </div>
-                                <div className={classes.lhalf}>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Kilometerstand</span><span className={classes.information}>{kilometerstand}</span>
+                                {openAusstattung == true && <div className={classes.twogrid}>
+                                    <div className={classes.gridinfocontainer}>
+                                        <div className={classes.infoheading}>Komfort</div>
+                                        {ausstattungKomfort.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
                                     </div>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Erstzulassung</span><span className={classes.information}>{erstzulassung}</span>
+                                    <div className={classes.gridinfocontainer}>
+                                        <div className={classes.infoheading}>Unterhaltung/Media</div>
+                                        {ausstattungUnterhaltung.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
                                     </div>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>Produktionsjahr</span><span className={classes.information}>{produktionsjahr}</span>
+                                    <div className={classes.gridinfocontainer}>
+                                        <div className={classes.infoheading}>Unterhaltung/Media</div>
+                                        {ausstattungUnterhaltung.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
                                     </div>
-                                    <div className={classes.info}>
-                                        <span className={classes.label}>HU</span><span className={classes.information}>{hu}</span>
+                                    <div className={classes.gridinfocontainer}>
+                                        <div className={classes.infoheading}>Sicherheit</div>
+                                        {ausstattungSicherheit.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
                                     </div>
-                                    <div className={classes.linfo}>
-                                        <span className={classes.label}>Scheckhaftgepflegt</span><span className={classes.information}>{scheckheftgepflegt == true ? "Ja" : "Nein"}</span>
+                                    <div className={classes.gridinfocontainer}>
+                                        <div className={classes.infoheading}>Extras</div>
+                                        {ausstattungExtras.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
+                                    </div>
+                                </div>}
+                                <div className={classes.longheadsection} onClick={() => setOpenFarbeUndInnenAusstattung(d => !d)}>
+                                    <div className={classes.headcontent}>
+                                        <span>Farbe und Innenausstattung</span>
+                                        <Expand className={`${openFarbeUndInnenAusstattung == true && classes.transformedexpand} ${classes.expand}` } />
                                     </div>
                                 </div>
-                            </div>}
-                            <div className={classes.longheadsection} onClick={() => setOpenAusstattung(d => !d)}>
-                                <div className={classes.headcontent}>
-                                    <span>Ausstattung</span>
-                                    <Expand className={`${openAusstattung == true && classes.transformedexpand} ${classes.expand}` } />
-                                </div>
-                            </div>
-                            {openAusstattung == true && <div className={classes.twogrid}>
-                                <div className={classes.gridinfocontainer}>
-                                    <div className={classes.infoheading}>Komfort</div>
-                                    {ausstattungKomfort.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
-                                </div>
-                                <div className={classes.gridinfocontainer}>
-                                    <div className={classes.infoheading}>Unterhaltung/Media</div>
-                                    {ausstattungUnterhaltung.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
-                                </div>
-                                <div className={classes.gridinfocontainer}>
-                                    <div className={classes.infoheading}>Unterhaltung/Media</div>
-                                    {ausstattungUnterhaltung.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
-                                </div>
-                                <div className={classes.gridinfocontainer}>
-                                    <div className={classes.infoheading}>Sicherheit</div>
-                                    {ausstattungSicherheit.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
-                                </div>
-                                <div className={classes.gridinfocontainer}>
-                                    <div className={classes.infoheading}>Extras</div>
-                                    {ausstattungExtras.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
-                                </div>
-                            </div>}
-                            <div className={classes.longheadsection} onClick={() => setOpenFarbeUndInnenAusstattung(d => !d)}>
-                                <div className={classes.headcontent}>
-                                    <span>Farbe und Innenausstattung</span>
-                                    <Expand className={`${openFarbeUndInnenAusstattung == true && classes.transformedexpand} ${classes.expand}` } />
+                                {openFarbeUndInnenAusstattung == true && <div className={classes.infocontainer}>
+                                    <div className={classes.flong}>
+                                        <div className={classes.longinfo}>
+                                            <span className={classes.longlabel}>Außenfarbe</span><span className={classes.information}>{aussenfarbe}</span>
+                                        </div>
+                                        <div className={classes.longinfo}>
+                                            <span className={classes.longlabel}>Farbe laut Hersteller</span><span className={classes.information}>{farbeLautHersteller}</span>
+                                        </div>
+                                        <div className={classes.longinfo}>
+                                            <span className={classes.longlabel}>Lackierung</span><span className={classes.information}>{lackierung}</span>
+                                        </div>
+                                        <div className={classes.longinfo}>
+                                            <span className={classes.longlabel}>Farbe der Innenausstattung</span><span className={classes.information}>{farbeinnenausstattung}</span>
+                                        </div>
+                                        <div className={classes.longlinfo}>
+                                            <span className={classes.longlabel}>Innenausstattung</span><span className={classes.information}>{innenausstattung}</span>
+                                        </div>
+                                    </div>
+                                </div>}
+                                <div className={classes.longheadsection} onClick={() => setOpenFinanzierung(d => !d)}>
+                                    <div className={classes.headcontent}>
+                                        <span>Finanzierung</span>
+                                        <Expand className={`${openFinanzierung == true && classes.transformedexpand} ${classes.expand}` } />
+                                    </div>
                                 </div>
                             </div>
-                            {openFarbeUndInnenAusstattung == true && <div className={classes.infocontainer}>
-                                <div className={classes.flong}>
-                                    <div className={classes.longinfo}>
-                                        <span className={classes.longlabel}>Außenfarbe</span><span className={classes.information}>{aussenfarbe}</span>
-                                    </div>
-                                    <div className={classes.longinfo}>
-                                        <span className={classes.longlabel}>Farbe laut Hersteller</span><span className={classes.information}>{farbeLautHersteller}</span>
-                                    </div>
-                                    <div className={classes.longinfo}>
-                                        <span className={classes.longlabel}>Lackierung</span><span className={classes.information}>{lackierung}</span>
-                                    </div>
-                                    <div className={classes.longinfo}>
-                                        <span className={classes.longlabel}>Farbe der Innenausstattung</span><span className={classes.information}>{farbeinnenausstattung}</span>
-                                    </div>
-                                    <div className={classes.longlinfo}>
-                                        <span className={classes.longlabel}>Innenausstattung</span><span className={classes.information}>{innenausstattung}</span>
-                                    </div>
-                                </div>
-                            </div>}
-                            <div className={classes.longheadsection} onClick={() => setOpenFinanzierung(d => !d)}>
-                                <div className={classes.headcontent}>
-                                    <span>Finanzierung</span>
-                                    <Expand className={`${openFinanzierung == true && classes.transformedexpand} ${classes.expand}` } />
-                                </div>
-                            </div>
+                            <div className={classes.adarea}></div>
                         </div>
-                        <div className={classes.r2c2}>
-                            <form onSubmit={handleSubmit}>
-                            <h1 className={classes.kontaktheading}>Anbieter kontaktieren</h1>
-                            <p className={classes.yourmessage}>Deine Nachricht</p>
-                            <textarea className={classes.textarea} placeholder={
-                            `Guten Tag,
-
-ich interessiere mich für ihr Fahrzeug.
-Kontaktieren Sie mich bitte.
-
-Mit freundlichen Grüßen`} onChange={(e) => setMessage(e.target.value)} value={message}></textarea>
-                            <input className={classes.input} placeholder={"Name"} onChange={(e) => setName(e.target.value)} value={name}/>
-                            <input className={classes.input} placeholder={"E-Mail"} onChange={(e) => setMail(e.target.value)} value={mail}/>
-                            <input className={classes.input} placeholder={"Telefonnummer (optional)"} onChange={(e) => setTel(e.target.value)} value={tel}/>
-                            <div className={classes.checkcontainer}>
-                                <input className={classes.checkinput} type={"checkbox"} onChange={() => setNewsletter(e => !e)} value={newsletter}/>
-                                <p className={classes.paragraph}>Ich möchte auf meine Interessen zugeschnittene Angebote und 
-Neuigkeiten der AUTOGIGANT. GmbH per E-Mail erhalten. Ich kann 
-diese Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+                        <div className={classes.secondcolumn}>
+                            <div className={classes.companyinformation}>
+                                <div className={classes.companyrow1}>
+                                    <div className={classes.logo}>
+                                        <Image src={'/gigantlogo.jpg'} layout='fill' objectFit='cover' />
+                                    </div>
+                                    <div className={classes.companysmalldetails}>
+                                        <div className={classes.companyname}>Gigant Group Teknoloji A.S.</div>
+                                        <div className={classes.loc1}>Wiener Straße 90</div>
+                                        <div className={classes.loc2}>2700 Wiener Neustadt</div>
+                                        <div className={classes.loc3}>Österreich</div>
+                                    </div>
+                                </div>
+                                <div className={classes.companyrow2}>
+                                    <div className={`${classes.closed} ${classes.open}`}>
+                                        <Clock className={classes.clock} />
+                                        Jetzt geöffnet
+                                    </div>
+                                    <div className={classes.socialmediaicons}>
+                                        <Facebook className={classes.socialmediaicon} />
+                                        <InstagramIcon className={classes.socialmediaicon}/>
+                                        <Youtube className={classes.socialmediaicon}/>
+                                        <Linkedin className={classes.socialmediaicon}/>
+                                        <Tiktok className={classes.socialmediaicon}/>
+                                    </div>
+                                </div>
+                                <div className={classes.companyrow3}>
+                                    <div className={classes.oeffnungszeiten}>Öffnungszeiten:</div>
+                                    <div className={classes.oeffnungszeitenrow}>
+                                        <div className={classes.tag}>Montag</div>
+                                        <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
+                                        <div className={classes.link}>Alle Fahrzeuge des Anbieters</div>
+                                    </div>
+                                    <div className={classes.oeffnungszeitenrow}>
+                                        <div className={classes.tag}>Dienstag</div>
+                                        <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
+                                        <div className={classes.link}>Firmenwebseite</div>
+                                    </div>
+                                    <div className={classes.oeffnungszeitenrow}>
+                                        <div className={classes.tag}>Mittwoch</div>
+                                        <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
+                                        <div className={classes.link}>Händlerprofil</div>
+                                    </div>
+                                    <div className={classes.oeffnungszeitenrow}>
+                                        <div className={classes.tag}>Donnerstag</div>
+                                        <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
+                                        <div className={classes.link}>Angebot melden</div>
+                                    </div>
+                                    <div className={classes.oeffnungszeitenrow}>
+                                        <div className={classes.tag}>Freitag</div>
+                                        <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
+                                        <div className={classes.link}>Impressum &</div>
+                                    </div>
+                                    <div className={classes.oeffnungszeitenrow}>
+                                        <div className={classes.tag}>Samstag</div>
+                                        <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
+                                        <div className={classes.link}>Datenschutz des Anbieters</div>
+                                    </div>
+                                </div>
                             </div>
-                            <button type='submit' className={classes.yellowbtn} >Nachricht senden</button>
-                            </form>
-                            <p className={classes.contactdesc}>Wir verwenden Deine E-Mail-Adresse gemäß unseren 
-Datenschutzbestimmungen, z.B. für Fahrzeug-Empfehlungen ähnlich Deiner 
-Suche. Wenn Du keine weiteren Fahrzeug-Empfehlungen mehr erhalten willst,
- kannst Du jederzeit hier widersprechen.</p>
-                            
                         </div>
                     </div>
                 </div>

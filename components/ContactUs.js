@@ -195,8 +195,8 @@ function ContactUs(){
                                 </div>
                                 <input type={"number"} className={classes.input} onChange={(e) => setTelnum(e.target.value)} placeholder="Telefonnummer *" />
                             </div>
-                            <input type={"text"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Firma" />
-                            <input type={"number"} className={classes.input} onChange={(e) => setVorname(e.target.value)} placeholder="Postleitzahl" />
+                            <input type={"text"} className={`${classes.input} ${classes.firmainput}`} onChange={(e) => setVorname(e.target.value)} placeholder="Firma" />
+                            <input type={"number"} className={`${classes.input} ${classes.postleitzahlinput}`} onChange={(e) => setVorname(e.target.value)} placeholder="Postleitzahl" />
                         </div>
                         <div className={classes.privatright}>
                             <input type={"number"} className={classes.haendlerinput} onChange={(e) => setVorname(e.target.value)} placeholder="Kundennummer" />

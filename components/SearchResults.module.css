@@ -17,7 +17,6 @@
 
 .topimg{
     position: relative;
-    width: 970px;
     height: 250px;
     margin-bottom: 30px;
     
@@ -1094,3 +1093,49 @@
     width: 20px;
 
 }
+
+@media (max-width: 600px) {
+    /* Make the container and rows take up the full width of the viewport */
+    .container,
+    .row {
+      width: 100%;
+    }
+    
+    /* Make the columns take up the full width of the container */
+    .c1,
+    .c2 {
+      width: 100%;
+    }
+    
+    /* Stack the columns vertically on small screens */
+    .row {
+      flex-direction: column;
+    }
+    
+    /* Reduce the font size and padding on small screens */
+    .centeritems1,
+    .c1r2 {
+      font-size: 12px;
+      padding: 10px;
+    }
+  }
+  
+  
+  @media (max-width: 1283px) {
+    /* Make the container and rows take up the full width of the viewport */
+    .container,
+    .row {
+      width: 100%;
+    }
+    
+    /* Make the columns take up the full width of the container */
+    .c1,
+    .c2 {
+      width: 100%;
+    }
+    
+    /* Stack the columns vertically on small screens */
+    .row {
+      flex-direction: column;
+    }
+  }
