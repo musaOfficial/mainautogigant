@@ -521,6 +521,9 @@
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
     transition: all .1s ease-in;
@@ -528,6 +531,12 @@
 
 .yellowbtn:hover{
     background-color: #FBB900;
+}
+
+.paperplane{
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
 }
 
 .contactdesc{

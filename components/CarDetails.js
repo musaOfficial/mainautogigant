@@ -24,6 +24,7 @@ import InputSelect from './ui/InputSelect';
 import Clock from './../public/clock.svg';
 import { useMemo } from 'react';
 import Input from './ui/Input';
+import PaperPlane from './../public/Paperplane.svg'
 // import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 
 const useDeviceSize = () => {
@@ -570,7 +571,7 @@ des Händlers messen. Sie können Ihre Einwilligung jederzeit für die
 Zukunft hier widerrufen. Für weitere Informationen zum Datenschutz
 klicken Sie bitte hier.</p>
                             </div>
-                            <button type='submit' className={classes.yellowbtn} >Nachricht senden</button>
+                            <button type='submit' className={classes.yellowbtn}><PaperPlane className={classes.paperplane} /><span className={classes.sendentext}>Nachricht senden</span></button>
                             </form>
                             <p className={classes.contactdesc}>Wir verwenden Deine E-Mail-Adresse gemäß unseren 
 Datenschutzbestimmungen, z.B. für Fahrzeug-Empfehlungen ähnlich Deiner 
