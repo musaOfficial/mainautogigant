@@ -18,7 +18,7 @@ import WhatsAppIcon from './../public/images/WhatsApp.svg';
 import InstagramIcon from './../public/icons/instagram.svg'
 import Facebook from './../public/icons/facebook.svg'
 import Youtube from './../public/icons/youtube.svg'
-import Linkedin from './../public/linkedin.svg'
+import Linkedin from './../public/Linkedin.svg'
 import Tiktok from './../public/icons/tiktok.svg'
 import InputSelect from './ui/InputSelect';
 import Clock from './../public/clock.svg';
