@@ -21,7 +21,10 @@ import Youtube from './../public/icons/youtube.svg'
 import Linkedin from './../public/linkedin.svg'
 import Tiktok from './../public/icons/tiktok.svg'
 import InputSelect from './ui/InputSelect';
-import Clock from './../public/clock.svg'
+import Clock from './../public/clock.svg';
+import { useMemo } from 'react';
+import Input from './ui/Input';
+// import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 
 const useDeviceSize = () => {
 
@@ -237,6 +240,10 @@ function CarDetails(){
         case err:
             console.log(err);
     }
+
+    // const { isLoaded } = useLoadScript({
+    //     googleMapsApiKey: "2323232323"
+    // })
     return (
         <div className={classes.container}>
             <div className={`${classes.contentcontainer} w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
@@ -525,8 +532,55 @@ function CarDetails(){
                                     </div>
                                 </div>
                             </div>
+                            <div className={classes.googlemaps}>
+                                Google Maps 
+                            </div>
+                            <div className={classes.r2c2}>
+                            <form onSubmit={handleSubmit}>
+                            <h1 className={classes.kontaktheading}>Anbieter kontaktieren</h1>
+                            <p className={classes.yourmessage}>Das will ich über das Fahrzeug wissen: </p>
+                            <div className={classes.checkrow}><input type={"checkbox"} /><span className={classes.checkboxtext}>Ist eine Probefahrt möglich?</span></div>
+                            <div className={classes.checkrow}><input type={"checkbox"} /><span className={classes.checkboxtext}>Ist das Fahrzeug noch verfügbar?</span></div>
+                            <div className={classes.checkrow}><input type={"checkbox"} /><span className={classes.checkboxtext}>Besteht Möglichkeit zum Eintausch?</span></div>
+                            <div className={classes.checkrow}><input type={"checkbox"} /><span className={classes.checkboxtext}>Weitere Informationen zum Fahrzeug</span></div>
+                            <textarea className={classes.textarea} placeholder={
+                            `Guten Tag,
+ich interessiere mich für ihr Fahrzeug.
+Kontaktieren Sie mich bitte.
+Mit freundlichen Grüßen`} onChange={(e) => setMessage(e.target.value)} value={message}></textarea>
+                            <input className={classes.input} placeholder={"Name"} onChange={(e) => setName(e.target.value)} value={name}/>
+                            <input className={classes.input} placeholder={"E-Mail"} onChange={(e) => setMail(e.target.value)} value={mail}/>
+                            <input className={classes.input} placeholder={"Telefonnummer (optional)"} onChange={(e) => setTel(e.target.value)} value={tel}/>
+                            <div className={classes.checkcontainer}>
+                                <input className={classes.checkinput} type={"checkbox"} onChange={() => setNewsletter(e => !e)} value={newsletter}/>
+                                <p className={classes.paragraph}>Ich möchte maßgeschneiderte Angebote und Neuigkeiten von Auto GIGANT. 
+per E-Mail erhalten. Diese Einwilligung kann ich jederzeit mit Wirkung für die 
+Zukunft widerrufen.
+
+Wir verwenden Ihre E-Mail-Adresse in Übereinstimmung mit unseren 
+Datenschutzbestimmungen, um Ihnen beispielsweise
+Fahrzeugempfehlungen zuzusenden, die Ihrer Suche entsprechen. Wenn Sie 
+keine weiteren Fahrzeugempfehlungen mehr erhalten möchten, können Sie 
+hier jederzeit widersprechen.
+
+Indem Sie auf "Nachricht senden" klicken, erklären Sie sich damit 
+einverstanden, dass wir (Auto GIGANT.) Ihre Nachricht speichern, 
+an den Händler weiterleiten und die Antwortquote und Reaktionszeit
+des Händlers messen. Sie können Ihre Einwilligung jederzeit für die
+Zukunft hier widerrufen. Für weitere Informationen zum Datenschutz
+klicken Sie bitte hier.</p>
+                            </div>
+                            <button type='submit' className={classes.yellowbtn} >Nachricht senden</button>
+                            </form>
+                            <p className={classes.contactdesc}>Wir verwenden Deine E-Mail-Adresse gemäß unseren 
+Datenschutzbestimmungen, z.B. für Fahrzeug-Empfehlungen ähnlich Deiner 
+Suche. Wenn Du keine weiteren Fahrzeug-Empfehlungen mehr erhalten willst,
+ kannst Du jederzeit hier widersprechen.</p>
+                            
+                        </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

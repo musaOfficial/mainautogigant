@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-google-maps/api": "^2.12.0",
+    "@react-google-maps/api": "^2.17.1",
     "@react-pdf/renderer": "^3.0.0",
     "chart.js": "^3.9.1",
     "faker": "^5.5.3",

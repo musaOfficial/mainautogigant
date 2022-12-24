@@ -157,7 +157,7 @@
 
 .price{
     width: 80%;
-    height: 60px;
+    height: 50px;
     background-color: #FBB900;
     color: #fff;
     font-size: 35px;
@@ -171,7 +171,7 @@
 .nexttoprice{
     display: flex;
     width: 60%;
-    height: 60px;
+    height: 50px;
 }
 
 .svg{
@@ -464,6 +464,7 @@
     background-color: #F1F2F3;
     padding: 20px;
     border-radius: 10px;
+    margin-top: 20px;
 }
 
 .textarea{
@@ -502,7 +503,6 @@
 
 .checkcontainer{
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
 
@@ -515,7 +515,7 @@
 
 .yellowbtn{
     width: 100%;
-    background-color: #FBB900;
+    background-color: #6C757D;
     height: 40px;
     border-radius: 10px;
     color: #fff;
@@ -527,7 +527,7 @@
 }
 
 .yellowbtn:hover{
-    background-color: #FFE497;
+    background-color: #FBB900;
 }
 
 .contactdesc{
@@ -1046,6 +1046,26 @@
 
 .link:hover{
     text-decoration: underline;
+}
+
+.googlemaps{
+    width: 100%;
+    height: 382px;
+    background-color: #F1F2F3;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkboxtext{
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+.checkrow{
+    display: flex;
+    align-items: center;
 }
 
 @media (max-width: 1140px){
