@@ -564,7 +564,7 @@ Fahrzeugempfehlungen zuzusenden, die Ihrer Suche entsprechen. Wenn Sie
 keine weiteren Fahrzeugempfehlungen mehr erhalten möchten, können Sie 
 hier jederzeit widersprechen.
 
-Indem Sie auf "Nachricht senden" klicken, erklären Sie sich damit 
+Indem Sie auf &rdquo;Nachricht senden&rdquo; klicken, erklären Sie sich damit 
 einverstanden, dass wir (Auto GIGANT.) Ihre Nachricht speichern, 
 an den Händler weiterleiten und die Antwortquote und Reaktionszeit
 des Händlers messen. Sie können Ihre Einwilligung jederzeit für die
