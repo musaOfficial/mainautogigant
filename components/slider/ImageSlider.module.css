@@ -133,12 +133,10 @@
     margin-bottom: -40px;
 }
 
-
-@media(max-width: 650px){
+@media(max-width: 1140px){
     .swiperopener{
-        height: 350px;
-        width: 385px;
-        margin-bottom: 0px;
+        height: auto;
+        width: 100%;
     }
 }
 
@@ -668,28 +666,6 @@
         width: 70vw;
     }
 }
-
-@media (max-width: 671px){
-    .imgboxbig{
-        height: 250px;
-    }
-
-    .container{
-        height: 700px;
-    }
-}
-
-@media (max-width: 661px){
-    .container{
-        height: 600px;
-    }
-}
-
-@media (max-width: 571px){
-    .container{
-        height: 500px;
-    }
-} 
 
 .closebackground{
     position: absolute;

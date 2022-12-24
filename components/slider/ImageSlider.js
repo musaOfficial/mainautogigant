@@ -122,7 +122,7 @@ function ImageSlider({
             
         </div>}
         <div className={classes.container}>
-        <div className={classes.swiperopener}>
+            <div className={classes.swiperopener}>
                 <div className="relative bg-theme-gray w-1000">
                     <Swiper
                         style={{
@@ -145,9 +145,9 @@ function ImageSlider({
                         </SwiperSlide>)}
                     
                     </Swiper>
-                    <div className={classes.zoomer} onClick={() => setZoomout(true)}>
+                    {width >= 1140 && <div className={classes.zoomer} onClick={() => setZoomout(true)}>
                         <ZoomOut className={classes.zoomericon} />
-                     </div>
+                     </div>}
                 </div>
                 <Swiper
                     onSwiper={setCarSwiper}
@@ -162,13 +162,6 @@ function ImageSlider({
                         <img src={img}></img>
                     </SwiperSlide>)}
                 </Swiper>
-                </div>
-            <div className={classes.dealerinfocontainer}>
-                <div className={classes.dealerimg}><Image src={"/gigantlogo.jpg"} layout='fill' objectFit="cover" /></div>
-                <div className={classes.dealerinfo}>
-                    <div className={classes.companyname}><CompanyName className={classes.companyname}/> Gigant Group Teknoloji A.S.</div>
-                    <div className={classes.companylocation}><CompanyLocation className={classes.companylocation}/> Wiener Straße 215, 3100 St. Pölten, AT</div>
-                </div>
             </div>
         </div>
         </>
