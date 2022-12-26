@@ -7,17 +7,17 @@ export default function Furnishing() {
   return (
     <div className="text-base border-b-2 mt-4">
       <button
-        onClick={() => setExpanded(!expanded)}
+        onClick={() => setFurnishingExpanded(!expanded)}
         className="w-full inline-flex items-center justify-between font-bold text-theme-gray-4"
       >
         Ausstattung
         <img
           src="/images/icons/expand-arrow.png"
-          className={`w-8 opacity-50 ${expanded ? "rotate-0" : "rotate-180"}`}
+          className={`w-8 opacity-50 ${furnishingExpanded ? "rotate-0" : "rotate-180"}`}
         />
       </button>
       <div
-        className={`${expanded ? "h-auto pb-4" : "h-0"} overflow-hidden pt-4`}
+        className={`${furnishingExpanded ? "h-auto pb-4" : "h-0"} overflow-hidden pt-4`}
       >
         <div className="flex justify-between md:flex-wrap">
           <div className="w-1/3">

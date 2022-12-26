@@ -2,22 +2,22 @@ import { useState } from "react";
 import ColorItem from "./ColorItem";
 
 export default function Colors() {
-    const [expanded, setExpanded] = useState(false);
+    const [colorsExpanded, setColorsExpanded] = useState(false);
 
   return (
     <div className="text-base border-b-2 mt-4">
       <button
-        onClick={() => setExpanded(!expanded)}
+        onClick={() => setColorsExpanded(d => !d)}
         className="w-full inline-flex items-center justify-between font-bold text-base text-theme-gray-4"
       >
         Farbe
         <img
           src="/images/icons/expand-arrow.png"
-          className={`w-8 opacity-50 ${expanded ? "rotate-0" : "rotate-180"}`}
+          className={`w-8 opacity-50 ${colorsExpanded ? "rotate-0" : "rotate-180"}`}
         />
       </button>
       <div
-        className={`${expanded ? "h-auto pb-4" : "h-0"} overflow-hidden pt-4`}
+        className={`${colorsExpanded ? "h-auto pb-4" : "h-0"} overflow-hidden pt-4`}
       >
           <div className="">
                 <p className="text-base mb-6">Außenfarbe</p>

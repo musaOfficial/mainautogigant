@@ -1120,22 +1120,3 @@
     }
   }
   
-  
-  @media (max-width: 1283px) {
-    /* Make the container and rows take up the full width of the viewport */
-    .container,
-    .row {
-      width: 100%;
-    }
-    
-    /* Make the columns take up the full width of the container */
-    .c1,
-    .c2 {
-      width: 100%;
-    }
-    
-    /* Stack the columns vertically on small screens */
-    .row {
-      flex-direction: column;
-    }
-  }

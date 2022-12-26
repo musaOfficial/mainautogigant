@@ -3,14 +3,39 @@ import Link from "next/link";
 import Input from "../ui/Input";
 import InputSelect from "../ui/InputSelect";
 import Checkbox from "../ui/Checkbox";
+import classes from './DealerRegister.module.css'
+
 
 export default function DealerRegister() {
-  const [gender, setGender] = useState("");
   const [isStepActive, setIsStepActive] = useState(1);
-  const [newsLaterChecked, setNewsLaterChecked] = useState(false);
-  const [privacyChecked, setPrivacyChecked] = useState(false);
-  const [password, setPassword] = useState(true);
-  const [password2, setPassword2] = useState(true);
+  const [firmenname, setFirmenname] = useState();
+  const [ergaenzung, setErgaenzung] = useState();
+  const [strasse, setStrasse] = useState();
+  const [hausnummer, setHausnummer] = useState();
+  const [stadt, setStadt] = useState();
+  const [plz, setPlz] = useState();
+  const [land, setLand] = useState();
+  const [uidNr, setUidNr] = useState();
+  const [email, setEmail] = useState();
+  const [internetaddresse, setInternetaddresse] = useState();
+  const [anrede, setAnrede] = useState();
+  const [titel, setTitel] = useState();
+  const [vorname, setVorname] = useState();
+  const [nachname, setNachname] = useState();
+  const [vorwahl1, setVorwahl1] = useState();
+  const [vorwahl2, setVorwahl2] = useState();
+  const [telefonnummer, setTelefonnummer] = useState();
+  const [mobiltelefonnummer, setMobiltelefonnummer] = useState();
+  const [passwort, setPasswort] = useState();
+  const [passwort2, setPasswort2] = useState();
+  const [fahrzeugHaendler, setFahrzeugHaendler] = useState();
+  const [kreditvermittler, setKreditvermittler] = useState();
+  const [zulassungsstelle, setZulassungsstelle] = useState();
+  const [kfzWerkstatt, setKfzWerkstatt] = useState();
+  const [versicherungsmakler, setVersicherungsmakler] = useState();
+  const [autoaufbereitung, setAutoaufbereitung] = useState();
+  const [newsletter, setNewsletter] = useState();
+  const [agbZustimmung, setAgbZustimmung] = useState();
 
   const option1 = [
     { value: "alle marken", label: "Alle Marken" },
@@ -20,23 +45,17 @@ export default function DealerRegister() {
   const option2 = [
     { value: "*Land", label: "*Land" },
     { value: "Österreich", label: "Österreich" },
-    { value: "Österreich2", label: "Österreich" },
-    { value: "Österreich3", label: "Österreich" },
   ];
   const option3 = [
     { value: "Anrede", label: "Anrede" },
     { value: "Herr", label: "Herr" },
-    { value: "Herr2", label: "Herr" },
-    { value: "Herr3", label: "Herr" },
   ];
   const option4 = [
-    { value: "+43", label: "+43" },
     { value: "+43", label: "+43" },
     { value: "+44", label: "+44" },
     { value: "+45", label: "+45" },
   ];
   const option5 = [
-    { value: "+43", label: "+43" },
     { value: "+43", label: "+43" },
     { value: "+44", label: "+44" },
     { value: "+45", label: "+45" },
@@ -110,26 +129,26 @@ export default function DealerRegister() {
                   <div>
                     <div className="flex items-center justify-between md:flex-col">
                       <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
-                        <Input placeholder="* Firmenname" />
+                        <Input onChange={(e) => setFirmenname(e.target.value)} placeholder="* Firmenname" />
                       </div>
                       <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
-                        <Input placeholder="Ergänzung" />
+                        <Input onChange={(e) => setErgaenzung(e.target.value)} placeholder="Ergänzung" />
                       </div>
                     </div>
                     <div className="flex items-center justify-between md:flex-col">
                       <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
-                        <Input placeholder="* Straße" />
+                        <Input onChange={(e) => setStrasse(e.target.value)} placeholder="* Straße" />
                       </div>
                       <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
-                        <Input placeholder="*Hausnummer" />
+                        <Input onChange={(e) => setHausnummer(e.target.value)}  placeholder="*Hausnummer" />
                       </div>
                     </div>
                     <div className="flex items-center justify-between md:flex-col">
                       <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
-                        <Input placeholder="*Stadt" />
+                        <Input onChange={(e) => setStadt(e.target.value)} placeholder="*Stadt" />
                       </div>
                       <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
-                        <Input placeholder="* PLZ" />
+                        <Input onChange={(e) => setPlz(e.target.value)} placeholder="* PLZ" />
                       </div>
                     </div>
                     <div className="flex items-center justify-between md:flex-col">
@@ -138,18 +157,19 @@ export default function DealerRegister() {
                           options={option2}
                           placeholder={option2[0].value}
                           regYear
+                          onChange={(e) => setLand(e.value)}
                         />
                       </div>
                       <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
-                        <Input placeholder="UID-Nr." />
+                        <Input placeholder="UID-Nr." onChange={(e) => setUidNr(e.target.value)} />
                       </div>
                     </div>
                     <div className="flex items-center justify-between md:flex-col">
                       <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
-                        <Input placeholder="*E-Mail-Adresse" />
+                        <Input placeholder="*E-Mail-Adresse" onChange={(e) => setEmail(e.target.value)} />
                       </div>
                       <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
-                        <Input placeholder="Internet-Adresse (URL)" />
+                        <Input placeholder="Internet-Adresse (URL)" onChange={(e) => setInternetaddresse(e.target.value)} />
                       </div>
                     </div>
                     <h3 className="text-base mb-4">Ansprechpartner</h3>
@@ -159,18 +179,19 @@ export default function DealerRegister() {
                           options={option3}
                           placeholder={option3[0].value}
                           regYear
+                          onChange={(e) => setAnrede(e.value)}
                         />
                       </div>
                       <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
-                        <Input placeholder="Titel" />
+                        <Input placeholder="Titel" onChange={(e) => setTitel(e.target.value)} />
                       </div>
                     </div>
                     <div className="flex items-center justify-between md:flex-col">
                       <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
-                        <Input placeholder="* Vorname" />
+                        <Input placeholder="* Vorname" onChange={(e) => setVorname(e.target.value)} />
                       </div>
                       <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
-                        <Input placeholder="* Nachname" />
+                        <Input placeholder="* Nachname" onChange={(e) => setNachname(e.target.value)} />
                       </div>
                     </div>
                     <div className="flex items-center justify-between md:flex-col">
@@ -179,10 +200,11 @@ export default function DealerRegister() {
                           options={option4}
                           placeholder={option4[0].value}
                           regYear
+                          onChange={(e) => setVorwahl1(e.value)}
                         />
                       </div>
                       <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
-                        <Input placeholder="*Telefonnummer" />
+                        <Input placeholder="*Telefonnummer" onChange={(e) => setTelefonnummer(e.target.value)} />
                       </div>
                     </div>
                     <div className="flex items-center justify-between md:flex-col">
@@ -191,10 +213,11 @@ export default function DealerRegister() {
                           options={option5}
                           placeholder={option5[0].value}
                           regYear
+                          onChange={(e) => setVorwahl2(e.value)}
                         />
                       </div>
                       <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
-                        <Input placeholder="* Mobiltelefonnummern" />
+                        <Input placeholder="* Mobiltelefonnummern" name={"Mobiltelefonnummer"} onChange={(e) => setMobiltelefonnummer(e.target.value)} />
                       </div>
                     </div>
                   </div>
@@ -205,10 +228,14 @@ export default function DealerRegister() {
                         inputType="password"
                         sublabel="mind. 8 Zeichen, ein Groß- & Kleinbuchstabe und eine
                         Ziffer"
+                        name={"passwort"}
+                        onChange={(e) => setPasswort(e.target.value)}
                       />
                       <Input
                         placeholder="* Passwort wiederholen"
                         inputType="password"
+                        name={"passwortWiederholen"}
+                        onChange={(e) => setPasswort2(e.target.value)}
                       />
                     </div>
                   </div>
@@ -216,37 +243,55 @@ export default function DealerRegister() {
                   <div className="pt-3 pb-6">
                     <div className="flex justify-between text-15 text-gray-500 font-medium mb-4">
                     <div className="w-1/3 sm:!w-1/2">
-                        <Checkbox label="Fahrzeug Händler" varient="sm" />
+                        <div className={classes.labelcontainer}>
+                          <input type={'checkbox'} onChange={(e) => setFahrzeugHaendler(e.target.value)} />
+                          <label className={classes.label}>Fahrzeug Händler</label>
+                        </div>
                       </div>
                       <div className="w-1/3 sm:!w-1/2">
-                        <Checkbox label="Kreditvermittler" varient="sm" />
+                      <div className={classes.labelcontainer}>
+                          <input type={'checkbox'} onChange={(e) => setKreditvermittler(e.target.value)}/>
+                          <label className={classes.label}>Kreditvermittler</label>
+                        </div>
                       </div>
                       <div className="w-1/3 sm:!w-1/2">
-                        <Checkbox label="Zulassungstelle" varient="sm" />
+                      <div className={classes.labelcontainer}>
+                          <input type={'checkbox'} onChange={(e) => setZulassungsstelle(e.target.value)} />
+                          <label className={classes.label}>Zulassungsstelle</label>
+                        </div>
                       </div>
                     </div>
                     <div className="flex justify-between text-15 text-gray-500 font-medium">
                     <div className="w-1/3 sm:!w-1/2">
-                        <Checkbox label="KFZ Werkstatt" varient="sm" />
+                        <div className={classes.labelcontainer}>
+                          <input type={'checkbox'} onChange={(e) => setKfzWerkstatt(e.target.value)} />
+                          <label className={classes.label}>KFZ Werkstatt</label>
+                        </div>
                       </div>
                       <div className="w-1/3 sm:!w-1/2">
-                        <Checkbox label="Versicherungsmakler" varient="sm" />
+                      <div className={classes.labelcontainer}>
+                          <input type={'checkbox'} onChange={(e) => setVersicherungsmakler(e.target.value)}/>
+                          <label className={classes.label}>Versicherungsmakler</label>
+                        </div>
                       </div>
                       <div className="w-1/3 sm:!w-1/2">
-                        <Checkbox label="Autoaufbereitung" varient="sm" />
+                      <div className={classes.labelcontainer}>
+                          <input type={'checkbox'} onChange={(e) => setAutoaufbereitung(e.target.value)} />
+                          <label className={classes.label}>Autoaufbereitung</label>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div className="flex justify-between items-end">
                     <div className="h-14 flex text-xs flex-col md:w-full justify-between pt-2">
-                      <Checkbox
-                        label="Nēwsletter, Updates and Trends und per E-Mail"
-                        varient="sm"
-                      />
-                      <Checkbox
-                        label="Ich erkläre mich mit den AGB einverstanden"
-                        varient="sm"
-                      />
+                        <div className={classes.labelcontainer}>
+                          <input type={'checkbox'} onChange={(e) => setNewsletter(e.target.value)} />
+                          <label className={classes.label}>Newsletter, Updates and Trends und per E-Mail</label>
+                        </div>
+                        <div className={classes.labelcontainer}>
+                          <input type={'checkbox'} onChange={(e) => setAgbZustimmung(e.target.value)} />
+                          <label className={classes.label}>Ich erkläre mich mit den AGB einverstanden</label>
+                        </div>
                     </div>
                   </div>
                   <div className="flex items-center justify-between mt-6 md:flex-col">
@@ -428,7 +473,7 @@ export default function DealerRegister() {
         </div>
         <div className="relative w-1/2 lg:w-auto lg:ml-0 lg:mt-4 ml-3">
           <img
-            className="w-full h-full rounded-10"
+            className="w-full h-120 rounded-10 object-cover"
             src={`/images/${
               isStepActive === 1
                 ? "reg-car"
@@ -438,6 +483,7 @@ export default function DealerRegister() {
                 ? "register-success"
                 : null
             }.png`}
+            
           />
           {isStepActive === 1 && (
             <div className="absolute left-6 top-6">

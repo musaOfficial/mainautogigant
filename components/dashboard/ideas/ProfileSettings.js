@@ -3,7 +3,7 @@ import classes from './ProfileSettings.module.css';
 import Zahnradgrau from './../../../public/Zahnradgrau.svg'
 import Link from 'next/link';
 import Expand from './../../../public/expand.svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Settingsclosebtn from './../../../public/Settingsclosebtn.svg'
 import Facebook from './../../../public/facebook.svg'
 import Youtube from './../../../public/youtube.svg'
@@ -137,7 +137,9 @@ export default function ProfileSettings(){
     const [t7, setT7] = useState(false);
 
     const onImageChange = (event) => {
-        console.log(event)
+        console.log(event);
+        const image = URL.createObjectURL(event)
+        console.log(image);
     }
 
     const reducer = (state, action) => {
@@ -166,6 +168,9 @@ export default function ProfileSettings(){
       const [Image5Profilseite, setImage5Profilseite] = useState(null);
 
       const [socialMediaSectionActive, setSocialMediaSectionActive] = useState(false);
+
+      const [imgUrl, setImgUrl] = useState(null);
+      
 
     return (
         <div className={classes.container}>
@@ -395,7 +400,14 @@ export default function ProfileSettings(){
                                             type="file"
                                             accept='image/png, image/jpg, image/jpeg'
                                             multiple
-                                            onChange={onImageChange}
+                                            onChange={e => {
+                                                if(selectedAvatar){
+                                                    setImgUrl(URL.createObjectURL(selectedAvatar))
+                                                }
+                                                return setSelectedAvatar(e.target.files[0])
+                                            }
+                                                
+                                                }
                                             className={classes.selectFile}
                                             />
                                     </label>

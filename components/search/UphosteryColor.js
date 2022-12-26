@@ -2,22 +2,22 @@ import { useState } from "react";
 import ColorItem from "./ColorItem";
 
 export default function UphosteryColor() {
-    const [expanded, setExpanded] = useState(false);
+    const [uphosteryExpanded, setUphosteryExpanded] = useState(false);
 
   return (
     <div className="text-base border-b-2 mt-4">
       <button
-        onClick={() => setExpanded(!expanded)}
+        onClick={() => setUphosteryExpanded(d => !d)}
         className="w-full inline-flex items-center justify-between font-bold text-base text-theme-gray-4"
       >
         Polsterfarbe
         <img
           src="/images/icons/expand-arrow.png"
-          className={`w-8 opacity-50 ${expanded ? "rotate-0" : "rotate-180"}`}
+          className={`w-8 opacity-50 ${uphosteryExpanded ? "rotate-0" : "rotate-180"}`}
         />
       </button>
       <div
-        className={`${expanded ? "h-auto pb-4" : "h-0"} overflow-hidden pt-4`}
+        className={`${uphosteryExpanded ? "h-auto pb-4" : "h-0"} overflow-hidden pt-4`}
       >
           <div className="">
                 <div className="flex justify-between md:flex-wrap">

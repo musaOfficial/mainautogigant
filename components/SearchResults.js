@@ -546,12 +546,6 @@ function SearchResults(){
                 </div>}
                
             <div className={`${classes.contentcontainer} overflow-y-hidden relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
-                <div>
-                    <p className={classes.werbungtext}>Werbung</p>
-                    <div className={classes.topimg}>
-                        
-                    </div>
-                </div>
                 <div className={classes.c2r1top}>
                     <div>
                         <Expand className={classes.backarrow} />
