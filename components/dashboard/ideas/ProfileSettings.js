@@ -148,19 +148,7 @@ export default function ProfileSettings(){
         dispatch({ type: "ADD_FILE_TO_LIST", files})
       };
 
-
-
-      var profilseiteImages = [];
-
-      const [Image1Profilseite, setImage1Profilseite] = useState(null);
-      const [Image2Profilseite, setImage2Profilseite] = useState(null);
-      const [Image3Profilseite, setImage3Profilseite] = useState(null);
-      const [Image4Profilseite, setImage4Profilseite] = useState(null);
-      const [Image5Profilseite, setImage5Profilseite] = useState(null);
-
       const [socialMediaSectionActive, setSocialMediaSectionActive] = useState(false);
-
-      const [imgUrl, setImgUrl] = useState(null);
 
      // PROFILDATEN
       const [firmenname, setFirmenname] = useState();
@@ -204,6 +192,13 @@ export default function ProfileSettings(){
 
       const [titelbild, setTitelbild] = useState();
 
+
+      // SOCIAL-MEDIA URLs
+      const [facebook, setFacebook] = useState();
+      const [instagram, setInstagram] = useState();
+      const [youtube, setYoutube] = useState();
+      const [tiktok, setTiktok] = useState();
+      const [linkedin, setLinkedin] = useState();
 
     return (
         <div className={classes.container}>
@@ -501,7 +496,7 @@ export default function ProfileSettings(){
                                 or drag &amp; drop your files here
                                 </h3>
                             </div>
-                           {data.fileList.map((file) => <div className={classes.filediv}>
+                           {data.fileList.map((file, index) => <div key={index} className={classes.filediv}>
                             <Image src={URL.createObjectURL(file)} layout='fill' alt='profileimg' objectFit='cover' />
                            </div>)}
                         
@@ -519,27 +514,27 @@ export default function ProfileSettings(){
                             <div className={classes.socialrow1}>
                                 <div className={classes.socialc1}>
                                     <Facebook className={classes.facebook}/>
-                                    <input className={classes.facebookinputurl} placeholder="Facebook Profil-URL"/>
+                                    <input className={classes.facebookinputurl} placeholder="Facebook Profil-URL" onChange={(e) => setFacebook(e.target.value)} />
                                 </div>
                                 <div className={classes.socialc2}>
                                     <Instagram className={classes.instagram}/>
-                                    <input className={classes.instagraminputurl} placeholder={"Instagram Profil-URL"}/>
+                                    <input className={classes.instagraminputurl} placeholder={"Instagram Profil-URL"} onChange={(e) => setInstagram(e.target.value)}/>
                                 </div>
                             </div>
                             <div className={classes.socialrow2}>
                                 <div className={classes.socialc1}>
                                     <Youtube className={classes.youtube}/>
-                                    <input className={classes.youtubeinputurl} placeholder="Youtube Profil-URL"/>
+                                    <input className={classes.youtubeinputurl} placeholder="Youtube Profil-URL"  onChange={(e) => setYoutube(e.target.value)}/>
                                 </div>
                                 <div className={classes.socialc2}>
                                     <Tiktok className={classes.tiktok}/>
-                                    <input className={classes.tiktokinputurl} placeholder="Tiktok Profil-URL"/>
+                                    <input className={classes.tiktokinputurl} placeholder="Tiktok Profil-URL"  onChange={(e) => setTiktok(e.target.value)}/>
                                 </div>
                             </div>
                             <div className={classes.socialrow3}>
                                 <div className={classes.socialc1}>
                                     <Linkedin className={classes.linkedin}/>
-                                    <input className={classes.linkedininputurl} placeholder="Linkedin Profil-URL"/>
+                                    <input className={classes.linkedininputurl} placeholder="Linkedin Profil-URL" onChange={(e) => setLinkedin(e.target.value)}/>
                                 </div>
                                 <div className={classes.socialc2}>
                                     <div className={classes.spaceforbutton}></div>
@@ -558,45 +553,45 @@ export default function ProfileSettings(){
             </div>
             {profilDataOpened == true && <div className={classes.profileContent}>
                 <div className={classes.datarow}>
-                    <input className={classes.datainput} placeholder="Firmenname"/>
-                    <input className={classes.datainput} placeholder="Ergänzung"/>
+                    <input className={classes.datainput} placeholder="Firmenname" onChange={(e) => setFirmenname(e.target.value)}/>
+                    <input className={classes.datainput} placeholder="Ergänzung" onChange={(e) => setErgaenzung(e.target.value)}/>
                 </div>
                 <div className={classes.datarow}>
-                    <input className={classes.datainput} placeholder="Straße"/>
-                    <input className={classes.datainput} placeholder="Hausnummer"/>
+                    <input className={classes.datainput} placeholder="Straße" onChange={(e) => setStrasse(e.target.value)}/>
+                    <input className={classes.datainput} placeholder="Hausnummer" onChange={(e) => setHausnummer(e.target.value)}/>
                 </div>
                 <div className={classes.datarow}>
-                    <input className={classes.datainput} placeholder="Stadt"/>
-                    <input className={classes.datainput} placeholder="PLZ"/>
+                    <input className={classes.datainput} placeholder="Stadt" onChange={(e) => setStadt(e.target.value)}/>
+                    <input className={classes.datainput} placeholder="PLZ" onChange={(e) => setPlz(e.target.value)}/>
                 </div>
                 <div className={classes.datarow}>
-                    <input className={classes.datainput} placeholder="Bundesland"/>
-                    <input className={classes.datainput} placeholder="Land"/>
+                    <input className={classes.datainput} placeholder="Bundesland" onChange={(e) => setBundesland(e.target.value)}/>
+                    <input className={classes.datainput} placeholder="Land" onChange={(e) => setLand(e.target.value)}/>
                 </div>
                 <div className={classes.datarow}>
-                    <input className={classes.fdatainput} placeholder="Ländervorwahl"/>
-                    <input className={classes.sdatainput} placeholder="Telefon Festnetz"/>
-                    <input className={classes.datainput} placeholder="Internet-Adresse (URL)"/>
+                    <input className={classes.fdatainput} placeholder="Ländervorwahl" onChange={(e) => setVorwahl1(e.target.value)}/>
+                    <input className={classes.sdatainput} placeholder="Telefon Festnetz" onChange={(e) => setTelefonfestnetz(e.target.value)}/>
+                    <input className={classes.datainput} placeholder="Internet-Adresse (URL)" onChange={(e) => setInternetaddresseurl(e.target.value)}/>
                 </div>
                 <div className={classes.datarow}>
-                    <input className={classes.fdatainput} placeholder="Ländervorwahl"/>
-                    <input className={classes.sdatainput} placeholder="Telefon Mobil"/>
-                    <input className={classes.datainput} placeholder="UID-Nr. (wird nicht öffentlich angezeigt)"/>
+                    <input className={classes.fdatainput} placeholder="Ländervorwahl" onChange={(e) => setVorwahl2(e.target.value)}/>
+                    <input className={classes.sdatainput} placeholder="Telefon Mobil" onChange={(e) => setTelefonmobil(e.target.value)}/>
+                    <input className={classes.datainput} placeholder="UID-Nr. (wird nicht öffentlich angezeigt)" onChange={(e) => setUidNr(e.target.value)}/>
                 </div>
                 <div className={classes.sectionheading}>ANSPRECHPARTNER</div>
                 <br/>
                 <div className={classes.ansprechpartnerbereich}>
                     <div className={classes.datarow}>
-                    <input className={classes.datainput} placeholder="Anrede"/>
-                    <input className={classes.datainput} placeholder="Titel"/>
+                    <input className={classes.datainput} placeholder="Anrede" onChange={(e) => setAnrede(e.target.value)}/>
+                    <input className={classes.datainput} placeholder="Titel" onChange={(e) => setTitel(e.target.value)}/>
                 </div>
                 <div className={classes.datarow}>
-                    <input className={classes.datainput} placeholder="Vorname"/>
-                    <input className={classes.datainput} placeholder="Nachname"/>
+                    <input className={classes.datainput} placeholder="Vorname" onChange={(e) => setVorname(e.target.value)}/>
+                    <input className={classes.datainput} placeholder="Nachname" onChange={(e) => setNachname(e.target.value)}/>
                 </div>
                 <div className={classes.datarow}>
-                    <input className={classes.fdatainput} placeholder="Ländervorwahl"/>
-                    <input className={classes.sdatainput} placeholder="Telefon Mobil"/>
+                    <input className={classes.fdatainput} placeholder="Ländervorwahl" onChange={(e) => setVorwahl3(e.target.value)}/>
+                    <input className={classes.sdatainput} placeholder="Telefon Mobil" onChange={(e) => setTelefonnummer(e.target.value)}/>
                     <button className={classes.savedatachanges}>Änderungen Speichern</button>
                 </div>
                     </div>
@@ -605,7 +600,7 @@ export default function ProfileSettings(){
                     <p className={classes.sectionheading}>ÜBER UNS TEXT</p>
                     <Toggle />
                 </div>
-                <textarea className={classes.ueberunstextarea} placeholder="Der Text, den Sie hier eingeben, wird auf ihrem öffentlichen Profil angezeigt"/>
+                <textarea className={classes.ueberunstextarea} onChange={(e) => setUeberuns(e.target.value)} placeholder="Der Text, den Sie hier eingeben, wird auf ihrem öffentlichen Profil angezeigt"/>
                 <button className={classes.saveueberunschanges}>Änderungen Speichern</button>
                 <hr />
                 <br />
@@ -655,9 +650,9 @@ export default function ProfileSettings(){
                 <br/>
                 <div className={classes.securitytwocolumns}>
                     <div className={classes.securityfirstcolumn}>
-                            <input className={classes.securityinput} placeholder="Aktuelle E-Mail Adresse"/>
-                            <input className={classes.securityinput} placeholder="Neue E-Mail Adresse"/>
-                            <input className={classes.securityinput} placeholder="Neue E-Mail Adresse wiederholen"/>
+                            <input className={classes.securityinput} placeholder="Aktuelle E-Mail Adresse" onChange={(e) => setActMail(e.target.value)}/>
+                            <input className={classes.securityinput} placeholder="Neue E-Mail Adresse" onChange={(e) => setNewMail(e.target.value)}/>
+                            <input className={classes.securityinput} placeholder="Neue E-Mail Adresse wiederholen" onChange={(e) => setNewMail2(e.target.value)}/>
                             <button className={classes.savechanges}>Änderungen Speichern</button>
                     </div>
                     <div className={classes.securitysecondcolumn}>
@@ -671,9 +666,9 @@ export default function ProfileSettings(){
                 <br/>
                 <div className={classes.securitytwocolumns}>
                     <div className={classes.securityfirstcolumn}>
-                            <input className={classes.securityinput} placeholder="Aktuelles Passwort"/>
-                            <input className={classes.securityinput} placeholder="Neues Passwort"/>
-                            <input className={classes.securityinput} placeholder="Neues Passwort wiederholen"/>
+                            <input className={classes.securityinput} placeholder="Aktuelles Passwort" onChange={(e) => setActPassword(e.target.value)}/>
+                            <input className={classes.securityinput} placeholder="Neues Passwort" onChange={(e) => setNewPassword(e.target.value)}/>
+                            <input className={classes.securityinput} placeholder="Neues Passwort wiederholen" onChange={(e) => setNewPassword2(e.target.value)}/>
                             <button className={classes.savechanges}>Änderungen Speichern</button>
                     </div>
                     <div className={classes.securitysecondcolumn}>
