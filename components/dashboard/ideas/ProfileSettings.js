@@ -19,6 +19,9 @@ import DragDrop from './../../ui/dragdrop/DragDrop'
 import { useReducer } from 'react';
 import DropZone from '../../ui/dragdrop/DropZone';
 import FilePreview from '../../ui/dragdrop/FilePreview';
+import Deleter from './../../../public/deleter.svg'
+import Closer from './../../../public/closer.svg'
+import { reduceResults } from 'react-advanced-form';
 
 export default function ProfileSettings(){
     const handleDragEnter = (e) => {
@@ -199,6 +202,41 @@ export default function ProfileSettings(){
       const [youtube, setYoutube] = useState();
       const [tiktok, setTiktok] = useState();
       const [linkedin, setLinkedin] = useState();
+
+      // FÜNF FOTO BEREICH
+      const [foto1, setFoto1] = useState();
+      const [foto2, setFoto2] = useState();
+      const [foto3, setFoto3] = useState();
+      const [foto4, setFoto4] = useState();
+      const [foto5, setFoto5] = useState();
+
+      // BLOCKIERTE BENUTZER
+      const [blockierteBenutzer, setBlockierteBenutzer] = useState([{
+        profileImg: "/m1.jpg",
+        vorname: "Max",
+        nachname: "Mustermann"
+    },
+    {
+        profileImg: "/m1.jpg",
+        vorname: "Musa",
+        nachname: "Arslan"
+    },
+    {
+        profileImg: "/m1.jpg",
+        vorname: "Servet",
+        nachname: "Simsek"
+    }])
+
+    // BLOCK AUFHEBUNG
+    const [openBlockDeleter, setOpenBlockDeleter] = useState(false);
+    function handleUnblocker(index) {
+        var reducedBlockers = [...blockierteBenutzer];
+        reducedBlockers.splice(index, 1);
+        setBlockierteBenutzer(reducedBlockers);
+        setOpenBlockDeleter(false);
+    }
+
+    const [blockedUserIndex, setBlockedUserIndex] = useState(0);
 
     return (
         <div className={classes.container}>
@@ -474,35 +512,84 @@ export default function ProfileSettings(){
                             <Toggle toggle={() => setImagesToggleOn(d => !d)} toggleOn={ImagesToggleOn} />
                         </div>
                         <br/>
-                        {ImagesToggleOn == true && <div>
-                            <div className={classes.drop}>
-                            <div
-                                className={classes.dropzone}
-                                onDrop={(e) => handleDrop(e)}
-                                onDragOver={(e) => handleDragOver(e)}
-                                onDragEnter={(e) => handleDragEnter(e)}
-                                onDragLeave={(e) => handleDragLeave(e)}
-                            >
-                                <h1 className={classes.title}>Drag And Drop File Upload</h1>
-
-                                <input
-                                id="fileSelect"
-                                type="file"
-                                className={classes.files}
-                                />
-                                <label htmlFor="fileSelect">Sie können mehrere Dateien auswählen</label>
-
-                                <h3 className={classes.uploadMessage}>
-                                or drag &amp; drop your files here
-                                </h3>
+                        {ImagesToggleOn == true && <div className={classes.fivefotos}>
+                            <div className={classes.fotodiv}>
+                                <div className={classes.imgplacer}>
+                                    {foto1 ? <Image src={foto1} layout="fill" objectFit='cover' /> : "Kein Foto"}
+                                </div>
+                                <label className={classes.fivefotouploadbtn}>Foto auswählen
+                                    <input onChange={(e) => {
+                                        const file = e.target.files[0];
+                                        setFoto1(URL.createObjectURL(file));
+                                    }} type={"file"} className={classes.fileupload}/>
+                                </label>
+                                <button className={classes.fivefotosendbtn}>Foto hochladen</button>
+                                <div className={classes.deleterbtn} onClick={() => setFoto1("")}>
+                                    <Deleter className={classes.deleter}  />
+                                </div>
                             </div>
-                           {data.fileList.map((file, index) => <div key={index} className={classes.filediv}>
-                            <Image src={URL.createObjectURL(file)} layout='fill' alt='profileimg' objectFit='cover' />
-                           </div>)}
-                        
-                            </div>  
+                            <div className={classes.fotodiv}>
+                                <div className={classes.imgplacer}>
+                                    {foto2 ? <Image src={foto2} layout="fill" objectFit='cover' /> : "Kein Foto"}
+                                </div>
+                                <label className={classes.fivefotouploadbtn}>Foto auswählen
+                                    <input onChange={(e) => {
+                                        const file = e.target.files[0];
+                                        setFoto2(URL.createObjectURL(file));
+                                    }} type={"file"} className={classes.fileupload}/>
+                                </label>
+                                <button className={classes.fivefotosendbtn}>Foto hochladen</button>
+                                <div className={classes.deleterbtn} onClick={() => setFoto2("")}>
+                                    <Deleter className={classes.deleter}  />
+                                </div>
+                            </div>
+                            <div className={classes.fotodiv}>
+                                <div className={classes.imgplacer}>
+                                    {foto3 ? <Image src={foto3} layout="fill" objectFit='cover' /> : "Kein Foto"}
+                                </div>
+                                <label className={classes.fivefotouploadbtn}>Foto auswählen
+                                    <input onChange={(e) => {
+                                        const file = e.target.files[0];
+                                        setFoto3(URL.createObjectURL(file));
+                                    }} type={"file"} className={classes.fileupload}/>
+                                </label>
+                                <button className={classes.fivefotosendbtn}>Foto hochladen</button>
+                                <div className={classes.deleterbtn} onClick={() => setFoto3("")}>
+                                    <Deleter className={classes.deleter}  />
+                                </div>
+                            </div>
+                            <div className={classes.fotodiv}>
+                                <div className={classes.imgplacer}>
+                                    {foto4 ? <Image src={foto4} layout="fill" objectFit='cover' /> : "Kein Foto"}
+                                </div>
+                                <label className={classes.fivefotouploadbtn}>Foto auswählen
+                                    <input onChange={(e) => {
+                                        const file = e.target.files[0];
+                                        setFoto4(URL.createObjectURL(file));
+                                    }} type={"file"} className={classes.fileupload}/>
+                                </label>
+                                <button className={classes.fivefotosendbtn}>Foto hochladen</button>
+                                <div className={classes.deleterbtn} onClick={() => setFoto4("")}>
+                                    <Deleter className={classes.deleter}  />
+                                </div>
+                            </div>
+                            <div className={classes.fotodiv}>
+                                <div className={classes.imgplacer}>
+                                    {foto5 ? <Image src={foto5} layout="fill" objectFit='cover' /> : "Kein Foto"}
+                                </div>
+                                <label className={classes.fivefotouploadbtn}>Foto auswählen
+                                    <input onChange={(e) => {
+                                        const file = e.target.files[0];
+                                        setFoto5(URL.createObjectURL(file));
+                                    }} type={"file"} className={classes.fileupload}/>
+                                </label>
+                                <button className={classes.fivefotosendbtn}>Foto hochladen</button>
+                                <div className={classes.deleterbtn} onClick={() => setFoto5("")}>
+                                    <Deleter className={classes.deleter}  />
+                                </div>
+                            </div>
+                            
                         </div>}
-                        
 
                     </div>
                     <div className={classes.row4}>
@@ -735,33 +822,33 @@ export default function ProfileSettings(){
             </div>
             {blockierteBenutzerOpened == true && <div className={classes.profileContent}>
                 <div className={classes.users}>
-                    <div className={classes.user}>
+                    {blockierteBenutzer.map((user, i) => <div key={i} className={classes.user}>
                         <div className={classes.userleft}>
-                            <div className={classes.profileimg}></div>
-                            <div className={classes.username}>Max Mustermann</div>
+                            <div className={classes.profileimg}>
+                                {user.profileImg ? <Image src={user.profileImg} layout='fill' objectFit='cover' /> : null}
+                            </div>
+                            <div className={classes.username}>{user.vorname + " " + user.nachname}</div>
                         </div>
-                        <Link href="/">
-                            <a className={classes.link}>Blockierung aufheben</a>
-                        </Link>
-                    </div>
-                    <div className={classes.user}>
-                        <div className={classes.userleft}>
-                            <div className={classes.profileimg}></div>
-                            <div className={classes.username}>Max Mustermann</div>
+                        <div className={classes.blockaufheber} >
+                            {openBlockDeleter && <div className={classes.openedblockdeletercontainer}>
+                                <div className={classes.closer} onClick={() => setOpenBlockDeleter(false)}></div>
+                                <div className={classes.openedblockdeleter}>
+                                    <div className={classes.blockheading}>Sind Sie sicher?</div>
+                                    <div className={classes.blockparagraph}>Möchten Sie {blockierteBenutzer[blockedUserIndex].vorname + " " + blockierteBenutzer[blockedUserIndex].nachname} wirklich entblockieren?</div>
+                                    <div className={classes.entblockierenbtn} onClick={(e) => {
+                                        handleUnblocker(blockedUserIndex);
+                                    }} >Entblockieren</div>
+                                </div>
+                                <div className={classes.closebtn} onClick={() => setOpenBlockDeleter(false)}>
+                                    <Closer className={classes.closerx}/>
+                                </div>
+                            </div>}
+                            <a className={classes.link} onClick={() => {
+                                setOpenBlockDeleter(true);
+                                setBlockedUserIndex(i);
+                            }}>Blockierung aufheben</a>
                         </div>
-                        <Link href="/">
-                            <a className={classes.link}>Blockierung aufheben</a>
-                        </Link>
-                    </div>
-                    <div className={classes.user}>
-                        <div className={classes.userleft}>
-                            <div className={classes.profileimg}></div>
-                            <div className={classes.username}>Max Mustermann</div>
-                        </div>
-                        <Link href="/">
-                            <a className={classes.link}>Blockierung aufheben</a>
-                        </Link>
-                    </div>
+                    </div>)}
                 </div>
             </div>}
         </div>

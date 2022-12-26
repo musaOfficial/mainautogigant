@@ -85,6 +85,7 @@
 .link{
     color: #0067B8;
     text-decoration: underline;
+    cursor: pointer;
 }
 .profileclosed{
     height: 50px;
@@ -887,6 +888,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
+    cursor: pointer;
   }
   
   .files {
@@ -898,6 +900,7 @@
     position: absolute !important;
     white-space: nowrap;
     width: 1px;
+    cursor: pointer;
   }
   
   .files + label {
@@ -1174,4 +1177,154 @@
     width: 350px;
     background-color: #6C757D;
     margin-top: 20px;
+}
+
+.fotodiv{
+    width: 120px;
+    position: relative;
+}
+
+.imgplacer{
+    height: 128px;
+    width: 100%;
+    background-color: #6C757D;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.fivefotouploadbtn{
+    width: 100%;
+    height: 40px;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    color: #6C757D;
+    font-size: 13px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.fivefotosendbtn{
+    width: 100%;
+    height: 40px;
+    background-color: #FBB900;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.deleterbtn{
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    background-color: #FB0000;
+    border-radius: 999px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.deleter{
+    color: #fff;
+    height: 10px;
+    width: 10px;
+}
+
+.fivefotos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.openedblockdeletercontainer{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.blockheading{
+    font-size: 20px;
+    color: #6C757D;
+    font-weight: bold;
+}
+
+.openedblockdeleter{
+    background-color: #F1F2F3;
+    width: 300px;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 10;
+}
+
+.entblockierenbtn{
+    height: 40px;
+    width: 100%;
+    background-color: #6C757D;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .1s ease-in;
+    margin-top: 20px;
+}
+
+.entblockierenbtn:hover{
+    background-color: #FBB900;
+}
+
+.closebtn{
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    transition: all .1s ease-in;
+    cursor: pointer;
+}
+
+.closebtn:hover{
+    transform: translateY(-1px);
+}
+
+.closerx{
+    color: #fff;
+    height: 30px;
+    width: 30px;
+}
+
+.closer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+
+.profileimg{
+    position: relative;
+    overflow: hidden;
 }
