@@ -188,7 +188,7 @@
 }
 
 .einverstaendnisbtn{
-    background-color: #FBB900;
+    background-color: #6C757D;
     border-radius: 10px;
     font-size: 14px;
     font-weight: bold;
@@ -198,6 +198,11 @@
     padding-right: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
+    transition: all .1s ease-in;
+}
+
+.einverstaendnisbtn:hover{
+    background-color: #FBB900;
 }
 
 .row2{
@@ -216,6 +221,7 @@
     background-color: #F1F2F3;
     margin-right: 20px;
     width: 100%;
+    position: relative;
 }
 
 .titelbildupdate{
@@ -248,6 +254,7 @@
     font-size: 16px;
     width: 100%;
     order: 1;
+    position: relative;
 }
 
 .breaktitelbildgroesse{
@@ -260,12 +267,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FBB900;
+    background-color: #6C757D;
     border-radius: 10px;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
     margin-top: 15px;
+    transition: all .1s ease-in;
+    cursor: pointer;
+}
+
+.titelbildhochladenbtn:hover{
+    background-color: #FBB900;
 }
 
 .titelbildeigenschaften{
@@ -459,13 +472,20 @@
 
 .savechanges{
     width: 100%;
-    background-color: #FBB900;
+    background-color: #6C757D;
     color: #fff;
     font-weight: bold;
     height: 40px;
     border-radius: 10px;
     font-size: 14px;
+    transition: all .1s ease-in;
 }
+
+.savechanges:hover{
+    background-color: #FBB900;
+}
+
+
 
 .datarow{
     display: flex;
@@ -515,12 +535,17 @@
     margin-right: 20px;
     margin-bottom: 20px;
     width: 100%;
-    background-color: #FBB900;
+    background-color: #6C757D;
     color: #fff;
     font-weight: bold;
     height: 40px;
     border-radius: 10px;
     font-size: 14px;
+    transition: all .1s ease-in;
+}
+
+.savedatachanges:hover{
+    background-color: #FBB900;
 }
 
 .datadesc{
@@ -545,7 +570,7 @@
     margin-right: 20px;
     margin-bottom: 20px;
     width: 50%;
-    background-color: #FBB900;
+    background-color: #6C757D;
     color: #fff;
     font-weight: bold;
     height: 40px;
@@ -554,6 +579,11 @@
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 14px;
+    transition: all .1s ease-in;
+}
+
+.saveueberunschanges:hover{
+    background-color: #FBB900;
 }
 
 .radiobuttons{
@@ -583,10 +613,9 @@
 }
 
 .sendenbtn{
-    margin-right: 20px;
     margin-bottom: 20px;
     width: 100%;
-    background-color: #FBB900;
+    background-color: #6C757D;
     color: #fff;
     font-weight: bold;
     height: 40px;
@@ -595,6 +624,11 @@
     align-items: center;
     justify-content: center;
     font-size: 14px;
+    transition: all .1s ease-in;
+}
+
+.sendenbtn:hover{
+    background-color: #FBB900;
 }
 
 .twobuttons{
@@ -655,6 +689,11 @@
     border-radius: 10px;
     margin-top: 20px;
     width: 50%;
+    transition: all .1s ease-in;
+}
+
+.securitykontodeaktivierungsbtn:hover{
+    background-color: #FBB900;
 }
 
 .securitykontoloeschenbtn{
@@ -822,18 +861,32 @@
     justify-content: center;
     align-items: center;
   
-    border: dashed 3px #ccc;
+    border: dashed 3px #6C757D;
     border-radius: 1rem;
     padding: 2rem;
     width: 100%;
   }
   
   .active {
-    border: dashed 3px dodgerblue;
+    border: dashed 3px #FBB900;
   }
   
   .uploadMessage h3 {
     margin-top: 1rem;
+  }
+
+  .fileupload{
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
   }
   
   .files {
@@ -849,7 +902,7 @@
   
   .files + label {
     margin-top: 1rem;
-    background-color: #0d6efd;
+    background-color: #FBB900;
     border-radius: 4rem;
     color: #fff;
     cursor: pointer;
@@ -1112,4 +1165,13 @@
         line-height: 16px;
         margin-bottom: 10px;
     }
+}
+
+.filediv{
+    position: relative;
+    object-fit: cover;
+    height: 550px;
+    width: 350px;
+    background-color: #6C757D;
+    margin-top: 20px;
 }

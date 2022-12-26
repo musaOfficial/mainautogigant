@@ -52,6 +52,8 @@ export default function ProfileSettings(){
     
         // get files from event on the dataTransfer object as an array
         let files = [...e.dataTransfer.files];
+
+        
     
         // ensure a file or files are dropped
         if (files && files.length > 0) {
@@ -69,22 +71,7 @@ export default function ProfileSettings(){
       };
     
       // handle file selection via input element
-      const handleFileSelect = (e) => {
-        // get files from event on the input element as an array
-        let files = [...e.target.files];
-    
-        // ensure a file or files are selected
-        if (files && files.length > 0) {
-          // loop over existing files
-          const existingFiles = data.fileList.map((f) => f.name);
-          // check if file already exists, if so, don't add to fileList
-          // this is to prevent duplicates
-          files = files.filter((f) => !existingFiles.includes(f.name));
-    
-          // dispatch action to add selected file or files to fileList
-          dispatch({ type: "ADD_FILE_TO_LIST", files });
-        }
-      };
+
 
       
     //   // to handle file uploads
@@ -136,11 +123,6 @@ export default function ProfileSettings(){
     const [t6, setT6] = useState(false);
     const [t7, setT7] = useState(false);
 
-    const onImageChange = (event) => {
-        console.log(event);
-        const image = URL.createObjectURL(event)
-        console.log(image);
-    }
 
     const reducer = (state, action) => {
         switch (action.type) {
@@ -159,6 +141,15 @@ export default function ProfileSettings(){
         fileList: [],
       });
 
+      function handleFileSelect(e){
+        // get files from event on the input element as an array
+        console.log(data.fileList)
+        let files = [...e.target.files];
+        dispatch({ type: "ADD_FILE_TO_LIST", files})
+      };
+
+
+
       var profilseiteImages = [];
 
       const [Image1Profilseite, setImage1Profilseite] = useState(null);
@@ -170,7 +161,49 @@ export default function ProfileSettings(){
       const [socialMediaSectionActive, setSocialMediaSectionActive] = useState(false);
 
       const [imgUrl, setImgUrl] = useState(null);
-      
+
+     // PROFILDATEN
+      const [firmenname, setFirmenname] = useState();
+      const [ergaenzung, setErgaenzung] = useState();
+      const [strasse, setStrasse] = useState();
+      const [hausnummer, setHausnummer] = useState();
+      const [stadt, setStadt] = useState();
+      const [plz, setPlz] = useState();
+      const [bundesland, setBundesland] = useState();
+      const [land, setLand] = useState();
+      const [vorwahl1, setVorwahl1] = useState();
+      const [telefonfestnetz, setTelefonfestnetz] = useState();
+      const [vorwahl2, setVorwahl2] = useState();
+      const [telefonmobil, setTelefonmobil] = useState();
+      const [internetaddresseurl, setInternetaddresseurl] = useState();
+      const [uidNr, setUidNr] = useState();
+
+     // ANSPRECHPARTNER
+     const [anrede, setAnrede] = useState();
+     const [titel, setTitel] = useState();
+     const [vorname, setVorname] = useState();
+     const [nachname, setNachname] = useState();
+     const [vorwahl3, setVorwahl3] = useState();
+     const [telefonnummer, setTelefonnummer] = useState();
+     // ÜBER UNS TEXT
+      const [ueberuns, setUeberuns] = useState();
+     // BRANCHE
+
+     // GEWERBEBERECHTIGUNG
+      const [gewerbeberechtigungFile, setGewerbeberechtigungFile] = useState("");
+
+      // KONTOSICHERHEIT
+      const [actMail, setActMail] = useState();
+      const [newMail, setNewMail] = useState();
+      const [newMail2, setNewMail2] = useState();
+
+      const [actPassword, setActPassword] = useState();
+      const [newPassword, setNewPassword] = useState();
+      const [newPassword2, setNewPassword2] = useState();
+
+
+      const [titelbild, setTitelbild] = useState();
+
 
     return (
         <div className={classes.container}>
@@ -401,10 +434,8 @@ export default function ProfileSettings(){
                                             accept='image/png, image/jpg, image/jpeg'
                                             multiple
                                             onChange={e => {
-                                                if(selectedAvatar){
-                                                    setImgUrl(URL.createObjectURL(selectedAvatar))
-                                                }
-                                                return setSelectedAvatar(e.target.files[0])
+                                                const file = e.target.files[0];
+                                                setSelectedAvatar(URL.createObjectURL(file));
                                             }
                                                 
                                                 }
@@ -425,10 +456,18 @@ export default function ProfileSettings(){
                     <h1 className={classes.titelbildheading}>TITELBILD AKTUALISIEREN</h1>
                     <div className={classes.row2}>
 
-                        <div className={classes.titelbild}>Titelbild</div>
+                        <div className={classes.titelbild}>
+                            {titelbild ? <Image src={titelbild} layout='fill' objectFit='cover' /> : "Titelbild"}
+                        </div>
                         <div className={classes.titelbildupdate}>
                             <div className={classes.titelbildauswahl}>
-                                <div className={classes.titelbildauswahlbtn}>Titelbild auswählen</div>
+                            <label className={classes.titelbildauswahlbtn}>
+                                Titelbild auswählen
+                                <input className={classes.fileupload} onChange={(e) => {
+                                    const file = e.target.files[0];
+                                    setTitelbild(URL.createObjectURL(file));
+                                }} type={"file"} />
+                            </label>
                                 <div className={classes.titelbildeigenschaften}>Titelbild Größe:<span className={classes.breaktitelbildgroesse}></span>955x300</div>
                             </div>
                             <div className={classes.titelbildhochladenbtn}>Titelbild hochladen</div>
@@ -454,25 +493,18 @@ export default function ProfileSettings(){
                                 <input
                                 id="fileSelect"
                                 type="file"
-                                multiple
                                 className={classes.files}
-                                onChange={(e) => handleFileSelect(e)}
                                 />
-                                <label htmlFor="fileSelect">You can select multiple Files</label>
+                                <label htmlFor="fileSelect">Sie können mehrere Dateien auswählen</label>
 
                                 <h3 className={classes.uploadMessage}>
                                 or drag &amp; drop your files here
                                 </h3>
                             </div>
-                           {data.fileList.map((e) => {
-                                if(data.fileList.length == 5){
-                                    var FileListLengthMessage = "Sie können maximal 5 Fotos hochladen";
-                                } else {
-                                    var imgURL = URL.createObjectURL(e);
-                                    profilseiteImages.push(imgURL)
-                                }
-                           })}
-                            {profilseiteImages[0] != null && <Image src={profilseiteImages[0]} layout='fill' />}
+                           {data.fileList.map((file) => <div className={classes.filediv}>
+                            <Image src={URL.createObjectURL(file)} layout='fill' alt='profileimg' objectFit='cover' />
+                           </div>)}
+                        
                             </div>  
                         </div>}
                         
@@ -580,7 +612,7 @@ export default function ProfileSettings(){
                 <div className={classes.sectionheading}>BRANCHE AUSWÄHLEN</div>
                 <div className={classes.radiobuttons}>
                     <div className={classes.twobuttonsonecolumn}>
-                        <input type="radio" value="fahrzeug-haendler" name="branche" /> Fahrzeug Händler<br/>
+                        <input type="radio" value="fahrzeug-haendler" name="branche"  /> Fahrzeug Händler<br/>
                         <input type="radio" value="kfz-werkstatt" name="branche" /> KFZ Werkstatt
                     </div>
                     <div className={classes.twobuttonsonecolumn}>
@@ -597,13 +629,14 @@ export default function ProfileSettings(){
                 <p className={classes.gewerbeberechtigungtext}>Sie müssen innerhalb von 3 Tagen nach der Registrierung Ihre Gewerbeberechtigung hochladen.<br/>Anderenfalls wird Ihr Profil automatisch<br/>gesperrt und Ihre Anzeigen werden nicht mehr angezeigt.<br/>Für die Entsperrung werden &#8364; 35 ,- verrechnet und kann bis zu 48 Stunden dauern.</p>
                 <br />
                 <div className={classes.maxdateigroesse}>Maximale Dateigröße 5 MB</div>
+                {gewerbeberechtigungFile != "" && gewerbeberechtigungFile.target.value }
                 <div className={classes.twobuttons}><label className={classes.dateihinzufuegenbtn}>
                 <Clip className={classes.clip}/>{" "}Datei hinzufügen
                  <input
           id="fileSelect"
           type="file"
           multiple
-          onChange={(e) => handleFileSelect(e)}
+          onChange={(e) => setGewerbeberechtigungFile(e)}
           className={classes.selectFile}
         />
                  </label>
