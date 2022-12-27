@@ -143,7 +143,7 @@ export default function Header() {
                   HANDLERLISTE
                 </a>
               </Link>
-              <Link href="/dashboard/make-ads">
+              <Link href="/dashboard/create-ad">
                 <a className="px-4 text-sm py-2 md:px-1 ease-in duration-100 hover:bg-theme-yellow fill-white inline-flex items-center">
                   <svg className="mr-2" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 10 10">
                     <g id="Group_1611" data-name="Group 1611" transform="translate(19765 20127)">

@@ -99,10 +99,10 @@ export default function Sidebar() {
               <p className="ml-2">ÜBERSICHT</p>
             </a>
           </Link>
-          <Link href="/dashboard/make-ads">
+          <Link href="/dashboard/create-ad">
             <a
               className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
-                active === "/dashboard/make-ads"
+                active === "/dashboard/create-ad"
                   ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
@@ -118,7 +118,7 @@ export default function Sidebar() {
                   d="M23.875,26.125h2.25v-3h3v-2.25h-3v-3h-2.25v3h-3v2.25h3Zm-12-7.5h9.75v-2.25h-9.75Zm0-4.5h9.75v-2.25h-9.75Zm0,9.375h3.75V20.875h-3.75ZM19,34a15.214,15.214,0,0,1-5.925-1.144,14.518,14.518,0,0,1-7.931-7.931A15.214,15.214,0,0,1,4,19a15.117,15.117,0,0,1,1.144-5.888A14.64,14.64,0,0,1,8.313,8.35,14.954,14.954,0,0,1,19,4,14.88,14.88,0,0,1,34,19a14.954,14.954,0,0,1-4.35,10.688,14.64,14.64,0,0,1-4.762,3.169A15.117,15.117,0,0,1,19,34Zm0-15Zm0,12.75A12.492,12.492,0,0,0,31.75,19,12.492,12.492,0,0,0,19,6.25,12.492,12.492,0,0,0,6.25,19,12.492,12.492,0,0,0,19,31.75Z"
                   transform="translate(-4 -4)"
                   className={`ease-linear duration-300 fill-theme-black-2 group-hover:fill-theme-yellow-2 ${
-                    active === "/dashboard/make-ads"
+                    active === "/dashboard/create-ad"
                       ? "fill-theme-yellow-2"
                       : ""
                   }`}
@@ -183,10 +183,10 @@ export default function Sidebar() {
           </Link>
         </div>
         <div className="p-6 border-b border-opacity-25 border-theme-gray-3">
-          <Link href="/dashboard/calender">
+          <Link href="/dashboard/calendar">
             <a
               className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
-                active === "/dashboard/calender"
+                active === "/dashboard/calendar"
                   ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
@@ -208,7 +208,7 @@ export default function Sidebar() {
                     d="M7.5,6h21a3,3,0,0,1,3,3V30a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3V9a3,3,0,0,1,3-3Z"
                     fill="none"
                     className={`ease-linear duration-300 stroke-theme-black-2 group-hover:stroke-theme-yellow-2 ${
-                      active === "/dashboard/calender"
+                      active === "/dashboard/calendar"
                         ? "stroke-theme-yellow-2"
                         : ""
                     }`}
@@ -222,7 +222,7 @@ export default function Sidebar() {
                     d="M24,3V9"
                     fill="none"
                     className={`ease-linear duration-300 stroke-theme-black-2 group-hover:stroke-theme-yellow-2 ${
-                      active === "/dashboard/calender"
+                      active === "/dashboard/calendar"
                         ? "stroke-theme-yellow-2"
                         : ""
                     }`}
@@ -236,7 +236,7 @@ export default function Sidebar() {
                     d="M12,3V9"
                     fill="none"
                     className={`ease-linear duration-300 stroke-theme-black-2 group-hover:stroke-theme-yellow-2 ${
-                      active === "/dashboard/calender"
+                      active === "/dashboard/calendar"
                         ? "stroke-theme-yellow-2"
                         : ""
                     }`}
@@ -250,7 +250,7 @@ export default function Sidebar() {
                     d="M4.5,15h27"
                     fill="none"
                     className={`ease-linear duration-300 stroke-theme-black-2 group-hover:stroke-theme-yellow-2 ${
-                      active === "/dashboard/calender"
+                      active === "/dashboard/calendar"
                         ? "stroke-theme-yellow-2"
                         : ""
                     }`}
@@ -326,7 +326,7 @@ export default function Sidebar() {
           <Link href="/dashboard/settings">
             <a
               className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-theme-black-2 bg-white hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
-                active === "/dashboard/ideas"
+                active === "/dashboard/settings"
                   ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
                   : ""
               }`}
@@ -342,7 +342,7 @@ export default function Sidebar() {
                   d="M15.55,34l-.75-4.725a10.048,10.048,0,0,1-1.5-.713,10.306,10.306,0,0,1-1.387-.937L7.487,29.65,4,23.5l4.05-2.963a4.458,4.458,0,0,1-.094-.769q-.019-.431-.019-.769t.019-.769a4.458,4.458,0,0,1,.094-.769L4,14.5,7.487,8.35l4.425,2.025A10.306,10.306,0,0,1,13.3,9.438a7.76,7.76,0,0,1,1.5-.675L15.55,4h6.9l.75,4.725a12.158,12.158,0,0,1,1.519.694,6.455,6.455,0,0,1,1.369.956L30.512,8.35,34,14.5l-4.05,2.888a5.284,5.284,0,0,1,.094.806q.019.431.019.806t-.019.787a5.221,5.221,0,0,1-.094.788L34,23.5l-3.488,6.15-4.425-2.025a12.44,12.44,0,0,1-1.369.956,6.535,6.535,0,0,1-1.519.694L22.45,34ZM19,23.875A4.865,4.865,0,0,0,23.875,19,4.865,4.865,0,0,0,19,14.125,4.865,4.865,0,0,0,14.125,19,4.865,4.865,0,0,0,19,23.875Zm0-2.25a2.625,2.625,0,0,1-1.856-4.481,2.625,2.625,0,0,1,3.713,3.713A2.529,2.529,0,0,1,19,21.625ZM19,19ZM17.35,31.75h3.3l.525-4.2a8.844,8.844,0,0,0,2.344-.937,9.612,9.612,0,0,0,2.006-1.538L29.5,26.8,31,24.1l-3.525-2.587q.15-.638.244-1.256A8.374,8.374,0,0,0,27.813,19a10.431,10.431,0,0,0-.075-1.256,7.759,7.759,0,0,0-.263-1.256L31,13.9l-1.5-2.7-3.975,1.725a8.359,8.359,0,0,0-1.95-1.631,6.325,6.325,0,0,0-2.4-.844l-.525-4.2h-3.3l-.525,4.2a7.945,7.945,0,0,0-2.381.9,8.271,8.271,0,0,0-1.969,1.575L8.5,11.2,7,13.9l3.525,2.587q-.15.638-.244,1.256a8.464,8.464,0,0,0,0,2.512q.094.619.244,1.256L7,24.1l1.5,2.7,3.975-1.725a9.611,9.611,0,0,0,2.006,1.538,8.844,8.844,0,0,0,2.344.938Z"
                   transform="translate(-4 -4)"
                   className={`ease-linear duration-300 fill-theme-black-2 group-hover:fill-theme-yellow-2 ${
-                    active === "/dashboard/ideas" ? "fill-theme-yellow-2" : ""
+                    active === "/dashboard/settings" ? "fill-theme-yellow-2" : ""
                   }`}
                 />
               </svg>

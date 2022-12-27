@@ -1,7 +1,8 @@
 import Head from "next/head";
 import DashboardLayout from "../../components/dashboard/Layout";
+import LatestAdvertisementsPage from "../../components/LatestAdvertisementsPage";
 
-export default function MakeAds() {
+export default function LatestAdvertisements() {
   return (
     <>
       <Head>
@@ -9,7 +10,9 @@ export default function MakeAds() {
         <meta name="description" content="Auto Gigant" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <DashboardLayout>Make adds</DashboardLayout>
+      <DashboardLayout>
+        <LatestAdvertisementsPage />
+      </DashboardLayout>
     </>
   );
 }
