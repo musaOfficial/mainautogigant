@@ -3,7 +3,7 @@ import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import Err404 from "../components/Error404";
 
-export default function Error403(){
+export default function Error404(){
     return (
         <div>
             <Head>
