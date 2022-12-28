@@ -1,4 +1,5 @@
 import Head from "next/head";
+import CreateAdPage from "../../components/CreateAdPage";
 import DashboardLayout from "../../components/dashboard/Layout";
 
 export default function MakeAds() {
@@ -10,7 +11,7 @@ export default function MakeAds() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DashboardLayout>
-        
+        <CreateAdPage />
       </DashboardLayout>
     </>
   );

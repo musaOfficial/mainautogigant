@@ -1,6 +1,59 @@
-export default function ListCard({ hgm, usrname, address, rating, cardView }) {
+import classes from './Card.module.css';
+import Image from 'next/image';
+import Store from './../../../public/dealercard/store.svg'
+import Account from './../../../public/dealercard/account.svg'
+import Map from './../../../public/dealercard/map.svg'
+import Star from './../../../public/dealercard/star.svg'
+
+export default function ListCard({ hgm, usrname, address, rating, fromRatingAmount, gridView, profileimgsrc, bannerimgsrc }) {
   return (
-    <div
+    <>
+      {gridView == false ? <div className={classes.container}>
+        <div className={classes.left}>
+          <div className={classes.cardimg}>
+          {bannerimgsrc ? <Image src={bannerimgsrc} layout="fill" objectFit='cover'/> : null}
+        </div>
+          <div className={classes.profileimg}>{profileimgsrc ? <Image src={profileimgsrc} layout="fill" objectFit='cover'/> : null}</div>
+        </div>
+        <div className={classes.right}>
+          <div className={classes.listitem}><Store className={classes.store}/>{hgm}</div>
+          <div className={classes.listitem}><Account className={classes.store}/>{usrname}</div>
+          <div className={classes.listitem}><Map className={classes.store}/>{address}</div>
+          <div className={classes.listitem}><Star className={classes.store}/>{rating} / von {fromRatingAmount} Bewertungen</div>
+          <div className={classes.buttons}>
+            <button className={classes.halfbtn}>PROFIL BESUCHEN</button>
+            <button className={classes.halfbtnsend}>NACHRICHT SENDEN</button>
+          </div>
+        </div>
+    </div> :
+    
+    <div className={classes.card}>
+      <div className={classes.top}>
+        <div className={classes.cardimage}>
+          {bannerimgsrc ? <Image src={bannerimgsrc} layout="fill" objectFit='cover'/> : null}
+        </div>
+        <div className={classes.profileimage}>
+          {profileimgsrc ? <Image src={profileimgsrc} layout="fill" objectFit='cover'/> : null}
+        </div>
+      </div>
+      <div className={classes.bottom}>
+        <div className={classes.listitem}><Store className={classes.store}/>{hgm}</div>
+          <div className={classes.listitem}><Account className={classes.store}/>{usrname}</div>
+          <div className={classes.listitem}><Map className={classes.store}/>{address}</div>
+          <div className={classes.listitem}><Star className={classes.store}/>{rating} / von {fromRatingAmount} Bewertungen</div>
+          <div className={classes.buttons}>
+            <button className={classes.halfbtncard}>PROFIL BESUCHEN</button>
+            <button className={classes.halfbtnsendcard}>NACHRICHT SENDEN</button>
+          </div>
+      </div>
+    </div>
+    }
+    </>
+  );
+}
+
+
+{/* <div
       className={`${
         cardView == "grid" ? "flex-col w-250 lg:w-224 md:!w-full" : ""
       } mt-8 lg:mt-4 p-4 border-2 transition duration-300 ease-linear hover:shadow-lg hover:border-theme-yellow-2 border-theme-gray-4 rounded-10 bg-theme-gray-4 text-theme-gray-4`}
@@ -109,6 +162,4 @@ export default function ListCard({ hgm, usrname, address, rating, cardView }) {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
+    </div> */}

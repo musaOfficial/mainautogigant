@@ -1,6 +1,9 @@
 import AdCard from "./AdCard";
 
 export default function Advertisements(){
+    const begehrtestenInserate = [
+        
+    ]
     return (
         <div className="p-4 rounded-md bg-theme-gray-4 mt-6">
             <div className="flex justify-between text-xl md:text-base font-bold text-theme-black-2">

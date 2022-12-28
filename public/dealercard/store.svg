@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="17.558" viewBox="0 0 20 17.558">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #6c757d;
+      }
+    </style>
+  </defs>
+  <path id="store_FILL0_wght400_GRAD0_opsz48" class="cls-1" d="M7.007,9.646V8H24.62V9.646Zm.137,15.912V18.48H5.8V16.834l1.207-5.542H24.593L25.8,16.834V18.48H24.456v7.078H22.81V18.48H17.624v7.078ZM8.79,23.912h7.188V18.48H8.79ZM7.419,16.834h0Zm0,0H24.181l-.85-3.9H8.269Z" transform="translate(-5.8 -8)"/>
+</svg>

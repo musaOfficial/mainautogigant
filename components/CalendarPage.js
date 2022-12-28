@@ -1,7 +1,6 @@
-
 import { Menu, Transition } from '@headlessui/react'
 import { DotsVerticalIcon } from '@heroicons/react/24/outline'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
 import {
   add,
   eachDayOfInterval,
@@ -64,8 +63,9 @@ const meetings = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-function CalendarPage(){
-    let today = startOfToday()
+
+export default function Example() {
+  let today = startOfToday()
   let [selectedDay, setSelectedDay] = useState(today)
   let [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
   let firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date())
@@ -88,8 +88,9 @@ function CalendarPage(){
   let selectedDayMeetings = meetings.filter((meeting) =>
     isSameDay(parseISO(meeting.startDatetime), selectedDay)
   )
-    return (
-        <div className="pt-16">
+
+  return (
+    <div className="pt-16">
       <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6">
         <div className="md:grid md:grid-cols-2 md:divide-x md:divide-gray-200">
           <div className="md:pr-14">
@@ -273,18 +274,15 @@ function Meeting({ meeting }) {
         </Transition>
       </Menu>
     </li>
-    )
+  )
 }
 
 let colStartClasses = [
-    '',
-    'col-start-2',
-    'col-start-3',
-    'col-start-4',
-    'col-start-5',
-    'col-start-6',
-    'col-start-7',
-  ]
-  
-
-export default CalendarPage;
+  '',
+  'col-start-2',
+  'col-start-3',
+  'col-start-4',
+  'col-start-5',
+  'col-start-6',
+  'col-start-7',
+]

@@ -1,0 +1,210 @@
+.adbanner{
+    width: 100%;
+    height: 300px;
+    background-color: #C3C3C3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.contentcontainer{
+    display: flex;
+}
+
+.leftcontainer{
+    width: 320px !important;
+}
+
+.heading{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.text13{
+    font-size: 13px;
+    color: #6C757D;
+}
+
+.amountDealers{
+    height: 95px;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.searchdealer{
+    height: 110px;
+    width: 100%;
+    background-color: #f1f2f3;
+    border-radius: 10px;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.searchinputdiv{
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.searchinputdiv input{
+    line-height: 50px;
+    padding-left: 40px;
+    width: 100%;
+}
+
+.searchinputdiv input::placeholder{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.searchicon{
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    height: 20px;
+    width: 20px;
+}
+
+.searchwithrate{
+    height: 250px;
+    width: 100%;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.grayliner{
+    width: 100%;
+    height: 1px;
+    background-color: #6C757D;
+}
+
+.filterbyratetext{
+    font-size: 13px;
+}
+
+.searchdealertext{
+    font-size: 13px;
+}
+
+.delfilter{
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    background-color: #6C757D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all .1s ease-in;
+}
+.delfilter:hover{
+    background-color: #FBB900;
+}
+
+.searchwithcity{
+    width: 100%;
+    background-color: #F1F2F3;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.rightcontainer{
+    width: 100%;
+    margin-left: 20px;
+}
+
+.layouteditor{
+    height: 70px;
+    width: 100%;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.show{
+    display: flex;
+    align-items: center;
+    flex-basis: 45%;
+}
+
+.sortierennach{
+    display: flex;
+    align-items: center;
+}
+
+.gridchanger{
+    width: 80px;
+    height: 100%;
+    background-color: #FBB900;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridview{
+    color: #FFE497;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.listview{
+    color: #FFE497;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.gridviewselected{
+    color: #fff;
+    cursor: default;
+}
+
+.dealergrid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.bin{
+    margin-right: 10px;
+    color: #fff;
+    height: 20px;
+    width: 20px;
+}
+
+.searchwithcity{
+    padding: 20px;
+}
+
+.citycontent{
+    width: 100%;
+    min-height: 220px;
+    overflow-y: auto;
+}
+

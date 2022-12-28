@@ -785,31 +785,71 @@ export default function ProfileSettings(){
                 <div className={classes.benachrichtigungseinstellungen}>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Alle Benachrichtigungen per E-Mail an die gespeicherte Adresse senden.</div>
-                        <Toggle toggle={() => setT1(t => !t)} toggleOn={t1}/>
+                        <Toggle toggle={() => {
+                            setT1(t => !t)
+                            if(!t1){
+                            setT2(true);
+                            setT3(true);
+                            setT4(true);
+                            setT5(true);
+                            setT6(true);
+                            setT7(true);
+                            }
+                        }} toggleOn={t1}/>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Erinnerungsbenachrichtigung vor Ablauf eines Inserates.</div>
-                        <Toggle toggle={() => setT2(t => !t)} toggleOn={t2}/>
+                        <Toggle toggle={() => {
+                            setT2(t => !t);
+                            if(t2){
+                                setT1(false);
+                            }
+                        }} toggleOn={t2}/>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Erinnerungsbenachrichtigung vor Ablauf eines Giga Powers.</div>
-                        <Toggle toggle={() => setT3(t => !t)} toggleOn={t3}/>
+                        <Toggle toggle={() => {
+                            setT3(t => !t)
+                            if(t3){
+                                setT1(false);
+                            }
+                        }} toggleOn={t3}/>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Benachrichtigung, dass der Preis des favorisierten Inserates gesunken ist.</div>
-                        <Toggle toggle={() => setT4(t => !t)} toggleOn={t4}/>
+                        <Toggle toggle={() => {
+                            setT4(t => !t);
+                            if(t4){
+                                setT1(false);
+                            }
+                        }} toggleOn={t4}/>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Erinnerungsbenachrichtigung vor Ablauf eines Abos.</div>
-                        <Toggle toggle={() => setT5(t => !t)} toggleOn={t5}/>
+                        <Toggle toggle={() => {
+                            setT5(t => !t)
+                            if(t5){
+                                setT1(false);
+                            }
+                        }} toggleOn={t5}/>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Erinnerungsbenachrichtigung für Suchaufträge.</div>
-                        <Toggle toggle={() => setT6(t => !t)} toggleOn={t6}/>
+                        <Toggle toggle={() => {
+                            setT6(t => !t)
+                            if(t6){
+                                setT1(false);
+                            }
+                        }} toggleOn={t6}/>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Newsletter an-/abmelden.</div>
-                        <Toggle toggle={() => setT7(t => !t)} toggleOn={t7}/>
+                        <Toggle toggle={() => {
+                            setT7(t => !t);
+                            if(t7){
+                                setT1(false);
+                            }
+                        }} toggleOn={t7}/>
                     </div>
                 </div>
             </div>}
@@ -837,7 +877,7 @@ export default function ProfileSettings(){
                                     <div className={classes.blockparagraph}>Möchten Sie {blockierteBenutzer[blockedUserIndex].vorname + " " + blockierteBenutzer[blockedUserIndex].nachname} wirklich entblockieren?</div>
                                     <div className={classes.entblockierenbtn} onClick={(e) => {
                                         handleUnblocker(blockedUserIndex);
-                                    }} >Entblockieren</div>
+                                    }} >Blockierung aufheben</div>
                                 </div>
                                 <div className={classes.closebtn} onClick={() => setOpenBlockDeleter(false)}>
                                     <Closer className={classes.closerx}/>

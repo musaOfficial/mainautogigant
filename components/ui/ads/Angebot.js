@@ -41,6 +41,8 @@ function Angebot({
     const [printOpen, setPrintOpen] = useState(false);
     const [shareOpen, setShareOpen] = useState(false);
 
+    var displayPrice = price.toLocaleString() + " €"
+
     if(pl % 3 == 0){
         console.log(true)
     } else {
@@ -88,7 +90,7 @@ function Angebot({
             </div>
         <div className={classes.carinfocontainer}>
             <div className={classes.carprice}>
-                {price}
+                {displayPrice}
             </div>
             <div className={classes.rightside}>
                 <h1 className={classes.title}>{title}</h1>
