@@ -248,7 +248,7 @@ function CarDetails(){
     // })
 
 
-    const isPrivateUser = false;
+    var isPrivateUser = false;
     const isPrivateSeller = true;
 
     const sellerStreet = "Stadionstraße 28";
@@ -258,7 +258,7 @@ function CarDetails(){
     return (
         <div className={classes.container}>
             <div className={`${classes.contentcontainer} w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
-                {isPrivateUser == true ? 
+                {isPrivateUser == false ? 
                 <div className={classes.fullwidth}>
                     <div className={classes.middle}>
                         <div className={classes.image}>
