@@ -9,7 +9,6 @@ import WhiteFavorites from './../public/svgs/whitefavorite.svg';
 import WhiteShare from './../public/svgs/whiteshare.svg';
 import Expand from './../public/expand.svg'
 import { useState } from 'react';
-import { pdf } from '@react-pdf/renderer';
 import { useEffect } from 'react';
 import MailIcon from './../public/images/email.svg';
 import LinkIcon from './../public/images/link.svg';
