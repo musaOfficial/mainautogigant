@@ -60,6 +60,7 @@ function FavouritesPage(){
         <div className={classes.container}>
             <div className={classes.heading}>Favoriten</div>
             {favourites.map((fav, index) => <Angebot 
+            key={index}
             title={fav.title} 
             price={fav.preis} 
             adNo={fav.adNo} 
