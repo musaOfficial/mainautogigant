@@ -787,14 +787,7 @@ export default function ProfileSettings(){
                         <div className={classes.benachrichtigunsdesc}>Alle Benachrichtigungen per E-Mail an die gespeicherte Adresse senden.</div>
                         <Toggle toggle={() => {
                             setT1(t => !t)
-                            if(!t1){
-                            setT2(true);
-                            setT3(true);
-                            setT4(true);
-                            setT5(true);
-                            setT6(true);
-                            setT7(true);
-                            }
+                            
                         }} toggleOn={t1}/>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>

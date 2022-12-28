@@ -20,6 +20,12 @@
 
 .loginbtn{
     width: 330px;
+    background-color: #6C757D;
+    transition: all .1s ease-in;
+}
+
+.loginbtn:hover{
+    background-color: #FBB900;
 }
 
 .lineheight{

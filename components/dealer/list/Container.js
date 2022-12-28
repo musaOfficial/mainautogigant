@@ -241,6 +241,7 @@ export default function DealerListContainer() {
               </div>
               <div className={`${gridView ? classes.dealergrid : classes.dealerlist}`}>
                 {dealers.map((dealer, index) => <ListCard 
+                  key={index}
                   hgm={dealer.companyname}
                   usrname={dealer.name}
                   address={dealer.location}

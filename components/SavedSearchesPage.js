@@ -34,7 +34,7 @@ function SavedSearchesPage(){
                 <br></br>
                 <div className={classes.brandmodel}><span className='mr-2'>Marke / Modell:</span>{search.model.map((md, mdindex) => {
                     if(md){
-                        return <span>{md.map((sr, srindex) => <span className={classes.singleitem}>{search.brand[mdindex] + " " +  sr}</span>)}</span>
+                        return <span key={mdindex}>{md.map((sr, srindex) => <span key={srindex} className={classes.singleitem}>{search.brand[mdindex] + " " +  sr}</span>)}</span>
                     }
                 }
                 )}</div>

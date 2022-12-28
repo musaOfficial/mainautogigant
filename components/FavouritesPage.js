@@ -36,7 +36,6 @@ function FavouritesPage(){
             },
             location: "Österreich, 2700 Wiener Neustadt",
             companyname: "Gigant Group Teknoloji A.S"
-
         },
         {
             preis: 213520,
