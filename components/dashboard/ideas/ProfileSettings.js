@@ -21,7 +21,6 @@ import DropZone from '../../ui/dragdrop/DropZone';
 import FilePreview from '../../ui/dragdrop/FilePreview';
 import Deleter from './../../../public/deleter.svg'
 import Closer from './../../../public/closer.svg'
-import { reduceResults } from 'react-advanced-form';
 
 export default function ProfileSettings(){
     const handleDragEnter = (e) => {
