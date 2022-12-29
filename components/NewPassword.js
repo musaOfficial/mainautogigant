@@ -12,7 +12,7 @@ function NewPassword(){
                     <div className={classes.content}>
                     <div className={classes.heading}>Neues Passwort</div>
                     <div className={classes.text}>Nun müssen Sie zweimal Ihr neues Passwort eingeben
-und mit "Senden" bestätigen</div>
+und mit &rdquo;Senden&rdquo; bestätigen</div>
                     <Input placeholder={`Passwort`} inputType={`password`} onChange={(e) => setPassword(e.target.value)} />
                     <Input placeholder={`Passwort Wiederholen`} inputType={`password`} onChange={(e) => setConfirmPassword(e.target.value)} />
                     <button className={classes.sendbtn}>Senden</button>

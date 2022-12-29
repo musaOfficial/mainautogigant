@@ -10,7 +10,7 @@ export default function Err403() {
           <Link href={"/"}><div className={classes.backtohome}><BackTo className={classes.backto} />zurück zur Startseite</div></Link>
           <div className={classes.content}>
             <div className={classes.heading}>Technischer Fehler</div>
-            <div classes={classes.text}>Leider ist ein technischer Fehler aufgetreten.<br></br>Wir arbeiten gerade an der Behebung dieses Fehlers und bitten um Ihr Verständnis | Error 500</div>
+            <div className={classes.text}>Leider ist ein technischer Fehler aufgetreten.<br></br>Wir arbeiten gerade an der Behebung dieses Fehlers und bitten um Ihr Verständnis | Error 500</div>
             <img className="mx-auto md:w-72 mt-10 mb-10" src="/images/404-gorila.png" />
           </div>
         </div>

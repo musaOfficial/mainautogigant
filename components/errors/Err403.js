@@ -10,7 +10,7 @@ export default function Err403() {
         <Link href={"/"}><div className={classes.backtohome}><BackTo className={classes.backto} />zurück zur Startseite</div></Link>
           <div className={classes.content}>
             <div className={classes.heading}>Zugriff verweigert</div>
-            <div classes={classes.text}>Um alle Funktionen nutzen zu können<br></br>melden Sie sich bitte mit Ihren Login-Daten an. | Error 403</div>
+            <div className={classes.text}>Um alle Funktionen nutzen zu können<br></br>melden Sie sich bitte mit Ihren Login-Daten an. | Error 403</div>
             <img className="mx-auto md:w-72 mt-10 mb-10" src="/images/404-gorila.png" />
           </div>
         </div>

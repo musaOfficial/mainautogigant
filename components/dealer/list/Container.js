@@ -106,7 +106,7 @@ export default function DealerListContainer() {
     },
   ]
 
-  const cities = [
+  const [cities, setCities] = useState([
     {
       id: 0,
       name: "Wiener Neustadt",
@@ -143,15 +143,55 @@ export default function DealerListContainer() {
       land: "Frankreich",
       region: "Niederösterreich",
     },
-  ]
+    {
+      id: 0,
+      name: "Wiener Neustadt",
+      land: "Österreich",
+      region: "Niederösterreich",
+    },
+    {
+      id: 0,
+      name: "Moskau",
+      land: "Österreich",
+      region: "Niederösterreich",
+    },
+    {
+      id: 0,
+      name: "Istanbul",
+      land: "Österreich",
+      region: "Niederösterreich",
+    },
+    {
+      id: 0,
+      name: "London",
+      land: "Österreich",
+      region: "Niederösterreich",
+    },
+    {
+      id: 0,
+      name: "Berlin",
+      land: "Österreich",
+      region: "Niederösterreich",
+    },
+    {
+      id: 0,
+      name: "Paris",
+      land: "Frankreich",
+      region: "Niederösterreich",
+    },
+  ]);
 
   // Nach Land, Region und Stadt filtern
   
   const [citySearch, setCitySearch] = useState("Pa");
 
-  function CheckIfContains(citySearch, name){
-      
-  }
+  // /.*b.*e.*/
+  const re = RegExp(`.*${citySearch.toLowerCase().split('').join('.*')}.*`)
+
+  // [ 'Belgium', 'Brest' ]
+  const matches = cities.filter(v => v.name.toLowerCase().match(re))
+
+  console.log(matches)
 
   return (
     <div className="bg-theme-gray-3">
@@ -251,13 +291,13 @@ export default function DealerListContainer() {
               </div>
               <div className={classes.searchwithcity}>
                 <div className={classes.searchdealertext}>FILTERN NACH STADT</div>
-                <div className={classes.searchinputdiv}>
+                <div className={`${classes.searchinputdiv} mb-2`}>
                   <input type={"text"} onChange={(e) => setCitySearch(e.target.value)} placeholder={"SUCHEN"}/>
                   <SearchIcon className={classes.searchicon}/>
                 </div>
                 <div className={classes.citycontent}>
-                  {cities.map((city, index) => <div className={classes.citycontainer}>
-                    {CheckIfContains(citySearch ,city.name)}
+                  {matches.map((city, index) => <div key={index} className={classes.citycontainer}>
+                    <input type={"checkbox"} className="mr-2" />{city.name}
                   </div>)}
                 </div>
                 <button className={classes.delfilter}><Bin className={classes.bin}/>LÖSCHEN</button>

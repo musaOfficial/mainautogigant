@@ -10,7 +10,7 @@ export default function Err403() {
         <Link href={"/"}><div className={classes.backtohome}><BackTo className={classes.backto} />zurück zur Startseite</div></Link>
           <div className={classes.content}>
             <div className={classes.heading}>Ungültiger Token</div>
-            <div classes={classes.text}>Die Gültigkeit unserer Tokens ist auf einen Zeitraum von 24 Stunden begrenzt | Error 401</div>
+            <div className={classes.text}>Die Gültigkeit unserer Tokens ist auf einen Zeitraum von 24 Stunden begrenzt | Error 401</div>
             <img className="mx-auto md:w-72 mt-10 mb-10" src="/images/404-gorila.png" />
           </div>
         </div>

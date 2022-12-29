@@ -1,0 +1,87 @@
+.container{
+    background-color: #F1F2F3;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+}
+
+.partshower{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #F1F2F3;
+}
+
+.one{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FBB900;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px 0 0 0;
+}
+
+.two{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(108, 117, 125, 0.75);
+    border-left: 2px solid #F1F2F3;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.three{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(108, 117, 125, 0.75);
+    border-left: 2px solid #F1F2F3;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.four{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(108, 117, 125, 0.75);
+    border-left: 2px solid #F1F2F3;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.five{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(108, 117, 125, 0.75);
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 0 10px 0 0 ;
+    border-left: 2px solid #F1F2F3;
+}
+
+.boldtext{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.parttext{
+    font-size: 13px;
+}
