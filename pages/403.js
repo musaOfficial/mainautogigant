@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
-import Err404 from "../components/Error404";
+
 
 export default function Error403(){
     return (
@@ -12,7 +12,7 @@ export default function Error403(){
                 <link rel="icon" href="favicon.ico" />
             </Head>
             <Header />
-            <Err404 />
+            
             <Footer />
         </div>
     )

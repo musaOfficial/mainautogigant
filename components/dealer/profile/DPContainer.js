@@ -3,6 +3,11 @@ import AdCard from "../../dashboard/overview/AdCard";
 import Pagination from "../list/Pagination";
 import Link from "next/link";
 import Input from '../../ui/Input';
+import Instargram from './../../../public/icons/instagram.svg'
+import Facebook from './../../../public/icons/facebook.svg';
+import Tiktok from './../../../public/icons/tiktok.svg';
+import Youtube from './../../../public/icons/youtube.svg';
+import classes from './DPContainer.module.css';
 
 export default function DPContainer() {
   return (
@@ -31,7 +36,7 @@ export default function DPContainer() {
                     rel="noreferrer"
                     className="mr-1 ease-linear duration-150 hover:opacity-60"
                   >
-                    <img src="/images/icons/dp-facebook-icon.png" />
+                    <Facebook className={classes.instagram} />
                   </a>
                   <a
                     href="https://instagram.com"
@@ -39,7 +44,7 @@ export default function DPContainer() {
                     rel="noreferrer"
                     className="mx-1 ease-linear duration-150 hover:opacity-60"
                   >
-                    <img src="/images/icons/dp-instagram-icon.png" />
+                    <Instargram className={classes.instagram} />
                   </a>
                   <a
                     href="https://youtube.com"
@@ -47,7 +52,7 @@ export default function DPContainer() {
                     rel="noreferrer"
                     className="mx-1 ease-linear duration-150 hover:opacity-60"
                   >
-                    <img src="/images/icons/dp-youtube-icon.png" />
+                    <Youtube className={classes.instagram} />
                   </a>
                   <a
                     href="https://tiktok.com"
@@ -55,7 +60,7 @@ export default function DPContainer() {
                     rel="noreferrer"
                     className="ml-1 ease-linear duration-150 hover:opacity-60"
                   >
-                    <img src="/images/icons/dp-tiktok-icon.png" />
+                    <Tiktok className={classes.instagram} />
                   </a>
                 </div>
               </div>

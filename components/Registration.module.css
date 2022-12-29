@@ -1,0 +1,261 @@
+.container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.left{
+    width: 100%;
+    margin-right: 20px;
+    background-color: #F1F2F3;
+    height: 100%;
+    min-height: 20vh;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+}
+
+.right{
+    width: 100%;
+}
+
+
+.backtohome{
+    align-self: flex-start;
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    color: #0067B8;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.backtohome:hover{
+    text-decoration: underline;
+}
+
+.backto{
+    margin-right: 10px;
+    width: 22px;
+    height: 15px;
+}
+
+.heading{
+    margin-top: 100px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.rowhalfer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.wholeinput{
+    margin-right: 20px;
+}
+
+.radioinput{
+    margin-right: 10px;
+    border-radius: 0;
+    outline: none;
+    border: none;
+}
+
+.name{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.input{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.inputleft{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-right: 20px;
+}
+
+.mail{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.label{
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.wholeinput{
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.gendercheckboxes{
+    display: flex;
+    align-items: center;
+}
+
+.newslettercheckboxes{
+    margin-top: 20px;
+}
+
+.bottominput{
+    display: flex;
+    font-size: 13px;
+    align-items: flex-start;
+}
+
+.transform{
+    transform: translateY(3px);
+}
+
+.captcha{
+    width: 50%;
+    height: 50px;
+    background-color: gray;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.sendbtn{
+    width: 100%;
+    height: 50px;
+    background-color: #6C757D;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .1s ease-in;
+    cursor: pointer;
+}
+
+.sendbtn:hover{
+    background-color: #FBB900;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+}
+
+.image{
+    position: relative;
+    width: 100%;
+    flex-basis: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    height: 100%;
+}
+
+.registerasdealer{
+    width: 100%;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    padding: 20px;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.dealertext{
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.dealerheading{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.link{
+    color: #0067B8;
+    cursor: pointer;
+}
+
+.link:hover{
+    text-decoration: underline;
+}
+
+.stepshower{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.steponeactive{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FBB900;
+    height: 50px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px 0 0 0;
+    position: relative;
+}
+
+.triangle{
+    position: absolute;
+    height: 9px;
+    width: 9px;
+    background-color: #FBB900;
+    transform: rotate(45deg);
+    bottom: -4px;
+}
+
+.steptwo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-left: 2px solid #F1F2F3;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #F1F2F3;
+}
+
+.stepthree{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-left: 2px solid #F1F2F3;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #F1F2F3;
+}
+
+.shopwithline{
+    margin-right: 10px;
+    width: 28px;
+    height: 25px;
+}

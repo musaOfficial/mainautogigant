@@ -1,0 +1,139 @@
+.container{
+    display: flex;
+    width: 100%;
+}
+
+.left{
+    width: 100%;
+    height: 100%;
+    margin-right: 20px;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+}
+
+.right{
+    width: 100%;
+    height: 100%;
+}
+
+.stepshower{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.steponeactive{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FBB900;
+    height: 50px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px 0 0 0;
+    position: relative;
+}
+
+.triangle{
+    position: absolute;
+    height: 9px;
+    width: 9px;
+    background-color: #FBB900;
+    transform: rotate(45deg);
+    bottom: -4px;
+}
+
+.steptwo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FBB900;
+    border-left: 2px solid #F1F2F3;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #F1F2F3;
+}
+
+.stepthree{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-left: 2px solid #F1F2F3;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #F1F2F3;
+}
+
+.heading{
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.info{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.infoicon{
+    width: 40px;
+    height: 40px;
+    margin-right: 25px;
+}
+.mailicon{
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+}
+.checkicon{
+    width: 45px;
+    height: 31.9px;
+    margin-right: 20px;
+}
+
+.mail{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.check{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.ifnomail{
+    margin-top: 60px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.link{
+    color: #0067B8;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.right{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}

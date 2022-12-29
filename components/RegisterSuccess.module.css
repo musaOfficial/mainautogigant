@@ -1,0 +1,128 @@
+.container{
+    display: flex;
+    width: 100%;
+}
+
+.left{
+    width: 100%;
+    padding: 20px;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    margin-right: 20px;
+    position: relative;
+}
+
+.right{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.stepshower{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.steponeactive{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FBB900;
+    height: 50px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px 0 0 0;
+    position: relative;
+}
+
+.triangle{
+    position: absolute;
+    height: 9px;
+    width: 9px;
+    background-color: #FBB900;
+    transform: rotate(45deg);
+    bottom: -4px;
+}
+
+.steptwo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FBB900;
+    border-left: 2px solid #F1F2F3;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #F1F2F3;
+}
+
+.stepthree{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FBB900;
+    border-left: 2px solid #F1F2F3;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #F1F2F3;
+    border-radius: 0 10px 0 0;
+}
+
+.check{
+    width: 100px;
+    height: 84.3px;
+    position: relative;
+}
+
+.content{
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bigtext{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.lasttext{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.first{
+    margin-top: 20px;
+}
+
+.middle{
+    margin-top: 20px;
+}
+
+.link{
+    color: #0067B8;
+    cursor: pointer;
+}
+
+.last{
+    margin-bottom: 100px;
+}
+
+.link:hover{
+    text-decoration: underline;
+}

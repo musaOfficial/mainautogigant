@@ -106,6 +106,53 @@ export default function DealerListContainer() {
     },
   ]
 
+  const cities = [
+    {
+      id: 0,
+      name: "Wiener Neustadt",
+      land: "Österreich",
+      region: "Niederösterreich",
+    },
+    {
+      id: 0,
+      name: "Moskau",
+      land: "Österreich",
+      region: "Niederösterreich",
+    },
+    {
+      id: 0,
+      name: "Istanbul",
+      land: "Österreich",
+      region: "Niederösterreich",
+    },
+    {
+      id: 0,
+      name: "London",
+      land: "Österreich",
+      region: "Niederösterreich",
+    },
+    {
+      id: 0,
+      name: "Berlin",
+      land: "Österreich",
+      region: "Niederösterreich",
+    },
+    {
+      id: 0,
+      name: "Paris",
+      land: "Frankreich",
+      region: "Niederösterreich",
+    },
+  ]
+
+  // Nach Land, Region und Stadt filtern
+  
+  const [citySearch, setCitySearch] = useState("Pa");
+
+  function CheckIfContains(citySearch, name){
+      
+  }
+
   return (
     <div className="bg-theme-gray-3">
       <div className="lg:px-6 md:!px-0">
@@ -134,7 +181,7 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck5(true)} className="mr-2 mt-0.5" />
+                    <input type={"checkbox"} onChange={() => setStarCheck5(d => !d)} className="mr-2 mt-0.5" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
@@ -148,7 +195,7 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck4(true)} className="mr-2 mt-0.5" />
+                    <input type={"checkbox"} onChange={() => setStarCheck4(d => !d)} className="mr-2 mt-0.5" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
@@ -162,7 +209,7 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck3(true)} className="mr-2 mt-0.5" />
+                    <input type={"checkbox"} onChange={() => setStarCheck3(d => !d)} className="mr-2 mt-0.5" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
@@ -176,7 +223,7 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck2(true)} className="mr-2 mt-0.5" />
+                    <input type={"checkbox"} onChange={() => setStarCheck2(d => !d)} className="mr-2 mt-0.5" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-g.png" />
@@ -190,7 +237,7 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck1(true)} className="mr-2 mt-0.5" />
+                    <input type={"checkbox"} onChange={() => setStarCheck1(d => !d)} className="mr-2 mt-0.5" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-g.png" />
                     <img src="/images/icons/sd-star-g.png" />
@@ -205,10 +252,14 @@ export default function DealerListContainer() {
               <div className={classes.searchwithcity}>
                 <div className={classes.searchdealertext}>FILTERN NACH STADT</div>
                 <div className={classes.searchinputdiv}>
-                  <input type={"text"} placeholder={"SUCHEN"}/>
+                  <input type={"text"} onChange={(e) => setCitySearch(e.target.value)} placeholder={"SUCHEN"}/>
                   <SearchIcon className={classes.searchicon}/>
                 </div>
-                <div className={classes.citycontent}></div>
+                <div className={classes.citycontent}>
+                  {cities.map((city, index) => <div className={classes.citycontainer}>
+                    {CheckIfContains(citySearch ,city.name)}
+                  </div>)}
+                </div>
                 <button className={classes.delfilter}><Bin className={classes.bin}/>LÖSCHEN</button>
               </div>
             </div>

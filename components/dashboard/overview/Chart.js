@@ -51,7 +51,7 @@ const data = {
     datasets: [
     {
       label: "Gesamtaufrufe",
-      data: labels.map(() => faker.datatype.number({ min: 100, max: 700 })),
+      data: labels.map(() => faker.datatype.number({ min: 300, max: 700 })),
       borderColor: "#FBB900",
       fill: false,
     },
