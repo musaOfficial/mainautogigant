@@ -255,6 +255,10 @@ function CarDetails(){
     const sellerCity = "2700 Wiener Neustadt";
     const sellerCountry = "Österreich";
 
+
+    // JETZT GESCHLOSSEN || JETZT GEÖFFNET
+    const companyOpen = false; // Jetzt geöffnet
+
     return (
         <div className={classes.container}>
             <div className={`${classes.contentcontainer} w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
@@ -448,7 +452,7 @@ function CarDetails(){
                                                 <div className={classes.infoheading}>Komfort</div>
                                                 {ausstattungKomfort.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
                                             </div>
-                                            <br></br>
+                                            <div className={classes.distancer}></div>
                                             <div className={classes.gridinfocontainer}>
                                                 <div className={classes.infoheading}>Extras</div>
                                                 {ausstattungExtras.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
@@ -459,7 +463,7 @@ function CarDetails(){
                                                 <div className={classes.infoheading}>Sicherheit</div>
                                                 {ausstattungSicherheit.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
                                             </div>
-                                            <br></br>
+                                            <div className={classes.distancer}></div>
                                             <div className={classes.gridinfocontainer}>
                                                 <div className={classes.infoheading}>Unterhaltung/Media</div>
                                                 {ausstattungUnterhaltung.map((item, index) => <div key={index} className={classes.longinformation}>{item}</div>)}
@@ -532,9 +536,9 @@ function CarDetails(){
                                     </div>
                                 </div>
                                 <div className={classes.companyrow2}>
-                                    <div className={`${classes.closed} ${classes.open}`}>
+                                    <div className={`${classes.closed} ${classes.open} ${companyOpen == true ? classes.open : classes.closed}`}>
                                         <Clock className={classes.clock} />
-                                        Jetzt geöffnet
+                                        {companyOpen == true ? "Jetzt geöffnet" : "Geschlossen"}
                                     </div>
                                     <div className={classes.socialmediaicons}>
                                         <Facebook className={classes.socialmediaicon} />
