@@ -2045,7 +2045,7 @@ kannst du den gewünschten Schritt in der Navigation oben auswählen oder auf ZU
                 <span className={classes.bolder}>Produkte</span>
                 <span className={classes.bolder}>Preis in EUR €</span>
               </div>
-              {cart.map((item, index) => <div className={classes.produktheadingwhite}>
+              {cart.map((item, index) => <div key={index} className={classes.produktheadingwhite}>
                 <span className={classes.bolder}>{item.value + " " + item.name}</span>
                 <span className={classes.bolder}>{item.price +",00"}</span>
               </div>)}
