@@ -48,8 +48,7 @@ import Angebot from './ui/ads/Angebot';
 import Page from './pagesearch/PageSearch';
 
 function SearchResults(){
- 
-
+    
     const halfSelectStyle1 = {
     control: (base) => ({
         ...base,

@@ -750,3 +750,54 @@
 .form{
     font-size: 13px;
 }
+
+.publishdescription{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.publishicon{
+    width: 61.69px;
+    height: 50px;
+    flex-basis: 10%;
+}
+
+.publishheading{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.produktheading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #FFE497;
+    height: 40px;
+    border-top: 1px solid rgba(108, 117, 125, 0.5);
+    border-bottom: 1px solid rgba(108, 117, 125, 0.5);
+}
+
+.produktheadingwhite{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    height: 40px;
+    border-top: 1px solid rgba(108, 117, 125, 0.5);
+    border-bottom: 1px solid rgba(108, 117, 125, 0.5);
+}
+
+.electronic{
+    margin-top: 20px;
+}

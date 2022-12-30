@@ -5,23 +5,31 @@ import Expand from "./../public/expand.svg";
 import Closer from "./../public/closer.svg";
 import Deleter from './../public/deleter.svg';
 import Bin from './../public/dealercard/bin.svg';
+import PublishIcon from './../public/publishexpand.svg';
+import Angebot from './ui/ads/Angebot'
+
 function CreateAdPage(){
     const style = {
-        control: (base) => ({
+        control: (base, state) => ({
           ...base,
           boxShadow: "none",
           border: "none",
           fontSize: '13px',
           borderRadius: '10px',
           height: "40px",
-          width: "100%"
+          width: "100%",
+          backgroundColor: state.isDisabled ? "rgba(255,255,255,0.5)" : "#fff",
+          cursor: state.isDisabled ? "not-allowed" : "pointer",
+
         }),
         option: (styles, state) => ({
           ...styles,
           backgroundColor: state.isSelected ? "#fbb900" : "",
           "&:active": "#fbb90080",
           fontSize: '13px',
-        }),
+        }
+        ),
+        
       };
 
     const months = []
@@ -137,7 +145,7 @@ function CreateAdPage(){
     const [vorbesitzer, setVorbesitzer] = useState();
     const [anzahlSitze, setAnzahlSitze] = useState();
     const [anzahlTuere, setAnzahlTuere] = useState();
-    const [pickerl, setPickerl] = useState();
+    const [pickerl, setPickerl] = useState(false);
     const [pickerlGueltigkeit, setPickerlGueltigkeit] = useState();
     const [garantie, setGarantie] = useState();
 
@@ -292,7 +300,10 @@ function CreateAdPage(){
     const [mwstAusweisbar, setMwstAusweisbar] = useState(false);
     const [teilAutonomesFahren, setTeilAutonomesFahren] = useState(false);
     const [nichtraucherfahrzeug, setNichtraucherFahrzeug] = useState(false);
+    const [parkhilfesensorenHintenUndVorne, setParkhilfesensorenHintenUndVorne] = useState(false);
 
+    const [pickerlMonth, setPickerlMonth] = useState();
+    const [pickerlYear, setPickerlYear] = useState();
 
     // KONTAKT
     const [name, setName] = useState("Musa");
@@ -369,6 +380,11 @@ function CreateAdPage(){
 
     const [allowNationalCode, setAllowNationalCode] = useState();
     const [securityQuestion, setSecurityQuestion] = useState();
+
+    const [beschreibung, setBeschreibung] = useState();
+
+    const [elektronischeRechnungAngefordert, setElektronischeRechnungAngefordert] = useState(false);
+
     return (
         <div className={classes.container}>
             <div className={classes.partshower}>
@@ -603,7 +619,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Bezeichnung</span>
-                <span className={classes.valueright}><input type={"text"} className={classes.input} placeholder={"zum Beispiel 350 CDI"} /></span>
+                <span className={classes.valueright}><input type={"text"} value={bezeichnung} className={classes.input} onChange={(e) => setBezeichnung(e.target.value)} placeholder={"zum Beispiel 350 CDI"} /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Erstzulassung *</span>
@@ -643,6 +659,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                     className='w-full'
                     isSearchable={true}
                     onChange={(e) => setFahrzeugtyp(e.value)}
+                    defaultInputValue={fahrzeugtyp}
                     />
             </div>
             <div className={classes.flexer}>
@@ -655,11 +672,11 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                     defaultInputValue={waehrungen[0].label}
                     onChange={(e) => setWaehrung(e.value)}
                     />*</span>
-                <span className={classes.valueright}><input type={"text"} className={classes.input} placeholder={"in " + waehrung} /></span>
+                <span className={classes.valueright}><input type={"number"} value={preis} className={classes.input} onChange={(e) => setPreis(e.target.value)} placeholder={"in " + waehrung} /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Kilometerstand</span>
-                <span className={classes.valueright}><input type={"text"} className={classes.input} placeholder={"in km"} /></span>
+                <span className={classes.valueright}><input type={"text"} value={kilometerstand} onChange={(e) => setKilometerstand(e.target.value)} className={classes.input} placeholder={"in km"} /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Treibstoff *</span>
@@ -671,7 +688,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                         className='w-full'
                         isSearchable={true}
                         onChange={(e) => setTreibstoff(e.value)}
-                        defaultInputValue={month}
+                        defaultInputValue={treibstoff}
                         />
                 </span>
             </div>
@@ -733,23 +750,23 @@ befüllen. Der Code befindet sich im Zulassungsschein.
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Leistung in KW *</span>
-                <span className={classes.valueright}><input type={"text"} className={classes.input} placeholder={"in KW"} /></span>
+                <span className={classes.valueright}><input type={"text"} value={leistungInKw} onChange={(e) => setLeistungInKw(e.target.value)} className={classes.input} placeholder={"in KW"} /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Vorbesitzer</span>
-                <span className={classes.valueright}><input type={"text"} className={classes.input} placeholder={"anzahl aller Vorbesitzer"} /></span>
+                <span className={classes.valueright}><input type={"number"} value={vorbesitzer} className={classes.input} onChange={(e) => setVorbesitzer(e.target.value)} placeholder={"anzahl aller Vorbesitzer"} /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Anzahl Sitze *</span>
-                <span className={classes.valueright}><input type={"text"} className={classes.input} placeholder={"anzahl der Sitze"} /></span>
+                <span className={classes.valueright}><input type={"number"} value={anzahlSitze} onChange={(e) => setAnzahlSitze(e.target.value)} className={classes.input} placeholder={"anzahl der Sitze"} /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Anzahl Türen</span>
-                <span className={classes.valueright}><input type={"text"} className={classes.input} placeholder={"anzahl der Türen"} /></span>
+                <span className={classes.valueright}><input type={"number"} value={anzahlTuere} onChange={(e) => setAnzahlTuere(e.target.value)} className={classes.input} placeholder={"anzahl der Türen"} /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>§ 57a "Pickerl"</span>
-                <span className={classes.valueright}><input type={"checkbox"} onChange={() => setPickerl(d => !d)} className="mr-2" /> Ja</span>
+                <span className={classes.valueright}><input type={"checkbox"} checked={pickerl} onChange={() => setPickerl(d => !d)} className="mr-2" /> Ja</span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Pickerl gültig bis</span>
@@ -762,8 +779,9 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                         placeholder=""
                         className='w-full ml-2'
                         isSearchable={true}
-                        onChange={(e) => setMonth(e.value)}
-                        defaultInputValue={month}
+                        onChange={(e) => setPickerlMonth(e.value)}
+                        isDisabled={!pickerl}
+                        defaultInputValue={pickerlMonth}
                         />
                     </label>
                     <label className='w-full flex items-center'>
@@ -774,15 +792,16 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                         placeholder=""
                         className='w-full ml-2'
                         isSearchable={true}
-                        onChange={(e) => setModel(e.value)}
-                        defaultInputValue={year}
+                        onChange={(e) => setPickerlYear(e.value)}
+                        isDisabled={!pickerl}
+                        defaultInputValue={pickerlYear}
                         />
                     </label>
                 </span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Garantie</span>
-                <span className={classes.valueright}><input type={"checkbox"} onChange={() => setGarantie(d => !d)} className="mr-2" /> Ja</span>
+                <span className={classes.valueright}><input type={"checkbox"} checked={garantie} onChange={() => setGarantie(d => !d)} className="mr-2" /> Ja</span>
             </div>
              </form>
             {/* Ausstattungen */}
@@ -791,508 +810,489 @@ befüllen. Der Code befindet sich im Zulassungsschein.
             <p className={classes.text}>Gib Ausstattung und Extras des Fahrzeugs an und überprüfe vorausgewählte Felder.</p>
             <div className={classes.ausstattungengrid}>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => setAchtFachBereift(d => !d)} className="mr-2" />
+                    <input type={"checkbox"} checked={achtFachBereift} onChange={() => setAchtFachBereift(d => !d)} className="mr-2" />
                     8-fach Bereift
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => setKlimaanlage(d => !d)} className="mr-2" />
+                    <input type={"checkbox"} checked={klimaanlage} onChange={() => setKlimaanlage(d => !d)} className="mr-2" />
                     Klimaanlage
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
-                        setEinparkhilfeSensorenVorne(d => !d); 
-                        setEinparkhilfeSensorenHinten(d => !d);
+                    <input type={"checkbox"}checked={parkhilfesensorenHintenUndVorne} onChange={() => {
+                        setParkhilfesensorenHintenUndVorne(d => !d)
                         }} className="mr-2" />
                     Parksensor vorne & hinten
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={ABS} onChange={() => {
                         setABS(d => !d)
                         }} className="mr-2" />
                     ABS
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
-                        setKlimaautomatik(d => !d)
+                    <input type={"checkbox"} checked={klimaautomatik} onChange={() => {
+                        setKlimaautomatik(d => !d);
                         }} className="mr-2" />
                     Klimaautomatik
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={radio} onChange={() => {
                         setRadio(d => !d)
                         }} className="mr-2" />
                     Radio
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={abstandsTempomat} onChange={() => {
                         setAbstandsTempomat(d => !d)
                         }} className="mr-2" />
                     Abstandstempomat
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={kollisionsWarner} onChange={() => {
                         setKollisionsWarner(d => !d)
                         }} className="mr-2" />
                     Kollisionswarner
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={regensensor} onChange={() => {
                         setRegensensor(d => !d)
                         }} className="mr-2" />
                     Regensensor
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={alarmanlage} onChange={() => {
                         setAlarmanlage(d => !d)
                         }} className="mr-2" />
                     Alarmanlage
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={komfortFahrwerk} onChange={() => {
                         setKomfortFahrwerk(d => !d)
                         }} className="mr-2" />
                     Komfortfahrwerk
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={reifendruckkontrollsystem} onChange={() => {
                         setReifendruckkontrollsystem(d => !d)
                         }} className="mr-2" />
                     Reifendrucksensor
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={androidauto} onChange={() => {
                         setAndroidauto(d => !d)
                         }} className="mr-2" />
                     Android Auto
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={kopfairbag} onChange={() => {
                         setKopfairbag(d => !d)
                         }} className="mr-2" />
                     Kopfairbags
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={rueckfahrkamera} onChange={() => {
                         setRueckfahrkamera(d => !d)
                         }} className="mr-2" />
                     Rückfahrkamera
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={anhaengerkupplung} onChange={() => {
                         setAnhaengerkupplung(d => !d)
                         }} className="mr-2" />
                     Anhängerkupplung
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
-                        setAnhaengerkupplung(d => !d)
-                        }} className="mr-2" />
-                    Anhängerkupplung
-                </label>
-                <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={kurvenlicht} onChange={() => {
                         setKurvenlicht(d => !d)
                         }} className="mr-2" />
                     Kurvenfahrlicht
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={schaltwippen} onChange={() => {
                         setSchaltwippen(d => !d)
                         }} className="mr-2" />
                     Schaltwippen
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={asr} onChange={() => {
                         setAsr(d => !d)
                         }} className="mr-2" />
-                    Antriebsschlupfregelung (ASR)
+                    Antriebsschlupfregelung(ASR)
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={laserlicht} onChange={() => {
                         setLaserlicht(d => !d)
                         }} className="mr-2" />
                     Laserlicht
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={schiebedach} onChange={() => {
                         setSchiebedach(d => !d)
                         }} className="mr-2" />
                     Schiebedach
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={applecarplay} onChange={() => {
                         setApplecarplay(d => !d)
                         }} className="mr-2" />
                     Apple CarPlay
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={leasingfaehigkeit} onChange={() => {
                         setLeasingfaehigkeit(d => !d)
                         }} className="mr-2" />
                     Leasingfähigkeit
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={schisack} onChange={() => {
                         setSchisack(d => !d)
                         }} className="mr-2" />
                     Schisack
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={automatischeHeckklappe} onChange={() => {
                         setAutomatischeHeckklappe(d => !d)
                         }} className="mr-2" />
                     Aut. Heckklappe
                 </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={ledscheinwerfer} onChange={() => {
                         setLedscheinwerfer(d => !d)
                         }} className="mr-2" />
                     LED-Scheinwerfer
-                </label>
+                </label> 
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
-                        setLedscheinwerfer(d => !d)
-                        }} className="mr-2" />
-                    LED-Scheinwerfer
-                </label>  
-                <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={seitenairbag} onChange={() => {
                         setSeitenairbag(d => !d)
                         }} className="mr-2" />
                     Seitenairbags
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={behindertenGerecht} onChange={() => {
                         setBehindertenGerecht(d => !d)
                         }} className="mr-2" />
                     Behindertengerecht
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={lederausstattung} onChange={() => {
                         setLederausstattung(d => !d)
                         }} className="mr-2" />
                     Lederausstattung
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={serviceGepflegt} onChange={() => {
                         setServiceGepflegt(d => !d)
                         }} className="mr-2" />
                     Servicegepflegt
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={beifahrerairbag} onChange={() => {
                         setBeifahrerairbag(d => !d)
                         }} className="mr-2" />
                     Beifahrerairbags
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={lederlenkrad} onChange={() => {
                         setLederlenkrad(d => !d)
                         }} className="mr-2" />
                     Lederlenkrad
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={servolenkung} onChange={() => {
                         setServolenkung(d => !d)
                         }} className="mr-2" />
                     Servolenkung
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={bluethoot} onChange={() => {
                         setBluethoot(d => !d)
                         }} className="mr-2" />
                     Bluethoot / USB
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={alufelgen} onChange={() => {
                         setAlufelgen(d => !d)
                         }} className="mr-2" />
                     Leichtmetall-/Alufelgen
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={sitzheizung} onChange={() => {
                         setSitzheizung(d => !d)
                         }} className="mr-2" />
                     Sitzheizung
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={bordcomputer} onChange={() => {
                         setBordcomputer(d => !d)
                         }} className="mr-2" />
                     Bordcomputer
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={lenkradheizung} onChange={() => {
                         setLenkradheizung(d => !d)
                         }} className="mr-2" />
                     Lenkradheizung
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={sperrdifferential} onChange={() => {
                         setSperrdifferential(d => !d)
                         }} className="mr-2" />
                     Sperrdifferential
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={cd} onChange={() => {
                         setCd(d => !d)
                         }} className="mr-2" />
                     CD Player
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={lichtsensor} onChange={() => {
                         setLichtsensor(d => !d)
                         }} className="mr-2" />
                     Lichtsensor
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={sportfahrwerk} onChange={() => {
                         setSportfahrwerk(d => !d)
                         }} className="mr-2" />
                     Sportfahrwerk
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={dachgepaecktraeger} onChange={() => {
                         setDachgepaecktraeger(d => !d)
                         }} className="mr-2" />
                     Dachgepäckträger
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={lordosenstuetze} onChange={() => {
                         setLordoesenstuetze(d => !d)
                         }} className="mr-2" />
                     Lordosenstütze
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={sportpaket} onChange={() => {
                         setSportpaket(d => !d)
                         }} className="mr-2" />
                     Sportpaket
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={dachreling} onChange={() => {
                         setDachreling(d => !d)
                         }} className="mr-2" />
                     Dachreling
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={mp3} onChange={() => {
                         setMp3(d => !d)
                         }} className="mr-2" />
                     Media-Interface / mp3
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={sportsitze} onChange={() => {
                         setSportsitze(d => !d)
                         }} className="mr-2" />
                     Sportsitze
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={einparkhilfe} onChange={() => {
                         setEinparkhilfe(d => !d)
                         }} className="mr-2" />
                     Einparkhilfe
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={metallicLackierung} onChange={() => {
                         setMetalliclackierung(d => !d)
                         }} className="mr-2" />
                     Metallic-Lackierung
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={spurhalteassistent} onChange={() => {
                         setSpurhalteassistent(d => !d)
                         }} className="mr-2" />
                     Spurhalteassistent
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={elektrfensterheber} onChange={() => {
                         setElektrfensterheber(d => !d)
                         }} className="mr-2" />
                     elektr. Fensterheber
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={mittelarmlehne} onChange={() => {
                         setMittelarmlehne(d => !d)
                         }} className="mr-2" />
                     Mittelarmlehne
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={stabilitaetsprogramme} onChange={() => {
                         setStabilitaetsprogramme(d => !d)
                         }} className="mr-2" />
                     Stabilitätsprogramme
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={elektrsitze} onChange={() => {
                         setElektrsitze(d => !d)
                         }} className="mr-2" />
                     elektr. Sitze
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={multifunktionslenkrad} onChange={() => {
                         setMultifunktionslenkrad(d => !d)
                         }} className="mr-2" />
                     Multifunktionslenkrad
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={standheizung} onChange={() => {
                         setStandheizung(d => !d)
                         }} className="mr-2" />
                     Standheizung
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={elektrseitenspiegel} onChange={() => {
                         setElektrseitenspiegel(d => !d)
                         }} className="mr-2" />
                     elektr. Spiegel
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={mwstAusweisbar} onChange={() => {
                         setMwstAusweisbar(d => !d)
                         }} className="mr-2" />
                     MwSt. ausweisbar
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={startstopauto} onChange={() => {
                         setStartstopauto(d => !d)
                         }} className="mr-2" />
                     Start/Stopp-Automatik
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={fahrerairbag} onChange={() => {
                         setFahrerairbag(d => !d)
                         }} className="mr-2" />
                     Fahrerairbag
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={navigationssystem} onChange={() => {
                         setNavigationssystem(d => !d)
                         }} className="mr-2" />
                     Navigationssystem
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={tagfahrlicht} onChange={() => {
                         setTagfahrlicht(d => !d)
                         }} className="mr-2" />
                     Tagfahrlicht
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={fernlichassistent} onChange={() => {
                         setFernlichassistent(d => !d)
                         }} className="mr-2" />
                     Fernlichtassistent
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={nebelscheinwerfer} onChange={() => {
                         setNebelscheinwerfer(d => !d)
                         }} className="mr-2" />
                     Nebelscheinwerfer
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={teilAutonomesFahren} onChange={() => {
                         setTeilAutonomesFahren(d => !d)
                         }} className="mr-2" />
                     Teilautonomes Fahren
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={freisprecheinrichtung} onChange={() => {
                         setFreisprecheinrichtung(d => !d)
                         }} className="mr-2" />
                     Freisprecheinrichtung
-                </label>  
+                </label>
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
-                        setFreisprecheinrichtung(d => !d)
-                        }} className="mr-2" />
-                    Freisprecheinrichtung
-                </label>  
-                <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={nichtraucherfahrzeug} onChange={() => {
                         setNichtraucherFahrzeug(d => !d)
                         }} className="mr-2" />
                     Nichtraucherfahrzeug
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={tempomat} onChange={() => {
                         setTempomat(d => !d)
                         }} className="mr-2" />
                     Tempomat
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={beheizbareFrontscheibe} onChange={() => {
                         setBeheizbareFrontscheibe(d => !d)
                         }} className="mr-2" />
                     Frontscheibenheizung
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={notbremsassistent} onChange={() => {
                         setNotbremsassistent(d => !d)
                         }} className="mr-2" />
                     Notbremsassistent
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={totwinkelAssistent} onChange={() => {
                         setTotwinkelAssitent(d => !d)
                         }} className="mr-2" />
                     Totwinkelassistent
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={induktionsladen} onChange={() => {
                         setInduktionsladen(d => !d)
                         }} className="mr-2" />
                     Handy induktiv laden
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={notrufsystem} onChange={() => {
                         setNotrufsystem(d => !d)
                         }} className="mr-2" />
                     Notrufsystem
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={winterpaket} onChange={() => {
                         setWinterpaket(d => !d)
                         }} className="mr-2" />
                     Winterpaket
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={headupDisplay} onChange={() => {
                         setHeadupDisplay(d => !d)
                         }} className="mr-2" />
                     Head-Up-Display
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={panoramadach} onChange={() => {
                         setPanoramadach(d => !d)
                         }} className="mr-2" />
                     Panoramadach
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={xenonscheinwerfer} onChange={() => {
                         setXenonscheinwerfer(d => !d)
                         }} className="mr-2" />
                     Xenon
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={isofix} onChange={() => {
                         setIsofix(d => !d)
                         }} className="mr-2" />
                     ISOFIX
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={einparkhilfeSensorenHinten} onChange={() => {
                         setEinparkhilfeSensorenHinten(d => !d)
                         }} className="mr-2" />
                     Parksensor hinten
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={zentralverriegelung} onChange={() => {
                         setZentralverriegelung(d => !d)
                         }} className="mr-2" />
                 Zentralverriegelung
                 </label>  
                 <label className={classes.checkboxname}>
-                    <input type={"checkbox"} onChange={() => {
+                    <input type={"checkbox"} checked={schluessellose} onChange={() => {
                         setSchluessellose(d => !d)
                         }} className="mr-2" />
                 Keyless entry
@@ -1304,7 +1304,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
             <div className={classes.point}>3. Beschreibung</div>
             <div className={classes.beschreibungarea}>
                 <textarea rows={10} placeholder={`z.B.: Verkaufsgrund, Nichtraucherfahrzeug, Vignette, Serviceheft, Mängel,
-         Besonderheiten wie nachträglich eingebautes Zubehör, ...`} className={classes.area} />
+         Besonderheiten wie nachträglich eingebautes Zubehör, ...`} className={classes.area} value={beschreibung} onChange={(e) => setBeschreibung(e.target.value)} />
             </div>
             </>
             {/* Kontakt */}
@@ -1318,17 +1318,17 @@ befüllen. Der Code befindet sich im Zulassungsschein.
             <br></br>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Telefonnummer</span>
-                <span className={classes.valueright}><input type={"text"} className={classes.input} onChange={(e) => setTel(e.target.value)} /></span>
+                <span className={classes.valueright}><input type={"text"} value={tel} className={classes.input} onChange={(e) => setTel(e.target.value)} /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Telefonnummer 2</span>
-                <span className={classes.valueright}><input type={"text"} className={classes.input} onChange={(e) => setTel2(e.target.value)} placeholder="(optional)" /></span>
+                <span className={classes.valueright}><input type={"text"} className={classes.input} value={tel2} onChange={(e) => setTel2(e.target.value)} placeholder="(optional)" /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}> </span>
                 <span className={classes.valueright}>
                     <label htmlFor='showMail'>
-                        <input id='showMail' type={"checkbox"} onChange={(e) => setShowMail(d => !d)} className={"mr-2"} />
+                        <input id='showMail' type={"checkbox"} checked={showMail} onChange={(e) => setShowMail(d => !d)} className={"mr-2"} />
                         Telefonnummer(n) anzeigen
                     </label>
                 </span>
@@ -1356,7 +1356,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
             <div className={classes.point}>5. Verkaufsort</div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Straße</span>
-                <span className={classes.valueright}><input type={"text"} className={classes.input} onChange={(e) => setStrasse(e.target.value)} /></span>
+                <span className={classes.valueright}><input type={"text"} className={classes.input} value={strasse} onChange={(e) => setStrasse(e.target.value)} /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Land *</span>
@@ -1375,7 +1375,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>PLZ und Ort *</span>
                 <span className={classes.valueright}>
-                <input type={"text"} onChange={(e) => setPlz(e.target.value)} className={classes.inputplz}/>
+                <input type={"number"} value={plz} onChange={(e) => setPlz(e.target.value)} className={classes.inputplz}/>
                 <Select 
                     styles={style}
                     options={laender}
@@ -1383,6 +1383,8 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                     defaultInputValue={laender[0].label}
                     className='w-full'
                     isSearchable={true}
+
+
                     onChange={(e) => setLand(e.value)}
                     />
                 </span>
@@ -2006,9 +2008,60 @@ indem Sie das Limit von 25 auf 50 Fotos erhöhen.<br></br><br></br>
       </div>
             </>}
             {stepActive == 5 && <>
-             <div className={classes.heading}>VERÖFFENTLICHEN</div>
-            <div className={classes.description}>Stelle deine Anzeige online</div>
-            <div className={classes.point}>Fast fertig...</div>
+             <div className={classes.heading}>Veröffentlichen</div>
+            <div className={classes.publishdescription}>
+              <PublishIcon className={classes.publishicon} />
+              <div className={classes.publishtext}>
+              Du bist fast fertig! Klicke als letzten Schritt auf BEZAHLEN UND VERÖFFENTLICHEN<br></br>
+und deine Anzeige ist in Kürze online! Solltest du noch etwas ändern wollen, <br></br>
+kannst du den gewünschten Schritt in der Navigation oben auswählen oder auf ZURÜCK klicken.
+              </div>
+            </div>
+            <div>
+              <Angebot 
+                title={brand + " " + model} 
+                price={preis} adNo={0} 
+                start={erstzulassungMonat} 
+                end={erstzulassungJahr} 
+                imgSrc={titelbild} 
+                description={beschreibung}
+                cardView={true}
+                details={
+                  {
+                    erstzulassung: erstzulassungMonat + " / " + erstzulassungJahr,
+                    leistung: leistungInKw,
+                    kraftstoff: treibstoff,
+                    fahrzeugzustand: zustand,
+                    kilometerstand: kilometerstand,
+                  }
+                }
+                location={"2700 Wiener Neustadt, Österreich"}
+                companyname={"Gigant Group Teknoloji A.S"}
+                />
+            </div>
+            <div className={classes.publishheading}>Rechnungsübersicht</div>
+            <div className={classes.rechnungcontainer}>
+              <div className={classes.produktheading}>
+                <span className={classes.bolder}>Produkte</span>
+                <span className={classes.bolder}>Preis in EUR €</span>
+              </div>
+              {cart.map((item, index) => <div className={classes.produktheadingwhite}>
+                <span className={classes.bolder}>{item.value + " " + item.name}</span>
+                <span className={classes.bolder}>{item.price +",00"}</span>
+              </div>)}
+              <div className={classes.produktheading}>
+                <span className={classes.bolder}>Rechnungsbetrag (inkl. USt.)</span>
+                <span className={classes.bolder}>{totalPrice + ",00"}</span>
+              </div>
+            </div>
+
+            <div className={classes.electronic}>
+              <label className='flex items-center'>
+                <input type={"checkbox"} onChange={() => setElektronischeRechnungAngefordert(d => !d)} />
+                <span className={"ml-2"}>elektronische Rechnung anfordern</span>
+              </label>
+            </div>
+
             <div className='flex items-center'>
             {stepActive > 1 && <div className={`${classes.savebtn} mr-4`} onClick={() => {
                 if(stepActive != 1){
@@ -2020,7 +2073,7 @@ indem Sie das Limit von 25 auf 50 Fotos erhöhen.<br></br><br></br>
                         setStepActive(d => d + 1)
                     }
                     setShowValidationTextStep1(true); 
-                }} type={"submit"}>Weiter</button>
+                }} type={"submit"}>zur Zahlung</button>
             </div>
             </>}
             </>
