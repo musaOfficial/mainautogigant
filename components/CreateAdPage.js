@@ -1446,7 +1446,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                 {titelbild != null && <div className={classes.titelbildimg}>
                     <div className={classes.titleimg}>
                         <span className={classes.titelbildtext}>Titelbild</span>
-                        <img src={titelbild} layout='fill' objectFit='cover' className={`${classes.half}`}/>
+                        <img src={titelbild} className={`${classes.half}`}/>
                     </div>
                 </div>}
                 <div className={classes.delallimages} onClick={() => setSecurityQuestion(true)}>
@@ -1467,7 +1467,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                 </div>}
                 <div className={classes.imagescontainer}>
                 {images.map((img, index) => <div key={index} onClick={() => setTitelbild(img)} className={`${classes.imgcontainer} `}>
-                    <img src={img} layout="fill" objectFit="cover" className={`${img == titelbild && classes.borderyellow} ${classes.img}`} />
+                    <img src={img} className={`${img == titelbild && classes.borderyellow} ${classes.img}`} />
                     <div className={classes.del} onClick={() => delImg(index)} ><Bin className={classes.bin} />Löschen</div>
                 </div>)}
                 </div>
