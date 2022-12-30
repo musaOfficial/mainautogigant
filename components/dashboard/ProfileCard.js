@@ -1,8 +1,9 @@
+import classes from './ProfileCard.module.css';
 export default function ProfileCard({ userThumb, userFullName }) {
   return (
-    <div className="bg-theme-gray-3 overflow-hidden lg:px-6 md:!px-0">
+    <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0">
       <div className="relative w-10/12 md:p-0 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col items-center bg-user-input">
-        <div className="flex w-full h-full items-center justify-between p-8 md:p-4 text-white bg-theme-gray-6">
+        <div className={`flex w-full h-full items-center justify-between p-8 md:p-4 text-white ${classes.backgroundcolor} `}>
           <div className="flex items-center justify-center mr-8 md:mr-4">
             <img className="shadow-md shadow-black border-4 border-theme-gray-4 rounded-full" src={userThumb} />
           </div>
@@ -22,7 +23,7 @@ export default function ProfileCard({ userThumb, userFullName }) {
             </button>
           </div>
           <div className="flex items-center justify-center ml-4 md:hidden">
-            <img src="/images/dashboard-right-img.png" />
+            <img src="/images/dashboard-right-img.png" className='opacity-0' />
           </div>
         </div>
       </div>

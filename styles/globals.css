@@ -323,3 +323,6 @@ input[type=number]::-webkit-outer-spin-button {
   object-fit: cover;
 }
 
+input:invalid{
+  border: 2px solid #FF0000;
+}

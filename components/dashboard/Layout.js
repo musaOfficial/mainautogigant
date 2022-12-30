@@ -13,9 +13,14 @@ export default function DashboardLayout({ children }) {
       />
       <div className="bg-theme-gray-10 md:bg-white">
         <div className="w-16/170 max-w-ag-container lg:w-full mx-auto flex md:flex-wrap justify-between bg-white">
-          <div className="flex w-full">
+          <div className="flex w-full relative">
             <Sidebar />
-            <div className={classes.container}>{children}</div>
+            <div className={classes.container}>
+              {children}
+              <div className={classes.rounder}>
+                <div className={classes.rounding}></div>
+              </div></div>
+            
           </div>
         </div>
       </div>

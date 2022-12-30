@@ -48,21 +48,7 @@ import Angebot from './ui/ads/Angebot';
 import Page from './pagesearch/PageSearch';
 
 function SearchResults(){
-    const style = {
-        control: (base) => ({
-          ...base,
-          boxShadow: "none",
-          border: "none",
-          fontSize: '13px',
-          borderRadius: '10px',
-        }),
-        option: (styles, state) => ({
-          ...styles,
-          backgroundColor: state.isSelected ? "#fbb900" : "",
-          "&:active": "#fbb90080",
-          fontSize: '13px',
-        }),
-      };
+ 
 
     const halfSelectStyle1 = {
     control: (base) => ({

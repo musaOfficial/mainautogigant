@@ -115,13 +115,6 @@ dass Ihr Inserat sofort gesehen wird.</p>
     padding-bottom: 0px;
 }
 
-/* {typeOpen1 == false ? <div className={classes.productsclosed}>
-                  <div className={classes.productnameclosed}>1 Woche</div>
-                  <div className={classes.productpriceclosed}>25,00 €</div>
-                  <Expand className={classes.expand} />
-                </div> : <div></div>} */
-
-
 .productsclosed{
     background-color: #6C757D;
     width: 100%;
