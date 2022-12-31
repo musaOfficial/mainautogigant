@@ -1,6 +1,5 @@
 .container{
     width: 100%;
-    padding: 30px;
     position: relative;
 }
 
@@ -9,9 +8,14 @@
     width: 20px;
     height: 20px;
     background-color: rgba(108, 117, 125, 0.75);
+    z-index: 0;
     top: 0;
     left: 0;
 
+}
+
+.zindex{
+    z-index: 10;
 }
 
 .rounding{

@@ -16,7 +16,9 @@ export default function DashboardLayout({ children }) {
           <div className="flex w-full relative">
             <Sidebar />
             <div className={classes.container}>
+              <div className={classes.zindex}>
               {children}
+              </div>
               <div className={classes.rounder}>
                 <div className={classes.rounding}></div>
               </div></div>

@@ -2058,7 +2058,7 @@ kannst du den gewünschten Schritt in der Navigation oben auswählen oder auf ZU
             <div className={classes.electronic}>
               <label className='flex items-center'>
                 <input type={"checkbox"} onChange={() => setElektronischeRechnungAngefordert(d => !d)} />
-                <span className={"ml-2"}>elektronische Rechnung anfordern</span>
+                <span className={"ml-2"}>elektronische Rechnung anfordern</span>1 
               </label>
             </div>
 

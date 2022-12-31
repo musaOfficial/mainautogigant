@@ -63,9 +63,7 @@ function SearchResults(){
           "&:active": "#fbb90080",
           fontSize: '13px',
         }),
-      };
-      
-
+    };
     
     const halfSelectStyle1 = {
     control: (base) => ({

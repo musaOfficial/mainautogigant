@@ -4,6 +4,7 @@ import Checkbox from "./ui/Checkbox";
 import Input from "./ui/Input";
 import classes from './Login.module.css'
 import Shop from './../public/aboutus/shop.svg'
+import ShopWithLine from './../public/shopwithline.svg'
 
 export default function Login() {
   const [passWordSave, setPasswordSave] = useState(false);
@@ -52,7 +53,7 @@ export default function Login() {
             <div className={`w-full flex items-center mt-8 bg-theme-gray-4 p-4  ${classes.fontsize} rounded-10 text-sm sm:flex-col`}>
               <Link href={"/dealer-login"}>
                 <button className={`w-1/2 sm:w-full sm:mb-4 ${classes.haendlerloginbtn} ${classes.loginbtn} ${classes.fontsize20} mr-2 sm:mr-0 inline-block px-10 sm:px-4 sm:text-sm py-3 rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3`}>
-                  <Shop />Händler - Login
+                 <ShopWithLine className={classes.shopwithline} /> Händler - Login
                 </button>
               </Link>
               <div className={`w-1/2 ml-2 sm:w-full sm:ml-0  ${classes.fontsize13}`}>

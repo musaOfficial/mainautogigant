@@ -1,5 +1,4 @@
 .container{
-    background-color: #F1F2F3;
     padding: 20px;
     border-radius: 10px;
     display: flex;
@@ -9,6 +8,7 @@
     margin-bottom: -20px;
     margin-top: -20px;
     transition: all .1s ease-in;
+    width: 100%;
 }
 
 .container:hover .actioncontainer, .container:hover .carinfocontainer, .container:hover .carimg{
@@ -27,12 +27,18 @@
 }
 
 .carimg{
-    width: 208px;
-    height: 168px;
+    height: 145px;
+    width: 200px;
     position: relative; 
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+    border-radius: 0px;
+    border-radius: 10px 0 0 10px;
+}
+
+.bgred:hover{
+    background-color: #FF0000 !important;
 }
 
 .lefticon{
@@ -80,7 +86,7 @@
 .actioncontainer{
     position: relative;
     width: 40px;
-    height: 145px;
+    height: 100px;
     background-color: #6C757D;
     display: flex;
     flex-direction: column;
