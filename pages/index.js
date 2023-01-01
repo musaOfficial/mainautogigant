@@ -14,6 +14,10 @@ export default function Home() {
         <title>Auto Gigant</title>
         <meta name="description" content="Auto Gigant" />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.css"
+        />
       </Head>
       <Header />
       <Homepage />

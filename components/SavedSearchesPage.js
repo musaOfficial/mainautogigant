@@ -6,6 +6,8 @@ function SavedSearchesPage(){
             model: [["i8", "X6"], [""]],
             id: 0,
             description: "",
+            erstzulassungAb: "12/2015",
+            land: "Österreich",
             saveDate: "11.04.2022",
             equipments: ["Allrad"]
         },
@@ -14,6 +16,8 @@ function SavedSearchesPage(){
             model: [["i8", "X6"]],
             id: 1,
             description: "",
+            erstzulassungAb: "12/2015",
+            land: "Österreich",
             saveDate: "11.07.2022",
             equipments: ["Allrad"]
         },
@@ -22,8 +26,10 @@ function SavedSearchesPage(){
             model: [["R8"]],
             id: 2,
             description: "",
+            erstzulassungAb: "12/2015",
+            land: "Österreich",
             saveDate: "11.04.2022",
-            equipments: ["Allrad"]
+            equipments: ["Allrad"],
         },
     ]
     return (
@@ -38,12 +44,14 @@ function SavedSearchesPage(){
                     }
                 }
                 )}</div>
-                {search.equipments.length == 0 ? null : <a className={classes.weiteresuchkriterien}>Ihre weiteren Suchkriterien</a>}
-                <div className={classes.liner}></div>
+                <div className={classes.grid}>
+                    <div className={classes.erstzulassungrow}>Erstzulassung Ab: {search.erstzulassungAb}</div>
+                    <div className={classes.land}>Land: {search.land}</div>
+                </div>
                 <div className={classes.functionalities}>
-                    <div className={classes.date}>Gespeichert am: <span className='font-bold'>{search.saveDate}</span></div>
-                    <div className={classes.bearbeiten}>Bearbeiten</div>
-                    <div className={classes.loeschen}>Löschen</div>
+                    <div className={classes.date}>Gespeichert am: <span className=''>{search.saveDate}</span></div>
+                    <div className={classes.anzeigenbtn}>Bearbeiten</div>
+                    <div className={classes.loeschenbtn}>Löschen</div>
                     <button className={classes.anzeigenbtn}>Ergebnisse anzeigen</button>
                 </div>
             </div>)}

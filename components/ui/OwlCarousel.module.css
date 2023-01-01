@@ -1,0 +1,246 @@
+.slider_container {
+    /* width: 100%; */
+    background-color: #f1f2f3;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    background-color: #f1f2f3;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    gap: 20px;
+}
+
+.cart_slide {
+    padding: 10px 40px;
+    margin-top: -40px;
+}
+.card {
+    background-color: white;
+    border-radius: 8px;
+    width: 225px;
+    border: 2px solid transparent;
+}
+
+.card:hover {
+    background-color: #ffe497;
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: #fbb900;
+}
+
+.imgcontainer {
+    height: 150px;
+    width: 221px;
+    position: relative;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+}
+
+.cardmenuremove {
+    display: none;
+}
+
+.cardmenu {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.09);
+    padding: 10px;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(40px, 35px);
+    z-index: 99;
+}
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.menuItem span:hover {
+    color: #0067b8;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6c757d;
+    border-radius: 0 10px 0 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.icon {
+    padding: 8px 12px 6px 12px;
+    cursor: pointer;
+}
+.icon:hover {
+    background-color: #fbb900;
+}
+
+.icon:nth-child(1) {
+    border-right: 1px solid white;
+    border-radius: 0 0 0 10px;
+}
+
+.icon:nth-child(2) {
+    border-radius: 0 10px 0 0;
+}
+
+.iconHover {
+    border-radius: 0 8px 0 0;
+    padding: 8px 12px 6px 12px;
+    cursor: pointer;
+    background-color: #fbb900;
+}
+
+.tag {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #fbb900;
+    border-radius: 10px 0 0 0;
+    padding: 3px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.flex,
+.flex3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    color: #6c757d;
+}
+
+.flex span,
+.flex3 span {
+    padding: 3px;
+}
+
+.flex span:nth-child(1) {
+    border-right: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.flex3 span:nth-child(1),
+.flex3 span:nth-child(2) {
+    border-right: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.heading {
+    font-size: 20px;
+    color: #6c757d;
+    text-align: center;
+}
+
+.description {
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    text-align: center;
+    color: #6c757d;
+    font-size: 13px;
+}
+
+.km {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    text-align: center;
+    color: #6c757d;
+    padding: 3px;
+}
+
+.address {
+    color: #0067b8;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.address:nth-child(1) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.card:hover .flex {
+    border-bottom: 1px solid #fff;
+}
+.card:hover .flex3 {
+    border-bottom: 1px solid #fff;
+}
+.card:hover .km {
+    border-bottom: 1px solid #fff;
+}
+.card:hover .description {
+    border-bottom: 1px solid #fff;
+}
+.card:hover .address:nth-child(1) {
+    border-bottom: 1px solid #fff;
+}
+
+.card:hover .flex3 span:nth-child(1) {
+    border-right: 1px solid #fff;
+}
+.card:hover .flex span:nth-child(1) {
+    border-right: 1px solid #fff;
+}
+.card:hover .flex3 span:nth-child(2) {
+    border-right: 1px solid #fff;
+}
+
+.slider_accordian {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.slider_accordian .btn {
+    width: 80%;
+    background-color: #6c757d !important;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.slider_accordian .btn:hover {
+    background-color: #fbb900 !important;
+}
+.slider_accordian .btn .btnName {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.slider_accordian .btn .btnName span {
+    font-size: 20px;
+    font-weight: bolder;
+}

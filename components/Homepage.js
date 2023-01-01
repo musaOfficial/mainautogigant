@@ -12,15 +12,17 @@ import SearchIcon from './../public/searchicon.svg';
 import HomeSwiper from './home/HomeSwiper';
 import { SwiperSlide } from 'swiper/react';
 import Angebot from './ui/ads/Angebot';
+import OwlSlider from './ui/OwlCarousel';
 
 function Homepage(){
     const style = {
         control: (base) => ({
           ...base,
           boxShadow: "none",
-          border: "none",
+          border: "1px solid #fff",
           fontSize: '13px',
           borderRadius: '10px',
+          backgroundColor: "transparent",
         }),
         option: (styles, state) => ({
           ...styles,
@@ -73,6 +75,7 @@ function Homepage(){
 
     const [anzahlGefundeneFahrzeuge, setAnzahlGefundeneFahrzeuge] = useState(21158);
     var displayAnzahlGefundeneFahrzeuge = anzahlGefundeneFahrzeuge.toLocaleString();
+    const [newsletterEmail, setNewsletterEmail] = useState();
 
     const angeboteFirstRow = [
         {
@@ -853,13 +856,17 @@ function Homepage(){
 
     const [row, setRow] = useState(0);
 
+    
+
     return (
         <>
             {/* Create components in the home folder: components/home/yourcomponent */}
             <div className={classes.container}>
-                <div className={`${classes.contentcontainer} w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col`}>
-                    <div className={classes.searcharea}>
-                        <img src={"/front.png"} className={classes.frontimg} />
+                <div className={`${classes.contentcontainer} w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto relative flex lg:flex-col`}>
+                    <form className={classes.searcharea}>
+                        <div className={classes.frontimage}>
+                            <img src={"/front.png"} className={classes.frontimg} />
+                        </div>
                         <div className={classes.selectioncontainer}>
                             <div className={classes.carlist}>
                                 <div className={classes.car}>
@@ -905,7 +912,7 @@ function Homepage(){
                                 className={`${classes.marginright} w-full  ${classes.selectinput}`}
                             />
                             <span className={`w-full relative ${classes.suchbegriff} `}>
-                                <input type={"text"} value={suchbegriff} onChange={(e) => setSuchbegriff(e.target.value)} placeholder={"Suchbegriff"} className={classes.input} />
+                                <input type={"text"} onChange={(e) => setSuchbegriff(e.target.value)} placeholder={"Suchbegriff"} className={classes.input} />
                                 <SearchIcon className={classes.searchicon} />
                             </span>
                         </div>
@@ -949,107 +956,209 @@ function Homepage(){
                                 <span>{displayAnzahlGefundeneFahrzeuge} Fahrzeuge anzeigen</span>
                             </button>
                         </div>
-                    </div>
+                    </form>
                     <div className={classes.swiperarea}>
-                        <HomeSwiper>
-                            {angeboteFirstRow.map((item, index) => <SwiperSlide className={classes.ad} key={index}>
-                                <Angebot 
-                                    title={item.title}
-                                    price={item.preis}
-                                    adNo={index}
-                                    start={item.start}
-                                    end={item.end}
-                                    imgSrc={item.imgSrc}
-                                    cardView={false}
-                                    description={"That is a description"}
-                                    details={
-                                        {
-                                            erstzulassung: erstzulassenAb,
-                                            kraftstoff: "Diesel",
-                                            leistung: "128 PS",
-                                            fahrzeugzustand: "Neu",
-                                            getriebe: "adfas",
-                                            kilometerstand: 1234,
-                                        }
+                        <OwlSlider>
+                            {angeboteFirstRow.map((item, index) => <Angebot 
+                                title={item.title}
+                                price={item.preis}
+                                adNo={index}
+                                start={item.start}
+                                end={item.end}
+                                imgSrc={item.imgSrc}
+                                cardView={false}
+                                description={"That is a description"}
+                                details={
+                                    {
+                                        erstzulassung: erstzulassenAb,
+                                        kraftstoff: "Diesel",
+                                        leistung: "128 PS",
+                                        fahrzeugzustand: "Neu",
+                                        getriebe: "adfas",
+                                        kilometerstand: 1234,
                                     }
-                                />
-                            </SwiperSlide>)}
-                        </HomeSwiper>
-                        <HomeSwiper>
-                        {angeboteSecondRow.map((item, index) => <SwiperSlide className={classes.ad} key={index}>
-                                <Angebot 
-                                    title={item.title}
-                                    price={item.preis}
-                                    adNo={index}
-                                    start={item.start}
-                                    end={item.end}
-                                    imgSrc={item.imgSrc}
-                                    cardView={false}
-                                    description={"That is a description"}
-                                    details={
-                                        {
-                                            erstzulassung: erstzulassenAb,
-                                            kraftstoff: "Diesel",
-                                            leistung: "128 PS",
-                                            fahrzeugzustand: "Neu",
-                                            getriebe: "adfas",
-                                            kilometerstand: 1234,
-                                        }
+                                }
+                            />)}
+                        </OwlSlider>
+                        <OwlSlider>
+                            {angeboteSecondRow.map((item, index) => <Angebot 
+                                title={item.title}
+                                price={item.preis}
+                                adNo={index}
+                                start={item.start}
+                                end={item.end}
+                                imgSrc={item.imgSrc}
+                                cardView={false}
+                                description={"That is a description"}
+                                details={
+                                    {
+                                        erstzulassung: erstzulassenAb,
+                                        kraftstoff: "Diesel",
+                                        leistung: "128 PS",
+                                        fahrzeugzustand: "Neu",
+                                        getriebe: "adfas",
+                                        kilometerstand: 1234,
                                     }
-                                />
-                            </SwiperSlide>)}
-                        </HomeSwiper>
-                        {row >= 1 && <HomeSwiper>
-                        {angeboteThirdRow.map((item, index) => <SwiperSlide className={classes.ad} key={index}>
-                                <Angebot 
-                                    title={item.title}
-                                    price={item.preis}
-                                    adNo={index}
-                                    start={item.start}
-                                    end={item.end}
-                                    imgSrc={item.imgSrc}
-                                    cardView={false}
-                                    description={"That is a description"}
-                                    details={
-                                        {
-                                            erstzulassung: erstzulassenAb,
-                                            kraftstoff: "Diesel",
-                                            leistung: "128 PS",
-                                            fahrzeugzustand: "Neu",
-                                            getriebe: "adfas",
-                                            kilometerstand: 1234,
-                                        }
+                                }
+                            />)}
+                        </OwlSlider>
+                       { row >= 1 && <OwlSlider>
+                            {angeboteThirdRow.map((item, index) => <Angebot 
+                                title={item.title}
+                                price={item.preis}
+                                adNo={index}
+                                start={item.start}
+                                end={item.end}
+                                imgSrc={item.imgSrc}
+                                cardView={false}
+                                description={"That is a description"}
+                                details={
+                                    {
+                                        erstzulassung: erstzulassenAb,
+                                        kraftstoff: "Diesel",
+                                        leistung: "128 PS",
+                                        fahrzeugzustand: "Neu",
+                                        getriebe: "adfas",
+                                        kilometerstand: 1234,
                                     }
-                                />
-                            </SwiperSlide>)}
-                        </HomeSwiper>}
-                        {row >= 2 && <HomeSwiper>
-                        {angeboteFourthRow.map((item, index) => <SwiperSlide className={classes.ad} key={index}>
-                                <Angebot 
-                                    title={item.title}
-                                    price={item.preis}
-                                    adNo={index}
-                                    start={item.start}
-                                    end={item.end}
-                                    imgSrc={item.imgSrc}
-                                    cardView={false}
-                                    description={"That is a description"}
-                                    details={
-                                        {
-                                            erstzulassung: erstzulassenAb,
-                                            kraftstoff: "Diesel",
-                                            leistung: "128 PS",
-                                            fahrzeugzustand: "Neu",
-                                            getriebe: "adfas",
-                                            kilometerstand: 1234,
-                                        }
-                                    }w
-                                />
-                            </SwiperSlide>)}
-                        </HomeSwiper>}
-                        {row <= 1 && <button className={classes.weiterebtn} onClick={() => setRow(d => d + 1)}>
+                                }
+                            />)}
+                        </OwlSlider>}
+                        {row >= 2 && <OwlSlider>
+                            {angeboteFourthRow.map((item, index) => <Angebot 
+                                title={item.title}
+                                price={item.preis}
+                                adNo={index}
+                                start={item.start}
+                                end={item.end}
+                                imgSrc={item.imgSrc}
+                                cardView={false}
+                                description={"That is a description"}
+                                details={
+                                    {
+                                        erstzulassung: erstzulassenAb,
+                                        kraftstoff: "Diesel",
+                                        leistung: "128 PS",
+                                        fahrzeugzustand: "Neu",
+                                        getriebe: "adfas",
+                                        kilometerstand: 1234,
+                                    }
+                                }
+                            />)}
+                        </OwlSlider>}
+                        <div className={classes.row}>
+                        {row < 2 && <button className={classes.weiterebtn} onClick={() => setRow(d => d + 1)}>
                             + Weitere Fahrzeuge
                         </button>}
+                        </div>
+                    </div>
+                    <div className={classes.lastarea}>
+                        <div className={classes.bigtext}>Wir bieten eine große Auswahl an beliebten Modellen, Marken und Autohäusern.</div>
+                        <div className={classes.carscontainer}>
+                            
+                            <div><div className={classes.item}>
+                                <div className={classes.marke}>Audi</div>
+                                <div className={classes.modell}>Audi A1</div>
+                                <div className={classes.modell}>Audi A3</div>
+                                <div className={classes.modell}>Audi A4</div>
+                                <div className={classes.modell}>Audi A6</div>
+                                <div className={classes.modell}>Audi Q5</div>
+                                <div className={classes.modell}>Mehr Modelle</div>
+                            </div>
+                            <div className={classes.iteml}>
+                                <div className={classes.marke}>Aufbautypen</div>
+                                <div className={classes.modell}>Cabrio</div>
+                                <div className={classes.modell}>Limousine</div>
+                                <div className={classes.modell}>Pick-up</div>
+                                <div className={classes.modell}>SUV</div>
+                                <div className={classes.modell}>Transporter</div>
+                                <div className={classes.modell}>Mehr Aufbautypen</div>
+                            </div></div>
+                            <div><div className={classes.item}>
+                                <div className={classes.marke}>BMW</div>
+                                <div className={classes.modell}>BMW 1er</div>
+                                <div className={classes.modell}>BMW 2er</div>
+                                <div className={classes.modell}>BMW 3er</div>
+                                <div className={classes.modell}>BMW 5er</div>
+                                <div className={classes.modell}>BMW X1</div>
+                                <div className={classes.modell}>Mehr Modelle</div>
+                            </div>
+                            <div className={classes.iteml}>
+                                <div className={classes.marke}>Marken Europa</div>
+                                <div className={classes.modell}>Citroen</div>
+                                <div className={classes.modell}>Fiat</div>
+                                <div className={classes.modell}>Peugeot</div>
+                                <div className={classes.modell}>Renault</div>
+                                <div className={classes.modell}>Skoda</div>
+                                <div className={classes.modell}>Mehr Marken</div>
+                            </div></div>
+                            <div><div className={classes.item}>
+                                <div className={classes.marke}>Mercedes-Benz</div>
+                                <div className={classes.modell}>Mercedes B-Klasse</div>
+                                <div className={classes.modell}>Mercedes C-Klasse</div>
+                                <div className={classes.modell}>Mercedes CLA</div>
+                                <div className={classes.modell}>Mercedes E-Klasse</div>
+                                <div className={classes.modell}>Mercedes GLA</div>
+                                <div className={classes.modell}>Mehr Modelle</div>
+                            </div>
+                            <div className={classes.iteml}>
+                                <div className={classes.marke}>Marken Asien</div>
+                                <div className={classes.modell}>Hyundai</div>
+                                <div className={classes.modell}>Mazda</div>
+                                <div className={classes.modell}>Mitsubishi</div>
+                                <div className={classes.modell}>Nissan</div>
+                                <div className={classes.modell}>Toyota</div>
+                                <div className={classes.modell}>Mehr Marken</div>
+                            </div></div>
+                            <div>
+                            <div className={classes.item}>
+                                <div className={classes.marke}>VW</div>
+                                <div className={classes.modell}>VW Golf</div>
+                                <div className={classes.modell}>VW Polo</div>
+                                <div className={classes.modell}>VW Passat</div>
+                                <div className={classes.modell}>VW Touran</div>
+                                <div className={classes.modell}>VW up!</div>
+                                <div className={classes.modell}>Mehr Modelle</div>
+                            </div>
+                            <div className={classes.iteml}>
+                                <div className={classes.marke}>Autohäuser</div>
+                                <div className={classes.modell}>Autohäuser in Wien</div>
+                                <div className={classes.modell}>Autohäuser in Graz</div>
+                                <div className={classes.modell}>Autohäuser in Linz</div>
+                                <div className={classes.modell}>Autohäuser in Salzburg</div>
+                                <div className={classes.modell}>Autohäuser in Wiener Neustadt</div>
+                                <div className={classes.modell}>Mehr Autohäuser</div>
+                            </div>
+                            </div>
+                            <div><div className={classes.item}>
+                                <div className={classes.marke}>Ford</div>
+                                <div className={classes.modell}>Ford Ecosport</div>
+                                <div className={classes.modell}>Ford Fiesta</div>
+                                <div className={classes.modell}>Ford Focus</div>
+                                <div className={classes.modell}>Ford Ka</div>
+                                <div className={classes.modell}>Ford Mondeo</div>
+                                <div className={classes.modell}>Mehr Modelle</div>
+                            </div>
+                            <div className={classes.iteml}>
+                                <div className={classes.marke}>GIGANT WORLD</div>
+                                <div className={classes.modell}>E GIGANT.</div>
+                                <div className={classes.modell}>IMMO GIGANT.</div>
+                                <div className={classes.modell}>GASTRO GIGANT.</div>
+                                <div className={classes.modell}>HOSTING GIGANT.</div>
+                                <div className={classes.modell}>GIGANT SHOP.</div>
+                                <div className={classes.modell}>Mehr Plattformen</div>
+                            </div></div>
+                        </div>
+                        <div className={classes.bigtext}>Autogigant.at wird bald auch in Deutschland, der Schweiz, Türkiye und Qatar verfügbar sein.</div>
+                        <div className={classes.newslettercontainer}>
+                            <div className={classes.newsletterheading}>GIGANT WORLD - aktuell. gigantisch. kostenlos.</div>
+                            <div className={classes.newslettertext}>Newsletter abonnieren, immer informiert bleiben und € 50,- GIGA COINS gewinnen!*</div>
+                            <div className={classes.inputrow}>
+                                <input type={"email"} value={newsletterEmail} onChange={(e) => setNewsletterEmail(e.target.value)} placeholder={"Deine E-Mail Adresse"} className={classes.newsletterinput} />
+                                <button className={classes.mailbtn}>Newsletter Anmelden</button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 .container{
     width: 100%;
     position: relative;
+    background-color: #F1F2F3;
 }
 
 .rounder{
@@ -21,7 +22,7 @@
 .rounding{
     width: 20px;
     height: 20px;
-    background-color: #fff;
+    background-color: #F1F2F3;
     border-radius: 10px 0 0 0;
 }
 

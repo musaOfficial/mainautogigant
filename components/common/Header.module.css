@@ -10,7 +10,7 @@
 @media (max-width: 800px){
     .margintop{
         margin-top: 2px;
-        width: 90%;
+        width: 50%;
         justify-content: space-between;
     }
     .headerbtn{
