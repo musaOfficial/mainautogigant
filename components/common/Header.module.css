@@ -5,6 +5,9 @@
     .headerbtn{
         box-shadow: 0 2px 8px #000;
     }
+    .margintop{
+        width: 60%;
+    }
 }
 
 @media (max-width: 800px){
@@ -176,7 +179,7 @@
     }
 
     .margintop{
-        width: 70%;
+        width: 50%;
     }
     .textareasearch{
         position: absolute;
@@ -251,8 +254,14 @@
     }
 }
 
+.margintop{
+    min-width: 40%;
+
+}
+
 .headerbtn{
     box-shadow: 7px 25px 20px rgb(0, 0, 0, 0.2);
+    width: 100%;
 }
 
 .headericon{
@@ -313,5 +322,34 @@
 @media(max-width: 653px){
     .threeicons{
         flex-basis: 40%;
+    }
+
+    .margintop{
+        width: 60%;
+    }
+}
+
+@media(max-width:723px){
+    .margintop{
+        width: 70%;
+    }
+}
+
+@media(max-width: 500px){
+    .margintop{
+        width: 120%;
+    }
+}
+
+@media(max-width: 440px){
+    .logo{
+        width: 40%;
+        height: auto;
+    }
+}
+
+@media(max-width: 410px){
+    .logo{
+        width: 35%;
     }
 }

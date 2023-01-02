@@ -61,7 +61,7 @@ export default function Header() {
           <X className={classes.searchx} onClick={() => setOpenTextarea(false)}/>
         </div>
       </div>}
-      <div className={`max-w-ag-container w-10/12 lg:w-full mx-auto flex justify-between items-end py-6 md:py-4 md:pb-2 md:items-start ${classes.maxwag} `}>
+      <div className={`max-w-ag-container w-10/12 lg:w-full mx-auto flex  justify-between items-end md:items-center py-6 md:py-4 md:pb-2 md:items-start ${classes.maxwag} `}>
         <Link href="/">
           <img
             className={`w-60 md:w-32 cursor-pointer ${classes.logo}`}
@@ -71,7 +71,9 @@ export default function Header() {
         </Link>
         <div className={`flex items-center ${classes.margintop}`}>
           <div className={`flex md:ml-6 lg:mr-0 ${classes.threeicons}`}>
-            <button className="mr-4">
+            {width >= 615 && <>
+            
+              <button className="mr-4">
               {width >= 950 && <div className="container">
                 <div className={`row ${classes.searchhover}`}>
                   <input type={"text"} className="in" placeholder={"Suchen"} />
@@ -85,7 +87,9 @@ export default function Header() {
               setOpenTextarea(d => !d);
             }} />}
             </button>
-            <Link href={"/dashboard/notifications"}>
+            </>}
+            {width >= 615 &&   <>
+              <Link href={"/dashboard/notifications"}>
               <button className="w-8 md:w-6 mr-4">
                 <NotificationsIcon className={classes.headericon}/>
               </button>
@@ -95,12 +99,13 @@ export default function Header() {
                 <FavoriteIcon className={classes.headericon}/>
               </button>
             </Link>
+            </>}
           </div>
           <div className={`w-60 ${classes.widthauto} ${classes.headerbtn} relative group flex items-center justify-end md:flex-1 h-14 rounded-tl-20 rounded-tr-20 hover:bg-theme-gray-10 px-2 pb-2 pb-0 `}>
             <button className="inline-flex justify-end">
               <AccountIcon className={classes.headericon} />
             </button>
-            <div className={`${classes.headerbtn} w-full sm:!w-40 md:pl-4 sm:rounded-tl-20 md:text-10 absolute z-50 uppercase invisible opacity-0 py-10 md:py-6 group-hover:visible group-hover:opacity-100 flex flex-col top-full overflow-hidden -mt-2 right-0 text-white rounded-bl-20 bg-theme-gray-10 ease-linear`}>
+            <div className={`${classes.headerbtn} w-full sm:!w-40 md:pl-4 md:text-10 absolute z-50 uppercase invisible opacity-0 py-10 md:py-6 group-hover:visible group-hover:opacity-100 flex flex-col top-full overflow-hidden -mt-2 right-0 text-white rounded-bl-20 bg-theme-gray-10 ease-linear`}>
               <Link href="/">
                 <a className={`px-4 ${classes.opacityhover} text-sm  py-1 md:px-1 ease-in duration-300 hover:bg-theme-yellow hover:fill-white hover:text-white  fill-white inline-flex items-center border-b border-opacity-60 hover:border-opacity-0 border-white`}>
                   <svg className="mr-2" xmlns="http://www.w3.org/2000/svg" width="15.059" height="14.129" viewBox="0 0 12.059 11.129">
