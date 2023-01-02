@@ -162,7 +162,7 @@ function RechargeGigaCoinsPage(){
             </div>
             {/* RECHNUNGENLISTE */}
             <div className={classes.scrollbehavior}>
-            {suche == "" && !searchActivated && selectedYear == "" ? rechnungen.map((rechnung, index) => <div className={classes.rechnung}>
+            {suche == "" && !searchActivated && selectedYear == "" ? rechnungen.map((rechnung, index) => <div key={index} className={classes.rechnung}>
                 <div className={classes.bezahlt}></div>
                 <div className={classes.zahlungschecker}>
                     {rechnung.type == "add" ? <GreenCheck className={classes.greencheck} /> : <RedCheck className={classes.redcheck} />}
@@ -179,7 +179,7 @@ function RechargeGigaCoinsPage(){
                     <div className={classes.csv}><Download />.CSV</div>
                 </div>
                 <div className={classes.betrag}>{rechnung.betrag + " €"}</div>
-            </div>) : matchedFilters.map((rechnung, index) => <div className={classes.rechnung}>
+            </div>) : matchedFilters.map((rechnung, index) => <div key={index} className={classes.rechnung}>
                 <div className={rechnung.bezahlt ? classes.bezahlt : classes.nichtbezahlt}></div>
                 <div className={classes.zahlungschecker}>
                     {rechnung.bezahlt == true ? <GreenCheck className={classes.greencheck} /> : <RedCheck className={classes.redcheck} />}
