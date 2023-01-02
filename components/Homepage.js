@@ -13,6 +13,8 @@ import HomeSwiper from './home/HomeSwiper';
 import { SwiperSlide } from 'swiper/react';
 import Angebot from './ui/ads/Angebot';
 import OwlSlider from './ui/OwlCarousel';
+import FrontImg from './../public/fronting.svg';
+import FrontPic from './../public/front.png';
 
 function Homepage(){
     const style = {
@@ -23,6 +25,8 @@ function Homepage(){
           fontSize: '13px',
           borderRadius: '10px',
           backgroundColor: "transparent",
+          
+
         }),
         option: (styles, state) => ({
           ...styles,
@@ -856,43 +860,20 @@ function Homepage(){
 
     const [row, setRow] = useState(0);
 
-    
-
     return (
         <>
             {/* Create components in the home folder: components/home/yourcomponent */}
-            <div className={classes.container}>
-                <div className={`${classes.contentcontainer} w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto relative flex lg:flex-col`}>
-                    <form className={classes.searcharea}>
-                        <div className={classes.frontimage}>
-                            <img src={"/front.png"} className={classes.frontimg} />
-                        </div>
-                        <div className={classes.selectioncontainer}>
-                            <div className={classes.carlist}>
-                                <div className={classes.car}>
-                                    <Limo className={classes.suv} />
-                                    <div className={classes.cartext}>Limousine</div>
-                                </div>
-                                <div className={classes.car}>
-                                    <Suv className={classes.suv} />
-                                    <div className={classes.cartext}>SUV</div>
-                                </div>
-                                <div className={classes.car}>
-                                    <KombiVan className={classes.suv} />
-                                    <div className={classes.cartext}>Kombi Van</div>
-                                </div>
-                                <div className={classes.car}>
-                                    <Coupe className={classes.suv} />
-                                    <div className={classes.cartext}>Coupè</div>
-                                </div>
-                                <div className={classes.car}>
-                                    <Cabrio className={classes.suv} />
-                                    <div className={classes.cartext}>Cabrio</div>
-                                </div>
-                                <div className={classes.car}>
-                                    <Kleinbus className={classes.suv} />
-                                    <div className={classes.cartext}>Kleinbus</div>
-                                </div>
+            <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0">
+                <div className={`${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white`}>
+                    <div className={classes.searcharea}>
+                        <div className={classes.selectsection}>
+                            <div className={classes.cars}>
+                                <Limo className={classes.car} />
+                                <Suv className={classes.car} />
+                                <KombiVan className={classes.car} />
+                                <Coupe className={classes.car} />
+                                <Cabrio className={classes.car} />
+                                <Kleinbus className={classes.car} />
                             </div>
                             <div className={classes.selectfields}>
                             <Select 
@@ -946,18 +927,17 @@ function Homepage(){
                             <span className={classes.bolder}>Erweiterte Suche</span>
                             <span className={classes.bolder}>Filter zurücksetzen</span>
                         </div>
+                            <div className={classes.sendarea}>
+                                <label className={classes.jarea}>
+                                    <input type={"checkbox"}  />
+                                    <span className={classes.jtext}>nur Neu- und Jungwagen</span>
+                                </label>
+                                <div className={classes.sendbtn}>{displayAnzahlGefundeneFahrzeuge} Fahrzeuge anzeigen</div>
+                            </div>
                         </div>
-                        <div className={classes.searchrow}>
-                            <label htmlFor='nur'>
-                                <input id='nur' type={"checkbox"} checked={nurNeuJungwagen} onChange={(e) => setNurNeuJungwagen(d => !d)} />
-                                <span className={"ml-2 text-white"}>nur Neu- und Jungwagen</span>
-                            </label>
-                            <button className={classes.searchbtn}>
-                                <span>{displayAnzahlGefundeneFahrzeuge} Fahrzeuge anzeigen</span>
-                            </button>
-                        </div>
-                    </form>
-                    <div className={classes.swiperarea}>
+                    </div>
+                   {/* CONTINUE HERE */}
+                   <div className={classes.swiperarea}>
                         <OwlSlider>
                             {angeboteFirstRow.map((item, index) => <Angebot 
                                 key={index}
@@ -1162,7 +1142,6 @@ function Homepage(){
                                 <button className={classes.mailbtn}>Newsletter Anmelden</button>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

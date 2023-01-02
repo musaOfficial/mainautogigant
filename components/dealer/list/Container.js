@@ -194,7 +194,7 @@ export default function DealerListContainer() {
   console.log(matches)
 
   return (
-    <div className="bg-theme-gray-3">
+    <div className="bg-theme-gray-10">
       <div className="lg:px-6 md:!px-0">
         <div className="w-10/12 lg:w-full max-w-ag-container mx-auto lg:pt-4 lg:px-4 px-8 bg-white pt-8 pb-12">
           <div className={classes.adbanner}>Werbung</div>
