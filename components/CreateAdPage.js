@@ -7,6 +7,12 @@ import Deleter from './../public/deleter.svg';
 import Bin from './../public/dealercard/bin.svg';
 import PublishIcon from './../public/publishexpand.svg';
 import Angebot from './ui/ads/Angebot'
+import Schloss from './../public/schloss.svg';
+import Sofort from './../public/sofort.svg';
+import Visa from './../public/visa.svg';
+import Klarna from './../public/klarna.svg';
+import Eps from './../public/eps.svg';
+import ApplePay from './../public/applepay.svg';
 
 function CreateAdPage(){
     const style = {
@@ -384,6 +390,7 @@ function CreateAdPage(){
     const [beschreibung, setBeschreibung] = useState();
 
     const [elektronischeRechnungAngefordert, setElektronischeRechnungAngefordert] = useState(false);
+    const [gutscheincode, setGutscheincode] = useState();
 
     return (
         <div className={classes.container}>
@@ -1975,6 +1982,7 @@ indem Sie das Limit von 25 auf 50 Fotos erhöhen.<br></br><br></br>
               }} />
             </div>
           </div>) : <h1 className={classes.warning}>WARENKORB LEER!</h1>}
+        
         </div>
         <div className={classes.orderright}>
             <div className={classes.right}>
@@ -1983,6 +1991,22 @@ indem Sie das Limit von 25 auf 50 Fotos erhöhen.<br></br><br></br>
             </div>
         </div>
       </div>
+      <div className={classes.littletext}>Nach Ablauf des Werbezeitraums wird dein Inserat zu einem Basis-Inserat</div>
+      <div className={classes.gutscheincode}>
+        <label className={classes.gclabel}>
+          <div className={classes.gutscheincodelabel} >Gutscheincode</div>
+          <input type={"text"} placeholder={"Gutscheincode"} onChange={(e) => setGutscheincode(e.target.value)} className={classes.gutscheincodeinput} />
+          <button className={classes.codebtn}>Code Einlösen</button>
+        </label>
+      </div>
+      <div className={classes.zahlungsmethoden}>
+                <span className={classes.zahl}><Schloss className={classes.schloss} /> <span className={classes.zahlungtext}>Sichere Zahlung<br></br>per SSL-Verschlüsselung</span></span>
+                <Sofort className={classes.sofort} />
+                <Visa className={classes.sofort} />
+                <Klarna className={classes.sofort} />
+                <Eps className={classes.sofort} />
+                <ApplePay className={classes.sofort} />
+            </div>
       <div className='flex items-center'>
       {stepActive > 1 && <div className={`${classes.savebtn} mr-4`} onClick={() => setStepActive(d => d - 1)}>Zurück</div>}
                 <button className={classes.savebtn} onClick={() => {
@@ -2054,6 +2078,7 @@ kannst du den gewünschten Schritt in der Navigation oben auswählen oder auf ZU
                 <span className={classes.bolder}>{totalPrice + ",00"}</span>
               </div>
             </div>
+          
 
             <div className={classes.electronic}>
               <label className='flex items-center'>

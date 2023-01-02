@@ -960,6 +960,7 @@ function Homepage(){
                     <div className={classes.swiperarea}>
                         <OwlSlider>
                             {angeboteFirstRow.map((item, index) => <Angebot 
+                                key={index}
                                 title={item.title}
                                 price={item.preis}
                                 adNo={index}
@@ -982,6 +983,7 @@ function Homepage(){
                         </OwlSlider>
                         <OwlSlider>
                             {angeboteSecondRow.map((item, index) => <Angebot 
+                                key={index}
                                 title={item.title}
                                 price={item.preis}
                                 adNo={index}
@@ -1004,6 +1006,7 @@ function Homepage(){
                         </OwlSlider>
                        { row >= 1 && <OwlSlider>
                             {angeboteThirdRow.map((item, index) => <Angebot 
+                                key={index}
                                 title={item.title}
                                 price={item.preis}
                                 adNo={index}
@@ -1026,6 +1029,7 @@ function Homepage(){
                         </OwlSlider>}
                         {row >= 2 && <OwlSlider>
                             {angeboteFourthRow.map((item, index) => <Angebot 
+                                key={index}
                                 title={item.title}
                                 price={item.preis}
                                 adNo={index}

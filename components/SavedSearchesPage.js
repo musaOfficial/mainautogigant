@@ -34,6 +34,8 @@ function SavedSearchesPage(){
     ]
     return (
         <div className={classes.container}>
+            <div className={classes.savedheading}>Gespeicherte Suchen</div>
+            <div className={classes.text}>Sie können Ihre gespeicherten Suchen hier löschen oder bearbeiten.</div>
             {savedSearches.map((search, index) => <div key={index} className={classes.savedsearch}>
                 <div className={classes.heading}>{search.brand[0] + " " + search.model[0][0]}</div>
                 <div className={classes.getmail}>Neue Angebote per E-Mail erhalten <input type={"checkbox"} /></div>

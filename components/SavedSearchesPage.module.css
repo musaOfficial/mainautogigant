@@ -13,9 +13,10 @@
 }
 
 .savedsearch{
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 20px;
 }
 
 .heading{
@@ -101,4 +102,13 @@
 
 .date{
     font-size: 13px;
+}
+
+.savedheading{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.text{
+    font-size: 15px;
 }

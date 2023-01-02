@@ -12,18 +12,20 @@
 }
 
 .searchinputarea{
-    width: 100%;
+    width: 50%;
     height: 40px;
     border-radius: 10px;
     display: flex;
     align-items: center;
-    background-color: #fff;
-    width: 100%;
+    background-color: rgba(255,255,255,0.75);
+    width: 60%;
 }
 
 .searchinput{
     width: 100%;
     height: 40px;
+    background-color: rgba(255,255,255,0.75);
+    border-radius: 10px;
 }
 
 .searchiconarea{
@@ -85,7 +87,7 @@
     justify-content: center;
     position: relative;
     cursor: pointer;
-    margin-right: 15%;
+    margin-right: 10%;
     margin-left: 20px;
 }
 
@@ -116,19 +118,28 @@
 .datelabel{
     display: flex;
     align-items: center;
-    flex-basis: 20%;
+    margin-right: 78px;
 }
 
 .expand{
     margin-right: 10px;
+    transition: all .1s ease-in;
+    cursor: pointer;
+}
+
+.expandopen{
+    transform: rotate(180deg);
+    margin-right: 10px;
+    transition: all .1s ease-in;
+    cursor: pointer;
 }
 
 .renrlabel{
-    margin-right: 15%;
+    margin-right: 8.4%;
 }
 
 .download{
-    margin-right: 15%;
+    margin-right: 19%;
 }
 
 .betrag{
@@ -137,10 +148,139 @@
 }
 
 .rechnung{
-    height: 40px;
+    height: 50px;
     width: 100%;
     background-color: #fff;
     border-radius: 10px;
-    overflow: hidden;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
+.bezahlt{
+    background-color: #29D62F;
+    width: 10px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 10px 0 0 10px;
+}
+.nichtbezahlt{
+    background-color: #FF0000;
+    width: 10px;
+    height: 50px;
+    border-radius: 10px 0 0 10px;
+    margin-right: 20px;
+}
+
+.greencheck{
+    height: 20px;
+    width: 20px;
+
+}
+.redcheck{
+    height: 20px;
+    width: 20px;
+}
+
+.zahlungschecker{
+    margin-right: 10%;
+}
+
+.date{
+    margin-right: 9.4%;
+}
+
+.rnnr{
+    margin-right: 8.4%;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    margin-right: 5%;
+}
+
+.pdf{
+    height: 30px;
+    background-color: #6C757D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 80px;
+    border-radius: 5px;
+    margin-right: 20px;
+    transition: all .1s ease-in;
+}
+
+.csv{
+    height: 30px;
+    background-color: #6C757D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 80px;
+    border-radius: 5px;
+    transition: all .1s ease-in;
+}
+
+.betrag{
+    font-weight: bold;
+}
+
+.pdf:hover{
+    background-color: #FBB900;
+    cursor: pointer;
+}
+
+.csv:hover{
+    background-color: #FBB900;
+    cursor: pointer;
+}
+
+.scrollbehavior{
+    max-height: 45.9vh;
+    overflow: auto;
+}
+
+.status{
+    margin-left: 10px;
+    margin-right: 60px;
+}
+
+.linebottom{
+    margin-top: 10px;
+    padding-top: 10px;
+    width: 100%;
+    border-top: 1px solid rgba(108, 117, 125, 0.5);
+}
+
+.greencheckexplanation{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.greenchecker{
+    height: 15px;
+    width: 15px;
+    margin-right: 7px;
+    font-size: 13px;
+}
+
+.redcheckexplanation{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.redchecker{
+    height: 15px;
+    width: 15px;
+    margin-right: 7px;
+}

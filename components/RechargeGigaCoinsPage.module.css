@@ -1,0 +1,407 @@
+.container{
+    padding: 30px;
+}
+
+.heading{
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 35px;
+}
+
+.text{
+    font-size: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(108, 117, 125, 0.5);
+    margin-bottom: 20px;
+}
+
+.container{
+    padding: 30px;
+}
+
+.heading{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.text{
+    font-size: 15px;
+}
+
+.searchinputarea{
+    width: 50%;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255,255,255,0.75);
+    width: 60%;
+}
+
+.searchinput{
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255,255,255,0.75);
+    border-radius: 10px;
+}
+
+.searchiconarea{
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchicon{
+    width: 25px;
+    height: 25px;
+}
+
+.suchbtn{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6C757D;
+    height: 40px;
+    border-radius: 0 10px 10px 0 ;
+    color: #fff;
+    font-weight: bold;
+    transition: all .1s ease-in;
+    cursor: pointer;
+}
+
+.suchbtn:hover{
+    background-color: #FBB900;
+}
+
+.searchandfilter{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+
+.leftarea{
+    width: 100%;
+    margin-right: 20px;
+    height: 40px;
+}
+
+.jahrselect{
+    width: 30%;
+    height: 40px;
+}
+
+.radiobtn{
+    border-radius: 100px;
+    overflow: hidden;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10%;
+    margin-left: 20px;
+}
+
+.radioinput{
+    width: 22px;
+    height: 22px;
+    outline: none;
+    border: none;
+    background: transparent;
+    border: none;
+    background-color: transparent;
+    background-color: #F1F2F3;
+    border: 1px solid #F1F2F3;
+    position: absolute;
+    cursor: pointer;
+}
+
+.infocontainer{
+    border-bottom: 1px solid rgba(108, 117, 125, 0.5);
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.datelabel{
+    display: flex;
+    align-items: center;
+    margin-right: 78px;
+}
+
+.expand{
+    margin-right: 10px;
+    transition: all .1s ease-in;
+    cursor: pointer;
+}
+
+.expandopen{
+    transform: rotate(180deg);
+    margin-right: 10px;
+    transition: all .1s ease-in;
+    cursor: pointer;
+}
+
+.renrlabel{
+    margin-right: 8.4%;
+}
+
+.download{
+    margin-right: 19%;
+}
+
+.betrag{
+    display: flex;
+    align-items: center;
+}
+
+.rechnung{
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.bezahlt{
+    background-color: #29D62F;
+    width: 10px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 10px 0 0 10px;
+}
+.nichtbezahlt{
+    background-color: #FF0000;
+    width: 10px;
+    height: 50px;
+    border-radius: 10px 0 0 10px;
+    margin-right: 20px;
+}
+
+.greencheck{
+    height: 20px;
+    width: 20px;
+
+}
+.redcheck{
+    height: 20px;
+    width: 20px;
+}
+
+.zahlungschecker{
+    margin-right: 10%;
+}
+
+.date{
+    margin-right: 9.4%;
+}
+
+.rnnr{
+    margin-right: 8.4%;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    margin-right: 5%;
+}
+
+.pdf{
+    height: 30px;
+    background-color: #6C757D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 80px;
+    border-radius: 5px;
+    margin-right: 20px;
+    transition: all .1s ease-in;
+}
+
+.csv{
+    height: 30px;
+    background-color: #6C757D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 80px;
+    border-radius: 5px;
+    transition: all .1s ease-in;
+}
+
+.betrag{
+    font-weight: bold;
+}
+
+.pdf:hover{
+    background-color: #FBB900;
+    cursor: pointer;
+}
+
+.csv:hover{
+    background-color: #FBB900;
+    cursor: pointer;
+}
+
+.scrollbehavior{
+    max-height: 45.9vh;
+    overflow: auto;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(108, 117, 125, 0.5);
+}
+
+.status{
+    margin-left: 10px;
+    margin-right: 60px;
+}
+
+.linebottom{
+    margin-top: 10px;
+    padding-top: 10px;
+    width: 100%;
+    border-top: 1px solid rgba(108, 117, 125, 0.5);
+}
+
+.greencheckexplanation{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.greenchecker{
+    height: 15px;
+    width: 15px;
+    margin-right: 7px;
+    font-size: 13px;
+}
+
+.redcheckexplanation{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.redchecker{
+    height: 15px;
+    width: 15px;
+    margin-right: 7px;
+}
+
+.bigcontainer{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.gigacoinrow{
+    display: flex;
+}
+
+.gigaleft{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 70px;
+    margin-top: 50px;
+}
+
+.gigaright{
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.gigaheading{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    line-height: 32px;
+
+}
+
+.gigacoins{
+    width: 200px;
+    height: 145.45px;
+    margin-bottom: 20px;
+}
+
+.gigaleft div{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.firstbtn{
+    background-color: #6C757D;
+    width: 70%;
+    color: #fff;
+    height: 50px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.firstbtn:hover{
+    background-color: #FBB900;
+}
+
+.boldtext{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.zahlungsmethoden{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    border-radius: 19px;
+    border: 1px solid rgba(108, 117, 125, 0.5);
+    padding: 20px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.zahlungtext{
+    font-size: 13px;
+    line-height: 18px;
+    margin-left: 10px;
+}
+
+.sofort{
+    width: 80px;
+    height: 40px;
+}
+
+.zahl{
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}

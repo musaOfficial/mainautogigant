@@ -19,7 +19,7 @@ function LatestAdvertisementsPage(){
             <div className={classes.heading}>Neuesten Inserate</div>
             <div className={classes.bigtext}>Aktuelle Fahrzeugangebote die auf AUTO GIGANT.</div>
             {latestAdvertisements.length != 0 ? <div className={classes.flex}>
-            {latestAdvertisements.map((fav, index) => <div className={classes.angebot}>
+            {latestAdvertisements.map((fav, index) => <div key={indexit} className={classes.angebot}>
                 <Angebot 
                     key={index}
                     title={fav.title} 

@@ -73,7 +73,7 @@ function FavouritesPage(){
                 Auf diese Weise werden Sie sofort über jegliche Änderungen informiert und bleiben stets auf dem neuesten Stand!
             </div>
             {favourites.length != 0 ? <div className={classes.flex}>
-            {favourites.map((fav, index) => <div className={classes.angebot}>
+            {favourites.map((fav, index) => <div key={index} className={classes.angebot}>
                 <FavAngebot 
                     key={index}
                     title={fav.title} 

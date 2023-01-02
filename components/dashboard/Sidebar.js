@@ -472,6 +472,35 @@ export default function Sidebar() {
           </Link>
         </div>
         <div className="p-6">
+        <Link href="/dashboard/my-subscriptions">
+            <a
+              className={`w-full h-12 mt-2 flex items-center mb-2 text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-white bg-theme-gray-10 hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
+                active === "/dashboard/my-subscriptions"
+                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
+                  : ""
+              }`}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="26.337"
+                viewBox="0 0 30 26.337"
+              >
+                <path
+                  id="store_FILL0_wght400_GRAD0_opsz48"
+                  d="M7.611,10.469V8H34.03v2.469Zm.206,23.868V23.72H5.8V21.251l1.811-8.313H33.989L35.8,21.251V23.72H33.784V34.337H31.314V23.72H23.537V34.337Zm2.469-2.469H21.067V23.72H10.286ZM8.228,21.251h0Zm0,0H33.372L32.1,15.407H9.5Z"
+                  transform="translate(-5.8 -8)"
+                  className={`ease-linear duration-300 fill-white group-hover:fill-theme-yellow-2 ${
+                    active === "/dashboard/my-subscriptions"
+                      ? "fill-theme-yellow-2"
+                      : ""
+                  }`}
+                />
+              </svg>
+
+              <p className="ml-2">MEINE ABOS</p>
+            </a>
+          </Link>
           <Link href="/dashboard/giga-power">
             <a
               className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-white bg-theme-gray-10 hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
@@ -528,35 +557,6 @@ export default function Sidebar() {
               </svg>
 
               <p className="ml-2">GIGA COINS AUFLADEN</p>
-            </a>
-          </Link>
-          <Link href="/dashboard/my-subscriptions">
-            <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-white bg-theme-gray-10 hover:bg-theme-gray-10 hover:text-theme-yellow-2 hover:shadow-md ${
-                active === "/dashboard/my-subscriptions"
-                  ? "bg-theme-gray-10 text-theme-yellow-2 shadow-md font-bold"
-                  : ""
-              }`}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="26.337"
-                viewBox="0 0 30 26.337"
-              >
-                <path
-                  id="store_FILL0_wght400_GRAD0_opsz48"
-                  d="M7.611,10.469V8H34.03v2.469Zm.206,23.868V23.72H5.8V21.251l1.811-8.313H33.989L35.8,21.251V23.72H33.784V34.337H31.314V23.72H23.537V34.337Zm2.469-2.469H21.067V23.72H10.286ZM8.228,21.251h0Zm0,0H33.372L32.1,15.407H9.5Z"
-                  transform="translate(-5.8 -8)"
-                  className={`ease-linear duration-300 fill-white group-hover:fill-theme-yellow-2 ${
-                    active === "/dashboard/my-subscriptions"
-                      ? "fill-theme-yellow-2"
-                      : ""
-                  }`}
-                />
-              </svg>
-
-              <p className="ml-2">MEINE ABOS</p>
             </a>
           </Link>
           <Link href="/dashboard/bills">

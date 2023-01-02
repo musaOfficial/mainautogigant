@@ -61,7 +61,7 @@ export default function Header() {
           <X className={classes.searchx} onClick={() => setOpenTextarea(false)}/>
         </div>
       </div>}
-      <div className="max-w-ag-container w-10/12 lg:w-full mx-auto flex justify-between items-end py-6 md:py-4 md:pb-2 md:items-start">
+      <div className={`max-w-ag-container w-10/12 lg:w-full mx-auto flex justify-between items-end py-6 md:py-4 md:pb-2 md:items-start ${classes.maxwag} `}>
         <Link href="/">
           <img
             className={`w-60 md:w-32 cursor-pointer ${classes.logo}`}

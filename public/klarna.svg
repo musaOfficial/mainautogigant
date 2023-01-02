@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="40" viewBox="0 0 80 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: rgba(112,112,112,0.5);
+      }
+
+      .cls-2 {
+        stroke: none;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_2704" data-name="Group 2704" transform="translate(-1229 -1443)">
+    <g id="Rectangle_5736" data-name="Rectangle 5736" class="cls-1" transform="translate(1229 1443)">
+      <rect class="cls-2" width="80" height="40" rx="10"/>
+      <rect class="cls-3" x="0.5" y="0.5" width="79" height="39" rx="9.5"/>
+    </g>
+    <g id="Klarna_logotype_white.svg_" data-name="Klarna logotype (white.svg)" transform="translate(1239 1456)">
+      <path id="Path_1312" data-name="Path 1312" d="M20.636,0H17.682a7.543,7.543,0,0,1-3.052,6.092l-1.169.875,4.526,6.178h3.729L17.546,7.46A10.45,10.45,0,0,0,20.636,0Z" transform="translate(-10.076 0)"/>
+      <path id="Path_1313" data-name="Path 1313" d="M0,13.145H3.025V0H0V13.145Z" transform="translate(0 0)"/>
+      <path id="Path_1314" data-name="Path 1314" d="M49.79,13.147h2.849V.01H49.79V13.147Z" transform="translate(-37.271 -0.007)"/>
+      <path id="Path_1315" data-name="Path 1315" d="M144.081,15.135a3.32,3.32,0,0,0-2.8,1.257V15.379h-2.71v9.087h2.743V19.689a1.915,1.915,0,0,1,2.042-2.059c1.2,0,1.883.714,1.883,2.039v4.8h2.718V18.683a3.6,3.6,0,0,0-3.875-3.553Z" transform="translate(-103.729 -11.326)"/>
+      <path id="Path_1316" data-name="Path 1316" d="M70.562,22.253A2.4,2.4,0,0,1,68.1,19.915a2.469,2.469,0,0,1,4.931,0A2.4,2.4,0,0,1,70.562,22.253Zm2.474-6.882v.581a4.789,4.789,0,1,0,0,7.938v.581H75.76v-9.1Z" transform="translate(-49.062 -11.318)"/>
+      <path id="Path_1317" data-name="Path 1317" d="M114.626,17.3V16.12H111.84v9.087h2.791V20.965c0-1.433,1.551-2.2,2.63-2.2h.03V16.12A3.388,3.388,0,0,0,114.626,17.3Z" transform="translate(-83.719 -12.067)"/>
+      <path id="Path_1318" data-name="Path 1318" d="M184.741,22.253a2.4,2.4,0,0,1-2.464-2.338,2.469,2.469,0,0,1,4.931,0A2.4,2.4,0,0,1,184.741,22.253Zm2.477-6.882v.581a4.795,4.795,0,1,0,0,7.925v.581h2.721V15.371Z" transform="translate(-134.534 -11.318)"/>
+      <path id="Path_1319" data-name="Path 1319" d="M226.742,39.44a1.707,1.707,0,1,0,1.208.5A1.71,1.71,0,0,0,226.742,39.44Z" transform="translate(-168.45 -29.523)"/>
+    </g>
+  </g>
+</svg>

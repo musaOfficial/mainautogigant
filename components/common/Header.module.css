@@ -171,9 +171,12 @@
 }
 
 @media (max-width: 767px){
+    .maxwag{
+        justify-content: space-between;
+    }
 
-    .threeicons{
-        flex-basis: 50%;
+    .margintop{
+        width: 70%;
     }
     .textareasearch{
         position: absolute;
@@ -244,6 +247,7 @@
     }
     .headerbtn{
         box-shadow: 0 2px 8px #000;
+        min-width: 200px;
     }
 }
 
