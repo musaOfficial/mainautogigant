@@ -33,6 +33,13 @@
     cursor: pointer;
 }
 
+.twovalues{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
 .triangle{
     width: 20px;
     height: 20px;
@@ -257,16 +264,51 @@
 
 .flexer{
     display: flex;
-    height: 50px;
+    height: 60px;
     align-items: center;
     width: 100%;
 }
 
+
+
 .input{
+    width: 62.78%;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    background-color: rgba(255,255,255,0.75);
+    color: rgba(108, 117, 125, 0.5);
+}
+.hinput{
     width: 100%;
     height: 40px;
     border-radius: 10px;
     padding-left: 10px;
+    padding-right: 20px;
+    background-color: rgba(255,255,255,0.75);
+    color: rgba(108, 117, 125, 0.5);
+}
+
+.hinput::placeholder{
+    color: rgba(108, 117, 125, 0.5);
+    font-size: 13px;
+}
+
+.input::placeholder{
+    color: rgba(108, 117, 125, 0.5);
+    font-size: 13px;
+}
+
+.kwvalue{
+    width: 187.5px;
+    display: flex;
+    align-items: center;
+}
+
+.psvalue{
+    width: 187.5px;
+    display: flex;
+    align-items: center;
 }
 
 .valueleft{
@@ -294,10 +336,15 @@
     width: 100%;
     border-radius: 10px;
     padding: 20px;
+    background-color: rgba(255,255,255,0.75);
+    outline: none;
+    border: none;
+    font-size: 13px;
+    color: rgba(109, 118, 126, 0.5);
 }
 
 .input:disabled{
-    background-color: rgba(108, 117, 125, 0.5);
+    background-color: rgba(255, 255, 255, 0.25);
     cursor: not-allowed;
 }
 
@@ -712,6 +759,10 @@
 .ordername{
     font-weight: normal;
     margin-right: 50px;
+}
+
+.checkboxname{
+    cursor: pointer;
 }
 
 .deleter{

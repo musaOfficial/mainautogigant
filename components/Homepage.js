@@ -7,7 +7,7 @@ import Coupe from './../public/acar/coupe.svg';
 import Cabrio from './../public/acar/cabrio.svg';
 import Kleinbus from './../public/acar/kleinbus.svg';
 import Select from 'react-select';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import SearchIcon from './../public/searchicon.svg';
 import HomeSwiper from './home/HomeSwiper';
 import { SwiperSlide } from 'swiper/react';
@@ -15,6 +15,16 @@ import Angebot from './ui/ads/Angebot';
 import OwlSlider from './ui/OwlCarousel';
 import FrontImg from './../public/fronting.svg';
 import FrontPic from './../public/front.png';
+import Input from './ui/Input'
+
+function ControlledInput({ onUpdate, placeholder, inputType, className }){
+    const [value, setValue] = useState();
+    const handleChange = e => {
+        setValue(e.target.value);
+        onUpdate(e.target.value)
+    }
+    return <input type={inputType} value={value || ''} onChange={handleChange} className={className} placeholder={placeholder} />
+}
 
 function Homepage(){
     const style = {
@@ -71,15 +81,16 @@ function Homepage(){
 
     const [model, setModel] = useState();
     const [brand, setBrand] = useState();
-    const [suchbegriff, setSuchbegriff] = useState();
+    const suchbegriff = useRef("");
+    const nurNeuJungwagen = useRef(false);
+    const newsletterMail = useRef("");
     const [kmStand, setKmStand] = useState();
     const [ezAb, setEzAb] = useState();
     const [maxPreis, setMaxPreis] = useState();
-    const [nurNeuJungwagen, setNurNeuJungwagen] = useState(false);
+   
 
     const [anzahlGefundeneFahrzeuge, setAnzahlGefundeneFahrzeuge] = useState(21158);
     var displayAnzahlGefundeneFahrzeuge = anzahlGefundeneFahrzeuge.toLocaleString();
-    const [newsletterEmail, setNewsletterEmail] = useState();
 
     const angeboteFirstRow = [
         {
@@ -893,7 +904,14 @@ function Homepage(){
                                 className={`${classes.marginright} w-full  ${classes.selectinput}`}
                             />
                             <span className={`w-full relative ${classes.suchbegriff} `}>
-                                <input type={"text"} onChange={(e) => setSuchbegriff(e.target.value)} placeholder={"Suchbegriff"} className={classes.input} />
+                                <ControlledInput 
+                                    onUpdate={val => {
+                                        suchbegriff.current = val;
+                                    }}
+                                    inputType={"text"}
+                                    placeholder={"Suchbegriff"}
+                                    className={classes.input}
+                                />
                                 <SearchIcon className={classes.searchicon} />
                             </span>
                         </div>
@@ -929,7 +947,13 @@ function Homepage(){
                         </div>
                             <div className={classes.sendarea}>
                                 <label className={classes.jarea}>
-                                    <input type={"checkbox"}  />
+                                <ControlledInput 
+                                    onUpdate={val => {
+                                        nurNeuJungwagen.current = val;
+                                    }}
+                                    inputType={"checkbox"}
+            
+                                />
                                     <span className={classes.jtext}>nur Neu- und Jungwagen</span>
                                 </label>
                                 <div className={classes.sendbtn}>{displayAnzahlGefundeneFahrzeuge} Fahrzeuge anzeigen</div>
@@ -1138,7 +1162,14 @@ function Homepage(){
                             <div className={classes.newsletterheading}>GIGANT WORLD - aktuell. gigantisch. kostenlos.</div>
                             <div className={classes.newslettertext}>Newsletter abonnieren, immer informiert bleiben und € 50,- GIGA COINS gewinnen!*</div>
                             <div className={classes.inputrow}>
-                                <input type={"email"} value={newsletterEmail} onChange={(e) => setNewsletterEmail(e.target.value)} placeholder={"Deine E-Mail Adresse"} className={classes.newsletterinput} />
+                                {/* <input type={"email"} value={newsletterEmail} onChange={(e) => setNewsletterEmail(e.target.value)} placeholder={"Deine E-Mail Adresse"} className={classes.newsletterinput} /> */}
+                                <ControlledInput 
+                                    onUpdate={val => {
+                                        newsletterMail.current = val;
+                                    }}
+                                    inputType={"email"}
+                                    className={classes.newsletterinput}
+                                />
                                 <button className={classes.mailbtn}>Newsletter Anmelden</button>
                             </div>
                         </div>

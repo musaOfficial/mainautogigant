@@ -18,14 +18,18 @@ function CreateAdPage(){
     const style = {
         control: (base, state) => ({
           ...base,
+          
           boxShadow: "none",
           border: "none",
           fontSize: '13px',
           borderRadius: '10px',
           height: "40px",
           width: "100%",
-          backgroundColor: state.isDisabled ? "rgba(255,255,255,0.5)" : "#fff",
+          backgroundColor: state.isDisabled ? "rgba(255,255,255,0.25)" : "rgba(255,255,255,0.75)",
           cursor: state.isDisabled ? "not-allowed" : "pointer",
+          color: "rgba(108, 117, 125, 0.5)",
+          color: "green",
+          color: state.isSelected ? "green" : "green"
 
         }),
         option: (styles, state) => ({
@@ -33,6 +37,8 @@ function CreateAdPage(){
           backgroundColor: state.isSelected ? "#fbb900" : "",
           "&:active": "#fbb90080",
           fontSize: '13px',
+          color: "rgba(108, 117, 125, 0.5)"
+
         }
         ),
         
@@ -148,6 +154,7 @@ function CreateAdPage(){
     const [farbe, setFarbe] = useState();
     const [zustand, setZustand] = useState();
     const [leistungInKw, setLeistungInKw] = useState();
+    const [leistungInPs, setLeistungInPs] = useState();
     const [vorbesitzer, setVorbesitzer] = useState();
     const [anzahlSitze, setAnzahlSitze] = useState();
     const [anzahlTuere, setAnzahlTuere] = useState();
@@ -391,7 +398,6 @@ function CreateAdPage(){
 
     const [elektronischeRechnungAngefordert, setElektronischeRechnungAngefordert] = useState(false);
     const [gutscheincode, setGutscheincode] = useState();
-
     return (
         <div className={classes.container}>
             <div className={classes.partshower}>
@@ -639,8 +645,8 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                         placeholder="Monat"
                         className='w-full ml-2'
                         isSearchable={true}
-                        onChange={(e) => setMonth(e.value)}
-                        defaultInputValue={month}
+                        onChange={(e) => setErstzulassungMonat(e.value)}
+                        defaultInputValue={erstzulassungMonat}
                         />
                     </label>
                     <label className='w-full flex items-center'>
@@ -651,8 +657,8 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                         placeholder="Jahr"
                         className='w-full ml-2'
                         isSearchable={true}
-                        onChange={(e) => setModel(e.value)}
-                        defaultInputValue={year}
+                        onChange={(e) => setErstzulassungJahr(e.value)}
+                        defaultInputValue={erstzulassungJahr}
                         />
                     </label>
                     </div>
@@ -679,7 +685,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                     defaultInputValue={waehrungen[0].label}
                     onChange={(e) => setWaehrung(e.value)}
                     />*</span>
-                <span className={classes.valueright}><input type={"number"} value={preis} className={classes.input} onChange={(e) => setPreis(e.target.value)} placeholder={"in " + waehrung} /></span>
+                <span className={classes.valueright}><input type={"number"} min={0} value={preis} className={classes.input} onChange={(e) => setPreis(e.target.value)} placeholder={"in " + waehrung} /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Kilometerstand</span>
@@ -756,27 +762,37 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                 </span>
             </div>
             <div className={classes.flexer}>
-                <span className={classes.valueleft}>Leistung in KW *</span>
-                <span className={classes.valueright}><input type={"text"} value={leistungInKw} onChange={(e) => setLeistungInKw(e.target.value)} className={classes.input} placeholder={"in KW"} /></span>
+                <span className={classes.valueleft}>Leistung</span>
+                <div className={`${classes.twovalues}`}>
+                  <span><input type={"number"} min={0}  value={leistungInKw} onChange={(e) => {
+                    setLeistungInKw(e.target.value)
+                    setLeistungInPs(Math.round(e.target.value * 1.36))
+                  }} className={`${classes.hinput} w-full mr-5`} placeholder={"KW"} /></span>
+                  <div></div>
+                  <span><input type={"number"}  min={0} value={leistungInPs} onChange={(e) => {
+                    setLeistungInPs(e.target.value)
+                    setLeistungInKw(Math.round(e.target.value / 1.36))
+                  }} className={`${classes.hinput} w-full ml-5`} placeholder={"PS"} /></span>
+                </div>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Vorbesitzer</span>
-                <span className={classes.valueright}><input type={"number"} value={vorbesitzer} className={classes.input} onChange={(e) => setVorbesitzer(e.target.value)} placeholder={"anzahl aller Vorbesitzer"} /></span>
+                <span className={classes.valueright}><input type={"number"} min={0}  value={vorbesitzer} className={classes.input} onChange={(e) => setVorbesitzer(e.target.value)} placeholder={"anzahl aller Vorbesitzer"} /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Anzahl Sitze *</span>
-                <span className={classes.valueright}><input type={"number"} value={anzahlSitze} onChange={(e) => setAnzahlSitze(e.target.value)} className={classes.input} placeholder={"anzahl der Sitze"} /></span>
+                <span className={classes.valueright}><input type={"number"} min={0}  value={anzahlSitze} onChange={(e) => setAnzahlSitze(e.target.value)} className={classes.input} placeholder={"anzahl der Sitze"} /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Anzahl Türen</span>
-                <span className={classes.valueright}><input type={"number"} value={anzahlTuere} onChange={(e) => setAnzahlTuere(e.target.value)} className={classes.input} placeholder={"anzahl der Türen"} /></span>
+                <span className={classes.valueright}><input type={"number"} min={0}  value={anzahlTuere} onChange={(e) => setAnzahlTuere(e.target.value)} className={classes.input} placeholder={"anzahl der Türen"} /></span>
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>§ 57a "Pickerl"</span>
-                <span className={classes.valueright}><input type={"checkbox"} checked={pickerl} onChange={() => setPickerl(d => !d)} className="mr-2" /> Ja</span>
+                <span className={classes.valueright}><input type={"checkbox"} checked={pickerl} onChange={() => setPickerl(d => !d)} className="mr-2 cursor-pointer" /> Ja</span>
             </div>
             <div className={classes.flexer}>
-                <span className={classes.valueleft}>Pickerl gültig bis</span>
+                <span className={classes.valueleft}>Pickerl gültig bis{pickerl && " *"}</span>
                 <span className={classes.valueright}>
                     <label className='w-full mr-4 flex items-center'>
                         Von
@@ -808,7 +824,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Garantie</span>
-                <span className={classes.valueright}><input type={"checkbox"} checked={garantie} onChange={() => setGarantie(d => !d)} className="mr-2" /> Ja</span>
+                <span className={classes.valueright}><input type={"checkbox"} checked={garantie} onChange={() => setGarantie(d => !d)} className="mr-2 cursor-pointer" /> Ja</span>
             </div>
              </form>
             {/* Ausstattungen */}
@@ -1382,7 +1398,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>PLZ und Ort *</span>
                 <span className={classes.valueright}>
-                <input type={"number"} value={plz} onChange={(e) => setPlz(e.target.value)} className={classes.inputplz}/>
+                <input type={"number"} value={plz} min={0} onChange={(e) => setPlz(e.target.value)} className={classes.inputplz}/>
                 <Select 
                     styles={style}
                     options={laender}
@@ -1390,7 +1406,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                     defaultInputValue={laender[0].label}
                     className='w-full'
                     isSearchable={true}
-
+                    isDisabled={plz == ""}
 
                     onChange={(e) => setLand(e.value)}
                     />

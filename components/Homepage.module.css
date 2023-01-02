@@ -400,10 +400,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FBB900;
+    background-color: #6C757D;
     border-radius: 10px;
     height: 40px;
     font-size: 20px;
     color: #fff;
     font-weight: bold;
+    transition: all .1s ease-in;
+}
+
+.mailbtn:hover{
+    background-color: #FBB900;
 }
