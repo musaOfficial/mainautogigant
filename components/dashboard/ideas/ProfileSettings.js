@@ -744,7 +744,6 @@ export default function ProfileSettings(){
                         <input type="checkbox" value="zulassungsstelle" onChange={() => setZulassungsstelle(d => !d)} name="branche" /> Zulassungsstelle<br/>
                         <input type="checkbox" value="autoaufbereitung" onChange={() => setAutoaufbereitung(d => !d)} name="branche" /> Autoaufbereitung
                     </div>
-                    
                 </div>
                 {/* ÖFFNUNGSZEITEN */}
                 <div className={classes.oeffnungszeiten}>
