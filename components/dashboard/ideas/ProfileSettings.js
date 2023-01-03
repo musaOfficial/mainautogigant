@@ -22,7 +22,11 @@ import FilePreview from '../../ui/dragdrop/FilePreview';
 import Deleter from './../../../public/deleter.svg'
 import Closer from './../../../public/closer.svg'
 
+
+
+
 export default function ProfileSettings(){
+    const format = 'HH:mm';
     const handleDragEnter = (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -178,6 +182,12 @@ export default function ProfileSettings(){
      // ÜBER UNS TEXT
       const [ueberuns, setUeberuns] = useState();
      // BRANCHE
+     const [fahrzeugHaendker, setFahrzeugHaendler] = useState(false);
+     const [kreditvermittler, setKreditvermittler] = useState(false);
+     const [zuassungsstelle, setZulassungsstelle] = useState(false);
+     const [kfzwerkstatt, setKfzwerkstatt] = useState(false);
+     const [versicherungsmakler, setVersicherungsmakler] = useState(false);
+     const [autoaufbereitung, setAutoaufbereitung] = useState(false); 
 
      // GEWERBEBERECHTIGUNG
       const [gewerbeberechtigungFile, setGewerbeberechtigungFile] = useState("");
@@ -236,6 +246,36 @@ export default function ProfileSettings(){
     }
 
     const [blockedUserIndex, setBlockedUserIndex] = useState(0);
+
+    // UHRZEITEN
+    const [montagOffen, setMontagOffen] = useState(false);
+    const [dienstagOffen, setDienstagOffen] = useState(false);
+    const [mittwochOffen, setMittwochOffen] = useState(false);
+    const [donnerstagOffen, setDonnerstagOffen] = useState(false);
+    const [freitagOffen, setFreitagOffen] = useState(false);
+    const [samstagOffen, setSamstagOffen] = useState(false);
+    const [sonntagOffen, setSonntagOffen] = useState(false);
+
+    const [montagVon, setMontagVon] = useState();
+    const [montagBis, setMontagBis] = useState();
+
+    const [dienstagVon, setDienstagVon] = useState();
+    const [dienstagBis, setDienstagBis] = useState();
+
+    const [mittwochVon, setMittwochVon] = useState();
+    const [mittwochBis, setMittwochBis] = useState();
+
+    const [donnerstagVon, setDonnerstagVon] = useState();
+    const [donnerstagBis, setDonnerstagBis] = useState();
+
+    const [freitagVon, setFreitagVon] = useState();
+    const [freitagBis, setFreitagBis] = useState();
+
+    const [samstagVon, setSamstagVon] = useState();
+    const [samstagBis, setSamstagBis] = useState();
+
+    const [sonntagVon, setSonntagVon] = useState();
+    const [sonntagBis, setSonntagBis] = useState();
 
     return (
         <div className={classes.container}>
@@ -693,16 +733,165 @@ export default function ProfileSettings(){
                 <div className={classes.sectionheading}>BRANCHE AUSWÄHLEN</div>
                 <div className={classes.radiobuttons}>
                     <div className={classes.twobuttonsonecolumn}>
-                        <input type="radio" value="fahrzeug-haendler" name="branche"  /> Fahrzeug Händler<br/>
-                        <input type="radio" value="kfz-werkstatt" name="branche" /> KFZ Werkstatt
+                        <input type="checkbox" value="fahrzeug-haendler" onChange={() => setFahrzeugHaendler(d => !d)} name="branche"  /> Fahrzeug Händler<br/>
+                        <input type="checkbox" value="kfz-werkstatt" onChange={() => setKfzwerkstatt(d => !d)} name="branche" /> KFZ Werkstatt
                     </div>
                     <div className={classes.twobuttonsonecolumn}>
-                        <input type="radio" value="kreditvermittler" name="branche" /> Kreditvermittler<br/>
-                        <input type="radio" value="versicherungsmakler" name="branche" /> Versicherungsmakler
+                        <input type="checkbox" value="kreditvermittler" onChange={() => setKreditvermittler(d => !d)} name="branche" /> Kreditvermittler<br/>
+                        <input type="checkbox" value="versicherungsmakler" onChange={() => setVersicherungsmakler(d => !d)} name="branche" /> Versicherungsmakler
                     </div>
                     <div className={classes.twobuttonsonecolumn}>
-                        <input type="radio" value="zulassungsstelle" name="branche" /> Zulassungsstelle<br/>
-                        <input type="radio" value="autoaufbereitung" name="branche" /> Autoaufbereitung
+                        <input type="checkbox" value="zulassungsstelle" onChange={() => setZulassungsstelle(d => !d)} name="branche" /> Zulassungsstelle<br/>
+                        <input type="checkbox" value="autoaufbereitung" onChange={() => setAutoaufbereitung(d => !d)} name="branche" /> Autoaufbereitung
+                    </div>
+                    
+                </div>
+                {/* ÖFFNUNGSZEITEN */}
+                <div className={classes.oeffnungszeiten}>
+                    <div className={classes.sectionheading}>ÖFFNUNGSZEITEN</div>
+                    <br/>
+                    <div className={classes.tag}>
+                        <div className={classes.tagchecker}>
+                            <div className={classes.tagname}>Montag</div>
+                            <input type={"checkbox"} onChange={() => {
+                                setMontagOffen(d => !d)
+                                if(montagOffen == false){
+                                    setMontagVon(false);
+                                    setMontagBis(false);
+                                }
+                            }} />
+                        </div>
+                        {montagOffen == true ? <div className={classes.uhrzeitauswahl}>
+                            <span className={classes.labeltext}>Von</span>
+                            <input type={"time"} value={montagOffen == false ? "" : montagVon} className={classes.voninput} onChange={(e) => setMontagVon(e.target.value)} />
+                            <span className={classes.labeltext}>Bis</span>
+                            <input type={"time"} value={montagOffen == false ? "" : montagBis} className={classes.bisinput} onChange={(e) => setMontagBis(e.target.value)} />
+                        </div> : <div className={classes.uhrzeitauswahl}>
+                            <span>Geschlossen</span>    
+                        </div>}
+                    </div>
+                    <div className={classes.tag}>
+                        <div className={classes.tagchecker}>
+                            <div className={classes.tagname}>Dienstag</div>
+                            <input type={"checkbox"} onChange={() => {
+                                setDienstagOffen(d => !d)
+                                if(dienstagOffen == false){
+                                    setDienstagVon(false);
+                                    setDienstagBis(false);
+                                }
+                            }} />
+                        </div>
+                        {dienstagOffen == true ? <div className={classes.uhrzeitauswahl}>
+                            <span className={classes.labeltext}>Von</span>
+                            <input type={"time"} value={dienstagOffen == false ? "" : dienstagVon} className={classes.voninput} onChange={(e) => setDienstagVon(e.target.value)} />
+                            <span className={classes.labeltext}>Bis</span>
+                            <input type={"time"} value={dienstagOffen == false ? "" : dienstagBis} className={classes.bisinput} onChange={(e) => setDienstagBis(e.target.value)} />
+                        </div> : <div className={classes.uhrzeitauswahl}>
+                            <span>Geschlossen</span>    
+                        </div>}
+                    </div>
+                    <div className={classes.tag}>
+                        <div className={classes.tagchecker}>
+                            <div className={classes.tagname}>Mittwoch</div>
+                            <input type={"checkbox"} onChange={() => {
+                                setMittwochOffen(d => !d)
+                                if(mittwochOffen == false){
+                                    setMittwochVon(false);
+                                    setMittwochBis(false);
+                                }
+                            }} />
+                        </div>
+                        {mittwochOffen == true ? <div className={classes.uhrzeitauswahl}>
+                            <span className={classes.labeltext}>Von</span>
+                            <input type={"time"} value={mittwochOffen == false ? "" : mittwochVon} className={classes.voninput} onChange={(e) => setMittwochVon(e.target.value)} />
+                            <span className={classes.labeltext}>Bis</span>
+                            <input type={"time"} value={mittwochOffen == false ? "" : mittwochBis} className={classes.bisinput} onChange={(e) => setMittwochBis(e.target.value)} />
+                        </div> : <div className={classes.uhrzeitauswahl}>
+                            <span>Geschlossen</span>    
+                        </div>}
+                    </div>
+                    <div className={classes.tag}>
+                        <div className={classes.tagchecker}>
+                            <div className={classes.tagname}>Donnerstag</div>
+                            <input type={"checkbox"} onChange={() => {
+                                setDonnerstagOffen(d => !d)
+                                if(donnerstagOffen == false){
+                                    setDonnerstagVon(false);
+                                    setDonnerstagBis(false);
+                                }
+                            }} />
+                        </div>
+                        {donnerstagOffen == true ? <div className={classes.uhrzeitauswahl}>
+                            <span className={classes.labeltext}>Von</span>
+                            <input type={"time"} value={donnerstagOffen == false ? "" : donnerstagVon} className={classes.voninput} onChange={(e) => setDonnerstagVon(e.target.value)} />
+                            <span className={classes.labeltext}>Bis</span>
+                            <input type={"time"} value={donnerstagOffen == false ? "" : donnerstagBis} className={classes.bisinput} onChange={(e) => setDonnerstagBis(e.target.value)} />
+                        </div> : <div className={classes.uhrzeitauswahl}>
+                            <span>Geschlossen</span>    
+                        </div>}
+                    </div>
+                    <div className={classes.tag}>
+                        <div className={classes.tagchecker}>
+                            <div className={classes.tagname}>Freitag</div>
+                            <input type={"checkbox"} onChange={() => {
+                                setFreitagOffen(d => !d)
+                                if(freitagOffen == false){
+                                    setFreitagVon(false);
+                                    setFreitagBis(false);
+                                }
+                            }} />
+                        </div>
+                        {freitagOffen == true ? <div className={classes.uhrzeitauswahl}>
+                            <span className={classes.labeltext}>Von</span>
+                            <input type={"time"} value={freitagOffen == false ? "" : freitagVon} className={classes.voninput} onChange={(e) => setFreitagVon(e.target.value)} />
+                            <span className={classes.labeltext}>Bis</span>
+                            <input type={"time"} value={freitagOffen == false ? "" : freitagVon} className={classes.bisinput} onChange={(e) => setFreitagBis(e.target.value)} />
+                        </div> : <div className={classes.uhrzeitauswahl}>
+                            <span>Geschlossen</span>    
+                        </div>}
+                    </div>
+                    <div className={classes.tag}>
+                        <div className={classes.tagchecker}>
+                            <div className={classes.tagname}>Samstag</div>
+                            <input type={"checkbox"} onChange={() => {
+                                setSamstagOffen(d => !d)
+                                if(samstagOffen == false){
+                                    setSamstagVon(false);
+                                    setSamstagBis(false);
+                                }
+                            }} />
+                        </div>
+                        {samstagOffen == true ? <div className={classes.uhrzeitauswahl}>
+                            <span className={classes.labeltext}>Von</span>
+                            <input type={"time"} value={samstagOffen == false ? "" : samstagVon} className={classes.voninput} onChange={(e) => setSamstagVon(e.target.value)} />
+                            <span className={classes.labeltext}>Bis</span>
+                            <input type={"time"} value={samstagOffen == false ? "" : samstagBis} className={classes.bisinput} onChange={(e) => setSamstagBis(e.target.value)} />
+                        </div> : <div className={classes.uhrzeitauswahl}>
+                            <span>Geschlossen</span>    
+                        </div>}
+                    </div>
+                    <div className={classes.tag}>
+                        <div className={classes.tagchecker}>
+                            <div className={classes.tagname}>Sonntag</div>
+                            <input type={"checkbox"} onChange={() => {
+                                setSonntagOffen(d => !d)
+                                if(sonntagOffen == false){
+                                    setSonntagVon(false);
+                                    setSonntagBis(false);
+                                }
+                            }} />
+                        </div>
+                        {sonntagOffen == true ? <div className={classes.uhrzeitauswahl}>
+                            <span className={classes.labeltext}>Von</span>
+                            <input type={"time"} value={sonntagOffen == false ? "" : sonntagVon} className={classes.voninput} onChange={(e) => setSonntagVon(e.target.value)} />
+                            <span className={classes.labeltext}>Bis</span>
+                            <input type={"time"} value={sonntagOffen == false ? "" : sonntagBis} className={classes.bisinput} onChange={(e) => setSonntagBis(e.target.value)} />
+                        </div> : <div className={classes.uhrzeitauswahl}>
+                            <span>Geschlossen</span>    
+                        </div>}
+                    </div>
+                    <div className='w-full flex justify-end' >
+                        <button className={classes.datesavechanges}>Änderungen Speichern</button>
                     </div>
                 </div>
                 <div className={classes.sectionheading}>GEWERBEBERECHTIGUNG</div>

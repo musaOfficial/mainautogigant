@@ -539,19 +539,21 @@ function CreateAdPage(){
                 <Select 
                     styles={style}
                     options={months}
-                    placeholder="Monat"
+                    placeholder={month == null ? "Monat" : month}
                     className={`mr-2 w-full ${classes.invalidselect}`}
                     isSearchable={true}
                     onChange={(e) => setMonth(e.value)}
+                  
                     required
                     />
                 <Select 
                     styles={style}
                     options={years}
-                    placeholder="Jahr"
+                    placeholder={year == null ? "Jahr" : year}
                     className='w-full'
                     isSearchable={true}
                     onChange={(e) => setYear(e.value)}
+                    
                     required
                     />
             </div>
@@ -560,12 +562,12 @@ function CreateAdPage(){
                 <div className={classes.left}>
                     <div className={classes.pointer}>2. Fahrzeugerfassung</div>
                     <div className={classes.point}>Selbsteingabe</div>
-                    <div className={classes.paragraph}>Geben Sie die Marke und das Modell Ihres Fahrzeuges an.</div>
+                    <div className={classes.paragraph}>Geben Sie die Marke und das Modell Ihres Fahrzeuges an.<br></br><br></br></div>
                     <div className={`${classes.halfer} mt-4`}>
                         <Select 
                         styles={style}
                         options={brands}
-                        placeholder="Marke"
+                        placeholder={brand == null ? "Marke" : brand}
                         className='w-full mr-4'
                         isSearchable={true}
                         onChange={(e) => setBrand(e.value)}
@@ -574,11 +576,12 @@ function CreateAdPage(){
                     <Select 
                         styles={style}
                         options={models}
-                        placeholder="Modell"
+                        placeholder={model == null ? "Modell" : model}
                         className='w-full'
                         isSearchable={true}
                         onChange={(e) => setModel(e.value)}
                         required={nationalerCode != "" ? false : true}
+                        
                         />
                     </div>
                 </div>
@@ -682,7 +685,6 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                     placeholder="€"
                     className='w-18 ml-1'
                     isSearchable={true}
-                    defaultInputValue={waehrungen[0].label}
                     onChange={(e) => setWaehrung(e.value)}
                     />*</span>
                 <span className={classes.valueright}><input type={"number"} min={0} value={preis} className={classes.input} onChange={(e) => setPreis(e.target.value)} placeholder={"in " + waehrung} /></span>
