@@ -254,14 +254,9 @@
     }
 }
 
-.margintop{
-    min-width: 40%;
-
-}
-
 .headerbtn{
     box-shadow: 7px 25px 20px rgb(0, 0, 0, 0.2);
-    width: 100%;
+    max-width: 250px ;
 }
 
 .headericon{
@@ -335,20 +330,15 @@
     }
 }
 
-@media(max-width: 500px){
+@media(max-width: 490px){
     .margintop{
-        width: 120%;
+        width: 100%;
     }
-}
 
-@media(max-width: 440px){
-    .logo{
-        width: 40%;
-        height: auto;
+    .headerbtn{
+        width: 100%;
     }
-}
 
-@media(max-width: 410px){
     .logo{
         width: 35%;
     }

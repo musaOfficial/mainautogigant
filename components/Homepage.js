@@ -11,7 +11,7 @@ import { useRef, useState } from 'react';
 import SearchIcon from './../public/searchicon.svg';
 import HomeSwiper from './home/HomeSwiper';
 import { SwiperSlide } from 'swiper/react';
-import Angebot from './ui/ads/Angebot';
+import HomeAngebot from './ui/ads/HomeAngebot';
 import OwlSlider from './ui/OwlCarousel';
 import FrontImg from './../public/fronting.svg';
 import FrontPic from './../public/front.png';
@@ -31,12 +31,11 @@ function Homepage(){
         control: (base) => ({
           ...base,
           boxShadow: "none",
-          border: "1px solid #fff",
-          fontSize: '13px',
+          border: "2px solid #fff",
+          fontSize: '15px',
           borderRadius: '10px',
           backgroundColor: "transparent",
-          
-
+          color: "#fff"
         }),
         option: (styles, state) => ({
           ...styles,
@@ -879,12 +878,35 @@ function Homepage(){
                     <div className={classes.searcharea}>
                         <div className={classes.selectsection}>
                             <div className={classes.cars}>
-                                <Limo className={classes.car} />
-                                <Suv className={classes.car} />
-                                <KombiVan className={classes.car} />
-                                <Coupe className={classes.car} />
-                                <Cabrio className={classes.car} />
-                                <Kleinbus className={classes.car} />
+                               <div className={classes.carflex}>
+                                    <Limo className={classes.car} />
+                                    <span className={classes.cartext}>Limousine</span>
+                                </div> 
+                                <div className={classes.carflex}>
+                                    <Suv className={classes.car} />
+                                    <span className={classes.cartext}>SUV</span>
+                                </div>
+                                <div className={classes.carflex}>
+                                    <KombiVan className={classes.car} />
+                                    <span className={classes.cartext}>Kombi Van</span>
+                                </div>
+                                <div className={classes.carflex}>
+                                    <Coupe className={classes.car} />
+                                    <span className={classes.cartext}>Coupè</span>
+                                </div>
+                                <div className={classes.carflex}>
+                                    <Cabrio className={classes.car} />
+                                    <span className={classes.cartext}>Cabrio</span>
+                                </div>
+                                <div className={classes.carflex}>
+                                    <Kleinbus className={classes.car} />
+                                    <span className={classes.cartext}>Kleinbus</span>
+                                </div>
+                                
+                                
+                                
+                                
+                                
                             </div>
                             <div className={classes.selectfields}>
                             <Select 
@@ -942,7 +964,7 @@ function Homepage(){
                             />
                         </div>
                         <div className={classes.erweitertesuche}>
-                            <span className={classes.bolder}>Erweiterte Suche</span>
+                            <span className={classes.firstbolder}>Erweiterte Suche</span>
                             <span className={classes.bolder}>Filter zurücksetzen</span>
                         </div>
                             <div className={classes.sendarea}>
@@ -963,7 +985,7 @@ function Homepage(){
                    {/* CONTINUE HERE */}
                    <div className={classes.swiperarea}>
                         <OwlSlider>
-                            {angeboteFirstRow.map((item, index) => <Angebot 
+                            {angeboteFirstRow.map((item, index) => <HomeAngebot 
                                 key={index}
                                 title={item.title}
                                 price={item.preis}
@@ -986,7 +1008,7 @@ function Homepage(){
                             />)}
                         </OwlSlider>
                         <OwlSlider>
-                            {angeboteSecondRow.map((item, index) => <Angebot 
+                            {angeboteSecondRow.map((item, index) => <HomeAngebot 
                                 key={index}
                                 title={item.title}
                                 price={item.preis}
@@ -1009,7 +1031,7 @@ function Homepage(){
                             />)}
                         </OwlSlider>
                        { row >= 1 && <OwlSlider>
-                            {angeboteThirdRow.map((item, index) => <Angebot 
+                            {angeboteThirdRow.map((item, index) => <HomeAngebot 
                                 key={index}
                                 title={item.title}
                                 price={item.preis}
@@ -1032,7 +1054,7 @@ function Homepage(){
                             />)}
                         </OwlSlider>}
                         {row >= 2 && <OwlSlider>
-                            {angeboteFourthRow.map((item, index) => <Angebot 
+                            {angeboteFourthRow.map((item, index) => <HomeAngebot 
                                 key={index}
                                 title={item.title}
                                 price={item.preis}
@@ -1169,6 +1191,7 @@ function Homepage(){
                                     }}
                                     inputType={"email"}
                                     className={classes.newsletterinput}
+                                    placeholder={"Deine E-Mail-Adresse"}
                                 />
                                 <button className={classes.mailbtn}>Newsletter Anmelden</button>
                             </div>
