@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="53.33" height="25" viewBox="0 0 53.33 25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="trending" class="cls-1" d="M3.333,29.864,0,26.532,16.666,9.866l15,15,10-10-4.108-4.106L53.33,6.533,49.1,22.306,45,18.2,31.665,31.533l-15-15Z" transform="translate(0 -6.533)"/>
+</svg>

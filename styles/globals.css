@@ -370,3 +370,18 @@ input:invalid{
 .owl-carousel {
   z-index: 1;
 }
+
+input[type=time] {
+  border: none;
+  color: #6C757D;
+  width: 100px;
+  margin-right: 20px;
+}
+
+input[type=time]::-webkit-datetime-edit-fields-wrapper {
+  display: flex;
+  border-radius: 10px;
+  background-color: #F1F2F3;
+  align-items: center;
+  justify-content: center;
+}
