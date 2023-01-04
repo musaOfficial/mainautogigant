@@ -37,33 +37,33 @@ function MySubscriptionsPage(){
 
     // Six Month Plan
     const sixmonthpackageSmallPrice = 155.40;
-    const sixmonthpackageSmallPriceMonthly = 161.40 / 3;
+    const sixmonthpackageSmallPriceMonthly = 161.40 / 6;
     const sixmonthpackageMediumPrice = 197.40;
-    const sixmonthpackageMediumPriceMonthly = 203.40 / 3;
+    const sixmonthpackageMediumPriceMonthly = 203.40 / 6;
     const sixmonthpackageLargePrice = 257.40;
-    const sixmonthpackageLargePriceMonthly = 263.40 / 3;
+    const sixmonthpackageLargePriceMonthly = 263.40 / 6;
     const sixmonthpackageUnlimitedPrice = 395.40;
-    const sixmonthpackageUnlimitedPriceMonthly = 401.40 / 3;
+    const sixmonthpackageUnlimitedPriceMonthly = 401.40 / 6;
 
     // Twelve Month Plan
     const twelvemonthpackageSmallPrice = 298.80;
-    const twelvemonthpackageSmallPriceMonthly = 310.80 / 3;
+    const twelvemonthpackageSmallPriceMonthly = 310.80 / 12;
     const twelvemonthpackageMediumPrice = 382.80;
-    const twelvemonthpackageMediumPriceMonthly = 394.80 / 3;
+    const twelvemonthpackageMediumPriceMonthly = 394.80 / 12;
     const twelvemonthpackageLargePrice = 502.80;
-    const twelvemonthpackageLargePriceMonthly = 514.80 / 3;
+    const twelvemonthpackageLargePriceMonthly = 514.80 / 12;
     const twelvemonthpackageUnlimitedPrice = 778.80;
-    const twelvemonthpackageUnlimitedPriceMonthly = 790.80 / 3;
+    const twelvemonthpackageUnlimitedPriceMonthly = 790.80 / 12;
 
     // Twentyfour Month Plan
     const twentyfourmonthpackageSmallPrice = 573.60;
-    const twentyfourmonthpackageSmallPriceMonthly = 597.60 / 3;
+    const twentyfourmonthpackageSmallPriceMonthly = 597.60 / 24;
     const twentyfourmonthpackageMediumPrice = 741.60;
-    const twentyfourmonthpackageMediumPriceMonthly = 765.60 / 3;
+    const twentyfourmonthpackageMediumPriceMonthly = 765.60 / 24;
     const twentyfourmonthpackageLargePrice = 981.60;
-    const twentyfourmonthpackageLargePriceMonthly = 1005.60 / 3;
+    const twentyfourmonthpackageLargePriceMonthly = 1005.60 / 24;
     const twentyfourmonthpackageUnlimitedPrice = 1533.60;
-    const twentyfourmonthpackageUnlimitedPriceMonthly = 1557.60 / 3;
+    const twentyfourmonthpackageUnlimitedPriceMonthly = 1557.60 / 24;
 
 
     const [selectedPrice, setSelectedPrice] = useState();
@@ -308,7 +308,7 @@ function MySubscriptionsPage(){
                 {sixmonthpackage == true &&<> <div className={`${classes.package} ${switcherFirstOn == true && classes.yellowpackage}`}>
                     <div className={classes.packageheading}><span>BUSINESS</span>SMALL</div>
                     <div className={classes.price}>{switcherFirstOn == false ? DisplayAsLocaleString(sixmonthpackageSmallPrice) : DisplayAsLocaleString(sixmonthpackageSmallPriceMonthly)}</div>
-                    <div className={classes.pricedescription}>3-Monats-Paket{switcherFirstOn == true && "/mtl."}</div>
+                    <div className={classes.pricedescription}>6-Monats-Paket{switcherFirstOn == true && "/mtl."}</div>
                     <div className={classes.addetail}>
                         <Greentick className={classes.tick} />
                         <span className={classes.addetailtext}>5 Anzeigen</span>
