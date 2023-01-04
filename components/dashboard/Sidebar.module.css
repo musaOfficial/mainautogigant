@@ -1,3 +1,19 @@
 .backgroundcolor{
     background-color: rgba(108, 117, 125, 0.75);
 }
+
+.cornerwhite{
+    width: 25px;
+    height: 25px;
+    background-color: #F1F2F3;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.cornercolor{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(108, 117, 125, 0.75);
+    border-radius: 0 0 10px 0;
+}

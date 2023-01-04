@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="30" viewBox="0 0 40 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(0,0,0,0.67);
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #e80000;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        fill: #00006f;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <path id="Path_3013" data-name="Path 3013" class="cls-1" d="M-69.56,0h40V30h-40Z" transform="translate(69.56)"/>
+    </clipPath>
+  </defs>
+  <g id="czech-32956" class="cls-2">
+    <path id="Path_3010" data-name="Path 3010" class="cls-3" d="M-69.56,0h45V30h-45Z" transform="translate(69.56)"/>
+    <path id="Path_3011" data-name="Path 3011" class="cls-4" d="M-69.56,0h45V15h-45Z" transform="translate(69.56)"/>
+    <path id="Path_3012" data-name="Path 3012" class="cls-5" d="M-69.56,0l22.426,14.981L-69.56,29.942Z" transform="translate(69.56)"/>
+  </g>
+</svg>

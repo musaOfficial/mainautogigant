@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 40 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #df0000;
+      }
+    </style>
+  </defs>
+  <g id="Group_2837" data-name="Group 2837" transform="translate(-673 -460)">
+    <g id="austria-32920" transform="translate(673 460)">
+      <path id="Path_1509" data-name="Path 1509" class="cls-1" d="M40,30H0V0H40Z"/>
+      <path id="Path_1510" data-name="Path 1510" class="cls-2" d="M40,30.114H0v-10H40Zm0-19.992H0v-10H40Z" transform="translate(0 -0.114)"/>
+    </g>
+  </g>
+</svg>

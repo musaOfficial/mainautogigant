@@ -1,0 +1,16 @@
+<svg id="germany-32989" xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 40 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffce00;
+      }
+
+      .cls-2 {
+        fill: #d00;
+      }
+    </style>
+  </defs>
+  <path id="Path_2265" data-name="Path 2265" class="cls-1" d="M0,320H40v10.506H0Z" transform="translate(0 -300.506)"/>
+  <path id="Path_2266" data-name="Path 2266" d="M0,0H40V10.506H0Z"/>
+  <path id="Path_2267" data-name="Path 2267" class="cls-2" d="M0,160H40v10.506H0Z" transform="translate(0 -150.253)"/>
+</svg>

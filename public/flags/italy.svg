@@ -1,0 +1,24 @@
+<svg id="italy-32999" xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 40 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #009246;
+      }
+
+      .cls-3 {
+        fill: #ce2b37;
+      }
+    </style>
+  </defs>
+  <path id="Path_2293" data-name="Path 2293" class="cls-1" d="M0,0H40V30H0Z"/>
+  <path id="Path_2294" data-name="Path 2294" class="cls-2" d="M0,0H14.01V30H0Z"/>
+  <path id="Path_2295" data-name="Path 2295" class="cls-3" d="M426.663,0h14.01V30h-14.01Z" transform="translate(-400.673)"/>
+</svg>

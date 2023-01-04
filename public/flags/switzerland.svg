@@ -1,0 +1,22 @@
+<svg id="switzerland-33095" xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 40 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d52b1e;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="Path_2094" data-name="Path 2094" class="cls-1" d="M0,0H40V30H0Z"/>
+  <g id="Group_2782" data-name="Group 2782" transform="translate(10.149 5.149)">
+    <path id="Path_2095" data-name="Path 2095" class="cls-2" d="M170,195h19.7v5.91H170Z" transform="translate(-170 -188.102)"/>
+    <path id="Path_2096" data-name="Path 2096" class="cls-2" d="M275,90h5.91v19.7H275Z" transform="translate(-268.105 -89.997)"/>
+  </g>
+</svg>

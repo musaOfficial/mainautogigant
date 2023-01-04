@@ -277,6 +277,16 @@ export default function ProfileSettings(){
     const [sonntagVon, setSonntagVon] = useState();
     const [sonntagBis, setSonntagBis] = useState();
 
+
+    useEffect(() => {
+        if(t2 && t3 && t4 && t5 && t6 && t7){
+            setT1(true);
+        }
+        if(t2 == false || t3 == false || t4 == false || t5 == false || t6 == false || t7 == false ){
+            setT1(false);
+        }
+    }, [t1, t2, t3, t4, t5, t6, t7])
+
     return (
         <div className={classes.container}>
             {avatarSelectionPopup == true && <div className={classes.avatarselectionbackground}>
@@ -548,7 +558,9 @@ export default function ProfileSettings(){
                     <div className={classes.row3}>
                         <div className={classes.desc}>
                             <p className={classes.desctext}>Hier können Sie zusätzlich noch 5 Fotos von Ihrem Unternehmen zu Ihrer Profilseite hinzufügen.<br/>Foto Größe: 550x350 Pixel</p>
-                            <Toggle toggle={() => setImagesToggleOn(d => !d)} toggleOn={ImagesToggleOn} />
+                            <div className={`${classes.switcher} ${ImagesToggleOn == true && classes.switcheron}`} onClick={() => setImagesToggleOn(d => !d)}>
+                            <div className={`${classes.switchercircle} ${ImagesToggleOn == true && classes.switcherCircleOn}`}></div>
+                        </div>
                         </div>
                         <br/>
                         {ImagesToggleOn == true && <div className={classes.fivefotos}>
@@ -634,7 +646,8 @@ export default function ProfileSettings(){
                     <div className={classes.row4}>
                         <div className={classes.desc}>
                             <p className={classes.desctext}>Öffnen Sie das gewünschte Social Media Profil und kopieren Sie den in der Adresszeile<br/>Ihres Browsers angegebenen Link (also die URL) und fügen Sie es hier ein.</p>
-                            <Toggle toggle={() => setSocialMediaSectionActive(t => !t)} toggleOn={socialMediaSectionActive} className={classes.socialactive}/>
+                            <div className={`${classes.switcher} ${socialMediaSectionActive == true && classes.switcheron}`} onClick={() => setSocialMediaSectionActive(d => !d)}>
+                            <div className={`${classes.switchercircle} ${socialMediaSectionActive == true && classes.switcherCircleOn}`}></div></div>
                         </div>
                        {socialMediaSectionActive == true &&  <div className={classes.socialmedia}>
                             <div className={classes.socialrow1}>
@@ -972,64 +985,55 @@ export default function ProfileSettings(){
                 <div className={classes.benachrichtigungseinstellungen}>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Alle Benachrichtigungen per E-Mail an die gespeicherte Adresse senden.</div>
-                        <Toggle toggle={() => {
-                            setT1(t => !t)
-                            
-                        }} toggleOn={t1}/>
+                        <div className={`${classes.switcher} ${t1 == true && classes.switcheron}`} onClick={() => {
+                            setT1(d => !d)
+                            if(t1 == false){
+                                setT2(true);
+                                setT3(true);
+                                setT4(true);
+                                setT5(true);
+                                setT6(true);
+                                setT7(true);
+                            } else {
+                                setT2(false);
+                                setT3(false);
+                                setT4(false);
+                                setT5(false);
+                                setT6(false);
+                                setT7(false);
+                            }
+                        }}>
+                        <div className={`${classes.switchercircle} ${t1 == true && classes.switcherCircleOn}`}></div></div>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Erinnerungsbenachrichtigung vor Ablauf eines Inserates.</div>
-                        <Toggle toggle={() => {
-                            setT2(t => !t);
-                            if(t2){
-                                setT1(false);
-                            }
-                        }} toggleOn={t2}/>
+                        <div className={`${classes.switcher} ${t2 == true && classes.switcheron}`} onClick={() => setT2(d => !d)}>
+                        <div className={`${classes.switchercircle} ${t2 == true && classes.switcherCircleOn}`}></div></div>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Erinnerungsbenachrichtigung vor Ablauf eines Giga Powers.</div>
-                        <Toggle toggle={() => {
-                            setT3(t => !t)
-                            if(t3){
-                                setT1(false);
-                            }
-                        }} toggleOn={t3}/>
+                        <div className={`${classes.switcher} ${t3 == true && classes.switcheron}`} onClick={() => setT3(d => !d)}>
+                        <div className={`${classes.switchercircle} ${t3 == true && classes.switcherCircleOn}`}></div></div>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Benachrichtigung, dass der Preis des favorisierten Inserates gesunken ist.</div>
-                        <Toggle toggle={() => {
-                            setT4(t => !t);
-                            if(t4){
-                                setT1(false);
-                            }
-                        }} toggleOn={t4}/>
+                        <div className={`${classes.switcher} ${t4 == true && classes.switcheron}`} onClick={() => setT4(d => !d)}>
+                        <div className={`${classes.switchercircle} ${t4 == true && classes.switcherCircleOn}`}></div></div>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Erinnerungsbenachrichtigung vor Ablauf eines Abos.</div>
-                        <Toggle toggle={() => {
-                            setT5(t => !t)
-                            if(t5){
-                                setT1(false);
-                            }
-                        }} toggleOn={t5}/>
+                        <div className={`${classes.switcher} ${t5 == true && classes.switcheron}`} onClick={() => setT5(d => !d)}>
+                        <div className={`${classes.switchercircle} ${t5 == true && classes.switcherCircleOn}`}></div></div>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Erinnerungsbenachrichtigung für Suchaufträge.</div>
-                        <Toggle toggle={() => {
-                            setT6(t => !t)
-                            if(t6){
-                                setT1(false);
-                            }
-                        }} toggleOn={t6}/>
+                        <div className={`${classes.switcher} ${t6 == true && classes.switcheron}`} onClick={() => setT6(d => !d)}>
+                        <div className={`${classes.switchercircle} ${t6 == true && classes.switcherCircleOn}`}></div></div>
                     </div>
                     <div className={classes.benachrichtigungseinstellung}>
                         <div className={classes.benachrichtigunsdesc}>Newsletter an-/abmelden.</div>
-                        <Toggle toggle={() => {
-                            setT7(t => !t);
-                            if(t7){
-                                setT1(false);
-                            }
-                        }} toggleOn={t7}/>
+                        <div className={`${classes.switcher} ${t7 == true && classes.switcheron}`} onClick={() => setT7(d => !d)}>
+                        <div className={`${classes.switchercircle} ${t7 == true && classes.switcherCircleOn}`}></div></div>
                     </div>
                 </div>
             </div>}

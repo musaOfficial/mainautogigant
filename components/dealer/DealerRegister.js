@@ -61,7 +61,7 @@ export default function DealerRegister() {
     { value: "+45", label: "+45" },
   ];
   return (
-    <div className="bg-theme-gray-3 overflow-hidden lg:px-6 md:!px-0">
+    <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0">
       <div className="relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6">
         <div className="w-1/2 lg:w-full relative before:lg:w-full mr-3 flex flex-col text-theme-gray-4 text-15 md:text-xs lg:flex-col">
           <div className="p-6 rounded-10 bg-theme-gray-4">
@@ -76,7 +76,6 @@ export default function DealerRegister() {
               </button>
               <span className="w-32 md:w-12 h-px p-px rounded-md bg-theme-gray-8"></span>
               <button
-                onClick={() => setIsStepActive(2)}
                 className={`h-14 w-14 md:w-10 md:h-10 flex items-center justify-center rounded-full ${
                   isStepActive == 2 ? "bg-theme-yellow-2" : "bg-theme-gray-8"
                 }`}
@@ -85,7 +84,6 @@ export default function DealerRegister() {
               </button>
               <span className="w-32 md:w-12 h-px p-px rounded-md bg-theme-gray-8"></span>
               <button
-                onClick={() => setIsStepActive(3)}
                 className={`h-14 w-14 md:w-10 md:h-10 flex items-center justify-center rounded-full ${
                   isStepActive == 3 ? "bg-theme-yellow-2" : "bg-theme-gray-8"
                 }`}
@@ -99,8 +97,8 @@ export default function DealerRegister() {
               <div>
                 <div className="relative">
                   <Link href="/">
-                    <a className="absolute right-6 top-1 lg:top-4 flex flex-col items-end text-theme-blue text-xs">
-                      <p>zurück</p>
+                    <a className="right-6 top-1 lg:top-4 flex flex-col items-end text-theme-blue text-xs">
+                     <p>zurück</p>
                       <p className="mb-1">zur Startseite</p>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -241,41 +239,41 @@ export default function DealerRegister() {
                   </div>
                   <h3 className="text-base">Branche Auswählen</h3>
                   <div className="pt-3 pb-6">
-                    <div className="flex justify-between text-15 text-gray-500 font-medium mb-4">
+                    <div className="flex sm:flex-col justify-between text-15 text-gray-500 font-medium mb-4 sm:mb-0">
                     <div className="w-1/3 sm:!w-1/2">
-                        <div className={classes.labelcontainer}>
+                        <div className={`${classes.labelcontainer} sm:mb-1`}>
                           <input type={'checkbox'} onChange={(e) => setFahrzeugHaendler(e.target.value)} />
                           <label className={classes.label}>Fahrzeug Händler</label>
                         </div>
                       </div>
                       <div className="w-1/3 sm:!w-1/2">
-                      <div className={classes.labelcontainer}>
+                      <div className={`${classes.labelcontainer} sm:mb-1`}>
                           <input type={'checkbox'} onChange={(e) => setKreditvermittler(e.target.value)}/>
                           <label className={classes.label}>Kreditvermittler</label>
                         </div>
                       </div>
                       <div className="w-1/3 sm:!w-1/2">
-                      <div className={classes.labelcontainer}>
+                      <div className={`${classes.labelcontainer} sm:mb-1`}>
                           <input type={'checkbox'} onChange={(e) => setZulassungsstelle(e.target.value)} />
                           <label className={classes.label}>Zulassungsstelle</label>
                         </div>
                       </div>
                     </div>
-                    <div className="flex justify-between text-15 text-gray-500 font-medium">
+                    <div className="flex sm:flex-col justify-between text-15 text-gray-500 font-medium">
                     <div className="w-1/3 sm:!w-1/2">
-                        <div className={classes.labelcontainer}>
+                        <div className={`${classes.labelcontainer} sm:mb-1`}>
                           <input type={'checkbox'} onChange={(e) => setKfzWerkstatt(e.target.value)} />
                           <label className={classes.label}>KFZ Werkstatt</label>
                         </div>
                       </div>
                       <div className="w-1/3 sm:!w-1/2">
-                      <div className={classes.labelcontainer}>
+                      <div className={`${classes.labelcontainer} sm:mb-1`}>
                           <input type={'checkbox'} onChange={(e) => setVersicherungsmakler(e.target.value)}/>
                           <label className={classes.label}>Versicherungsmakler</label>
                         </div>
                       </div>
                       <div className="w-1/3 sm:!w-1/2">
-                      <div className={classes.labelcontainer}>
+                      <div className={`${classes.labelcontainer} sm:mb-1`}>
                           <input type={'checkbox'} onChange={(e) => setAutoaufbereitung(e.target.value)} />
                           <label className={classes.label}>Autoaufbereitung</label>
                         </div>
@@ -284,11 +282,11 @@ export default function DealerRegister() {
                   </div>
                   <div className="flex justify-between items-end">
                     <div className="h-14 flex text-xs flex-col md:w-full justify-between pt-2">
-                        <div className={classes.labelcontainer}>
+                        <div className={`${classes.labelcontainer}`}>
                           <input type={'checkbox'} onChange={(e) => setNewsletter(e.target.value)} />
                           <label className={classes.label}>Newsletter, Updates and Trends und per E-Mail</label>
                         </div>
-                        <div className={classes.labelcontainer}>
+                        <div className={`${classes.labelcontainer}`}>
                           <input type={'checkbox'} onChange={(e) => setAgbZustimmung(e.target.value)} />
                           <label className={classes.label}>Ich erkläre mich mit den AGB einverstanden</label>
                         </div>

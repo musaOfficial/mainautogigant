@@ -217,7 +217,6 @@
     height: 225px;
     background-color: #fff;
     border-radius: 10px;
-
 }
 
 .boxtop{
@@ -233,7 +232,7 @@
 }
 
 .boxbottom{
-    font-size: 13px;
+    font-size: 14px;
     padding: 20px;
     padding-top: 10px;
     font-weight: 300;

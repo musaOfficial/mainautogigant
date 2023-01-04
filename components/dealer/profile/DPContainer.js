@@ -11,8 +11,8 @@ import classes from './DPContainer.module.css';
 
 export default function DPContainer() {
   return (
-    <div className="bg-theme-gray-3 lg:px-6 md:!px-0">
-      <div className="w-10/12 lg:w-full max-w-ag-container mx-auto flex md:flex-col-reverse shadow-1">
+    <div className="bg-theme-gray-10 lg:px-6 md:!px-0">
+      <div className="w-10/12 lg:w-full max-w-ag-container mx-auto flex md:flex-col-reverse">
         <div className="w-full p-6 bg-white">
           <div>
             <img

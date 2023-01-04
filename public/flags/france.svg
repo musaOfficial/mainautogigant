@@ -1,0 +1,24 @@
+<svg id="france-32967" xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 40 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #00267f;
+      }
+
+      .cls-3 {
+        fill: #f31830;
+      }
+    </style>
+  </defs>
+  <path id="Path_2820" data-name="Path 2820" class="cls-1" d="M0,0H40V30H0Z"/>
+  <path id="Path_2821" data-name="Path 2821" class="cls-2" d="M0,0H14.008V30H0Z"/>
+  <path id="Path_2822" data-name="Path 2822" class="cls-3" d="M426.662,0H440.67V30H426.662Z" transform="translate(-400.67)"/>
+</svg>

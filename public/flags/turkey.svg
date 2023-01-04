@@ -1,0 +1,25 @@
+<svg id="turkey-33109" xmlns="http://www.w3.org/2000/svg" width="40.001" height="30.001" viewBox="0 0 40.001 30.001">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f31930;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #f31830;
+      }
+    </style>
+  </defs>
+  <path id="Path_1511" data-name="Path 1511" class="cls-1" d="M0,0H40V30H0Z"/>
+  <path id="Path_1512" data-name="Path 1512" class="cls-2" d="M178.286,135.075a7.624,7.624,0,1,1-7.623-7.493,7.559,7.559,0,0,1,7.623,7.493Z" transform="translate(-152.85 -119.608)"/>
+  <path id="Path_1513" data-name="Path 1513" class="cls-3" d="M230.125,157.551a6.1,6.1,0,1,1-6.1-5.994A6.047,6.047,0,0,1,230.125,157.551Z" transform="translate(-204.307 -142.084)"/>
+  <path id="Path_1514" data-name="Path 1514" class="cls-2" d="M391.042,191.465l-.062,2.77-2.584.7,2.547.907-.062,2.54,1.661-1.984,2.51.871-1.452-2.129,1.772-2.117-2.72.75-1.612-2.31Z" transform="translate(-364.121 -179.498)"/>
+</svg>

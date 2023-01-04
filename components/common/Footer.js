@@ -10,6 +10,30 @@ import TikTokIcon from './../../public/icons/tiktok.svg';
 import FaceBookIcon from './../../public/icons/facebook.svg';
 import WorldIcon from './../../public/world.svg';
 import { useEffect } from "react";
+import Albania from './../../public/flags/albania.svg';
+import Austria from './../../public/flags/austria.svg';
+import Bosnia from './../../public/flags/bosnia.svg';
+import Bulgaria from './../../public/flags/bulgaria.svg';
+import Croatia from './../../public/flags/croatia.svg';
+import Czech from './../../public/flags/czech.svg';
+import France from './../../public/flags/france.svg';
+import Hungary from './../../public/flags/hungary.svg';
+import Iran from './../../public/flags/iran.svg';
+import Poland from './../../public/flags/poland.svg';
+import Italy from './../../public/flags/italy.svg';
+import Qatar from './../../public/flags/qatar.svg';
+import Romania from './../../public/flags/romania.svg';
+import Russia from './../../public/flags/russia.svg';
+import Saudi from './../../public/flags/saudi.svg';
+import Serbia from './../../public/flags/serbia.svg';
+import Spain from './../../public/flags/spain.svg';
+import Switzerland from './../../public/flags/switzerland.svg';
+import Turkey from './../../public/flags/turkey.svg';
+import Ukraine from './../../public/flags/ukraine.svg';
+import United from './../../public/flags/united.svg';
+import Germany from './../../public/flags/germany.svg';
+import Slovakia from './../../public/flags/slovakia.svg';
+import Azerbaijan from './../../public/flags/azerbaijan.svg';
 
 const useDeviceSize = () => {
 
@@ -64,22 +88,217 @@ export default function Footer() {
 
   const [openLanguagesBar, setOpenLanguagesBar] = useState(false);
 
-  if(typeof window == 'object' && openLanguagesBar == true){
-    const concernedElement = document.querySelector(".langBar");
 
-    document.addEventListener("mousedown", (event) => {
-      if (concernedElement.contains(event.target)) {
-        
-      } else {
-        setOpenLanguagesBar(false);
-      }
-    });
-  }
-
-  const [language, setLanguage] = useState("DEUTSCH");
+  const [language, setLanguage] = useState("Deutsch");
+  const [flag, setFlag] = useState(<WorldIcon className={classes.world} />);
 
   return (
-    <footer className="md:!px-0 relative">
+    <footer className="md:!px-0">
+      {openLanguagesBar == true && <div className={classes.openbar}>
+          <div className={classes.heading}>Sprache auswählen</div>
+          <div className={classes.firstrow}>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Austria className={classes.world} />);
+                setLanguage("Deutsch");
+                setOpenLanguagesBar(false);
+              }}>
+                <Austria className={`${classes.flag} ${classes.germanflag}`} />
+                <div className={classes.flagname}>Deutsch </div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Turkey className={classes.world} />);
+                setLanguage("Türkçe");
+                setOpenLanguagesBar(false);
+              }}>
+                <Turkey className={`${classes.flag} ${classes.turkishflag}`} />
+                <div className={classes.flagname}>Türkçe</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<United className={classes.world} />);
+                setLanguage("English");
+                setOpenLanguagesBar(false);
+              }}>
+                <United className={`${classes.flag} ${classes.englishflag}`} />
+                <div className={classes.flagname}>English</div>
+              </div>
+          </div>
+          <div className={classes.secondrow}>
+            <div className={classes.language}>
+                <Germany className={classes.flag} onClick={() => {
+                  setFlag(<Germany className={classes.world} />);
+                  setLanguage("Deutsch")
+                  setOpenLanguagesBar(false);
+                }} />
+                <div className={classes.flagname}>Deutsch</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Slovakia className={classes.world} />);
+                setLanguage("Slovenská");
+                setOpenLanguagesBar(false);
+              }}>
+                <Slovakia className={classes.flag} />
+                <div className={classes.flagname}>Slovenská</div>
+              </div>
+            <div className={classes.language} onClick={() => {
+              setFlag(<Qatar className={classes.world} />);
+              setLanguage("عربي");
+              setOpenLanguagesBar(false);
+            }}>
+                <Qatar className={classes.flag} />
+                <div className={classes.flagname}>عربي</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<France className={classes.world} />);
+                setLanguage("Français");
+                setOpenLanguagesBar(false);
+              }} >
+                <France className={classes.flag} />
+                <div className={classes.flagname}>Français</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Russia className={classes.world} />);
+                setLanguage("Русский");
+                setOpenLanguagesBar(false);
+              }}>
+                <Russia className={classes.flag} />
+                <div className={classes.flagname}>Русский</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Hungary className={classes.world} />);
+                setLanguage("Magyar");
+                setOpenLanguagesBar(false);
+              }}>
+                <Hungary className={classes.flag} />
+                <div className={classes.flagname}>Magyar</div>
+              </div>
+
+            <div className={classes.language} onClick={() => {
+                setFlag(<Switzerland className={classes.world} />)
+                setLanguage("Schweiz")
+                setOpenLanguagesBar(false);
+            }}>
+                <Switzerland className={classes.flag} />
+                <div className={classes.flagname}>Schweiz</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Ukraine className={classes.world} />);
+                setLanguage("українська");
+                setOpenLanguagesBar(false);
+              }}>
+                <Ukraine className={classes.flag} />
+                <div className={classes.flagname}>українська</div>
+              </div>
+            <div className={classes.language} onClick={() => {
+              setFlag(<Italy className={classes.world} />);
+              setLanguage("Italiano")
+              setOpenLanguagesBar(false);
+            }}>
+                <Italy className={classes.flag} />
+                <div className={classes.flagname}>Italiano</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Albania className={classes.world} />);
+                setLanguage("shqiptare");
+                setOpenLanguagesBar(false);
+              }}>
+                <Albania className={classes.flag} />
+                <div className={classes.flagname}>shqiptare</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Serbia className={classes.world} />);
+                setLanguage("Српски");
+                setOpenLanguagesBar(false);
+              }}>
+                <Serbia className={classes.flag} />
+                <div className={classes.flagname}>Српски</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Bulgaria className={classes.world} />);
+                setLanguage("български");
+                setOpenLanguagesBar(false);
+              }}>
+                <Bulgaria className={classes.flag} />
+                <div className={classes.flagname}>български</div>
+              </div>
+
+            <div className={classes.language} onClick={() => {
+              setFlag(<Croatia className={classes.world} />);
+              setLanguage("Hrvatski");
+              setOpenLanguagesBar(false);
+            }}>
+                <Croatia className={classes.flag} />
+                <div className={classes.flagname}>Hrvatski</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Romania className={classes.world} />);
+                setLanguage("Română");
+                setOpenLanguagesBar(false);
+              }}>
+                <Romania className={classes.flag} />
+                <div className={classes.flagname}>Română</div>
+              </div>
+            <div className={classes.language} onClick={() => {
+              setFlag(<Spain className={classes.world} />);
+              setLanguage("español");
+              setOpenLanguagesBar(false);
+            }}>
+                <Spain className={classes.flag} />
+                <div className={classes.flagname}>español</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Czech className={classes.world} />);
+                setLanguage("čeština");
+                setOpenLanguagesBar(false);
+              }}>
+                <Czech className={classes.flag} />
+                <div className={classes.flagname}>čeština</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Bosnia className={classes.world} />);
+                setLanguage("bosanski");
+                setOpenLanguagesBar(false);
+              }}>
+                <Bosnia className={classes.flag} />
+                <div className={classes.flagname}>bosanski</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Iran className={classes.world} />);
+                setLanguage("فارسی");
+                setOpenLanguagesBar(false);
+              }}>
+                <Iran className={classes.flag} />
+                <div className={classes.flagname}>فارسی</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Poland className={classes.world} />);
+                setLanguage("Polski")
+                setOpenLanguagesBar(false);
+              }}>
+                <Poland className={classes.flag} />
+                <div className={classes.flagname}>Polski</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Saudi className={classes.world} />);
+                setLanguage("عربي");
+                setOpenLanguagesBar(false);
+              }}>
+                <Saudi className={classes.flag} />
+                <div className={classes.flagname}>عربي</div>
+              </div>
+              <div className={classes.language} onClick={() => {
+                setFlag(<Azerbaijan className={classes.world} />);
+                setLanguage("Azərbaycan")
+                setOpenLanguagesBar(false);
+              }}>
+                <Azerbaijan className={classes.flag} />
+                <div className={classes.flagname}>Azərbaycan</div>
+              </div>
+          </div>
+        </div>}
+      {openLanguagesBar == true && <div className={classes.closebar} onClick={() => setOpenLanguagesBar(false)}></div>}
+      {openLanguagesBar == true && <div className={classes.openbarbackground}>
+        
+      </div>}
       <div className={`${classes.backgroundfooterlinks}`}>
         <div className="w-10/12 max-w-ag-container lg:w-full mx-auto">
           <div className="flex md:flex-col bg-theme-gray-4 p-6 pb-0">
@@ -243,57 +462,6 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          {openLanguagesBar == true && <div className={classes.langcontainer}>
-          <div className="w-10/12 max-w-ag-container lg:w-full mx-auto flex justify-end">
-            <div className={classes.languagesbar}>
-              <div className={classes.language} onClick={() => setLanguage("DEUTSCH")}>
-                  DEUTSCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("RUMÄNISCH")}>
-                    RUMÄNISCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("SERBISCH")}>
-                    SERBISCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("TÜRKISCH")}>
-                    TÜRKISCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("BOSNISCH")}>
-                    BOSNISCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("KROATISCH")}>
-                    KROATISCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("UNGARISCH")}>
-                    UNGARISCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("ARABISCH")}>
-                    ARABISCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("POLNISCH")}>
-                    POLNISCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("UKRAINISCH")}>
-                    UKRAINISCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("SLOWAKISCH")}>
-                    SLOWAKISCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("PERSISCH")}>
-                    PERSISCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("BULGARISCH")}>
-                    BULGARISCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("ITALIENISCH")}>
-                    ITALIENISCH
-              </div>
-              <div className={classes.language} onClick={() => setLanguage("RUSSISCH")}>
-                    RUSSISCH
-              </div>
-            </div>  
-          </div>  
-          </div>}
         </div>
         <div className="w-10/12 max-w-ag-container lg:w-full mx-auto shadow-1">
           <div className="flex items-center flex-column justify-between py-2 text-white text-13 bg-black border-t border-theme-gray-3 xl:flex-wrap md:justify-center">
@@ -317,12 +485,12 @@ export default function Footer() {
                     <div className="flex">
                       <span className={`md:px-2 ${classes.linkprop} ${classes.linkproplast} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all border-r-2 border-theme-gray-3`}>IMPRESSUM</span>
                       <Link href={"/contact-us"}><span className={`md:px-2 ${classes.linkprop} ${classes.borderright} cursor-pointer hover:text-yellow-600 pl-4 pr-4 text-12 hover:transition-all`}>KONTAKT</span></Link>
-                      {width < 575 && <p className="flex items-center cursor-pointer hover:transition-all hover:text-yellow-600" onClick={() => setOpenLanguagesBar(d => !d)}><WorldIcon className={classes.world} />{language}</p>}
+                      {width < 575 && <p className="flex items-center cursor-pointer hover:transition-all hover:text-yellow-600" onClick={() => setOpenLanguagesBar(d => !d)}>{flag}{language}</p>}
                     </div>
                   </span>
                 </div>
                 <div className={`${classes.languages} langBar`}>
-                  {width >= 575 && <p className="flex items-center cursor-pointer hover:transition-all hover:text-yellow-600" onClick={() => setOpenLanguagesBar(d => !d)}><WorldIcon className={classes.world} />{language}</p>}
+                  {width >= 575 && <p className="flex items-center cursor-pointer hover:transition-all hover:text-yellow-600" onClick={() => setOpenLanguagesBar(d => !d)}>{flag}{language}</p>}
                 </div>
               </div>              
           </div>

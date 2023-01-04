@@ -1,3 +1,95 @@
+.openbarbackground{
+    
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.closebar{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 11;
+}
+
+.openbar{
+    width: 300px;
+    min-height: 500px;
+    border-radius: 30px;
+    background-color: #F1F2F3;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    z-index: 12;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+}
+
+.heading{
+    color: #6C757D;
+}
+
+.firstrow{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    height: 70px;
+    gap: 20px;
+    border-bottom: 1px solid rgba(108, 117, 125, 0.5);
+    color: #6C757D;
+    font-size: 13px;
+    margin-right: 7px;
+}
+
+.germanflag{
+    margin-left: 5px;
+}
+
+.englishflag{
+    margin-left: 10px;
+}
+
+.secondrow{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.language{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.flag{
+    width: 30px;
+    height: 20px;
+}
+
 .langcontainer{
     position: absolute;
     width: 100%;
@@ -54,7 +146,7 @@
 }
 
 .backgroundfooterlinks{
-    background-color: rgba(108, 117, 125, 0.85);
+    background-color: #6C757D;
 }
 
 .footerborder{

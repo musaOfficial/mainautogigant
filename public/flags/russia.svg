@@ -1,0 +1,24 @@
+<svg id="russia-33064" xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 40 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #0039a6;
+      }
+
+      .cls-3 {
+        fill: #d52b1e;
+      }
+    </style>
+  </defs>
+  <path id="Path_1324" data-name="Path 1324" class="cls-1" d="M0,0H40V30H0Z"/>
+  <path id="Path_1325" data-name="Path 1325" class="cls-2" d="M0,160H40v21.013H0Z" transform="translate(0 -151.016)"/>
+  <path id="Path_1326" data-name="Path 1326" class="cls-3" d="M0,320H40V330.5H0Z" transform="translate(0 -300.504)"/>
+</svg>

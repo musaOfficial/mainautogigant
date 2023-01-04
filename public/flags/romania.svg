@@ -1,0 +1,24 @@
+<svg id="romania-33063" xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 40 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00319c;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #ffde00;
+      }
+
+      .cls-3 {
+        fill: #de2110;
+      }
+    </style>
+  </defs>
+  <path id="Path_2268" data-name="Path 2268" class="cls-1" d="M0,0H14.009V30H0Z"/>
+  <path id="Path_2269" data-name="Path 2269" class="cls-2" d="M213.333,0h14.009V30H213.333Z" transform="translate(-200.338)"/>
+  <path id="Path_2270" data-name="Path 2270" class="cls-3" d="M426.666,0h14.01V30h-14.01Z" transform="translate(-400.676)"/>
+</svg>

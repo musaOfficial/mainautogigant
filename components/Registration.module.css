@@ -259,3 +259,9 @@
     width: 28px;
     height: 25px;
 }
+
+@media(max-width: 840px){
+    .container{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,19 @@
+<svg id="ukraine-33145" xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 40 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffd500;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #005bbb;
+      }
+    </style>
+  </defs>
+  <path id="Path_1505" data-name="Path 1505" class="cls-1" d="M0,0H40V30H0Z"/>
+  <path id="Path_1506" data-name="Path 1506" class="cls-2" d="M0,0H40V15.761H0Z"/>
+</svg>
