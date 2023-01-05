@@ -783,15 +783,30 @@
     position: fixed;
 }
 
+.close{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    height: 30px;
+    width: 30px;
+    color: #fff;
+    transition: all .1s ease-in;
+    cursor: pointer;
+    
+}
+
+.close:hover{
+    transform: translateY(-2px);
+}
+
 .avatarselectionbox{
-    height: 700px;
-    width: 380px;
+    width: 300px;
     background-color: #555555;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 50px;
+    border-radius: 30px;
     padding: 20px;
     display: flex;
     justify-content: center;

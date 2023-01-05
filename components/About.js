@@ -85,7 +85,7 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                         {width >= 1186 && <Image src={'/aboutus/abr.png'} layout='fill' /> }
                     </div>
                 </div>
-                <div className={classes.ourteam}>
+                {/* <div className={classes.ourteam}>
                     <div className={classes.leftteam}>
                         <h1 className={classes.teamheading}>UNSER TEAM</h1>
                         <div className={classes.points}>
@@ -130,7 +130,7 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                     <div className={classes.rightteam}>
                         <SwiperComponent />
                     </div>
-                </div>
+                </div> */}
                 {/* <div className={classes.fragencontainer}>
                     <h1 className={classes.fragenheading}>HÄUFIG GESTELLTE FRAGEN</h1>
                     {/* FRAGEN - bottom */}

@@ -29,6 +29,7 @@
     min-height: 500px;
     border-radius: 30px;
     background-color: #F1F2F3;
+    height: 600px;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -59,6 +60,80 @@
     color: #6C757D;
     font-size: 13px;
     margin-right: 7px;
+}
+
+.swiperslide{
+    width: 100%;
+    height: 100%;
+}
+
+.swiperslidetop{
+    height: 108px;
+    width: 100%;
+    position: relative;
+}
+
+.socialcontainer{
+    margin-top: 20px;
+}
+
+.opened{
+    width: 100px;
+    height: 33px;
+    background-color: #29D62F;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.swiperslidelogo{
+    height: 55px;
+    width: 137px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.swiperslidebottom{
+    padding: 20px;
+    color: #0067B8;
+    font-size: 15px;
+    text-align: start;
+}
+
+.expandor{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #6C757D;
+    color: #fff;
+    padding: 10px;
+    transform: rotate(-90deg);
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.socialmediaicon{
+    color: #6C757D;
+    width: 100%;
+    margin-left: 10px;
+    height: 32.23px;
+    width: 32.23px;
+}
+
+.expandor:hover{
+    background-color: #FBB900;
+}
+
+.swiperslideheading{
+    font-weight: bold;
 }
 
 .germanflag{

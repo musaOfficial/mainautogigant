@@ -34,6 +34,15 @@ import United from './../../public/flags/united.svg';
 import Germany from './../../public/flags/germany.svg';
 import Slovakia from './../../public/flags/slovakia.svg';
 import Azerbaijan from './../../public/flags/azerbaijan.svg';
+import Image from "next/image";
+import SwiperSlideImage from './../../public/swiperslide.png';
+import Gigantlogo from './../../public/gigantlogo.jpg';
+import Expand from './../../public/expand.svg';
+import Facebook from './../../public/facebook.svg';
+import Tiktok from './../../public/tiktok.svg';
+import Instagram from './../../public/instagram.svg';
+import Youtube from './../../public/youtube.svg';
+import Linkedin from './../../public/linkedin.svg';
 
 const useDeviceSize = () => {
 
@@ -311,43 +320,33 @@ export default function Footer() {
             </div>
             <div className="w-1/3 ml-4 md:w-1/2 md:mx-auto sm:!w-full">
               <FooterCarousel
-              className={"z-0 w-full"}>
+              className={`z-0 w-full ${classes.footercarousel} `}>
                 <SwiperSlide>
-                  <div className="w-full h-full relative flex items-center p-6 bg-white overflow-hidden">
-                    <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10 overflow-hidden"></div>
-                    <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4 overflow-hidden">
-                      <img className="rounded-full" src="/images/logo.png" />
+                  <div className={classes.swiperslide}>
+                    <div className={classes.swiperslidetop}>
+                      <Image src={SwiperSlideImage} layout="fill" objectFit="cover" />
+                      <div className={classes.swiperslidelogo}>
+                        <Image src={Gigantlogo} layout='fill' objectFit="cover" />
+                      </div>
                     </div>
-                    <div className="flex-1 relative z-30">
-                      <h4 className="text-base font-bold">HGMEDIA WERBEAGENTUR</h4>
-                      <p className="text-13 py-2">WIENER STRASSE 90 2700 WIENER NEUSTADT</p>
-                      <button className="inline-block px-2 py-2 text-13 sm:px-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white font-bold ease-linear duration-300 hover:bg-theme-yellow-3">PROFIL BESUCHEN</button>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="w-full h-full relative flex items-center p-6 bg-white  overflow-hidden">
-                  <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10 overflow-hidden"></div>
-                    <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4 overflow-hidden">
-                      <img className="rounded-full" src="/images/logo.png" />
-                    </div>
-                    <div className="flex-1 relative z-30">
-                      <h4 className="text-base font-bold overflow-hidden">HGMEDIA WERBEAGENTUR</h4>
-                      <p className="text-13 py-2">WIENER STRASSE 90 2700 WIENER NEUSTADT</p>
-                      <button className="inline-block px-2 py-2 text-13 sm:px-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white font-bold ease-linear duration-300 hover:bg-theme-yellow-3">PROFIL BESUCHEN</button>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="w-full h-full relative  flex items-center p-6 bg-white overflow-hidden">
-                  <div className="absolute md:h-12 h-20 w-full left-0 bottom-0 z-20 bg-theme-gray-10 overflow-hidden"></div>
-                    <div className="relative z-30 mr-4 rounded-full border-4 border-theme-gray-4 overflow-hidden">
-                      <img className="rounded-full" src="/images/logo.png" />
-                    </div>
-                    <div className="flex-1 relative z-30">
-                      <h4 className="text-base font-bold">HGMEDIA WERBEAGENTUR</h4>
-                      <p className="text-13 py-2">WIENER STRASSE 90 2700 WIENER NEUSTADT</p>
-                      <button className="inline-block px-2 py-2 text-13 sm:px-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white font-bold ease-linear duration-300 hover:bg-theme-yellow-3">PROFIL BESUCHEN</button>
+                    <div className={classes.swiperslidebottom}>
+                        <div className="flex justify-between items-center">
+                          <div>
+                            <div className={classes.swiperslideheading}>Gigant Group Teknoloji A.S.</div>
+                            <div className={classes.swiperslidelocation}>Wiener Straße 90<br />2700 Wiener Neustadt<br />Österreich</div>
+                          </div>
+                          <div>
+                            <Link href={"/dealer-profile"}><div className={classes.expand}><Expand className={classes.expandor} /></div></Link>
+                          </div>
+                        </div>
+                        <div className={`flex items-center w-full ${classes.socialcontainer}`}>
+                          <div className={`${classes.opened} ${classes.notopened}`}>Jetzt geöffnet</div>
+                          <Facebook className={classes.socialmediaicon} />
+                          <Instagram className={classes.socialmediaicon} />
+                          <Youtube className={classes.socialmediaicon} />
+                          <Linkedin className={classes.socialmediaicon} />
+                          <Tiktok className={classes.socialmediaicon} />
+                        </div>
                     </div>
                   </div>
                 </SwiperSlide>

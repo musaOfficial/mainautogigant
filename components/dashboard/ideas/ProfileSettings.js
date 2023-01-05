@@ -24,7 +24,6 @@ import Closer from './../../../public/closer.svg'
 
 
 
-
 export default function ProfileSettings(){
     const format = 'HH:mm';
     const handleDragEnter = (e) => {
@@ -289,9 +288,10 @@ export default function ProfileSettings(){
 
     return (
         <div className={classes.container}>
+            
             {avatarSelectionPopup == true && <div className={classes.avatarselectionbackground}>
+                <Closer className={classes.close} onClick={() => setAvatarSelectionPopup(false)} />
                 <div className={classes.avatarselectionbox}>
-                    <div className={classes.clsbtn} onClick={() => setAvatarSelectionPopup(false)}>x</div>
                     <div className={classes.grid}>
                     <span onClick={() => {
                             setSelectedAvatar("/m1.jpg");

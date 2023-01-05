@@ -133,7 +133,7 @@ function MySubscriptionsPage(){
                     </div>
                     <div className={classes.addetail}>
                         <Graytick className={classes.tick} />
-                        <span className={classes.addetailgray}>Profil Booster</span>
+                        <span className={classes.addetailgray}>Profil Booster</   span>
                     </div>
                     <div className={classes.addetail}>
                         <Graytick className={classes.tick} />
@@ -143,7 +143,7 @@ function MySubscriptionsPage(){
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Ad Screen Slider</span>
                     </div>
@@ -191,7 +191,7 @@ function MySubscriptionsPage(){
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Ad Screen Slider</span>
                     </div>
@@ -238,7 +238,7 @@ function MySubscriptionsPage(){
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Ad Screen Slider</span>
                     </div>
@@ -285,7 +285,7 @@ function MySubscriptionsPage(){
                         <Greentick className={classes.tick} />
                         <span className={classes.addetailtext}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Greentick className={classes.tick} />
                         <span className={classes.addetailtext}>1 x Ad Screen Slider</span>
                     </div>
@@ -333,7 +333,7 @@ function MySubscriptionsPage(){
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Ad Screen Slider</span>
                     </div>
@@ -381,7 +381,7 @@ function MySubscriptionsPage(){
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Ad Screen Slider</span>
                     </div>
@@ -428,7 +428,7 @@ function MySubscriptionsPage(){
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Ad Screen Slider</span>
                     </div>
@@ -475,7 +475,7 @@ function MySubscriptionsPage(){
                         <Greentick className={classes.tick} />
                         <span className={classes.addetailtext}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Greentick className={classes.tick} />
                         <span className={classes.addetailtext}>1 x Ad Screen Slider</span>
                     </div>
@@ -523,7 +523,7 @@ function MySubscriptionsPage(){
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Ad Screen Slider</span>
                     </div>
@@ -571,7 +571,7 @@ function MySubscriptionsPage(){
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Ad Screen Slider</span>
                     </div>
@@ -618,7 +618,7 @@ function MySubscriptionsPage(){
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Ad Screen Slider</span>
                     </div>
@@ -665,7 +665,7 @@ function MySubscriptionsPage(){
                         <Greentick className={classes.tick} />
                         <span className={classes.addetailtext}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Greentick className={classes.tick} />
                         <span className={classes.addetailtext}>1 x Ad Screen Slider</span>
                     </div>
@@ -713,7 +713,7 @@ function MySubscriptionsPage(){
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Ad Screen Slider</span>
                     </div>
@@ -761,7 +761,7 @@ function MySubscriptionsPage(){
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Ad Screen Slider</span>
                     </div>
@@ -808,7 +808,7 @@ function MySubscriptionsPage(){
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Graytick className={classes.tick} />
                         <span className={classes.addetailgray}>1 x Ad Screen Slider</span>
                     </div>
@@ -855,7 +855,7 @@ function MySubscriptionsPage(){
                         <Greentick className={classes.tick} />
                         <span className={classes.addetailtext}>1 x Giga Label</span>
                     </div>
-                    <div className={classes.addetaillast}>
+                    <div className={`${classes.addetaillast} ${classes.openedpricedescription}`}>
                         <Greentick className={classes.tick} />
                         <span className={classes.addetailtext}>1 x Ad Screen Slider</span>
                     </div>

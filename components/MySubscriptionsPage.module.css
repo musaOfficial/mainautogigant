@@ -91,6 +91,10 @@
     padding-bottom: 5px;
 }
 
+.openedpricedescription{
+    border-bottom: 1px solid #F1F2F3;
+}
+
 .addetail{
     display: flex;
     align-items: center;
