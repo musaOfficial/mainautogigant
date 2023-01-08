@@ -126,3 +126,9 @@
 .link:hover{
     text-decoration: underline;
 }
+
+@media(max-width: 1023px){
+    .container{
+        flex-direction: column;
+    }
+}

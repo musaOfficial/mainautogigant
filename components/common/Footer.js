@@ -42,7 +42,7 @@ import Facebook from './../../public/facebook.svg';
 import Tiktok from './../../public/tiktok.svg';
 import Instagram from './../../public/instagram.svg';
 import Youtube from './../../public/youtube.svg';
-import Linkedin from './../../public/linkedin.svg';
+import Linkedin from './../../public/Linkedin.svg';
 
 const useDeviceSize = () => {
 

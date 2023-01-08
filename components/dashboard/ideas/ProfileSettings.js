@@ -740,7 +740,9 @@ export default function ProfileSettings(){
                     <Toggle />
                 </div>
                 <textarea className={classes.ueberunstextarea} onChange={(e) => setUeberuns(e.target.value)} placeholder="Der Text, den Sie hier eingeben, wird auf ihrem öffentlichen Profil angezeigt"/>
-                <button className={classes.saveueberunschanges}>Änderungen Speichern</button>
+                <div className='flex w-full justify-end'>
+                    <button className={classes.saveueberunschanges}>Änderungen Speichern</button>
+                </div>
                 <hr />
                 <br />
                 <div className={classes.sectionheading}>BRANCHE AUSWÄHLEN</div>

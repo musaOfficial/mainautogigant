@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { useState } from "react";
 import Input from "./ui/Input";
+import classes from './DealerLogin.module.css';
 
 export default function DealerLogin() {
   const [passWordSave, setPasswordSave] = useState(false);
 
   return (
     <>
-      <div className="bg-theme-gray-3 overflow-hidden lg:px-6 md:!px-0">
+      <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0">
         <div className="relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6">
           <div className="w-1/2 lg:w-full mr-3 rounded-10 bg-theme-gray-4 flex flex-col text-theme-gray-4 text-15 md:text-xs lg:flex-col">
             <div className="p-6">
@@ -65,7 +66,7 @@ export default function DealerLogin() {
                   </Link>
                 </div>
                 <div className="flex items-end justify-between mt-10 sm:flex-col">
-                  <button className="w-1/2 sm:w-full sm:mb-4 sm:mr-0 mr-2 inline-block px-10 py-3 sm:px-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3">
+                  <button className={`w-1/2 sm:w-full sm:mb-4 sm:mr-0 mr-2 inline-block px-10 py-3 sm:px-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3 ${classes.btn} `}>
                     Einloggen
                   </button>
                   <Link href="/registration/user">

@@ -270,3 +270,42 @@
 .yellowpackage{
     background-color: #FEE497;
 }
+
+@media(max-width: 1105px){
+    .packages{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media(max-width: 1022px){
+    .packages{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media(max-width: 870px){
+    .packages{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 653px){
+    .packages{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .boxergrid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .selection{
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 451px){
+    .packages{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

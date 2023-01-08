@@ -129,3 +129,14 @@
     border-radius: 10px;
     padding-left: 20px;
 }
+
+.secondcontent{
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media(max-width: 1023px){
+    .secondcontent{
+        margin-top: 20px;
+    }
+}
