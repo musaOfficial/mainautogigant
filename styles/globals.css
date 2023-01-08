@@ -19,6 +19,7 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #808080;
   --swiper-navigation-color: #ccc;
+  color: #6C757D !important;
 }
 
 ::selection{

@@ -2,15 +2,26 @@
     border-radius: 10px;
     display: flex;
     align-items: center;
-    margin-left: -20px;
-    margin-right: -20px;
-    margin-bottom: -20px;
-    margin-top: -20px;
     transition: all .1s ease-in;
     width: 100%;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+
+}
+
+.colorad{
+    background-color: #FEE497 !important;
+    border-top: 3px solid #FBB900 !important;
+    border-right: 3px solid #FBB900 !important;
+    border-bottom: 3px solid #FBB900 !important;
+}
+
+
+.gigalabel{
+    width: 60px;
+    height: 25px;
+    top: -12.5px;
+    left: 20px;
+    position: absolute;
+    z-index: 10;
 }
 
 .container:hover .actioncontainer, .container:hover .carinfocontainer, .container:hover .carimg{
@@ -37,6 +48,7 @@
     cursor: pointer;
     border-radius: 0px;
     border-radius: 10px 0 0 10px;
+    z-index: 10;
 }
 
 .bgred:hover{
@@ -124,6 +136,7 @@
     cursor: pointer;
     height: 145px;
     position: relative;
+    z-index: 0;
 }
 
 .carprice{
@@ -182,8 +195,9 @@
     width: 100%;
     justify-content: space-between;
     margin-top: 5px;
-    font-size: 15px;
+    font-size: 13px;
     color: #0067B8;
+    align-items: center;
 }
 
 .left{
@@ -259,19 +273,24 @@
     position: absolute;
     background-color: #fff;
     color: #0067B8;
-    width: 150px;
+    width: 120px;
     border-radius: 5px;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
     top: -20px;
+    font-size: 13px;
+}
+
+.svgcontainer:hover{
+    color: #FBB900;
 }
 
 
 .favoritesvgcontainer{
     position: absolute;
-    width: 170px; 
+    width: 130px; 
     background-color: #fff;
     color: #0067B8;
     z-index: 1000;
@@ -280,12 +299,13 @@
     justify-content: center;
     border-radius: 5px;
     top: 24px;
-    
+    font-size: 13px;
 }
+
 
 .sharesvgcontainer{
     position: absolute;
-    width: 155px;
+    width: 125px;
     background-color: #fff;
     color: #0067B8;
     z-index: 1000;
@@ -293,8 +313,9 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    bottom: -140px;
+    bottom: -110px;
     padding: 10px 0;
+    font-size: 13px;
 }
 
 .instaicon{
@@ -326,8 +347,4 @@
     background-color: #fff;
     position: absolute;
     bottom: -10px;
-}
-
-.borderbottom{
-    border-bottom: 1px solid rgba(108, 117, 125, 0.2);
 }

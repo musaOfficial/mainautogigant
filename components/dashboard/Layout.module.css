@@ -26,6 +26,37 @@
     border-radius: 10px 0 0 0;
 }
 
+.bgcolor{
+    background-color: #F1F2F3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    padding-left: 30px;
+}
+
+.up{
+    height: 40px;
+    width: 40px;
+    margin-right: 30px;
+    margin-left: 10px;
+    color: transparent;
+    transition: all .1s ease-in;
+    color: #fff;
+}
+
+.linkgroup:hover .up{
+    color: #FBB900;
+}
+
+.linkgroup{
+    color: #0067B8;
+}
+
+.linkgroup:hover{
+    color: #FBB900;
+}
+
 @media (max-width: 650px){
     .container{
         padding: 0;

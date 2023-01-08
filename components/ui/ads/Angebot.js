@@ -12,7 +12,10 @@ import MailIcon from './../../../public/images/email.svg';
 import LinkIcon from './../../../public/images/link.svg';
 import FacebookIcon from './../../../public/images/facebik.svg';
 import WhatsAppIcon from './../../../public/images/WhatsApp.svg';
-import InstagramIcon from './../../../public/icons/instagram.svg'
+import InstagramIcon from './../../../public/icons/instagram.svg';
+import CompanyIcon from './../../../public/icons/companyname.svg';
+import GigaLabel from './../../../public/gigalabel.svg';
+import Link from 'next/link';
 
 function Angebot({
     title,
@@ -27,7 +30,10 @@ function Angebot({
     location,
     companyname,
     index,
-    key
+    key,
+    gigalabel,
+    colorad,
+    id,
 }){
 
     // erstzulassung, kraftstoff, leistung, kilometerstand, getriebe, fahrzeugzustand
@@ -43,6 +49,9 @@ function Angebot({
 
     var displayPrice = price.toLocaleString() + " €"
 
+    var fz = details.kilometerstand + " km";
+    var ez = "EZ: " + details.erstzulassung;
+
     if(pl % 3 == 0){
         console.log(true)
     } else {
@@ -53,16 +62,18 @@ function Angebot({
     return (
         cardView == true ? <div className={`${classes.container}`}>
         <div className={classes.actioncontainer}>
-            <div className={`${classes.lefticon} ${classes.top}`} onMouseEnter={() => setVisibleOpen(true)} onMouseLeave={() => setVisibleOpen(false)}  >
-                <Visible className={classes.whiteicon} />
-                {visibleOpen == true && <div className={`${classes.svgcontainer} hover:font-bold`}>
-                    Inserat anschauen
-                </div>}
-                {visibleOpen == true && <div className={classes.triangle1}></div>}
-            </div>
+            <Link href={`car-details/${id}`}>
+                <div className={`${classes.lefticon} ${classes.top}`} onMouseEnter={() => setVisibleOpen(true)} onMouseLeave={() => setVisibleOpen(false)}  >
+                    <Visible className={classes.whiteicon} />
+                    {visibleOpen == true && <div className={`${classes.svgcontainer}`}>
+                        Inserat anschauen
+                    </div>}
+                    {visibleOpen == true && <div className={classes.triangle1}></div>}
+                </div>
+            </Link>
             <div className={`${classes.lefticon} ${classes.middle}`} onMouseEnter={() => setPrintOpen(true)} onMouseLeave={() => setPrintOpen(false)}>
                 <Print className={classes.whiteicon}/>
-                {printOpen == true && <div className={`${classes.favoritesvgcontainer} hover:font-bold`}>
+                {printOpen == true && <div className={`${classes.favoritesvgcontainer} hover:text-yellow-400`}>
                     Als Favorit speichern
                 </div>}
                 {printOpen == true && <div className={classes.triangle2}></div>}
@@ -71,29 +82,36 @@ function Angebot({
                 <Share className={classes.whiteicon} />
                 {shareOpen == true && <div className={classes.sharesvgcontainer}>
                     <div className={classes.shareitems}>
-                        <div className='flex items-center'><MailIcon /><span className="ml-1 hover:font-bold">E-mail</span></div>
+                        <div className='flex items-center'><MailIcon /><span className="ml-1 hover:text-yellow-400">E-mail</span></div>
                         <div className={classes.borderbottom}></div>
-                        <div className='flex items-center'><LinkIcon /><span className="ml-1 hover:font-bold">Link kopieren</span></div>
+                        <div className='flex items-center'><LinkIcon /><span className="ml-1 hover:text-yellow-400">Link kopieren</span></div>
                         <div className={classes.borderbottom}></div>
-                        <div className='flex items-center'><FacebookIcon /><span className="ml-1 hover:font-bold">Facebook</span></div>
+                        <div className='flex items-center'><FacebookIcon /><span className="ml-1 hover:text-yellow-400">Facebook</span></div>
                         <div className={classes.borderbottom}></div>
-                        <div className='flex items-center'><InstagramIcon className={classes.instaicon}/><span className="ml-1 hover:font-bold">Instagram</span></div>
+                        <div className='flex items-center'><InstagramIcon className={classes.instaicon}/><span className="ml-1 hover:text-yellow-400">Instagram</span></div>
                         <div className={classes.borderbottom}></div>
-                        <div className='flex items-center'><WhatsAppIcon /><span className="ml-1 hover:font-bold">WhatsApp</span></div>
+                        <div className='flex items-center'><WhatsAppIcon /><span className="ml-1 hover:text-yellow-400">WhatsApp</span></div>
                     </div>
                 </div>}
                 {shareOpen == true && <div className={classes.triangle3}></div>}
             </div>
         </div>
-            <div className={classes.carimg}>
-                <Image src={imgSrc} layout='fill' objectFit='cover'/>
-            </div>
-        <div className={classes.carinfocontainer}>
+            <Link href={`car-details/${id}`}>
+                <div className='relative'>
+                    <div className={classes.carimg}>
+                        <Image src={imgSrc} layout='fill' objectFit='cover'/>
+                    </div>
+                    {gigalabel == true && <GigaLabel className={classes.gigalabel} />}
+                </div>
+            </Link>
+        <div className={`${classes.carinfocontainer} ${colorad ? classes.colorad : null}`}>
             <div className={classes.carprice}>
                 {displayPrice}
             </div>
             <div className={classes.rightside}>
-                <h1 className={classes.title}>{title}</h1>
+                <Link href={`car-details/${id}`}>
+                    <h1 className={classes.title}>{title}</h1>
+                </Link>
                 <p className={classes.cardesc}>{displayDesc}</p>
                 <div className={classes.cardetails}>
                     <div className={`${classes.detail} ${classes.firstdetail}`}>{details.erstzulassung}</div>
@@ -104,69 +122,77 @@ function Angebot({
                 </div>
                 <div className={classes.companyinfo}>
                     <div className={classes.left}><CompanyLocation className={classes.companyicon}/>{location}</div>
-                    <div className={classes.right}><CompanyLocation className={classes.companyicon}/>{companyname}</div>
+                    <div className={classes.right}><CompanyIcon className={classes.companyicon}/>{companyname}</div>
                 </div>
             </div>
         </div>
     </div> : 
         
         <div className={styles.container}>
-            <div className={styles.top}>
-                <Image className={styles.img} src={imgSrc} layout='fill' objectFit='cover' />
-                <div className={styles.price}>{price}</div>
-                <div className={styles.actioncontainer}>
-                    <div className={`${classes.borderright} ${classes.first}`} onMouseEnter={() => setVisibleOpen(true)} onMouseLeave={() => setVisibleOpen(false)}>
-                        <Visible className={classes.sicon} />
-                        {visibleOpen == true && <div className={styles.svgcontainer}>
-                            Inserat anschauen
-                        </div>}
-                        {visibleOpen == true && <div className={styles.triangle1}></div>}
-                    </div>
-                    <div className={classes.borderright} onMouseEnter={() => setPrintOpen(true)} onMouseLeave={() => setPrintOpen(false)}>
-                        <Print  className={classes.sicon}/>
-                        {printOpen == true && <div className={styles.favoritesvgcontainer}>
-                            Als Favorit speichern
-                        </div>}
-                        {printOpen == true && <div className={styles.triangle2}></div>}
-                    </div>
-                    <div className={`${classes.borderright} ${classes.last}`} onMouseEnter={() => setShareOpen(true)} onMouseLeave={() => setShareOpen(false)}>
-                        <Share  className={classes.sicon}/>
-                        {shareOpen == true && <div className={styles.sharesvgcontainer}>
-                                <div className={classes.shareitems}>
-                                <div className='flex items-center'><MailIcon /><span className="ml-1 hover:font-bold">E-mail</span></div>
-                                <div className={classes.borderbottom}></div>
-                                <div className='flex items-center'><LinkIcon /><span className="ml-1 hover:font-bold">Link kopieren</span></div>
-                                <div className={classes.borderbottom}></div>
-                                <div className='flex items-center'><FacebookIcon /><span className="ml-1 hover:font-bold">Facebook</span></div>
-                                <div className={classes.borderbottom}></div>
-                                <div className='flex items-center'><InstagramIcon className={classes.instaicon}/><span className="ml-1 hover:font-bold">Instagram</span></div>
-                                <div className={classes.borderbottom}></div>
-                                <div className='flex items-center'><WhatsAppIcon /><span className="ml-1 hover:font-bold">WhatsApp</span></div>
-                            </div>
-                        </div>}
-                        {shareOpen == true && <div className={styles.triangle3}></div>}
+            <div className='relative'>
+                
+                <div className={styles.top}>
+                    <Link href={`car-details/${id}`}><Image className={styles.img} src={imgSrc} layout='fill' objectFit='cover' /></Link>
+                    <div className={styles.price}>{displayPrice}</div>
+                    <div className={styles.actioncontainer}>
+                        <div className={`${classes.borderright} ${classes.first}`} onMouseEnter={() => setVisibleOpen(true)} onMouseLeave={() => setVisibleOpen(false)}>
+                           <Link href={`car-details/${id}`} ><Visible className={classes.sicon} /></Link>
+                            {visibleOpen == true && <div className={styles.svgcontainer}>
+                                Inserat anschauen
+                            </div>}
+                            {visibleOpen == true && <div className={styles.triangle1}></div>}
+                        </div>
+                        <div className={classes.borderright} onMouseEnter={() => setPrintOpen(true)} onMouseLeave={() => setPrintOpen(false)}>
+                            <Print  className={classes.sicon}/>
+                            {printOpen == true && <div className={styles.favoritesvgcontainer}>
+                                Als Favorit speichern
+                            </div>}
+                            {printOpen == true && <div className={styles.triangle2}></div>}
+                        </div>
+                        <div className={`${classes.borderright} ${classes.last}`} onMouseEnter={() => setShareOpen(true)} onMouseLeave={() => setShareOpen(false)}>
+                            <Share  className={classes.sicon}/>
+                            {shareOpen == true && <div className={styles.sharesvgcontainer}>
+                                    <div className={classes.shareitems}>
+                                    <div className='flex items-center'><MailIcon /><span className="ml-1 hover:font-bold">E-mail</span></div>
+                                    <div className={classes.borderbottom}></div>
+                                    <div className='flex items-center'><LinkIcon /><span className="ml-1 hover:font-bold">Link kopieren</span></div>
+                                    <div className={classes.borderbottom}></div>
+                                    <div className='flex items-center'><FacebookIcon /><span className="ml-1 hover:font-bold">Facebook</span></div>
+                                    <div className={classes.borderbottom}></div>
+                                    <div className='flex items-center'><InstagramIcon className={classes.instaicon}/><span className="ml-1 hover:font-bold">Instagram</span></div>
+                                    <div className={classes.borderbottom}></div>
+                                    <div className='flex items-center'><WhatsAppIcon /><span className="ml-1 hover:font-bold">WhatsApp</span></div>
+                                </div>
+                            </div>}
+                            {shareOpen == true && <div className={styles.triangle3}></div>}
+                        </div>
                     </div>
                 </div>
+            
+                <GigaLabel className={classes.gigalabel} />
             </div>
-            <div className={styles.bottom}>
-                <h1 className={styles.title}>{title}</h1>
+            <div className={`${styles.bottom} ${colorad ? styles.colorad : null}`}>
+                <Link href={`car-details/${id}`}>
+                    <h1 className={styles.title}>{title}</h1>
+                </Link>
                 <p className={styles.desc}>{cardDisplayDesc}</p>
                 <div className={styles.details}>
                     <div className={styles.row}>
-                        <div className={styles.detail}>{details.erstzulassung}</div>
-                        <div className={styles.detaillast}>{details.kraftstoff}</div>
+                        <div className={`${styles.detail} mr-1`}>{ez}</div>
+                        <div className={`${styles.detaillast} ml-1`}>{details.kraftstoff}</div>
                     </div>
                     <div className={styles.row}>
-                        <div className={styles.detail}>{details.leistung}</div>
-                        <div className={styles.detail}>{details.fahrzeugzustand}</div>
-                        <div className={styles.detaillast}>{details.getriebe}</div>
+                        <div className={`${styles.detail} mr-1`}>{details.leistung}</div>
+                        <div className={`${styles.detail} -ml-1 mr-1 `}>{details.fahrzeugzustand}</div>
+                        <div className={`${styles.detaillast}`}>{details.getriebe}</div>
                     </div>
                     <div className={styles.row}>
-                        <div className={styles.detaillast}>{details.kilometerstand}</div>
+                        <div className={`${styles.detail} mr-1`}>{fz}</div>
+                        <div className={`${styles.detaillast} ml-1`}>{details.seller == true ? "Händler" : "Privat"}</div>
                     </div>
                 </div>
                 <div className={styles.companylocation}><CompanyLocation className={classes.companyicon}/>{location}</div>
-                <div className={styles.companyname}><CompanyLocation className={classes.companyicon}/>  {companyname}</div>
+                <div className={styles.companyname}><CompanyIcon className={classes.companyicon}/>  {companyname}</div>
             </div>
         </div>
     )

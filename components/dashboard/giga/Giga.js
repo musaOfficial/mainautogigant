@@ -399,7 +399,7 @@ Anzeige bei Suchanfragen einen hohen Rang einnimmt.<br></br><br></br>
             </div>
             <div className={classes.cardcontainer}>
               <div className={classes.padding}>
-                <h2 className={classes.cardheading}>FETTER TEXT UND FARBIGER RAHMEN</h2>
+                <h2 className={classes.cardheading}>FARBIGER HINTERGRUND UND FARBIGER RAHMEN</h2>
                 <p className={classes.carddescription}>
                 Der Titel der Anzeige wird fett geschrieben und findet auf 
 einem farbigen Hintergrund statt.<br></br><br></br>
@@ -408,7 +408,7 @@ einem farbigen Hintergrund statt.<br></br><br></br>
                   Wie sieht mein Inserat aus?
                 </p>
                 <button className={classes.addtocart} onClick={() => {
-                  handleAddToCart("FETTER TEXT UND FARBIGER RAHMEN", selectedItemName5, selectedItemPrice5);
+                  handleAddToCart("FARBIGER HINTERGRUND UND FARBIGER RAHMEN", selectedItemName5, selectedItemPrice5);
                 }}>
                   Zum Warenkorb hinzufügen
                 </button>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="30" viewBox="0 0 70 30">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #fbb900;
+        stroke-width: 2px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 0;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_2285" data-name="Group 2285" transform="translate(-1230 -856)">
+    <g id="Rectangle_2797" data-name="Rectangle 2797" class="cls-1" transform="translate(1230 856)">
+      <path class="cls-4" d="M10,0H70a0,0,0,0,1,0,0V20A10,10,0,0,1,60,30H0a0,0,0,0,1,0,0V10A10,10,0,0,1,10,0Z"/>
+      <path class="cls-5" d="M10,1H69a0,0,0,0,1,0,0V20a9,9,0,0,1-9,9H1a0,0,0,0,1,0,0V10A9,9,0,0,1,10,1Z"/>
+    </g>
+    <g id="Ebene_1" transform="translate(1202.938 791.287)">
+      <rect id="Rectangle_2761" data-name="Rectangle 2761" width="61.86" height="20.458" transform="translate(31.062 69.712)"/>
+      <g id="Group_1049" data-name="Group 1049">
+        <path id="Path_1005" data-name="Path 1005" class="cls-2" d="M48.684,72.547H33.9V87.334H48.684V78.461H39.812v2.958h5.914v2.958H36.854V75.5h11.83Z"/>
+        <rect id="Rectangle_2762" data-name="Rectangle 2762" class="cls-2" width="2.954" height="14.787" transform="translate(51.643 72.547)"/>
+        <path id="Path_1006" data-name="Path 1006" class="cls-2" d="M72.342,72.547H57.556V87.334H72.342V78.461H63.471v2.958h5.914v2.957H60.512V75.5h11.83Z"/>
+        <path id="Path_1007" data-name="Path 1007" class="cls-3" d="M75.3,72.547V87.334h2.955V81.419h8.872v5.915h2.959V72.547Zm11.827,5.914H78.256V75.5h8.872Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

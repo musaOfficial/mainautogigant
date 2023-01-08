@@ -541,7 +541,7 @@ function SearchResults(){
                             <span className='ml-2' htmlFor="ABS" >ABS</span>
                         </div>
                         <div>
-                            
+                         
                         </div>
                     </div>
                 </div>}

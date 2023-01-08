@@ -15,8 +15,8 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`w-280 lg:top-0 relative lg:absolute ${
-        expandSidebar ? "lg:left-0 lg:top-0" : "lg:-left-80"
+      className={`w-280 lg:top-0 h-screen relative lg:absolute ${
+        expandSidebar ? "lg:left-0 z-10 h-screen lg:top-0" : "lg:-left-80 z-10 h-screen"
       } z-10 ${classes.backgroundcolor} ease-linear duration-200`}
     >
       <div className={classes.cornerwhite}>
@@ -25,7 +25,7 @@ export default function Sidebar() {
        
       {expandSidebar && (
         <div
-          className=" lg:block fixed h-screen w-screen top-0 left-0 z-10 bg-black bg-opacity-40"
+          className=" lg:block fixed h-full w-full top-0 left-0 bg-black bg-opacity-40"
           onClick={() => setExpandSidebar(false)}
         >
           <button
