@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import classes from './Sidebar.module.css';
+import Up from './../../public/up.svg';
 
 export default function Sidebar() {
   const [active, setActive] = useState("overview");
@@ -19,54 +20,25 @@ export default function Sidebar() {
         expandSidebar ? "lg:left-0 z-10 h-screen lg:top-0" : "lg:-left-80 z-10 h-screen"
       } z-10 ${classes.backgroundcolor} ease-linear duration-200`}
     >
+      
       <div className={classes.cornerwhite}>
         <div className={classes.cornercolor}></div>
       </div>
        
       {expandSidebar && (
+        <>
         <div
-          className=" lg:block fixed h-full w-full top-0 left-0 bg-black bg-opacity-40"
+          className={`lg:block fixed h-full w-full top-0 left-0 bg-black bg-opacity-75 `}
           onClick={() => setExpandSidebar(false)}
         >
           <button
-            className="absolute top-0 right-4 bg-theme-yellow-6 rounded-sm p-1"
+            className={`absolute top-0 right-4  bg-theme-yellow-6 rounded-sm p-1 ${classes.centerup}`}
             onClick={() => setExpandSidebar(false)}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14.414"
-              height="14.414"
-              viewBox="0 0 14.414 14.414"
-            >
-              <g
-                id="Group_359"
-                data-name="Group 359"
-                transform="translate(-1054.793 -663.793)"
-              >
-                <line
-                  id="Line_243"
-                  data-name="Line 243"
-                  x2="13"
-                  y2="13"
-                  transform="translate(1055.5 664.5)"
-                  fill="none"
-                  stroke="#555"
-                  strokeWidth="2"
-                />
-                <line
-                  id="Line_244"
-                  data-name="Line 244"
-                  x1="13"
-                  y2="13"
-                  transform="translate(1055.5 664.5)"
-                  fill="none"
-                  stroke="#555"
-                  strokeWidth="2"
-                />
-              </g>
-            </svg>
+            <Up className={classes.up} />
           </button>
         </div>
+        </>
       )}
       {!expandSidebar && (
         <button
@@ -80,7 +52,7 @@ export default function Sidebar() {
         <div className=" pl-6 pr-6 pb-6 border-b border-opacity-15 border-theme-gray-3">
           <Link href="/dashboard">
             <a
-              className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-150 text-white bg-theme-gray-10 hover:bg-[#FBB900] ${
+              className={`w-full h-12 flex items-center mt-6 text-14 group py-2 px-4 rounded-md ease-linear duration-150 text-white bg-theme-gray-10 hover:bg-[#FBB900] ${
                 active === "/dashboard"
                   ? "bg-[#FBB900] font-bold"
                   : ""
@@ -162,7 +134,7 @@ export default function Sidebar() {
           </Link>
           <Link href="/dashboard/drafts">
             <a
-              className={`w-full h-12 mt-2 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-100 text-white bg-theme-gray-10 hover:bg-[#FBB900] ${
+              className={`w-full h-12 mt-2 flex -mb-4 items-center text-14 group py-2 px-4 rounded-md ease-linear duration-100 text-white bg-theme-gray-10 hover:bg-[#FBB900] ${
                 active === "/dashboard/drafts"
                   ? "bg-[#FBB900] font-bold"
                   : ""
@@ -189,7 +161,7 @@ export default function Sidebar() {
             </a>
           </Link>
         </div>
-        <div className="p-6 border-b border-opacity-25 border-theme-gray-3">
+        <div className="pl-6 pr-6 pb-2 pt-2 border-b border-opacity-25 border-theme-gray-3">
           <Link href="/dashboard/calendar">
             <a
               className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-white bg-theme-gray-10 hover:bg-[#FBB900] hover:white hover:shadow-md ${
@@ -358,7 +330,7 @@ export default function Sidebar() {
             </a>
           </Link>
         </div>
-        <div className="p-6 border-b border-opacity-25 border-theme-gray-3">
+        <div className="pl-6 pr-6 pb-2 pt-2 border-b border-opacity-25 border-theme-gray-3">
           <Link href="/dashboard/favourites">
             <a
               className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-white bg-theme-gray-10 hover:bg-[#FBB900] hover:text-white hover:shadow-md ${
@@ -477,7 +449,7 @@ export default function Sidebar() {
             </a>
           </Link>
         </div>
-        <div className="p-6">
+        <div className="pl-6 pr-6 pb-2">
         <Link href="/dashboard/my-subscriptions">
             <a
               className={`w-full h-12 mt-2 flex items-center mb-2 text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-white bg-theme-gray-10 hover:bg-[#FBB900] hover:text-white hover:shadow-md ${
