@@ -18,6 +18,7 @@ import PlusIcon from './../public/icons/ausstattungPlus.svg'
 import DelX from './../public/images/closedetail.svg';
 import Closex from './../public/closex.svg'
 import PageSearch from './pagesearch/PageSearch';
+import { useEffect } from 'react';
 import {
     marke1,
     marke2,
@@ -47,7 +48,279 @@ import {
 import Angebot from './ui/ads/Angebot';
 import Page from './pagesearch/PageSearch';
 
+const useDeviceSize = () => {
+
+    const [width, setWidth] = useState(0)
+    const [height, setHeight] = useState(0)
+  
+    const handleWindowResize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    }
+  
+    useEffect(() => {
+      // component is mounted and window is available
+      handleWindowResize();
+      window.addEventListener('resize', handleWindowResize);
+      // unsubscribe from the event on component unmount
+      return () => window.removeEventListener('resize', handleWindowResize);
+    }, []);
+  
+    return [width, height]
+  
+  }
+
 function SearchResults(){
+
+    const [width, height] = useDeviceSize();
+
+    const [bezahlteAngebote, setBezahlteAngebote] = useState([
+        {
+            id: "sköafjasökldc",
+            preis: 500,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Halbautomatik",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
+        },
+    ]);
+
+    const [angebote, setAngebote] = useState([
+        {
+            id: "sköafjasökldc",
+            preis: 500,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Halbautomatik",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
+        },
+        {
+            id: "sköafjasökldc",
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1230,
+                fahrzeugzustand: "Neu",
+                getriebe: "Automatik",
+                seller: false,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
+        },
+        {
+            id: "sköafjasökldc",
+            preis: 2120,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Schaltgetriebe",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
+        },
+        {
+            id: "sköafjasökldc",
+            preis: 500,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Halbautomatik",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
+        },
+        {
+            id: "sköafjasökldc",
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1230,
+                fahrzeugzustand: "Neu",
+                getriebe: "Automatik",
+                seller: false,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
+        },
+        {
+            id: "sköafjasökldc",
+            preis: 2120,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Schaltgetriebe",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
+        },
+        {
+            id: "sköafjasökldc",
+            preis: 500,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Halbautomatik",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
+        },
+        {
+            id: "sköafjasökldc",
+            preis: 213520,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1230,
+                fahrzeugzustand: "Neu",
+                getriebe: "Automatik",
+                seller: false,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
+        },
+        {
+            id: "sköafjasökldc",
+            preis: 2120,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Schaltgetriebe",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
+        },
+        {
+            id: "sköafjasökldc",
+            preis: 2120,
+            title: "Mercedes AMG GT",
+            adNo: "#294873205",
+            start: "01/01/2020",
+            end: "01/01/2022",
+            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Schaltgetriebe",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
+        },
+    ]);
 
     const style = {
         control: (base) => ({
@@ -119,268 +392,44 @@ function SearchResults(){
         }),
         }; 
 
-    const [expanded, setExpanded] = useState(true);
-    const [brandName, setBrandName] = useState({}); 
-    const [varient, setVarient] = useState("");
-    const [modelName, setModelName] = useState({});
-    const [modelItems, setModelItems] = useState([]);
-
-    const [brandSelected, setBrandSelected] = useState();
-
-    const [modelInputValue, setModelInputValue] = useState();
-    const [brandNameInputValue, setBrandNameInputValue] = useState();
-
-    const anzahlAngebote = 5000;
-    const displayAnzahlAngebote = anzahlAngebote.toLocaleString();
-
-    const [filters, setFilters] = useState(["Österreich","Mercedes", "CLS 320","Österreichh","Mercedess", "CLS 3200"]);
-
-    const [openBasisdaten, setOpenBasisdaten] = useState(false);
-    const [openAusstattung, setOpenAusstattung] = useState(false);
-    const [openFarbe, setOpenFarbe] = useState(false);
-    const [openPolsterFarbe, setOpenPolsterFarbe] = useState(false);
-    const [openFahrzeugzustand, setOpenFahrzeugzustand] = useState(false);
-    const [openUmwelt, setOpenUmwelt] = useState(false);
-    const [openAngebotDetails, setOpenAngebotDetails] = useState(false);
-
-    const [inputMarkeChanged, setInputMarkeChanged] = useState(false);
-
-    const [inputKarosserieform, setInputKarosserieform] = useState();
-    const [inputKarosserieformChanged, setInputKarosserieformChanged] = useState();
-
-    const [inputKraftstoff, setInputKraftstoff] = useState();
-    const [inputKraftstoffChanged, setInputKraftstoffChanged] = useState()
-
-    const [ausstattungsKriterienOpen, setAusstattungsKriterienOpen] = useState(false);
-    const addModel = () => {
-        setModelItems([
-          ...modelItems,
-          {
-            brandName: brandName.value,
-            modelName: modelName.value,
-            varient: varient,
-          },
-        ]);
+        const [expanded, setExpanded] = useState(true);
+        const [brandName, setBrandName] = useState({}); 
+        const [varient, setVarient] = useState("");
+        const [modelName, setModelName] = useState({});
+        const [modelItems, setModelItems] = useState([]);
     
-        setBrandName({value: "", label: ""});
-        setVarient("");
-        setModelName({value: "", label: ""});
-        setBrandNameInputValue("");
-        setBrandSelected(false);
-      };
+        const [brandSelected, setBrandSelected] = useState();
+    
+        const [modelInputValue, setModelInputValue] = useState();
+        const [brandNameInputValue, setBrandNameInputValue] = useState();
+    
+        const anzahlAngebote = 5000;
+        const displayAnzahlAngebote = anzahlAngebote.toLocaleString();
+    
+        const [filters, setFilters] = useState(["Österreich","Mercedes", "CLS 320","Österreichh","Mercedess", "CLS 3200"]);
+    
+        const [openBasisdaten, setOpenBasisdaten] = useState(false);
+        const [openAusstattung, setOpenAusstattung] = useState(false);
+        const [openFarbe, setOpenFarbe] = useState(false);
+        const [openPolsterFarbe, setOpenPolsterFarbe] = useState(false);
+        const [openFahrzeugzustand, setOpenFahrzeugzustand] = useState(false);
+        const [openUmwelt, setOpenUmwelt] = useState(false);
+        const [openAngebotDetails, setOpenAngebotDetails] = useState(false);
+    
+        const [inputMarkeChanged, setInputMarkeChanged] = useState(false);
+    
+        const [inputKarosserieform, setInputKarosserieform] = useState();
+        const [inputKarosserieformChanged, setInputKarosserieformChanged] = useState();
+    
+        const [inputKraftstoff, setInputKraftstoff] = useState();
+        const [inputKraftstoffChanged, setInputKraftstoffChanged] = useState()
+    
+        const [ausstattungsKriterienOpen, setAusstattungsKriterienOpen] = useState(false);
 
+        const [gigaInfoOpen, setGigaInfoOpen] = useState(false);
+        const [gridView, setGridView] = useState(true);
 
-    const bezahlteAngebote = [
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-    ]
-
-
-    const angebote = [
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-    ]
-
-    const [gigaInfoOpen, setGigaInfoOpen] = useState(false);
-    const [gridView, setGridView] = useState(true);
-
-    const [zweizonenKlima, setZweizonenKlima] = useState(false)
+        const [zweizonenKlima, setZweizonenKlima] = useState(false)
     const [dreizonenKlima, setDreizonenKlima] = useState(false)
     const [drei60kamera, setDrei60kamera] = useState(false)
     const [vierzonenKlima, setVierzonenKlima] = useState(false)
@@ -512,7 +561,42 @@ function SearchResults(){
     const [xenonscheinwerfer, setXenonscheinwerfer] = useState(false);
     const [zentralverriegelung, setZentralverriegelung] = useState(false);
     const [zentralFunkfern, setZentralFunkfern] = useState(false);
+    const [achtFachBereift, setAchtFachBereift] = useState(false);
+    const [kollisionsWarner, setKollisionsWarner] = useState(false);
+    const [komfortFahrwerk, setKomfortFahrwerk] = useState(false);
+    const [rueckfahrkamera, setRueckfahrkamera] = useState(false);
+    const [asr, setAsr] = useState(false);
+    const [leasingfaehigkeit, setLeasingfaehigkeit] = useState(false);
+    const [schisack, setSchisack] = useState(false);
+    const [automatischeHeckklappe, setAutomatischeHeckklappe] = useState(false);
+    const [serviceGepflegt, setServiceGepflegt] = useState(false);
+    const [lenkradheizung, setLenkradheizung] = useState(false);
+    const [sperrdifferential, setSperrdifferential] = useState(false);
+    const [dachgepaecktraeger, setDachgepaecktraeger] = useState(false);
+    const [metallicLackierung, setMetalliclackierung] = useState(false);
+    const [mittelarmlehne, setMittelarmlehne] = useState(false);
+    const [stabilitaetsprogramme, setStabilitaetsprogramme] = useState(false);
+    const [mwstAusweisbar, setMwstAusweisbar] = useState(false);
+    const [teilAutonomesFahren, setTeilAutonomesFahren] = useState(false);
+    const [nichtraucherfahrzeug, setNichtraucherFahrzeug] = useState(false);
+    const [parkhilfesensorenHintenUndVorne, setParkhilfesensorenHintenUndVorne] = useState(false);
     
+        const addModel = () => {
+            setModelItems([
+            ...modelItems,
+            {
+            brandName: brandName.value,
+            modelName: modelName.value,
+            varient: varient,
+            },
+        ]);
+            setBrandName({value: "", label: ""});
+            setVarient("");
+            setModelName({value: "", label: ""});
+            setBrandNameInputValue("");
+            setBrandSelected(false);
+        };
+
     function handleDeleteFilter(index){
         var reducedFilters = [...filters];
         reducedFilters.splice(index, 1);
@@ -524,29 +608,498 @@ function SearchResults(){
                 {openAusstattung == true && <div className={classes.ausstattungContainer} >
                     <Closex className={classes.closex} onClick={() => setOpenAusstattung(false)} />
                     <div className={classes.ausstattungencon}>
-                        <div>
-                            <input className={`${classes.varientinputsmaller} cursor-pointer`} id="zweizoneklima" type="checkbox" checked={zweizonenKlima} onChange={() => setZweizonenKlima(d => !d)} />
-                            <span className='ml-2' htmlFor="zweizoneklima" >2-Zonen-Klimaautomatik</span>
-                        </div>
-                        <div>
-                            <input className={`${classes.varientinputsmaller} cursor-pointer`} id="ABS" type="checkbox" checked={ABS} onChange={() => setABS(d => !d)} />
-                            <span className='ml-2' htmlFor="ABS" >ABS</span>
-                        </div>
-                        <div>
-                            <input className={`${classes.varientinputsmaller} cursor-pointer`} id="ABS" type="checkbox" checked={ABS} onChange={() => setABS(d => !d)} />
-                            <span className='ml-2' htmlFor="ABS" >ABS</span>
-                        </div>
-                        <div>
-                            <input className={`${classes.varientinputsmaller} cursor-pointer`} id="ABS" type="checkbox" checked={ABS} onChange={() => setABS(d => !d)} />
-                            <span className='ml-2' htmlFor="ABS" >ABS</span>
-                        </div>
-                        <div>
-                         
-                        </div>
+                    <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={achtFachBereift} onChange={() => setAchtFachBereift(d => !d)} className="mr-2" />
+                    8-fach Bereift
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={klimaanlage} onChange={() => setKlimaanlage(d => !d)} className="mr-2" />
+                    Klimaanlage
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"}checked={parkhilfesensorenHintenUndVorne} onChange={() => {
+                        setParkhilfesensorenHintenUndVorne(d => !d)
+                        }} className="mr-2" />
+                    Parksensor vorne & hinten
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={ABS} onChange={() => {
+                        setABS(d => !d)
+                        }} className="mr-2" />
+                    ABS
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={klimaautomatik} onChange={() => {
+                        setKlimaautomatik(d => !d);
+                        }} className="mr-2" />
+                    Klimaautomatik
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={radio} onChange={() => {
+                        setRadio(d => !d)
+                        }} className="mr-2" />
+                    Radio
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={abstandsTempomat} onChange={() => {
+                        setAbstandsTempomat(d => !d)
+                        }} className="mr-2" />
+                    Abstandstempomat
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={kollisionsWarner} onChange={() => {
+                        setKollisionsWarner(d => !d)
+                        }} className="mr-2" />
+                    Kollisionswarner
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={regensensor} onChange={() => {
+                        setRegensensor(d => !d)
+                        }} className="mr-2" />
+                    Regensensor
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={alarmanlage} onChange={() => {
+                        setAlarmanlage(d => !d)
+                        }} className="mr-2" />
+                    Alarmanlage
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={komfortFahrwerk} onChange={() => {
+                        setKomfortFahrwerk(d => !d)
+                        }} className="mr-2" />
+                    Komfortfahrwerk
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={reifendruckkontrollsystem} onChange={() => {
+                        setReifendruckkontrollsystem(d => !d)
+                        }} className="mr-2" />
+                    Reifendrucksensor
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={androidauto} onChange={() => {
+                        setAndroidauto(d => !d)
+                        }} className="mr-2" />
+                    Android Auto
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={kopfairbag} onChange={() => {
+                        setKopfairbag(d => !d)
+                        }} className="mr-2" />
+                    Kopfairbags
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={rueckfahrkamera} onChange={() => {
+                        setRueckfahrkamera(d => !d)
+                        }} className="mr-2" />
+                    Rückfahrkamera
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={anhaengerkupplung} onChange={() => {
+                        setAnhaengerkupplung(d => !d)
+                        }} className="mr-2" />
+                    Anhängerkupplung
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={kurvenlicht} onChange={() => {
+                        setKurvenlicht(d => !d)
+                        }} className="mr-2" />
+                    Kurvenfahrlicht
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={schaltwippen} onChange={() => {
+                        setSchaltwippen(d => !d)
+                        }} className="mr-2" />
+                    Schaltwippen
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={asr} onChange={() => {
+                        setAsr(d => !d)
+                        }} className="mr-2" />
+                    Antriebsschlupfregelung(ASR)
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={laserlicht} onChange={() => {
+                        setLaserlicht(d => !d)
+                        }} className="mr-2" />
+                    Laserlicht
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={schiebedach} onChange={() => {
+                        setSchiebedach(d => !d)
+                        }} className="mr-2" />
+                    Schiebedach
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={applecarplay} onChange={() => {
+                        setApplecarplay(d => !d)
+                        }} className="mr-2" />
+                    Apple CarPlay
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={leasingfaehigkeit} onChange={() => {
+                        setLeasingfaehigkeit(d => !d)
+                        }} className="mr-2" />
+                    Leasingfähigkeit
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={schisack} onChange={() => {
+                        setSchisack(d => !d)
+                        }} className="mr-2" />
+                    Schisack
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={automatischeHeckklappe} onChange={() => {
+                        setAutomatischeHeckklappe(d => !d)
+                        }} className="mr-2" />
+                    Aut. Heckklappe
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={ledscheinwerfer} onChange={() => {
+                        setLedscheinwerfer(d => !d)
+                        }} className="mr-2" />
+                    LED-Scheinwerfer
+                </label> 
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={seitenairbag} onChange={() => {
+                        setSeitenairbag(d => !d)
+                        }} className="mr-2" />
+                    Seitenairbags
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={behindertenGerecht} onChange={() => {
+                        setBehindertenGerecht(d => !d)
+                        }} className="mr-2" />
+                    Behindertengerecht
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={lederausstattung} onChange={() => {
+                        setLederausstattung(d => !d)
+                        }} className="mr-2" />
+                    Lederausstattung
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={serviceGepflegt} onChange={() => {
+                        setServiceGepflegt(d => !d)
+                        }} className="mr-2" />
+                    Servicegepflegt
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={beifahrerairbag} onChange={() => {
+                        setBeifahrerairbag(d => !d)
+                        }} className="mr-2" />
+                    Beifahrerairbags
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={lederlenkrad} onChange={() => {
+                        setLederlenkrad(d => !d)
+                        }} className="mr-2" />
+                    Lederlenkrad
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={servolenkung} onChange={() => {
+                        setServolenkung(d => !d)
+                        }} className="mr-2" />
+                    Servolenkung
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={bluethoot} onChange={() => {
+                        setBluethoot(d => !d)
+                        }} className="mr-2" />
+                    Bluethoot / USB
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={alufelgen} onChange={() => {
+                        setAlufelgen(d => !d)
+                        }} className="mr-2" />
+                    Leichtmetall-/Alufelgen
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={sitzheizung} onChange={() => {
+                        setSitzheizung(d => !d)
+                        }} className="mr-2" />
+                    Sitzheizung
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={bordcomputer} onChange={() => {
+                        setBordcomputer(d => !d)
+                        }} className="mr-2" />
+                    Bordcomputer
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={lenkradheizung} onChange={() => {
+                        setLenkradheizung(d => !d)
+                        }} className="mr-2" />
+                    Lenkradheizung
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={sperrdifferential} onChange={() => {
+                        setSperrdifferential(d => !d)
+                        }} className="mr-2" />
+                    Sperrdifferential
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={cd} onChange={() => {
+                        setCd(d => !d)
+                        }} className="mr-2" />
+                    CD Player
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={lichtsensor} onChange={() => {
+                        setLichtsensor(d => !d)
+                        }} className="mr-2" />
+                    Lichtsensor
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={sportfahrwerk} onChange={() => {
+                        setSportfahrwerk(d => !d)
+                        }} className="mr-2" />
+                    Sportfahrwerk
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={dachgepaecktraeger} onChange={() => {
+                        setDachgepaecktraeger(d => !d)
+                        }} className="mr-2" />
+                    Dachgepäckträger
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={lordosenstuetze} onChange={() => {
+                        setLordoesenstuetze(d => !d)
+                        }} className="mr-2" />
+                    Lordosenstütze
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={sportpaket} onChange={() => {
+                        setSportpaket(d => !d)
+                        }} className="mr-2" />
+                    Sportpaket
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={dachreling} onChange={() => {
+                        setDachreling(d => !d)
+                        }} className="mr-2" />
+                    Dachreling
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={mp3} onChange={() => {
+                        setMp3(d => !d)
+                        }} className="mr-2" />
+                    Media-Interface / mp3
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={sportsitze} onChange={() => {
+                        setSportsitze(d => !d)
+                        }} className="mr-2" />
+                    Sportsitze
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={einparkhilfe} onChange={() => {
+                        setEinparkhilfe(d => !d)
+                        }} className="mr-2" />
+                    Einparkhilfe
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={metallicLackierung} onChange={() => {
+                        setMetalliclackierung(d => !d)
+                        }} className="mr-2" />
+                    Metallic-Lackierung
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={spurhalteassistent} onChange={() => {
+                        setSpurhalteassistent(d => !d)
+                        }} className="mr-2" />
+                    Spurhalteassistent
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={elektrfensterheber} onChange={() => {
+                        setElektrfensterheber(d => !d)
+                        }} className="mr-2" />
+                    elektr. Fensterheber
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={mittelarmlehne} onChange={() => {
+                        setMittelarmlehne(d => !d)
+                        }} className="mr-2" />
+                    Mittelarmlehne
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={stabilitaetsprogramme} onChange={() => {
+                        setStabilitaetsprogramme(d => !d)
+                        }} className="mr-2" />
+                    Stabilitätsprogramme
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={elektrsitze} onChange={() => {
+                        setElektrsitze(d => !d)
+                        }} className="mr-2" />
+                    elektr. Sitze
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={multifunktionslenkrad} onChange={() => {
+                        setMultifunktionslenkrad(d => !d)
+                        }} className="mr-2" />
+                    Multifunktionslenkrad
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={standheizung} onChange={() => {
+                        setStandheizung(d => !d)
+                        }} className="mr-2" />
+                    Standheizung
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={elektrseitenspiegel} onChange={() => {
+                        setElektrseitenspiegel(d => !d)
+                        }} className="mr-2" />
+                    elektr. Spiegel
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={mwstAusweisbar} onChange={() => {
+                        setMwstAusweisbar(d => !d)
+                        }} className="mr-2" />
+                    MwSt. ausweisbar
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={startstopauto} onChange={() => {
+                        setStartstopauto(d => !d)
+                        }} className="mr-2" />
+                    Start/Stopp-Automatik
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={fahrerairbag} onChange={() => {
+                        setFahrerairbag(d => !d)
+                        }} className="mr-2" />
+                    Fahrerairbag
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={navigationssystem} onChange={() => {
+                        setNavigationssystem(d => !d)
+                        }} className="mr-2" />
+                    Navigationssystem
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={tagfahrlicht} onChange={() => {
+                        setTagfahrlicht(d => !d)
+                        }} className="mr-2" />
+                    Tagfahrlicht
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={fernlichassistent} onChange={() => {
+                        setFernlichassistent(d => !d)
+                        }} className="mr-2" />
+                    Fernlichtassistent
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={nebelscheinwerfer} onChange={() => {
+                        setNebelscheinwerfer(d => !d)
+                        }} className="mr-2" />
+                    Nebelscheinwerfer
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={teilAutonomesFahren} onChange={() => {
+                        setTeilAutonomesFahren(d => !d)
+                        }} className="mr-2" />
+                    Teilautonomes Fahren
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={freisprecheinrichtung} onChange={() => {
+                        setFreisprecheinrichtung(d => !d)
+                        }} className="mr-2" />
+                    Freisprecheinrichtung
+                </label>
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={nichtraucherfahrzeug} onChange={() => {
+                        setNichtraucherFahrzeug(d => !d)
+                        }} className="mr-2" />
+                    Nichtraucherfahrzeug
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={tempomat} onChange={() => {
+                        setTempomat(d => !d)
+                        }} className="mr-2" />
+                    Tempomat
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={beheizbareFrontscheibe} onChange={() => {
+                        setBeheizbareFrontscheibe(d => !d)
+                        }} className="mr-2" />
+                    Frontscheibenheizung
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={notbremsassistent} onChange={() => {
+                        setNotbremsassistent(d => !d)
+                        }} className="mr-2" />
+                    Notbremsassistent
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={totwinkelAssistent} onChange={() => {
+                        setTotwinkelAssitent(d => !d)
+                        }} className="mr-2" />
+                    Totwinkelassistent
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={induktionsladen} onChange={() => {
+                        setInduktionsladen(d => !d)
+                        }} className="mr-2" />
+                    Handy induktiv laden
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={notrufsystem} onChange={() => {
+                        setNotrufsystem(d => !d)
+                        }} className="mr-2" />
+                    Notrufsystem
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={winterpaket} onChange={() => {
+                        setWinterpaket(d => !d)
+                        }} className="mr-2" />
+                    Winterpaket
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={headupDisplay} onChange={() => {
+                        setHeadupDisplay(d => !d)
+                        }} className="mr-2" />
+                    Head-Up-Display
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={panoramadach} onChange={() => {
+                        setPanoramadach(d => !d)
+                        }} className="mr-2" />
+                    Panoramadach
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={xenonscheinwerfer} onChange={() => {
+                        setXenonscheinwerfer(d => !d)
+                        }} className="mr-2" />
+                    Xenon
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={isofix} onChange={() => {
+                        setIsofix(d => !d)
+                        }} className="mr-2" />
+                    ISOFIX
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={einparkhilfeSensorenHinten} onChange={() => {
+                        setEinparkhilfeSensorenHinten(d => !d)
+                        }} className="mr-2" />
+                    Parksensor hinten
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={zentralverriegelung} onChange={() => {
+                        setZentralverriegelung(d => !d)
+                        }} className="mr-2" />
+                Zentralverriegelung
+                </label>  
+                <label className={classes.checkboxname}>
+                    <input type={"checkbox"} checked={schluessellose} onChange={() => {
+                        setSchluessellose(d => !d)
+                        }} className="mr-2" />
+                Keyless entry
+                </label>
                     </div>
                 </div>}
                
-            <div className={`${classes.contentcontainer} overflow-y-hidden relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
+            <div className={`${classes.contentcontainer} relative w-10/12 lg:w-full flex justify-center max-w-ag-container md:!w-full mx-auto flex-col bg-white p-6`}>
                 <div className={classes.c2r1top}>
                     <div>
                         <Expand className={classes.backarrow} />
@@ -554,11 +1107,11 @@ function SearchResults(){
                     </div>
                     <div>
                         <Question className={classes.question} />
-                        <span className={classes.questiontext}>Infos zur Reihung der Anzeigen</span>
+                        <span className={classes.questiontext}>{width >= 458 && "Infos zur Reihung der Anzeigen"}</span>
                     </div>
                 </div>
             <div className={classes.row}>
-                <div className={classes.c1}>
+                {width >= 1250 && <div className={classes.c1}>
                     <div className={classes.c1r1}>
                         <div className={classes.centeritems1}>
                             <h3 className={classes.anzahlAngeboteNummer}>{displayAnzahlAngebote}</h3>
@@ -1153,9 +1706,8 @@ function SearchResults(){
                                 </div>
                             </div>}
                         </div>
-                        
             </div>
-            </div>
+            </div>}
                 <div className={classes.c2}>
                     <div className={classes.c2r1}>
                         <div className={classes.c2r1bottom}>
@@ -1172,66 +1724,67 @@ function SearchResults(){
                                 />
                             </div>
                         </div>
-                        <div className={classes.view}>
+                        {width >= 1250 && <div className={classes.view}>
                             <ListView className={`${classes.listview} ${gridView == true && classes.viewactive} ${"mr-4"}`} onClick={() => setGridView(true)}/>
                             <GridView className={` ${classes.gridview} ${gridView == false && classes.viewactive} `} onClick={() => setGridView(false)}/>
-                        </div>
+                        </div>}
                     </div>
                     <div className={`${classes.c2r2}`}>
                             <div className={`${gridView == true ? classes.carlistcontainer : classes.gridlayout} `}>
-                                {bezahlteAngebote.map((item, index) => <div key={index} className={gridView == true ? classes.sponsored : classes.sponsorcard}>
-                                    <Angebot 
-                                        title={"Sponsored"}
-                                        description="This is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long description"
-                                        price="€ 45.520,-"
-                                        adNo="#123456789"
-                                        start="01/01/2020"
-                                        end="01/01/2020"
-                                        imgSrc="/images/draft-card-img-car-1.png"
-                                        cardView={gridView == true}
-                                        details={
-                                            {
-                                                erstzulassung: "01/2022",
-                                                kraftstoff: "Benzin",
-                                                leistung: "125 PS",
-                                                kilometerstand: "412.000 KM",
-                                                getriebe: "Automatik",
-                                                fahrzeugzustand: "Gebraucht",
-                                            }
-                                        }
-                                        location = "2700 Wiener Neustadt | AT"
-                                        companyname = "Gigant Group Teknoloji A.S"
-                                    />
+                                {bezahlteAngebote.map((fav, index) => <div key={index} className={gridView == true ? classes.sponsored : classes.sponsorcard}>
+                                    <div className={width < 1250 && classes.cardlength}>
+                                        <Angebot 
+                                            key={index}
+                                            id={fav.id}
+                                            title={fav.title} 
+                                            price={fav.preis} 
+                                            adNo={fav.adNo} 
+                                            start={fav.start}  
+                                            end={fav.end}
+                                            imgSrc={fav.imgSrc}
+                                            description={"This is a description"}
+                                            details={fav.details}
+                                            cardView={width >= 1250 ? true : false}
+                                            location={fav.location}
+                                            companyname={fav.companyname}
+                                            onClick={() => handleDel(index)}
+                                            gigalabel={fav.gigalabel}
+                                            colorad={fav.colorad}  
+                                        />
+                                    </div>
                                     <div className={gridView == true ? classes.werbeanzeige : classes.werbeanzeigecard}>Werbeanzeige</div >
                                 </div>)}
-                                {angebote.map((item, index) => <Angebot
-                                    key={index}
-                                    title={item.title}
-                                    description="This is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long descriptionThis is a long description, this is a long description"
-                                    price="€ 45.520,-"
-                                    adNo="#123456789"
-                                    start="01/01/2020"
-                                    end="01/01/2020"
-                                    imgSrc="/images/draft-card-img-car-1.png"
-                                    cardView={gridView}
-                                    details={
-                                        {
-                                            erstzulassung: "01/2022",
-                                            kraftstoff: "Benzin",
-                                            leistung: "125 PS",
-                                            kilometerstand: "412.000 KM",
-                                            getriebe: "Automatik",
-                                            fahrzeugzustand: "Gebraucht",
-                                        }
-                                    }
-                                    location = "2700 Wiener Neustadt | AT"
-                                    companyname = "Gigant Group Teknoloji A.S"
-                                />)}
+                                <div className={width < 1250 && classes.adgrid}>
+                                    {angebote.map((fav, index) => <div className={width >= 1250 && classes.adprop}>
+                                        <Angebot
+                                        key={index}
+                                        id={fav.id}
+                                        title={fav.title} 
+                                        price={fav.preis} 
+                                        adNo={fav.adNo} 
+                                        start={fav.start}  
+                                        end={fav.end}
+                                        imgSrc={fav.imgSrc}
+                                        description={"This is a description"}
+                                        details={fav.details}
+                                        cardView={width >= 1250 ? true : false}
+                                        location={fav.location}
+                                        companyname={fav.companyname}
+                                        onClick={() => handleDel(index)}
+                                        gigalabel={fav.gigalabel}
+                                        colorad={fav.colorad}       
+                                    />
+                                    </div>)}
+                                </div>
                             </div>
                     </div>
-                    <div className={classes.c2r3}>
+                    {/* <div className={classes.c2r3}>
                         <PageSearch totalAds={anzahlAngebote} />
-                    </div>
+                    </div> 
+                    
+                    AUSKOMMENTIERT WEGEN RESPONSIVE PROBLEMEN
+                    
+                    */}
                 </div>
         </div>
     </div>

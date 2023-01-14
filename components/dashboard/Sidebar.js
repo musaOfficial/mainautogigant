@@ -16,8 +16,8 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`w-280 lg:top-0 h-screen relative lg:absolute ${
-        expandSidebar ? "lg:left-0 z-10 h-screen lg:top-0" : "lg:-left-80 z-10 h-screen"
+      className={`w-280 lg:top-0 relative lg:absolute ${
+        expandSidebar ? "lg:left-0 z-11 lg:top-0" : "lg:-left-80 z-10"
       } z-10 ${classes.backgroundcolor} ease-linear duration-200`}
     >
       
@@ -27,17 +27,6 @@ export default function Sidebar() {
        
       {expandSidebar && (
         <>
-        <div
-          className={`lg:block fixed h-full w-full top-0 left-0 bg-black bg-opacity-75 `}
-          onClick={() => setExpandSidebar(false)}
-        >
-          <button
-            className={`absolute top-0 right-4  bg-theme-yellow-6 rounded-sm p-1 ${classes.centerup}`}
-            onClick={() => setExpandSidebar(false)}
-          >
-            <Up className={classes.up} />
-          </button>
-        </div>
         </>
       )}
       {!expandSidebar && (
@@ -48,8 +37,11 @@ export default function Sidebar() {
           <img src="/images/icons/mobile-hamburger.png" />
         </button>
       )}
-      <div className="lg:fixed z-50 lg:h-screen lg:overflow-y-scroll lg:bg-theme-gray-4">
-        <div className=" pl-6 pr-6 pb-6 border-b border-opacity-15 border-theme-gray-3">
+      <div className="lg:fixed z-50 lg:h-screen lg:bg-theme-gray-4">
+        <div className=" pl-6 pr-6 pb-10 border-b border-opacity-15 border-theme-gray-3">
+          <div className={classes.burgeractive} onClick={() => setExpandSidebar(d => !d)}>
+            <img src="/images/icons/mobile-hamburger.png" />
+          </div>
           <Link href="/dashboard">
             <a
               className={`w-full h-12 flex items-center mt-6 text-14 group py-2 px-4 rounded-md ease-linear duration-150 text-white bg-theme-gray-10 hover:bg-[#FBB900] ${
@@ -161,7 +153,7 @@ export default function Sidebar() {
             </a>
           </Link>
         </div>
-        <div className="pl-6 pr-6 pb-2 pt-2 border-b border-opacity-25 border-theme-gray-3">
+        <div className="pl-6 pr-6 pb-6 pt-6 border-b border-opacity-25 border-theme-gray-3">
           <Link href="/dashboard/calendar">
             <a
               className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-white bg-theme-gray-10 hover:bg-[#FBB900] hover:white hover:shadow-md ${
@@ -330,7 +322,7 @@ export default function Sidebar() {
             </a>
           </Link>
         </div>
-        <div className="pl-6 pr-6 pb-2 pt-2 border-b border-opacity-25 border-theme-gray-3">
+        <div className="pl-6 pr-6 pb-6 pt-6 border-b border-opacity-25 border-theme-gray-3">
           <Link href="/dashboard/favourites">
             <a
               className={`w-full h-12 flex items-center text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-white bg-theme-gray-10 hover:bg-[#FBB900] hover:text-white hover:shadow-md ${
@@ -449,7 +441,7 @@ export default function Sidebar() {
             </a>
           </Link>
         </div>
-        <div className="pl-6 pr-6 pb-2">
+        <div className="pl-6 pr-6 pb-6 pt-6">
         <Link href="/dashboard/my-subscriptions">
             <a
               className={`w-full h-12 mt-2 flex items-center mb-2 text-14 group py-2 px-4 rounded-md ease-linear duration-300 text-white bg-theme-gray-10 hover:bg-[#FBB900] hover:text-white hover:shadow-md ${

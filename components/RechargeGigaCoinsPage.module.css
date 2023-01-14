@@ -55,6 +55,8 @@
 .searchicon{
     width: 25px;
     height: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .suchbtn{
@@ -90,8 +92,9 @@
 }
 
 .jahrselect{
-    width: 30%;
+    width: 150px;
     height: 40px;
+    margin-left: -30px;
 }
 
 .radiobtn{
@@ -130,12 +133,13 @@
     display: flex;
     font-weight: bold;
     margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .datelabel{
     display: flex;
     align-items: center;
-    margin-right: 78px;
 }
 
 .expand{
@@ -152,11 +156,11 @@
 }
 
 .renrlabel{
-    margin-right: 8.4%;
+
 }
 
 .download{
-    margin-right: 19%;
+
 }
 
 .betrag{
@@ -172,13 +176,22 @@
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+    min-width: 600px;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.inputrow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .bezahlt{
     background-color: #29D62F;
     width: 10px;
     height: 50px;
-    margin-right: 20px;
     border-radius: 10px 0 0 10px;
 }
 .nichtbezahlt{
@@ -186,7 +199,6 @@
     width: 10px;
     height: 50px;
     border-radius: 10px 0 0 10px;
-    margin-right: 20px;
 }
 
 .greencheck{
@@ -200,15 +212,13 @@
 }
 
 .zahlungschecker{
-    margin-right: 10%;
+
 }
 
-.date{
-    margin-right: 9.4%;
-}
+.date{}
 
 .rnnr{
-    margin-right: 8.4%;
+
 }
 
 .buttons{
@@ -216,7 +226,7 @@
     align-items: center;
     justify-content: center;
     height: 30px;
-    margin-right: 5%;
+
 }
 
 .pdf{
@@ -228,7 +238,7 @@
     color: #fff;
     width: 80px;
     border-radius: 5px;
-    margin-right: 20px;
+    margin-right: 10px;
     transition: all .1s ease-in;
 }
 
@@ -268,7 +278,6 @@
 
 .status{
     margin-left: 10px;
-    margin-right: 60px;
 }
 
 .linebottom{
@@ -320,7 +329,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-right: 70px;
     margin-top: 50px;
 }
 
@@ -368,6 +376,26 @@
     transition: all .1s ease-in;
 }
 
+.searchinputarea{
+    width: 300%;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255,255,255,0.75);
+    width: 60%;
+    width: 130px;
+    margin-right: 90px;
+}
+
+.searchinput{
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255,255,255,0.75);
+    border-radius: 10px;
+    width: 125px;
+}
+
 .firstbtn:hover{
     background-color: #FBB900;
 }
@@ -379,9 +407,7 @@
 
 .zahlungsmethoden{
     display: flex;
-    align-items: center;
     width: 100%;
-    height: 75px;
     border-radius: 19px;
     border: 1px solid rgba(108, 117, 125, 0.5);
     padding: 20px;
@@ -395,13 +421,59 @@
     margin-left: 10px;
 }
 
+.methods{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
 .sofort{
     width: 80px;
     height: 40px;
+    margin-right: 5px;
 }
 
 .zahl{
     display: flex;
     align-items: center;
     margin-right: 50px;
+}
+
+@media(max-width: 586px){
+    .infocontainer{
+        font-size: 13px;
+        padding-left: 0;
+    }
+}
+
+@media(max-width: 432px){
+    .infocontainer{
+        font-size: 10px;
+    }
+}
+
+@media(max-width: 786px){
+    .gigacoinrow{
+        flex-direction: column;
+    }
+
+    .firstbtn{
+        font-size: 15px;
+    }
+
+    .zahlungsmethoden{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .methods{
+        margin-top: 20px;
+    }
+}
+
+@media(max-width: 826px){
+    .methods{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

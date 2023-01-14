@@ -339,7 +339,7 @@ input:invalid{
   height: 100px;
   position: absolute;
   top: 30%;
-  left: -20px;
+  left: -30px;
   /* margin-left: -20px; */
   display: block !important;
   border: 0px solid black;
@@ -350,7 +350,7 @@ input:invalid{
   height: 100px;
   position: absolute;
   top: 30%;
-  right: -20px;
+  right: -30px;
   display: block !important;
   border: 0px solid black;
 }
@@ -385,4 +385,8 @@ input[type=time]::-webkit-datetime-edit-fields-wrapper {
   background-color: #F1F2F3;
   align-items: center;
   justify-content: center;
+}
+
+.zindex{
+  z-index: 100;
 }

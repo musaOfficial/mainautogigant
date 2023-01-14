@@ -117,7 +117,7 @@
 }
 
 .price{
-    z-index: 100;
+    z-index: 1;
     width: 120px;
     height: 30px;
     background-color: #FBB900;

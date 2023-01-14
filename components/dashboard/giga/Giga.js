@@ -55,6 +55,7 @@ function Giga() {
             unten überprüfen.
           </p>
           <div className={classes.gridcards}>
+            <div>
             <div className={classes.cardcontainer}>
               <div className={classes.padding}>
                 <h2 className={classes.cardheading}>STARTSEITE SCHAUFENSTER</h2>
@@ -66,11 +67,11 @@ function Giga() {
                 <p className={classes.showexample}>
                   Wie sieht mein Inserat aus?
                 </p>
-                <button className={classes.addtocart} onClick={() => {
+                {/* <button className={classes.adasdf} onClick={() => {
                   handleAddToCart("STARTSEITE SCHAUFENSTER", selectedItemName1, selectedItemPrice1);
                 }}>
                   Zum Warenkorb hinzufügen
-                </button>
+                </button> */}
               </div>
 
               {/* CARD-CONTENT */}
@@ -149,6 +150,14 @@ function Giga() {
                 )}
               </div>
             </div>
+            <button className={classes.addtocart} onClick={() => {
+                  handleAddToCart("STARTSEITE SCHAUFENSTER", selectedItemName1, selectedItemPrice1);
+                }}>
+                  Zum Warenkorb hinzufügen
+                </button>
+            </div>
+            
+            <div>
             <div className={classes.cardcontainer}>
               <div className={classes.padding}>
                 <h2 className={classes.cardheading}>TOP INSERAT</h2>
@@ -160,11 +169,6 @@ der Auflistungsseite und zeigen Sie Ihren Beitrag
                 <p className={classes.showexample}>
                   Wie sieht mein Inserat aus?
                 </p>
-                <button className={classes.addtocart} onClick={() => {
-                  handleAddToCart("TOP INSERAT", selectedItemName2, selectedItemPrice2);
-                }}>
-                  Zum Warenkorb hinzufügen
-                </button>
               </div>
 
               {/* CARD-CONTENT */}
@@ -243,6 +247,14 @@ der Auflistungsseite und zeigen Sie Ihren Beitrag
                 )}
               </div>
             </div>
+            <button className={classes.addtocart} onClick={() => {
+                  handleAddToCart("TOP INSERAT", selectedItemName2, selectedItemPrice2);
+                }}>
+                  Zum Warenkorb hinzufügen
+                </button>
+            </div>
+            
+            <div>
             <div className={classes.cardcontainer}>
               <div className={classes.padding}>
                 <h2 className={classes.cardheading}>GIGA LABEL</h2>
@@ -254,11 +266,6 @@ und in der Kategorie „GIGA LABEL“ sein.
                 <p className={classes.showexample}>
                   Wie sieht mein Inserat aus?
                 </p>
-                <button className={classes.addtocart} onClick={() => {
-                  handleAddToCart("GIGA LABEL", selectedItemName3, selectedItemPrice3);
-                }}>
-                  Zum Warenkorb hinzufügen
-                </button>
               </div>
 
               {/* CARD-CONTENT */}
@@ -337,6 +344,13 @@ und in der Kategorie „GIGA LABEL“ sein.
                 )}
               </div>
             </div>
+            <button className={classes.addtocart} onClick={() => {
+                  handleAddToCart("GIGA LABEL", selectedItemName3, selectedItemPrice3);
+                }}>
+                  Zum Warenkorb hinzufügen
+                </button>
+            </div>
+            <div>
             <div className={classes.cardcontainer}>
               <div className={classes.padding}>
                 <h2 className={classes.cardheading}>DATUMSAKTUALISIERUNG</h2>
@@ -347,11 +361,6 @@ Anzeige bei Suchanfragen einen hohen Rang einnimmt.<br></br><br></br>
                 <p className={classes.showexample}>
                   Wie sieht mein Inserat aus?
                 </p>
-                <button className={classes.addtocart} onClick={() => {
-                  handleAddToCart("DATUMSAKTUALISIERUNG", selectedItemName4, selectedItemPrice4);
-                }}>
-                  Zum Warenkorb hinzufügen
-                </button>
               </div>
 
               {/* CARD-CONTENT */}
@@ -396,7 +405,16 @@ Anzeige bei Suchanfragen einen hohen Rang einnimmt.<br></br><br></br>
                   </div>
                 )}
               </div>
+
+
             </div>
+            <button className={classes.addtocart} onClick={() => {
+                  handleAddToCart("DATUMSAKTUALISIERUNG", selectedItemName4, selectedItemPrice4);
+                }}>
+                  Zum Warenkorb hinzufügen
+                </button>
+            </div>
+            <div>
             <div className={classes.cardcontainer}>
               <div className={classes.padding}>
                 <h2 className={classes.cardheading}>FARBIGER HINTERGRUND UND FARBIGER RAHMEN</h2>
@@ -407,11 +425,6 @@ einem farbigen Hintergrund statt.<br></br><br></br>
                 <p className={classes.showexample}>
                   Wie sieht mein Inserat aus?
                 </p>
-                <button className={classes.addtocart} onClick={() => {
-                  handleAddToCart("FARBIGER HINTERGRUND UND FARBIGER RAHMEN", selectedItemName5, selectedItemPrice5);
-                }}>
-                  Zum Warenkorb hinzufügen
-                </button>
               </div>
 
               {/* CARD-CONTENT */}
@@ -457,6 +470,13 @@ einem farbigen Hintergrund statt.<br></br><br></br>
                 )}
               </div>
             </div>
+            <button className={classes.addtocart} onClick={() => {
+                  handleAddToCart("FARBIGER HINTERGRUND UND FARBIGER RAHMEN", selectedItemName5, selectedItemPrice5);
+                }}>
+                  Zum Warenkorb hinzufügen
+                </button>
+            </div>
+            <div>
             <div className={classes.cardcontainer}>
               <div className={classes.padding}>
                 <h2 className={classes.cardheading}>50 FOTO RECHTE</h2>
@@ -467,11 +487,6 @@ indem Sie das Limit von 25 auf 50 Fotos erhöhen.<br></br><br></br>
                 <p className={classes.showexample}>
                   Wie sieht mein Inserat aus?
                 </p>
-                <button className={classes.addtocart} onClick={() => {
-                  handleAddToCart("50 FOTO RECHTE", selectedItemName6, selectedItemPrice6);
-                }}>
-                  Zum Warenkorb hinzufügen
-                </button>
               </div>
 
               {/* CARD-CONTENT */}
@@ -517,6 +532,12 @@ indem Sie das Limit von 25 auf 50 Fotos erhöhen.<br></br><br></br>
                 )}
               </div>
             </div>
+            <button className={classes.addtocart} onClick={() => {
+                  handleAddToCart("50 FOTO RECHTE", selectedItemName6, selectedItemPrice6);
+                }}>
+                  Zum Warenkorb hinzufügen
+                </button>
+            </div>
           </div>
           {/* CARD-CONTENT */}
         </div>
@@ -538,8 +559,9 @@ indem Sie das Limit von 25 auf 50 Fotos erhöhen.<br></br><br></br>
             <div className={classes.right}>
               <div className={classes.total}>GESAMT</div>
               <div className={classes.totalprice}>{totalPrice},00 €</div>
+              <button className={classes.purchasebtn}>KAUFEN</button>
             </div>
-            <button className={classes.purchasebtn}>KAUFEN</button>
+            
         </div>
       </div>
     </>

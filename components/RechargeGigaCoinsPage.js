@@ -15,6 +15,7 @@ import Visa from './../public/visa.svg';
 import Klarna from './../public/klarna.svg';
 import Eps from './../public/eps.svg';
 import ApplePay from './../public/applepay.svg';
+import Mastercard from './../public/mastercard.svg';
 
 function RechargeGigaCoinsPage(){
     const style = {
@@ -129,6 +130,7 @@ function RechargeGigaCoinsPage(){
             <div className={classes.text}>Wenn Sie Vorauszahlungen per Überweisung auf unser Bankkonto durchführen, wird der Betrag als Guthaben auf Ihr Kundenkonto gebucht. Zukünftige Rechnungsbeträge werden automatisch mit dem Guthaben verrechnet.</div>
             <div className={classes.actmoney}>Aktuelles Guthaben:</div>
             <div className={classes.searchandfilter}>
+            <div className={classes.inputrow}>
             <label htmlFor='input' className={classes.leftarea}>
             <div className={classes.searchinputarea}>
                 <div className={classes.searchiconarea}>
@@ -149,6 +151,7 @@ function RechargeGigaCoinsPage(){
                         filterByYear();
                     }}
                     />
+            </div>
             </div>
             </div>
             
@@ -217,11 +220,14 @@ function RechargeGigaCoinsPage(){
             </div>
             <div className={classes.zahlungsmethoden}>
                 <span className={classes.zahl}><Schloss className={classes.schloss} /> <span className={classes.zahlungtext}>Sichere Zahlung<br></br>per SSL-Verschlüsselung</span></span>
-                <Sofort className={classes.sofort} />
-                <Visa className={classes.sofort} />
-                <Klarna className={classes.sofort} />
-                <Eps className={classes.sofort} />
-                <ApplePay className={classes.sofort} />
+                <div className={classes.methods}>
+                    <Sofort className={classes.sofort} />
+                    <Visa className={classes.sofort} />
+                    <Mastercard className={classes.sofort} />
+                    <Klarna className={classes.sofort} />
+                    <Eps className={classes.sofort} />
+                    <ApplePay className={classes.sofort} />
+                </div>
             </div>
         </div>
     )

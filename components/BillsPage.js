@@ -29,7 +29,8 @@ function BillsPage(){
     };
 
     const years = [];
-    for(let i = 2023 - 110; i <= 2023; i++){
+    const currentYear = Number(new Date().getUTCFullYear())
+    for(let i = currentYear; i >= 2023; i--){
         years.push({label: i + "", value: i})
     } 
 
@@ -122,26 +123,28 @@ function BillsPage(){
             <div className={classes.heading}>Rechnungen</div>
             <div className={classes.text}>Hier finden Sie eine Übersicht Ihrer letzen Rechnungen</div>
             <div className={classes.searchandfilter}>
-            <label htmlFor='input' className={classes.leftarea}>
-            <div className={classes.searchinputarea}>
-                <div className={classes.searchiconarea}>
-                    <SearchICon className={classes.searchicon} />
-                </div>
-                <input id='input' type={"text"} onChange={(e) => setSuche(e.target.value)} className={classes.searchinput} placeholder={"Rechnungsnr."}/>
+            <div className={classes.inputrow}>
+                <label htmlFor='input' className={classes.leftarea}>
+                <div className={classes.searchinputarea}>
+                    <div className={classes.searchiconarea}>
+                        <SearchICon className={classes.searchicon} />
+                    </div>
+                    <input id='input' type={"text"} onChange={(e) => setSuche(e.target.value)} className={classes.searchinput} placeholder={"Rechnungsnr."}/>
 
-            </div>
-            </label>
-            <div className={classes.jahrselect}>
-                <Select 
-                    styles={style}
-                    options={years}
-                    placeholder="Alle Jahre"
-                    className=''
-                    onChange={(e) => {
-                        setSelectedYear(e.value);
-                        filterByYear();
-                    }}
-                    />
+                </div>
+                </label>
+                <div className={classes.jahrselect}>
+                    <Select 
+                        styles={style}
+                        options={years}
+                        placeholder="Alle Jahre"
+                        className=''
+                        onChange={(e) => {
+                            setSelectedYear(e.value);
+                            filterByYear();
+                        }}
+                        />
+                </div>
             </div>
             </div>
             
@@ -156,7 +159,7 @@ function BillsPage(){
             {/* RECHNUNGENLISTE */}
             <div className={classes.scrollbehavior}>
             {suche == "" && !searchActivated && selectedYear == "" ? rechnungen.map((rechnung, index) => <div key={index} className={classes.rechnung}>
-                <div className={rechnung.bezahlt ? classes.bezahlt : classes.nichtbezahlt}></div>
+            <div className={rechnung.bezahlt ? classes.bezahlt : classes.nichtbezahlt}></div>
                 <div className={classes.zahlungschecker}>
                     {rechnung.bezahlt == true ? <GreenCheck className={classes.greencheck} /> : <RedCheck className={classes.redcheck} />}
                 </div>

@@ -12,13 +12,15 @@
 }
 
 .searchinputarea{
-    width: 50%;
+    width: 300%;
     height: 40px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     background-color: rgba(255,255,255,0.75);
     width: 60%;
+    width: 130px;
+    margin-right: 90px;
 }
 
 .searchinput{
@@ -26,6 +28,7 @@
     height: 40px;
     background-color: rgba(255,255,255,0.75);
     border-radius: 10px;
+    width: 125px;
 }
 
 .searchiconarea{
@@ -38,6 +41,8 @@
 .searchicon{
     width: 25px;
     height: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .suchbtn{
@@ -52,6 +57,7 @@
     font-weight: bold;
     transition: all .1s ease-in;
     cursor: pointer;
+    width: 100%;
 }
 
 .suchbtn:hover{
@@ -64,22 +70,24 @@
     height: 40px;
     margin-top: 5px;
     margin-bottom: 40px;
+    width: 100%;
 }
 
-.leftarea{
+.inputrow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    margin-right: 20px;
-    height: 40px;
 }
 
 .jahrselect{
-    width: 30%;
+    width: 150px;
     height: 40px;
+    margin-left: -30px;
 }
 
 .radiobtn{
-    border-radius: 100px;
-    overflow: hidden;
+
     height: 20px;
     width: 20px;
     display: flex;
@@ -113,12 +121,13 @@
     display: flex;
     font-weight: bold;
     margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .datelabel{
     display: flex;
     align-items: center;
-    margin-right: 78px;
 }
 
 .expand{
@@ -135,11 +144,11 @@
 }
 
 .renrlabel{
-    margin-right: 8.4%;
+
 }
 
 .download{
-    margin-right: 19%;
+
 }
 
 .betrag{
@@ -150,23 +159,26 @@
 .rechnung{
     height: 50px;
     width: 100%;
+    min-width: 600px;
     background-color: #fff;
     border-radius: 10px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
 }
 
 .bezahlt{
     background-color: #29D62F;
-    width: 10px;
+    min-width: 10px;
     height: 50px;
     margin-right: 20px;
     border-radius: 10px 0 0 10px;
 }
 .nichtbezahlt{
     background-color: #FF0000;
-    width: 10px;
+    min-width: 10px;
     height: 50px;
     border-radius: 10px 0 0 10px;
     margin-right: 20px;
@@ -183,15 +195,15 @@
 }
 
 .zahlungschecker{
-    margin-right: 10%;
+
 }
 
 .date{
-    margin-right: 9.4%;
+
 }
 
 .rnnr{
-    margin-right: 8.4%;
+
 }
 
 .buttons{
@@ -199,7 +211,6 @@
     align-items: center;
     justify-content: center;
     height: 30px;
-    margin-right: 5%;
 }
 
 .pdf{
@@ -211,7 +222,7 @@
     color: #fff;
     width: 80px;
     border-radius: 5px;
-    margin-right: 20px;
+    margin-right: 10px;
     transition: all .1s ease-in;
 }
 
@@ -248,7 +259,7 @@
 
 .status{
     margin-left: 10px;
-    margin-right: 60px;
+
 }
 
 .linebottom{
@@ -283,4 +294,17 @@
     height: 15px;
     width: 15px;
     margin-right: 7px;
+}
+
+@media(max-width: 586px){
+    .infocontainer{
+        font-size: 13px;
+        padding-left: 0;
+    }
+}
+
+@media(max-width: 432px){
+    .infocontainer{
+        font-size: 10px;
+    }
 }

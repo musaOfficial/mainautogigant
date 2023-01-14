@@ -14,6 +14,10 @@
     flex-direction: column;
 }
 
+.distanceoptimizer{
+    height: 400px;
+}
+
 .searcharea{
     background-image: url('./../public/rightfront.png');
     background-repeat: repeat;
@@ -28,10 +32,29 @@
 }
 
 .selectsection{
-    width: 62%;
+    width: 67%;
     padding: 20px;
     height: 100%;
     position: relative;
+}
+
+@media(max-width: 696px){
+    .selectsection{
+        width: 80%;
+    }
+}
+@media(max-width: 588px){
+    .selectsection{
+        width: 90%;
+    }
+}
+@media(max-width: 524px){
+    .selectsection{
+        width: 100%;
+    }
+    .cartext{
+        font-size: 12px;
+    }
 }
 
 .sendarea{
@@ -80,9 +103,10 @@
 }
 
 .cars{
-    display: flex;
+    display: grid;
     width: 100%;
-    justify-content: space-between;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 10px;
 }
 
 .car{
@@ -91,6 +115,13 @@
     color: #fff;
     cursor: pointer;
     transition: all .1s ease-in;
+}
+
+@media(max-width: 976px){
+    .car{
+        width: 58.83px;
+        height: 24.83px;
+    }
 }
 
 .car:hover{

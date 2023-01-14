@@ -53,6 +53,7 @@ export default function MyDrafts() {
       backgroundColor: state.isSelected ? "#fbb900" : "",
       "&:active": "#fbb90080",
       fontSize: "13px",
+      zIndex: state.isSelected ? 15 : 15
     }),
   };
 
@@ -310,9 +311,12 @@ export default function MyDrafts() {
               <Select
                 options={sortOptions}
                 styles={style}
+                menuPortalTarget={document.body}
+                menuPosition={'fixed'}
                 onChange={(e) => {}}
                 placeholder={"SORTIEREN NACH"}
                 className="w-full"
+                classNamePrefix={"zindex"}
               ></Select>
             </div>
           </div>

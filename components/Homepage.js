@@ -93,778 +93,538 @@ function Homepage(){
 
     const angeboteFirstRow = [
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 500,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Halbautomatik",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
+            id: "sköafjasökldc",
             preis: 213520,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1230,
+                fahrzeugzustand: "Neu",
+                getriebe: "Automatik",
+                seller: false,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 2120,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Schaltgetriebe",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 500,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Halbautomatik",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
+            id: "sköafjasökldc",
             preis: 213520,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1230,
+                fahrzeugzustand: "Neu",
+                getriebe: "Automatik",
+                seller: false,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 2120,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Schaltgetriebe",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
     ]
     const angeboteSecondRow = [
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 500,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Halbautomatik",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
+            id: "sköafjasökldc",
             preis: 213520,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1230,
+                fahrzeugzustand: "Neu",
+                getriebe: "Automatik",
+                seller: false,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 2120,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Schaltgetriebe",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 500,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Halbautomatik",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
+            id: "sköafjasökldc",
             preis: 213520,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1230,
+                fahrzeugzustand: "Neu",
+                getriebe: "Automatik",
+                seller: false,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 2120,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Schaltgetriebe",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
     ]
     const angeboteThirdRow = [
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 500,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Halbautomatik",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
+            id: "sköafjasökldc",
             preis: 213520,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1230,
+                fahrzeugzustand: "Neu",
+                getriebe: "Automatik",
+                seller: false,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 2120,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Schaltgetriebe",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 500,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Halbautomatik",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
+            id: "sköafjasökldc",
             preis: 213520,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1230,
+                fahrzeugzustand: "Neu",
+                getriebe: "Automatik",
+                seller: false,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 2120,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Schaltgetriebe",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
     ]
     const angeboteFourthRow = [
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 500,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Halbautomatik",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
+            id: "sköafjasökldc",
             preis: 213520,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1230,
+                fahrzeugzustand: "Neu",
+                getriebe: "Automatik",
+                seller: false,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 2120,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Schaltgetriebe",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 500,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Halbautomatik",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
+            id: "sköafjasökldc",
             preis: 213520,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1230,
+                fahrzeugzustand: "Neu",
+                getriebe: "Automatik",
+                seller: false,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
         {
-            preis: 213520,
+            id: "sköafjasökldc",
+            preis: 2120,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-        },
-        {
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
+            details: {
+                erstzulassung: "11.04.2018",
+                kraftstoff: "Diesel",
+                leistung: "200 PS",
+                kilometerstand: 1200,
+                fahrzeugzustand: "Neu",
+                getriebe: "Schaltgetriebe",
+                seller: true,
+            },
+            location: "Österreich, 2700 Wiener Neustadt",
+            companyname: "Gigant Group Teknoloji A.S",
+            gigalabel: true,
+            colorad: true,
         },
     ]
 
@@ -902,11 +662,6 @@ function Homepage(){
                                     <Kleinbus className={classes.car} />
                                     <span className={classes.cartext}>Kleinbus</span>
                                 </div>
-                                
-                                
-                                
-                                
-                                
                             </div>
                             <div className={classes.selectfields}>
                             <Select 
@@ -941,7 +696,7 @@ function Homepage(){
                             <Select 
                                 options={kmstandBis}
                                 styles={style}
-                                placeholder={"km-stand bis"}
+                                placeholder={"km bis"}
                                 onChange={(e) => setKmStand(e.value)}
                                 defaultInputValue={kmStand}
                                 className={`${classes.marginright} w-full  ${classes.selectinput}`}
@@ -984,98 +739,92 @@ function Homepage(){
                     </div>
                    {/* CONTINUE HERE */}
                    <div className={classes.swiperarea}>
+                        <div className={classes.distanceoptimizer}>
                         <OwlSlider>
-                            {angeboteFirstRow.map((item, index) => <HomeAngebot 
+                            {angeboteFirstRow.map((fav, index) => <HomeAngebot 
                                 key={index}
-                                title={item.title}
-                                price={item.preis}
-                                adNo={index}
-                                start={item.start}
-                                end={item.end}
-                                imgSrc={item.imgSrc}
+                                id={fav.id}
+                                title={fav.title} 
+                                price={fav.preis} 
+                                adNo={fav.adNo} 
+                                start={fav.start}  
+                                end={fav.end}
+                                imgSrc={fav.imgSrc}
+                                description={"This is a description"}
+                                details={fav.details}
                                 cardView={false}
-                                description={"That is a description"}
-                                details={
-                                    {
-                                        erstzulassung: erstzulassenAb,
-                                        kraftstoff: "Diesel",
-                                        leistung: "128 PS",
-                                        fahrzeugzustand: "Neu",
-                                        getriebe: "adfas",
-                                        kilometerstand: 1234,
-                                    }
-                                }
+                                location={fav.location}
+                                companyname={fav.companyname}
+                                onClick={() => handleDel(index)}
+                                gigalabel={fav.gigalabel}
+                                colorad={fav.colorad}    
                             />)}
                         </OwlSlider>
+                        </div>
+                        <div className={classes.distanceoptimizer}>
                         <OwlSlider>
-                            {angeboteSecondRow.map((item, index) => <HomeAngebot 
+                            {angeboteSecondRow.map((fav, index) => <HomeAngebot 
                                 key={index}
-                                title={item.title}
-                                price={item.preis}
-                                adNo={index}
-                                start={item.start}
-                                end={item.end}
-                                imgSrc={item.imgSrc}
+                                id={fav.id}
+                                title={fav.title} 
+                                price={fav.preis} 
+                                adNo={fav.adNo} 
+                                start={fav.start}  
+                                end={fav.end}
+                                imgSrc={fav.imgSrc}
+                                description={"This is a description"}
+                                details={fav.details}
                                 cardView={false}
-                                description={"That is a description"}
-                                details={
-                                    {
-                                        erstzulassung: erstzulassenAb,
-                                        kraftstoff: "Diesel",
-                                        leistung: "128 PS",
-                                        fahrzeugzustand: "Neu",
-                                        getriebe: "adfas",
-                                        kilometerstand: 1234,
-                                    }
-                                }
+                                location={fav.location}
+                                companyname={fav.companyname}
+                                onClick={() => handleDel(index)}
+                                gigalabel={fav.gigalabel}
+                                colorad={fav.colorad}    
                             />)}
                         </OwlSlider>
-                       { row >= 1 && <OwlSlider>
-                            {angeboteThirdRow.map((item, index) => <HomeAngebot 
+                        </div>
+                       { row >= 1 &&  <div className={classes.distanceoptimizer}> <OwlSlider>
+                            {angeboteThirdRow.map((fav, index) => <HomeAngebot 
                                 key={index}
-                                title={item.title}
-                                price={item.preis}
-                                adNo={index}
-                                start={item.start}
-                                end={item.end}
-                                imgSrc={item.imgSrc}
+                                id={fav.id}
+                                title={fav.title} 
+                                price={fav.preis} 
+                                adNo={fav.adNo} 
+                                start={fav.start}  
+                                end={fav.end}
+                                imgSrc={fav.imgSrc}
+                                description={"This is a description"}
+                                details={fav.details}
                                 cardView={false}
-                                description={"That is a description"}
-                                details={
-                                    {
-                                        erstzulassung: erstzulassenAb,
-                                        kraftstoff: "Diesel",
-                                        leistung: "128 PS",
-                                        fahrzeugzustand: "Neu",
-                                        getriebe: "adfas",
-                                        kilometerstand: 1234,
-                                    }
-                                }
+                                location={fav.location}
+                                companyname={fav.companyname}
+                                onClick={() => handleDel(index)}
+                                gigalabel={fav.gigalabel}
+                                colorad={fav.colorad}    
                             />)}
-                        </OwlSlider>}
-                        {row >= 2 && <OwlSlider>
-                            {angeboteFourthRow.map((item, index) => <HomeAngebot 
-                                key={index}
-                                title={item.title}
-                                price={item.preis}
-                                adNo={index}
-                                start={item.start}
-                                end={item.end}
-                                imgSrc={item.imgSrc}
-                                cardView={false}
-                                description={"That is a description"}
-                                details={
-                                    {
-                                        erstzulassung: erstzulassenAb,
-                                        kraftstoff: "Diesel",
-                                        leistung: "128 PS",
-                                        fahrzeugzustand: "Neu",
-                                        getriebe: "adfas",
-                                        kilometerstand: 1234,
-                                    }
-                                }
-                            />)}
-                        </OwlSlider>}
+                        </OwlSlider> </div>}
+                        
+                        {row >= 2 && <div className={classes.distanceoptimizer}> <OwlSlider>
+                            {angeboteFourthRow.map((fav, index) => <HomeAngebot 
+                            key={index}
+                            id={fav.id}
+                            title={fav.title} 
+                            price={fav.preis} 
+                            adNo={fav.adNo} 
+                            start={fav.start}  
+                            end={fav.end}
+                            imgSrc={fav.imgSrc}
+                            description={"This is a description"}
+                            details={fav.details}
+                            cardView={false}
+                            location={fav.location}
+                            companyname={fav.companyname}
+                            onClick={() => handleDel(index)}
+                            gigalabel={fav.gigalabel}
+                            colorad={fav.colorad}    
+                        />)}
+                    </OwlSlider> </div>}
+                        
                         <div className={classes.row}>
                         {row < 2 && <button className={classes.weiterebtn} onClick={() => setRow(d => d + 1)}>
                             + Weitere Fahrzeuge

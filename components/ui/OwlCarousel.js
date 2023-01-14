@@ -31,6 +31,7 @@ function OwlSlider({ children }){
             '<i class="fas fa-angle-left"></i>',
             '<i class="fas fa-angle-right"></i>',
         ],
+        margin: 20,
         responsive: {
             0: {
                 items: 1,
@@ -55,16 +56,19 @@ function OwlSlider({ children }){
             <div className={classes.cart_slide}>
             <Owler
                 className="owl-theme"
-                loop
+                loop={true}
                 margin={4}
                 nav={true}
                 navText={[
                     '<img src="/images/Arrow_left.png" />',
                     '<img src="/images/Arrow_right.png" />',
                 ]}
+            
                 dots={false}
                 animateIn={true}
                 {...options}
+            
+
             >
                 {children}
             </Owler>

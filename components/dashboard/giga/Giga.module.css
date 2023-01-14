@@ -40,6 +40,12 @@ Wenn Sie wissen möchten, welcher Service für Sie geeignet ist, können Sie die
     gap: 20px;
 }
 
+@media(max-width: 645px){
+    .gridcards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
 /* <div className={classes.cardcontainer}>
 <h2 className={classes.cardheading}>STARTSEITE SCHAUFENSTER</h2>
 <p className={classes.carddescription}>Sichern Sie sich Ihren Platz im Schaufenster
@@ -51,7 +57,7 @@ dass Ihr Inserat sofort gesehen wird.</p>
 
 .cardcontainer{
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0px;
     position: relative;
     overflow: hidden;
     min-height: 215px;
@@ -81,7 +87,7 @@ dass Ihr Inserat sofort gesehen wird.</p>
     background-color: #6C757D;
     width: 100%;
     height: 50px;
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     color: #fff;
     cursor: pointer;
     transition: all .1s ease-in;
@@ -233,13 +239,17 @@ dass Ihr Inserat sofort gesehen wird.</p>
     padding: 20px;
     border-radius: 10px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     margin: 30px;
     margin-top: -20px;
 }
 
 .orderleft{
-    width: 70%;
+    width: 100%;
+}
+
+.orderright{
+    margin-top: 20px;
 }
 
 .ordercontainer{
@@ -273,6 +283,7 @@ dass Ihr Inserat sofort gesehen wird.</p>
 .last{
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .orderprice{
@@ -287,9 +298,26 @@ dass Ihr Inserat sofort gesehen wird.</p>
 .ordername{
     font-weight: normal;
     margin-right: 50px;
+    width: 70px;
 }
 
 .deleter{
     cursor: pointer;
     transform: translateY(-1px);
+}
+
+@media(max-width: 550px){
+    .c2{
+        font-size: 13px;
+    }
+
+    .last{
+        width: 45%;
+    }
+}
+
+@media(max-width: 477px){
+    .c2{
+        font-size: 10px;
+    }
 }

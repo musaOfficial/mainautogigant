@@ -1,5 +1,6 @@
 .backgroundcolor{
     background-color: rgba(108, 117, 125, 0.75);
+
 }
 
 .cornerwhite{
@@ -30,4 +31,13 @@
     left: 259px;
     transform: translateY(-50%);
     transition: all .1s ease-in;
+}
+
+.burgeractive{
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    
 }

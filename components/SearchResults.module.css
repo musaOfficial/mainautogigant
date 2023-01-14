@@ -8,9 +8,6 @@
 
 .contentcontainer{
     background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 30px;
     min-height: 100vh;
 }
@@ -26,17 +23,48 @@
     color: #fff !important;
 }
 
+.adgrid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media(max-width: 591px){
+    .adgrid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.cardlength{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    margin-left: auto;
+}
+
+@media(max-width: 591px){
+    .cardlength{
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
 .sponsored{
     position: relative;
     margin-bottom: 20px;
-    background-color: #fff;
-    height: 200px;
-    padding-top: 10px;
+    padding-top: 17px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #fff;
 }
 
 .sponsorcard{
     position: relative;
     height: 368.5px;
+}
+
+.adprop{
+    margin-bottom: 20px;
 }
 
 .werbeanzeige{
@@ -90,7 +118,6 @@
 }
 
 .c1r2{
-    width: 250px;
     background-color: #F1F2F3;
     border-radius: 10px;
     padding: 20px;
@@ -863,46 +890,39 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
 }
 
 .direktsuche{
-    padding-left: 20px !important;
+    padding-left: 10px;
     height: 40px;
-    width: 100%;
-    margin-right: 10px;
     border-radius: 10px;
-    min-width: 95%;
+    width: 100%;
+    
 }
 
-.direktsuche:focus{
-    padding-left: 20px !important;
-    padding-right: 0 !important;
-    height: 40px;
-    width: 95%;
-    min-width: 95%;
-    margin-right: 10px;
-    border-radius: 10px;
-}
 
 .suchenbtn{
-    background-color: #FFB900;
+    background-color: #6C757D;
     border-radius: 10px;
     color: #fff;
     font-weight: bold;
     font-size: 15px;
-    width: 80px;
+    width: 25%;
     max-width: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 5px 20px;
     height: 40px;
-    transition: all .1s eain;
+    transition: all .1s ease-in;
+    margin-left: 10px;
 }
 
 .suchenbtn:hover{
-    background-color: #FFE497;
+    background-color: #FBB900;
 }
 
 .searchicon{
@@ -918,7 +938,7 @@
     height: 20px;
     width: 20px;
     color: #FFE497;
-    z-index: 1000;
+    z-index: 10;
     cursor: pointer;
     transition: all .1s ease-in;
 }
@@ -927,7 +947,7 @@
     height: 20px;
     width: 20px;
     color: #FFE497;
-    z-index: 1000;
+    z-index: 10;
     cursor: pointer;
     transition: all .1s ease-in;
 }
@@ -1059,19 +1079,32 @@
 }
 
 .ausstattungencon{
-    width: 70vw;
+    width: 80vw;
     height: 70vh;
     background-color: #F1F2F3;
     padding: 20px;
-    z-index: 1100;
+    z-index: 12;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgb(0, 0, 0, 0.5);
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    column-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-y: scroll;
+    font-size: 13px;
 }
 
-.ausstattungencon div input{
-    transform: translateY(2px);
+@media(max-width: 835px){
+    .ausstattungencon{
+        grid-template-columns: repeat(2, 1fr);
+        min-width: 300px;
+    }
+}
+
+@media(max-width: 569px){
+    .ausstattungencon{
+        grid-template-columns: repeat(1, 1fr);
+
+    }
 }
 
 .closex{
