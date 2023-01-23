@@ -221,15 +221,15 @@ export default function SearchDetail() {
   const [modals, setModals] = useState([
   ]);
 
-  function addModal(){
+  function addModal(){ 
     setModals([
       ...modals,
       {
-        brandName: selectedBrand.label,
-        modelName: selectedModel.label,
+        brandName: selectedBrand.label, 
+        modelName: selectedModel.label, 
         variant: variante,
-      }
-    ])
+      } 
+    ]) 
 
     setSelectedBrand(brands[0]);
     setSelectedModel(models[0]);
@@ -280,6 +280,8 @@ export default function SearchDetail() {
       }
     
   }
+
+
 
 
   const [erstzulassungVon, setErstzulassungVon] = useState();
@@ -686,14 +688,10 @@ export default function SearchDetail() {
 
   const priceGap = 1000;
   
-  const rangeInput = document.querySelectorAll(".range-input input")
-  const progress = document.querySelector(".slider .progress")
-  const rangeInputLeistung = document.querySelectorAll(".range-inputLeistung input")
-  const progressLeistung = document.querySelector(".sliderL .progressL")
-  const rangeInputPreis = document.querySelectorAll(".range-inputPreis input")
-  const progressPreis = document.querySelector(".sliderPreis .progressPreis")
-  useEffect(() => {
+  if(process.browser){
     if (typeof window !== "undefined") {
+      const rangeInput = document.querySelectorAll(".range-input input")
+      const progress = document.querySelector(".slider .progress")
       rangeInput.forEach(input => {
         input.addEventListener("input", e => {
           if(maxVal - minVal < priceGap){
@@ -710,6 +708,8 @@ export default function SearchDetail() {
         })
       })
 
+      const rangeInputLeistung = document.querySelectorAll(".range-inputLeistung input")
+      const progressLeistung = document.querySelector(".sliderL .progressL")
       rangeInputLeistung.forEach(input => {
         input.addEventListener("input", e => {
           if(maxValLeistung - minValLeistung < 10){
@@ -725,6 +725,8 @@ export default function SearchDetail() {
         })
       })
 
+      const rangeInputPreis = document.querySelectorAll(".range-inputPreis input")
+      const progressPreis = document.querySelector(".sliderPreis .progressPreis")
       rangeInputPreis.forEach(input => {
         input.addEventListener("input", e => {
           if(maxValPreis - minValPreis < priceGap){
@@ -741,8 +743,8 @@ export default function SearchDetail() {
         })
       })
   }
+  }
 
-  }, [rangeInputPreis, progressPreis, rangeInput, progress, rangeInputLeistung, progressLeistung])
   return (
     <div className="bg-theme-gray-10 lg:px-6 md:!px-0">
       {/* BRAND SELECTION */}
