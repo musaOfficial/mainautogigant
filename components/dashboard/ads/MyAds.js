@@ -1,13 +1,177 @@
+import classes from './MyAds.module.css';
 import { useEffect, useState } from "react";
 import Pagination from "../../dealer/list/Pagination";
 import AdCard from "./AdCard";
 import { AiOutlineCodeSandbox } from "react-icons/bi";
-
+import MyAd from "../../ui/ads/MyAd";
+import Select from "react-select";
 // import AdsCard from "./AdsCard";
+const useDeviceSize = () => {
+
+  const [width, setWidth] = useState(0)
+  const [height, setHeight] = useState(0)
+
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  }
+
+  useEffect(() => {
+    // component is mounted and window is available
+    handleWindowResize();
+    window.addEventListener('resize', handleWindowResize);
+    // unsubscribe from the event on component unmount
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
+
+  return [width, height];
+
+}
 
 export default function MyAds() {
+
+  const style = {
+    control: (base) => ({
+      ...base,
+      boxShadow: "none",
+      border: "none",
+      fontSize: '13px',
+      borderRadius: '10px',
+    }),
+    option: (styles, state) => ({
+      ...styles,
+      backgroundColor: state.isSelected ? "#fbb900" : "",
+      "&:active": "#fbb90080",
+      fontSize: '13px',
+    }),
+};
+
+  const laender = [
+    {value: "Österreich", label: "Österreich"},
+    {value: "Afghanistan", label: "Afghanistan"},
+    {value: "Ägypten", label: "Ägypten"},
+  ]
+
+  const sortOptions = [
+    { value: "aktualitaet", label: "Aktualität" },
+    { value: "inDerNaehe", label: "in der Nähe" },
+    { value: "preisAufsteigend", label: "Preis aufsteigend" },
+    { value: "preisAbsteigend", label: "Preis absteigend" },
+    { value: "kmAufsteigend", label: "km aufsteigend" },
+    { value: "kmAbsteigend", label: "km absteigend" },
+    { value: "relevanz", label: "Relevanz" },
+    { value: "ezAbsteigend", label: "EZ absteigend" },
+    { value: "ezAufsteigend", label: "EZ aufsteigend" },
+  ];
+
+
+  const [width, height] = useDeviceSize();
+
   const [cardView, setCardView] = useState("list");
   const [cards, setCards] = useState(3);
+
+  const [angebote, setAngebote] = useState([
+    {
+        id: "sköafjasökldc",
+        preis: 500,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1200,
+            fahrzeugzustand: "Neu",
+            getriebe: "Halbautomatik",
+            seller: true,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+        amountViews: 12000,
+        amountLikes: 10101,
+        publicSince: new Date().toLocaleDateString()
+    },
+    {
+        id: "sköafjasökldc",
+        preis: 500,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1200,
+            fahrzeugzustand: "Neu",
+            getriebe: "Halbautomatik",
+            seller: true,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+        amountViews: 12000,
+        amountLikes: 10101,
+        publicSince: new Date().toLocaleDateString()
+    },
+    {
+        id: "sköafjasökldc",
+        preis: 500,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1200,
+            fahrzeugzustand: "Neu",
+            getriebe: "Halbautomatik",
+            seller: true,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+        amountViews: 12000,
+        amountLikes: 10101,
+        publicSince: new Date().toLocaleDateString()
+    },
+    {
+        id: "sköafjasökldc",
+        preis: 500,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1200,
+            fahrzeugzustand: "Neu",
+            getriebe: "Halbautomatik",
+            seller: true,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+        amountViews: 12000,
+        amountLikes: 10101,
+        publicSince: new Date().toLocaleDateString()
+    },
+    ]);
 
   useEffect(() => {
     if (window.innerWidth <= 767) {
@@ -15,12 +179,11 @@ export default function MyAds() {
     }
   }, []);
 
-
   return (
     <>
       <div className="flex-1">
         <div className="rounded-md bg-theme-gray-4 p-4">
-          <div className="border-b border-theme-gray-2 pb-4 mb-4">
+          <div className=" border-theme-gray-2 pb-4 mb-4">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-3xl xl:text-2xl font-bold text-theme-black-2">
                 MEINE INSERATE
@@ -45,248 +208,30 @@ export default function MyAds() {
                 </button>
               ) : null}
             </div>
-            <div className="flex items-end xl:items-center justify-between text-xs xl:text-10">
-              <div className="flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="60"
-                  height="60"
-                  viewBox="0 0 60 60"
-                  className="xl:w-6"
-                >
-                  <g
-                    id="Group_708"
-                    data-name="Group 708"
-                    transform="translate(-1274 -543)"
-                  >
-                    <rect
-                      id="Rectangle_1115"
-                      data-name="Rectangle 1115"
-                      width="60"
-                      height="60"
-                      rx="5"
-                      transform="translate(1274 543)"
-                      fill="#c3c3c3"
-                    />
-                    <path
-                      id="list_FILL0_wght400_GRAD0_opsz48"
-                      d="M20.167,17.265V14H50.093v3.265Zm0,9.25V23.25H50.093v3.265Zm0,9.25V32.5H50.093v3.265Z"
-                      transform="translate(1274.562 548.117)"
-                      fill="#f1f2f3"
-                    />
-                    <g
-                      id="Path_959"
-                      data-name="Path 959"
-                      transform="translate(1284 579)"
-                      fill="#f1f2f3"
-                    >
-                      <path
-                        d="M 3 5.5 C 1.621500015258789 5.5 0.5 4.378499984741211 0.5 3 C 0.5 1.621500015258789 1.621500015258789 0.5 3 0.5 C 4.378499984741211 0.5 5.5 1.621500015258789 5.5 3 C 5.5 4.378499984741211 4.378499984741211 5.5 3 5.5 Z"
-                        stroke="none"
-                      />
-                      <path
-                        d="M 3 1 C 1.897200107574463 1 1 1.897200107574463 1 3 C 1 4.102799892425537 1.897200107574463 5 3 5 C 4.102799892425537 5 5 4.102799892425537 5 3 C 5 1.897200107574463 4.102799892425537 1 3 1 M 3 0 C 4.65684986114502 0 6 1.34315013885498 6 3 C 6 4.65684986114502 4.65684986114502 6 3 6 C 1.34315013885498 6 0 4.65684986114502 0 3 C 0 1.34315013885498 1.34315013885498 0 3 0 Z"
-                        stroke="none"
-                        fill="#f1f2f3"
-                      />
-                    </g>
-                    <g
-                      id="Path_958"
-                      data-name="Path 958"
-                      transform="translate(1284 570)"
-                      fill="#f1f2f3"
-                    >
-                      <path
-                        d="M 3 5.5 C 1.621500015258789 5.5 0.5 4.378499984741211 0.5 3 C 0.5 1.621500015258789 1.621500015258789 0.5 3 0.5 C 4.378499984741211 0.5 5.5 1.621500015258789 5.5 3 C 5.5 4.378499984741211 4.378499984741211 5.5 3 5.5 Z"
-                        stroke="none"
-                      />
-                      <path
-                        d="M 3 1 C 1.897200107574463 1 1 1.897200107574463 1 3 C 1 4.102799892425537 1.897200107574463 5 3 5 C 4.102799892425537 5 5 4.102799892425537 5 3 C 5 1.897200107574463 4.102799892425537 1 3 1 M 3 0 C 4.65684986114502 0 6 1.34315013885498 6 3 C 6 4.65684986114502 4.65684986114502 6 3 6 C 1.34315013885498 6 0 4.65684986114502 0 3 C 0 1.34315013885498 1.34315013885498 0 3 0 Z"
-                        stroke="none"
-                        fill="#f1f2f3"
-                      />
-                    </g>
-                    <g
-                      id="Ellipse_76"
-                      data-name="Ellipse 76"
-                      transform="translate(1284 561)"
-                      fill="#f1f2f3"
-                      stroke="#f1f2f3"
-                      strokeWidth="1"
-                    >
-                      <circle cx="3" cy="3" r="3" stroke="none" />
-                      <circle cx="3" cy="3" r="2.5" fill="none" />
-                    </g>
-                  </g>
-                </svg>
-                <span className="w-px h-14 xl:h-6 bg-theme-gray-5 mx-6 xl:mx-2 block"></span>
-                <h2 className="text-50 xl:text-3xl font-bold text-theme-black-2">
-                  {cards ? cards : 0}
-                </h2>
-              </div>
-              {cards ? (
-                <>
-                  {/* <div className="flex items-center">
-                    ANZEIGEN :
-                    <div className="relative">
-                      <select className="ml-2 outline-none appearance-none  bg-transparent rounded border-2 py-2 pl-6 pr-8 xl:pl-3 xl:pr-6 border-theme-gray-2">
-                        <option>12</option>
-                        <option>16</option>
-                        <option>20</option>
-                      </select>
-                      <img
-                        className="absolute top-4 -mt-0.5 right-3"
-                        src="/images/icons/sd-select-arrow.png"
-                      />
-                    </div>
-                  </div> */}
-                  {/* <div className="flex items-center justify-end">
-                    <p className="lg:hidden">SORTIEREN NACH :</p>
-                    <div className="relative">
-                      <select className="ml-2 outline-none appearance-none  bg-transparent rounded border-2 py-2 pl-6 pr-8 xl:pl-2 border-theme-gray-2">
-                        <option>Preis: aufsteigend</option>
-                        <option>Preis: aufsteigend</option>
-                        <option>Preis: aufsteigend</option>
-                      </select>
-                      <img
-                        className="absolute top-4 -mt-0.5 right-3"
-                        src="/images/icons/sd-select-arrow.png"
-                      />
-                    </div>
-                  </div> */}
-                  <div className="flex items-center lg:hidden">
-                    <button onClick={() => setCardView("grid")}>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          id="grid_view_FILL0_wght500_GRAD0_opsz48"
-                          d="M5.7,14.88V5.7h9.18v9.18Zm0,10.82V16.52h9.18V25.7ZM16.52,14.88V5.7H25.7v9.18Zm0,10.82V16.52H25.7V25.7ZM7.558,13.022h5.464V7.558H7.558Zm10.82,0h5.464V7.558H18.378Zm0,10.82h5.464V18.378H18.378Zm-10.82,0h5.464V18.378H7.558ZM18.378,13.022ZM18.378,18.378ZM13.022,18.378ZM13.022,13.022Z"
-                          transform="translate(-5.7 -5.7)"
-                          fill={cardView === "grid" ? "#fbb900" : "#555"}
-                        />
-                      </svg>
-                    </button>
-                    <button
-                      className="ml-4"
-                      onClick={() => setCardView("list")}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          id="view_list_FILL0_wght500_GRAD0_opsz48"
-                          d="M5.8,29.7V9.7h20v20ZM7.668,15.784h2.857V12.078H7.668Zm4.505,0H23.932V12.078H12.174Zm0,5.734H23.932V17.882H12.174Zm0,5.769H23.932V23.616H12.174Zm-4.505,0h2.857V23.616H7.668Zm0-5.769h2.857V17.882H7.668Z"
-                          transform="translate(-5.8 -9.7)"
-                          fill={cardView === "list" ? "#fbb900" : "#555"}
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </>
-              ) : null}
             </div>
-          </div>
-          {cards ? (
-            <div className="flex items-center md:flex-col md:items-start justify-between mb-6">
-              <div className="flex items-center md:mb-4">
-                ANZEIGEN :
-                <div className="relative">
-                  <select className="ml-2 outline-none appearance-none  bg-transparent rounded border-2 py-2 pl-6 pr-8 xl:pl-3 xl:pr-6 border-theme-gray-2">
-                    <option>12</option>
-                    <option>16</option>
-                    <option>20</option>
-                  </select>
-                  <img
-                    className="absolute top-4 -mt-0.5 right-3"
-                    src="/images/icons/sd-select-arrow.png"
-                  />
-                </div>
-              </div>
-              <div className="flex items-center justify-end">
-                <p className="lg:hidden">SORTIEREN NACH :</p>
-                <div className="relative">
-                  <select className="ml-2 outline-none appearance-none  bg-transparent rounded border-2 py-2 pl-6 pr-8 xl:pl-2 border-theme-gray-2">
-                    <option>Preis: aufsteigend</option>
-                    <option>Preis: aufsteigend</option>
-                    <option>Preis: aufsteigend</option>
-                  </select>
-                  <img
-                    className="absolute top-4 -mt-0.5 right-3"
-                    src="/images/icons/sd-select-arrow.png"
-                  />
-                </div>
-              </div>
+            <div className={width >= 1250 ? classes.flex : classes.grid}>
+              {angebote.map((fav, index) => <MyAd 
+                key={index}
+                id={fav.id}
+                title={fav.title} 
+                price={fav.preis} 
+                adNo={fav.adNo} 
+                start={fav.start}  
+                end={fav.end}
+                imgSrc={fav.imgSrc}
+                description={"This is a description"}
+                details={fav.details}
+                cardView={width >= 1250 ? true : false}
+                location={fav.location}
+                companyname={fav.companyname}
+                onClick={() => handleDel(index)}
+                gigalabel={fav.gigalabel}
+                colorad={fav.colorad} 
+                amountViews={fav.amountViews}
+                amountLikes={fav.amountLikes}
+                publicSince={fav.publicSince}
+              />)}
             </div>
-          ) : null}
-          {cards && cardView === "grid" && (
-            <div className="flex justify-between flex-wrap">
-              <AdCard
-                title="Lamborghini Huracán"
-                price="45.520"
-                adNo="#123456789"
-                start="01/01/2020"
-                end="01/01/2020"
-                imgSrc="/images/draft-card-img-car-1.png"
-                cardView={cardView}
-              />
-              <AdCard
-                title="Lamborghini Huracán"
-                price="45.520"
-                adNo="#123456789"
-                start="01/01/2020"
-                end="01/01/2020"
-                imgSrc="/images/draft-card-img-car-1.png"
-                cardView={cardView}
-              />
-              <AdCard
-                title="Lamborghini Huracán"
-                price="45.520"
-                adNo="#123456789"
-                start="01/01/2020"
-                end="01/01/2020"
-                imgSrc="/images/draft-card-img-car-1.png"
-                cardView={cardView}
-              />
-            </div>
-          )}
-          {cards && cardView === "list" && (
-            <>
-              <AdCard
-                title="Lamborghini Huracán"
-                price="45.520"
-                adNo="#123456789"
-                start="01/01/2020"
-                end="01/01/2020"
-                imgSrc="/images/draft-card-img-car-1.png"
-                cardView={cardView}
-              />
-              <AdCard
-                title="Lamborghini Huracán"
-                price="45.520"
-                adNo="#123456789"
-                start="01/01/2020"
-                end="01/01/2020"
-                imgSrc="/images/draft-card-img-car-1.png"
-                cardView={cardView}
-              />
-              <AdCard
-                title="Lamborghini Huracán"
-                price="45.520"
-                adNo="#123456789"
-                start="01/01/2020"
-                end="01/01/2020"
-                imgSrc="/images/draft-card-img-car-1.png"
-                cardView={cardView}
-              />
-            </>
-          )}
           <div className="flex items-center justify-between md:flex-col mt-8">
             <button className="w-1/3 md:w-full flex items-center justify-center rounded-10 text-white fill-white text-sm bg-theme-gray-5">
               <svg
@@ -325,7 +270,7 @@ export default function MyAds() {
             </button>
           </div>
         </div>
-        {cards ? <Pagination wFull /> : null}
+
       </div>
     </>
   );

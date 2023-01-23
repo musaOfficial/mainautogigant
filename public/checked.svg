@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #6c757d;
+        opacity: 0.5;
+      }
+
+      .cls-2, .cls-3, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #707070;
+      }
+
+      .cls-3 {
+        stroke-linecap: round;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_3058" data-name="Group 3058" transform="translate(-690 -1070)">
+    <g id="Rectangle_6350" data-name="Rectangle 6350" class="cls-1" transform="translate(690 1070)">
+      <rect class="cls-4" width="25" height="25" rx="5"/>
+      <rect class="cls-5" x="0.5" y="0.5" width="24" height="24" rx="4.5"/>
+    </g>
+    <line id="Line_1306" data-name="Line 1306" class="cls-2" x2="4" y2="5" transform="translate(696.5 1083.5)"/>
+    <line id="Line_1307" data-name="Line 1307" class="cls-3" x1="8" y2="10" transform="translate(700.5 1078.5)"/>
+  </g>
+</svg>

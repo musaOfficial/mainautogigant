@@ -38,22 +38,39 @@
     position: relative;
 }
 
+.cars{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
 @media(max-width: 696px){
     .selectsection{
         width: 80%;
+    }
+
+    .cars{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 @media(max-width: 588px){
     .selectsection{
         width: 90%;
     }
+
+    .cars{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 @media(max-width: 524px){
     .selectsection{
         width: 100%;
     }
-    .cartext{
-        font-size: 12px;
+
+    .cars{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -222,6 +239,10 @@
     border: 2px solid #fff;
 }
 
+.dis{
+    background-color: green;
+}
+
 .input::placeholder{
     font-size: 15px;
     color: #6C757D;
@@ -365,6 +386,7 @@
     margin-bottom: 20px;
     margin-top: 20px;
     color: #6C757D;
+    text-align: center;
 }
 
 .carscontainer{
@@ -372,8 +394,22 @@
     border-radius: 10px;
     background-color: #F1F2F3;
     padding: 20px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
     justify-content: space-between;
+}
+
+@media(max-width: 824px){
+    .carscontainer{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 526px){
+    .carscontainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .item{
@@ -391,6 +427,10 @@
     color: #0067B8;
     font-size: 13px;
     margin-top: 20px;
+}
+
+@media(max-width: 333px){
+
 }
 
 .marke{
@@ -438,12 +478,12 @@
 .inputrow{
     display: flex;
     align-items: center;
-    width: 70%;
+    width: 90%;
 }
 
 .newsletterinput{
     width: 100%;
-    margin-right: 20px;
+    margin-right: 5px;
     height: 40px;
     border-radius: 10px;
     padding-left: 10px;
@@ -465,4 +505,38 @@
 
 .mailbtn:hover{
     background-color: #FBB900;
+}
+
+@media(max-width: 758px){
+    .mailbtn{
+        font-size: 15px;
+    }
+
+    .inputrow{
+        font-size: 13px;
+        width: 100%;
+    }
+}
+
+@media(max-width: 450px){
+    .mailbtn{
+        font-size: 13px;
+    }
+
+    .cars{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        margin-bottom: 0;
+        height: 110px;
+    }
+
+    .searcharea{
+        height: 350px;
+        background-size: cover;
+    }
+
+    .sendbtn{
+        font-size: 15px;
+    }
 }

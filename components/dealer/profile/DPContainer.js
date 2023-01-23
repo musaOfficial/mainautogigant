@@ -8,16 +8,301 @@ import Facebook from './../../../public/icons/facebook.svg';
 import Tiktok from './../../../public/icons/tiktok.svg';
 import Youtube from './../../../public/icons/youtube.svg';
 import classes from './DPContainer.module.css';
+import Angebot from "../../ui/ads/Angebot";
+import { useState, useEffect } from "react";
+import Linkedin from './../../../public/Linkedin.svg';
+
+const useDeviceSize = () => {
+
+  const [width, setWidth] = useState(0)
+  const [height, setHeight] = useState(0)
+
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  }
+
+  useEffect(() => {
+    // component is mounted and window is available
+    handleWindowResize();
+    window.addEventListener('resize', handleWindowResize);
+    // unsubscribe from the event on component unmount
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
+
+  return [width, height]
+
+}
 
 export default function DPContainer() {
+
+  const [width, height] = useDeviceSize();
+
+  const [angebote, setAngebote] = useState([
+    {
+        id: "sköafjasökldc",
+        preis: 500,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1200,
+            fahrzeugzustand: "Neu",
+            getriebe: "Halbautomatik",
+            seller: true,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+    },
+    {
+        id: "sköafjasökldc",
+        preis: 213520,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1230,
+            fahrzeugzustand: "Neu",
+            getriebe: "Automatik",
+            seller: false,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+    },
+    {
+        id: "sköafjasökldc",
+        preis: 2120,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1200,
+            fahrzeugzustand: "Neu",
+            getriebe: "Schaltgetriebe",
+            seller: true,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+    },
+    {
+        id: "sköafjasökldc",
+        preis: 500,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1200,
+            fahrzeugzustand: "Neu",
+            getriebe: "Halbautomatik",
+            seller: true,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+    },
+    {
+        id: "sköafjasökldc",
+        preis: 213520,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1230,
+            fahrzeugzustand: "Neu",
+            getriebe: "Automatik",
+            seller: false,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+    },
+    {
+        id: "sköafjasökldc",
+        preis: 2120,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1200,
+            fahrzeugzustand: "Neu",
+            getriebe: "Schaltgetriebe",
+            seller: true,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+    },
+    {
+        id: "sköafjasökldc",
+        preis: 500,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1200,
+            fahrzeugzustand: "Neu",
+            getriebe: "Halbautomatik",
+            seller: true,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+    },
+    {
+        id: "sköafjasökldc",
+        preis: 213520,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1230,
+            fahrzeugzustand: "Neu",
+            getriebe: "Automatik",
+            seller: false,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+    },
+    {
+        id: "sköafjasökldc",
+        preis: 2120,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1200,
+            fahrzeugzustand: "Neu",
+            getriebe: "Schaltgetriebe",
+            seller: true,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+    },
+    {
+        id: "sköafjasökldc",
+        preis: 2120,
+        title: "Mercedes AMG GT",
+        adNo: "#294873205",
+        start: "01/01/2020",
+        end: "01/01/2022",
+        imgSrc: "/images/draft-card-img-car-1.png",
+        details: {
+            erstzulassung: "11.04.2018",
+            kraftstoff: "Diesel",
+            leistung: "200 PS",
+            kilometerstand: 1200,
+            fahrzeugzustand: "Neu",
+            getriebe: "Schaltgetriebe",
+            seller: true,
+        },
+        location: "Österreich, 2700 Wiener Neustadt",
+        companyname: "Gigant Group Teknoloji A.S",
+        gigalabel: true,
+        colorad: true,
+    },
+]);
+
+  const [bannerImgSrc, setBannerImgSrc] = useState("/images/reg-car.png");
+  const [profileImgSrc, setProfileImgSrc] = useState("/images/dealer-profile-breadcrumb-img.png");
+  const [amountStars, setAmountStars] = useState(7);
+  const [aboutUs, setAboutUs] = useState("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae modi tempora odit explicabo dicta qui, blanditiis incidunt possimus natus a adipisci laborum fugit quaerat perspiciatis reprehenderit expedita magni rerum voluptatum numquam? Unde eius consectetur quaerat expedita deserunt quis blanditiis ipsa, corporis mollitia vero modi adipisci ratione voluptate enim voluptas, numquam totam perspiciatis iure? Necessitatibus voluptates quod, velit in voluptas possimus accusamus.");
+
+  // Variablen für die 5 Fotos unter dem Über Uns Text
+  const [thumbImage1, setThumbImage1] = useState("/images/dp-thumb-img-1.png");
+  const [thumbImage2, setThumbImage2] = useState("/images/dp-thumb-img-2.png" );
+  const [thumbImage3, setThumbImage3] = useState("/images/dp-thumb-img-3.png");
+  const [thumbImage4, setThumbImage4] = useState("/images/dp-thumb-img-4.png");
+  const [thumbImage5, setThumbImage5] = useState("/images/dp-thumb-img-5.png");
+
+  // Social Media URL's
+  const [facebookUrl, setFacebookUrl] = useState("");
+  const [instagramUrl, setInstagramUrl] = useState("");
+  const [youtubeUrl, setYoutubeUrl] = useState("");
+  const [linkedinUrl, setLinkedinUrl] = useState("");
+  const [tiktokUrl, setTiktokUrl] = useState("");
+
+  // Firmendaten
+  const [tel, setTel] = useState("+43 987 654 3210");
+  const [mail, setMail] = useState("support@example.com");
+  const [website, setWebsite] = useState("www.example.com");
+
+  // Kontaktdaten
+  const [name, setName] = useState("");
+  const [usermail, setUsermail] = useState("");
+  const [message, setMessage] = useState("");
+
+
   return (
     <div className="bg-theme-gray-10 lg:px-6 md:!px-0">
       <div className="w-10/12 lg:w-full max-w-ag-container mx-auto flex md:flex-col-reverse">
         <div className="w-full p-6 bg-white">
-          <div>
+          <div className="relative">
             <img
-              className="w-full"
-              src="/images/dealer-profile-breadcrumb-img.png"
+              className={classes.bannerimg}
+              src={bannerImgSrc}
+            />
+            <img
+              className={classes.profileimg}
+              src={profileImgSrc}
             />
           </div>
           <div className="flex mt-6 md:flex-col">
@@ -31,7 +316,7 @@ export default function DPContainer() {
                 </div>
                 <div className="flex">
                   <a
-                    href="https://facebook.com"
+                    href={facebookUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="mr-1 ease-linear duration-150 hover:opacity-60"
@@ -39,7 +324,7 @@ export default function DPContainer() {
                     <Facebook className={classes.instagram} />
                   </a>
                   <a
-                    href="https://instagram.com"
+                    href={instagramUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="mx-1 ease-linear duration-150 hover:opacity-60"
@@ -47,7 +332,7 @@ export default function DPContainer() {
                     <Instargram className={classes.instagram} />
                   </a>
                   <a
-                    href="https://youtube.com"
+                    href={youtubeUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="mx-1 ease-linear duration-150 hover:opacity-60"
@@ -55,7 +340,15 @@ export default function DPContainer() {
                     <Youtube className={classes.instagram} />
                   </a>
                   <a
-                    href="https://tiktok.com"
+                    href={linkedinUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="ml-1 ease-linear duration-150 hover:opacity-60"
+                  >
+                    <Linkedin className={classes.instagram} />
+                  </a>
+                  <a
+                    href={tiktokUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="ml-1 ease-linear duration-150 hover:opacity-60"
@@ -72,7 +365,77 @@ export default function DPContainer() {
                   <div className="flex items-center text-base md:flex-col">
                     <div className="flex flex-col items-center mr-6 md:mr-0 md:mb-3">
                       <div className="flex mb-1">
+                        {amountStars == 0 && <>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
                         <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        </>}
+                        {amountStars <= 1 && amountStars > 0 && <>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        </>}
+                        {amountStars <= 2 && amountStars > 1 && <>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        </>}
+                        {amountStars <= 3 && amountStars > 2 && <>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        </>}
+
+                        {amountStars <= 4 && amountStars > 3 && <>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
                           <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
                         </svg>
                         <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
@@ -87,8 +450,28 @@ export default function DPContainer() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
                           <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
                         </svg>
+                        </>}
+                        {amountStars > 4 && <>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        </>}
+
+                        
                       </div>
-                      <p>4,9 / 27 Bewertungen</p>
+                      <p>{amountStars} / 27 Bewertungen</p>
                     </div>
                     <button className="sm:mb-4 sm:mr-0 mr-2 inline-block px-4 py-1 sm:px-3 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-13 font-bold ease-linear duration-300 hover:bg-theme-yellow-3">
                       HÄNDLER BEWERTEN
@@ -97,23 +480,15 @@ export default function DPContainer() {
                 </div>
 
                 <p className="text-base">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Recusandae modi tempora odit explicabo dicta qui, blanditiis
-                  incidunt possimus natus a adipisci laborum fugit quaerat
-                  perspiciatis reprehenderit expedita magni rerum voluptatum
-                  numquam? Unde eius consectetur quaerat expedita deserunt quis
-                  blanditiis ipsa, corporis mollitia vero modi adipisci ratione
-                  voluptate enim voluptas, numquam totam perspiciatis iure?
-                  Necessitatibus voluptates quod, velit in voluptas possimus
-                  accusamus.
+                  {aboutUs}
                 </p>
               </div>
               <div className="flex justify-between xl:flex-wrap xl:justify-around p-4 mt-7 text-theme-gray-4 bg-theme-gray-4 rounded-10">
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src="/images/dp-thumb-img-1.png" />
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src="/images/dp-thumb-img-2.png" />
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src="/images/dp-thumb-img-3.png" />
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src="/images/dp-thumb-img-4.png" />
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src="/images/dp-thumb-img-5.png" />
+                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage1} />
+                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage2}/>
+                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage3} />
+                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage4}/>
+                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage5} />
               </div>
               <div className="h-96 w-full mt-7 google-map-container rounded-10 overflow-hidden">
                 <Map />
@@ -148,12 +523,27 @@ export default function DPContainer() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-4">
-                  <AdCard />
-                  <AdCard />
-                  <AdCard />
-                  <AdCard />
-                  <AdCard />
+                <div className={classes.grid}>
+                  {angebote.map((fav, index) => <div key={index} className={width >= 1250 && classes.adprop}>
+                      <Angebot
+                      key={index}
+                      id={fav.id}
+                      title={fav.title} 
+                      price={fav.preis} 
+                      adNo={fav.adNo} 
+                      start={fav.start}  
+                      end={fav.end}
+                      imgSrc={fav.imgSrc}
+                      description={"This is a description"}
+                      details={fav.details}
+                      cardView={width >= 1250 ? true : false}
+                      location={fav.location}
+                      companyname={fav.companyname}
+                      onClick={() => handleDel(index)}
+                      gigalabel={fav.gigalabel}
+                      colorad={fav.colorad}       
+                  />
+                  </div>)}
                 </div>
               </div>
               <Pagination wFull pagType='sm-border' />
@@ -260,7 +650,7 @@ export default function DPContainer() {
                       fill="#555"
                     />
                   </svg>
-                  <p className="ml-4">+43 987 654 3210</p>
+                  <p className="ml-4">{tel}</p>
                 </div>
                 <div className="flex items-center mt-2">
                   <svg
@@ -276,7 +666,7 @@ export default function DPContainer() {
                       fill="#555"
                     />
                   </svg>
-                  <p className="ml-4">support@example.com</p>
+                  <p className="ml-4">{mail}</p>
                 </div>
                 <div className="flex items-center mt-2">
                   <svg
@@ -292,7 +682,7 @@ export default function DPContainer() {
                       fill="#555"
                     />
                   </svg>
-                  <p className="ml-4">www.example.com</p>
+                  <p className="ml-4">{website}</p>
                 </div>
               </div>
               {/* <div className="text-center mt-6 p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base">
@@ -381,11 +771,12 @@ export default function DPContainer() {
               <div className="mt-6 p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base">
                 <h2 className="text-base font-bold">NACHRICHT SENDEN</h2>
                 <form className="pt-2 pb-2">
-                  <Input placeholder="Vollständiger Name" />
-                  <Input placeholder="Ihre E-Mail eingeben" />
+                  <Input placeholder="Vollständiger Name" onChange={(e) => setName(e.target.value)} />
+                  <Input placeholder="Ihre E-Mail eingeben" onChange={(e) => setMail(e.target.value)} />
                   <textarea
                    className="w-full h-36 resize-none rounded-10 text-base p-3 bg-white"
                     placeholder="Ihre Nachricht"
+                    onChange={(e) => setMessage(e.target.value)}
                   ></textarea>
                   <button className="w-full inline-block px-2 py-3 mt-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3">
                     NACHRICHT SENDEN

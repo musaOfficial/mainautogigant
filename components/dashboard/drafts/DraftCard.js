@@ -52,13 +52,6 @@ function DraftCard({
     var fz = details.kilometerstand + " km";
     var ez = "EZ: " + details.erstzulassung;
 
-    if(pl % 3 == 0){
-        console.log(true)
-    } else {
-        console.log(false);
-    }
-
-
     return (
         cardView == true ? <div className={`${classes.container}`}>
         <div className={classes.actioncontainer}>

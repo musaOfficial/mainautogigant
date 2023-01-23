@@ -35,7 +35,8 @@ function Homepage(){
           fontSize: '15px',
           borderRadius: '10px',
           backgroundColor: "transparent",
-          color: "#fff"
+          color: "#fff",
+          fontSize: "13px"
         }),
         option: (styles, state) => ({
           ...styles,
@@ -901,15 +902,15 @@ function Homepage(){
                             </div>
                             <div className={classes.iteml}>
                                 <div className={classes.marke}>Autohäuser</div>
-                                <div className={classes.modell}>Autohäuser in Wien</div>
-                                <div className={classes.modell}>Autohäuser in Graz</div>
-                                <div className={classes.modell}>Autohäuser in Linz</div>
-                                <div className={classes.modell}>Autohäuser in Salzburg</div>
-                                <div className={classes.modell}>Autohäuser in Wiener Neustadt</div>
+                                <div className={classes.modell}>in Wien</div>
+                                <div className={classes.modell}>in Graz</div>
+                                <div className={classes.modell}>in Linz</div>
+                                <div className={classes.modell}>in Salzburg</div>
+                                <div className={classes.modell}>in Wiener Neustadt</div>
                                 <div className={classes.modell}>Mehr Autohäuser</div>
                             </div>
                             </div>
-                            <div><div className={classes.item}>
+                            <div className={`${classes.lastitem}`}><div className={classes.item}>
                                 <div className={classes.marke}>Ford</div>
                                 <div className={classes.modell}>Ford Ecosport</div>
                                 <div className={classes.modell}>Ford Fiesta</div>
@@ -918,7 +919,7 @@ function Homepage(){
                                 <div className={classes.modell}>Ford Mondeo</div>
                                 <div className={classes.modell}>Mehr Modelle</div>
                             </div>
-                            <div className={classes.iteml}>
+                            <div className={`${classes.iteml}`}>
                                 <div className={classes.marke}>GIGANT WORLD</div>
                                 <div className={classes.modell}>E GIGANT.</div>
                                 <div className={classes.modell}>IMMO GIGANT.</div>

@@ -40,7 +40,7 @@
 
 .anzeigenbtn{
     height: 40px;
-    width: 180px;
+    width: 100%;
     background-color: #6C757D;
     color: #fff;
     font-weight: bold;
@@ -83,7 +83,6 @@
 
 .loeschenbtn{
     height: 40px;
-    width: 180px;
     background-color: #6C757D;
     color: #fff;
     font-weight: bold;
@@ -94,6 +93,7 @@
     justify-content: center;
     cursor: pointer;
     line-height: 40px;
+    width: 100%;
 }
 
 .loeschenbtn:hover{
@@ -111,4 +111,36 @@
 
 .text{
     font-size: 15px;
+}
+
+.brandmodel{
+    margin-bottom: 10px;
+}
+
+.modelgrid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+@media(max-width: 734px){
+    .functionalities{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .loeschenbtn{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .date{
+        margin-bottom: 5px;
+    }
+
+    .funcrow{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

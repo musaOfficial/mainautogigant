@@ -16,6 +16,10 @@
     width: 320px !important;
 }
 
+.leftcontainermenu{
+    width: 100% !important;
+}
+
 .heading{
     font-size: 20px;
     font-weight: bold;
@@ -44,6 +48,19 @@
     border-radius: 10px;
     display: flex;
     padding: 20px;
+    flex-direction: column;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.searchdealermenu{
+    height: 110px;
+    width: 100%;
+    background-color: #f1f2f3;
+    border-radius: 10px;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
     flex-direction: column;
     margin-bottom: 20px;
     position: relative;
@@ -85,6 +102,14 @@
     padding: 20px;
 }
 
+.searchwithratemenu{
+    height: 250px;
+    width: 100%;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
 .grayliner{
     width: 100%;
     height: 1px;
@@ -118,6 +143,13 @@
 }
 
 .searchwithcity{
+    width: 100%;
+    background-color: #F1F2F3;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.searchwithcitymenu{
     width: 100%;
     background-color: #F1F2F3;
     margin-top: 20px;
@@ -206,5 +238,111 @@
     width: 100%;
     height: 220px;
     overflow-y: auto;
+}
+
+.countercontainer{
+    width: 100%;
+    min-height: 45px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(108, 117, 125, 0.75);
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #fff;
+
+}
+
+.counter{
+    line-height: 20px;
+}
+
+.homemenu{
+    margin-right: 20px;
+    height: 35px;
+    width: 35px;
+}
+
+.counternumber{
+    font-weight: bold;
+}
+
+.suche{
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+
+.filterrow{
+    display: flex;
+    flex-direction: column;
+}
+
+.closefilter{
+    background-color: #F1F2F3;
+    min-height: 45px;
+    width: 100%;
+    display: flex;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.openedfilter{
+    background-color: #F1F2F3;
+    min-height: 45px;
+    width: 100%;
+    display: flex;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    flex-direction: column;
+}
+
+.menu{
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+}
+
+.closemenu{
+    width: 35px;
+    height: 35px;
+}
+
+@media(max-width: 1250px){
+    .rightcontainer{
+        margin-left: 0;
+    }
+}
+
+@media(max-width: 800px){
+    .dealergrid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 750px){
+    .layouteditor{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+    }
+
+    .show{
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 525px){
+    .dealergrid{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 

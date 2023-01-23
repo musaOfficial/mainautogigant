@@ -38,23 +38,30 @@ function SavedSearchesPage(){
             <div className={classes.text}>Sie können Ihre gespeicherten Suchen hier löschen oder bearbeiten.</div>
             {savedSearches.map((search, index) => <div key={index} className={classes.savedsearch}>
                 <div className={classes.heading}>{search.brand[0] + " " + search.model[0][0]}</div>
-                <div className={classes.getmail}>Neue Angebote per E-Mail erhalten <input type={"checkbox"} /></div>
+                <div className={classes.getmail}>Neue Angebote per E-Mail erhalten <input type={"checkbox"} /></div> 
                 <br></br>
-                <div className={classes.brandmodel}><span className='mr-2'>Marke / Modell:</span>{search.model.map((md, mdindex) => {
-                    if(md){
-                        return <span key={mdindex}>{md.map((sr, srindex) => <span key={srindex} className={classes.singleitem}>{search.brand[mdindex] + " " +  sr}</span>)}</span>
+                <div className={classes.brandmodel}>
+                <span className='mb-4'>Marke / Modell:</span>
+                </div>
+                <div className={classes.modelgrid}>
+                    {search.model.map((md, mdindex) => {
+                        if(md){
+                            return <span key={mdindex}>{md.map((sr, srindex) => <span key={srindex} className={classes.singleitem}>{search.brand[mdindex] + " " +  sr}</span>)}</span>
+                        }
                     }
-                }
-                )}</div>
+                    )}
+                </div>
                 <div className={classes.grid}>
                     <div className={classes.erstzulassungrow}>Erstzulassung Ab: {search.erstzulassungAb}</div>
                     <div className={classes.land}>Land: {search.land}</div>
                 </div>
                 <div className={classes.functionalities}>
                     <div className={classes.date}>Gespeichert am: <span className=''>{search.saveDate}</span></div>
-                    <div className={classes.anzeigenbtn}>Bearbeiten</div>
-                    <div className={classes.loeschenbtn}>Löschen</div>
-                    <button className={classes.anzeigenbtn}>Ergebnisse anzeigen</button>
+                    <div className={classes.funcrow}>
+                        <div className={classes.anzeigenbtn}>Bearbeiten</div>
+                        <div className={classes.loeschenbtn}>Löschen</div>
+                        <button className={classes.anzeigenbtn}>Ergebnisse anzeigen</button>
+                    </div>
                 </div>
             </div>)}
         </div>

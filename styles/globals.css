@@ -390,3 +390,22 @@ input[type=time]::-webkit-datetime-edit-fields-wrapper {
 .zindex{
   z-index: 100;
 }
+
+input[type="range"]::-webkit-slider-thumb{
+  height: 17px;
+  width: 17px;
+  -webkit-appearance: none;
+  border-radius: 50%;
+  background-color: #6C757D;
+  pointer-events: auto;
+}
+
+input[type="range"]::-moz-range-thumb{
+  height: 17px;
+  width: 17px;
+  border: none;
+  -moz-appearance: none;
+  border-radius: 50%;
+  background-color: #6C757D;
+  pointer-events: auto;
+}

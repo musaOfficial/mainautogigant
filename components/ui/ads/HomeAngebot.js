@@ -1,5 +1,6 @@
 import classes from './Angebot.module.css';
 import styles from './AngebotCard.module.css';
+import attr from './HomeAngebot.module.css';
 import Image from 'next/image';
 import Visible from './../../../public/icons/visibility.svg';
 import Print from './../../../public/icons/favorite.svg';
@@ -51,13 +52,6 @@ function HomeAngebot({
 
     var fz = details.kilometerstand + " km";
     var ez = "EZ: " + details.erstzulassung;
-
-    if(pl % 3 == 0){
-        console.log(true)
-    } else {
-        console.log(false);
-    }
-
 
     return (
         cardView == true ? <div className={`${classes.container}`}>
@@ -169,7 +163,7 @@ function HomeAngebot({
                     </div>
                 </div>
             
-                <GigaLabel className={classes.gigalabel} />
+                {gigalabel == true && <GigaLabel className={attr.gigalabel} />}
             </div>
             <div className={`${styles.bottom} ${colorad ? styles.colorad : null}`}>
                 <Link href={`car-details/${id}`}>

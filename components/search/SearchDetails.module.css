@@ -1,0 +1,1114 @@
+.contentcontainer{
+    min-height: 80vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.contentpadding{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.searchdetailcontainer{
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px;
+}
+
+.backtohomepage{
+    display: flex;
+    align-items: center;
+    color: #0067B8;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.backtohomepage:hover{
+    text-decoration: underline;
+}
+
+.expand{
+    transform: rotate(90deg);
+    margin-right: 10px;
+}
+
+.heading{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.rotate{
+    transform: rotate(180deg);
+    transition: all .1s ease-in;
+}
+
+.unrotated{
+    transform: rotate(0deg);
+    transition: all .1s ease-in;
+}
+
+.top_row{
+    display: flex;
+    height: 40px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.leftrow{
+    display: flex;
+    align-items: center;
+}
+
+.backhome{
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+
+}
+
+.rightrow{
+    width: 50%;
+    border: 2px solid #FBB900;
+    border-radius: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 1px;
+}
+
+.easybtn{
+    width: 100%;
+    background-color: #fff;
+    height: 100%;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FEE497;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.easybtnopen{
+    background-color: #FBB900;
+    color: #fff;
+}
+
+.delallfilter{
+    width: 100%;
+    background-color: #FBB900;
+    height: 100%;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    transition: all .1s ease-in;
+}
+
+.delallfilterclose{
+    background-color: #fff;
+    color: #FFE497;
+    cursor: pointer;
+}
+
+.section{
+    height: 50px;
+    background-color: #F1F2F3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: bold;
+}
+
+.closedsection{
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+.unrotated{
+    transition: all .1s ease-in;
+}
+
+.rotated{
+    transform: rotate(180deg);
+    transition: all .1s ease-in;
+}
+
+.basiscontainer{
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.admodelinputrow{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+    gap: 20px;
+    border-bottom: 1px solid #F1F2F3;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.brandinputcontainer{
+    position: relative;
+    background-color: #F1F2F3;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    color: rgba(108, 117, 125, 0.75);
+    cursor: pointer;
+}
+
+.brandinput{
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #F1F2F3;
+}
+
+.admodelsvg{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 30px;
+    width: 30px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.brandselectioncontainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brandselection{
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    height: 80%;
+    width: 80vw;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.brandspan{
+    margin-left: 10px;
+}
+
+.variantinput{
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 20px;
+    background-color: #F1F2F3;
+}
+
+.addmorecontainer{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    font-weight: bold;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+.addmore{
+    margin-right: 10px;
+    height: 35px;
+    width: 35px;
+}
+
+.modalcontainer{
+    width: 100%;
+    height: 40px;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    color: rgba(108, 117, 125, 0.75);
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+.modalinfo{
+    width: 50%;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.modalbrand{
+    flex-basis: 25%;
+    font-weight: bold;
+    color: #6C757D;
+}
+
+.modalmodel{
+    flex-basis: 25%;
+    font-weight: bold;
+    color: #6C757D;
+}
+
+.modalsection{
+    border-bottom: 1px solid #F1F2F3;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.bin{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.bin:hover{
+    color: #FF0000;
+}
+
+.karocontainer{
+    border-top: 1px solid rgb(241, 242, 243);
+    padding-top: 20px;
+    width: 90%;
+}
+
+.label{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.vonbiscontainer{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    border-bottom: 1px solid #F1F2F3;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.lastvonbiscontainer{
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+
+.select{
+    width: 100%;
+}
+
+.checkboxlabel{
+    color: rgba(108, 117, 125, 0.75);
+}
+
+.checker{
+    height: 25px;
+    width: 25px;
+}
+
+.checkinput{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.typlabel{
+    margin-left: 10px;
+    line-height: 17px;
+}
+
+.suchlabel{
+    margin-left: 10px;
+    line-height: 17px;
+    font-size: 15px;
+    color: rgba(108, 117, 125, 0.75);
+}
+
+.fahrzeugtypgrid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+    border-bottom: 1px solid #F1F2F3;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.lastfahrzeugtypgrid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.sublabel{
+    font-size: 13px;
+}
+
+.leistungrow{
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+
+.psrow{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #F1F2F3;
+}
+
+.add{
+    width: 25px;
+    height: 25px;
+}
+
+.ausstattung{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    height: 50px;
+    width: 250px;
+    cursor: pointer;
+}
+
+.ausstattungContainer{
+    position: absolute;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1050;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ausstattungencon{
+    width: 80vw;
+    height: 70vh;
+    background-color: #F1F2F3;
+    padding: 20px;
+    z-index: 12;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgb(0, 0, 0, 0.5);
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-y: scroll;
+    font-size: 13px;
+}
+
+@media(max-width: 835px){
+    .ausstattungencon{
+        grid-template-columns: repeat(2, 1fr);
+        min-width: 300px;
+    }
+}
+
+@media(max-width: 569px){
+    .ausstattungencon{
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+}
+
+.closex{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 15px;
+    height: 15px;
+    color: #fff;
+    transition: all .1s ease-in;
+}
+
+.closex:hover{
+    top: 16.5px;
+    right: 16.5px;
+    cursor: pointer;
+    color: #FBB900;
+    height: 20px;
+    width: 20px;
+
+}
+
+.bb{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #F1F2F3;
+}
+
+.beige{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #CBA863;
+    color: #fff;
+    cursor: pointer;
+}
+
+.blau{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #285EC9;
+    color: #fff;
+    cursor: pointer;
+}
+
+.schwarz{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.gruen{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #1E9411;
+    color: #fff;
+    cursor: pointer;
+}
+
+.orange{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #FF5700;
+    color: #fff;
+    cursor: pointer;
+}
+
+.rot{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #FF1414;
+    color: #fff;
+    cursor: pointer;
+}
+
+.gold{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #E5A000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.braun{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #734614;
+    color: #fff;
+    cursor: pointer;
+}
+.silber{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #F3F3F3;
+    color: #fff;
+    cursor: pointer;
+}
+
+.gelb{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #FFEE00;
+    color: #fff;
+    cursor: pointer;
+}
+
+.bronze{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #EBB957;
+    color: #fff;
+    cursor: pointer;
+}
+.violett{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #991DCC;
+    color: #fff;
+    cursor: pointer;
+}
+.grau{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #BCBCBC;
+    color: #fff;
+    cursor: pointer;
+}
+.weiss{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 2px solid #F1F2F3;
+    color: #fff;
+    cursor: pointer;
+}
+
+.whitecheck{
+    color: #fff;
+}
+
+.blackcheck{
+    color: #000;
+}
+
+.colorsgrid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #F1F2F3;
+}
+
+.regionrow{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    border-bottom: 1px solid #F1F2F3;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.bottomrow{
+    min-height: 100px;
+    width: 100%;
+    background-color: #91989E;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.suchen{
+    height: 50px;
+    width: 100%;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10%;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.tworow{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.resetfilter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.suchenundspeichern{
+    height: 50px;
+    width: 100%;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.suchenundspeichern:hover, .resetfilter:hover, .suchen:hover{
+    background-color: #FBB900;
+    color: #fff;
+}
+
+.inserentcontainer{
+    width: 40%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #F1F2F3;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.inserentitem{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(108, 117, 125, 0.5);
+    cursor: pointer;
+    transition: all .1s ease-in;
+    height: 100%;
+}
+
+.selectedinserent{
+    background-color: #FBB900;
+    width: 100%;
+    color: #fff;
+    border-radius: 10px;
+    transition: all .1s ease-in;
+}
+
+.easysearchcontainer{
+    display: flex;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.left{
+    width: 45%;
+    background-color: #F1F2F3;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 40px;
+}
+
+.right{
+    width: 60%;
+
+    position: relative;
+}
+
+.filter{
+    height: 50px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 10px;
+    background-color: #6C757D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.filter:hover{
+    background-color: #FBB900;
+}
+
+.speichern{
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #6C757D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.speichern:hover{
+    background-color: #FBB900;
+}
+
+.save{
+    height: 72px;
+    width: 100%;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .1s ease-in;
+    background-color: #6C757D;
+}
+
+.save:hover{
+    background-color: #FBB900;
+}
+
+.carsvg{
+    width: 88.28px;
+    height: 28.81px;
+}
+
+.car{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all .1s ease-in;
+}
+
+.carsgrid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-bottom: 10px;
+}
+
+.selectedcarsvg{
+    color: #FBB900;
+    transition: all .1s ease-in;
+}
+
+.minmaxinputs{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.inputmin{
+    background-color: #F1F2F3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+}
+
+.inputmin::placeholder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.slider{
+    height: 5px;
+    border-radius: 5px;
+    background-color: #F1F2F3;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.progress{
+    height: 5px;
+    background-color: #FBB900;
+    border-radius: 5px;
+    position: absolute;
+    left: 25%;
+    right: 25%;
+}
+
+.range_input{
+    position: relative;
+}
+
+.range_input input{
+    position: absolute;
+    top: -5px;
+    height: 5px;
+    width: 100%;
+    -webkit-appearance: none;
+    background: none;
+    pointer-events: none;
+}
+
+@media(max-width: 1200px){
+    .easysearchcontainer{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .left{
+        width: 100%;
+    }
+    
+    .right{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .inserentcontainer{
+        width: 100%;
+    }
+
+    .regionrow{
+        width: 100%;
+    }
+}
+
+@media(max-width: 950px){
+    .colorsgrid{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media(max-width: 800px){
+    .rightrow{
+        width: 60% ;
+    }
+
+    .bottomrow{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .tworow{
+        margin-top: 20px;
+    }
+
+    .suchen{
+        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .addmorecontainer{
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .fahrzeugtypgrid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .lastfahrzeugtypgrid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .colorsgrid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media(max-width: 700px){
+
+    .carsvg{
+        height: 50px;
+        width: 50px;
+    }
+
+    .car{
+        height: 50px;
+    }
+
+    .admodelinputrow{
+        width: 100%;
+    }
+}
+
+@media(max-width: 650px){
+    .top_row{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 80px;
+    }
+
+
+
+    .leftrow{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .rightrow{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    
+    .carsgrid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .filter{
+        font-size: 13px;
+    }
+
+    .speichern{
+        font-size: 13px;
+    }
+
+    .rightrow{
+        min-height: 50px;
+    }
+}
+
+@media(max-width: 600px){
+    .admodelinputrow{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vonbiscontainer{
+        width: 100%;
+    }
+
+    .lastvonbiscontainer{
+        width: 100%;
+    }
+
+    .colorsgrid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .leistungrow{
+        width: 100%;
+    }
+
+    .regionrow{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+}
+
+@media(max-width: 500px){
+    .fahrzeugtypgrid{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .lastfahrzeugtypgrid{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media(max-width: 450px){
+    .easybtn{
+        font-size: 13px;
+    }
+    
+    .delallfilter{
+        font-size: 13px;
+    }
+
+    .colorsgrid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+

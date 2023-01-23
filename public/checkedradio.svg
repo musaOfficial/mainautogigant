@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #6c757d;
+        stroke-width: 5px;
+        opacity: 0.5;
+      }
+
+      .cls-2 {
+        fill: #fbb900;
+        stroke: #fbb900;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_3059" data-name="Group 3059" transform="translate(-420 -1765)">
+    <g id="Rectangle_6365" data-name="Rectangle 6365" class="cls-1" transform="translate(420 1765)">
+      <rect class="cls-3" width="25" height="25" rx="12.5"/>
+      <rect class="cls-4" x="2.5" y="2.5" width="20" height="20" rx="10"/>
+    </g>
+    <g id="Ellipse_256" data-name="Ellipse 256" class="cls-2" transform="translate(428 1773)">
+      <circle class="cls-3" cx="4.5" cy="4.5" r="4.5"/>
+      <circle class="cls-4" cx="4.5" cy="4.5" r="4"/>
+    </g>
+  </g>
+</svg>

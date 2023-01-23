@@ -13,8 +13,34 @@ import Visa from './../public/visa.svg';
 import Klarna from './../public/klarna.svg';
 import Eps from './../public/eps.svg';
 import ApplePay from './../public/applepay.svg';
+import { useEffect } from 'react';
+
+const useDeviceSize = () => {
+
+  const [width, setWidth] = useState(0)
+  const [height, setHeight] = useState(0)
+
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  }
+
+  useEffect(() => {
+    // component is mounted and window is available
+    handleWindowResize();
+    window.addEventListener('resize', handleWindowResize);
+    // unsubscribe from the event on component unmount
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
+
+  return [width, height]
+
+}
 
 function CreateAdPage(){
+
+  const [width, height] = useDeviceSize();
+
     const style = {
         control: (base, state) => ({
           ...base,
@@ -528,7 +554,7 @@ function CreateAdPage(){
                 </div>
                 </>}
             </div>
-             {stepActive == 1 && <form>
+             {stepActive == 1 && <form className={classes.stepActive1}>
              <div className={classes.heading}>MODELL</div>
             <div className={classes.description}>Fahrzeugmodell und Erstzulassung</div>
             <div className={classes.point}>1. Erstzulassung</div>
@@ -568,7 +594,7 @@ function CreateAdPage(){
                         styles={style}
                         options={brands}
                         placeholder={brand == null ? "Marke" : brand}
-                        className='w-full mr-4'
+                        className={`w-full mr-4 $ ${classes.responsiveselect}`}
                         isSearchable={true}
                         onChange={(e) => setBrand(e.value)}
                         required={nationalerCode != "" ? false : true}
@@ -599,31 +625,14 @@ befüllen. Der Code befindet sich im Zulassungsschein.
             </div>             <div className={classes.halfer}>
                 {stepActive > 1 && <div className={`${classes.savebtn} mr-4`} onClick={() => setStepActive(d => d - 1)}>Zurück</div>}
                 <button className={classes.savebtn} onClick={() => {
-                    if(nationalerCode != null){
-                        setBrand(null);
-                        setModel(null);
-                    }
-                    if(brand != null && model != null){
-                        setNationalerCode(null);
-                    }
-                    if(month != null && year != null){
-                        if(brand != null && model != null){
-                            setStepActive(d => d + 1)
-                        }
-                        else if(nationalerCode != null){
-                            setStepActive(d => d + 1)
-                        } else{
-
-                        }
-                    }
-                    setShowValidationTextStep1(true); 
+                    setStepActive(d => d + 1);
                 }} type={"submit"}>Weiter</button>
             </div></form>}
             {stepActive == 2 && <>
             {/* Fahrzeugdaten */}
              <form className={classes.form}>
              <div className={classes.heading}>DETAILS</div>
-            <div className={classes.description}>Fahrzeugdaten und Ausstattung</div>
+            <div className={classes.description}>Fahrzeugdaten und Ausstattung</div>.halfer
             <div className={`${classes.point} mb-4`}>1. Fahrzeugdaten</div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Marke *</span>
@@ -639,7 +648,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
             </div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Erstzulassung *</span>
-                <div className={`${classes.halfer} w-full`}>
+                <div className={`${classes.halfing} w-full`}>
                     <label className='w-full mr-4 flex items-center'>
                         Monat
                     <Select 
@@ -689,7 +698,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                     />*</span>
                 <span className={classes.valueright}><input type={"number"} min={0} value={preis} className={classes.input} onChange={(e) => setPreis(e.target.value)} placeholder={"in " + waehrung} /></span>
             </div>
-            <div className={classes.flexer}>
+            <div className={`${classes.flexer} ${width <= 750 && "!mt-9"}`}>
                 <span className={classes.valueleft}>Kilometerstand</span>
                 <span className={classes.valueright}><input type={"text"} value={kilometerstand} onChange={(e) => setKilometerstand(e.target.value)} className={classes.input} placeholder={"in km"} /></span>
             </div>
@@ -830,7 +839,7 @@ befüllen. Der Code befindet sich im Zulassungsschein.
             </div>
              </form>
             {/* Ausstattungen */}
-            <>
+            <div className={classes.formbottom}>
             <div className={classes.point}>2. Ausstattungen</div>
             <p className={classes.text}>Gib Ausstattung und Extras des Fahrzeugs an und überprüfe vorausgewählte Felder.</p>
             <div className={classes.ausstattungengrid}>
@@ -1323,17 +1332,17 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                 Keyless entry
                 </label>  
             </div>
-            </>
+            </div>
             {/* Beschreibung */}
-            <>
+            <div className={classes.formbottom}>
             <div className={classes.point}>3. Beschreibung</div>
             <div className={classes.beschreibungarea}>
                 <textarea rows={10} placeholder={`z.B.: Verkaufsgrund, Nichtraucherfahrzeug, Vignette, Serviceheft, Mängel,
          Besonderheiten wie nachträglich eingebautes Zubehör, ...`} className={classes.area} value={beschreibung} onChange={(e) => setBeschreibung(e.target.value)} />
             </div>
-            </>
+            </div>
             {/* Kontakt */}
-            <>
+            <div className={classes.formbottom}>
             <div className={classes.point}>4. Kontakt</div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Name</span>
@@ -1375,9 +1384,9 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                     Die E-Mail-Adresse scheint in der Anzeige NICHT auf.
                 </span>
             </div>
-            </>
+            </div>
             {/* Verkaufsort */}
-            <>
+            <div className={classes.formbottom}>
             <div className={classes.point}>5. Verkaufsort</div>
             <div className={classes.flexer}>
                 <span className={classes.valueleft}>Straße</span>
@@ -1417,30 +1426,13 @@ befüllen. Der Code befindet sich im Zulassungsschein.
             <div className='flex'>
             {stepActive > 1 && <div className={`${classes.savebtn} mr-4`} onClick={() => setStepActive(d => d - 1)}>Zurück</div>}
                 <button className={classes.savebtn} onClick={() => {
-                    if(nationalerCode != null){
-                        setBrand(null);
-                        setModel(null);
-                    }
-                    if(brand != null && model != null){
-                        setNationalerCode(null);
-                    }
-                    if(month != null && year != null){
-                        if(brand != null && model != null){
-                            setStepActive(d => d + 1)
-                        }
-                        else if(nationalerCode != null){
-                            setStepActive(d => d + 1)
-                        } else{
-
-                        }
-                    }
-                    setShowValidationTextStep1(true); 
+                    setStepActive(d => d + 1)
                 }} type={"submit"}>Weiter</button>
             </div>
-            </>
+            </div>
             </>}
             <>
-            {stepActive == 3 && <>
+            {stepActive == 3 && <div className={classes.formbottom}>
                 <div className={classes.heading}>BILDER HOCHLADEN</div>
 
                 <div className={classes.point}>Fügen Sie Ihrer Anzeige Bilder hinzu</div>
@@ -1499,33 +1491,17 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                 <div className='flex'>
             {stepActive > 1 && <div className={`${classes.savebtn} mr-4`} onClick={() => setStepActive(d => d - 1)}>Zurück</div>}
                 <button className={classes.savebtn} onClick={() => {
-                    if(nationalerCode != null){
-                        setBrand(null);
-                        setModel(null);
-                    }
-                    if(brand != null && model != null){
-                        setNationalerCode(null);
-                    }
-                    if(month != null && year != null){
-                        if(brand != null && model != null){
-                            setStepActive(d => d + 1)
-                        }
-                        else if(nationalerCode != null){
-                            setStepActive(d => d + 1)
-                        } else{
-
-                        }
-                    }
-                    setShowValidationTextStep1(true); 
+                    setStepActive(d => d + 1);
                 }} type={"submit"}>Weiter</button>
             </div>
-            </>}
-            {stepActive == 4 && <>
+            </div>}
+            {stepActive == 4 && <div className={classes.formbottom}>
                 <div className={classes.heading}>GIGA POWER</div>
                 <div className={classes.description}>Anzeige schneller verkaufen</div>
                 <div className={classes.point}>Schneller verkaufen mit Zusatzprodukten</div>
-                <div className={classes.gridtwolayout}>
-                <div className={classes.cardcontainer}>
+                <div className={classes.gridcards}>
+            <div>
+            <div className={classes.cardcontainer}>
               <div className={classes.padding}>
                 <h2 className={classes.cardheading}>STARTSEITE SCHAUFENSTER</h2>
                 <p className={classes.carddescription}>
@@ -1536,11 +1512,11 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                 <p className={classes.showexample}>
                   Wie sieht mein Inserat aus?
                 </p>
-                <button className={classes.addtocart} onClick={() => {
+                {/* <button className={classes.adasdf} onClick={() => {
                   handleAddToCart("STARTSEITE SCHAUFENSTER", selectedItemName1, selectedItemPrice1);
                 }}>
                   Zum Warenkorb hinzufügen
-                </button>
+                </button> */}
               </div>
 
               {/* CARD-CONTENT */}
@@ -1618,8 +1594,16 @@ befüllen. Der Code befindet sich im Zulassungsschein.
                   </div>
                 )}
               </div>
-                 </div>
-                 <div className={classes.cardcontainer}>
+            </div>
+            <button className={classes.addtocart} onClick={() => {
+                  handleAddToCart("STARTSEITE SCHAUFENSTER", selectedItemName1, selectedItemPrice1);
+                }}>
+                  Zum Warenkorb hinzufügen
+                </button>
+            </div>
+            
+            <div>
+            <div className={classes.cardcontainer}>
               <div className={classes.padding}>
                 <h2 className={classes.cardheading}>TOP INSERAT</h2>
                 <p className={classes.carddescription}>
@@ -1630,11 +1614,6 @@ der Auflistungsseite und zeigen Sie Ihren Beitrag
                 <p className={classes.showexample}>
                   Wie sieht mein Inserat aus?
                 </p>
-                <button className={classes.addtocart} onClick={() => {
-                  handleAddToCart("TOP INSERAT", selectedItemName2, selectedItemPrice2);
-                }}>
-                  Zum Warenkorb hinzufügen
-                </button>
               </div>
 
               {/* CARD-CONTENT */}
@@ -1713,6 +1692,14 @@ der Auflistungsseite und zeigen Sie Ihren Beitrag
                 )}
               </div>
             </div>
+            <button className={classes.addtocart} onClick={() => {
+                  handleAddToCart("TOP INSERAT", selectedItemName2, selectedItemPrice2);
+                }}>
+                  Zum Warenkorb hinzufügen
+                </button>
+            </div>
+            
+            <div>
             <div className={classes.cardcontainer}>
               <div className={classes.padding}>
                 <h2 className={classes.cardheading}>GIGA LABEL</h2>
@@ -1724,11 +1711,6 @@ und in der Kategorie „GIGA LABEL“ sein.
                 <p className={classes.showexample}>
                   Wie sieht mein Inserat aus?
                 </p>
-                <button className={classes.addtocart} onClick={() => {
-                  handleAddToCart("GIGA LABEL", selectedItemName3, selectedItemPrice3);
-                }}>
-                  Zum Warenkorb hinzufügen
-                </button>
               </div>
 
               {/* CARD-CONTENT */}
@@ -1807,6 +1789,13 @@ und in der Kategorie „GIGA LABEL“ sein.
                 )}
               </div>
             </div>
+            <button className={classes.addtocart} onClick={() => {
+                  handleAddToCart("GIGA LABEL", selectedItemName3, selectedItemPrice3);
+                }}>
+                  Zum Warenkorb hinzufügen
+                </button>
+            </div>
+            <div>
             <div className={classes.cardcontainer}>
               <div className={classes.padding}>
                 <h2 className={classes.cardheading}>DATUMSAKTUALISIERUNG</h2>
@@ -1817,11 +1806,6 @@ Anzeige bei Suchanfragen einen hohen Rang einnimmt.<br></br><br></br>
                 <p className={classes.showexample}>
                   Wie sieht mein Inserat aus?
                 </p>
-                <button className={classes.addtocart} onClick={() => {
-                  handleAddToCart("DATUMSAKTUALISIERUNG", selectedItemName4, selectedItemPrice4);
-                }}>
-                  Zum Warenkorb hinzufügen
-                </button>
               </div>
 
               {/* CARD-CONTENT */}
@@ -1866,10 +1850,19 @@ Anzeige bei Suchanfragen einen hohen Rang einnimmt.<br></br><br></br>
                   </div>
                 )}
               </div>
+
+
             </div>
+            <button className={classes.addtocart} onClick={() => {
+                  handleAddToCart("DATUMSAKTUALISIERUNG", selectedItemName4, selectedItemPrice4);
+                }}>
+                  Zum Warenkorb hinzufügen
+                </button>
+            </div>
+            <div>
             <div className={classes.cardcontainer}>
               <div className={classes.padding}>
-                <h2 className={classes.cardheading}>FETTER TEXT UND FARBIGER RAHMEN</h2>
+                <h2 className={classes.cardheading}>FARBIGER HINTERGRUND UND FARBIGER RAHMEN</h2>
                 <p className={classes.carddescription}>
                 Der Titel der Anzeige wird fett geschrieben und findet auf 
 einem farbigen Hintergrund statt.<br></br><br></br>
@@ -1877,11 +1870,6 @@ einem farbigen Hintergrund statt.<br></br><br></br>
                 <p className={classes.showexample}>
                   Wie sieht mein Inserat aus?
                 </p>
-                <button className={classes.addtocart} onClick={() => {
-                  handleAddToCart("FETTER TEXT UND FARBIGER RAHMEN", selectedItemName5, selectedItemPrice5);
-                }}>
-                  Zum Warenkorb hinzufügen
-                </button>
               </div>
 
               {/* CARD-CONTENT */}
@@ -1927,6 +1915,13 @@ einem farbigen Hintergrund statt.<br></br><br></br>
                 )}
               </div>
             </div>
+            <button className={classes.addtocart} onClick={() => {
+                  handleAddToCart("FARBIGER HINTERGRUND UND FARBIGER RAHMEN", selectedItemName5, selectedItemPrice5);
+                }}>
+                  Zum Warenkorb hinzufügen
+                </button>
+            </div>
+            <div>
             <div className={classes.cardcontainer}>
               <div className={classes.padding}>
                 <h2 className={classes.cardheading}>50 FOTO RECHTE</h2>
@@ -1937,11 +1932,6 @@ indem Sie das Limit von 25 auf 50 Fotos erhöhen.<br></br><br></br>
                 <p className={classes.showexample}>
                   Wie sieht mein Inserat aus?
                 </p>
-                <button className={classes.addtocart} onClick={() => {
-                  handleAddToCart("50 FOTO RECHTE", selectedItemName6, selectedItemPrice6);
-                }}>
-                  Zum Warenkorb hinzufügen
-                </button>
               </div>
 
               {/* CARD-CONTENT */}
@@ -1987,8 +1977,15 @@ indem Sie das Limit von 25 auf 50 Fotos erhöhen.<br></br><br></br>
                 )}
               </div>
             </div>
-                </div>
-                <div className={classes.c2}>
+            <button className={classes.addtocart} onClick={() => {
+                  handleAddToCart("50 FOTO RECHTE", selectedItemName6, selectedItemPrice6);
+                }}>
+                  Zum Warenkorb hinzufügen
+                </button>
+            </div>
+          </div>
+
+          <div className={classes.c2}>
         <div className={classes.orderleft}>
           {cart.length != 0 ? cart.map((item, index) => <div key={index} className={classes.ordercontainer}>
             <div className={classes.ordervalue}>{item.value}</div>
@@ -2000,7 +1997,6 @@ indem Sie das Limit von 25 auf 50 Fotos erhöhen.<br></br><br></br>
               }} />
             </div>
           </div>) : <h1 className={classes.warning}>WARENKORB LEER!</h1>}
-        
         </div>
         <div className={classes.orderright}>
             <div className={classes.right}>
@@ -2009,47 +2005,16 @@ indem Sie das Limit von 25 auf 50 Fotos erhöhen.<br></br><br></br>
             </div>
         </div>
       </div>
-      <div className={classes.littletext}>Nach Ablauf des Werbezeitraums wird dein Inserat zu einem Basis-Inserat</div>
-      <div className={classes.gutscheincode}>
-        <label className={classes.gclabel}>
-          <div className={classes.gutscheincodelabel} >Gutscheincode</div>
-          <input type={"text"} placeholder={"Gutscheincode"} onChange={(e) => setGutscheincode(e.target.value)} className={classes.gutscheincodeinput} />
-          <button className={classes.codebtn}>Code Einlösen</button>
-        </label>
-      </div>
-      <div className={classes.zahlungsmethoden}>
-                <span className={classes.zahl}><Schloss className={classes.schloss} /> <span className={classes.zahlungtext}>Sichere Zahlung<br></br>per SSL-Verschlüsselung</span></span>
-                <Sofort className={classes.sofort} />
-                <Visa className={classes.sofort} />
-                <Klarna className={classes.sofort} />
-                <Eps className={classes.sofort} />
-                <ApplePay className={classes.sofort} />
-            </div>
+                
+                
       <div className='flex items-center'>
       {stepActive > 1 && <div className={`${classes.savebtn} mr-4`} onClick={() => setStepActive(d => d - 1)}>Zurück</div>}
                 <button className={classes.savebtn} onClick={() => {
-                    if(nationalerCode != null){
-                        setBrand(null);
-                        setModel(null);
-                    }
-                    if(brand != null && model != null){
-                        setNationalerCode(null);
-                    }
-                    if(month != null && year != null){
-                        if(brand != null && model != null){
-                            setStepActive(d => d + 1)
-                        }
-                        else if(nationalerCode != null){
-                            setStepActive(d => d + 1)
-                        } else{
-
-                        }
-                    }
-                    setShowValidationTextStep1(true); 
+                    setStepActive(d => d + 1) 
                 }} type={"submit"}>Weiter</button>
       </div>
-            </>}
-            {stepActive == 5 && <>
+            </div>}
+            {stepActive == 5 && <div className={classes.formbottom}>
              <div className={classes.heading}>Veröffentlichen</div>
             <div className={classes.publishdescription}>
               <PublishIcon className={classes.publishicon} />
@@ -2067,7 +2032,7 @@ kannst du den gewünschten Schritt in der Navigation oben auswählen oder auf ZU
                 end={erstzulassungJahr} 
                 imgSrc={titelbild} 
                 description={beschreibung}
-                cardView={true}
+                cardView={width >= 754 ? true : false}
                 details={
                   {
                     erstzulassung: erstzulassungMonat + " / " + erstzulassungJahr,
@@ -2118,7 +2083,7 @@ kannst du den gewünschten Schritt in der Navigation oben auswählen oder auf ZU
                     setShowValidationTextStep1(true); 
                 }} type={"submit"}>zur Zahlung</button>
             </div>
-            </>}
+            </div>}
             </>
         </div>
     )

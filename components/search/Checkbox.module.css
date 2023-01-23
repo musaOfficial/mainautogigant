@@ -1,0 +1,9 @@
+.label{
+    margin-left: 10px;
+}
+
+.checker{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}

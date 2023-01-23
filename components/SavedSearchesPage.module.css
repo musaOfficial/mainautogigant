@@ -25,7 +25,14 @@
 }
 
 .brandmodel{
-    height: 40px;
+    margin-bottom: 10px;
+}
+
+.modelgrid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
 }
 
 .weiteresuchkriterien{
@@ -40,7 +47,6 @@
 
 .anzeigenbtn{
     height: 40px;
-    width: 180px;
     background-color: #6C757D;
     color: #fff;
     font-weight: bold;
@@ -83,7 +89,6 @@
 
 .loeschenbtn{
     height: 40px;
-    width: 180px;
     background-color: #6C757D;
     color: #fff;
     font-weight: bold;
@@ -111,4 +116,27 @@
 
 .text{
     font-size: 15px;
+}
+
+.funcrow{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+@media(max-width: 734px){
+    .functionalities{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .date{
+        margin-bottom: 5px;
+    }
+
+    .funcrow{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

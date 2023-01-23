@@ -5,8 +5,6 @@ import Expand from './../public/expand.svg'
 import InputSelect from './ui/InputSelect';
 import Select from "react-select";
 import AddCircle from './../public/images/add_circle.svg'
-import Input from './ui/Input';
-import ModelItem from './search/ModelItem';
 import MyLocation from './../public/images/my_location.svg'
 import RemoveCircle from './../public/images/remove_circle.svg'
 import Question from './../public/question.svg';
@@ -18,6 +16,9 @@ import PlusIcon from './../public/icons/ausstattungPlus.svg'
 import DelX from './../public/images/closedetail.svg';
 import Closex from './../public/closex.svg'
 import PageSearch from './pagesearch/PageSearch';
+import HomeMenu from './../public/homemenu.svg';
+import CloseMenu from './../public/menuclose.svg';
+import Menu from './../public/menu.svg';
 import { useEffect } from 'react';
 import {
     marke1,
@@ -603,6 +604,23 @@ function SearchResults(){
         setFilters(reducedFilters);
     }
 
+
+    // Suchbegriff ist der Suchinput
+    const [suchbegriff, setSuchbegriff] = useState();
+    
+    const sortOptions = [
+        {label: 'Neueste', value: 'latest'},
+        {label: 'Älteste', value: 'oldest'},
+        {label: 'Preis aufsteigend', value: 'priceAscending'},
+        {label: 'Preis absteigend', value: 'priceDescending'},
+        {label: 'Entfernung', value: 'distance'},
+        {label: 'Beliebtheit', value: 'popularity'},
+    ];
+
+    const [sortOption, setSortOption] = useState();
+    
+    const [filterOpen, setFilterOpen] = useState(false);
+
     return (
         <div className={`${classes.container} ${openAusstattung == true && "overflow-y-hidden"}`}>
                 {openAusstattung == true && <div className={classes.ausstattungContainer} >
@@ -1098,7 +1116,631 @@ function SearchResults(){
                 </label>
                     </div>
                 </div>}
-               
+            {width <= 1249 &&             <div className={`relative w-10/12 lg:w-full flex justify-center max-w-ag-container md:!w-full mx-auto flex-col bg-white`}>
+                <div className={classes.responsivecounter}>
+                    <HomeMenu className={classes.homemenu} />
+                    <div className={classes.counter}>
+                        <div className={classes.counternumber}>{anzahlAngebote}</div>
+                        <div className={classes.countertext}>Angebote für Ihre Suche</div>
+                    </div>
+                </div>
+                <div className={classes.filteropener}>
+                    {filterOpen == false ?  <div className={classes.filterclosedrow}>
+                        <Menu className={classes.menu} onClick={() => setFilterOpen(true)}/>
+                        <div className={classes.suchcontainer}>
+                            <input type={"text"} className={classes.suche} placeholder={"Suche"} onChange={(e) => setSuchbegriff(e.target.value)} />
+                            <SearchIcon className={classes.suchesvg} />
+                        </div>
+                        <div className={classes.sortcontainer}>
+                            <Select 
+                                options={sortOptions}
+                                styles={style}
+                                placeholder={"Sortieren"}
+                                onChange={(e) => setSortOption(e.value)}
+                                className={"w-full"}
+                            />
+                        </div>
+                    </div> : 
+                    
+                    <div className={classes.filteropenedrow}>
+                        <div className={classes.filterrow}>
+                    <div onClick={() => setFilterOpen(false)}>
+                        <CloseMenu className={classes.closemenu} />
+                    </div>
+                    <div className={classes.c1r2}>
+                        <div className={classes.centeritems2}>
+                            {filters.map((filter, index) => <div key={index} className={classes.filter}>{filter}<DelX onClick={(e) => {
+                                handleDeleteFilter(index);
+                            }} className={classes.delx}/></div>)}
+                        </div>
+                        <div>
+                            <button className={classes.delfilters}>FILTER LÖSCHEN</button>
+                            <button className={classes.savesearch}>SUCHE SPEICHERN</button>
+                        </div>
+                    </div>
+                    <div className={classes.filterrow3}>
+                        <div className={openBasisdaten == true ? classes.sectioncontainer : classes.sectioncontainerclosed} onClick={() => {
+                            if(openBasisdaten == false){
+                                setOpenBasisdaten(true);
+                            }
+                        }}>
+                            <div className={classes.headingcontainer} onClick={() => {
+                            if(openBasisdaten == true){
+                                setOpenBasisdaten(false);
+                            }
+                        }}>
+                                <div className={classes.sectionheading}>BASISDATEN & STANDORT</div>
+                                <Expand className={openBasisdaten == false ? classes.openedExpand : classes.closedExpand}/>
+                            </div>
+                            {openBasisdaten == true && <div className={classes.basiscontainer}>
+                                <div className={`${classes.inputrowgiga} ${classes.marginbottom}`}>
+                                    <input id='gigacheckbox' className={classes.checkboxgiga} type={"checkbox"} />
+                                    <label className='cursor-pointer' htmlFor='gigacheckbox'>
+                                     <img className={classes.gigadraftimg} src={"/images/draft-card-giga-logo.png"} />
+                                    </label>
+                                    <img src={"/images/info.svg"} onMouseOver={() => setGigaInfoOpen(true)} onMouseLeave={() => setGigaInfoOpen(false)} />
+                                    {gigaInfoOpen == true && <div className={classes.gigaexplanation}>
+                                        <div className={classes.triangle}></div>
+                                        Lorem ipsum dolor sit Amet, InsecteturLorem
+                                    </div>}
+                                </div>
+                                <div className={classes.selectcar}>
+                                    <div>
+                                        <label className='font-bold'>Marke</label>
+                                        <Select 
+                                            options={marke1} 
+                                            styles={style}
+                                            onChange={(e) => {
+                                                setBrandSelected(true);
+                                                setInputMarkeChanged(true);
+                                                if(e.value == "alle"){
+                                                setBrandSelected(false);
+                                                }
+                                                setBrandName(e);
+                                            }}
+                                            value={inputMarkeChanged == true ? brandName : marke1[0].label}
+                                            placeholder={"Alle"}
+                                            className="mt-1"
+                                        ></Select>
+                                    </div>
+                                    <div className={classes.selectmodel}>
+                                        <label className='font-bold'>Modell</label>
+                                        <Select 
+                                            options={marke2} 
+                                            styles={style}
+                                            onChange={(e) => {
+                                                setModelName(e)
+                                              }}
+                                            value={modelName || marke1[0].label}
+                                            name={"Modell"}
+                                            isDisabled={!brandSelected}
+                                            className="mt-1"
+                                        ></Select>
+                                    </div>
+                                    <div>
+                                        <p className="mb-1 font-bold">Variante</p>
+                                        <input className={classes.varientinput} onChange={(e) => setVarient(e.target.value)} placeholder="z.B CLS 320, E 220, usw."/>
+                                    </div>
+                                    <div className={`${classes.addmodal} ${classes.marginbottom}`} onClick={addModel}>
+                                        <AddCircle className={classes.addmodalsvg} /> <span className={classes.addmodaltext}>Weitere Marken/<br/>Modelle hinzufügen</span>
+                                    </div>
+                                    <div className={classes.marginbottom}>
+                                        <label className='font-bold'>Karosserieform</label>
+                                        <Select 
+                                            options={karo} 
+                                            styles={style}
+                                            onChange={(e) => {
+                                                setInputKarosserieform(e.value);
+                                                setInputKarosserieformChanged(true);
+                                            }}
+                                            value={inputKarosserieformChanged == false ? brandName : marke1[0].label}
+                                            placeholder={"Alle"}
+                                            className="mt-1 mb-1"/>
+                                            
+                                    </div>
+                                    <div className={classes.marginbottom}>
+                                        <label className='font-bold'>Kraftstoff</label>
+                                        <Select                                             
+                                            options={van1} 
+                                            styles={style}
+                                            onChange={(e) => {
+                                                setInputKraftstoff(e.value)
+                                                setInputKraftstoffChanged(true);
+                                            }}
+                                            value={inputKraftstoffChanged == false ? brandName : marke1[0].label}
+                                            placeholder={"Alle"}
+                                            className="mt-1 mb-1"/>
+                                    </div>
+                                    <div className={classes.marginbottom}>
+                                        <label className={classes.smalltext}>Erstzulassung</label>
+                                        <div className={`${classes.halfselect} mt-1`}>
+                                           <Select className={classes.halfselect1} options={van1} styles={halfSelectStyle1} placeholder="Von" />
+                                           <Select className={classes.halfselect2} options={van2} styles={halfSelectStyle2} placeholder="Bis"/>
+                                        </div>
+                                        <div className={classes.marginbottom}></div>
+                                        <label>Preis</label>
+                                        <div className={`${classes.halfselect} mt-1`}>
+                                            <Select className={classes.halfselect1} options={van1} styles={halfSelectStyle1} placeholder="Von"/>
+                                           <Select className={classes.halfselect2} options={van2} styles={halfSelectStyle2} placeholder="Bis"/>
+                                        </div>
+                                    </div>
+                                    <div className={classes.mgb}>
+                                        <label>Land</label>
+                                        <Select 
+                                            styles={style}
+                                            options={land}
+                                            placeholder="Land"
+                                            className='mt-1'
+                                            />
+                                    </div>
+                                    <div className={classes.mgb}>
+                                        <label>Stadt/PLZ</label>
+                                        <div className={`${classes.locdiv} mt-1`}>
+                                            <input className={classes.varientinput}  placeholder="z.B Wien oder 1010"/>
+                                            <MyLocation className={classes.mylocation}/>
+                                        </div>
+                                    </div>
+                                    <div className={classes.mgb}>
+                                        <label>Umkreis (km)</label>
+                                        <Select 
+                                            styles={style}
+                                            options={umk}
+                                            placeholder="Umkreis"
+                                            className='mt-1'
+                                            />
+                                    </div>
+                                    <div className={`${classes.grnzcheck} ${classes.marginbottom}`} >
+                                        <input id='grenz' className={classes.checkboxgiga} type={"checkbox"} />
+                                        <label className={classes.colortext1} htmlFor="grenz">Grenzübergreifend</label>
+                                    </div>
+                                    <div className={`${classes.marginbottom}`}>
+                                        <label>Kilometerstand</label>
+                                        <div className={`${classes.halfselect} mt-1`}>
+                                            <Select className={classes.halfselect1} options={van1} styles={halfSelectStyle1} placeholder="Von"/>
+                                            <Select className={classes.halfselect2} options={van2} styles={halfSelectStyle2} placeholder="Bis"/>
+                                        </div>
+                                    </div>
+                                    <div className={`${classes.flex} ${classes.marginbottom}`}>
+                                        <div className={classes.flex1}>
+                                            <label className='font-bold'>Leistung</label>
+                                            <Select
+                                            options={van1} 
+                                            styles={style}
+                                            onChange={(e) => {
+                                                setInputKraftstoff(e.value)
+                                                setInputKraftstoffChanged(true);
+                                            }}
+                                            value={inputKraftstoffChanged == false ? brandName : marke1[0].label}
+                                            placeholder={"Alle"}
+                                            className="mt-1 mb-1"
+                                            />
+                                        </div>
+                                        <div className={`${classes.vonbisps}`}>
+                                            <div className={classes.flex2}>
+                                                <label className={classes.block}>Von</label>
+                                                <input type={"number"} className={classes.numvonbis} placeholder="PS"/>
+                                            </div>
+                                            <div>
+                                                <label className={classes.block}>Bis</label>
+                                                <input type={"number"} className={classes.numvonbis} placeholder="PS" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className={`${classes.marginbottom}`}>
+                                        <label>Getriebe</label>
+                                        <Select 
+                                            styles={style}
+                                            options={getri}
+                                            placeholder="Getriebe"
+                                            className='mt-1 mb-1'
+                                        />
+                                    </div>
+                                    <div className={`${classes.anzahltuerencontainer} ${classes.marginbottom}`}>
+                                        <label className={classes.block}>Anzahl Türen</label>
+                                        <div className={`${classes.flexverkaeuferart} mt-1`}>
+                                        <div className={classes.verkaeuferart}>
+                                                <div className={classes.checkcenter}>
+                                                    <input id='turalle' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className='!font-normal cursor-pointer' htmlFor='turalle'>Alle</label>
+                                                </div>
+                                            </div>
+                                            <div className={classes.verkaeuferart}>
+                                                <div className={classes.checkcenter}>
+                                                    <input id='tur23' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className='!font-normal cursor-pointer' htmlFor='tur23'>2/3</label>
+                                                </div>
+                                            </div>
+                                            <div className={classes.verkaeuferart}>
+                                                <div className={classes.checkcenter}>
+                                                    <input id='tur45' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className='!font-normal cursor-pointer' htmlFor='tur45'>4/5</label>
+                                                </div>
+                                            </div>
+                                            <div className={classes.verkaeuferart}>
+                                                <div className={classes.checkcenter}>
+                                                    <input id='tur67' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className='!font-normal cursor-pointer' htmlFor='tur67'>6/7</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className={classes.marginbottom}>
+                                        <label>Sitzplätze</label>
+                                        <div className={`${classes.halfselect} mt-1`}>
+                                            <Select className={classes.halfselect1} options={van1} styles={halfSelectStyle1} placeholder="Von"/>
+                                            <Select className={classes.halfselect2} options={van2} styles={halfSelectStyle2} placeholder="Bis"/>
+                                        </div>
+                                    </div>
+                                    <div className={`${classes.mgb} ${classes.marginbottom}`}>
+                                        <label className={classes.block}>Verkäufer</label>
+                                        <div className={classes.flexverkaeuferart}>
+                                            <div className={classes.verkaeuferart}>
+                                                <div className={classes.checkcenter}>
+                                                    <input id='veralle' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className={`${classes.spantransformation} !font-normal text-sm ml-1 cursor-pointer`} htmlFor="veralle">Alle</label>
+                                                </div>
+                                            </div>
+                                            <div className={classes.verkaeuferart}>
+                                                <div className={classes.checkcenter}>
+                                                    <input id='verhaendler' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className={`${classes.spantransformation} !font-normal text-sm ml-1 cursor-pointer`} htmlFor="verhaendler">Händler</label>
+                                                </div>
+                                            </div>
+                                            <div className={classes.verkaeuferart}>
+                                                <div className={classes.checkcenter}>
+                                                    <input id='verprivat' type={"checkbox"} className={classes.varientinputsmaller} />
+                                                    <label className={`${classes.spantransformation} !font-normal text-sm ml-1 cursor-pointer`} htmlFor="verprivat">Privat</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className={`${classes.fahrzeugzustandcontainer}`}>
+                                        <label className='font-bold'>Fahrzeugzustand</label>
+                                        <div>
+                                            <input id='fahalle' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
+                                            <label className={`text-sm ml-1 cursor-pointer`} htmlFor="fahalle">Alle</label>
+                                        </div>
+                                        <div>
+                                            <input id='fahgeb' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
+                                            <label className='text-sm ml-1 cursor-pointer' htmlFor="fahgeb">Gebraucht</label>
+                                        </div>
+                                        <div>
+                                            <input id='fahjah' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
+                                            <label className='text-sm ml-1 cursor-pointer' htmlFor="fahjah">Jahreswagen</label>
+                                        </div>
+                                        <div>
+                                            <input id='fahvor' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
+                                            <label className='text-sm ml-1 cursor-pointer' htmlFor="fahvor">Vorführwagen</label>
+                                        </div>
+                                        <div>
+                                            <input id='fahtag' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}/>
+                                            <label className='text-sm ml-1 cursor-pointer' htmlFor="fahtag">Tageszulassung</label>
+                                        </div>
+                                    </div>
+                                </div>
+                           </div>
+                            }
+                        </div>
+                        {/* AUSSTATTUNG */}
+                        <div className={classes.ausstattung} onClick={() => setOpenAusstattung(true)}>
+                            <span className=''>AUSSTATTUNG</span><PlusIcon className={classes.plusicon} />
+                        </div>
+                            {/* FARBE */}
+                        <div className={openFarbe == true ? classes.sectioncontainer : classes.sectioncontainerclosed} onClick={() => {
+                            if(openFarbe == false){
+                                setOpenFarbe(true);
+                            }
+                        }}>
+                            <div className={classes.headingcontainer} onClick={() => {
+                            if(openFarbe == true){
+                                setOpenFarbe(false);
+                            }
+                        }}>
+                                <div className={classes.sectionheading}>FARBE</div>
+                                <Expand className={openFarbe == false ? classes.openedExpand : classes.closedExpand}/>
+                            </div>
+                            {openFarbe == true && <div className={classes.basiscontainer}>
+                                <div>
+                                    <label className={`${classes.fontsize13} font-semibold`}>Außenfarbe</label>
+                                    <div className={classes.farben}>
+                                        <div className={classes.farbencolumn}>
+                                            <div>
+                                                <input id='farsch' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.schwarz}`} />
+                                                <label className={classes.colortext1} htmlFor="farsch">Schwarz</label>
+                                            </div>
+                                            <div>
+                                                <input id='farbei' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.beige}`} />
+                                                <label className={classes.colortext1} htmlFor="farbei">Beige</label>
+                                            </div>
+                                            <div>
+                                                <input id='fargol' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.gold}`} />
+                                                <label className={classes.colortext1} htmlFor="fargol">Gold</label>
+                                            </div>
+                                            <div>
+                                                <input id='fargra' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.grau}`} />
+                                                <label className={classes.colortext1} htmlFor="fargra">Grau</label>
+                                            </div>
+                                            <div>
+                                                <input id='fargel' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.gelb}`} />
+                                                <label className={classes.colortext1} htmlFor="fargel">Gelb</label>
+                                            </div>
+                                            <div>
+                                                <input id='farrot' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.rot}`} />
+                                                <label className={classes.colortext1} htmlFor="farrot">Rot</label>
+                                            </div>
+                                            <div>
+                                                <input id='farsil' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.silber}`} />
+                                                <label className={classes.colortext1} htmlFor="farsil">Silber</label>
+                                            </div>
+                                        </div>
+                                        <div className={classes.farbencolumn2}>
+                                            <div>
+                                                <input id='farwei' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.weiss}`} />
+                                                <label className={classes.colortext1} htmlFor="farwei">Weiss</label>
+                                            </div>
+                                            <div>
+                                                <input id='farbla' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.blau}`} />
+                                                <label className={classes.colortext1} htmlFor="farbla">Blau</label>
+                                            </div>
+                                            <div>
+                                                <input id='farbra' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.braun}`} />
+                                                <label className={classes.colortext1} htmlFor="farbra">Braun</label>
+                                            </div>
+                                            <div>
+                                                <input id='farora' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.orange}`} />
+                                                <label className={classes.colortext1} htmlFor="farora">Orange</label>
+                                            </div>
+                                            <div>
+                                                <input id='farvio' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.violett}`} />
+                                                <label className={classes.colortext1} htmlFor="farvio">Violett</label>
+                                            </div>
+                                            <div>
+                                                <input id='fargru' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.gruen}`} />
+                                                <label className={classes.colortext1} htmlFor="fargru">Grün</label>
+                                            </div>
+                                            <div>
+                                                <input id='farbro' type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.bronze}`} />
+                                                <label className={classes.colortext1} htmlFor="farbro">Bronze</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label className='text-sm font-semibold'>Lackierungsart</label>
+                                    <div className={classes.colorrow}>
+                                        <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.weiss}`}/>
+                                        <span className={classes.fontsize13}>Metallic</span>
+                                    </div>
+                                </div>
+                            </div>}
+                        </div>
+                        {/* POLSTERFARBE */}
+                        <div className={openPolsterFarbe == true ? classes.sectioncontainer : classes.sectioncontainerclosed} onClick={() => {
+                            if(openPolsterFarbe == false){
+                                setOpenPolsterFarbe(true);
+                            }
+                        }}>
+                            <div className={classes.headingcontainer} onClick={() => {
+                            if(openPolsterFarbe == true){
+                                setOpenPolsterFarbe(false);
+                            }
+                        }}>
+                                <div className={classes.sectionheading}>POLSTERFARBE</div>
+                                <Expand className={openPolsterFarbe == false ? classes.openedExpand : classes.closedExpand}/>
+                            </div>
+                            {openPolsterFarbe == true && <div className={classes.basiscontainer}>
+                                <div className={classes.polsterfarben}>
+                                    <div className={classes.farbecol1}>
+                                        <div>
+                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.beige}`}/>
+                                            <label>Beige</label>
+                                        </div>
+                                        <div>
+                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.weiss}`}/>
+                                            <label>Weiß</label>
+                                        </div>
+                                        <div>
+                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.braun}`}/>
+                                            <label>Braun</label>
+                                        </div>
+                                        <div className={classes.marginbottomnone}>
+                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.gruen}`}/>
+                                            <label>Grün</label>
+                                        </div>
+                                    </div>
+                                    <div className={classes.farbecol2}>
+                                        <div>
+                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.blau}`}/>
+                                            <label>Blau</label>
+                                        </div>
+                                        <div>
+                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.schwarz}`}/>
+                                            <label>Schwarz</label>
+                                        </div>
+                                        <div>
+                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.grau}`}/>
+                                            <label>Grau</label>
+                                        </div>
+                                        <div className={classes.marginbottomnone}>
+                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.gelb}`}/>
+                                            <label>Gelb</label>
+                                        </div>
+                                    </div>
+                                    <div className={classes.farbecol3}>
+                                        <div>
+                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.orange}`}/>
+                                            <label>Orange</label>
+                                        </div>
+                                        <div>
+                                            <input type={"checkbox"} className={`${classes.varientinputsmaller} ${classes.rot}`}/>
+                                            <label>Rot</label>
+                                        </div>
+                                        <div className={classes.marginbottomnone}>
+                                            <input type={"checkbox"} className={`${classes.varientinputsmaller}`}/>
+                                            <label>Sonstiges</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label className={classes.materiallabel}>Material</label>
+                                <div className={classes.materialcontainer}>
+                                    <div>
+                                        <input id='matalc' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='matalc'>Alcantara</label>
+                                    </div>
+                                    <div>
+                                        <input id='matsto' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='matsto'>Stoff</label>
+                                    </div>
+                                    <div>
+                                        <input id='matvol' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='matvol'>Vollleder</label>
+                                    </div>
+                                    <div>
+                                        <input id='mattei' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='mattei'>Teilleder</label>
+                                    </div>
+                                    <div>
+                                        <input id='matvel' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='matvel'>Velours</label>
+                                    </div>
+                                    <div>
+                                        <input id='matson' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='matson'>Sonstiges</label>
+                                    </div>
+                                </div>
+                            </div>}
+                        </div>
+                        {/* POLSTERFARBE */}
+                        <div className={openFahrzeugzustand == true ? classes.sectioncontainer : classes.sectioncontainerclosed} onClick={() => {
+                            if(openFahrzeugzustand == false){
+                                setOpenFahrzeugzustand(true);
+                            }
+                        }}>
+                            <div className={classes.headingcontainer} onClick={() => {
+                            if(openFahrzeugzustand == true){
+                                setOpenFahrzeugzustand(false);
+                            }
+                        }}>
+                                <div className={classes.sectionheading}>FAHRZEUGZUSTAND</div>
+                                <Expand className={openFahrzeugzustand == false ? classes.openedExpand : classes.closedExpand}/>
+                            </div>
+                            {openFahrzeugzustand == true && <div className={classes.basiscontainer}>
+                                <div className={classes.marginbottom}>
+                                    <label htmlFor='selfahrz' className={`${classes.fontsize13} ${classes.label}`}>Fahrzeughalter (max.)</label>
+                                    <Select 
+                                        styles={style}
+                                        options={fahrz}
+                                        placeholder="Nicht anzeigen"
+                                        className='mt-1 mb-1'
+                                        id='selfahrz'
+                                        />
+                                </div>
+                                <div className={classes.marginbottom}>
+                                    <label className={classes.fontsize13}>Unfallfahrzeug</label>
+                                    <Select 
+                                        styles={style}
+                                        options={unfall}
+                                        placeholder="Nicht anzeigen"
+                                        className='mt-1 mb-1'
+                                        />
+                                </div>
+                                <div className={`${classes.materialcontainer}`}>
+                                    <div>
+                                        <input id='matnic' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='ml-1 text-sm cursor-pointer' htmlFor='matnic'>Nichtraucherfahrzeug</label>
+                                    </div>
+                                    <div>
+                                        <input id='matgar' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='ml-1 text-sm cursor-pointer' htmlFor='matgar'>Garantie</label>
+                                    </div>
+                                    <div>
+                                        <input id='matsch' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='ml-1 text-sm cursor-pointer' htmlFor='matsch'>Scheckhaftgepflegt</label>
+                                    </div>
+                                    <div>
+                                        <input id='mather' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='ml-1 text-sm cursor-pointer' htmlFor='mather'>Herstellerzertifizerung<div className={classes.belowtext}>(Technisch geprüfte{"\n"}Fahrzeuge mit Garantie)</div></label>
+                                    </div>
+                                </div>
+                            </div>}
+                        </div>
+                        {/* UMWELT */}
+                        <div className={openUmwelt == true ? classes.sectioncontainer : classes.sectioncontainerclosed} onClick={() => {
+                            if(openUmwelt == false){
+                                setOpenUmwelt(true);
+                            }
+                        }}>
+                            <div className={classes.headingcontainer} onClick={() => {
+                            if(openUmwelt == true){
+                                setOpenUmwelt(false);
+                            }
+                        }}>
+                                <div className={classes.sectionheading}>UMWELT</div>
+                                <Expand className={openUmwelt == false ? classes.openedExpand : classes.closedExpand}/>
+                            </div>
+                            {openUmwelt == true && <div className={classes.basiscontainer}>
+                                <div className={classes.marginbottom}>
+                                    <label className='text-sm'>Schadstoffklasse (mind.)</label>
+                                    <Select 
+                                        styles={style}
+                                        options={schads}
+                                        placeholder="Alle"
+                                        className='mt-1 mb-1'
+                                        />
+                                </div>
+                                <div className={classes.marginbottom}>
+                                    <label className='text-sm'>Feinstaubplakette (mind.)</label>
+                                    <Select 
+                                        styles={style}
+                                        options={fahrz}
+                                        placeholder="Alle"
+                                        className='mt-1 mb-1'
+                                        />
+                                </div>
+                                <div className={`${classes.materialcontainer}`}>
+                                    <div>
+                                        <input id='matruss' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='!font-normal text-sm ml-1 cursor-pointer' htmlFor='matruss'>Rußpartikelfilter</label>
+                                    </div>
+                                </div>
+                            </div>}
+                        </div>
+                        {/* ANGEBOTDETAILS */}
+                        <div className={`${openAngebotDetails == true ? classes.sectioncontainer : classes.sectioncontainerclosed2} ${classes.noline}`} onClick={() => {
+                            if(openAngebotDetails == false){
+                                setOpenAngebotDetails(true);
+                            }
+                        }}>
+                            <div className={classes.headingcontainer} onClick={() => {
+                            if(openAngebotDetails == true){
+                                setOpenAngebotDetails(false);
+                            }
+                        }}>
+                                <div className={classes.sectionheading}>ANGEBOTDETAILS</div>
+                                <Expand className={openAngebotDetails == false ? classes.openedExpand : classes.closedExpand}/>
+                            </div>
+                            {openAngebotDetails == true && <div className={classes.basiscontainer}>
+                                <div>
+                                    <label className='text-sm font-bold'>Online seit</label>
+                                    <Select 
+                                        styles={style}
+                                        options={schads}
+                                        placeholder="Alle"
+                                        className='mt-1 mb-1'
+                                        />
+                                </div>
+                                <div className={`${classes.materialcontainer} mt-2`}>
+                                    <div>
+                                        <input id='matmwst' type={"checkbox"} className={classes.varientinputsmaller}/>
+                                        <label className='text-sm ml-1 cursor-pointer' htmlFor='matmwst'>MwST. ausweisbar</label>
+                                    </div>
+                                </div>
+                            </div>}
+                        </div>
+            </div>
+            </div>
+                    </div>
+                    }
+                </div>
+            </div>}
             <div className={`${classes.contentcontainer} relative w-10/12 lg:w-full flex justify-center max-w-ag-container md:!w-full mx-auto flex-col bg-white p-6`}>
                 <div className={classes.c2r1top}>
                     <div>
@@ -1111,7 +1753,8 @@ function SearchResults(){
                     </div>
                 </div>
             <div className={classes.row}>
-                {width >= 1250 && <div className={classes.c1}>
+                {width >= 1250 && 
+                <div className={classes.c1}>
                     <div className={classes.c1r1}>
                         <div className={classes.centeritems1}>
                             <h3 className={classes.anzahlAngeboteNummer}>{displayAnzahlAngebote}</h3>
@@ -1713,7 +2356,7 @@ function SearchResults(){
                         <div className={classes.c2r1bottom}>
                             <div className={classes.direktsuchecontainer}>
                                 <input type={"text"} className={classes.direktsuche} placeholder="Direktsuche" />
-                                <button className={classes.suchenbtn}>SUCHEN</button>
+                                <button className={classes.suchenbtn}>Suchen</button>
                             </div>
                             <div className={classes.sortierungcontainer}>
                                 <Select 

@@ -21,6 +21,7 @@ import Linkedin from './../public/Linkedin.svg'
 import Tiktok from './../public/icons/tiktok.svg'
 import InputSelect from './ui/InputSelect';
 import Clock from './../public/clock.svg';
+import Info from './../public/info.svg';
 import { useMemo } from 'react';
 import Input from './ui/Input';
 import PaperPlane from './../public/paper-plane.svg'
@@ -573,12 +574,10 @@ function CarDetails(){
                                     <div className={`${classes.oeffnungszeitenrow} ${today == "friday" && "font-bold"}`}>
                                         <div className={classes.tag}>Freitag</div>
                                         <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
-                                        <div className={classes.link}>Impressum &</div>
                                     </div>
                                     <div className={`${classes.oeffnungszeitenrow} ${today == "saturday" && "font-bold"}`}>
                                         <div className={classes.tag}>Samstag</div>
                                         <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
-                                        <div className={classes.link}>Datenschutz des Anbieters</div>
                                     </div>
                                 </div>
                             </div>

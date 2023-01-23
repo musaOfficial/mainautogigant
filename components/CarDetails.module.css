@@ -55,7 +55,31 @@
     display: flex;
     justify-content: space-between;
     padding: 30px;
+    padding-top: 0;
     width: 100%;
+}
+
+@media(max-width: 1150px){
+    .contentcontainer{
+        padding: 0;
+    }
+
+    .carinfocontainer{
+        border-radius: 0 !important;
+        overflow: scroll;
+    }
+
+    .price{
+        border-top-left-radius: 0 !important;
+    }
+   
+    .print{
+        border-top-right-radius: 0 !important;
+    }
+
+    .bottomleftnomargin{
+        border-radius: 0 !important;
+    }
 }
 
 .backtoresults{

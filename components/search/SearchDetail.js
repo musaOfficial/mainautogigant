@@ -1,21 +1,24 @@
-import Router from "next/router";
 
-import Colors from "./Colors";
-import DataLocation from "./DataLocation";
-import Environment from "./Environment";
-import Furnishing from "./Furnishing";
-import Offer from "./Offer";
-import UphosteryColor from "./UphosteryColor";
-import VehicleCondition from "./VehicleCondition";
+import classes from './SearchDetails.module.css';
 import { useState, useEffect } from "react";
-import Input from "../ui/Input";
-import InputSelect from "../ui/InputSelect";
-import CheckBoxItem from "./CheckBoxItem";
-import ModelItem from "./ModelItem";
-import ColorItem from "./ColorItem";
-import { fahrz, unfall } from "./selectOptions";
-import { schads, fahrzeu } from "./selectOptions";
-import { offer } from "./selectOptions";
+import Expand from './../../public/expand.svg';
+import Link from 'next/link'
+import Select from "react-select";
+import Bin from './../../public/bin.svg';
+import Add from './../../public/add.svg';
+import Checked from './../../public/checked.svg';
+import Unchecked from './../../public/unchecked.svg';
+import CheckedRadio from './../../public/checkedradio.svg';
+import UncheckedRadio from './../../public/uncheckedradio.svg';
+import Closex from './../../public/closex.svg';
+import Limo from './../../public/acar/limo.svg';
+import Suv from './../../public/acar/suv.svg'
+import KombiVan from './../../public/acar/kombivan.svg';
+import Coupe from './../../public/acar/coupe.svg';
+import Cabrio from './../../public/acar/cabrio.svg';
+import Kleinbus from './../../public/acar/kleinbus.svg';
+import Check from './../../public/hackerl.svg';
+
 import {
   marke1,
   marke2,
@@ -39,742 +42,2205 @@ import {
   von4,
   bis4,
 } from "./selectOptions";
+import BackHome from './../../public/home.svg';
+import Checkbox from './Checkbox';
 
-export default function SearchDetail() {
-  const [showGoTop, setShowGoTop] = useState(false);
+const useDeviceSize = () => {
 
-  const handleVisibleButton = () => {
-    setShowGoTop(window.pageYOffset > 50);
-  };
+  const [width, setWidth] = useState(0)
+  const [height, setHeight] = useState(0)
 
-  const handleScrollUp = () => {
-    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleVisibleButton);
-  }, []);
-
-  const [expanded, setExpanded] = useState(true);
-  const [brandName, setBrandName] = useState({}); 
-  const [varient, setVarient] = useState("");
-  const [modelName, setModelName] = useState({});
-  const [modelItems, setModelItems] = useState([]);
-
-  
-
-  const addModel = () => {
-    setModelItems([
-      ...modelItems,
-      {
-        brandName: brandName.value,
-        modelName: modelName.value,
-        varient: varient,
-      },
-    ]);
-
-    setBrandName({value: "", label: ""});
-    setVarient("");
-    setModelName({value: "", label: ""});
-    setBrandNameInputValue("");
-    setBrandSelected(false);
-  };
-
-  const deleteHandler = (id) => {
-    let newArr = modelItems;
-    newArr.splice(id, 1);
-    setModelItems([...newArr]);
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
   }
 
-  const [brandSelected, setBrandSelected] = useState();
+  useEffect(() => {
+    // component is mounted and window is available
+    handleWindowResize();
+    window.addEventListener('resize', handleWindowResize);
+    // unsubscribe from the event on component unmount
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
 
-  const [modelInputValue, setModelInputValue] = useState();
-  const [brandNameInputValue, setBrandNameInputValue] = useState();
+  return [width, height]
 
-  const [furnishingExpanded, setFurnishingExpanded] = useState(false);
-  const [colorsExpanded, setColorsExpanded] = useState(false);
-  const [uphosteryExpanded, setUphosteryExpanded] = useState(false);
-  const [vehicleExpanded, setVehicleExpanded] = useState(false);
-  const [environmentExpanded, setEnvironmentExpanded] = useState(false);
-  const [offerExpanded, setOfferExpanded] = useState(false);
+}
+
+
+export default function SearchDetail() {
+
+  const [width, height] = useDeviceSize();
+
+  const [markeOpen, setMarkeOpen] = useState(false);
+  const [basisdatenOpen, setBasisdatenOpen] = useState(false);
+  const [typOpen, setTypOpen] = useState(false);
+  const [motorOpen, setMotorOpen] = useState(false);
+  const [ausstattungOpen, setAusstattungOpen] = useState(false);
+  const [standortOpen, setStandortOpen] = useState(false);
+
+  const [easybtnOpen, setEasybtnOpen] = useState(false);
+
+  const [anzahlTreffer, setAnzahlTreffer] = useState(117);
+
+  const style = {
+    control: (base) => ({
+      ...base,
+      boxShadow: "none",
+      height: "40px",
+      border: "2px solid #F1F2F3",
+      "&:hover": {
+        border: "2px solid #FBB900",
+        cursor: "pointer"
+      },
+      backgroundColor: "#F1F2F3",
+      fontSize: '13px',
+      borderRadius: '10px',
+      "&::placeholder": {
+        color: "rgba(241, 242, 243, 0.75)"
+      }
+    }),
+    option: (styles, state) => ({
+      ...styles,
+      backgroundColor: state.isSelected ? "#fbb900" : "",
+      "&:active": "#fbb90080",
+      fontSize: '13px',
+    }),
+};
+
+  const whitestyle = {
+    control: (base) => ({
+      ...base,
+      boxShadow: "none",
+      height: "40px",
+      border: "2px solid #F1F2F3",
+      "&:hover": {
+        border: "2px solid #FBB900",
+        cursor: "pointer"
+      },
+      backgroundColor: "#fff",
+      fontSize: '13px',
+      borderRadius: '10px',
+      "&::placeholder": {
+        color: "rgba(241, 242, 243, 0.75)"
+      }
+    }),
+    option: (styles, state) => ({
+      ...styles,
+      backgroundColor: state.isSelected ? "#fbb900" : "",
+      "&:active": "#fbb90080",
+      fontSize: '13px',
+    }),
+};
+
+  // START of Variables for MARKE & MODELL
+  const brands = [
+    {value: "Alle Marken", label: "Alle Marken"},
+    {value: 'Acura', label: 'Acura'},
+    {value: 'Alfa Romeo', label: 'Alfa Romeo'},
+    {value: 'Aston Martin', label: 'Aston Martin'},
+    {value: 'Audi', label: 'Audi'},
+    {value: 'Bentley', label: 'Bentley'},
+    {value: 'BMW', label: 'BMW'},
+    {value: 'Bugatti', label: 'Bugatti'},
+    {value: 'Buick', label: 'Buick'},
+    {value: 'Cadillac', label: 'Cadillac'},
+    {value: 'Chevrolet', label: 'Chevrolet'},
+    {value: 'Chrysler', label: 'Chrysler'},
+    {value: 'Citroen', label: 'Citroen'},
+    {value: 'Dodge', label: 'Dodge'},
+    {value: 'Ferrari', label: 'Ferrari'},
+    {value: 'Fiat', label: 'Fiat'},
+    {value: 'Ford', label: 'Ford'},
+    {value: 'GMC', label: 'GMC'},
+    {value: 'Honda', label: 'Honda'},
+    {value: 'Hyundai', label: 'Hyundai'},
+    {value: 'Infiniti', label: 'Infiniti'},
+    {value: 'Jaguar', label: 'Jaguar'},
+    {value: 'Jeep', label: 'Jeep'},
+    {value: 'Kia', label: 'Kia'},
+    {value: 'Lamborghini', label: 'Lamborghini'},
+    {value: 'Land Rover', label: 'Land Rover'},
+    {value: 'Lexus', label: 'Lexus'},
+    {value: 'Lincoln', label: 'Lincoln'},
+    {value: 'Lotus', label: 'Lotus'},
+    {value: 'Maserati', label: 'Maserati'},
+    {value: 'Mazda', label: 'Mazda'},
+    {value: 'McLaren', label: 'McLaren'},
+    {value: 'Mercedes-Benz', label: 'Mercedes-Benz'},
+    {value: 'Mini', label: 'Mini'},
+    {value: 'Mitsubishi', label: 'Mitsubishi'},
+    {value: 'Nissan', label: 'Nissan'},
+    {value: 'Porsche', label: 'Porsche'},
+    {value: 'Ram', label: 'Ram'},
+    {value: 'Renault', label: 'Renault'},
+    {value: 'Rolls-Royce', label: 'Rolls-Royce'},
+    {value: 'Saab', label: 'Saab'},
+    {value: 'Subaru', label: 'Subaru'},
+    {value: 'Suzuki', label: 'Suzuki'},
+    {value: 'Tesla', label: 'Tesla'},
+  ]
+
+  const [models, setModels] = useState([
+    {value: 'Alle Modelle', label: 'Alle Modelle' },
+    {value: 'A3', label: 'A3'},
+    {value: 'A4', label: 'A4'},
+    {value: 'A5', label: 'A5'},
+    {value: 'A6', label: 'A6'},
+    {value: 'A7', label: 'A7'},
+    {value: 'A8', label: 'A8'},
+    {value: 'Q3', label: 'Q3'},
+    {value: 'Q5', label: 'Q5'},
+    {value: 'Q7', label: 'Q7'},
+    {value: 'R8', label: 'R8'},
+    {value: 'RS3', label: 'RS3'},
+    {value: 'RS4', label: 'RS4'},
+    {value: 'RS5', label: 'RS5'},
+    {value: 'RS6', label: 'RS6'},
+    {value: 'RS7', label: 'RS7'},
+    {value: 'S3', label: 'S3'},
+    {value: 'S4', label: 'S4'},
+    {value: 'S5', label: 'S5'},
+    {value: 'S6', label: 'S6'},
+    {value: 'S7', label: 'S7'},
+    {value: 'S8', label: 'S8'},
+    {value: 'TT', label: 'TT'},
+    {value: 'e-tron', label: 'e-tron'},
+    {value: 'e-tron GT', label: 'e-tron GT'},
+    {value: 'Q2', label: 'Q2'},
+    {value: 'Q4', label: 'Q4'},
+  ]);
+  
+  const [brandSelectionOpen, setBrandSelectionOpen] = useState(false);
+  const [modelSelectionOpen, setModelSelectionOpen] = useState(false);
+
+  const [selectedBrand, setSelectedBrand] = useState(brands[0]);
+  const [selectedModel, setSelectedModel] = useState(models[0]);
+  const [variante, setVariante] = useState("");
+
+  const [modals, setModals] = useState([
+  ]);
+
+  function addModal(){
+    setModals([
+      ...modals,
+      {
+        brandName: selectedBrand.label,
+        modelName: selectedModel.label,
+        variant: variante,
+      }
+    ])
+
+    setSelectedBrand(brands[0]);
+    setSelectedModel(models[0]);
+    setVariante("")
+    console.log(modals)
+  }
+
+  function reduceModals(index){
+    var reducedModals = [...modals];
+    reducedModals.splice(index, 1)
+    setModals(reducedModals);
+  }
+
+  const bodyTypes = [
+    {value: 'Sedan', label: 'Sedan'},
+    {value: 'Hatchback', label: 'Hatchback'},
+    {value: 'SUV', label: 'SUV'},
+    {value: 'Crossover', label: 'Crossover'},
+    {value: 'Coupe', label: 'Coupe'},
+    {value: 'Convertible', label: 'Convertible'},
+    {value: 'Pickup', label: 'Pickup'},
+    {value: 'Van', label: 'Van'},
+    {value: 'Wagon', label: 'Wagon'},
+    {value: 'Minivan', label: 'Minivan'},
+    {value: 'Roadster', label: 'Roadster'},
+    {value: 'Sports Car', label: 'Sports Car'},
+    {value: 'Electric Car', label: 'Electric Car'},
+    {value: 'Hybrid Car', label: 'Hybrid Car'},
+    {value: 'Plug-in Hybrid', label: 'Plug-in Hybrid'},
+  ]
+
+  const [selectedBodyType, setSelectedBodyType] = useState();
+  // END of Variables for MARKE & MODELL
+  // -----------------------------------
+  // START of Variables for BASISDATEN
+  var erstzulassungen = [{value: "beliebig", label: "beliebig"}];
+  for(let i = 2023; i >= 1900; i-- ){
+      erstzulassungen.push({value: i, label: i})
+  }
+
+  var preise = [{value: "beliebig", label: "beliebig"}];
+  for(let i = 0; i < 105000; ){
+      preise.push({value: i, label: i})
+      if(i < 30000){
+        i += 2500;
+      } else {
+        i += 10000
+      }
+    
+  }
+
+
+  const [erstzulassungVon, setErstzulassungVon] = useState();
+  const [erstzulassungBis, setErstzulassungBis] = useState();
+
+  const [preisVon, setPreisVon] = useState();
+  const [preisBis, setPreisBis] = useState();
+
+  const [kilometerstandVon, setKilometerstandVon] = useState();
+  const [kilometerstandBis, setKilometerstandBis] = useState();
+  // END of Variables for BASISDATEN
+  // -----------------------------------
+  // START of Variables for TYP & ZUSTAND
+
+  // Fahrzeugtyp
+  const [cabrio, setCabrio] = useState(false);
+  const [kleinwagen, setKleinwagen] = useState(false);
+  const [kleinbus, setKleinbus] = useState(false);
+  const [kombi, setKombi] = useState(false);
+  const [limousine, setLimousine] = useState(false);
+  const [mopedauto, setMopedauto] = useState(false);
+  const [sportwagen, setSportwagen] = useState(false);
+  const [suv, setSuv] = useState(false);
+
+  // Zustand
+  const [gebrauchtwagen, setGebrauchtwagen] = useState(false);
+  const [jahreswagen, setJahreswagen] = useState(false);
+  const [neuwagen, setNeuwagen] = useState(false);
+  const [oldtimer, setOldtimer] = useState(false);
+  const [tageszulassung, setTageszulassung] = useState(false);
+  const [unfallwagen, setUnfallwagen] = useState(false);
+  const [vorfuehrwagen, setVorfuehrwagen] = useState(false);
+
+  // Garantie
+  const [ja, setJa] = useState(false);
+  const [scheckhaftgepflegt, setScheckhaftgepflegt] = useState(false);
+  const [herstellerzertifizerung, setHerstellerzertifizierung] = useState(false);
+  
+  // Fahrzeughalter
+  var fahrzeughalterArr = [{value: "Alle", label: "Alle"}];
+  for(let i = 0; i <= 10; i++){
+    fahrzeughalterArr.push({value: i, label: i})
+  }
+
+  const [fahrzeughalter, setFahrzeughalter] = useState(false);
+  const [nichtraucherfahrzeug, setNichtraucherFahrzeug] = useState(false);
+
+  // END of Variables for TYP & ZUSTAND
+  // -----------------------------------
+  // START of Variables for MOTOR
+
+  // Leistung
+  var leistungArr = [];
+  for(let i = 0; i <= 400; ){
+    if(i < 100){
+      i += 10;
+    } else {
+      i += 50;
+    }
+    leistungArr.push({value: i, label: i})
+  }
+
+  const [leistungVon, setLeistungVon] = useState();
+  const [leistungBis, setLeistungBis] = useState();
+
+  const [selectPs, setSelectPs] = useState(true);
+
+  // Treibstoff
+  const [benzin, setBenzin] = useState(false);
+  const [diesel, setDiesel] = useState(false);
+  const [elektro, setElektro] = useState(false);
+  const [gas, setGas] = useState(false);
+  const [hybridBenzin, setHybridBenzin] = useState(false);
+  const [hybridDiesel, setHybridDiesel] = useState(false);
+  const [wasserstoff, setWasserstoff] = useState(false);
+
+  // Getriebeart
+  const [automatik, setAutomatik] = useState(false);
+  const [schaltgetriebe, setSchaltgetriebe] = useState(false);
+  const [getriebeNeuwagen, setGetriebeNeuwagen] = useState(false);
+
+  // Antrieb
+  const [allrad, setAllrad] = useState(false);
+  const [vorderrad, setVorderrad] = useState(false);
+  const [hinterrad, setHinterrad] = useState(false);
+
+
+  // END of Variables for MOTOR
+  // -----------------------------------
+  // START of Variables for AUSSTATTUNG
+  const [zweizonenKlima, setZweizonenKlima] = useState(false)
+  const [dreizonenKlima, setDreizonenKlima] = useState(false)
+  const [drei60kamera, setDrei60kamera] = useState(false)
+  const [vierzonenKlima, setVierzonenKlima] = useState(false)
+  const [ABS, setABS] = useState(false);
+  const [abstandsTempomat, setAbstandsTempomat] = useState(false);
+  const [abstandsWarner, setAbstandsWarner] = useState(false)
+  const [airbagHinten, setAirbagHinten] = useState(false)
+  const [alarmanlage, setAlarmanlage] = useState(false)
+  const [allwetterReifen, setAllwetterReifen] = useState(false)
+  const [alufelgen, setAlufelgen] = useState(false)
+  const [ambientebeleuchtung, setAmbientebeleuchtung] = useState(false)
+  const [androidauto, setAndroidauto] = useState(false)
+  const [anhaengerkupplung, setAnhaengerkupplung] = useState(false)
+  const [applecarplay, setApplecarplay] = useState(false)
+  const [armlehne, setArmlehne] = useState(false)
+  const [beheizbareFrontscheibe, setBeheizbareFrontscheibe] = useState(false)
+  const [beheizbaresLenkrad, setBeheizbaresLenkrad] = useState(false)
+  const [behindertenGerecht, setBehindertenGerecht] = useState(false)
+  const [beifahrerairbag, setBeifahrerairbag] = useState(false)
+  const [berganfahrassistent, setBerganfahrassistent] = useState(false)
+  const [bixenonscheinwerfer, setBixenonscheinwerfer] = useState(false)
+  const [biodieselumruestung, setBiodieselumruestung] = useState(false)
+  const [blendfreiesFernlicht, setBlendfreiesFernlicht] = useState(false)
+  const [bluethoot, setBluethoot] = useState(false)
+  const [bordcomputer, setBordcomputer] = useState(false)
+  const [cd, setCd] = useState(false)
+  const [dabradio, setDabradio] = useState(false)
+  const [dachreling, setDachreling] = useState(false)
+  const [ezehngeeignet, setEzehngeeignet] = useState(false)
+  const [einparkhilfe, setEinparkhilfe] = useState(false)
+  const [einparkhilfeKamera, setEinparkhilfeKamera] = useState(false)
+  const [einparkhilfeSelbst, setEinparkhilfeSelbst] = useState(false)
+  const [einparkhilfeSensorenVorne, setEinparkhilfeSensorenVorne] = useState(false)
+  const [einparkhilfeSensorenHinten, setEinparkhilfeSensorenHinten] = useState(false)
+  const [elektrfensterheber, setElektrfensterheber] = useState(false)
+  const [elektrsitzhinten, setElektrsitzhinten] = useState(false)
+  const [elektrheckklappe, setElektrheckklappe] = useState(false)
+  const [elektrseitenspiegel, setElektrseitenspiegel] = useState(false)
+  const [elektrsitze, setElektrsitze] = useState(false)
+  const [elektrparkbremse, setElektrparkbremse] = useState(false)
+  const [esp, setEsp] = useState(false)
+  const [fahrerairbag, setFahrerairbag] = useState(false)
+  const [fernlichassistent, setFernlichassistent] = useState(false)
+  const [freisprecheinrichtung, setFreisprecheinrichtung] = useState(false)
+  const [gepaeckraum, setGepaeckraum] = useState(false)
+  const [geschwindigkeitsbegrenz, setGeschwindigkeitsbegrenz] = useState(false)
+  const [getonteScheiben, setGetonteScheiben] = useState(false)
+  const [headupDisplay, setHeadupDisplay] = useState(false)
+  const [induktionsladen, setInduktionsladen] = useState(false)
+  const [innenspiegelauto, setInnenspiegelauto] = useState(false)
+  const [isofix, setIsofix] = useState(false)
+  const [katalysator, setKatalysator] = useState(false)
+  const [klimaanlage, setKlimaanlage] = useState(false)
+  const [klimaautomatik, setKlimaautomatik] = useState(false)
+  const [kopfairbag, setKopfairbag] = useState(false)
+  const [kurvenlicht, setKurvenlicht] = useState(false)
+  const [laserlicht, setLaserlicht] = useState(false)
+  const [ledscheinwerfer, setLedscheinwerfer] = useState(false)
+  const [ledtagfahrlicht, setLedtagfahrlicht] = useState(false)
+  const [lederausstattung, setLederausstattung] = useState(false)
+  const [lederlenkrad, setLederlenkrad] = useState(false)
+  const [lichtsensor, setLichtsensor] = useState(false)
+  const [lordosenstuetze, setLordoesenstuetze] = useState(false)
+  const [luftfederung, setLuftfederung] = useState(false)
+  const [markise, setMarkise] = useState(false)
+  const [massageSitze, setMassageSitze] = useState(false)
+  const [mp3, setMp3] = useState(false)
+  const [muedigkeitswarn, setMuedigkeitswarn] = useState(false)
+  const [multifunktionslenkrad, setMultifunktionslenkrad] = useState(false)
+  const [musikstreamingIntegriert, setMusikstreamingIntegriert] = useState(false)
+  const [nachtsichtAssistent, setNachtsichtAssistent] = useState(false)
+  const [navigationssystem, setNavigationssystem] = useState(false);
+  const [nebelscheinwerfer, setNebelscheinwerfer] = useState(false);
+  const [notbremsassistent, setNotbremsassistent] = useState(false);
+  const [notrad, setNotrad] = useState(false);
+  const [notrufsystem, setNotrufsystem] = useState(false);
+  const [pannenkit, setPannenkit] = useState(false);
+  const [panoramadach, setPanoramadach] = useState(false);
+  const [radio, setRadio] = useState(false);
+  const [raucherpaket, setRaucherpaket] = useState(false);
+  const [rechtslenker, setRechtslenker] = useState(false);
+  const [regensensor, setRegensensor] = useState(false);
+  const [reichweitenverlaengerer, setReichweitenverlaengerer] = useState(false);
+  const [reifendruckkontrollsystem, setReifendruckkontrollsystem] = useState(false);
+  const [reserverad, setReserverad] = useState(false);
+  const [schaltwippen, setSchaltwippen] = useState(false);
+  const [scheinwerferreinigung, setScheinwerferreinigung] = useState(false);
+  const [schiebedach, setSchiebedach] = useState(false);
+  const [schiebetuer, setSchiebetuer] = useState(false);
+  const [schieblinks, setSchieblinks] = useState(false);
+  const [schiebrechts, setSchiebrechts] = useState(false);
+  const [schluessellose, setSchluessellose] = useState(false);
+  const [seitenairbag, setSeitenairbag] = useState(false);
+  const [servolenkung, setServolenkung] = useState(false);
+  const [sitzbelueftung, setSitzbelueftung] = useState(false);
+  const [sitzheizung, setSitzheizung] = useState(false);
+  const [skisack, setSkisack] = useState(false);
+  const [sommerreifen, setSommerreifen] = useState(false);
+  const [soundsystem, setSoundsystem] = useState(false);
+  const [spoiler, setSpoiler] = useState(false);
+  const [sportfahrwerk, setSportfahrwerk] = useState(false);
+  const [sportpaket, setSportpaket] = useState(false);
+  const [sportsitze, setSportsitze] = useState(false);
+  const [sprachsteuerung, setSprachsteuerung] = useState(false);
+  const [spurhalteassistent, setSpurhalteassistent] = useState(false);
+  const [stahlfelgen, setStahlfelgen] = useState(false);
+  const [standheizung, setStandheizung] = useState(false);
+  const [startstopauto, setStartstopauto] = useState(false);
+  const [tagfahrlicht, setTagfahrlicht] = useState(false);
+  const [taximietwage, setTaximietwagen] = useState(false);
+  const [teilbruecksitzbank, setTeilbruecksitzbank] = useState(false);
+  const [tempomat, setTempomat] = useState(false);
+  const [totwinkelAssistent, setTotwinkelAssitent] = useState(false);
+  const [touchscreen, setTouchscreen] = useState(false);
+  const [traktionskontrolle, setTraktionskontrolle] = useState(false);
+  const [tuning, setTuning] = useState(false);
+  const [tv, setTv] = useState(false);
+  const [umklappbeifahrer, setUmklappbeifahrer] = useState(false);
+  const [usb, setUsb] = useState(false);
+  const [verkehrszeichenErkennung, setVerkehrszeichenErkennung] = useState(false);
+  const [vollledscheinwerfer, setVollledscheinwerfer] = useState(false);
+  const [volldigitalesKombiinstrument, setVolldigitalesKombiinstrument] = useState(false);
+  const [wlan, setWlan] = useState(false);
+  const [wegfahrsperre, setWegfahrsperre] = useState(false);
+  const [windschott, setWindschott] = useState(false);
+  const [winterpaket, setWinterpaket] = useState(false);
+  const [winterreifen, setWinterreifen] = useState(false);
+  const [xenonscheinwerfer, setXenonscheinwerfer] = useState(false);
+  const [zentralverriegelung, setZentralverriegelung] = useState(false);
+  const [zentralFunkfern, setZentralFunkfern] = useState(false);
+  const [achtFachBereift, setAchtFachBereift] = useState(false);
+  const [kollisionsWarner, setKollisionsWarner] = useState(false);
+  const [komfortFahrwerk, setKomfortFahrwerk] = useState(false);
+  const [rueckfahrkamera, setRueckfahrkamera] = useState(false);
+  const [asr, setAsr] = useState(false);
+  const [leasingfaehigkeit, setLeasingfaehigkeit] = useState(false);
+  const [schisack, setSchisack] = useState(false);
+  const [automatischeHeckklappe, setAutomatischeHeckklappe] = useState(false);
+  const [serviceGepflegt, setServiceGepflegt] = useState(false);
+  const [lenkradheizung, setLenkradheizung] = useState(false);
+  const [sperrdifferential, setSperrdifferential] = useState(false);
+  const [dachgepaecktraeger, setDachgepaecktraeger] = useState(false);
+  const [metallicLackierung, setMetalliclackierung] = useState(false);
+  const [mittelarmlehne, setMittelarmlehne] = useState(false);
+  const [stabilitaetsprogramme, setStabilitaetsprogramme] = useState(false);
+  const [mwstAusweisbar, setMwstAusweisbar] = useState(false);
+  const [teilAutonomesFahren, setTeilAutonomesFahren] = useState(false);
+  const [parkhilfesensorenHintenUndVorne, setParkhilfesensorenHintenUndVorne] = useState(false);
+
+
+  const [openAusstattung, setOpenAusstattung] = useState();
+
+  // Außenfarbe
+  const [aussenfarbeBeige , setAussenfarbeBeige] = useState(false)
+  const [aussenfarbeBlau , setAussenfarbeBlau] = useState(false)
+  const [aussenfarbeSchwarz , setAussenfarbeSchwarz] = useState(false)
+  const [aussenfarbeGruen , setAussenfarbeGruen] = useState(false)
+  const [aussenfarbeOrange , setAussenfarbeOrange] = useState(false)
+  const [aussenfarbeRot , setAussenfarbeRot] = useState(false)
+  const [aussenfarbeGold , setAussenfarbeGold] = useState(false)
+  const [aussenfarbeBraun , setAussenfarbeBraun] = useState(false)
+  const [aussenfarbeSilber , setAussenfarbeSilber] = useState(false)
+  const [aussenfarbeGelb , setAussenfarbeGelb] = useState(false)
+  const [aussenfarbeBronze , setAussenfarbeBronze] = useState(false)
+  const [aussenfarbeViolett , setAussenfarbeViolett] = useState(false)
+  const [aussenfarbeGrau , setAussenfarbeGrau] = useState(false)
+  const [aussenfarbeWeiss , setAussenfarbeWeiss] = useState(false)
+
+  // Lackierungsart
+  const [metallic, setMetallic] = useState(false);
+
+  // Polsterfarbe
+  const [polsterfarbeBeige, setPolsterfarbeBeige] = useState(false);
+  const [polsterfarbeBlau, setPolsterfarbeBlau] = useState(false);
+  const [polsterfarbeSchwarz, setPolsterfarbeSchwarz] = useState(false);
+  const [polsterfarbeGruen, setPolsterfarbeGruen] = useState(false);
+  const [polsterfarbeOrange, setPolsterfarbeOrange] = useState(false);
+  const [polsterfarbeRot, setPolsterfarbeRot] = useState(false);
+  const [polsterfarbeWeiss, setPolsterfarbeWeiss] = useState(false);
+  const [polsterfarbeBraun, setPolsterfarbeBraun] = useState(false);
+  const [polsterfarbeGrau, setPolsterfarbeGrau] = useState(false);
+  const [polsterfarbeGelb, setPolsterfarbeGelb] = useState(false);
+  const [polsterfarbeSonstiges, setPolsterfarbeSonstiges] = useState(false);
+
+  // Material
+  const [alcantara, setAlcantara] = useState(false);
+  const [stoff, setStoff] = useState(false);
+  const [vollleder, setVollleder] = useState(false);
+  const [teilleder, setTeilleder] = useState(false);
+  const [velours, setVelours] = useState(false);
+  const [sonstiges, setSonstiges] = useState(false);
+
+  // Anzahl Türe und Sitze
+  const [tuereVon, setTuereVon] = useState();
+  const [tuereBis, setTuereBis] = useState();
+
+  const [sitzeVon, setSitzeVon] = useState();
+  const [sitzeBis, setSitzeBis] = useState();
+
+  // END of Variables for AUSSTATTUNG
+  // -----------------------------------
+  // START of Variables for STANDORT & SONSTIGES
+  const laender = [
+    { label: 'United States', value: 'US' },
+    { label: 'Canada', value: 'CA' },
+    { label: 'Mexico', value: 'MX' },
+    { label: 'Germany', value: 'DE' },
+    { label: 'France', value: 'FR' },
+    { label: 'Japan', value: 'JP' },
+    { label: 'China', value: 'CN' },
+    { label: 'United Kingdom', value: 'UK' },
+    { label: 'Australia', value: 'AU' },
+    { label: 'Brazil', value: 'BR' }
+  ]
+
+  const bundeslaender = [
+    { label: 'Burgenland', value: 'BL' },
+    { label: 'Kärnten', value: 'KT' },
+    { label: 'Niederösterreich', value: 'NO' },
+    { label: 'Oberösterreich', value: 'OO' },
+    { label: 'Salzburg', value: 'SB' },
+    { label: 'Steiermark', value: 'ST' },
+    { label: 'Tirol', value: 'TR' },
+    { label: 'Vorarlberg', value: 'VB' },
+    { label: 'Wien', value: 'WI' }  
+  ]
+
+  const umkreis = [
+    { label: '500m', value: 500 },
+    { label: '1km', value: 1000 },
+    { label: '2km', value: 2000 },
+    { label: '5km', value: 5000 },
+    { label: '10km', value: 10000 },
+    { label: '20km', value: 20000 },
+    { label: '50km', value: 50000 }
+  ]
+
+  const schadstoffklassen = [
+    {label: 'Euro 6', value: 'Euro6'},
+    {label: 'Euro 5', value: 'Euro5'},
+    {label: 'Euro 4', value: 'Euro4'},
+    {label: 'Euro 3', value: 'Euro3'},
+    {label: 'Euro 2', value: 'Euro2'},
+    {label: 'Euro 1', value: 'Euro1'},
+    {label: 'Keine Schadstoffklasse', value: 'None'}
+  ]
+
+  const feinstaubplaketten = [
+    {label: 'Grün', value: 'green'},
+    {label: 'Gelb', value: 'yellow'},
+    {label: 'Rot', value: 'red'},
+    {label: 'Keine Plakette', value: 'none'}
+  ]
+
+  const suchzeitraum = [
+    {label: 'Heute', value: 'today'},
+    {label: 'Gestern', value: 'yesterday'},
+    {label: 'Letzte Woche', value: 'lastweek'},
+    {label: 'Letzten Monat', value: 'lastmonth'},
+    {label: 'Letztes Jahr', value: 'lastyear'},
+];
+
+  const [selectedLand, setSelectedLand] = useState();
+  const [selectedBundesland, setSelectedBundesland] = useState();
+  const [selectedUmkreis, setSelectedUmkreis] = useState();
+
+  const [inserentHaendler, setInserentHaendler] = useState();
+  const [inserentPrivat, setInserentPrivat] = useState();
+  const [inserentAlle, setInserentAlle] = useState();
+
+  const [selectedSchadstoffklasse, setSelectedSchadstoffklasse] = useState();
+  const [selectedFeinstaubplakette, setSelectedFeinstaubplakette] = useState();
+  const [russpartikelfilter, setRusspartikelfilter] = useState();
+
+  const [selectedSuchzeitraum, setSelectedSuchzeitraum] = useState();
+  const [zweitage, setZweitage] = useState();
+  const [mwstAusweisbarSuche, setMwstAusweisbarSuche] = useState();
+
+
+  useEffect(() => {
+    if(inserentHaendler == true && inserentPrivat == true){
+      setInserentAlle(true);
+    }
+    
+  }, [inserentAlle ,inserentHaendler, inserentPrivat]) 
+
+  useEffect(() => {
+
+    if(inserentHaendler == false || inserentPrivat == false){
+      setInserentAlle(false)
+    }
+  }, [inserentHaendler, inserentPrivat])
+
+  // END of Variables for STANDORT & SONSTIGES
+
+
+
+
+  // EINFACHE SUCHE
+
+  // Inserent-Auswahl
+  const [inserent, setInserent] = useState("alle")
+  const [bodyType, setBodyType] = useState("limousine");
+
+  const [minVal, setMinVal] = useState();
+  const [maxVal, setMaxVal] = useState();
+
+  const [minValLeistung, setMinValLeistung] = useState();
+  const [maxValLeistung, setMaxValLeistung] = useState();
+
+  const [minValPreis, setMinValPreis] = useState();
+  const [maxValPreis, setMaxValPreis] = useState();
+
+  const priceGap = 1000;
+  
+  if (typeof window !== "undefined") {
+      const rangeInput = document.querySelectorAll(".range-input input")
+      const progress = document.querySelector(".slider .progress")
+      rangeInput.forEach(input => {
+        input.addEventListener("input", e => {
+          if(maxVal - minVal < priceGap){
+            if(e.target.className === "range-min"){
+              rangeInput[0].value = maxVal - priceGap;
+            } else {
+              rangeInput[1].value = minVal + 1000;
+            }
+          } else {
+            
+            progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+            progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+          }
+        })
+      })
+
+      const rangeInputLeistung = document.querySelectorAll(".range-inputLeistung input")
+      const progressLeistung = document.querySelector(".sliderL .progressL")
+      rangeInputLeistung.forEach(input => {
+        input.addEventListener("input", e => {
+          if(maxValLeistung - minValLeistung < 10){
+            if(e.target.className === "range-minLeistung"){
+              rangeInputLeistung[0].value = maxValLeistung - 2;
+            } else {
+              rangeInputLeistung[1].value = minValLeistung + 2;
+            }
+          } else {
+            progressLeistung.style.left = (minValLeistung / rangeInputLeistung[0].max) * 100 + "%";
+            progressLeistung.style.right = 100 - (maxValLeistung / rangeInputLeistung[1].max) * 100 + "%";
+          }
+        })
+      })
+
+      const rangeInputPreis = document.querySelectorAll(".range-inputPreis input")
+      const progressPreis = document.querySelector(".sliderPreis .progressPreis")
+      rangeInputPreis.forEach(input => {
+        input.addEventListener("input", e => {
+          if(maxValPreis - minValPreis < priceGap){
+            if(e.target.className === "range-minPreis"){
+              rangeInputPreis[0].value = maxValPreis - 1000;
+            } else {
+              rangeInputPreis[1].value = minValPreis + 1000;
+            }
+          } else {
+            
+            progressPreis.style.left = (minValPreis / rangeInputPreis[0].max) * 100 + "%";
+            progressPreis.style.right = 100 - (maxValPreis / rangeInputPreis[1].max) * 100 + "%";
+          }
+        })
+      })
+  }
+
   return (
-    <div className="bg-white py-6">
-      <div className="lg:px-6 md:!px-0">
-        <div className="w-10/12 lg:w-full max-w-ag-container mx-auto lg:pt-0">
-          <div className="pb-4 md:py-4 rounded-tr-10 rounded-tl-10 px-8 bg-theme-gray-4 pt-6 mt-7">
-            <button onClick={() => Router.back()} className="inline-flex">
-              <img
-                className="w-6 opacity-60"
-                src="/images/icons/back-button.png"
-              />
-              Zurück
-            </button>
-            <h2 className="text-3xl font-bold text-theme-gray-4">
-              Detailsuche
-            </h2>
+    <div className="bg-theme-gray-10 lg:px-6 md:!px-0">
+      {/* BRAND SELECTION */}
+      {brandSelectionOpen == true && <div className={classes.brandselectioncontainer}>
+        <div className={classes.brandselection}>
+          {brands.map((brand, index) => <div key={index} onClick={(e) => {
+            setSelectedBrand(brand)
+            console.log(brand)
+            setBrandSelectionOpen(false);
+          }}>
+            <input type={"radio"} name={"brand"} />
+            <span className={classes.brandspan}>{brand.label}</span>
+          </div>)}
+        </div>
+      </div>}
+      {/* BRAND SELECTION */}
+
+      {/* MODEL SELECTION */}
+      {modelSelectionOpen == true && <div className={classes.brandselectioncontainer}>
+        <div className={classes.brandselection}>
+          {models.map((model, index) => <div key={index} onClick={(e) => {
+            setSelectedModel(model)
+            console.log(model)
+            setModelSelectionOpen(false);
+          }}>
+            <input type={"radio"} name={"model"} />
+            <span className={classes.brandspan}>{model.label}</span>
+          </div>)}
+        </div>
+      </div>}
+      {/* MODEL SELECTION */}
+
+      {/* AUSTATTUNGEN */}
+      {openAusstattung == true && <div className={classes.ausstattungContainer} >
+            <Closex className={classes.closex} onClick={() => setOpenAusstattung(false)} />
+            <div className={classes.ausstattungencon}>
+            <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={achtFachBereift} onChange={() => setAchtFachBereift(d => !d)} className="mr-2" />
+            8-fach Bereift
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={klimaanlage} onChange={() => setKlimaanlage(d => !d)} className="mr-2" />
+            Klimaanlage
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"}checked={parkhilfesensorenHintenUndVorne} onChange={() => {
+                setParkhilfesensorenHintenUndVorne(d => !d)
+                }} className="mr-2" />
+            Parksensor vorne & hinten
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={ABS} onChange={() => {
+                setABS(d => !d)
+                }} className="mr-2" />
+            ABS
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={klimaautomatik} onChange={() => {
+                setKlimaautomatik(d => !d);
+                }} className="mr-2" />
+            Klimaautomatik
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={radio} onChange={() => {
+                setRadio(d => !d)
+                }} className="mr-2" />
+            Radio
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={abstandsTempomat} onChange={() => {
+                setAbstandsTempomat(d => !d)
+                }} className="mr-2" />
+            Abstandstempomat
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={kollisionsWarner} onChange={() => {
+                setKollisionsWarner(d => !d)
+                }} className="mr-2" />
+            Kollisionswarner
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={regensensor} onChange={() => {
+                setRegensensor(d => !d)
+                }} className="mr-2" />
+            Regensensor
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={alarmanlage} onChange={() => {
+                setAlarmanlage(d => !d)
+                }} className="mr-2" />
+            Alarmanlage
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={komfortFahrwerk} onChange={() => {
+                setKomfortFahrwerk(d => !d)
+                }} className="mr-2" />
+            Komfortfahrwerk
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={reifendruckkontrollsystem} onChange={() => {
+                setReifendruckkontrollsystem(d => !d)
+                }} className="mr-2" />
+            Reifendrucksensor
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={androidauto} onChange={() => {
+                setAndroidauto(d => !d)
+                }} className="mr-2" />
+            Android Auto
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={kopfairbag} onChange={() => {
+                setKopfairbag(d => !d)
+                }} className="mr-2" />
+            Kopfairbags
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={rueckfahrkamera} onChange={() => {
+                setRueckfahrkamera(d => !d)
+                }} className="mr-2" />
+            Rückfahrkamera
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={anhaengerkupplung} onChange={() => {
+                setAnhaengerkupplung(d => !d)
+                }} className="mr-2" />
+            Anhängerkupplung
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={kurvenlicht} onChange={() => {
+                setKurvenlicht(d => !d)
+                }} className="mr-2" />
+            Kurvenfahrlicht
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={schaltwippen} onChange={() => {
+                setSchaltwippen(d => !d)
+                }} className="mr-2" />
+            Schaltwippen
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={asr} onChange={() => {
+                setAsr(d => !d)
+                }} className="mr-2" />
+            Antriebsschlupfregelung(ASR)
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={laserlicht} onChange={() => {
+                setLaserlicht(d => !d)
+                }} className="mr-2" />
+            Laserlicht
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={schiebedach} onChange={() => {
+                setSchiebedach(d => !d)
+                }} className="mr-2" />
+            Schiebedach
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={applecarplay} onChange={() => {
+                setApplecarplay(d => !d)
+                }} className="mr-2" />
+            Apple CarPlay
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={leasingfaehigkeit} onChange={() => {
+                setLeasingfaehigkeit(d => !d)
+                }} className="mr-2" />
+            Leasingfähigkeit
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={schisack} onChange={() => {
+                setSchisack(d => !d)
+                }} className="mr-2" />
+            Schisack
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={automatischeHeckklappe} onChange={() => {
+                setAutomatischeHeckklappe(d => !d)
+                }} className="mr-2" />
+            Aut. Heckklappe
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={ledscheinwerfer} onChange={() => {
+                setLedscheinwerfer(d => !d)
+                }} className="mr-2" />
+            LED-Scheinwerfer
+        </label> 
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={seitenairbag} onChange={() => {
+                setSeitenairbag(d => !d)
+                }} className="mr-2" />
+            Seitenairbags
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={behindertenGerecht} onChange={() => {
+                setBehindertenGerecht(d => !d)
+                }} className="mr-2" />
+            Behindertengerecht
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={lederausstattung} onChange={() => {
+                setLederausstattung(d => !d)
+                }} className="mr-2" />
+            Lederausstattung
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={serviceGepflegt} onChange={() => {
+                setServiceGepflegt(d => !d)
+                }} className="mr-2" />
+            Servicegepflegt
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={beifahrerairbag} onChange={() => {
+                setBeifahrerairbag(d => !d)
+                }} className="mr-2" />
+            Beifahrerairbags
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={lederlenkrad} onChange={() => {
+                setLederlenkrad(d => !d)
+                }} className="mr-2" />
+            Lederlenkrad
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={servolenkung} onChange={() => {
+                setServolenkung(d => !d)
+                }} className="mr-2" />
+            Servolenkung
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={bluethoot} onChange={() => {
+                setBluethoot(d => !d)
+                }} className="mr-2" />
+            Bluethoot / USB
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={alufelgen} onChange={() => {
+                setAlufelgen(d => !d)
+                }} className="mr-2" />
+            Leichtmetall-/Alufelgen
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={sitzheizung} onChange={() => {
+                setSitzheizung(d => !d)
+                }} className="mr-2" />
+            Sitzheizung
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={bordcomputer} onChange={() => {
+                setBordcomputer(d => !d)
+                }} className="mr-2" />
+            Bordcomputer
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={lenkradheizung} onChange={() => {
+                setLenkradheizung(d => !d)
+                }} className="mr-2" />
+            Lenkradheizung
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={sperrdifferential} onChange={() => {
+                setSperrdifferential(d => !d)
+                }} className="mr-2" />
+            Sperrdifferential
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={cd} onChange={() => {
+                setCd(d => !d)
+                }} className="mr-2" />
+            CD Player
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={lichtsensor} onChange={() => {
+                setLichtsensor(d => !d)
+                }} className="mr-2" />
+            Lichtsensor
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={sportfahrwerk} onChange={() => {
+                setSportfahrwerk(d => !d)
+                }} className="mr-2" />
+            Sportfahrwerk
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={dachgepaecktraeger} onChange={() => {
+                setDachgepaecktraeger(d => !d)
+                }} className="mr-2" />
+            Dachgepäckträger
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={lordosenstuetze} onChange={() => {
+                setLordoesenstuetze(d => !d)
+                }} className="mr-2" />
+            Lordosenstütze
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={sportpaket} onChange={() => {
+                setSportpaket(d => !d)
+                }} className="mr-2" />
+            Sportpaket
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={dachreling} onChange={() => {
+                setDachreling(d => !d)
+                }} className="mr-2" />
+            Dachreling
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={mp3} onChange={() => {
+                setMp3(d => !d)
+                }} className="mr-2" />
+            Media-Interface / mp3
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={sportsitze} onChange={() => {
+                setSportsitze(d => !d)
+                }} className="mr-2" />
+            Sportsitze
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={einparkhilfe} onChange={() => {
+                setEinparkhilfe(d => !d)
+                }} className="mr-2" />
+            Einparkhilfe
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={metallicLackierung} onChange={() => {
+                setMetalliclackierung(d => !d)
+                }} className="mr-2" />
+            Metallic-Lackierung
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={spurhalteassistent} onChange={() => {
+                setSpurhalteassistent(d => !d)
+                }} className="mr-2" />
+            Spurhalteassistent
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={elektrfensterheber} onChange={() => {
+                setElektrfensterheber(d => !d)
+                }} className="mr-2" />
+            elektr. Fensterheber
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={mittelarmlehne} onChange={() => {
+                setMittelarmlehne(d => !d)
+                }} className="mr-2" />
+            Mittelarmlehne
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={stabilitaetsprogramme} onChange={() => {
+                setStabilitaetsprogramme(d => !d)
+                }} className="mr-2" />
+            Stabilitätsprogramme
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={elektrsitze} onChange={() => {
+                setElektrsitze(d => !d)
+                }} className="mr-2" />
+            elektr. Sitze
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={multifunktionslenkrad} onChange={() => {
+                setMultifunktionslenkrad(d => !d)
+                }} className="mr-2" />
+            Multifunktionslenkrad
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={standheizung} onChange={() => {
+                setStandheizung(d => !d)
+                }} className="mr-2" />
+            Standheizung
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={elektrseitenspiegel} onChange={() => {
+                setElektrseitenspiegel(d => !d)
+                }} className="mr-2" />
+            elektr. Spiegel
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={mwstAusweisbar} onChange={() => {
+                setMwstAusweisbar(d => !d)
+                }} className="mr-2" />
+            MwSt. ausweisbar
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={startstopauto} onChange={() => {
+                setStartstopauto(d => !d)
+                }} className="mr-2" />
+            Start/Stopp-Automatik
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={fahrerairbag} onChange={() => {
+                setFahrerairbag(d => !d)
+                }} className="mr-2" />
+            Fahrerairbag
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={navigationssystem} onChange={() => {
+                setNavigationssystem(d => !d)
+                }} className="mr-2" />
+            Navigationssystem
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={tagfahrlicht} onChange={() => {
+                setTagfahrlicht(d => !d)
+                }} className="mr-2" />
+            Tagfahrlicht
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={fernlichassistent} onChange={() => {
+                setFernlichassistent(d => !d)
+                }} className="mr-2" />
+            Fernlichtassistent
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={nebelscheinwerfer} onChange={() => {
+                setNebelscheinwerfer(d => !d)
+                }} className="mr-2" />
+            Nebelscheinwerfer
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={teilAutonomesFahren} onChange={() => {
+                setTeilAutonomesFahren(d => !d)
+                }} className="mr-2" />
+            Teilautonomes Fahren
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={freisprecheinrichtung} onChange={() => {
+                setFreisprecheinrichtung(d => !d)
+                }} className="mr-2" />
+            Freisprecheinrichtung
+        </label>
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={nichtraucherfahrzeug} onChange={() => {
+                setNichtraucherFahrzeug(d => !d)
+                }} className="mr-2" />
+            Nichtraucherfahrzeug
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={tempomat} onChange={() => {
+                setTempomat(d => !d)
+                }} className="mr-2" />
+            Tempomat
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={beheizbareFrontscheibe} onChange={() => {
+                setBeheizbareFrontscheibe(d => !d)
+                }} className="mr-2" />
+            Frontscheibenheizung
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={notbremsassistent} onChange={() => {
+                setNotbremsassistent(d => !d)
+                }} className="mr-2" />
+            Notbremsassistent
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={totwinkelAssistent} onChange={() => {
+                setTotwinkelAssitent(d => !d)
+                }} className="mr-2" />
+            Totwinkelassistent
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={induktionsladen} onChange={() => {
+                setInduktionsladen(d => !d)
+                }} className="mr-2" />
+            Handy induktiv laden
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={notrufsystem} onChange={() => {
+                setNotrufsystem(d => !d)
+                }} className="mr-2" />
+            Notrufsystem
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={winterpaket} onChange={() => {
+                setWinterpaket(d => !d)
+                }} className="mr-2" />
+            Winterpaket
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={headupDisplay} onChange={() => {
+                setHeadupDisplay(d => !d)
+                }} className="mr-2" />
+            Head-Up-Display
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={panoramadach} onChange={() => {
+                setPanoramadach(d => !d)
+                }} className="mr-2" />
+            Panoramadach
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={xenonscheinwerfer} onChange={() => {
+                setXenonscheinwerfer(d => !d)
+                }} className="mr-2" />
+            Xenon
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={isofix} onChange={() => {
+                setIsofix(d => !d)
+                }} className="mr-2" />
+            ISOFIX
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={einparkhilfeSensorenHinten} onChange={() => {
+                setEinparkhilfeSensorenHinten(d => !d)
+                }} className="mr-2" />
+            Parksensor hinten
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={zentralverriegelung} onChange={() => {
+                setZentralverriegelung(d => !d)
+                }} className="mr-2" />
+        Zentralverriegelung
+        </label>  
+        <label className={classes.checkboxname}>
+            <input type={"checkbox"} checked={schluessellose} onChange={() => {
+                setSchluessellose(d => !d)
+                }} className="mr-2" />
+        Keyless entry
+        </label>
+            </div>
+        </div>}
+      {/* AUSTATTUNGEN */}
+      <div className={`w-10/12 lg:w-full max-w-ag-container mx-auto flex md:flex-col-reverse ${classes.contentcontainer} ${easybtnOpen == true && classes.contentpadding}`}>
+        <div className={`${classes.top_row} ${easybtnOpen == false && classes.contentpadding}`}>
+          <span className={classes.leftrow}><BackHome className={classes.backhome} /> ../Detailsuche</span>
+          <div className={classes.rightrow}>
+            <div className={`${classes.easybtn} ${easybtnOpen == true && classes.easybtnopen}`} onClick={() => setEasybtnOpen(true)} >Einfache Suche</div>
+            <div className={`${classes.delallfilter} ${easybtnOpen == true && classes.delallfilterclose}`} onClick={() => setEasybtnOpen(false)} >Erweiterte Suche</div>
           </div>
         </div>
-        <div className="w-10/12 lg:w-full max-w-ag-container mx-auto lg:px-6 lg:pt-0 px-8 bg-theme-gray-4 rounded-bl-10 rounded-br-10">
-        <div className="text-base border-b-2 pt-6">
-      <button
-        onClick={() => setExpanded(!expanded)}
-        className="w-full inline-flex items-center justify-between font-bold md:pt-6 text-theme-gray-4"
-      >
-        Basisdaten &amp; Standort
-        <img
-          src="/images/icons/expand-arrow.png"
-          className={`w-8 opacity-50 ${expanded ? "rotate-0" : "rotate-180"}`}
-        />
-      </button>
-      <div
-        className={`${expanded ? "h-auto pb-4" : "h-0"} overflow-hidden pt-4`}
-      >
-        {modelItems
-          ? modelItems.map((item, i) => (
-            <ModelItem
-              key={i}
-              id={i}
-              brandName={item.brandName}
-              modelName={item.modelName}
-              varient={item.varient}
-              deleteHandler={() => deleteHandler(i)}
+        {easybtnOpen == false ? 
+        <>
+        <div className={`${classes.section} ${markeOpen == false && classes.closedsection}`} onClick={() => setMarkeOpen(d => !d)}>
+          <div className={classes.sectionheading}>Marke & Modell</div>
+          <div className={classes.expandrow}><Expand className={`${classes.unrotated} ${markeOpen == true && classes.rotated}`} /></div>
+        </div> 
+        {markeOpen == true && <div className={classes.basiscontainer}>
+          {modals.length != 0 && <div className={classes.modalsection}>
+            {modals.map((modal, index) => <div className={`${classes.modalcontainer} ${index == modals.length - 1 && classes.lastmodalel}`}>
+              <div className={classes.modalinfo}>
+                <span className={classes.modalbrand}>{modal.brandName}</span>
+                <span className={classes.modalmodel}>{modal.modelName}</span>
+                <span className={classes.modalvariant}>{modal.variant}</span>
+              </div>
+              <div className={classes.delete} onClick={() => reduceModals(index)} ><Bin className={classes.bin} /></div>
+            </div>)
+          } 
+          </div>}
+          <div className={classes.admodelinputrow}>
+            <div className={classes.brandinputcontainer} onClick={() => setBrandSelectionOpen(d => !d)}>
+              <span>{selectedBrand.label}</span>
+              <Add className={classes.admodelsvg} />
+            </div>
+            <div className={classes.brandinputcontainer} onClick={() => setModelSelectionOpen(d => !d)}>
+              <span>{selectedModel.label}</span>
+              <Add className={classes.admodelsvg} />
+            </div>
+            <input type={"text"} value={variante} onChange={(e) => setVariante(e.target.value)} className={classes.variantinput} placeholder={"Variante / z.B Avantgarde, TDI,.."} />
+          </div>
+          <div className={classes.addmorecontainer} onClick={() => addModal()}>
+            <Add className={classes.addmore} />
+            <span className={classes.addmoretext}>Weitere Marken/Modelle hinzufügen</span>
+          </div>
+
+          <div className={classes.karocontainer}>
+            <Select 
+              options={bodyTypes}
+              styles={style}
+              onChange={(e) => setSelectedBodyType(e.value)}
+              placeholder={"Karosserieform"}
             />
-          ))
-          : null}
-        {/* Basisdaten & Standort */}
-        <div className="flex items-end md:flex-col justify-between">
-          <div className="w-300 lg:w-200 md:!w-full md:mb-4">
-            <p className="mb-1">Marke</p>
-            <InputSelect
-              options={marke1}
-              placeholder={marke1[0].label}
-              onChange={(e) => {
-                setBrandSelected(true);
-                if(e.value == "alle"){
-                  setBrandSelected(false);
+          </div>
+        </div>}
+
+        <div className={`${classes.section} ${basisdatenOpen == false && classes.closedsection}`} onClick={() => setBasisdatenOpen(d => !d)}>
+          <div className={classes.sectionheading}>Basisdaten</div>
+          <div className={classes.expandrow}><Expand className={`${classes.unrotated} ${basisdatenOpen == true && classes.rotated}`} /></div>
+        </div> 
+        {basisdatenOpen == true && <div className={classes.basiscontainer}>
+          <label className={classes.label}>Erstzulassung</label>
+          <div className={classes.vonbiscontainer}>
+            <Select
+              options={erstzulassungen}
+              styles={style}
+              placeholder={"Von"}
+              onChange={(e) => setErstzulassungVon(e.value)}
+              className={`${classes.select} mr-4`}
+              isSearchable
+              isMulti
+            />
+            <Select
+              options={erstzulassungen}
+              styles={style}
+              placeholder={"Bis"}
+              onChange={(e) => setErstzulassungVon(e.value)}
+              className={classes.select}
+              isSearchable
+            />
+          </div>
+          <label className={classes.label}>Preis</label>
+          <div className={classes.vonbiscontainer}>
+            <Select
+              options={preise}
+              styles={style}
+              placeholder={"Von"}
+              onChange={(e) => setPreisVon(e.value)}
+              className={`${classes.select} mr-4`}
+            />
+            <Select
+              options={preise}
+              styles={style}
+              placeholder={"Bis"}
+              onChange={(e) => setPreisBis(e.value)}
+              className={classes.select}
+            />
+          </div>
+          <label className={classes.label}>Kilometerstand</label>
+          <div className={classes.lastvonbiscontainer}>
+            <Select
+              options={preise}
+              styles={style}
+              placeholder={"Von"}
+              onChange={(e) => setKilometerstandVon(e.value)}
+              className={`${classes.select} mr-4`}
+            />
+            <Select
+              options={preise}
+              styles={style}
+              placeholder={"Bis"}
+              onChange={(e) => setKilometerstandBis(e.value)}
+              className={classes.select}
+            />
+          </div>
+        </div>}
+
+        <div className={`${classes.section} ${typOpen == false && classes.closedsection}`} onClick={() => setTypOpen(d => !d)}>
+          <div className={classes.sectionheading}>Typ & Zustand</div>
+          <div className={classes.expandrow}><Expand className={`${classes.unrotated} ${typOpen == true && classes.rotated}`} /></div>
+        </div> 
+        {typOpen == true && <div className={classes.basiscontainer}>
+            <label className={classes.label}>Fahrzeugtyp</label>
+            <div className={classes.fahrzeugtypgrid}>
+              <div className={classes.checkinput} onClick={() => {
+                    setCabrio(d => !d);
+                }}>
+                <span >
+                    {cabrio == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+                </span>
+                <span className={classes.typlabel}>Cabrio / Roadster</span>
+              </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setKleinwagen(d => !d);
+              }}>
+              <span >
+                  {kleinwagen == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Klein-/ Kompaktwagen</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setKleinbus(d => !d);
+              }}>
+              <span >
+                  {kleinbus == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Kleinbus</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setKombi(d => !d);
+              }}>
+              <span >
+                  {kombi == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Kombi / Family Van</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setLimousine(d => !d);
+              }}>
+              <span >
+                  {limousine == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Limousine</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setMopedauto(d => !d);
+              }}>
+              <span >
+                  {mopedauto == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Mopedauto</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setSportwagen(d => !d);
+              }}>
+              <span >
+                  {sportwagen == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Sportwagen / Coupé</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setSuv(d => !d);
+              }}>
+              <span >
+                  {suv == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>SUV / Geländewagen</span>
+            </div>
+            </div>
+            
+            <label className={classes.label}>Zustand</label>
+            <div className={classes.fahrzeugtypgrid}>
+              <div className={classes.checkinput} onClick={() => {
+                    setGebrauchtwagen(d => !d);
+                }}>
+                <span >
+                    {gebrauchtwagen == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+                </span>
+                <span className={classes.typlabel}>Gebrauchtwagen</span>
+              </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setJahreswagen(d => !d);
+              }}>
+              <span >
+                  {jahreswagen == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Jahreswagen</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setNeuwagen(d => !d);
+              }}>
+              <span >
+                  {neuwagen == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Neuwagen</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setOldtimer(d => !d);
+              }}>
+              <span >
+                  {oldtimer == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Oldtimer</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setTageszulassung(d => !d);
+              }}>
+              <span >
+                  {tageszulassung == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Tageszulassung</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setUnfallwagen(d => !d);
+              }}>
+              <span >
+                  {unfallwagen == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Unfallwagen</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setVorfuehrwagen(d => !d);
+              }}>
+              <span >
+                  {vorfuehrwagen == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Vorführwagen</span>
+            </div>
+            
+            </div>
+
+            <label className={classes.label}>Garantie</label>
+            <div className={classes.fahrzeugtypgrid}>   
+                <div className={classes.checkinput} onClick={() => {
+                      setJa(d => !d);
+                  }}>
+                  <span >
+                      {ja == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+                  </span>
+                  <span className={classes.typlabel}>Ja</span>
+                </div>
+                <div className={classes.checkinput} onClick={() => {
+                      setScheckhaftgepflegt(d => !d);
+                  }}>
+                  <span >
+                      {scheckhaftgepflegt == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+                  </span>
+                  <span className={classes.typlabel}>Scheckhaftgepflegt</span>
+                </div>
+                <div className={classes.checkinput} onClick={() => {
+                      setHerstellerzertifizierung(d => !d);
+                  }}>
+                  <span >
+                      {herstellerzertifizerung == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+                  </span>
+                  <span className={classes.typlabel}>Herstellerzertifizierung<br></br><span className={classes.sublabel}>(Technisch geprüfte Fahrzeuge mit Garantie)</span></span>
+                </div>
+            </div>
+
+            <label className={classes.label}>Fahrzeughalter (max.)</label>
+            <div className={classes.lastfahrzeugtypgrid}>   
+                <div className={classes.fahrzeughalter}>
+                  <Select
+                    options={fahrzeughalterArr}
+                    styles={style}
+                    placeholder={"Alle"}
+                    onChange={(e) => setFahrzeughalter(e.value)}
+                  />
+                </div>
+                <div className={classes.checkinput} onClick={() => {
+                      setNichtraucherFahrzeug(d => !d);
+                  }}>
+                  <span >
+                      {nichtraucherfahrzeug == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+                  </span>
+                  <span className={classes.typlabel}>Nichtraucherfahrzeug</span>
+                </div>
+            </div>
+        </div>}
+      
+        <div className={`${classes.section} ${motorOpen == false && classes.closedsection}`} onClick={() => setMotorOpen(d => !d)}>
+          <div className={classes.sectionheading}>Motor</div>
+          <div className={classes.expandrow}><Expand className={`${classes.unrotated} ${motorOpen == true && classes.rotated}`} /></div>
+        </div> 
+        {motorOpen == true && <div className={classes.basiscontainer}>
+          <label className={classes.label}>Leistung</label>
+          <div className={classes.leistungrow}>
+            <Select 
+              options={leistungArr}
+              styles={style}
+              placeholder={"Von"}
+              onChange={(e) => setLeistungVon(e.value)}
+              className={`${classes.select} mr-4`}
+            />
+            <Select 
+              options={leistungArr}
+              styles={style}
+              placeholder={"Bis"}
+              onChange={(e) => setLeistungBis(e.value)}
+              className={classes.select}
+            />
+          </div>
+          <div className={classes.psrow}>
+          <div className={`${classes.checkinput} mr-4`} onClick={() => {
+              setSelectPs(d => !d);
+            }}>
+            <span >
+                {selectPs == false ? <span className={classes.checker}><UncheckedRadio className={classes.checker}/></span> : <span className={classes.checker}><CheckedRadio className={classes.checker} /></span> }
+            </span>
+            <span className={classes.typlabel}>PS</span>
+          </div>
+
+          <div className={classes.checkinput} onClick={() => {
+              setSelectPs(d => !d);
+            }}>
+            <span >
+                {selectPs == true ? <span className={classes.checker}><UncheckedRadio className={classes.checker}/></span> : <span className={classes.checker}><CheckedRadio className={classes.checker} /></span> }
+            </span>
+            <span className={classes.typlabel}>kW</span>
+          </div>
+          </div>
+          <label className={classes.label}>Treibstoff</label>
+          <div className={classes.fahrzeugtypgrid}>
+              <div className={classes.checkinput} onClick={() => {
+                    setBenzin(d => !d);
+                }}>
+                <span >
+                    {benzin == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+                </span>
+                <span className={classes.typlabel}>Benzin</span>
+              </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setDiesel(d => !d);
+              }}>
+              <span >
+                  {diesel == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Diesel</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setElektro(d => !d);
+              }}>
+              <span >
+                  {elektro == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Elektro</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setGas(d => !d);
+              }}>
+              <span >
+                  {gas == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Gas</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setHybridBenzin(d => !d);
+              }}>
+              <span >
+                  {hybridBenzin == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Hybrid Elektro/Benzin</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setHybridDiesel(d => !d);
+              }}>
+              <span >
+                  {diesel == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Hybrid Elektro/Diesel</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setWasserstoff(d => !d);
+              }}>
+              <span >
+                  {wasserstoff == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Wasserstoff</span>
+            </div>
+            </div>
+          <label className={classes.label}>Getriebeart</label>
+          <div className={classes.fahrzeugtypgrid}>
+              <div className={classes.checkinput} onClick={() => {
+                    setAutomatik(d => !d);
+                }}>
+                <span >
+                    {automatik == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+                </span>
+                <span className={classes.typlabel}>Automatik</span>
+              </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setSchaltgetriebe(d => !d);
+              }}>
+              <span >
+                  {schaltgetriebe == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Schaltgetriebe</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setNeuwagen(d => !d);
+              }}>
+              <span >
+                  {neuwagen == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Neuwagen</span>
+            </div>
+            </div>
+          <label className={classes.label}>Antrieb</label>
+          <div className={classes.lastfahrzeugtypgrid}>
+              <div className={classes.checkinput} onClick={() => {
+                    setAllrad(d => !d);
+                }}>
+                <span >
+                    {allrad == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+                </span>
+                <span className={classes.typlabel}>Allrad</span>
+              </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setVorderrad(d => !d);
+              }}>
+              <span >
+                  {vorderrad == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Vorderrad</span>
+            </div>
+            <div className={classes.checkinput} onClick={() => {
+                  setHinterrad(d => !d);
+              }}>
+              <span >
+                  {hinterrad == false ? <span className={classes.checker}><Unchecked className={classes.checker}/></span> : <span className={classes.checker}><Checked className={classes.checker} /></span> }
+              </span>
+              <span className={classes.typlabel}>Hinterrad</span>
+            </div>
+            </div>
+        </div>}
+      
+        <div className={`${classes.section} ${ausstattungOpen == false && classes.closedsection}`} onClick={() => setAusstattungOpen(d => !d)}>
+          <div className={classes.sectionheading}>Ausstattung</div>
+          <div className={classes.expandrow}><Expand className={`${classes.unrotated} ${ausstattungOpen == true && classes.rotated}`} /></div>
+        </div> 
+        {ausstattungOpen == true && <div className={classes.basiscontainer}>
+            <div className={classes.bb}>
+              <div className={classes.ausstattung} onClick={() => setOpenAusstattung(d => !d)}>
+                <span>Ausstattung</span>
+                <Add className={classes.add} />
+              </div> 
+            </div>
+            <label className={classes.label}>Außenfarbe</label>
+            <div className={classes.colorsgrid}>
+              <div className='flex items-center'>
+                <div className={classes.beige} onClick={() => setAussenfarbeBeige(d => !d)}>
+                  {aussenfarbeBeige == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Beige</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.blau} onClick={() => setAussenfarbeBlau(d => !d)}>
+                  {aussenfarbeBlau == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Blau</span>
+              </div>
+
+              <div className='flex items-center'>
+                <div className={classes.schwarz} onClick={() => setAussenfarbeSchwarz(d => !d)}>
+                  {aussenfarbeSchwarz == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Schwarz</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.gruen} onClick={() => setAussenfarbeGruen(d => !d)}>
+                  {aussenfarbeGruen == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Grün</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.orange} onClick={() => setAussenfarbeOrange(d => !d)}>
+                  {aussenfarbeOrange == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Orange</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.rot} onClick={() => setAussenfarbeRot(d => !d)}>
+                  {aussenfarbeRot == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Rot</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.gold} onClick={() => setAussenfarbeGold(d => !d)}>
+                  {aussenfarbeGold == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Gold</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.braun} onClick={() => setAussenfarbeBraun(d => !d)}>
+                  {aussenfarbeBraun == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Braun</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.silber} onClick={() => setAussenfarbeSilber(d => !d)}>
+                  {aussenfarbeSilber == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Silber</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.gelb} onClick={() => setAussenfarbeGelb(d => !d)}>
+                  {aussenfarbeGelb == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Gelb</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.bronze} onClick={() => setAussenfarbeBronze(d => !d)}>
+                  {aussenfarbeBronze == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Bronze</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.violett} onClick={() => setAussenfarbeViolett(d => !d)}>
+                  {aussenfarbeViolett == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Violett</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.grau} onClick={() => setAussenfarbeGrau(d => !d)}>
+                  {aussenfarbeGrau == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Grau</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.weiss} onClick={() => setAussenfarbeWeiss(d => !d)}>
+                  {aussenfarbeWeiss == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Weiß</span>
+              </div>
+              {/* <span className={classes.blau}></span>
+              <span className={classes.schwarz}></span>
+              <span className={classes.gruen}></span>
+              <span className={classes.orange}></span>
+              <span className={classes.rot}></span>
+              <span className={classes.gold}></span>
+              <span className={classes.braun}></span>
+              <span className={classes.silber}></span>
+              <span className={classes.gelb}></span>
+              <span className={classes.bronze}></span>
+              <span className={classes.violett}></span>
+              <span className={classes.grau}></span>
+              <span className={classes.weiss}></span> */}
+            </div>
+            <label className={classes.label}>Lackierungsart</label>
+            <div className={`flex items-center mt-2 ${classes.bb}`}>
+                <div className={classes.weiss} onClick={() => setMetallic(d => !d)}>
+                  {metallic == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Metallic</span>
+            </div>
+            <label className={classes.label}>Polsterfarbe</label>
+            <div className={classes.colorsgrid}>
+              <div className='flex items-center'>
+                <div className={classes.beige} onClick={() => setPolsterfarbeBeige(d => !d)}>
+                  {polsterfarbeBeige == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Beige</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.blau} onClick={() => setPolsterfarbeBlau(d => !d)}>
+                  {polsterfarbeBlau == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Blau</span>
+              </div>
+
+              <div className='flex items-center'>
+                <div className={classes.schwarz} onClick={() => setPolsterfarbeSchwarz(d => !d)}>
+                  {polsterfarbeSchwarz == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Schwarz</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.gruen} onClick={() => setPolsterfarbeGruen(d => !d)}>
+                  {polsterfarbeGruen == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Grün</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.orange} onClick={() => setPolsterfarbeOrange(d => !d)}>
+                  {polsterfarbeOrange == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Orange</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.rot} onClick={() => setPolsterfarbeRot(d => !d)}>
+                  {polsterfarbeRot == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Rot</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.weiss} onClick={() => setPolsterfarbeWeiss(d => !d)}>
+                  {polsterfarbeWeiss == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Weiss</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.braun} onClick={() => setPolsterfarbeBraun(d => !d)}>
+                  {polsterfarbeBraun == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Braun</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.silber} onClick={() => setPolsterfarbeGrau(d => !d)}>
+                  {polsterfarbeGrau == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Grau</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.gelb} onClick={() => setPolsterfarbeGelb(d => !d)}>
+                  {polsterfarbeGelb == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Gelb</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.bronze} onClick={() => setPolsterfarbeBraun(d => !d)}>
+                  {polsterfarbeBraun == true && <Check className={classes.whitecheck} />}
+                </div>
+                <span className={classes.typlabel}>Bronze</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.weiss} onClick={() => setPolsterfarbeSonstiges(d => !d)}>
+                  {polsterfarbeSonstiges == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Sonstiges</span>
+              </div>
+            </div>
+            <label className={classes.label}>Material</label>
+            <div className={classes.colorsgrid}>
+              <div className='flex items-center'>
+                <div className={classes.weiss} onClick={() => setAlcantara(d => !d)}>
+                  {alcantara == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Alcantara</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.weiss} onClick={() => setStoff(d => !d)}>
+                  {stoff == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Stoff</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.weiss} onClick={() => setVollleder(d => !d)}>
+                  {vollleder == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Vollleder</span>
+              </div>
+
+              <div className='flex items-center'>
+                <div className={classes.weiss} onClick={() => setTeilleder(d => !d)}>
+                  {teilleder == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Teilleder</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.weiss} onClick={() => setVelours(d => !d)}>
+                  {velours == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Velours</span>
+              </div>
+              <div className='flex items-center'>
+                <div className={classes.weiss} onClick={() => setSonstiges(d => !d)}>
+                  {sonstiges == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Sonstiges</span>
+              </div>
+            </div>
+            <label className={classes.label}>Anzahl der Türen</label>
+            <div className={classes.leistungrow}>
+            <Select 
+              options={fahrzeughalterArr}
+              styles={style}
+              placeholder={"Von"}
+              onChange={(e) => setTuereVon(e.value)}
+              className={`${classes.select} mr-4`}
+            />
+            <Select 
+              options={fahrzeughalterArr}
+              styles={style}
+              placeholder={"Bis"}
+              onChange={(e) => setTuereBis(e.value)}
+              className={classes.select}
+            />
+          </div>
+            <label className={classes.label}>Anzahl der Sitze</label>
+            <div className={classes.leistungrow}>
+            <Select 
+              options={fahrzeughalterArr}
+              styles={style}
+              placeholder={"Von"}
+              onChange={(e) => setSitzeVon(e.value)}
+              className={`${classes.select} mr-4`}
+            />
+            <Select 
+              options={fahrzeughalterArr}
+              styles={style}
+              placeholder={"Bis"}
+              onChange={(e) => setSitzeBis(e.value)}
+              className={classes.select}
+            />
+          </div>
+        </div>}
+      
+        <div className={`${classes.section} ${standortOpen == false && classes.closedsection}`} onClick={() => setStandortOpen(d => !d)}>
+          <div className={classes.sectionheading}>Standort & Sonstiges</div>
+          <div className={classes.expandrow}><Expand className={`${classes.unrotated} ${standortOpen == true && classes.rotated}`} /></div>
+        </div> 
+        {standortOpen == true && <div className={classes.basiscontainer}>
+          <label className={classes.label}>Suche in Region</label> 
+          <div className={classes.regionrow}>
+            <Select 
+              options={laender}
+              styles={style}
+              placeholder="Land"
+              onChange={(e) => setSelectedLand(e.value)}
+              className={`${classes.select} mr-4`}
+            />
+            <Select 
+              options={bundeslaender}
+              styles={style}
+              placeholder="Bundesland/Bezirk"
+              onChange={(e) => setSelectedLand(e.value)}
+              className={`${classes.select} mr-4`}
+            />
+            <Select 
+              options={umkreis}
+              styles={style}
+              placeholder="Umkreis"
+              onChange={(e) => setSelectedUmkreis(e.value)}
+              className={`${classes.select}`}
+            />
+          </div> 
+          <label className={classes.label}>Inserent</label> 
+          <div className={classes.colorsgrid}>
+            <div className='flex items-center'>
+              <div className={classes.weiss} onClick={() => {
+                setInserentAlle(d => !d);
+                if(inserentAlle == false){
+                  setInserentHaendler(true)
+                  setInserentPrivat(true)
                 }
-                setBrandName(e);
-              }}
-              name={"Marke"}
-              value={brandName || marke1[0].label}
-              regYear
+                if(inserentAlle == true){
+                  setInserentHaendler(false)
+                  setInserentPrivat(false)
+                }
+              }}>
+                {inserentAlle == true && <Check className={classes.blackcheck} />}
+              </div>
+              <span className={classes.typlabel}>Alle</span>
+            </div>
+            <div className='flex items-center'>
+              <div className={classes.weiss} onClick={() => setInserentHaendler(d => !d)}>
+                {inserentHaendler == true && <Check className={classes.blackcheck} />}
+              </div>
+              <span className={classes.typlabel}>Händler</span>
+            </div>
+            <div className='flex items-center'>
+              <div className={classes.weiss} onClick={() => setInserentPrivat(d => !d)}>
+                {inserentPrivat == true && <Check className={classes.blackcheck} />}
+              </div>
+              <span className={classes.typlabel}>Privat</span>
+            </div>
+          </div>
+          <label className={classes.label}>Umwelt</label>
+          <div className={classes.fahrzeugtypgrid}>
+            <Select 
+              options={schadstoffklassen}
+              styles={style}
+              placeholder={"Schadstoffklasse (mind.)"}
+              onChange={(e) => setSelectedSchadstoffklasse(e.value)}
+              isSearchable
             />
-          </div>
-          {/* <div className="w-8"></div> */}
-          <div className="w-300 lg:w-200 md:!w-full md:mb-4">
-            <p className="mb-1">Modell</p>
-            <InputSelect
-              options={marke2}
-              placeholder={marke1[0].label}
-              onChange={(e) => {
-                setModelName(e)
-              }}
-              value={modelName || marke1[0].label}
-              name={"Modell"}
-              disabled={!brandSelected}
-              regYear
+            <Select 
+              options={feinstaubplaketten}
+              styles={style}
+              placeholder={"Feinstaubplakette (mind.)"}
+              onChange={(e) => setSelectedSchadstoffklasse(e.value)}
+              isSearchable
             />
-          </div>
-          {/* <div className="w-8"></div> */}
-          <div className="md:w-full flex items-end justify-between md:flex-col">
-            <div className="mr-4 md:mr-0 md:w-full">
-              <p className="mb-1">Variante</p>
-              <Input
-                placeholder={marke1[0].label}
-                onChange={(e) => setVarient(e.target.value)}
-                value={varient}
-              />
+            <div className='flex items-center'>
+              <div className={classes.weiss} onClick={() => setRusspartikelfilter(d => !d)}>
+                {russpartikelfilter == true && <Check className={classes.blackcheck} />}
+              </div>
+              <span className={classes.typlabel}>Rußpartikelfilter</span>
             </div>
-            {/* <div className="w-8"></div> */}
-            <button className="w-1/2 sm:w-full mb-6 sm:mb-4 sm:mr-0 md:mx-auto inline-block px-4 py-3 sm:px-4 lg:text-sm rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3">
-              Alle Filter entfernen
-            </button>
           </div>
-        </div>
-        {/* Add more brands/models */}
+          <label className={classes.label}>Suchzeitraum</label>
+          <div className={classes.lastfahrzeugtypgrid}>
+            <Select 
+              options={suchzeitraum}
+              styles={style}
+              placeholder={"Alle"}
+              onChange={(e) => setSelectedSuchzeitraum(e.value)}
+              isSearchable
+            />
+            <div className='flex items-center' onClick={() => setZweitage(d => !d)}>
+              <div className={classes.weiss} >
+                {zweitage == true && <Check className={classes.blackcheck} />}
+              </div>
+              <span className={classes.suchlabel}>nur Anzeigen<br></br>der letzten 48 Stunden</span>
+            </div>
 
-        <button
-          onClick={addModel}
-          className={`text-theme-gray-4 font-bold py-8 text-base flex items-center`}
-        >
-          <svg className="mr-2" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
-            <path id="add_circle" d="M15.656,22.75h1.875V17.563H22.75V15.688H17.531V10.25H15.656v5.438H10.25v1.875h5.406ZM16.5,29a12.678,12.678,0,0,1-4.937-.953,12.1,12.1,0,0,1-6.609-6.609A12.678,12.678,0,0,1,4,16.5a12.6,12.6,0,0,1,.953-4.906A12.2,12.2,0,0,1,7.594,7.625,12.462,12.462,0,0,1,16.5,4,12.4,12.4,0,0,1,29,16.5a12.462,12.462,0,0,1-3.625,8.906,12.2,12.2,0,0,1-3.969,2.641A12.6,12.6,0,0,1,16.5,29Zm0-12.5Zm0,10.625A10.229,10.229,0,0,0,24,24a10.229,10.229,0,0,0,3.125-7.5A10.229,10.229,0,0,0,24,9a10.229,10.229,0,0,0-7.5-3.125A10.229,10.229,0,0,0,9,9a10.229,10.229,0,0,0-3.125,7.5A10.229,10.229,0,0,0,9,24,10.229,10.229,0,0,0,16.5,27.125Z" transform="translate(-4 -4)" fill="#6c757d" />
-          </svg>
+            <div className='flex items-center' onClick={() => setMwstAusweisbarSuche(d => !d)}>
+              <div className={classes.weiss} >
+                {mwstAusweisbarSuche == true && <Check className={classes.blackcheck} />}
+              </div>
+              <span className={classes.suchlabel}>MwSt. ausweisbar</span>
+            </div>
 
-          Weitere Marken/Modelle hinzufügen
-        </button>
-        {/* Select boxes */}
-        <div className="flex justify-between md:flex-col">
-          <div className="w-300 md:w-full md:mb-4">
-            <p className="mb-1">Karosserieform</p>
-            <InputSelect options={karo} placeholder={karo[1].label} regYear />
+          
           </div>
-          <div className="w-5"></div>
-          <div className="flex flex-1 items-end md:w-full md:mb-4">
-            <div className="w-1/2">
-              <p className="mb-1">Erstzulassung</p>
-              <InputSelect
-                options={van1}
-                placeholder={van1[1].label}
-                regYear
-                classes="pr-4"
-              />
+        </div>}
+      
+        
+        
+        
+        <div className={classes.bottomrow}>
+            <div className={classes.tworow}>
+              <div className={classes.resetfilter}>Filter zurücksetzen</div>
+              <div className={classes.suchenundspeichern}>Suchen & Speichern</div>
             </div>
-            <span className="mr-3"></span>
-            <div className="w-1/2">
-              <InputSelect options={bis1} placeholder={bis1[1].label} regYear />
+            <div className={classes.suchen}>
+             {anzahlTreffer} Treffer anzeigen
             </div>
-          </div>
-          <div className="w-5"></div>
-          <div className="flex flex-1 items-end">
-            <div className="w-1/2">
-              <p className="mb-1">Preis</p>
-              <InputSelect
-                options={van2}
-                placeholder={van2[1].label}
-                regYear
-                classes="pr-4"
-              />
-            </div>
-            <span className="mr-3"></span>
-            <div className="w-1/2">
-              <InputSelect options={bis2} placeholder={bis2[1].label} regYear />
-            </div>
-          </div>
         </div>
-        <div className="flex justify-between md:flex-col mt-8">
-          <div className="w-300 md:w-full md:mb-4">
-            <p className="mb-1">Land</p>
-            <InputSelect options={land} placeholder={land[1].label} regYear />
+        
+        
+        
+        </>
+        
+        : 
+        
+        <>
+          <div className={classes.inserentcontainer}>
+              <div className={`${classes.inserentitem} ${inserent == "alle" && classes.selectedinserent}`} onClick={() => setInserent("alle")}>Alle</div>
+              <div className={`${classes.inserentitem} ${inserent == "haendler" && classes.selectedinserent}`} onClick={() => setInserent("haendler")}>Händler</div>
+              <div className={`${classes.inserentitem} ${inserent == "privat"  && classes.selectedinserent}`} onClick={() => setInserent("privat")}>Privat</div>
           </div>
-          <div className="w-5"></div>
-          <div className="flex flex-1 items-end md:mb-4">
-            <div className="w-full">
-              <p className="mb-1">Stadt/PLZ</p>
-              <div className="relative">
-                <Input
-                  placeholder="z.B Wien oder 1010 "
+          <div className={classes.easysearchcontainer}>
+              <div className={classes.left}>
+                <Select 
+                  options={brands}
+                  styles={whitestyle}
+                  placeholder={"Marke"}
+                  onChange={(e) => setSelectedBrand(e.value)}
+                  className={"mb-4"}
                 />
-                <button className="w-6 bg-white absolute right-2 bottom-3">
-                  <img className="opacity-50" src="/images/icons/location-mark.png" />
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="w-5"></div>
-          <div className="flex flex-1 items-end">
-            <div className="w-full">
-              <p className="mb-1">Umkreis (km)</p>
-              <InputSelect
-                options={umk}
-                placeholder={umk[1].label}
-                regYear
-                classes="pr-4"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-between mt-8 md:flex-col">
-          <div className="w-300 md:w-full md:mb-4">
-            <p className="mb-1">Kraftstoff</p>
-            <InputSelect options={kraft} placeholder={kraft[1].label} regYear />
-          </div>
-          <div className="w-5"></div>
-          <div className="flex flex-1 items-end md:mb-4">
-            <div className="w-1/2">
-              <p className="mb-1">Kilometerstand</p>
-              <InputSelect
-                options={kilo}
-                placeholder={kilo[1].label}
-                regYear
-                classes="pr-4"
-              />
-            </div>
-            <span className="mr-3"></span>
-            <div className="w-1/2">
-              <InputSelect
-                options={kilo2}
-                placeholder={kilo2[1].label}
-                regYear
-              />
-            </div>
-          </div>
-          <div className="w-5 md:hidden"></div>
-          <div className="flex flex-1">
-            <div className="">
-              <p className="mb-1">Leistung</p>
-              <InputSelect
-                options={leis}
-                placeholder={leis[1].label}
-                regYear
-                classes="pr-4 md:pr-0"
-              />
-            </div>
-            <div className="w-5 md:hidden"></div>
-            <div className="flex items-end flex-1">
-              <div className="w-1/2">
-                <p className="mb-1">von</p>
-                <InputSelect
-                  options={von}
-                  placeholder={von[1].label}
-                  regYear
-                  classes="pr-4"
+                <Select 
+                  options={models}
+                  styles={whitestyle}
+                  placeholder={"Modell"}
+                  onChange={(e) => setSelectedModel(e.value)}
+                  className={"mb-4"}
                 />
+                <Select 
+                  options={erstzulassungen}
+                  styles={whitestyle}
+                  placeholder={"Erstzulassung"}
+                  onChange={(e) => setErstzulassungVon(e.value)}
+                  className={"mb-4"}
+                />
+                <div className={`${classes.tworow} mb-4`}>
+                  <div className={classes.filter}>Filter zurücksetzen</div>
+                  <div className={classes.speichern}>Suche speichern</div>
+                </div>
+                <div className={classes.save}>
+                  {anzahlTreffer} Treffer anzeigen
+                </div>
               </div>
-              <span className="mr-3"></span>
-              <div className="w-1/2">
-                <p className="mb-1">bis</p>
-                <InputSelect options={bis} placeholder={bis[1].label} regYear />
+              <div className={classes.right}>
+                <div className={classes.carsgrid}>
+                  <div className={classes.car}>
+                    <Limo className={`${classes.carsvg} ${bodyType == "limousine" && classes.selectedcarsvg}`} onClick={() => setBodyType("limousine")} />
+                    <span className={`${classes.text} ${bodyType == "limousine" && classes.selectedcarsvg}`}>Limousine</span>
+                  </div>
+                  <div className={classes.car}>
+                    <Suv className={`${classes.carsvg} ${bodyType == "suv" && classes.selectedcarsvg}`} onClick={() => setBodyType("suv")} />
+                    <span className={`${classes.text} ${bodyType == "suv" && classes.selectedcarsvg}`}>SUV</span>
+                  </div>
+                  <div className={classes.car}>
+                    <KombiVan className={`${classes.carsvg} ${bodyType == "kombivan" && classes.selectedcarsvg}`} onClick={() => setBodyType("kombivan")} />
+                    <span className={`${classes.text} ${bodyType == "kombivan" && classes.selectedcarsvg}`}>Kombi Van</span>
+                  </div>
+                  <div className={classes.car}>
+                    <Coupe className={`${classes.carsvg} ${bodyType == "coupe" && classes.selectedcarsvg}`} onClick={() => setBodyType("coupe")} />
+                    <span className={`${classes.text} ${bodyType == "coupe" && classes.selectedcarsvg}`}>Coupè</span>
+                  </div>
+                  <div className={classes.car}>
+                    <Cabrio className={`${classes.carsvg} ${bodyType == "cabrio" && classes.selectedcarsvg}`} onClick={() => setBodyType("cabrio")} />
+                    <span className={`${classes.text} ${bodyType == "cabrio" && classes.selectedcarsvg}`}>Cabrio</span>
+                  </div>
+                  <div className={classes.car}>
+                    <Kleinbus className={`${classes.carsvg} ${bodyType == "kleinbus" && classes.selectedcarsvg}`} onClick={() => setBodyType("kleinbus")}/>
+                    <span className={`${classes.text} ${bodyType == "kleinbus" && classes.selectedcarsvg}`}>Kleinbus</span>
+                  </div>
+                </div>
+                <div className={classes.wrapper}>
+                  <label className={classes.label}>Preis (€)</label>
+                  <div className={`${classes.slider} slider`}>
+                    <div className={`${classes.progress} progress`}></div>
+                  </div>
+                  <div className={`${classes.range_input} range-input`}>
+                    <input type={"range"} className={`${classes.range_min} range-min`} min={0} max={50000} defaultValue={12000} step={100} onChange={(e) => {
+                      setMinVal(e.target.value);
+                    }} />
+                    <input type={"range"} className={`${classes.range_max} range-max`} min={0} max={50000} defaultValue={38000} step={100}  onChange={(e) => {
+                      setMaxVal(e.target.value)
+                    }}/>
+                  </div>
+                  <div className={classes.minmaxinputs}>
+                    <input type={"number"} className={`${classes.inputmin} input-min`} value={minVal} defaultValue={12000} placeholder="Min"  />
+                    <input type={"number"} className={`${classes.inputmin} input-max`} value={maxVal} defaultValue={38000} placeholder="Max"  />
+                  </div>
+                </div>
+                <div className={classes.wrapper}>
+                  <label className={classes.label}>Leistung (kW)</label>
+                  <div className={`${classes.slider} sliderL`}>
+                    <div className={`${classes.progress} progressL`}></div>
+                  </div>
+                  <div className={`${classes.range_input} range-inputLeistung`}>
+                    <input type={"range"} className={`${classes.range_min} range-minLeistung`} min={0} max={1000} defaultValue={250} step={1} onChange={(e) => {
+                      setMinValLeistung(e.target.value);
+                    }} />
+                    <input type={"range"} className={`${classes.range_max} range-maxLeistung`} min={0} max={1000} defaultValue={750} step={1}  onChange={(e) => {
+                      setMaxValLeistung(e.target.value)
+                    }}/>
+                  </div>
+                  <div className={classes.minmaxinputs}>
+                    <input type={"number"} className={`${classes.inputmin} input-minLeistung`} value={minValLeistung} defaultValue={250} placeholder="Min"  />
+                    <input type={"number"} className={`${classes.inputmin} input-maxLeistung`} value={maxValLeistung} defaultValue={750} placeholder="Max"  />
+                  </div>
+                </div>
+                <div className={classes.wrapper}>
+                  <label className={classes.label}>Preis (€)</label>
+                  <div className={`${classes.slider} sliderPreis`}>
+                    <div className={`${classes.progress} progressPreis`}></div>
+                  </div>
+                  <div className={`${classes.range_input} range-inputPreis`}>
+                    <input type={"range"} className={`${classes.range_min} range-minPreis`} min={0} max={50000} defaultValue={12000} step={500} onChange={(e) => {
+                      setMinValPreis(e.target.value);
+                    }} />
+                    <input type={"range"} className={`${classes.range_max} range-maxPreis`} min={0} max={50000} defaultValue={38000} step={500}  onChange={(e) => {
+                      setMaxValPreis(e.target.value)
+                    }}/>
+                  </div>
+                  <div className={classes.minmaxinputs}>
+                    <input type={"number"} className={`${classes.inputmin} input-minPreis`} value={minValPreis} defaultValue={12000} placeholder="Min"  />
+                    <input type={"number"} className={`${classes.inputmin} input-maxPreis`} value={maxValPreis} defaultValue={38000} placeholder="Max"  />
+                  </div>
+                </div>
               </div>
-            </div>
           </div>
-        </div>
-        <div className="flex justify-between mt-8 md:flex-col">
-          <div className="w-300 md:w-full md:mb-4">
-            <p className="mb-1">Getriebe</p>
-            <InputSelect options={getri} placeholder={getri[1].label} regYear />
-          </div>
-          <div className="w-5"></div>
-          <div className="flex-1 items-end md:mb-4">
-            <p className="mb-1">Anzahl Türen</p>
-            <div className="flex justify-between mt-3">
-              <div className="flex items-center form-check form-check-inline">
-                <CheckBoxItem title="Alle" wAuto />
-              </div>
-              <div className="flex items-center">
-                <CheckBoxItem title="2/3" wAuto />
-              </div>
-              <div className="flex items-center">
-                <CheckBoxItem title="4/5" wAuto />
-              </div>
-              <div className="flex items-center">
-                <CheckBoxItem title="6/7" wAuto />
-              </div>
-            </div>
-          </div>
-          <div className="w-5 md:hidden"></div>
-          <div className="flex flex-1 items-end">
-            <div className="w-1/2">
-              <p className="mb-1">Sitzplätze</p>
-              <InputSelect
-                options={von4}
-                placeholder={von4 ? von4[1].label : ""}
-                regYear
-                classes="pr-4"
-              />
-            </div>
-            <span className="mr-3"></span>
-            <div className="w-1/2">
-              <InputSelect options={bis4} placeholder={bis4[1].label} regYear />
-            </div>
-          </div>
-        </div>
-        <div className="w-1/3 pr-10 mt-8 md:w-full">
-          <p className="mb-1">Verkäufer</p>
-          <div className="flex justify-between mt-2">
-            <div className="flex items-center form-check form-check-inline">
-              <CheckBoxItem title="Alle" wAuto />
-            </div>
-            <div className="flex items-center">
-              <CheckBoxItem title="Händler" wAuto />
-            </div>
-            <div className="flex items-center">
-              <CheckBoxItem title="Privat" wAuto />
-            </div>
-          </div>
-        </div>
-        <div className="w-4/5 lg:w-full mt-8 md:w-full">
-          <p className="mb-1">Fahrzeugzustand</p>
-          <div className="flex justify-between mt-2 md:flex-wrap md:justify-start">
-            <div className="flex items-center md:mr-4 md:mb-4">
-              <CheckBoxItem title="Neu" wAuto />
-            </div>
-            <div className="flex items-center md:mr-4 md:mb-4">
-              <CheckBoxItem title="Gebraucht" wAuto />
-            </div>
-            <div className="flex items-center md:mr-4 md:mb-4">
-              <CheckBoxItem title="Oldtimer" wAuto />
-            </div>
-            <div className="flex items-center md:mr-4 md:mb-4">
-              <CheckBoxItem title="Jahreswagen" wAuto />
-            </div>
-            <div className="flex items-center md:mr-4 md:mb-4">
-              <CheckBoxItem title="Vorführfahrzeug" wAuto />
-            </div>
-            <div className="flex items-center md:mr-4 md:mb-4">
-              <CheckBoxItem title="Tageszulassung" wAuto />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="text-base border-b-2 mt-4">
-      <button
-        onClick={() => setFurnishingExpanded(d => !d)}
-        className="w-full inline-flex items-center justify-between font-bold text-theme-gray-4"
-      >
-        Ausstattung
-        <img
-          src="/images/icons/expand-arrow.png"
-          className={`w-8 opacity-50 ${furnishingExpanded ? "rotate-0" : "rotate-180"}`}
-        />
-      </button>
-      <div
-        className={`${furnishingExpanded ? "h-auto pb-4" : "h-0"} overflow-hidden pt-4`}
-      >
-        <div className="flex justify-between md:flex-wrap">
-          <div className="w-1/3">
-            <CheckBoxItem wAuto marginBottom title="2-Zonen Klimaautomatik" />
-            <CheckBoxItem wAuto marginBottom title="3-Zonen Klimaautomatik" />
-            <CheckBoxItem wAuto marginBottom title="4-Zonen Klimaautomatik" />
-            <CheckBoxItem wAuto marginBottom title="360º Kamera" />
-            <CheckBoxItem wAuto marginBottom title="ABS" />
-            <CheckBoxItem wAuto marginBottom title="Abstandstempomat" />
-            <CheckBoxItem wAuto marginBottom title="Abstandswarner" />
-            <CheckBoxItem wAuto marginBottom title="Airbag hinten" />
-            <CheckBoxItem wAuto marginBottom title="Alarmanlage" />
-            <CheckBoxItem wAuto marginBottom title="Allrad" />
-            <CheckBoxItem wAuto marginBottom title="Allwetterreifen" />
-            <CheckBoxItem wAuto marginBottom title="Alufelgen" />
-            <CheckBoxItem wAuto marginBottom title="Ambientebeleuchtung" />
-            <CheckBoxItem wAuto marginBottom title="Android Auto" />
-            <CheckBoxItem wAuto marginBottom title="Anhängerkupplung" />
-            <CheckBoxItem wAuto marginBottom title="Apple CarPlay" />
-            <CheckBoxItem wAuto marginBottom title="Armlehne" />
-            <CheckBoxItem wAuto marginBottom title="Beheizbare Frontscheibe" />
-            <CheckBoxItem wAuto marginBottom title="Beheizbares Lenkrad" />
-            <CheckBoxItem wAuto marginBottom title="Behindertengerecht" />
-            <CheckBoxItem wAuto marginBottom title="Beifahrerairbag" />
-            <CheckBoxItem wAuto marginBottom title="Berganfahrassistent" />
-            <CheckBoxItem wAuto marginBottom title="Bi-Xenon Scheinwerfer" />
-            <CheckBoxItem wAuto marginBottom title="Biodieselumrüstung" />
-            <CheckBoxItem wAuto marginBottom title="Blendfreies Fernlicht" />
-            <CheckBoxItem wAuto marginBottom title="Bluetooth" />
-            <CheckBoxItem wAuto marginBottom title="Bordcomputer" />
-            <CheckBoxItem wAuto marginBottom title="CD" />
-            <CheckBoxItem wAuto marginBottom title="DAB-Radio" />
-            <CheckBoxItem wAuto marginBottom title="Dachreling" />
-            <CheckBoxItem wAuto marginBottom title="E10-geignet" />
-            <CheckBoxItem wAuto marginBottom title="Einparkhilfe" />
-            <CheckBoxItem wAuto marginBottom title="Einparkhilfe Kamera" />
-            <CheckBoxItem wAuto marginBottom title="Einparkhilfe selbst lenkendes System" />
-            <CheckBoxItem wAuto marginBottom title="Einparkhilfe Sensoren hinten" />
-            <CheckBoxItem wAuto marginBottom title="Einparkhilfe Sensoren vorne" />
-            <CheckBoxItem wAuto marginBottom title="Elektr. Fensterheber" />
-            <CheckBoxItem wAuto marginBottom title="Elektr. Sitzeinstellung, hinten" />
-            <CheckBoxItem wAuto marginBottom title="Elektrische Seitenspiegel" />
-            <CheckBoxItem wAuto marginBottom title="Elektrische Sitze" />
-            <CheckBoxItem wAuto marginBottom title="Elektronische Parkbremse" />
-            <CheckBoxItem wAuto marginBottom title="ESP" />
-            <CheckBoxItem wAuto marginBottom title="Fahrerairbag" />
-            <CheckBoxItem wAuto title="Fernlichtassistent" />
-          </div>
-          <div className="w-1/3">
-            <CheckBoxItem wAuto marginBottom title="Freisprecheinrichtung" />
-            <CheckBoxItem wAuto marginBottom title="Gebäckraumabtrennung" />
-            <CheckBoxItem wAuto marginBottom title="Geschwindigkeitsbegrenzungsanlage" />
-            <CheckBoxItem wAuto marginBottom title="Getönte Scheiben" />
-            <CheckBoxItem wAuto marginBottom title="Head-up display" />
-            <CheckBoxItem wAuto marginBottom title="Induktionsladen für Smartphones" />
-            <CheckBoxItem wAuto marginBottom title="Innenspiegel automatisch abblendend" />
-            <CheckBoxItem wAuto marginBottom title="Isofix" />
-            <CheckBoxItem wAuto marginBottom title="Katalysator" />
-            <CheckBoxItem wAuto marginBottom title="Klimaanlage" />
-            <CheckBoxItem wAuto marginBottom title="Klimaautomatik" />
-            <CheckBoxItem wAuto marginBottom title="Kopfairbag" />
-            <CheckBoxItem wAuto marginBottom title="Kurvenlicht" />
-            <CheckBoxItem wAuto marginBottom title="Laserlicht" />
-            <CheckBoxItem wAuto marginBottom title="LED-Scheinwerfer" />
-            <CheckBoxItem wAuto marginBottom title="LED-Tagfahrlicht" />
-            <CheckBoxItem wAuto marginBottom title="Lederausstattung" />
-            <CheckBoxItem wAuto marginBottom title="Lederlenkrad" />
-            <CheckBoxItem wAuto marginBottom title="Lichtsensor" />
-            <CheckBoxItem wAuto marginBottom title="Lordosenstütze" />
-            <CheckBoxItem wAuto marginBottom title="Luftfederung" />
-            <CheckBoxItem wAuto marginBottom title="Markise" />
-            <CheckBoxItem wAuto marginBottom title="Massagesitze" />
-            <CheckBoxItem wAuto marginBottom title="MP3" />
-            <CheckBoxItem wAuto marginBottom title="Müdigkeitswarnsystem" />
-            <CheckBoxItem wAuto marginBottom title="Multifunktionslenkrad" />
-            <CheckBoxItem wAuto marginBottom title="Musikstreaming integriert" />
-            <CheckBoxItem wAuto marginBottom title="Nachtsicht-Assistent" />
-            <CheckBoxItem wAuto marginBottom title="Navigationssystem" />
-            <CheckBoxItem wAuto marginBottom title="Nebelscheinwerfer" />
-            <CheckBoxItem wAuto marginBottom title="Notbremsassistent" />
-            <CheckBoxItem wAuto marginBottom title="Notrad" />
-            <CheckBoxItem wAuto marginBottom title="Notrufsystem" />
-            <CheckBoxItem wAuto marginBottom title="Pannenkit" />
-            <CheckBoxItem wAuto marginBottom title="Panoramadach" />
-            <CheckBoxItem wAuto marginBottom title="Radio" />
-            <CheckBoxItem wAuto marginBottom title="Raucherpaket" />
-            <CheckBoxItem wAuto marginBottom title="Rechtslenker" />
-            <CheckBoxItem wAuto marginBottom title="Regensensor" />
-            <CheckBoxItem wAuto marginBottom title="Reichweitenverlängerer" />
-            <CheckBoxItem wAuto marginBottom title="Reifendruckkontrollsystem" />
-            <CheckBoxItem wAuto marginBottom title="Reserverad" />
-            <CheckBoxItem wAuto marginBottom title="Schaltwippen" />
-            <CheckBoxItem wAuto title="Scheinwerferreinigung" />
-          </div>
-          <div className="w-1/3">
-            <CheckBoxItem wAuto marginBottom title="Schiebedach" />
-            <CheckBoxItem wAuto marginBottom title="Schiebetür" />
-            <CheckBoxItem wAuto marginBottom title="Schiebetür links" />
-            <CheckBoxItem wAuto marginBottom title="Schiebetür rechts" />
-            <CheckBoxItem wAuto marginBottom title="Schlüssellose Zentralverriegelung" />
-            <CheckBoxItem wAuto marginBottom title="Seitenairbag" />
-            <CheckBoxItem wAuto marginBottom title="Servolenkung" />
-            <CheckBoxItem wAuto marginBottom title="Sitzbelüftung" />
-            <CheckBoxItem wAuto marginBottom title="Sitzheizung" />
-            <CheckBoxItem wAuto marginBottom title="Skisack" />
-            <CheckBoxItem wAuto marginBottom title="Sommerreifen" />
-            <CheckBoxItem wAuto marginBottom title="Soundsystem" />
-            <CheckBoxItem wAuto marginBottom title="Spoiler" />
-            <CheckBoxItem wAuto marginBottom title="Sportfahrwerk" />
-            <CheckBoxItem wAuto marginBottom title="Sportpaket" />
-            <CheckBoxItem wAuto marginBottom title="Sportsitze" />
-            <CheckBoxItem wAuto marginBottom title="Sprachsteuerung" />
-            <CheckBoxItem wAuto marginBottom title="Spurhalteassistent" />
-            <CheckBoxItem wAuto marginBottom title="Stahlfelgen" />
-            <CheckBoxItem wAuto marginBottom title="Standheizung" />
-            <CheckBoxItem wAuto marginBottom title="Start/Stop-Automatik" />
-            <CheckBoxItem wAuto marginBottom title="Tagfahrlicht" />
-            <CheckBoxItem wAuto marginBottom title="Taxi oder Mietwagen" />
-            <CheckBoxItem wAuto marginBottom title="teilb. Rücksitzbank" />
-            <CheckBoxItem wAuto marginBottom title="Tempomat" />
-            <CheckBoxItem wAuto marginBottom title="Totwinkel-Assistent" />
-            <CheckBoxItem wAuto marginBottom title="Tochscreen" />
-            <CheckBoxItem wAuto marginBottom title="Traktionskontrolle" />
-            <CheckBoxItem wAuto marginBottom title="Tuning" />
-            <CheckBoxItem wAuto marginBottom title="TV" />
-            <CheckBoxItem wAuto marginBottom title="Umklappbarer Beifahrersitz" />
-            <CheckBoxItem wAuto marginBottom title="USB" />
-            <CheckBoxItem wAuto marginBottom title="Verkehrszeichenerkennung" />
-            <CheckBoxItem wAuto marginBottom title="Voll-LED Scheinwerfer" />
-            <CheckBoxItem wAuto marginBottom title="Volldigitales Kombiinstrument" />
-            <CheckBoxItem wAuto marginBottom title="W-Lan / Wifi Hotspot" />
-            <CheckBoxItem wAuto marginBottom title="Wegfahrsperre" />
-            <CheckBoxItem wAuto marginBottom title="Windschott (Cabrio)" />
-            <CheckBoxItem wAuto marginBottom title="Winterpaket" />
-            <CheckBoxItem wAuto marginBottom title="Winterreifen" />
-            <CheckBoxItem wAuto marginBottom title="Xenonscheinwerfer" />
-            <CheckBoxItem wAuto marginBottom title="Zentralverriegelung" />
-            <CheckBoxItem wAuto title="Zentralverriegelung mit Funkfernbedienung" />
-          </div>
-        </div>
-        <button className="font-bold py-8 text-xs flex items-center">
-          <img className="w-6 opacity-80 mr-2" src='/images/icons/remove-minus-icon.png' />
-          Ungenutzte Filter ausblenden
-        </button>
-      </div>
-    </div>
-    <div className="text-base border-b-2 mt-4">
-      <button
-        onClick={() => setColorsExpanded(d => !d)}
-        className="w-full inline-flex items-center justify-between font-bold text-base text-theme-gray-4"
-      >
-        Farbe
-        <img
-          src="/images/icons/expand-arrow.png"
-          className={`w-8 opacity-50 ${colorsExpanded ? "rotate-0" : "rotate-180"}`}
-        />
-      </button>
-      <div
-        className={`${colorsExpanded ? "h-auto pb-4" : "h-0"} overflow-hidden pt-4`}
-      >
-          <div className="">
-                <p className="text-base mb-6">Außenfarbe</p>
-                <div className="flex justify-between md:flex-wrap">
-                    <ColorItem title='Beige' bgColor='bg-farbe-beige' />
-                    <ColorItem title='Blau' bgColor='bg-farbe-blue'/>
-                    <ColorItem title='Schwarz' bgColor='bg-black' />
-                    <ColorItem title='Grün' bgColor='bg-farbe-green' />
-                    <ColorItem title='Orange' bgColor='bg-farbe-orange' />
-                    <ColorItem title='Rot' bgColor='bg-farbe-red'/>
-                </div>
-                <div className="flex justify-between mt-8 md:mt-0 md:flex-wrap">
-                    <ColorItem title='Gold' bgColor='bg-farbe-golden' />
-                    <ColorItem title='Braun' bgColor='bg-farbe-brown' />
-                    <ColorItem title='Silber' bgColor='bg-farbe-silver' borderColor />
-                    <ColorItem title='Gelb' bgColor='bg-farbe-yellow' />
-                    <ColorItem title='Bronze' bgColor='bg-farbe-bronze' />
-                    <ColorItem title='Violett' bgColor='bg-farbe-violet'/>
-                </div>
-                <div className="flex mt-8 md:mt-0">
-                    <ColorItem title='Grau' bgColor='bg-farbe-gray'/>
-                    <ColorItem title='Weiss' bgColor='bg-white' blackChecked />
-                </div>
-                <p className="text-base my-6">Lackierungsart</p>
-                <div className="flex">
-                    <ColorItem title='Metallic' bgColor='bg-white' blackChecked />
-                </div>
-          </div>
-      </div>
-    </div>
-    <div className="text-base border-b-2 mt-4">
-      <button
-        onClick={() => setUphosteryExpanded(d => !d)}
-        className="w-full inline-flex items-center justify-between font-bold text-base text-theme-gray-4"
-      >
-        Polsterfarbe
-        <img
-          src="/images/icons/expand-arrow.png"
-          className={`w-8 opacity-50 ${uphosteryExpanded ? "rotate-0" : "rotate-180"}`}
-        />
-      </button>
-      <div
-        className={`${uphosteryExpanded ? "h-auto pb-4" : "h-0"} overflow-hidden pt-4`}
-      >
-          <div className="">
-                <div className="flex justify-between md:flex-wrap">
-                    <ColorItem title='Beige' bgColor='bg-farbe-beige' />
-                    <ColorItem title='Blau' bgColor='bg-farbe-blue' />
-                    <ColorItem title='Schwarz' bgColor='bg-black' />
-                    <ColorItem title='Grün' bgColor='bg-farbe-green' />
-                    <ColorItem title='Orange' bgColor='bg-farbe-orange' />
-                    <ColorItem title='Rot' bgColor='bg-farbe-red' />
-                </div>
-                <div className="flex justify-between mt-8 md:mt-0 md:flex-wrap">
-                    <ColorItem title='Weiß' bgColor='bg-white' />
-                    <ColorItem title='Braun' bgColor='bg-farbe-brown' />
-                    <ColorItem title='Grau' bgColor='bg-farbe-gray' />
-                    <ColorItem title='Gelb' bgColor='bg-farbe-yellow' />
-                    <ColorItem title='Braun' bgColor='bg-farbe-brown' />
-                    <ColorItem title='Sonstiges' bgColor='bg-white' />
-                </div>
-                <p className="text-base my-6">Material</p>
-                <div className="flex md:flex-wrap">
-                    <ColorItem title='Alcantara' bgColor='bg-white' />
-                    <ColorItem title='Stoff' bgColor='bg-white' />
-                    <ColorItem title='Volleder' bgColor='bg-white' />
-                    <ColorItem title='Teilleder' bgColor='bg-white' />
-                    <ColorItem title='Velours' bgColor='bg-white' />
-                    <ColorItem title='Sonstiges' bgColor='bg-white' />
-                </div>
-          </div>
-      </div>
-    </div>
-    <div className="text-base border-b-2 mt-4">
-      <button
-        onClick={() => setVehicleExpanded(d => !d)}
-        className="w-full inline-flex items-center justify-between font-bold text-base text-theme-gray-4"
-      >
-        Fahrzeugzustand
-        <img
-          src="/images/icons/expand-arrow.png"
-          className={`w-8 opacity-50 ${vehicleExpanded ? "rotate-0" : "rotate-180"}`}
-        />
-      </button>
-      <div
-        className={`${vehicleExpanded ? "h-auto pb-4" : "h-0"} overflow-hidden pt-4`}
-      >
-        {/* Basisdaten & Standort */}
-        <div className="flex items-end md:flex-col">
-          <div className="w-1/4 lg:w-1/3 md:!w-full mr-20 md:mr-0 md:mb-4">
-            <p className="mb-1 text-base">Fahrzeughalter (max.)</p>
-            <InputSelect options={fahrz} placeholder={fahrz[1].label} regYear />
-          </div>
-
-          {/* <div className="w-8"></div> */}
-          <div className="w-1/4 lg:w-1/3 md:!w-full relative">
-            <p className="mb-1 text-base">Unfallfahrzeug</p>
-            <InputSelect
-              options={unfall}
-              placeholder={unfall[1].label}
-              regYear
-            />
-          </div>
-        </div>
-        <div className="flex md:flex-col mt-4">
-          <div className="flex w-1/3 lg:w-1/3 md:!w-full md:flex-wrap justify-between mr-20">
-            <CheckBoxItem title="Nichtraucherfahrzeug" wAuto />
-            <CheckBoxItem title="Garantie" wAuto />
-          </div>
-          <div className="flex w-5/12 lg:w-1/2 md:!w-full justify-between">
-            <CheckBoxItem title="Scheckheftgepflegt" wAuto />
-            <CheckBoxItem title="Herstellerzertifizierung" sublabel="(Technisch geprüfte Fahrzeuge mit Garantie)" wAuto />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="text-base border-b-2 mt-4">
-      <button
-        onClick={() => setEnvironmentExpanded(d => !d)}
-        className="w-full inline-flex items-center justify-between font-bold text-base text-theme-gray-4"
-      >
-        Umwelt
-        <img
-          src="/images/icons/expand-arrow.png"
-          className={`w-8 opacity-50 ${environmentExpanded ? "rotate-0" : "rotate-180"}`}
-        />
-      </button>
-      <div
-        className={`${environmentExpanded ? "h-auto pb-4" : "h-0"} overflow-hidden pt-4`}
-      >
-        {/* Basisdaten & Standort */}
-        <div className="flex items-center md:flex-col md:items-start">
-          <div className="w-1/4 md:w-full md:mr-0 md:mb-4 mr-20">
-            <p className="mb-1 text-base">Schadstoffklasse (mind.)</p>
-            <InputSelect
-              options={schads}
-              placeholder={schads[1].label}
-              regYear
-            />
-          </div>
-          {/* <div className="w-8"></div> */}
-          <div className="w-1/4 md:w-full">
-            <p className="mb-1 text-base">Fahrzeughalter (max.)</p>
-            <InputSelect
-              options={schads}
-              placeholder={schads[1].label}
-              regYear
-            />
-          </div>
-          <div className="ml-10 md:ml-0">
-            <CheckBoxItem title="Rußpartikelfilter" wAuto />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="text-base border-b-2 mt-4">
-      <button
-        onClick={() => setOfferExpanded(d => !d)}
-        className="w-full inline-flex items-center justify-between font-bold text-base text-theme-gray-4"
-      >
-        Angebotsdetails
-        <img
-          src="/images/icons/expand-arrow.png"
-          className={`w-8 opacity-50 ${offerExpanded ? "rotate-0" : "rotate-180"}`}
-        />
-      </button>
-      <div
-        className={`${offerExpanded ? "h-auto pb-4" : "h-0"} overflow-hidden pt-4`}
-      >
-        {/* Basisdaten & Standort */}
-        <div className="flex items-center md:flex-col md:items-start">
-          <div className="w-1/4 md:w-full md:mr-0 mr-20">
-            <p className="mb-1 text-base">Online seit (mind.)</p>
-
-            <InputSelect
-              options={offer}
-              placeholder={offer[1].label}
-              regYear
-            />
-          </div>
-          <CheckBoxItem title="MwSt. ausweisbar" wAuto />
-        </div>
-      </div>
-    </div>
-          <div className="relative">
-            <div className="flex justify-center pt-6 pb-10 md:pb-16">
-            <button className="w-80 mr-2 inline-block px-10 py-3 sm:px-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-100 hover:bg-theme-yellow-3">
-                Suchen
-              </button>
-            <button className="w-80 inline-block px-10 py-3 sm:px-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-100 hover:bg-theme-yellow-3">
-                Suchen & Speichern
-              </button>
-            </div>
-          </div>
-        </div>
+        </>}
       </div>
     </div>
   );

@@ -3,3 +3,27 @@
     width: 40px;
     color: #6C757D;
 }
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.bannerimg{
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.profileimg{
+    height: 154px;
+    width: 154px;
+    border-radius: 999px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    object-fit: cover;
+}

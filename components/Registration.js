@@ -48,7 +48,6 @@ export default function Registration() {
   for(let i = 2023 - 110; i <= 2023 - 10; i++ ){
     geburtsjahre.push({value: i, label: i});
   }
-  console.log(geburtsjahre)
   return (
     <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0 pb-max-h-full ">
       <div className="relative w-10/12 lg:w-full max-w-ag-container max-h-full md:!w-full mx-auto flex lg:flex-col bg-white p-6">
