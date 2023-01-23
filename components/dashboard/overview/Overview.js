@@ -158,7 +158,7 @@ export default function Overview() {
                 <h4>Letzten 7 Tage</h4>
             </div>
             <div className={classes.adgrid}>
-              {begehrtestenInserate.map((fav, index) => <div className={width >= 1250 && classes.adprop}>
+              {begehrtestenInserate.map((fav, index) => <div key={index} className={width >= 1250 && classes.adprop}>
                   <Angebot
                     key={index}
                     id={fav.id}

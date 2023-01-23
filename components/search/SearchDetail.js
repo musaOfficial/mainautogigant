@@ -1284,7 +1284,7 @@ export default function SearchDetail() {
         </div> 
         {markeOpen == true && <div className={classes.basiscontainer}>
           {modals.length != 0 && <div className={classes.modalsection}>
-            {modals.map((modal, index) => <div className={`${classes.modalcontainer} ${index == modals.length - 1 && classes.lastmodalel}`}>
+            {modals.map((modal, index) => <div key={index} className={`${classes.modalcontainer} ${index == modals.length - 1 && classes.lastmodalel}`}>
               <div className={classes.modalinfo}>
                 <span className={classes.modalbrand}>{modal.brandName}</span>
                 <span className={classes.modalmodel}>{modal.modelName}</span>
