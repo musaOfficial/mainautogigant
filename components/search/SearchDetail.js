@@ -686,9 +686,14 @@ export default function SearchDetail() {
 
   const priceGap = 1000;
   
-  if (typeof window !== "undefined") {
-      const rangeInput = document.querySelectorAll(".range-input input")
-      const progress = document.querySelector(".slider .progress")
+  const rangeInput = document.querySelectorAll(".range-input input")
+  const progress = document.querySelector(".slider .progress")
+  const rangeInputLeistung = document.querySelectorAll(".range-inputLeistung input")
+  const progressLeistung = document.querySelector(".sliderL .progressL")
+  const rangeInputPreis = document.querySelectorAll(".range-inputPreis input")
+  const progressPreis = document.querySelector(".sliderPreis .progressPreis")
+  useEffect(() => {
+    if (typeof window !== "undefined") {
       rangeInput.forEach(input => {
         input.addEventListener("input", e => {
           if(maxVal - minVal < priceGap){
@@ -705,8 +710,6 @@ export default function SearchDetail() {
         })
       })
 
-      const rangeInputLeistung = document.querySelectorAll(".range-inputLeistung input")
-      const progressLeistung = document.querySelector(".sliderL .progressL")
       rangeInputLeistung.forEach(input => {
         input.addEventListener("input", e => {
           if(maxValLeistung - minValLeistung < 10){
@@ -722,8 +725,6 @@ export default function SearchDetail() {
         })
       })
 
-      const rangeInputPreis = document.querySelectorAll(".range-inputPreis input")
-      const progressPreis = document.querySelector(".sliderPreis .progressPreis")
       rangeInputPreis.forEach(input => {
         input.addEventListener("input", e => {
           if(maxValPreis - minValPreis < priceGap){
@@ -741,6 +742,7 @@ export default function SearchDetail() {
       })
   }
 
+  }, [rangeInputPreis, progressPreis, rangeInput, progress, rangeInputLeistung, progressLeistung])
   return (
     <div className="bg-theme-gray-10 lg:px-6 md:!px-0">
       {/* BRAND SELECTION */}
