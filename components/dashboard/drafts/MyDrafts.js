@@ -311,7 +311,6 @@ export default function MyDrafts() {
               <Select
                 options={sortOptions}
                 styles={style}
-                menuPortalTarget={document.body}
                 menuPosition={'fixed'}
                 onChange={(e) => {}}
                 placeholder={"SORTIEREN NACH"}
