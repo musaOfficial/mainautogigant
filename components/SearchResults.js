@@ -2398,7 +2398,7 @@ function SearchResults(){
                                     <div className={gridView == true ? classes.werbeanzeige : classes.werbeanzeigecard}>Werbeanzeige</div >
                                 </div>)}
                                 <div className={width < 1250 && classes.adgrid}>
-                                    {angebote.map((fav, index) => <div className={width >= 1250 && classes.adprop}>
+                                    {angebote.map((fav, index) => <div key={index} className={width >= 1250 && classes.adprop}>
                                         <Angebot
                                         key={index}
                                         id={fav.id}
