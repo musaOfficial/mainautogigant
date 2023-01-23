@@ -7,7 +7,6 @@ import GreenCheck from './../public/greencheck.svg';
 import RedCheck from './../public/images/closedetail.svg';
 import Closex from './../public/closex.svg'
 import Download from './../public/download.svg';
-import ModelItem from './search/ModelItem';
 
 function BillsPage(){
     const style = {

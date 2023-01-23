@@ -7,7 +7,6 @@ import GreenCheck from './../public/plus.svg';
 import RedCheck from './../public/minus.svg';
 import Closex from './../public/closex.svg'
 import Download from './../public/download.svg';
-import ModelItem from './search/ModelItem';
 import GigaCoins from './../public/gigacoins.svg';
 import Schloss from './../public/schloss.svg';
 import Sofort from './../public/sofort.svg';
