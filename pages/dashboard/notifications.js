@@ -1,7 +1,7 @@
 import Head from "next/head";
 import DashboardLayout from "../../components/dashboard/Layout";
-
-export default function Notifications() {
+import Notifications from "../../components/Notifications";
+export default function NotificationsPage() {
   return (
     <>
       <Head>
@@ -10,7 +10,7 @@ export default function Notifications() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DashboardLayout>
-       
+        <Notifications />
       </DashboardLayout>
     </>
   );
