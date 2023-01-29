@@ -81,7 +81,7 @@ export default function Login() {
               </div>
             </div>
 
-            <div className={`w-full flex items-center mt-8 bg-theme-gray-4 p-4  ${classes.fontsize} ${classes.sendbtnarea} rounded-10 text-sm sm:flex-col`}>
+            <div className={`w-full flex items-center mt-8 bg-theme-gray-4 p-4  ${classes.fontsize} ${classes.sendbtnarea} ${classes.lightbackground} rounded-10 text-sm sm:flex-col`}>
               <Link href={"/dealer-login"}>
                 <button className={`w-1/2 sm:w-full sm:mb-4 ${classes.haendlerloginbtn} ${classes.loginbtn} ${classes.fontsize20} mr-2 sm:mr-0 inline-block px-10 sm:text-sm py-3 rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3 ${classes.haendlerloginbtn}`}>
                  <ShopWithLine className={classes.shopwithline} /> Händler - Login
