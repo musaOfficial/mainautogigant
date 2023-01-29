@@ -8,7 +8,7 @@ function LogoutSuccess(){
             <div className={` ${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
                 <div className={classes.row}>
                     <div className={classes.left}>
-                        <div className={classes.bigtext}>Sie haben Sich erfolgreich ausgeloggt!</div>
+                        <div className={classes.bigtext}>Sie haben sich erfolgreich ausgeloggt!</div>
                         <Logout className={classes.logout} />
                         <div className={classes.smalltext}>
                             Wir freuen uns schon auf ein Wiedersehen.<br></br>

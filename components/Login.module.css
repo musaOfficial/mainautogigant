@@ -1,3 +1,7 @@
+.container{
+    color: #6C757D;
+}
+
 .fontsize{
     font-size: 15px;
 }
@@ -10,12 +14,12 @@
     font-size: 13px;
 }
 
-.fontsize13{
-    font-size: 13px;
+.fontsize15{
+    font-size: 15px;
 }
 
-.fontsize20{
-    font-size: 20px;
+.fontsize30{
+    font-size: 30px;
 }
 
 .loginbtn{
@@ -74,4 +78,61 @@
 
 .haendlerloginbtn:hover{
     background-color: #FBB900;
+}
+
+.top_row{
+    display: flex;
+    height: 40px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.leftrow{
+    display: flex;
+    align-items: center;
+}
+
+.backhome{
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.backhome:hover{
+    color: #FBB900;
+    background-color: #fff;
+}
+
+.sendbtnarea{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.loginbtn{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.dealertext{
+    line-height: 17px;
+    width: 100%;
+}
+
+.logrow{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.forgot{
+    height: 30px;
+    display: flex;
+    align-items: center;
 }
