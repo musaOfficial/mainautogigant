@@ -13,7 +13,7 @@ export default function ResetPassword() {
       <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0">
         <div className={`${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col flex-col bg-white p-6`}>
           <div className={`${classes.top_row}`}>
-                <span className={classes.leftrow}><Link href={"/"}><BackHome className={classes.backhome} /></Link> ../Passwort vergessen</span>
+                <span className={classes.leftrow}><Link href={"/"}><BackHome className={classes.backhome} /></Link></span>
           </div>
           <div className={classes.row}>
               <div className={classes.left}>
@@ -29,7 +29,7 @@ export default function ResetPassword() {
                 </div>
                 <Input placeholder={"E-Mail-Adresse"} inputType={"email"} onChange={(e) => setMail(e.target.value)} />
                 <div className={classes.sendarea}>
-                  <div className={classes.sendbtn}>Senden</div>
+                  <div className={classes.sendbtn}>Änderungslink anfordern</div>
                   <div className={classes.acccheck}>
                       <Check className={classes.check} />
                       <span className={classes.checktext}>Du bist noch nicht registriert?<br></br><span className={classes.link}>Jetzt neu registrieren</span></span>
