@@ -5,15 +5,19 @@ import BackArrow from './../public/backto.svg';
 import { useState } from "react";
 import Check from './../public/checkaccount.svg'
 import Image from "next/image";
+import BackHome from './../public/home.svg';
 export default function ResetPassword() {
   const [mail, setMail] = useState();
   return (
     <>
       <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0">
-        <div className={`${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
+        <div className={`${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col flex-col bg-white p-6`}>
+          <div className={`${classes.top_row}`}>
+                <span className={classes.leftrow}><Link href={"/"}><BackHome className={classes.backhome} /></Link> ../Passwort vergessen</span>
+          </div>
           <div className={classes.row}>
               <div className={classes.left}>
-                <Link href={"/"}><div className={classes.backto}><BackArrow className={classes.backarrow} /> zurück zur Startseite</div></Link>
+                
                 <div className={classes.heading}>Passwort vergessen</div>
                 <div className={classes.text}>
                   Bitte geben Sie hier Ihre E-Mail-Adresse ein,<br></br>

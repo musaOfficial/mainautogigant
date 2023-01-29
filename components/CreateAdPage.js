@@ -619,6 +619,7 @@ function CreateAdPage(){
                     Gib den nationalen Code (Eurotax-Code) des 
 Fahrzeugs an, um Fahrzeug-Details automatisch zu
 befüllen. Der Code befindet sich im Zulassungsschein.
+<br></br><br></br>
                     </div>
                     <input type={"text"} onChange={(e) => setNationalerCode(e.target.value)} placeholder={"Nationaler Code"} className={classes.nationalcode} required={model != "" && brand != "" ? false : true} />
                 </div>
