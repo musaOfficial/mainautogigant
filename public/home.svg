@@ -3,7 +3,7 @@
     <style>
       .cls-1 {
         fill: currentColor;
-        stroke: #f1f2f3;
+        stroke: #F1F2F3;
         stroke-linejoin: round;
         stroke-width: 2px;
       }

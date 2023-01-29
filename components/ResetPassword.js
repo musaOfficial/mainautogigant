@@ -32,7 +32,7 @@ export default function ResetPassword() {
                   <div className={classes.sendbtn}>Änderungslink anfordern</div>
                   <div className={classes.acccheck}>
                       <Check className={classes.check} />
-                      <span className={classes.checktext}>Du bist noch nicht registriert?<br></br><span className={classes.link}>Jetzt neu registrieren</span></span>
+                      <span className={classes.checktext}>Du bist noch nicht registriert?<br></br><span className={classes.link}><Link href={"/registration/user"}>Jetzt neu registrieren</Link></span></span>
                   </div>
                 </div>
               </div>
