@@ -1,12 +1,140 @@
-.calendarcontainer{
+.container{
+    padding: 30px;
     width: 100%;
 }
 
-.blaugrau{
-    color: #6C757D;
+.calendar{
+    display: flex;
+    width: 100%;
+}
+
+.innercalendar{
+    width: 100% !important;
+    border: none !important;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.meetingDay {
+    background-color: #FFE497;
+}
+
+
+
+
+.calendarheading{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    line-height: 23px;
+    border-bottom: 1px solid rgba(108, 117, 125, 0.5);
+    margin-bottom: 10px;
+}
+
+.today{
+    text-transform: capitalize;
+}
+
+.scheduled{
+    font-weight: bold !important;
+    background-color: #FFE497 !important;
+}
+
+.add{
+    background-color: #6C757D;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .1s ease-in;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add:hover{
+    background-color: #FBB900;
+}
+
+.addbackground{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addcontent{
+    min-width: 300px;
+    background-color: #F1F2F3;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.input{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+
+.today{
+    font-weight: bold;
+    align-self: flex-start;
+    font-size: 20px;
+}
+
+.item{
+    width: 100%;
+    display: flex;
+    background-color: #fff;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.model{
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.bin{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.bin:hover{
+    color: #FF0000;
 }
 
 .heading{
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
+    line-height: 40px;
+}
+
+.topdescription{
+    font-size: 15px;
+    margin-bottom: 20px;
 }

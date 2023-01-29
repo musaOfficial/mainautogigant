@@ -156,3 +156,13 @@
 .link:hover{
     text-decoration: underline;
 }
+
+.basistext{
+    font-size: 12px;
+}
+
+.textheading{
+    font-size: 12px;
+    font-weight: bold;
+    color: #0067B8;
+}
