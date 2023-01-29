@@ -104,16 +104,16 @@ export default function Login() {
 
   
           </div>
-          <div className={`relative w-1/2 lg:w-auto lg:ml-0 lg:mt-4 ml-3`}>
+          <div className={`relative w-1/2 lg:w-auto lg:ml-0 lg:mt-4 ml-3 `}>
             {width >= 1000 && <img className={`w-full`} src={`/images/login-car.png`} />}
-             {width >= 1000 && <div className={`absolute top-8 left-8`}>
-              <p className={`px-2 table text-black text-2xl bg-theme-yellow-2  font-bold`}>
+             {width >= 1000 && <div className={`absolute top-8 left-8 ${classes.img}`}>
+              <p className={`px-2 table text-black  bg-theme-yellow-2 font-bold`}>
                 Mehr
               </p>
-              <p className={`px-2 table mt-1 text-black text-2xl bg-theme-yellow-2 font-bold`}>
+              <p className={`px-2 table mt-1 text-black  bg-theme-yellow-2 font-bold`}>
                 als nur eine
               </p>
-              <p className={`px-2 table mt-1 text-black text-2xl bg-theme-yellow-2 font-bold`}>
+              <p className={`px-2 table mt-1 text-black  bg-theme-yellow-2 font-bold`}>
                 Auto Suchmaschine.
               </p>
             </div>}
