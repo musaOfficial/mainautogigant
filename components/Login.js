@@ -55,7 +55,7 @@ export default function Login() {
               <div className={`mt-6 ${classes.fontsize}`}>
                 <Input placeholder={`E-Mail-Adresse`} inputType={`email`} />
                 <Input placeholder={`Passwort`} inputType={`password`} />
-                <div className={`flex justify-between mt-4`}>
+                <div className={`flex justify-between`}>
                   <div className={`flex items-center`} onClick={() => setPasswordSave(!passWordSave)}>
                     <Checkbox label='Eingeloggt bleiben' />
                   </div>
@@ -63,7 +63,7 @@ export default function Login() {
                     <a className={`text-theme-blue ${classes.fontsize15} ${classes.forgot}`}>Passwort vergessen?</a>
                   </Link>
                 </div>
-                <div className={`flex items-center justify-between mt-10 sm:flex-col ${classes.sendbtnarea}`}>
+                <div className={`flex items-center justify-between mt-4 sm:flex-col ${classes.sendbtnarea}`}>
                   <button className={`w-1/2 sm:mb-4 sm:mr-0 mr-2 inline-block px-10 py-3 sm:px-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white ${classes.loginbtn} ${classes.fontsize20} text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3`}>
                     Einloggen
                   </button>
