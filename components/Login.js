@@ -68,12 +68,12 @@ export default function Login() {
                     Einloggen
                   </button>
                   <Link href={`/registration/user`}>
-                    <div className={`w-1/2 sm:w-full sm:mb-4 sm:ml-0 ml-2 flex items-center cursor-pointer text-13`}>
+                    <div className={` sm:w-full sm:mb-4 sm:ml-0 ml-2 flex items-center cursor-pointer text-13`}>
                       <div className={`${classes.lineheight}`}>
-                        <p className={`cursor-default`}>Du bist noch nicht registriert?</p>
-                        <p className={`text-theme-blue  ${classes.fontsize13}`}>
+                        <p className={`cursor-default`}>Du bist noch nicht registriert?<span className={`ml-1 text-theme-blue  ${classes.fontsize13}`}>
                           Jetzt neu registrieren
-                        </p>
+                        </span></p>
+                        
                       </div>
                     </div>
                   </Link>
