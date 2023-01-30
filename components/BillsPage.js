@@ -30,11 +30,14 @@ function BillsPage(){
     const years = [];
     const currentYear = Number(new Date().getUTCFullYear())
     for(let i = currentYear; i >= 2023; i--){
-        years.push({label: i + "", value: i})
+        if(i == currentYear){
+            years.push({label: "Alle", value: null})
+        }
+        years.push({label: i, value: i})
     } 
 
     const [suche, setSuche] = useState("");
-    const [selectedYear, setSelectedYear] = useState("");
+    const [selectedYear, setSelectedYear] = useState();
 
     const [rechnungen, setRechnungen] = useState([
         { 
@@ -100,22 +103,32 @@ function BillsPage(){
         }
     }
 
-    var matchedFilters = [];
+    const [matchedFilters, setMatchedFilters] = useState();
 
     function searchForBillNumber(){
         
-        const re = RegExp(`.*${suche.toLowerCase().split('').join('.*')}.*`)
 
-        // [ 'Belgium', 'Brest' ]
-        const matches = rechnungen.filter(v => v.rechnungsnummer.toLowerCase().match(re))
-        matchedFilters = matches;
     }
 
 
     function filterByYear(){
-        const filteredByYear = rechnungen.filter(v => v.datum.getFullYear() == selectedYear);
-        matchedFilters = filteredByYear;
+
     }
+
+    useEffect(() => {
+
+        const filteredByYear = rechnungen.filter(v => v.datum.getFullYear() == selectedYear);
+        setMatchedFilters(filteredByYear);
+
+    }, [selectedYear])
+
+    useEffect(() => {
+        const re = RegExp(`.*${suche.toLowerCase().split('').join('.*')}.*`)
+
+        // [ 'Belgium', 'Brest' ]
+        const matches = rechnungen.filter(v => v.rechnungsnummer.toLowerCase().match(re))
+        setMatchedFilters(matches);
+    }, [suche])
 
     return (
         <div className={classes.container}>
@@ -157,7 +170,7 @@ function BillsPage(){
             </div>
             {/* RECHNUNGENLISTE */}
             <div className={classes.scrollbehavior}>
-            {suche == "" && !searchActivated && selectedYear == "" ? rechnungen.map((rechnung, index) => <div key={index} className={classes.rechnung}>
+            {suche == "" && selectedYear == null && rechnungen.map((rechnung, index) => <div key={index} className={classes.rechnung}>
             <div className={rechnung.bezahlt ? classes.bezahlt : classes.nichtbezahlt}></div>
                 <div className={classes.zahlungschecker}>
                     {rechnung.bezahlt == true ? <GreenCheck className={classes.greencheck} /> : <RedCheck className={classes.redcheck} />}
@@ -174,7 +187,8 @@ function BillsPage(){
                     <div className={classes.csv}><Download />.CSV</div>
                 </div>
                 <div className={classes.betrag}>{rechnung.betrag + " €"}</div>
-            </div>) : matchedFilters.map((rechnung, index) => <div key={indexRech} className={classes.rechnung}>
+            </div>)}
+            {(suche != "" || selectedYear != null) && matchedFilters.map((rechnung, index) => <div key={index} className={classes.rechnung}>
                 <div className={rechnung.bezahlt ? classes.bezahlt : classes.nichtbezahlt}></div>
                 <div className={classes.zahlungschecker}>
                     {rechnung.bezahlt == true ? <GreenCheck className={classes.greencheck} /> : <RedCheck className={classes.redcheck} />}
@@ -191,8 +205,7 @@ function BillsPage(){
                     <div className={classes.csv}><Download />.CSV</div>
                 </div>
                 <div className={classes.betrag}>{rechnung.betrag + " €"}</div>
-            </div>) }
-
+            </div>)}
             </div>
             <div className={classes.linebottom}>
                 <div className={classes.greencheckexplanation}>

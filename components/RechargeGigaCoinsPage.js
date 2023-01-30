@@ -37,11 +37,14 @@ function RechargeGigaCoinsPage(){
 
     const years = [];
     for(let i = 2023; i >= 1900; i--){
+        if(i == 2023){
+            years.push({label: "Alle", value: null})
+        }
         years.push({label: i, value: i})
     } 
 
     const [suche, setSuche] = useState("");
-    const [selectedYear, setSelectedYear] = useState("");
+    const [selectedYear, setSelectedYear] = useState();
 
 
 
@@ -109,20 +112,25 @@ function RechargeGigaCoinsPage(){
         }
     }
 
-    var matchedFilters = [];
+    const [matchedFilters, setMatchedFilters] = useState();
 
     function searchForBillNumber(){
         
         const re = RegExp(`.*${suche.toLowerCase().split('').join('.*')}.*`)
 
         const matches = rechnungen.filter(v => v.rechnungsnummer.toLowerCase().match(re))
-        matchedFilters = matches;
+        setMatchedFilters(matches)
     }
 
+    useEffect(() => {
+
+        const filteredByYear = rechnungen.filter(v => v.datum.getFullYear() == selectedYear);
+        setMatchedFilters(filteredByYear)
+    }, [selectedYear])
 
     function filterByYear(){
-        const filteredByYear = rechnungen.filter(v => v.datum.getFullYear() == selectedYear);
-        matchedFilters = filteredByYear;
+        
+        
     }
 
     useEffect(() => {
@@ -133,8 +141,10 @@ function RechargeGigaCoinsPage(){
         }
 
         searchForBillNumber();
-
     }, [suche])
+
+    
+
     return (
         <div className={classes.container}>
             <div className={classes.heading}>GIGA COINS AUFLADEN</div>
@@ -166,6 +176,7 @@ function RechargeGigaCoinsPage(){
             </div>
             </div>
             
+            
             {/* RECHNUNGENINFORMATION */}
             <div className={classes.infocontainer}>
                 <div className={classes.status}>Status</div>
@@ -176,8 +187,8 @@ function RechargeGigaCoinsPage(){
             </div>
             {/* RECHNUNGENLISTE */}
             <div className={classes.scrollbehavior}>
-            {suche == "" && !searchActivated && selectedYear == "" && rechnungen.map((rechnung, index) => <div key={index} className={classes.rechnung}>
-                <div className={classes.bezahlt}></div>
+            {suche == "" && !searchActivated && selectedYear == null && rechnungen.map((rechnung, index) => <div key={index} className={classes.rechnung}>
+                <div className={rechnung.type == "add" ? classes.bezahlt : classes.nichtbezahlt}></div>
                 <div className={classes.zahlungschecker}>
                     {rechnung.type == "add" ? <GreenCheck className={classes.greencheck} /> : <RedCheck className={classes.redcheck} />}
                 </div>
@@ -194,13 +205,13 @@ function RechargeGigaCoinsPage(){
                 </div>
                 <div className={classes.betrag}>{rechnung.betrag + " €"}</div>
             </div>)}
-            {matchedFilters.map((rechnung, index) => <div key={index} className={classes.rechnung}>
-                <div className={rechnung.bezahlt ? classes.bezahlt : classes.nichtbezahlt}></div>
+            {(suche != "" || selectedYear != null) && matchedFilters.map((rechnung, index) => <div key={index} className={classes.rechnung}>
+                <div className={rechnung.type == "add" ? classes.bezahlt : classes.nichtbezahlt}></div>
                 <div className={classes.zahlungschecker}>
                     {rechnung.bezahlt == true ? <GreenCheck className={classes.greencheck} /> : <RedCheck className={classes.redcheck} />}
                 </div>
                 <div className={classes.date}>{
-                    rechnung.datum.toLocaleDateString()
+                    rechnung.datum.toLocaleDateString("de-DE")
                 }</div>
                 <div className={classes.rnnr}>
                     {rechnung.rechnungsnummer}<br></br>

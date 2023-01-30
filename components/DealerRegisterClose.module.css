@@ -19,11 +19,13 @@
 }
 
 .stepshower{
-    display: flex;
+    display: grid;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    grid-template-columns: repeat(3, 1fr);
+
 }
 
 .steponeactive{

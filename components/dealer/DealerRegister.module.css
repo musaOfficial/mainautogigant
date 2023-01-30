@@ -8,3 +8,148 @@
     display: flex;
     align-items: center;
 }
+
+.stepshower{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100% !important;
+}
+
+.steponeactive{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FBB900;
+    height: 50px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px 0 0 0;
+    position: relative;
+}
+
+.triangle{
+    position: absolute;
+    height: 9px;
+    width: 9px;
+    background-color: #FBB900;
+    transform: rotate(45deg);
+    bottom: -4px;
+}
+
+.steptwo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-left: 2px solid #F1F2F3;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #F1F2F3;
+}
+
+.steponeactive{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FBB900;
+    height: 50px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px 0 0 0;
+    position: relative;
+}
+
+.stepthree{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-left: 2px solid #F1F2F3;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #F1F2F3;
+}
+
+.top_row{
+    display: flex;
+    height: 40px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.leftrow{
+    display: flex;
+    align-items: center;
+}
+
+.backhome{
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.backhome:hover{
+    color: #FBB900;
+    background-color: #fff;
+}
+
+.weiss{
+    min-height: 25px;
+    min-width: 25px;
+    max-height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 2px solid #F1F2F3;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.whitecheck{
+    color: #fff;
+}
+
+.blackcheck{
+    color: #000;
+}
+
+.typlabel{
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.img{
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    font-size: 30px;
+    border-radius: 10px 0 0 0;
+    overflow: hidden;
+}
