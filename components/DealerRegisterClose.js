@@ -3,11 +3,15 @@ import Info from './../public/registerclose/info.svg';
 import Check from './../public/registerclose/check.svg';
 import Mail from './../public/registerclose/mailicon.svg';
 import Image from 'next/image';
-
+import Link from 'next/link';
+import BackHome from './../public/home.svg';
 function DealerRegisterClose(){
     return (
         <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0">
-            <div className="relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6">
+            <div className="relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex flex-col  lg:flex-col bg-white p-6">
+            <div className={`${classes.top_row}`}>
+                <span className={classes.leftrow}><Link href={"/"}><BackHome className={classes.backhome} /></Link></span>
+            </div>
                 <div className={classes.container}>
                     <div className={classes.left}>
                         <div className={classes.stepshower}>

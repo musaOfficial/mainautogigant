@@ -139,6 +139,34 @@
     position: relative;
 }
 
+.top_row{
+    display: flex;
+    height: 40px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.leftrow{
+    display: flex;
+    align-items: center;
+}
+
+.backhome{
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.backhome:hover{
+    color: #FBB900;
+    background-color: #fff;
+}
+
 @media(max-width: 1023px){
     .container{
         flex-direction: column;
@@ -146,5 +174,17 @@
     
     .left{
         margin-bottom: 20px;
+    }
+
+    .mailicon{
+        min-width: 35px;
+    }
+
+    .infoicon{
+        min-width: 38px;
+    }
+
+    .checkicon{
+        min-width: 45px;
     }
 }
