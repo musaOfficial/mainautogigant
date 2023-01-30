@@ -15,7 +15,7 @@ export default function DealerLogin() {
             <span className={classes.leftrow}><Link href={"/"}><BackHome className={classes.backhome} /></Link></span>
           </div>
           <div className="flex relative w-full">
-          <div className="w-full lg:w-full mr-3 rounded-10 bg-theme-gray-4 flex flex-col text-theme-gray-4 text-15 md:text-xs lg:flex-col">
+          <div className="w-full lg:w-full rounded-10 bg-theme-gray-4 flex flex-col text-theme-gray-4 text-15 md:text-xs lg:flex-col">
             <div className="p-6">
               <div className="mt-2">
                 <h3 className="text-3xl md:text-xl font-bold">Händler Login</h3>
