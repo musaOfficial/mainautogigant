@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Input from "./ui/Input";
 import classes from './DealerLogin.module.css';
+import BackHome from './../public/home.svg';
 
 export default function DealerLogin() {
   const [passWordSave, setPasswordSave] = useState(false);
@@ -9,7 +10,11 @@ export default function DealerLogin() {
   return (
     <>
       <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0">
-        <div className="relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6">
+        <div className="relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex flex-col lg:flex-col bg-white p-6">
+        <div className={`${classes.top_row}`}>
+            <span className={classes.leftrow}><Link href={"/"}><BackHome className={classes.backhome} /></Link></span>
+          </div>
+          <div className="flex relative w-full">
           <div className="w-full lg:w-full mr-3 rounded-10 bg-theme-gray-4 flex flex-col text-theme-gray-4 text-15 md:text-xs lg:flex-col">
             <div className="p-6">
               <div className="mt-2">
@@ -102,6 +107,7 @@ export default function DealerLogin() {
                 Auto Suchmaschine.
               </p>
             </div>
+          </div>
           </div>
           </div>
         </div>
