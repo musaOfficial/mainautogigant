@@ -14,7 +14,7 @@ export default function DealerLogin() {
         <div className={`${classes.top_row}`}>
             <span className={classes.leftrow}><Link href={"/"}><BackHome className={classes.backhome} /></Link></span>
           </div>
-          <div className="flex relative w-full">
+          <div className="flex relative w-full md:!w-full lg:flex-col">
           <div className="w-full lg:w-full rounded-10 bg-theme-gray-4 flex flex-col text-theme-gray-4 text-15 md:text-xs lg:flex-col">
             <div className="p-6">
               <div className="mt-2">
@@ -75,13 +75,13 @@ export default function DealerLogin() {
                     Einloggen
                   </button>
                   <Link href="/registration/user">
-                    <div className="w-full sm:w-full sm:mb-4 mt-1 sm:ml-0 ml-2 flex items-center cursor-pointer text-13">
+                    <div className="w-full sm:w-full sm:mb-4 mt-2 sm:ml-0 ml-2 flex items-center cursor-pointer text-13">
                       <img
                         className="opacity-50 mr-2"
                         src="/images/icons/login-user.png"
                       />
                       <div>
-                        <p>Du bist noch nicht registriert?<span className="text-theme-blue">
+                        <p>Du bist noch nicht registriert?<br /><span className="text-theme-blue">
                           {" "}Jetzt neu registrieren
                         </span></p>
                         

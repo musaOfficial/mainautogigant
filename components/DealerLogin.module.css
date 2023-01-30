@@ -51,3 +51,9 @@
     color: #FBB900;
     background-color: #fff;
 }
+
+@media(max-width: 500px){
+    .img{
+        font-size: 25px;
+    }
+}
