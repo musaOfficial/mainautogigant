@@ -8,6 +8,9 @@ import Checkbox from "./ui/Checkbox";
 import Select from 'react-select';
 import Image from "next/image";
 import ShopWithLine from './../public/shopwithline.svg';
+import Check from './../public/hackerl.svg';
+import BackHome from './../public/home.svg';
+
 
 export default function Registration() {
   const style = {
@@ -38,6 +41,8 @@ export default function Registration() {
   const [newsletterActive, setNewsletterActive] = useState();
   const [agb, setAgb] = useState();
 
+  const [geburtsjahr, setGeburtsjahr] = useState();
+
   const option1 = [
     { value: "alle marken", label: "Alle Marken" },
     { value: "alle", label: "Alle Marken" },
@@ -45,12 +50,16 @@ export default function Registration() {
   ];
 
   var geburtsjahre = [];
-  for(let i = 2023 - 110; i <= 2023 - 10; i++ ){
+  for(let i = 2023 - 18; i >= 1930; i-- ){
     geburtsjahre.push({value: i, label: i});
   }
   return (
     <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0 pb-max-h-full ">
-      <div className="relative w-10/12 lg:w-full max-w-ag-container max-h-full md:!w-full mx-auto flex lg:flex-col bg-white p-6">
+      <div className="relative w-10/12 lg:w-full max-w-ag-container max-h-full md:!w-full mx-auto flex flex-col lg:flex-col bg-white p-6">
+        <div className={`${classes.top_row}`}>
+            <span className={classes.leftrow}><Link href={"/"}><BackHome className={classes.backhome} /></Link></span>
+        </div>
+        <div className="flex">
         <div className={classes.container}>
           <div className={classes.left}>
             <div className={classes.stepshower}>
@@ -58,7 +67,6 @@ export default function Registration() {
               <div className={classes.steptwo}>2</div>
               <div className={classes.stepthree}>3</div>
             </div>
-            <Link href={"/"}><div className={classes.backtohome}><BackTo className={classes.backto} />zurück zur Startseite</div></Link>
             <div className={classes.heading}>Neu Registrieren</div>
             <div className={classes.rowhalfer}>
               <div className={classes.gendercheckboxes}>
@@ -95,18 +103,26 @@ export default function Registration() {
               placeholder="Alle"
               className='mt-1 mb-1'
               isSearchable={true}
-              defaultInputValue={geburtsjahre[geburtsjahre.length - 1].value}
+              onChange={(e) => setGeburtsjahr(e.value)}
               />
             </div>
             <div className={classes.newslettercheckboxes}>
-              <label htmlFor="newsletter" className={classes.wholeinput}>
-                <input id="newsletter" className={classes.radioinput} type={"checkbox"} onChange={() => setNewsletterActive(d => !d)} />  
-                Newsletter, Updates und Trends erhalten.
-              </label>
+
               <label htmlFor="agb" className={classes.bottominput}>
-                <input id="agb" className={`${classes.radioinput} ${classes.transform}`} type={"checkbox"} onChange={() => setAgb(d => !d)} />  
-                Es gelten unsere Allgemeinen Geschäftsbedingungen.
-Informationen zum Datenschutz finden Sie in unserer Datenschutzerklärung.
+              <div className='flex items-center'>
+                <div className={classes.weiss} onClick={() => setNewsletterActive(d => !d)}>
+                  {newsletterActive == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Newsletter, Updates und Trends erhalten.</span>
+              </div>
+              </label>
+              <label htmlFor="agb" className={`${classes.bottominput} mt-2`}>
+              <div className='flex'>
+                <div className={classes.weiss} onClick={() => setAgb(d => !d)}>
+                  {agb == true && <Check className={classes.blackcheck} />}
+                </div>
+                <span className={classes.typlabel}>Es gelten unsere Allgemeinen Geschäftsbedingungen. Informationen zum Datenschutz finden Sie in unserer Datenschutzerklärung.</span>
+              </div>
               </label>
             </div>
             <div className={classes.captcha}>Captcha</div>
@@ -117,14 +133,16 @@ Informationen zum Datenschutz finden Sie in unserer Datenschutzerklärung.
               <Image src={"/images/reg-car.png"} layout="fill" objectFit="cover" />
             </div>
             <div className={classes.registerasdealer}>
-              <div className={classes.dealerheading}>Als Händler registrieren</div>
+              <Link href={"dealer"}><div className={classes.dealerheading}>Als Händler registrieren</div></Link>
               <div className={classes.dealertext}>
               Haben Sie Fragen?<br/>
 Wir helfen Ihnen gerne weiter. <Link href={"/contact-us"}><span className={classes.link}>Kontaktformular</span></Link>
               </div>
-              <div className={classes.sendbtn}><ShopWithLine className={classes.shopwithline} />Als Händler registrieren</div>
+              <Link href={"dealer"}><div className={classes.sendbtn}><ShopWithLine className={classes.shopwithline} />Als Händler registrieren</div></Link>
             </div>
           </div>
+        </div>
+
         </div>
       </div>
     </div>

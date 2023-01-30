@@ -36,12 +36,14 @@ function RechargeGigaCoinsPage(){
     };
 
     const years = [];
-    for(let i = 2023 - 110; i <= 2023; i++){
-        years.push({label: i + "", value: i})
+    for(let i = 2023; i >= 1900; i--){
+        years.push({label: i, value: i})
     } 
 
     const [suche, setSuche] = useState("");
     const [selectedYear, setSelectedYear] = useState("");
+
+
 
     const [rechnungen, setRechnungen] = useState([
         { 
@@ -113,7 +115,6 @@ function RechargeGigaCoinsPage(){
         
         const re = RegExp(`.*${suche.toLowerCase().split('').join('.*')}.*`)
 
-        // [ 'Belgium', 'Brest' ]
         const matches = rechnungen.filter(v => v.rechnungsnummer.toLowerCase().match(re))
         matchedFilters = matches;
     }
@@ -123,6 +124,17 @@ function RechargeGigaCoinsPage(){
         const filteredByYear = rechnungen.filter(v => v.datum.getFullYear() == selectedYear);
         matchedFilters = filteredByYear;
     }
+
+    useEffect(() => {
+        if(suche != ""){
+            setSearchActivated(true)
+        } else {
+            setSearchActivated(false);
+        }
+
+        searchForBillNumber();
+
+    }, [suche])
     return (
         <div className={classes.container}>
             <div className={classes.heading}>GIGA COINS AUFLADEN</div>
@@ -164,7 +176,7 @@ function RechargeGigaCoinsPage(){
             </div>
             {/* RECHNUNGENLISTE */}
             <div className={classes.scrollbehavior}>
-            {suche == "" && !searchActivated && selectedYear == "" ? rechnungen.map((rechnung, index) => <div key={index} className={classes.rechnung}>
+            {suche == "" && !searchActivated && selectedYear == "" && rechnungen.map((rechnung, index) => <div key={index} className={classes.rechnung}>
                 <div className={classes.bezahlt}></div>
                 <div className={classes.zahlungschecker}>
                     {rechnung.type == "add" ? <GreenCheck className={classes.greencheck} /> : <RedCheck className={classes.redcheck} />}
@@ -181,7 +193,8 @@ function RechargeGigaCoinsPage(){
                     <div className={classes.csv}><Download />.CSV</div>
                 </div>
                 <div className={classes.betrag}>{rechnung.betrag + " €"}</div>
-            </div>) : matchedFilters.map((rechnung, index) => <div key={index} className={classes.rechnung}>
+            </div>)}
+            {matchedFilters.map((rechnung, index) => <div key={index} className={classes.rechnung}>
                 <div className={rechnung.bezahlt ? classes.bezahlt : classes.nichtbezahlt}></div>
                 <div className={classes.zahlungschecker}>
                     {rechnung.bezahlt == true ? <GreenCheck className={classes.greencheck} /> : <RedCheck className={classes.redcheck} />}
@@ -198,7 +211,7 @@ function RechargeGigaCoinsPage(){
                     <div className={classes.csv}><Download />.CSV</div>
                 </div>
                 <div className={classes.betrag}>{rechnung.betrag + " €"}</div>
-            </div>) }
+            </div>)}
             </div>
             <div className={classes.bigcontainer}>
                 <div className={classes.gigaheading}>EURO AUFLADEN UND ZUSÄTZLICH<br></br>GRATIS GIGA COINS ERHALTEN.</div>

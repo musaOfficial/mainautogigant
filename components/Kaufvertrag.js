@@ -1,6 +1,9 @@
 
 import { useState } from 'react';
 import classes from './Kaufvertrag.module.css';
+import Link from 'next/link';
+import BackHome from './../public/home.svg';
+
 function KFZKaufvertrag(){
     const [purchaserFirstName, setPurchaserFirstName] = useState();
     const [purchaserLastName, setPurchaserLastName] = useState();
@@ -38,7 +41,11 @@ function KFZKaufvertrag(){
 
     return (
         <div className={classes.container}>
-            <div className={`${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex lg:flex-col bg-white p-6`}>
+            <div className={`${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex flex-col lg:flex-col bg-white p-6`}>
+                <div className={`${classes.top_row}`}>
+                    <span className={classes.leftrow}><Link href={"/"}><BackHome className={classes.backhome} /></Link></span>
+                </div>
+                <div className='flex w-full lg:flex-col'>
                 <div className={classes.content}>
                     <form onSubmit={handleSubmit}>
                     <h1 className={classes.heading}>KFZ Kaufvertrag</h1>
@@ -92,15 +99,25 @@ function KFZKaufvertrag(){
                 </div>
                 <div className={classes.secondcontent}>
                     <div className={classes.img}>
-                        <span className={classes.yellowbackground}>KFZ Kaufvertrag<br></br></span>
-                        <span className={classes.yellowbackground}>Vorlage<br></br></span>
-                        <span className={classes.yellowbackground}>für Privatpersonen.</span>
+                        <div className={`relative w-full lg:w-auto lg:ml-0 lg:mt-4 ml-3 ${classes.border} `}>
+                            <p className={`px-2 table text-blackn  bg-theme-yellow-2 font-bold ${classes.text}`}>
+                                Mehr
+                            </p>
+                            <p className={`px-2 table mt-1 text-black  bg-theme-yellow-2 font-bold ${classes.text}`}>
+                                als nur eine
+                            </p>
+                            <p className={`px-2 table mt-1 text-black  bg-theme-yellow-2 font-bold ${classes.text}`}>
+                                Auto Suchmaschine.
+                            </p>
+                          
+                        </div>
                     </div>
                     <p className={classes.scdesc}>Im gebrauchten Zustand, wie besichtigt und Probe gefahren,<br/>ohne jede Gewährleistung.</p>
                     <p className={classes.scdesc}>Der Kaufpreis wurde bei der Übergabe des Wagens bezahlt<br/>und der Empfang hiermit bestätigt.</p>
                     <p className={classes.scdesc}>Für die Richtigkeit und Echtheit der Motor- und Fahrgestellnummer<br/> sowie der Fahrzeugpapiere haftet der Verkäufer.</p>
                     <p className={classes.scdesc}>Er bestätigt, dass das Fahrzeug sein alleiniges Eigentum ist und von<br/>keiner Seite irgendwelche Forderungen an denselben bestehen.</p>
                     <button className={classes.downloadtemplate}>Kaufvertrag Vorlage herunterladen</button>
+                </div>
                 </div>
             </div>
         </div>
