@@ -10,8 +10,16 @@
     background-color: #6C757D;
     cursor: pointer;
     transition: all .1s ease-in;   
+    margin-top: -10px;
 }
 
 .btn:hover{
     background-color: #FBB900;
+}
+
+.img{
+    width: 100%;
+    border-radius: 10px 0 0 0;
+    overflow: hidden;
+    font-size: 30px;
 }

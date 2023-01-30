@@ -42,7 +42,7 @@ export default function Checkbox({ label, varient }) {
           </g>
         </svg>
       </div>
-      <label className={`${varient === "sm" ? "text-13" : "text-base"} ${classes.fontsize15} cursor-pointer  font-normal`}>
+      <label className={`${varient === "sm" ? "text-13" : "text-base"} ${classes.fontsize13} cursor-pointer  font-normal`}>
         {label}
       </label>
     </div>

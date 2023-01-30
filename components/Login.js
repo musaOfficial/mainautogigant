@@ -60,7 +60,7 @@ export default function Login() {
                     <Checkbox label='Eingeloggt bleiben' />
                   </div>
                   <Link href={`/reset-password`}>
-                    <a className={`text-theme-blue ${classes.fontsize15} ${classes.forgot}`}>Passwort vergessen?</a>
+                    <a className={`text-theme-blue ${classes.fontsize13} ${classes.forgot}`}>Passwort vergessen?</a>
                   </Link>
                 </div>
                 <div className={`flex items-center justify-between mt-4 sm:flex-col ${classes.sendbtnarea}`}>
