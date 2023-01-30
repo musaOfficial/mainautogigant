@@ -52,6 +52,19 @@
     background-color: #fff;
 }
 
+.check{
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+@media(max-width: 767px){
+    .forgotpassword{
+        font-size: 12px;
+        margin-top: 3.5px;
+    }
+}
+
 @media(max-width: 500px){
     .img{
         font-size: 25px;

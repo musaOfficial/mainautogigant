@@ -3,6 +3,7 @@ import { useState } from "react";
 import Input from "./ui/Input";
 import classes from './DealerLogin.module.css';
 import BackHome from './../public/home.svg';
+import Check from './../public/registerclose/check.svg';
 
 export default function DealerLogin() {
   const [passWordSave, setPasswordSave] = useState(false);
@@ -67,7 +68,7 @@ export default function DealerLogin() {
                     <label htmlFor="stayLoggedIn">Eingeloggt bleiben</label>
                   </div>
                   <Link href="/reset-password">
-                    <a className="text-theme-blue">Passwort vergessen?</a>
+                    <a className={`text-theme-blue ${classes.forgotpassword}`}>Passwort vergessen?</a>
                   </Link>
                 </div>
                 <div className="flex flex-col items-end justify-between mt-10 sm:flex-col">
@@ -75,13 +76,10 @@ export default function DealerLogin() {
                     Einloggen
                   </button>
                   <Link href="/registration/user">
-                    <div className="w-full sm:w-full sm:mb-4 mt-2 sm:ml-0 ml-2 flex items-center cursor-pointer text-13">
-                      <img
-                        className="opacity-50 mr-2"
-                        src="/images/icons/login-user.png"
-                      />
+                    <div className="w-full sm:w-full sm:mb-4 mt-2 sm:ml-0 ml-2 flex items-center  text-13">
+                      <Check className={classes.check} />
                       <div>
-                        <p>Du bist noch nicht registriert?<br /><span className="text-theme-blue">
+                        <p>Du bist noch nicht registriert?<br /><span className="text-theme-blue cursor-pointer hover:underline">
                           {" "}Jetzt neu registrieren
                         </span></p>
                         
