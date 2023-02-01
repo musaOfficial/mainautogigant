@@ -118,7 +118,7 @@
 
 .price{
     z-index: 0;
-    width: 120px;
+    min-width: 150px;
     height: 30px;
     background-color: #FBB900;
     position: absolute;
@@ -126,12 +126,15 @@
     right: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     color: #fff;
     font-weight: bold;
     border-radius: 10px 0 0 0;
     font-size: 20px;
+    padding-left: 20px;
 }
+
+
 
 .actioncontainer{
     position: absolute;
@@ -230,4 +233,10 @@
     position: absolute;
     background-color: #fff;
     top: 25px;
+}
+
+.gigalabel{
+    left: 20px;
+    top: 20px;
+    position: absolute;
 }

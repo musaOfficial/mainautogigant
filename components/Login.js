@@ -7,6 +7,7 @@ import Shop from './../public/aboutus/shop.svg'
 import ShopWithLine from './../public/shopwithline.svg'
 import BackHome from './../public/home.svg';
 import { useEffect } from "react";
+import Check from './../public/registerclose/check.svg';
 
 const useDeviceSize = () => {
 
@@ -70,8 +71,8 @@ export default function Login() {
                   <Link href={`/registration/user`}>
                     <div className={` sm:w-full sm:mb-4 sm:ml-0 ml-2 flex items-center cursor-pointer text-13`}>
                       <div className={`${classes.lineheight}`}>
-                        <p className={`cursor-default`}>Du bist noch nicht registriert?<span className={`ml-1 text-theme-blue  ${classes.fontsize13}`}>
-                          Jetzt neu registrieren
+                        <Check className={classes.check} /><p className={`cursor-default`}>Du bist noch nicht registriert?<span className={`ml-1 text-theme-blue  ${classes.fontsize13}`}>
+                          <br></br><Link href={"registration/user"}><span className={classes.link}>Jetzt neu registrieren!</span></Link>
                         </span></p>
                         
                       </div>

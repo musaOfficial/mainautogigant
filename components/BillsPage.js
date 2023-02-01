@@ -58,7 +58,6 @@ function BillsPage(){
             betrag: 150.54,
             bezahlt: false,
         },
-
     ])
 
 

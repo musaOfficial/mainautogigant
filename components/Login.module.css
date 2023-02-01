@@ -34,6 +34,7 @@
 
 .lineheight{
     line-height: 14px;
+    display: flex;
 }
 
 .haendlerloginbtn{
@@ -146,4 +147,15 @@
     border-top-left-radius: 10px;
     overflow: hidden;
     font-size: 30px !important;
+}
+
+.check{
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+.link:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }

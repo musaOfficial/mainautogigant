@@ -18,8 +18,8 @@
 .gigalabel{
     width: 60px;
     height: 25px;
-    top: -12.5px;
-    left: 20px;
+    top: 15px;
+    left: 15px;
     position: absolute;
     z-index: 11;
 }
@@ -143,16 +143,17 @@
     position: absolute;
     right: 0px;
     top: 0px;
-    width: 160px;
+    min-width: 160px;
     height: 40px;
     background-color: #FFB900;
     border-radius: 0 10px 0 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     color: #fff;
     font-size: 25px;
     font-weight: bold;
+    padding-left: 20px;
 }
 
 .title{
@@ -347,4 +348,21 @@
     background-color: #fff;
     position: absolute;
     bottom: -10px;
+}
+
+.paper{
+    background-color: #0067B8;
+    width: 43px;
+    height: calc(100% + 3px);
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(3px, -2px);
+    border-radius: 0 10px 0 0;
+}
+
+.plane{
+    width: 22px;
+    height: 22px;
 }

@@ -16,6 +16,7 @@ import InstagramIcon from './../../../public/icons/instagram.svg';
 import CompanyIcon from './../../../public/icons/companyname.svg';
 import GigaLabel from './../../../public/gigalabel.svg';
 import Link from 'next/link';
+import PaperPlane from './../../../public/paper-plane.svg';
 
 function DraftCard({
     title,
@@ -100,6 +101,7 @@ function DraftCard({
         <div className={`${classes.carinfocontainer} ${colorad ? classes.colorad : null}`}>
             <div className={classes.carprice}>
                 {displayPrice}
+                <div className={classes.paper}><PaperPlane className={classes.plane} /></div>
             </div>
             <div className={classes.rightside}>
                 <Link href={`car-details/${id}`}>
@@ -126,7 +128,10 @@ function DraftCard({
                 
                 <div className={styles.top}>
                     <Link href={`car-details/${id}`}><Image className={styles.img} src={imgSrc} layout='fill' objectFit='cover' /></Link>
-                    <div className={styles.price}>{displayPrice}</div>
+                    <div className={styles.price}>
+                        {displayPrice}
+                        <div className={classes.paper}><PaperPlane className={classes.plane} /></div>
+                    </div>
                     <div className={styles.actioncontainer}>
                         <div className={`${classes.borderright} ${classes.first}`} onMouseEnter={() => setVisibleOpen(true)} onMouseLeave={() => setVisibleOpen(false)}>
                            <Link href={`car-details/${id}`} ><Visible className={classes.sicon} /></Link>
@@ -162,7 +167,7 @@ function DraftCard({
                     </div>
                 </div>
             
-                <GigaLabel className={classes.gigalabel} />
+              {gigalabel == true && <GigaLabel className={classes.gigalabel} />}
             </div>
             <div className={`${styles.bottom} ${colorad ? styles.colorad : null}`}>
                 <Link href={`car-details/${id}`}>

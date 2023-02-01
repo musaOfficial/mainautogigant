@@ -208,7 +208,7 @@ function RechargeGigaCoinsPage(){
             {(suche != "" || selectedYear != null) && matchedFilters.map((rechnung, index) => <div key={index} className={classes.rechnung}>
                 <div className={rechnung.type == "add" ? classes.bezahlt : classes.nichtbezahlt}></div>
                 <div className={classes.zahlungschecker}>
-                    {rechnung.bezahlt == true ? <GreenCheck className={classes.greencheck} /> : <RedCheck className={classes.redcheck} />}
+                    {rechnung.type == "add" ? <GreenCheck className={classes.greencheck} /> : <RedCheck className={classes.redcheck} />}
                 </div>
                 <div className={classes.date}>{
                     rechnung.datum.toLocaleDateString("de-DE")
@@ -229,7 +229,7 @@ function RechargeGigaCoinsPage(){
                 <div className={classes.gigacoinrow}>
                     <div className={classes.gigaleft}>
                         <GigaCoins className={classes.gigacoins} />
-                        <div>Jetzt Aufladen und zusätzlich Bonus erhalten.<br></br>Gültig bis 30.01.2023</div>
+                        <div>Jetzt Aufladen und zusätzlich Bonus erhalten.<br></br>Gültig bis 30.02.2023</div>
                     </div>
                     <div className={classes.gigaright}>
                         <div className={classes.firstbtn}>500,00 € Aufladen</div>

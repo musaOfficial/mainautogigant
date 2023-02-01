@@ -6,7 +6,7 @@ import SwiperComponent from './ui/Swiper';
 import { useState } from 'react';
 import Expand from './../public/expand.svg'
 import { useEffect } from 'react';
-
+import Link from 'next/link';
 const useDeviceSize = () => {
 
     const [width, setWidth] = useState(0)
@@ -78,7 +78,7 @@ kaufen können, und dem arabam/supply-Service für die Fahrzeugbeschaffung seine
                             <p className={classes.lefttext} >Qualität ist nie ein Zufall; 
     sie ist immer das Ergebnis 
     einer hohen Absicht.</p>
-                            <button className={classes.leftbtn}>KONTAKTIEREN SIE UNS</button> 
+                            <Link href="/contact-us"><button className={classes.leftbtn}>KONTAKTIEREN SIE UNS</button></Link>
                         </div>
                     </div>
                     <div className={classes.right}>

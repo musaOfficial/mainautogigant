@@ -19,7 +19,7 @@ export default function DealerLogin() {
           <div className="w-full lg:w-full rounded-10 bg-theme-gray-4 flex flex-col text-theme-gray-4 text-15 md:text-xs lg:flex-col">
             <div className="p-6">
               <div className="mt-2">
-                <h3 className="text-3xl md:text-xl font-bold">Händler Login</h3>
+                <h3 className="text-3xl font-bold">Händler Login</h3>
                 <p className="mt-1 text-base">
                   Um fortzufahren, musst du eingeloggt sein.
                 </p>

@@ -555,7 +555,7 @@ export default function DPContainer() {
                     <path id="call_FILL0_wght400_GRAD0_opsz48" d="M34.125,36a22.476,22.476,0,0,1-10.1-2.5A34.306,34.306,0,0,1,15,27a34.306,34.306,0,0,1-6.5-9.021A22.476,22.476,0,0,1,6,7.875,1.85,1.85,0,0,1,7.875,6h5.833a1.474,1.474,0,0,1,1.021.4,1.841,1.841,0,0,1,.562,1.063l1.125,5.25a3,3,0,0,1-.021,1.063,1.605,1.605,0,0,1-.437.813l-4.167,4.208a34.593,34.593,0,0,0,5.229,6.75,28.9,28.9,0,0,0,6.563,4.875l3.958-4.083a2.3,2.3,0,0,1,.958-.646,1.926,1.926,0,0,1,1.083-.062l4.958,1.083A1.82,1.82,0,0,1,36,28.5v5.625A1.85,1.85,0,0,1,34.125,36ZM10.542,16.5l3.375-3.417h0L12.958,8.5H8.5A14.342,14.342,0,0,0,9,12.063,33.585,33.585,0,0,0,10.542,16.5ZM33.5,33.5h0V29.042h0l-4.292-.875h0l-3.292,3.458a20.8,20.8,0,0,0,3.708,1.292A19.554,19.554,0,0,0,33.5,33.5Zm-7.583-1.875ZM10.542,16.5Z" transform="translate(-6 -6)" fill="#6c757d" />
                   </svg>
                   <Link href='/'>
-                    <a className='hidden group-hover:block absolute -bottom-4 z-20 right-0 md:-right-8 text-theme-blue text-13 bg-white rounded-10 px-2 py-px shadow-md whitespace-nowrap' target='_blank' rel="noreferrer">
+                    <a className='hidden group-hover:block absolute hover:underline -bottom-4 z-20 right-0 md:-right-8 text-theme-blue text-13 bg-white rounded-10 px-2 py-px shadow-md whitespace-nowrap' target='_blank' rel="noreferrer">
                       Händler anrufen
                       <span className="absolute h-4 w-4 -z-10 right-6 md:right-14 -top-1 rotate-45 bg-white"></span>
                     </a>
@@ -567,7 +567,7 @@ export default function DPContainer() {
                   </svg>
 
                   <Link href='/'>
-                    <a className='hidden group-hover:block absolute -bottom-4 z-20 right-0 text-theme-blue text-13 bg-white rounded-10 px-2 py-px shadow-md whitespace-nowrap' target='_blank' rel="noreferrer">
+                    <a className='hidden group-hover:block absolute -bottom-4 hover:underline z-20 right-0 text-theme-blue text-13 bg-white rounded-10 px-2 py-px shadow-md whitespace-nowrap' target='_blank' rel="noreferrer">
                       Händler merken
                       <span className="absolute h-4 w-4 -z-10 right-6 -top-1 rotate-45 bg-white"></span>
                     </a>
@@ -582,7 +582,7 @@ export default function DPContainer() {
                       <span className="absolute h-4 w-4 -z-10 right-6 -top-1 rotate-45 bg-white"></span>
                       <div className="text-theme-gray-4 px-1 py-px">
                         <Link href='/'>
-                          <a className="flex items-center ease-linear duration-200 hover:text-theme-blue py-1" target='_blank' rel="noreferrer">
+                          <a className="flex items-center ease-linear duration-200 hover:underline text-theme-blue py-1" target='_blank' rel="noreferrer">
                             <svg className="mr-2" xmlns="http://www.w3.org/2000/svg" width="19.999" height="20" viewBox="0 0 19.999 20">
                               <g id="rz_email" transform="translate(-112.779 -154.99)">
                                 <path id="Path_1002" data-name="Path 1002" d="M131.175,164.709h-9.316l4.658,3.675Z" transform="translate(-3.738 -4.004)" fill="#6c757d" />
@@ -593,14 +593,14 @@ export default function DPContainer() {
                             E-Mail
                           </a>
                         </Link>
-                        <button className="flex items-center ease-linear duration-200 hover:text-theme-blue py-1">
+                        <button className="flex items-center ease-linear duration-200 hover:underline text-theme-blue py-1">
                           <svg className="mr-2" xmlns="http://www.w3.org/2000/svg" width="20" height="19.999" viewBox="0 0 20 19.999">
                             <path id="rz_link" d="M134.605,124.607a10,10,0,1,0,10,10A10,10,0,0,0,134.605,124.607Zm0,14.8-1.262,1.263a3.394,3.394,0,0,1-4.8-4.8l1.262-1.262a3.393,3.393,0,0,1,3.2-.9l-3.315,3.311a1.766,1.766,0,0,0,2.5,2.5L135.5,136.2A3.391,3.391,0,0,1,134.606,139.405Zm1.718-7.758a.878.878,0,0,1,1.241,1.242l-4.677,4.678a.878.878,0,0,1-1.242-1.242Zm4.343,1.7-1.262,1.262a3.388,3.388,0,0,1-3.2.9l3.313-3.314a1.766,1.766,0,0,0-2.5-2.5l-3.312,3.313a3.387,3.387,0,0,1,.9-3.2l1.262-1.263a3.394,3.394,0,0,1,4.8,4.8Z" transform="translate(-124.606 -124.607)" fill="#6c757d" />
                           </svg>
                           Link kopieren
                         </button>
                         <Link href='/'>
-                          <a className="flex items-center ease-linear duration-200 hover:text-theme-blue py-1" target='_blank' rel="noreferrer">
+                          <a className="flex items-center ease-linear duration-200 hover:underline text-theme-blue py-1" target='_blank' rel="noreferrer">
                             <svg className="mr-2" xmlns="http://www.w3.org/2000/svg" width="19.999" height="19.999" viewBox="0 0 19.999 19.999">
                               <g id="facebook" transform="translate(0 -0.073)">
                                 <path id="Path_1001" data-name="Path 1001" d="M20,10.133a10.05,10.05,0,0,1-8.441,9.939V13.061h2.324l.442-2.9H11.558V8.278a1.446,1.446,0,0,1,1.625-1.567H14.44V4.241a15.236,15.236,0,0,0-2.232-.2c-2.278,0-3.766,1.389-3.766,3.9v2.211H5.909v2.9H8.441v7.011A10.056,10.056,0,1,1,20,10.133Z" fill="#6c757d" />
@@ -611,7 +611,7 @@ export default function DPContainer() {
                           </a>
                         </Link>
                         <Link href='/'>
-                          <a className="flex items-center ease-linear duration-200 hover:text-theme-blue py-1" target='_blank' rel="noreferrer">
+                          <a className="flex items-center ease-linear duration-200 hover:underline text-theme-blue py-1" target='_blank' rel="noreferrer">
                             <svg className="mr-2" xmlns="http://www.w3.org/2000/svg" width="19.999" height="19.999" viewBox="0 0 19.999 19.999">
                               <path id="icons8-whatsapp-480" d="M13,3A9.983,9.983,0,0,0,4.426,18.125L3.09,23l4.979-1.307A10,10,0,1,0,13,3ZM9.577,8.335c.162,0,.329,0,.474.007.178,0,.372.017.558.428.221.488.7,1.713.763,1.837a.447.447,0,0,1,.019.433,1.816,1.816,0,0,1-.244.415c-.124.143-.26.321-.373.43-.124.124-.252.26-.109.508a7.409,7.409,0,0,0,1.377,1.714,6.724,6.724,0,0,0,1.992,1.229c.248.124.392.1.535-.062s.619-.72.786-.968.328-.205.553-.124,1.446.681,1.694.806.411.186.474.286a2.045,2.045,0,0,1-.142,1.178,2.491,2.491,0,0,1-1.67,1.175c-.457.042-.884.206-2.973-.617a10.151,10.151,0,0,1-4.233-3.74A4.8,4.8,0,0,1,8.05,10.711a2.789,2.789,0,0,1,.864-2.067A.91.91,0,0,1,9.577,8.335Z" transform="translate(-3 -3)" fill="#6c757d" />
                             </svg>
@@ -627,7 +627,7 @@ export default function DPContainer() {
                     <path id="report_FILL0_wght400_GRAD0_opsz48" d="M14.75,36,6,27.25V14.75L14.75,6h12.5L36,14.75v12.5L27.25,36ZM21,29.292a1.5,1.5,0,1,0-1.021-.438A1.4,1.4,0,0,0,21,29.292Zm-1.25-6h2.5V12.333h-2.5ZM15.792,33.5H26.208L33.5,26.208V15.792L26.208,8.5H15.792L8.5,15.792V26.208ZM21,21Z" transform="translate(-6 -6)" fill="#6c757d" />
                   </svg>
                   <Link href='/'>
-                    <a className='hidden group-hover:block absolute -bottom-4 z-20 right-0 text-theme-blue text-13 bg-white rounded-10 px-2 py-px shadow-md whitespace-nowrap' target='_blank' rel="noreferrer">
+                    <a className='hidden group-hover:block absolute hover:underline -bottom-4 z-20 right-0 text-theme-blue text-13 bg-white rounded-10 px-2 py-px shadow-md whitespace-nowrap' target='_blank' rel="noreferrer">
                       Händler anrufen
                       <span className="absolute h-4 w-4 -z-10 right-6 -top-1 rotate-45 bg-white"></span>
                     </a>
