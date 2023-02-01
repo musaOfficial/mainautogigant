@@ -77,7 +77,6 @@
 }
 
 .lefticon:hover, .lastlefticon:hover{
-    background-color: #FFB900;
     overflow: hidden;
 }
 
@@ -91,10 +90,28 @@
     border-radius: 0;
     cursor: pointer;
 }
+
+.middle{
+    transition: all .1s ease-in;
+}
+
+.top{
+    transition: all .1s ease-in;
+}
+
+.bottom{
+    transition: all .1s ease-in;
+}
+
 .bottom:hover{
-    background-color: #FFB900;
+    color: #FF0000 !important;
     border-radius: 0 0 0 10px;
     cursor: pointer;
+}
+
+.bottom:hover .binicon{
+    color: #FF0000;
+    transition: all .1s ease-in;
 }
 
 .actioncontainer{

@@ -4,7 +4,6 @@ import DraftCard from "./DraftCard";
 import classes from "./MyDrafts.module.css";
 import PostAd from "./../../../public/postad.svg";
 import Select from "react-select";
-import Angebot from "../../ui/ads/Angebot";
 
 const useDeviceSize = () => {
 

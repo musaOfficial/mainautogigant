@@ -23,7 +23,6 @@ import Charger from './../../../public/charger.svg';
 import Pen from './../../../public/pen.svg';
 import Bin from './../../../public/bian.svg';
 import Printer from './../../../public/printer.svg';
-
 function MyAd({
     title,
     price,

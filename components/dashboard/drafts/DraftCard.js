@@ -17,7 +17,9 @@ import CompanyIcon from './../../../public/icons/companyname.svg';
 import GigaLabel from './../../../public/gigalabel.svg';
 import Link from 'next/link';
 import PaperPlane from './../../../public/paper-plane.svg';
-
+import GigaPowerIcon from './../../../public/gigapower.svg';
+import EditIcon from './../../../public/edit.svg';
+import BinIcon from './../../../public/bin.svg';
 function DraftCard({
     title,
     price,
@@ -58,36 +60,14 @@ function DraftCard({
         <div className={classes.actioncontainer}>
             <Link href={`car-details/${id}`}>
                 <div className={`${classes.lefticon} ${classes.top}`} onMouseEnter={() => setVisibleOpen(true)} onMouseLeave={() => setVisibleOpen(false)}  >
-                    <Visible className={classes.whiteicon} />
-                    {visibleOpen == true && <div className={`${classes.svgcontainer}`}>
-                        Inserat anschauen
-                    </div>}
-                    {visibleOpen == true && <div className={classes.triangle1}></div>}
+                    <GigaPowerIcon className={classes.whiteicon} />
                 </div>
             </Link>
             <div className={`${classes.lefticon} ${classes.middle}`} onMouseEnter={() => setPrintOpen(true)} onMouseLeave={() => setPrintOpen(false)}>
-                <Print className={classes.whiteicon}/>
-                {printOpen == true && <div className={`${classes.favoritesvgcontainer} hover:text-yellow-400`}>
-                    Als Favorit speichern
-                </div>}
-                {printOpen == true && <div className={classes.triangle2}></div>}
+                <EditIcon className={classes.whiteicon}/>
             </div>
             <div className={`${classes.lastlefticon} ${classes.bottom}`} onMouseEnter={() => setShareOpen(true)} onMouseLeave={() => setShareOpen(false)}>
-                <Share className={classes.whiteicon} />
-                {shareOpen == true && <div className={classes.sharesvgcontainer}>
-                    <div className={classes.shareitems}>
-                        <div className='flex items-center'><MailIcon /><span className="ml-1 hover:text-yellow-400">E-mail</span></div>
-                        <div className={classes.borderbottom}></div>
-                        <div className='flex items-center'><LinkIcon /><span className="ml-1 hover:text-yellow-400">Link kopieren</span></div>
-                        <div className={classes.borderbottom}></div>
-                        <div className='flex items-center'><FacebookIcon /><span className="ml-1 hover:text-yellow-400">Facebook</span></div>
-                        <div className={classes.borderbottom}></div>
-                        <div className='flex items-center'><InstagramIcon className={classes.instaicon}/><span className="ml-1 hover:text-yellow-400">Instagram</span></div>
-                        <div className={classes.borderbottom}></div>
-                        <div className='flex items-center'><WhatsAppIcon /><span className="ml-1 hover:text-yellow-400">WhatsApp</span></div>
-                    </div>
-                </div>}
-                {shareOpen == true && <div className={classes.triangle3}></div>}
+                <BinIcon className={`${classes.whiteicon} ${classes.binicon}`} />
             </div>
         </div>
             <Link href={`car-details/${id}`}>
