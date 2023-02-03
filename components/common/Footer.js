@@ -462,8 +462,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="w-10/12 max-w-ag-container lg:w-full mx-auto shadow-1">
-          <div className="flex items-center flex-column justify-between py-2 text-white text-13 bg-black border-t border-theme-gray-3 xl:flex-wrap md:justify-center">
+        <div className={`w-10/12 max-w-ag-container lg:w-full mx-auto shadow-1 ${classes.lineheight}`}>
+          <div className={`flex items-center flex-column justify-between py-2 text-white text-13 bg-black border-t border-theme-gray-3 xl:flex-wrap md:justify-center`}>
               <div className={classes.linkscontainer}>
                 <div className={classes.links}>
                   <span className={`${classes.linkgroup1}`}>
@@ -494,7 +494,7 @@ export default function Footer() {
               </div>              
           </div>
           <div className={classes.belowfootercontainer}>
-            <p className={`flex items-center ${classes.linkpropfirst} ${width < 1024 && classes.noborderright} md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all border-r-2 border-theme-gray-3`}>MADE WITH <img className={`${classes.worldicon}`} src="/images/icons/copyright-fav.png" />IN AUSTRIA</p>
+            <p className={`flex items-center ${classes.linkpropfirst} ${width < 1024 && classes.noborderright} md:px-2 cursor-pointer hover:text-yellow-600 hover:transition-all border-r-2 border-theme-gray-3`}>MADE WITH <img className={`${classes.hearticon}`} src="/images/icons/copyright-fav.png" />IN AUSTRIA</p>
             <Link href={"https://www.hgmedia.at/"}><p className={`md:px-2 ${classes.linkprop} cursor-pointer text-12  `}>IN COOPERATION WITH <span className="hover:text-yellow-600">HGMEDIA ADVERTISING AGENCY</span></p></Link>
           </div>
         </div>

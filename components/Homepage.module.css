@@ -38,6 +38,10 @@
     position: relative;
 }
 
+.style{
+    color: #fff;
+}
+
 .cars{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -397,7 +401,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
-    justify-content: space-between;
+    height: 100%;
 }
 
 @media(max-width: 824px){
@@ -420,14 +424,6 @@
     font-size: 13px;
 }
 
-.iteml{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    color: #0067B8;
-    font-size: 13px;
-    margin-top: 20px;
-}
 
 @media(max-width: 333px){
 
@@ -515,6 +511,11 @@
     .inputrow{
         font-size: 13px;
         width: 100%;
+        flex-direction: column;
+    }
+
+    .newsletterinput{
+        margin-bottom: 10px;
     }
 }
 
@@ -540,3 +541,22 @@
         font-size: 15px;
     }
 }
+
+@media(max-width: 900px){
+    .carscontainer{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media(max-width: 650px){
+    .carscontainer{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 512px){
+    .carscontainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+

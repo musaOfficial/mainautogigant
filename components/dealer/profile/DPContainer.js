@@ -294,7 +294,7 @@ export default function DPContainer() {
   return (
     <div className="bg-theme-gray-10 lg:px-6 md:!px-0">
       <div className="w-10/12 lg:w-full max-w-ag-container mx-auto flex md:flex-col-reverse">
-        <div className="w-full p-6 bg-white">
+        <div className={`w-full p-6 bg-white ${classes.profilecontainer}`}>
           <div className="relative">
             <img
               className={classes.bannerimg}

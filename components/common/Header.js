@@ -446,7 +446,6 @@ export default function Header() {
                   <svg className="mr-2" xmlns="http://www.w3.org/2000/svg" width="10" height="9.701" viewBox="0 0 10 9.701">
                     <path id="logout_FILL0_wght400_GRAD200_opsz40" d="M7.485,8.749h4.369L10.463,7.358l.793-.78L14,9.322l-2.718,2.718-.806-.793,1.4-1.4h-4.4ZM8.876,4.458V5.55H5.092v7.516H8.876v1.092H5.092A1.111,1.111,0,0,1,4,13.067V5.55A1.111,1.111,0,0,1,5.092,4.458Z" transform="translate(-4 -4.457)" />
                   </svg>
-
                   logout
                 </a>
               </Link>

@@ -35,7 +35,7 @@ function Homepage(){
           fontSize: '15px',
           borderRadius: '10px',
           backgroundColor: "transparent",
-          color: "#fff",
+          color: "#fff !important",
           fontSize: "13px"
         }),
         option: (styles, state) => ({
@@ -46,33 +46,30 @@ function Homepage(){
         }),
     };
 
-    const brands = [
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
+    let brands = [
+        { label: "Toyota", value: "toyota", className: classes.style },
+        { label: "BMW", value: "bmw", className: classes.style },
+        { label: "Mercedes-Benz", value: "mercedes-benz", className: classes.style },
+        { label: "Audi", value: "audi", className: classes.style },
+        { label: "Volkswagen", value: "volkswagen", className: classes.style },
+        { label: "Ford", value: "ford", className: classes.style },
+        { label: "Honda", value: "honda", className: classes.style },
+        { label: "Nissan", value: "nissan", className: classes.style },
+        { label: "Mazda", value: "mazda" },
+        { label: "Hyundai", value: "hyundai" }
     ];
+
     const [models, setModels] = useState([
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
-        {value: "as", label: "as"},
+        { label: "3 Series", value: "3 series" },
+        { label: "5 Series", value: "5 series" },
+        { label: "7 Series", value: "7 series" },
+        { label: "X3", value: "x3" },
+        { label: "X5", value: "x5" },
+        { label: "X7", value: "x7" },
+        { label: "Z4", value: "z4" },
+        { label: "M2", value: "m2" },
+        { label: "M3", value: "m3" },
+        { label: "M4", value: "m4" }
     ]);
 
     const kmstandBis = [];
@@ -836,7 +833,7 @@ function Homepage(){
                         <div className={classes.bigtext}>Wir bieten eine große Auswahl an beliebten Modellen, Marken und Autohäusern.</div>
                         <div className={classes.carscontainer}>
                             
-                            <div><div className={classes.item}>
+                            <div className={classes.item}>
                                 <div className={classes.marke}>Audi</div>
                                 <div className={classes.modell}>Audi A1</div>
                                 <div className={classes.modell}>Audi A3</div>
@@ -845,7 +842,7 @@ function Homepage(){
                                 <div className={classes.modell}>Audi Q5</div>
                                 <div className={classes.modell}>Mehr Modelle</div>
                             </div>
-                            <div className={classes.iteml}>
+                            <div className={classes.item}>
                                 <div className={classes.marke}>Aufbautypen</div>
                                 <div className={classes.modell}>Cabrio</div>
                                 <div className={classes.modell}>Limousine</div>
@@ -853,8 +850,8 @@ function Homepage(){
                                 <div className={classes.modell}>SUV</div>
                                 <div className={classes.modell}>Transporter</div>
                                 <div className={classes.modell}>Mehr Aufbautypen</div>
-                            </div></div>
-                            <div><div className={classes.item}>
+                            </div>
+                            <div className={classes.item}>
                                 <div className={classes.marke}>BMW</div>
                                 <div className={classes.modell}>BMW 1er</div>
                                 <div className={classes.modell}>BMW 2er</div>
@@ -863,7 +860,7 @@ function Homepage(){
                                 <div className={classes.modell}>BMW X1</div>
                                 <div className={classes.modell}>Mehr Modelle</div>
                             </div>
-                            <div className={classes.iteml}>
+                            <div className={classes.item}>
                                 <div className={classes.marke}>Marken Europa</div>
                                 <div className={classes.modell}>Citroen</div>
                                 <div className={classes.modell}>Fiat</div>
@@ -871,8 +868,8 @@ function Homepage(){
                                 <div className={classes.modell}>Renault</div>
                                 <div className={classes.modell}>Skoda</div>
                                 <div className={classes.modell}>Mehr Marken</div>
-                            </div></div>
-                            <div><div className={classes.item}>
+                            </div>
+                            <div className={classes.item}>
                                 <div className={classes.marke}>Mercedes-Benz</div>
                                 <div className={classes.modell}>Mercedes B-Klasse</div>
                                 <div className={classes.modell}>Mercedes C-Klasse</div>
@@ -881,7 +878,7 @@ function Homepage(){
                                 <div className={classes.modell}>Mercedes GLA</div>
                                 <div className={classes.modell}>Mehr Modelle</div>
                             </div>
-                            <div className={classes.iteml}>
+                            <div className={classes.item}>
                                 <div className={classes.marke}>Marken Asien</div>
                                 <div className={classes.modell}>Hyundai</div>
                                 <div className={classes.modell}>Mazda</div>
@@ -889,8 +886,8 @@ function Homepage(){
                                 <div className={classes.modell}>Nissan</div>
                                 <div className={classes.modell}>Toyota</div>
                                 <div className={classes.modell}>Mehr Marken</div>
-                            </div></div>
-                            <div>
+                            </div>
+                            
                             <div className={classes.item}>
                                 <div className={classes.marke}>VW</div>
                                 <div className={classes.modell}>VW Golf</div>
@@ -900,7 +897,7 @@ function Homepage(){
                                 <div className={classes.modell}>VW up!</div>
                                 <div className={classes.modell}>Mehr Modelle</div>
                             </div>
-                            <div className={classes.iteml}>
+                            <div className={classes.item}>
                                 <div className={classes.marke}>Autohäuser</div>
                                 <div className={classes.modell}>in Wien</div>
                                 <div className={classes.modell}>in Graz</div>
@@ -909,8 +906,8 @@ function Homepage(){
                                 <div className={classes.modell}>in Wiener Neustadt</div>
                                 <div className={classes.modell}>Mehr Autohäuser</div>
                             </div>
-                            </div>
-                            <div className={`${classes.lastitem}`}><div className={classes.item}>
+                            
+                            <div className={classes.item}>
                                 <div className={classes.marke}>Ford</div>
                                 <div className={classes.modell}>Ford Ecosport</div>
                                 <div className={classes.modell}>Ford Fiesta</div>
@@ -919,7 +916,7 @@ function Homepage(){
                                 <div className={classes.modell}>Ford Mondeo</div>
                                 <div className={classes.modell}>Mehr Modelle</div>
                             </div>
-                            <div className={`${classes.iteml}`}>
+                            <div className={`${classes.item}`}>
                                 <div className={classes.marke}>GIGANT WORLD</div>
                                 <div className={classes.modell}>E GIGANT.</div>
                                 <div className={classes.modell}>IMMO GIGANT.</div>
@@ -927,7 +924,7 @@ function Homepage(){
                                 <div className={classes.modell}>HOSTING GIGANT.</div>
                                 <div className={classes.modell}>GIGANT SHOP.</div>
                                 <div className={classes.modell}>Mehr Plattformen</div>
-                            </div></div>
+                            </div>
                         </div>
                         <div className={classes.bigtext}>Autogigant.at wird bald auch in Deutschland, der Schweiz, Türkiye und Qatar verfügbar sein.</div>
                         <div className={classes.newslettercontainer}>
