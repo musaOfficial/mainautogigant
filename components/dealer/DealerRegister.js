@@ -147,7 +147,7 @@ export default function DealerRegister() {
                   </h3>
                   <div className="flex items-center mt-6 text-16 justify-between text-base">
                     <p className="pr-4">Firma</p>
-                    <p className="">*=Pflichtfelder</p>
+                    <p className="text-13">*=Pflichtfelder</p>
                   </div>
                   <div className="mt-2">
                     <div>
