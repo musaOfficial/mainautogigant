@@ -60,10 +60,25 @@
 }
 
 .radioinput{
+    -webkit-appearance: none;
     margin-right: 10px;
     border-radius: 0;
-    outline: none;
-    border: none;
+    outline: 1px solid #fff;
+    border-radius: 999px;
+    height: 14px;
+    width: 14px;
+    border: 1.9px solid #fff !important;
+    background-color: #fff;
+}
+
+.radioinput:checked{
+    background-color: #FBB900;
+    border: 1.9px solid #fff !important;
+    outline: 1px solid #FBB900 !important;
+}
+
+.radioinput:not(:checked){
+    cursor: pointer;
 }
 
 .name{
