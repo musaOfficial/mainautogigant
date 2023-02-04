@@ -369,7 +369,7 @@ export default function DealerListContainer() {
                   <SearchIcon className={classes.searchicon}/>
                 </div>
                 <div className={classes.citycontent}>
-                  {matches.map((city, index) => <div className='flex'>
+                  {matches.map((city, index) => <div key={index} className='flex'>
                       <div className={classes.weiss} onClick={() => {
                         if(!selectedStates.includes({state: city.name, index: index})){
                           selectState(index, city.name)
