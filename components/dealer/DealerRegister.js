@@ -145,7 +145,7 @@ export default function DealerRegister() {
                   <h3 className="text-3xl text-theme-gray-4 font-bold mt-14">
                     Als Händler registrieren
                   </h3>
-                  <div className="flex items-center mt-6 text-13 text-base">
+                  <div className="flex items-center mt-6 text-16 justify-between text-base">
                     <p className="pr-4">Firma</p>
                     <p className="">*=Pflichtfelder</p>
                   </div>
