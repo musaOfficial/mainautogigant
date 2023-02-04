@@ -10,9 +10,34 @@ import Image from "next/image";
 import ShopWithLine from './../public/shopwithline.svg';
 import Check from './../public/hackerl.svg';
 import BackHome from './../public/home.svg';
+import { useEffect } from "react";
 
+const useDeviceSize = () => {
+
+  const [width, setWidth] = useState(0)
+  const [height, setHeight] = useState(0)
+
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  }
+
+  useEffect(() => {
+    // component is mounted and window is available
+    handleWindowResize();
+    window.addEventListener('resize', handleWindowResize);
+    // unsubscribe from the event on component unmount
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
+
+  return [width, height]
+
+}
 
 export default function Registration() {
+
+  const [width, height] = useDeviceSize();
+
   const style = {
     control: (base) => ({
       ...base,
@@ -99,7 +124,7 @@ export default function Registration() {
               <input type={"email"} placeholder={"E-Mail-Addresse *"} className={classes.input} onChange={(e) => setEmail(e.target.value)} />
             </div>
             <div className={classes.password}>
-            <p className={classes.label}>mind. 8 Zeichen, ein Groß- & Kleinbuchstabe und eine Ziffer</p>
+            <p className={classes.label}>mind. 8 Zeichen, {width < 450 && <br></br>} ein Groß- & Kleinbuchstabe und eine Ziffer</p>
             <Input inputType={"password"} className={classes.pflichtfelder} placeholder={"Passwort *"} onChange={(e) => setPassword(e.target.value)} />
             <Input inputType={"password"} className={classes.pflichtfelder} placeholder={"Passwort Wiederholen *"} onChange={(e) => setConfirmPassword(e.target.value)} />
             </div>
@@ -141,7 +166,7 @@ export default function Registration() {
               <Image src={"/images/reg-car.png"} layout="fill" objectFit="cover" />
             </div>
             <div className={classes.registerasdealer}>
-              <Link href={"dealer"}><div className={classes.dealerheading}>Als Händler registrieren</div></Link>
+             <div className={classes.dealerheading}>Als Händler registrieren</div>
               <div className={classes.dealertext}>
               Haben Sie Fragen?<br/>
 Wir helfen Ihnen gerne weiter. <Link href={"/contact-us"}><span className={classes.link}>Kontaktformular</span></Link>

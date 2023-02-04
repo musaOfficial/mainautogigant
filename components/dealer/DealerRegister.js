@@ -6,8 +6,38 @@ import Checkbox from "../ui/Checkbox";
 import classes from "./DealerRegister.module.css";
 import BackHome from "./../../public/home.svg";
 import Check from "./../../public/hackerl.svg";
+import Select from 'react-select'
 
 export default function DealerRegister() {
+
+
+  const style = {
+    control: (base) => ({
+      ...base,
+      boxShadow: "none",
+      border: "none",
+      fontSize: '13px',
+      borderRadius: '10px',
+      width: "100%",
+      cursor: "pointer",
+      height: "40px",
+      marginBottom: "24px"
+    }),
+    option: (styles, state) => ({
+      ...styles,
+      backgroundColor: state.isSelected ? "#fbb900" : "",
+      "&:active": "#fbb90080",
+      "&:hover" : {
+        backgroundColor: "#FFE497"
+      },
+      "&:focus" : {
+        backgroundColor: "#FBB900"
+      },
+      fontSize: '13px',
+      cursor: "pointer",
+    }),
+  };
+
   const [isStepActive, setIsStepActive] = useState(1);
   const [firmenname, setFirmenname] = useState();
   const [ergaenzung, setErgaenzung] = useState();
@@ -90,7 +120,7 @@ export default function DealerRegister() {
                   <h3 className="text-2xl text-theme-gray-4 font-bold mt-12">
                     Als Händler registrieren
                   </h3>
-                  <div className="flex items-center mt-6 text-base">
+                  <div className="flex items-center mt-6 text-13 text-base">
                     <p className="pr-4">Firma</p>
                     <p className="">*=Pflichtfelder</p>
                   </div>
@@ -140,7 +170,8 @@ export default function DealerRegister() {
                       </div>
                       <div className="flex items-center justify-between md:flex-col">
                         <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
-                          <InputSelect
+                          <Select
+                            styles={style}
                             options={option2}
                             placeholder={option2[0].value}
                             regYear
@@ -173,7 +204,8 @@ export default function DealerRegister() {
                       <h3 className="text-base mb-4">Ansprechpartner</h3>
                       <div className="flex items-center justify-between md:flex-col">
                         <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
-                          <InputSelect
+                          <Select
+                            styles={style}
                             options={option3}
                             placeholder={option3[0].value}
                             regYear
@@ -203,7 +235,8 @@ export default function DealerRegister() {
                       </div>
                       <div className="flex items-center justify-between md:flex-col">
                         <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
-                          <InputSelect
+                          <Select
+                            styles={style}
                             options={option4}
                             placeholder={option4[0].value}
                             regYear
@@ -219,7 +252,8 @@ export default function DealerRegister() {
                       </div>
                       <div className="flex items-center justify-between md:flex-col">
                         <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
-                          <InputSelect
+                          <Select
+                            styles={style}
                             options={option5}
                             placeholder={option5[0].value}
                             regYear

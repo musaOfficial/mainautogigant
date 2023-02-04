@@ -5,13 +5,17 @@ const style = {
     ...base,
     boxShadow: "none",
     border: "none",
-    fontSize: '16px'
+    fontSize: '13px'
+  }),
+  menu: (styles, state) => ({
+    ...styles,
+    fontSize: "13px",
   }),
   option: (styles, state) => ({
     ...styles,
     backgroundColor: state.isSelected ? "#fbb900" : "",
     "&:active": "#fbb90080",
-    fontSize: '16px'
+    fontSize: '13px'
   }),
 };
 const style2 = {
@@ -23,18 +27,18 @@ const style2 = {
     outline: "none",
     borderRadius: "10px",
     marginBottom: "24px",
-    fontSize: '16px'
+    fontSize: '13px'
   }),
   menu: (styles, state) => ({
     ...styles,
     zIndex: 999,
-    fontSize: '16px'
+    fontSize: '13px'
   }),
   option: (styles, state) => ({
     ...styles,
     backgroundColor: state.isSelected ? "#fbb900" : "",
     "&:active": "#fbb90080",
-    fontSize: '16px',
+    fontSize: '13px',
   }),
 };
 
