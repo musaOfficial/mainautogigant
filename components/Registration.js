@@ -21,12 +21,20 @@ export default function Registration() {
       fontSize: '13px',
       borderRadius: '10px',
       width: "50%",
+      cursor: "pointer",
     }),
     option: (styles, state) => ({
       ...styles,
       backgroundColor: state.isSelected ? "#fbb900" : "",
       "&:active": "#fbb90080",
+      "&:hover" : {
+        backgroundColor: "#FFE497"
+      },
+      "&:focus" : {
+        backgroundColor: "#FBB900"
+      },
       fontSize: '13px',
+      cursor: "pointer",
     }),
   };
 
@@ -92,8 +100,8 @@ export default function Registration() {
             </div>
             <div className={classes.password}>
             <p className={classes.label}>mind. 8 Zeichen, ein Groß- & Kleinbuchstabe und eine Ziffer</p>
-            <Input inputType={"password"} placeholder={"Passwort *"} onChange={(e) => setPassword(e.target.value)} />
-            <Input inputType={"password"} placeholder={"Passwort Wiederholen *"} onChange={(e) => setConfirmPassword(e.target.value)} />
+            <Input inputType={"password"} className={classes.pflichtfelder} placeholder={"Passwort *"} onChange={(e) => setPassword(e.target.value)} />
+            <Input inputType={"password"} className={classes.pflichtfelder} placeholder={"Passwort Wiederholen *"} onChange={(e) => setConfirmPassword(e.target.value)} />
             </div>
             <div className={classes.birth}>
               <div className={classes.label}>Geburtsjahr ist nur für Sie sichtbar</div>

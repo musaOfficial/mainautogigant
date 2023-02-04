@@ -1,10 +1,10 @@
 .input{
     height: 40px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .input::placeholder{
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .fontsize{

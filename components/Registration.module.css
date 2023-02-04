@@ -57,6 +57,7 @@
 
 .wholeinput{
     margin-right: 20px;
+    font-size: 13px;
 }
 
 .radioinput{
@@ -92,6 +93,7 @@
     height: 40px;
     border-radius: 10px;
     padding-left: 10px;
+    font-size: 13px;
 }
 .inputleft{
     width: 100%;
@@ -99,11 +101,13 @@
     border-radius: 10px;
     padding-left: 10px;
     margin-right: 20px;
+    font-size: 13px;
 }
 
 .mail{
     margin-top: 20px;
     margin-bottom: 20px;
+    font-size: 13px;
 }
 
 .label{
@@ -241,6 +245,14 @@
     background-color: #FBB900;
     transform: rotate(45deg);
     bottom: -4px;
+}
+
+.pflichtfelder{
+    font-size: 13px;
+}
+
+.password{
+    font-size: 13px;
 }
 
 .steptwo{
