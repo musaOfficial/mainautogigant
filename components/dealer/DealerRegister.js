@@ -125,8 +125,30 @@ export default function DealerRegister() {
     { value: "marken", label: "Alle Marken" },
   ];
   const option2 = [
-    { value: "Österreich", label:  "Österreich" },
-    { value: "Italien", label: "Italien" },
+    {value: "AL", label: <Albania />, name: "Albania"},
+    {value: "AT", label: <Austria />, name: "Austria"},
+    {value: "BA", label: <Bosnia />, name: "Bosnia"},
+    {value: "BG", label: <Bulgaria />, name: "Bulgaria"},
+    {value: "HR", label: <Croatia />, name: "Croatia"},
+    {value: "CZ", label: <Czech />, name: "Czech Republic"},
+    {value: "FR", label: <France />, name: "France"},
+    {value: "HU", label: <Hungary />, name: "Hungary"},
+    {value: "IR", label: <Iran />, name: "Iran"},
+    {value: "PL", label: <Poland />, name: "Poland"},
+    {value: "IT", label: <Italy />, name: "Italy"},
+    {value: "QA", label: <Qatar />, name: "Qatar"},
+    {value: "RO", label: <Romania />, name: "Romania"},
+    {value: "RU", label: <Russia />, name: "Russia"},
+    {value: "SA", label: <Saudi />, name: "Saudi Arabia"},
+    {value: "RS", label: <Serbia />, name: "Serbia"},
+    {value: "ES", label: <Spain />, name: "Spain"},
+    {value: "CH", label: <Switzerland />, name: "Switzerland"},
+    {value: "TR", label: <Turkey />, name: "Turkey"},
+    {value: "UA", label: <Ukraine />, name: "Ukraine"},
+    {value: "GB", label: <United />, name: "United Kingdom"},
+    {value: "DE", label: <Germany />, name: "Germany"},
+    {value: "SK", label: <Slovakia />, name: "Slovakia"},
+    {value: "AZ", label: <Azerbaijan />, name: "Azerbaijan"}
   ];
   const option3 = [
     { value: "Frau", label: "Frau" },
@@ -210,7 +232,10 @@ export default function DealerRegister() {
                             styles={style}
                             options={option2}
                             placeholder={"Land *"}
-                            regYear
+                            formatOptionLabel={option => <div className="flex items-center">
+                              <span className="mr-2">{option.label}</span>
+                              {option.name}
+                            </div>}
                             onChange={(e) => setLand(e.value)}
                           />
                         </div>
@@ -473,7 +498,7 @@ export default function DealerRegister() {
                         className="w-2/5 md:w-full md:mr-0 md:mb-4 mr-4 inline-block"
                         src="/images/icons/recapcha.png"
                       />
-                      <button className={`w-1/2 sm:w-full sm:mb-4 ml-4 sm:mr-0 inline-block px-4 sm:px-4 sm:text-sm py-3 rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3 ${classes.registerbtn}`}>
+                      <button className={`w-1/2 sm:w-full sm:mb-4 ml-4 sm:mr-0 inline-block px-4 sm:px-4 sm:text-sm py-3 rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear sm:ml-0 duration-300 hover:bg-theme-yellow-3 ${classes.registerbtn}`}>
                         Neu registrieren
                       </button>
                     </div>
@@ -685,8 +710,8 @@ export default function DealerRegister() {
               <div className={classes.textheading}>AutoGigant. bietet den Benutzern eine Reihe von Vorteilen, darunter: </div>
               <div className={classes.text}><span className={classes.textsmallheading}>Bequemlichkeit:</span> Benutzer können bequem von zu Hause aus nach Autos suchen und vergleichen, ohne dass sie physisch einen Autohändler besuchen müssen.</div>
               <div className={classes.text}><span className={classes.textsmallheading}>Zeitersparnis:</span> Online-Automärkte ermöglichen es Benutzern, innerhalb weniger Minuten Hunderte von Autos zu durchsuchen und zu vergleichen, anstatt stundenlang von einem Autohändler zum nächsten zu gehen.</div>
-              <div className={classes.text}><span className={classes.textsmallheading}>Größere Auswahl:</span> Online-Automärkte haben in der Regel eine größere Auswahl an Autos, einschließlich gebrauchter und neuer Autos, als traditionelle Autohändler.</div>
               <div className={classes.text}><span className={classes.textsmallheading}>Preisvergleich:</span>Benutzer können leicht Preise für ähnliche Autos vergleichen, um sicherzustellen, dass sie den besten Preis erhalten.</div>
+              <div className={classes.text}><span className={classes.textsmallheading}>Größere Auswahl:</span>Online-Automärkte haben in der Regel eine größere Auswahl an Autos, einschließlich gebrauchter und neuer Autos, als traditionelle Autohändler.</div>
               <div className={classes.text}><span className={classes.textsmallheading}>Transparenz:</span>Online-Automärkte bieten oft detaillierte Informationen über jedes Auto, einschließlich Fotos, Spezifikationen und Historienberichte, die es Benutzern ermöglichen, eine informierte Entscheidung über den Kauf zu treffen.</div>
               <div className={classes.text}><span className={classes.textsmallheading}>Verkauf und Kauf von Autos:</span>Benutzer können ihr Auto auf einem Online-Automarkt verkaufen oder ein Auto kaufen, indem sie einfach eine Anzeige erstellen oder durch Anzeigen blättern.</div>
             </div>
