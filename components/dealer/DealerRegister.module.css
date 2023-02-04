@@ -162,6 +162,11 @@
     height: 50px;
 }
 
+.need{
+    display: block;
+    margin-bottom: 5px;
+}
+
 .registerbtn:hover{
     background-color: #FBB900;
 }

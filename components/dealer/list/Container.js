@@ -9,6 +9,7 @@ import ListView from './../../../public/listview.svg';
 import Bin from './../../../public/bin.svg'
 import HomeMenu from './../../../public/homemenu.svg';
 import CloseMenu from './../../../public/menuclose.svg';
+import Check from "./../../../public/hackerl.svg";
 import Menu from './../../../public/menu.svg';
 
 const useDeviceSize = () => {
@@ -211,6 +212,27 @@ export default function DealerListContainer() {
 
   const [suchbegriff, setSuchbegriff] = useState();
 
+
+  const [selectedStates, setSelectedStates] = useState([]);
+
+  function selectState(index, name){
+    setSelectedStates(
+      [...selectedStates,
+      {state: name, index: index }]
+    )
+  }
+
+  function removeState(index, name){
+    var reducedStates = selectedStates;
+    reducedStates.splice(1, index);
+    setSelectedStates(reducedStates)
+  }
+
+  useEffect(() => {
+    console.log(selectedStates)
+    
+  }, [selectedStates])
+
   return (
     <div className="bg-theme-gray-10">
       <div className="lg:px-6 md:!px-0">
@@ -227,7 +249,7 @@ export default function DealerListContainer() {
               
               {filterOpen == false ? <div className={classes.closefilter}>
                   <Menu className={classes.menu} onClick={() => setFilterOpen(d => !d)}/>
-                  <input type={"text"} placeholder={"Suchen"} onChange={(e) => setSuchbegriff(e.target.value)} className={classes.suche} />
+                  <input type={"text"} placeholder={"Händler suchen"} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} className={classes.suche} />
               </div> : 
               
               <div className={classes.openedfilter}>
@@ -236,14 +258,14 @@ export default function DealerListContainer() {
                 </div>
                 <div className={classes.leftcontainermenu}>
               <div className={classes.searchdealermenu}>
-                <div className={classes.searchdealertext}>HÄNDLER SUCHEN</div>
+                <div className={classes.searchdealertext}>Händler suchen</div>
                 <div className={classes.searchinputdiv}>
-                  <input type={"text"} onChange={(e) => setFirmenname(e.target.value)} placeholder={"FIRMENNAME"}/>
+                  <input type={"text"} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} placeholder={"Firmenname"}/>
                   <SearchIcon className={classes.searchicon}/>
                 </div>
               </div>
               <div className={classes.searchwithratemenu}>
-                <div className={classes.filterbyratetext}>FILTERN NACH BEWERTUNG</div>
+                <div className={classes.filterbyratetext}>Filtern nach Bewertung</div>
                 <div className={classes.grayliner}></div>
                 <div className={classes.starbox}>
                   
@@ -252,7 +274,11 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck5(d => !d)} className="mr-2 mt-0.5" />
+                  <div className='flex'>
+                      <div className={classes.weiss} onClick={() => setStarCheck5(d => !d)}>
+                        {starCheck5 == true && <Check className={classes.blackcheck} />}
+                      </div>
+                    </div>
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
@@ -266,7 +292,11 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck4(d => !d)} className="mr-2 mt-0.5" />
+                    <div className='flex'>
+                      <div className={classes.weiss} onClick={() => setStarCheck4(d => !d)}>
+                        {starCheck4 == true && <Check className={classes.blackcheck} />}
+                      </div>
+                    </div>
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
@@ -280,7 +310,11 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck3(d => !d)} className="mr-2 mt-0.5" />
+                    <div className='flex'>
+                      <div className={classes.weiss} onClick={() => setStarCheck3(d => !d)}>
+                        {starCheck3 == true && <Check className={classes.blackcheck} />}
+                      </div>
+                    </div>
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
@@ -294,7 +328,11 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck2(d => !d)} className="mr-2 mt-0.5" />
+                    <div className='flex'>
+                      <div className={classes.weiss} onClick={() => setStarCheck2(d => !d)}>
+                        {starCheck2 == true && <Check className={classes.blackcheck} />}
+                      </div>
+                    </div>
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-g.png" />
@@ -308,7 +346,11 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck1(d => !d)} className="mr-2 mt-0.5" />
+                    <div className='flex'>
+                      <div className={classes.weiss} onClick={() => setStarCheck1(d => !d)}>
+                        {starCheck1 == true && <Check className={classes.blackcheck} />}
+                      </div>
+                    </div>
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-g.png" />
                     <img src="/images/icons/sd-star-g.png" />
@@ -323,13 +365,26 @@ export default function DealerListContainer() {
               <div className={classes.searchwithcitymenu}>
                 <div className={classes.searchdealertext}>FILTERN NACH STADT</div>
                 <div className={`${classes.searchinputdiv} mb-2`}>
-                  <input type={"text"} onChange={(e) => setCitySearch(e.target.value)} placeholder={"SUCHEN"}/>
+                  <input type={"text"} onChange={(e) => setCitySearch(e.target.value)} placeholder={"Suchen"}/>
                   <SearchIcon className={classes.searchicon}/>
                 </div>
                 <div className={classes.citycontent}>
-                  {matches.map((city, index) => <div key={index} className={classes.citycontainer}>
-                    <input type={"checkbox"} className="mr-2" />{city.name}
-                  </div>)}
+                  {matches.map((city, index) => <div className='flex'>
+                      <div className={classes.weiss} onClick={() => {
+                        if(!selectedStates.includes({state: city.name, index: index})){
+                          selectState(index, city.name)
+                          console.log(index, city.name)
+                          console.log(true)
+                        } else{
+                          removeState(index)
+                          console.log(false)
+                        }
+                      }} >
+                        {selectedStates.includes({state: city.name, index: index}) == true && <Check className={classes.blackcheck} />}
+                      </div>
+                      {city.name}
+                    </div>
+                  )}
                 </div>
                 <button className={classes.delfilter}><Bin className={classes.bin}/>Filter löschen</button>
               </div>
@@ -352,12 +407,12 @@ export default function DealerListContainer() {
               <div className={classes.searchdealer}>
                 <div className={classes.searchdealertext}>HÄNDLER SUCHEN</div>
                 <div className={classes.searchinputdiv}>
-                  <input type={"text"} onChange={(e) => setFirmenname(e.target.value)} placeholder={"FIRMENNAME"}/>
+                  <input type={"text"} onChange={(e) => setFirmenname(e.target.value)} placeholder={"Firmenname"}/>
                   <SearchIcon className={classes.searchicon}/>
                 </div>
               </div>
               <div className={classes.searchwithrate}>
-                <div className={classes.filterbyratetext}>FILTERN NACH BEWERTUNG</div>
+                <div className={classes.filterbyratetext}>Filtern nach Bewertung</div>
                 <div className={classes.grayliner}></div>
                 <div className={classes.starbox}>
                   
@@ -366,7 +421,11 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck5(d => !d)} className="mr-2 mt-0.5" />
+                    <div className='flex'>
+                      <div className={classes.weiss} onClick={() => setStarCheck5(d => !d)}>
+                        {starCheck5 == true && <Check className={classes.blackcheck} />}
+                      </div>
+                    </div>
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
@@ -380,7 +439,11 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck4(d => !d)} className="mr-2 mt-0.5" />
+                    <div className='flex'>
+                      <div className={classes.weiss} onClick={() => setStarCheck4(d => !d)}>
+                        {starCheck4 == true && <Check className={classes.blackcheck} />}
+                      </div>
+                    </div>
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
@@ -394,7 +457,11 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck3(d => !d)} className="mr-2 mt-0.5" />
+                    <div className='flex'>
+                      <div className={classes.weiss} onClick={() => setStarCheck3(d => !d)}>
+                        {starCheck3 == true && <Check className={classes.blackcheck} />}
+                      </div>
+                    </div>
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
@@ -408,7 +475,11 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck2(d => !d)} className="mr-2 mt-0.5" />
+                    <div className='flex'>
+                      <div className={classes.weiss} onClick={() => setStarCheck2(d => !d)}>
+                        {starCheck2 == true && <Check className={classes.blackcheck} />}
+                      </div>
+                    </div>
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-g.png" />
@@ -422,7 +493,11 @@ export default function DealerListContainer() {
                   htmlFor="5star"
                 >
                   <div className="w-full flex items-center justify-between">
-                    <input type={"checkbox"} onChange={() => setStarCheck1(d => !d)} className="mr-2 mt-0.5" />
+                    <div className='flex'>
+                      <div className={classes.weiss} onClick={() => setStarCheck1(d => !d)}>
+                        {starCheck1 == true && <Check className={classes.blackcheck} />}
+                      </div>
+                    </div>
                     <img src="/images/icons/sd-star-y.png" />
                     <img src="/images/icons/sd-star-g.png" />
                     <img src="/images/icons/sd-star-g.png" />
@@ -432,26 +507,40 @@ export default function DealerListContainer() {
                   <p className="text-xs ml-4">(58)</p>
                   </label>
                 </div>
-                <button className={classes.delfilter}><Bin className={classes.bin}/>FILTER LÖSCHEN</button>
+                <button className={classes.delfilter}><Bin className={classes.bin}/>Filter löschen</button>
               </div>
               <div className={classes.searchwithcity}>
-                <div className={classes.searchdealertext}>FILTERN NACH STADT</div>
+                <div className={classes.searchdealertext}>Filtern nach Stadt</div>
                 <div className={`${classes.searchinputdiv} mb-2`}>
-                  <input type={"text"} onChange={(e) => setCitySearch(e.target.value)} placeholder={"SUCHEN"}/>
+                  <input type={"text"} onChange={(e) => setCitySearch(e.target.value)} placeholder={"Suchen"}/>
                   <SearchIcon className={classes.searchicon}/>
                 </div>
                 <div className={classes.citycontent}>
                   {matches.map((city, index) => <div key={index} className={classes.citycontainer}>
-                    <input type={"checkbox"} className="mr-2" />{city.name}
+                  <div className='flex'>
+                      <div className={classes.weiss} onClick={() => {
+                        if(!selectedStates.includes({state: city.name, index: index})){
+                          selectState(index, city.name)
+                          console.log(index, city.name)
+                          console.log(true)
+                        } else{
+                          removeState(index)
+                          console.log(false)
+                        }
+                      }} >
+                        {selectedStates.includes({state: city.name, index: index}) == true && <Check className={classes.blackcheck} />}
+                      </div>
+                      {city.name}
+                    </div>
                   </div>)}
                 </div>
-                <button className={classes.delfilter}><Bin className={classes.bin}/>LÖSCHEN</button>
+                <button className={classes.delfilter}><Bin className={classes.bin}/>Filter löschen</button>
               </div>
             </div>}
             <div className={classes.rightcontainer}>
               <div className={classes.layouteditor}>
                 <div className={classes.show}>
-                  ANZEIGEN:                                         
+                  Anzeigen:                                         
                   <Select 
                     styles={style}
                     options={anzahlAnzeigen}
@@ -461,7 +550,7 @@ export default function DealerListContainer() {
                     />
                 </div>
                 <div className={classes.sortierennach}>
-                  SORTIEREN NACH:
+                  Sortieren nach:
                   <Select 
                     styles={style}
                     options={anzahlAnzeigen}
@@ -482,7 +571,7 @@ export default function DealerListContainer() {
                   usrname={dealer.name}
                   address={dealer.location}
                   rating={dealer.rating}
-                  gridView={gridView}
+                  gridView={width <= 882 && true || gridView}
                   fromRatingAmount={dealer.fromRatingAmount}
                 />)}
               </div>

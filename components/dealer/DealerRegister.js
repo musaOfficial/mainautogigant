@@ -345,12 +345,10 @@ export default function DealerRegister() {
                     </div>
                     <div>
                       <div className="relative mb-4">
+                        <div className={classes.need}>mind. 8 Zeichen, {width <= 450 && <br></br>} ein Groß- & Kleinbuchstabe und eine Ziffer</div>
                         <Input
                           placeholder="Passwort *"
                           inputType="password"
-                          sublabel={`mind. 8 Zeichen, ${width < 450 ? `
-                          ` : ""} ein Groß- & Kleinbuchstabe und eine Ziffer` }
-                      
                           name={"passwort"}
                           onChange={(e) => setPasswort(e.target.value)}
                         />
