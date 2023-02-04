@@ -32,6 +32,8 @@ import United from './../../public/flags/united.svg';
 import Germany from './../../public/flags/germany.svg';
 import Slovakia from './../../public/flags/slovakia.svg';
 import Azerbaijan from './../../public/flags/azerbaijan.svg';
+import option4 from "../data/phonePrefixes";
+import TopRow from "../ui/TopRow";
 
 const useDeviceSize = () => {
 
@@ -130,68 +132,11 @@ export default function DealerRegister() {
     { value: "Frau", label: "Frau" },
     { value: "Herr", label: "Herr" },
   ];
-  const option4 = [
-    { value: "+43", label: <Austria /> },
-    { value: "+49", label: <Germany /> },
-    { value: "+90", label: <Turkey /> },
-    { value: "+355", label: <Albania /> },
-{ value: "+387", label: <Bosnia /> },
-{ value: "+359", label: <Bulgaria /> },
-{ value: "+385", label: <Croatia /> },
-{ value: "+420", label: <Czech /> },
-{ value: "+33", label: <France /> },
-{ value: "+36", label: <Hungary /> },
-{ value: "+98", label: <Iran /> },
-{ value: "+48", label: <Poland /> },
-{ value: "+39", label: <Italy /> },
-{ value: "+974", label: <Qatar /> },
-{ value: "+40", label: <Romania /> },
-{ value: "+7", label: <Russia /> },
-{ value: "+966", label: <Saudi /> },
-{ value: "+381", label: <Serbia /> },
-{ value: "+34", label: <Spain /> },
-{ value: "+41", label: <Switzerland /> },
-{ value: "+380", label: <Ukraine /> },
-{ value: "+44", label: <United /> },
-{ value: "+421", label: <Slovakia /> },
-{ value: "+994", label: <Azerbaijan /> },
-  ];
-  const option5 = [
-    { value: "+43", label: <Austria /> },
-    { value: "+49", label: <Germany /> },
-    { value: "+90", label: <Turkey /> },
-    { value: "+355", label: <Albania /> },
-{ value: "+387", label: <Bosnia /> },
-{ value: "+359", label: <Bulgaria /> },
-{ value: "+385", label: <Croatia /> },
-{ value: "+420", label: <Czech /> },
-{ value: "+33", label: <France /> },
-{ value: "+36", label: <Hungary /> },
-{ value: "+98", label: <Iran /> },
-{ value: "+48", label: <Poland /> },
-{ value: "+39", label: <Italy /> },
-{ value: "+974", label: <Qatar /> },
-{ value: "+40", label: <Romania /> },
-{ value: "+7", label: <Russia /> },
-{ value: "+966", label: <Saudi /> },
-{ value: "+381", label: <Serbia /> },
-{ value: "+34", label: <Spain /> },
-{ value: "+41", label: <Switzerland /> },
-{ value: "+380", label: <Ukraine /> },
-{ value: "+44", label: <United /> },
-{ value: "+421", label: <Slovakia /> },
-{ value: "+994", label: <Azerbaijan /> },
-  ];
+
   return (
     <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0">
       <div className="relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex flex-col lg:flex-col bg-white p-6">
-        <div className={`${classes.top_row}`}>
-          <span className={classes.leftrow}>
-            <Link href={"/"}>
-              <BackHome className={classes.backhome} />
-            </Link>
-          </span>
-        </div>
+        <TopRow />
         <div className="flex w-full lg:flex-col">
           <div className="w-1/2 lg:w-full relative before:lg:w-full mr-2 flex flex-col text-theme-gray-4 text-15 md:text-xs lg:flex-col">
             <div className="p-6 rounded-10 bg-theme-gray-4">
@@ -351,7 +296,7 @@ export default function DealerRegister() {
                         <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
                           <Select
                             styles={style}
-                            options={option5}
+                            options={option4}
                             placeholder={<div className={"flex items-center"}>
                             <span className="mr-2">{option4[0].label}</span> {option4[0].value}
                           </div>}
@@ -702,6 +647,7 @@ export default function DealerRegister() {
               {/* DEALER REGISTER STEP
             THREE ENDS HERE */}
             </div>
+        
           </div>
           <div className="relative w-1/2 lg:w-auto lg:ml-0 lg:mt-4 ml-3">
             <img
@@ -734,6 +680,16 @@ export default function DealerRegister() {
               </div>
             </div>
             )}
+            
+            <div className={classes.textcontainer}>
+              <div className={classes.textheading}>AutoGigant. bietet den Benutzern eine Reihe von Vorteilen, darunter: </div>
+              <div className={classes.text}><span className={classes.textsmallheading}>Bequemlichkeit:</span> Benutzer können bequem von zu Hause aus nach Autos suchen und vergleichen, ohne dass sie physisch einen Autohändler besuchen müssen.</div>
+              <div className={classes.text}><span className={classes.textsmallheading}>Zeitersparnis:</span> Online-Automärkte ermöglichen es Benutzern, innerhalb weniger Minuten Hunderte von Autos zu durchsuchen und zu vergleichen, anstatt stundenlang von einem Autohändler zum nächsten zu gehen.</div>
+              <div className={classes.text}><span className={classes.textsmallheading}>Größere Auswahl:</span> Online-Automärkte haben in der Regel eine größere Auswahl an Autos, einschließlich gebrauchter und neuer Autos, als traditionelle Autohändler.</div>
+              <div className={classes.text}><span className={classes.textsmallheading}>Preisvergleich:</span>Benutzer können leicht Preise für ähnliche Autos vergleichen, um sicherzustellen, dass sie den besten Preis erhalten.</div>
+              <div className={classes.text}><span className={classes.textsmallheading}>Transparenz:</span>Online-Automärkte bieten oft detaillierte Informationen über jedes Auto, einschließlich Fotos, Spezifikationen und Historienberichte, die es Benutzern ermöglichen, eine informierte Entscheidung über den Kauf zu treffen.</div>
+              <div className={classes.text}><span className={classes.textsmallheading}>Verkauf und Kauf von Autos:</span>Benutzer können ihr Auto auf einem Online-Automarkt verkaufen oder ein Auto kaufen, indem sie einfach eine Anzeige erstellen oder durch Anzeigen blättern.</div>
+            </div>
           </div>
         </div>
       </div>
