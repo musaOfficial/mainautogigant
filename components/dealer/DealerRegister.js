@@ -8,6 +8,30 @@ import BackHome from "./../../public/home.svg";
 import Check from "./../../public/hackerl.svg";
 import Select from 'react-select'
 import { useEffect } from "react";
+import Albania from './../../public/flags/albania.svg';
+import Austria from './../../public/flags/austria.svg';
+import Bosnia from './../../public/flags/bosnia.svg';
+import Bulgaria from './../../public/flags/bulgaria.svg';
+import Croatia from './../../public/flags/croatia.svg';
+import Czech from './../../public/flags/czech.svg';
+import France from './../../public/flags/france.svg';
+import Hungary from './../../public/flags/hungary.svg';
+import Iran from './../../public/flags/iran.svg';
+import Poland from './../../public/flags/poland.svg';
+import Italy from './../../public/flags/italy.svg';
+import Qatar from './../../public/flags/qatar.svg';
+import Romania from './../../public/flags/romania.svg';
+import Russia from './../../public/flags/russia.svg';
+import Saudi from './../../public/flags/saudi.svg';
+import Serbia from './../../public/flags/serbia.svg';
+import Spain from './../../public/flags/spain.svg';
+import Switzerland from './../../public/flags/switzerland.svg';
+import Turkey from './../../public/flags/turkey.svg';
+import Ukraine from './../../public/flags/ukraine.svg';
+import United from './../../public/flags/united.svg';
+import Germany from './../../public/flags/germany.svg';
+import Slovakia from './../../public/flags/slovakia.svg';
+import Azerbaijan from './../../public/flags/azerbaijan.svg';
 
 const useDeviceSize = () => {
 
@@ -99,7 +123,7 @@ export default function DealerRegister() {
     { value: "marken", label: "Alle Marken" },
   ];
   const option2 = [
-    { value: "Österreich", label: "Österreich" },
+    { value: "Österreich", label:  "Österreich" },
     { value: "Italien", label: "Italien" },
   ];
   const option3 = [
@@ -107,14 +131,56 @@ export default function DealerRegister() {
     { value: "Herr", label: "Herr" },
   ];
   const option4 = [
-    { value: "+43", label: "+43" },
-    { value: "+44", label: "+44" },
-    { value: "+45", label: "+45" },
+    { value: "+43", label: <Austria /> },
+    { value: "+49", label: <Germany /> },
+    { value: "+90", label: <Turkey /> },
+    { value: "+355", label: <Albania /> },
+{ value: "+387", label: <Bosnia /> },
+{ value: "+359", label: <Bulgaria /> },
+{ value: "+385", label: <Croatia /> },
+{ value: "+420", label: <Czech /> },
+{ value: "+33", label: <France /> },
+{ value: "+36", label: <Hungary /> },
+{ value: "+98", label: <Iran /> },
+{ value: "+48", label: <Poland /> },
+{ value: "+39", label: <Italy /> },
+{ value: "+974", label: <Qatar /> },
+{ value: "+40", label: <Romania /> },
+{ value: "+7", label: <Russia /> },
+{ value: "+966", label: <Saudi /> },
+{ value: "+381", label: <Serbia /> },
+{ value: "+34", label: <Spain /> },
+{ value: "+41", label: <Switzerland /> },
+{ value: "+380", label: <Ukraine /> },
+{ value: "+44", label: <United /> },
+{ value: "+421", label: <Slovakia /> },
+{ value: "+994", label: <Azerbaijan /> },
   ];
   const option5 = [
-    { value: "+43", label: "+43" },
-    { value: "+44", label: "+44" },
-    { value: "+45", label: "+45" },
+    { value: "+43", label: <Austria /> },
+    { value: "+49", label: <Germany /> },
+    { value: "+90", label: <Turkey /> },
+    { value: "+355", label: <Albania /> },
+{ value: "+387", label: <Bosnia /> },
+{ value: "+359", label: <Bulgaria /> },
+{ value: "+385", label: <Croatia /> },
+{ value: "+420", label: <Czech /> },
+{ value: "+33", label: <France /> },
+{ value: "+36", label: <Hungary /> },
+{ value: "+98", label: <Iran /> },
+{ value: "+48", label: <Poland /> },
+{ value: "+39", label: <Italy /> },
+{ value: "+974", label: <Qatar /> },
+{ value: "+40", label: <Romania /> },
+{ value: "+7", label: <Russia /> },
+{ value: "+966", label: <Saudi /> },
+{ value: "+381", label: <Serbia /> },
+{ value: "+34", label: <Spain /> },
+{ value: "+41", label: <Switzerland /> },
+{ value: "+380", label: <Ukraine /> },
+{ value: "+44", label: <United /> },
+{ value: "+421", label: <Slovakia /> },
+{ value: "+994", label: <Azerbaijan /> },
   ];
   return (
     <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0">
@@ -263,7 +329,13 @@ export default function DealerRegister() {
                           <Select
                             styles={style}
                             options={option4}
-                            placeholder={option4[0].value}
+                            placeholder={<div className={"flex items-center"}>
+                            <span className="mr-2">{option4[0].label}</span> {option4[0].value}
+                          </div>}
+                            formatOptionLabel={option => <div className={"flex items-center"}>
+                              <span className="mr-2">{option.label}</span> {option.value}
+                            </div> }
+                          
                             regYear
                             onChange={(e) => setVorwahl1(e.value)}
                           />
@@ -280,7 +352,12 @@ export default function DealerRegister() {
                           <Select
                             styles={style}
                             options={option5}
-                            placeholder={option5[0].value}
+                            placeholder={<div className={"flex items-center"}>
+                            <span className="mr-2">{option4[0].label}</span> {option4[0].value}
+                          </div>}
+                            formatOptionLabel={option => <div className={"flex items-center"}>
+                            <span className="mr-2">{option.label}</span> {option.value}
+                          </div> }
                             regYear
                             onChange={(e) => setVorwahl2(e.value)}
                           />
