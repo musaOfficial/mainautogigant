@@ -153,3 +153,20 @@
     border-radius: 10px 0 0 0;
     overflow: hidden;
 }
+
+.registerbtn{
+    background-color: #6C757D;
+    border-radius: 10px;
+    transition: all .1s ease-in;
+    font-size: 20px;
+}
+
+.registerbtn:hover{
+    background-color: #FBB900;
+}
+
+@media(max-width: 580px){
+    .grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

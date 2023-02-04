@@ -7,9 +7,34 @@ import classes from "./DealerRegister.module.css";
 import BackHome from "./../../public/home.svg";
 import Check from "./../../public/hackerl.svg";
 import Select from 'react-select'
+import { useEffect } from "react";
+
+const useDeviceSize = () => {
+
+  const [width, setWidth] = useState(0)
+  const [height, setHeight] = useState(0)
+
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  }
+
+  useEffect(() => {
+    // component is mounted and window is available
+    handleWindowResize();
+    window.addEventListener('resize', handleWindowResize);
+    // unsubscribe from the event on component unmount
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
+
+  return [width, height]
+
+}
+
 
 export default function DealerRegister() {
 
+  const [width, height] = useDeviceSize();
 
   const style = {
     control: (base) => ({
@@ -74,11 +99,11 @@ export default function DealerRegister() {
     { value: "marken", label: "Alle Marken" },
   ];
   const option2 = [
-    { value: "*Land", label: "*Land" },
     { value: "Österreich", label: "Österreich" },
+    { value: "Italien", label: "Italien" },
   ];
   const option3 = [
-    { value: "Anrede", label: "Anrede" },
+    { value: "Frau", label: "Frau" },
     { value: "Herr", label: "Herr" },
   ];
   const option4 = [
@@ -102,7 +127,7 @@ export default function DealerRegister() {
           </span>
         </div>
         <div className="flex w-full lg:flex-col">
-          <div className="w-1/2 lg:w-full relative before:lg:w-full mr-3 flex flex-col text-theme-gray-4 text-15 md:text-xs lg:flex-col">
+          <div className="w-1/2 lg:w-full relative before:lg:w-full mr-2 flex flex-col text-theme-gray-4 text-15 md:text-xs lg:flex-col">
             <div className="p-6 rounded-10 bg-theme-gray-4">
               <div className={classes.stepshower}>
                 <div className={classes.steponeactive}>
@@ -117,20 +142,20 @@ export default function DealerRegister() {
               {isStepActive === 1 && (
                 <div>
                   <div className="relative"></div>
-                  <h3 className="text-2xl text-theme-gray-4 font-bold mt-12">
+                  <h3 className="text-3xl text-theme-gray-4 font-bold mt-14">
                     Als Händler registrieren
                   </h3>
                   <div className="flex items-center mt-6 text-13 text-base">
                     <p className="pr-4">Firma</p>
                     <p className="">*=Pflichtfelder</p>
                   </div>
-                  <div className="mt-4">
+                  <div className="mt-2">
                     <div>
                       <div className="flex items-center justify-between md:flex-col">
                         <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
                           <Input
                             onChange={(e) => setFirmenname(e.target.value)}
-                            placeholder="* Firmenname"
+                            placeholder="Firmenname *"
                           />
                         </div>
                         <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
@@ -144,13 +169,13 @@ export default function DealerRegister() {
                         <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
                           <Input
                             onChange={(e) => setStrasse(e.target.value)}
-                            placeholder="* Straße"
+                            placeholder="Straße *"
                           />
                         </div>
                         <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
                           <Input
                             onChange={(e) => setHausnummer(e.target.value)}
-                            placeholder="*Hausnummer"
+                            placeholder="Hausnummer *"
                           />
                         </div>
                       </div>
@@ -158,13 +183,13 @@ export default function DealerRegister() {
                         <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
                           <Input
                             onChange={(e) => setStadt(e.target.value)}
-                            placeholder="*Stadt"
+                            placeholder="Stadt *"
                           />
                         </div>
                         <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
                           <Input
                             onChange={(e) => setPlz(e.target.value)}
-                            placeholder="* PLZ"
+                            placeholder="PLZ *"
                           />
                         </div>
                       </div>
@@ -173,7 +198,7 @@ export default function DealerRegister() {
                           <Select
                             styles={style}
                             options={option2}
-                            placeholder={option2[0].value}
+                            placeholder={"Land *"}
                             regYear
                             onChange={(e) => setLand(e.value)}
                           />
@@ -188,7 +213,7 @@ export default function DealerRegister() {
                       <div className="flex items-center justify-between md:flex-col">
                         <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
                           <Input
-                            placeholder="*E-Mail-Adresse"
+                            placeholder="E-Mail-Adresse *"
                             onChange={(e) => setEmail(e.target.value)}
                           />
                         </div>
@@ -207,7 +232,7 @@ export default function DealerRegister() {
                           <Select
                             styles={style}
                             options={option3}
-                            placeholder={option3[0].value}
+                            placeholder={"Anrede *"}
                             regYear
                             onChange={(e) => setAnrede(e.value)}
                           />
@@ -222,13 +247,13 @@ export default function DealerRegister() {
                       <div className="flex items-center justify-between md:flex-col">
                         <div className="w-60 lg:w-6/12 md:!w-full mr-2 md:mr-0">
                           <Input
-                            placeholder="* Vorname"
+                            placeholder="Vorname *"
                             onChange={(e) => setVorname(e.target.value)}
                           />
                         </div>
                         <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
                           <Input
-                            placeholder="* Nachname"
+                            placeholder="Nachname *"
                             onChange={(e) => setNachname(e.target.value)}
                           />
                         </div>
@@ -245,7 +270,7 @@ export default function DealerRegister() {
                         </div>
                         <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
                           <Input
-                            placeholder="*Telefonnummer"
+                            placeholder="Telefonnummer *"
                             onChange={(e) => setTelefonnummer(e.target.value)}
                           />
                         </div>
@@ -262,7 +287,7 @@ export default function DealerRegister() {
                         </div>
                         <div className="w-60 lg:w-6/12 md:!w-full ml-2 md:ml-0">
                           <Input
-                            placeholder="* Mobiltelefonnummern"
+                            placeholder="Mobiltelefonnummern *"
                             name={"Mobiltelefonnummer"}
                             onChange={(e) =>
                               setMobiltelefonnummer(e.target.value)
@@ -274,15 +299,16 @@ export default function DealerRegister() {
                     <div>
                       <div className="relative mb-4">
                         <Input
-                          placeholder="*Passwort"
+                          placeholder="Passwort *"
                           inputType="password"
-                          sublabel="mind. 8 Zeichen, ein Groß- & Kleinbuchstabe und eine
-                        Ziffer"
+                          sublabel={`mind. 8 Zeichen, ${width < 450 ? `
+                          ` : ""} ein Groß- & Kleinbuchstabe und eine Ziffer` }
+                      
                           name={"passwort"}
                           onChange={(e) => setPasswort(e.target.value)}
                         />
                         <Input
-                          placeholder="* Passwort wiederholen"
+                          placeholder="Passwort wiederholen *"
                           inputType="password"
                           name={"passwortWiederholen"}
                           onChange={(e) => setPasswort2(e.target.value)}
@@ -425,7 +451,7 @@ export default function DealerRegister() {
                         className="w-2/5 md:w-full md:mr-0 md:mb-4 mr-4 inline-block"
                         src="/images/icons/recapcha.png"
                       />
-                      <button className="w-1/2 sm:w-full sm:mb-4 ml-4 sm:mr-0 inline-block px-4 sm:px-4 sm:text-sm py-3 rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3">
+                      <button className={`w-1/2 sm:w-full sm:mb-4 ml-4 sm:mr-0 inline-block px-4 sm:px-4 sm:text-sm py-3 rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3 ${classes.registerbtn}`}>
                         Neu registrieren
                       </button>
                     </div>
