@@ -11,6 +11,8 @@ import HomeMenu from './../../../public/homemenu.svg';
 import CloseMenu from './../../../public/menuclose.svg';
 import Check from "./../../../public/hackerl.svg";
 import Menu from './../../../public/menu.svg';
+import TopRow from "../../ui/TopRow";
+
 
 const useDeviceSize = () => {
 
@@ -45,6 +47,7 @@ export default function DealerListContainer() {
       border: "none",
       fontSize: '13px',
       borderRadius: '10px',
+      backgroundColor: "rgba(255, 255, 255, 0.75)"
     }),
     option: (styles, state) => ({
       ...styles,
@@ -260,9 +263,36 @@ export default function DealerListContainer() {
               <div className={classes.searchdealermenu}>
                 <div className={classes.searchdealertext}>Händler suchen</div>
                 <div className={classes.searchinputdiv}>
-                  <input type={"text"} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} placeholder={"Firmenname"}/>
+                  <input type={"text"} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} className={classes.whiteinput} placeholder={"Firmenname"}/>
                   <SearchIcon className={classes.searchicon}/>
                 </div>
+              </div>
+              
+              <div className={classes.searchwithcitymenu}>
+                <div className={classes.searchdealertext}>Filtern nach Stadt</div>
+                <div className={`${classes.searchinputdiv} mb-2`}>
+                  <input type={"text"} onChange={(e) => setCitySearch(e.target.value)} className={classes.whiteinput} placeholder={"Suchen"}/>
+                  <SearchIcon className={classes.searchicon}/>
+                </div>
+                <div className={classes.citycontent}>
+                  {matches.map((city, index) => <div key={index} className='flex'>
+                      <div className={classes.weiss} onClick={() => {
+                        if(!selectedStates.includes({state: city.name, index: index})){
+                          selectState(index, city.name)
+                          console.log(index, city.name)
+                          console.log(true)
+                        } else{
+                          removeState(index)
+                          console.log(false)
+                        }
+                      }} >
+                        {selectedStates.includes({state: city.name, index: index}) == true && <Check className={classes.blackcheck} />}
+                      </div>
+                      {city.name}
+                    </div>
+                  )}
+                </div>
+                <button className={classes.delfilter}><Bin className={classes.bin}/>Filter löschen</button>
               </div>
               <div className={classes.searchwithratemenu}>
                 <div className={classes.filterbyratetext}>Filtern nach Bewertung</div>
@@ -362,14 +392,41 @@ export default function DealerListContainer() {
                 </div>
                 <button className={classes.delfilter}><Bin className={classes.bin}/>Filter löschen</button>
               </div>
-              <div className={classes.searchwithcitymenu}>
-                <div className={classes.searchdealertext}>FILTERN NACH STADT</div>
+            </div>
+              </div>
+              }
+            </div>
+          </div>
+
+        : <div></div>}
+        <div className="w-10/12 lg:w-full max-w-ag-container mx-auto lg:pt-4 lg:px-4 px-8 bg-white pt-8 pb-12">
+          <div className={classes.adbanner}>Werbung</div>
+          <div className={classes.contentcontainer}>
+          <TopRow />
+          <div className="flex">
+          {width >= 1250 && 
+            <div className={classes.leftcontainer}>
+              <div className={classes.amountDealers}>
+                <div className={classes.heading}>{displayAmountDealers}</div>
+                <div className={classes.text13}>Registrierte Autohändler</div>
+              </div>
+              <div className={classes.searchdealer}>
+                <div className={classes.searchdealertext}>Händler Suchen</div>
+                <div className={classes.searchinputdiv}>
+                  <input type={"text"} onChange={(e) => setFirmenname(e.target.value)} className={classes.whiteinput} placeholder={"Firmenname"}/>
+                  <SearchIcon className={classes.searchicon}/>
+                </div>
+              </div>
+              
+              <div className={classes.searchwithcity}>
+                <div className={classes.searchdealertext}>Filtern nach Stadt</div>
                 <div className={`${classes.searchinputdiv} mb-2`}>
-                  <input type={"text"} onChange={(e) => setCitySearch(e.target.value)} placeholder={"Suchen"}/>
+                  <input type={"text"} onChange={(e) => setCitySearch(e.target.value)} className={classes.whiteinput} placeholder={"Suchen"}/>
                   <SearchIcon className={classes.searchicon}/>
                 </div>
                 <div className={classes.citycontent}>
-                  {matches.map((city, index) => <div key={index} className='flex'>
+                  {matches.map((city, index) => <div key={index} className={classes.citycontainer}>
+                  <div className='flex'>
                       <div className={classes.weiss} onClick={() => {
                         if(!selectedStates.includes({state: city.name, index: index})){
                           selectState(index, city.name)
@@ -384,32 +441,9 @@ export default function DealerListContainer() {
                       </div>
                       {city.name}
                     </div>
-                  )}
+                  </div>)}
                 </div>
                 <button className={classes.delfilter}><Bin className={classes.bin}/>Filter löschen</button>
-              </div>
-            </div>
-              </div>
-              }
-            </div>
-          </div>
-
-        : <div></div>}
-        <div className="w-10/12 lg:w-full max-w-ag-container mx-auto lg:pt-4 lg:px-4 px-8 bg-white pt-8 pb-12">
-          <div className={classes.adbanner}>Werbung</div>
-          <div className={classes.contentcontainer}>
-            {width >= 1250 && 
-            <div className={classes.leftcontainer}>
-              <div className={classes.amountDealers}>
-                <div className={classes.heading}>{displayAmountDealers}</div>
-                <div className={classes.text13}>REGISTRIERTE AUTOHÄNDLER</div>
-              </div>
-              <div className={classes.searchdealer}>
-                <div className={classes.searchdealertext}>HÄNDLER SUCHEN</div>
-                <div className={classes.searchinputdiv}>
-                  <input type={"text"} onChange={(e) => setFirmenname(e.target.value)} placeholder={"Firmenname"}/>
-                  <SearchIcon className={classes.searchicon}/>
-                </div>
               </div>
               <div className={classes.searchwithrate}>
                 <div className={classes.filterbyratetext}>Filtern nach Bewertung</div>
@@ -509,33 +543,6 @@ export default function DealerListContainer() {
                 </div>
                 <button className={classes.delfilter}><Bin className={classes.bin}/>Filter löschen</button>
               </div>
-              <div className={classes.searchwithcity}>
-                <div className={classes.searchdealertext}>Filtern nach Stadt</div>
-                <div className={`${classes.searchinputdiv} mb-2`}>
-                  <input type={"text"} onChange={(e) => setCitySearch(e.target.value)} placeholder={"Suchen"}/>
-                  <SearchIcon className={classes.searchicon}/>
-                </div>
-                <div className={classes.citycontent}>
-                  {matches.map((city, index) => <div key={index} className={classes.citycontainer}>
-                  <div className='flex'>
-                      <div className={classes.weiss} onClick={() => {
-                        if(!selectedStates.includes({state: city.name, index: index})){
-                          selectState(index, city.name)
-                          console.log(index, city.name)
-                          console.log(true)
-                        } else{
-                          removeState(index)
-                          console.log(false)
-                        }
-                      }} >
-                        {selectedStates.includes({state: city.name, index: index}) == true && <Check className={classes.blackcheck} />}
-                      </div>
-                      {city.name}
-                    </div>
-                  </div>)}
-                </div>
-                <button className={classes.delfilter}><Bin className={classes.bin}/>Filter löschen</button>
-              </div>
             </div>}
             <div className={classes.rightcontainer}>
               <div className={classes.layouteditor}>
@@ -576,6 +583,7 @@ export default function DealerListContainer() {
                 />)}
               </div>
             </div>
+          </div>
           </div>
           {/* 
               PAGINATION

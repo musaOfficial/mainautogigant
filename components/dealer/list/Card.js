@@ -37,13 +37,13 @@ export default function ListCard({ hgm, usrname, address, rating, fromRatingAmou
         </div>
       </div>
       <div className={classes.bottom}>
-        <div className={classes.listitem}><Store className={classes.store}/>{hgm}</div>
-          <div className={classes.listitem}><Account className={classes.store}/>{usrname}</div>
-          <div className={classes.listitem}><Map className={classes.store}/>{address}</div>
-          <div className={classes.listitem}><Star className={classes.store}/>{rating} / von {fromRatingAmount} Bewertungen</div>
+        <div className={classes.listitem}><span className='font-bold'>{hgm}</span></div>
+          <div className={classes.listitem}>{usrname}</div>
+          <div className={classes.listitem}>{address}</div>
+          <div className={classes.lastlistitem}>{rating} / von {fromRatingAmount} Bewertungen</div>
           <div className={classes.buttons}>
-            <button className={classes.halfbtncard}>PROFIL BESUCHEN</button>
-            <button className={classes.halfbtnsendcard}>NACHRICHT SENDEN</button>
+            <button className={classes.halfbtncard}>Profil besuchen</button>
+            <button className={classes.halfbtnsendcard}>Nachricht senden</button>
           </div>
       </div>
     </div>
