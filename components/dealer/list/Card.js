@@ -4,22 +4,28 @@ import Store from './../../../public/dealercard/store.svg'
 import Account from './../../../public/dealercard/account.svg'
 import Map from './../../../public/dealercard/map.svg'
 import Star from './../../../public/dealercard/star.svg'
+import { useState } from 'react';
 
 export default function ListCard({ hgm, usrname, address, rating, fromRatingAmount, gridView, profileimgsrc, bannerimgsrc }) {
+
+  const [hover, setHover] = useState(false);
+
   return (
     <>
-      {gridView == false ? <div className={classes.container}>
+      {gridView == false ? <div className={classes.container} onMouseOver={() => setHover(true)} onMouseLeave={() => setHover(false)}>
         <div className={classes.left}>
-          <div className={classes.cardimg}>
+          {hover == true && <div className={classes.cardimg}>
           {bannerimgsrc ? <Image src={bannerimgsrc} layout="fill" objectFit='cover'/> : null}
-        </div>
-          <div className={classes.profileimg}>{profileimgsrc ? <Image src={profileimgsrc} layout="fill" objectFit='cover'/> : null}</div>
+        </div>}
+          {hover == false && <div className={classes.profileimg}>{profileimgsrc ? <Image src={profileimgsrc} layout="fill" objectFit='cover'/> : null}</div>}
         </div>
         <div className={classes.right}>
-          <div className={classes.listitem}><Store className={classes.store}/>{hgm}</div>
-          <div className={classes.listitem}><Account className={classes.store}/>{usrname}</div>
-          <div className={classes.listitem}><Map className={classes.store}/>{address}</div>
-          <div className={classes.listitem}><Star className={classes.store}/>{rating} / von {fromRatingAmount} Bewertungen</div>
+          <div className='flex flex-col'>
+            <div className={classes.listitem}>{hgm}</div>
+            <div className={classes.listitem}>{usrname}</div>
+            <div className={classes.listitem}>{address}</div>
+            <div className={classes.listitem}>{rating} / von {fromRatingAmount} Bewertungen</div>
+          </div>
           <div className={classes.buttons}>
             <button className={classes.halfbtn}>PROFIL BESUCHEN</button>
             <button className={classes.halfbtnsend}>NACHRICHT SENDEN</button>
@@ -27,14 +33,14 @@ export default function ListCard({ hgm, usrname, address, rating, fromRatingAmou
         </div>
     </div> :
     
-    <div className={classes.card}>
+    <div className={classes.card} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
       <div className={classes.top}>
-        <div className={classes.cardimage}>
+        {hover == true && <div className={classes.cardimage} >
           {bannerimgsrc ? <Image src={bannerimgsrc} layout="fill" objectFit='cover'/> : null}
-        </div>
-        <div className={classes.profileimage}>
+        </div>}
+        {hover == false && <div className={classes.profileimage}>
           {profileimgsrc ? <Image src={profileimgsrc} layout="fill" objectFit='cover'/> : null}
-        </div>
+        </div>}
       </div>
       <div className={classes.bottom}>
         <div className={classes.listitem}><span className='font-bold'>{hgm}</span></div>

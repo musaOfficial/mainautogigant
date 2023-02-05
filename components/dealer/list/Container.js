@@ -239,20 +239,22 @@ export default function DealerListContainer() {
   return (
     <div className="bg-theme-gray-10">
       <div className="lg:px-6 md:!px-0">
-      {width < 1250 ? 
+        <div className="w-10/12 lg:w-full max-w-ag-container mx-auto lg:pt-4 lg:px-4 px-8 bg-white pt-8 pb-12">
+          <div className={classes.adbanner}>Werbung</div>
+          <div className={classes.contentcontainer}>
+          <TopRow />
+          {width < 1250 ? 
           <div className={`relative w-10/12 lg:w-full flex justify-center max-w-ag-container md:!w-full mx-auto flex-col bg-white`}>
             <div className={classes.filterrow}>
-              <div className={classes.countercontainer}>
-                  <HomeMenu className={classes.homemenu} />
-                  <div className={classes.counter}>
-                    <div className={classes.counternumber}>{amountDealers}</div>
-                    <div className={classes.countertext}>Registrierte Autohändler</div>
-                  </div>
-                </div>
               
               {filterOpen == false ? <div className={classes.closefilter}>
                   <Menu className={classes.menu} onClick={() => setFilterOpen(d => !d)}/>
+                  <div className="flex flex-col w-full">
+                  <div className={classes.counter}>
+                    <div className={classes.countertext}><strong>{amountDealers}</strong> Registrierte Autohändler</div>
+                  </div>
                   <input type={"text"} placeholder={"Händler suchen"} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} className={classes.suche} />
+                  </div>
               </div> : 
               
               <div className={classes.openedfilter}>
@@ -399,10 +401,6 @@ export default function DealerListContainer() {
           </div>
 
         : <div></div>}
-        <div className="w-10/12 lg:w-full max-w-ag-container mx-auto lg:pt-4 lg:px-4 px-8 bg-white pt-8 pb-12">
-          <div className={classes.adbanner}>Werbung</div>
-          <div className={classes.contentcontainer}>
-          <TopRow />
           <div className="flex">
           {width >= 1250 && 
             <div className={classes.leftcontainer}>

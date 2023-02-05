@@ -119,12 +119,12 @@
 }
 
 .filterbyratetext{
-    font-size: 13px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 .searchdealertext{
-    font-size: 13px;
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -137,7 +137,7 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     border-radius: 10px;
     transition: all .1s ease-in;
@@ -298,6 +298,8 @@
     padding-right: 30px;
     padding-bottom: 10px;
     align-items: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .openedfilter{
