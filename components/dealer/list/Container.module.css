@@ -379,9 +379,9 @@
     }
 }
 
-@media(max-width: 1250px){
+@media(max-width: 1249px){
     .rightcontainer{
-        margin-left: 0;
+        margin-left: 0px;
     }
 }
 

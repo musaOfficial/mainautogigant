@@ -556,9 +556,9 @@ export default function DealerListContainer() {
             </div>}
             
             <div className={classes.rightcontainer}>
-              <div className={classes.counter}>
+              {width < 1250 && <div className={classes.counter}>
                 <div className={classes.countertext}><strong>{amountDealers}</strong> Registrierte Autohändler</div>
-              </div>
+              </div>}
               <div className={classes.layouteditor}>
                 <div className={classes.show}>
                   Anzeigen:                                         
