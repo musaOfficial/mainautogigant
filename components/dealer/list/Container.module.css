@@ -307,22 +307,23 @@
     min-height: 45px;
     width: 100%;
     display: flex;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 10px;
     flex-direction: column;
+    border-radius: 10px;
 }
 
 .menu{
-    width: 35px;
-    height: 35px;
+    width: 35px !important;
+    height: 35px !important;
     margin-right: 20px;
 }
 
 .closemenu{
-    width: 35px;
-    height: 35px;
+    width: 33px !important;
+    height: 33px !important;
 }
 
 .weiss{
@@ -353,6 +354,14 @@
 
 .whiteinput{
     background-color: rgba(255, 255, 255, 0.75);
+}
+
+@media(max-width: 882px){
+    .dealerlist{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
 }
 
 @media(max-width: 1250px){

@@ -97,45 +97,52 @@ export default function DealerListContainer() {
     {
       companyname: "HGMEDIA WERBEAGENTUR",
       name: "HASAN GÜLER",
-      location: "WIENER STRASSE 90, 2700 WIENER NEUSTADT",
+      location: "WIENER STRASSE 90",
       rating: 4.9,
       fromRatingAmount: 27,
+      state: "2700 Wiener Neustadt"
     },
     {
       companyname: "HGMEDIA WERBEAGENTUR",
       name: "HASAN GÜLER",
-      location: "WIENER STRASSE 90, 2700 WIENER NEUSTADT",
+      location: "WIENER STRASSE 90",
       rating: 4.9,
       fromRatingAmount: 27,
+      state: "2700 Wiener Neustadt"
     },
     {
       companyname: "HGMEDIA WERBEAGENTUR",
       name: "HASAN GÜLER",
-      location: "WIENER STRASSE 90, 2700 WIENER NEUSTADT",
+      location: "WIENER STRASSE 90",
       rating: 4.9,
       fromRatingAmount: 27,
+      state: "2700 Wiener Neustadt"
     },
     {
       companyname: "HGMEDIA WERBEAGENTUR",
       name: "HASAN GÜLER",
-      location: "WIENER STRASSE 90, 2700 WIENER NEUSTADT",
+      location: "WIENER STRASSE 90",
       rating: 4.9,
       fromRatingAmount: 27,
+      state: "2700 Wiener Neustadt"
     },
     {
       companyname: "HGMEDIA WERBEAGENTUR",
       name: "HASAN GÜLER",
-      location: "WIENER STRASSE 90, 2700 WIENER NEUSTADT",
+      location: "WIENER STRASSE 90",
       rating: 4.9,
       fromRatingAmount: 27,
+      state: "2700 Wiener Neustadt"
     },
     {
       companyname: "HGMEDIA WERBEAGENTUR",
       name: "HASAN GÜLER",
-      location: "WIENER STRASSE 90, 2700 WIENER NEUSTADT",
+      location: "WIENER STRASSE 90",
       rating: 4.9,
       fromRatingAmount: 27,
+      state: "2700 Wiener Neustadt"
     },
+    
   ]
 
   const [cities, setCities] = useState([
@@ -577,6 +584,7 @@ export default function DealerListContainer() {
                   address={dealer.location}
                   rating={dealer.rating}
                   gridView={width <= 882 && true || gridView}
+                  state={dealer.state}
                   fromRatingAmount={dealer.fromRatingAmount}
                 />)}
               </div>
