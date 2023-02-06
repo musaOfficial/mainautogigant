@@ -263,18 +263,15 @@ export default function DealerListContainer() {
             <div className={classes.filterrow}>
               
               {filterOpen == false ? <div className={classes.closefilter}>
-                  <span className="flex items-center"><Menu className={classes.menu} onClick={() => setFilterOpen(d => !d)}/> <span className="font-bold mb-2">Filtern</span></span>
+                  <span className="flex items-center"><Menu className={classes.menu} onClick={() => setFilterOpen(d => !d)}/></span>
                   <div className="flex flex-col w-full">
-                  <div className={classes.counter}>
-                    <div className={classes.countertext}><strong>{amountDealers}</strong> Registrierte Autohändler</div>
-                  </div>
                   <input type={"text"} placeholder={"Händler suchen"} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} className={classes.suche} />
                   </div>
               </div> : 
               
               <div className={classes.openedfilter}>
                 <div onClick={() => setFilterOpen(false) }>
-                  <span className="flex items-center"><CloseMenu className={classes.closemenu} /><span className="font-bold ml-2">Schließen</span></span>
+                  <span className="flex items-center"><CloseMenu className={classes.closemenu} /></span>
                 </div>
                 <div className={classes.leftcontainermenu}>
               <div className={classes.searchdealermenu}>
@@ -557,7 +554,11 @@ export default function DealerListContainer() {
                 <button className={classes.delfilter}><Bin className={classes.bin}/>Filter löschen</button>
               </div>
             </div>}
+            
             <div className={classes.rightcontainer}>
+              <div className={classes.counter}>
+                <div className={classes.countertext}><strong>{amountDealers}</strong> Registrierte Autohändler</div>
+              </div>
               <div className={classes.layouteditor}>
                 <div className={classes.show}>
                   Anzeigen:                                         
@@ -583,6 +584,7 @@ export default function DealerListContainer() {
                   <ListView className={`${classes.listview} ${gridView == false && classes.gridviewselected}`} onClick={() => setGridView(false)}/>  
                 </div>}
               </div>
+              
               <div className={`${gridView ? classes.dealergrid : classes.dealerlist}`}>
                 {dealers.map((dealer, index) => <ListCard 
                   key={index}
