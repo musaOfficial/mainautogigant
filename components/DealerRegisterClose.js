@@ -35,12 +35,12 @@ Keine E-Mail erhalten? <span className={classes.link}>Hier neu anfordern.</span>
                         <div className={classes.check}>
                             <Check className={classes.checkicon} />
                             <div className={classes.desc}>
-                            Mit Klick auf den Bestätigungslink ist Ihr AUTO GIGANT.
+                            Mit Klick auf den Bestätigungslink ist Ihr AutoGigant.
 Benutzerkonto aktiv
                             </div>
                         </div>
                         <div className={classes.ifnomail}>
-                        Wenn Sie keine E-Mail von uns erhalten haben,<br></br>
+                        Wenn Sie keine E-Mail von uns erhalten haben,
 schauen Sie bitte auch im Spam-Ordner Ihres E-Mail-Postfaches.
                         </div>
                     </div>
