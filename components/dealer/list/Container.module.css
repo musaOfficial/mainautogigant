@@ -49,11 +49,16 @@
     background-color: #f1f2f3;
     display: flex;
     padding: 20px;
-    padding-top: 13px;
+    padding-top: 20px;
     flex-direction: column;
     margin-bottom: 20px;
     position: relative;
     border-radius: 0 0 10px 10px;
+}
+
+.inputdiv{
+    height: 45px;
+    background-color: #fff;
 }
 
 .searchdealermenu{
@@ -78,7 +83,7 @@
 }
 
 .searchinputdiv input{
-    line-height: 40px;
+    line-height: 45px;
     padding-left: 40px;
     width: 100%;
 }
@@ -87,9 +92,37 @@
     font-size: 13px;
 }
 
+.inputdiv{
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.inputdiv input{
+    line-height: 45px;
+    padding-left: 40px;
+    width: 100%;
+}
+
+.inputdiv input::placeholder{
+    font-size: 13px;
+}
+
 .searchicon{
     position: absolute;
     top: 10px;
+    left: 10px;
+    height: 20px;
+    width: 20px;
+}
+
+.searchiconmenu{
+    position: absolute;
+    top: 12.5px;
     left: 10px;
     height: 20px;
     width: 20px;
@@ -329,7 +362,7 @@
     padding-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     align-items: center;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -344,7 +377,7 @@
     display: flex;
     padding-top: 20px;
     padding-left: 20px;
-    padding-right: 30px;
+    padding-right: 20px;
     padding-bottom: 10px;
     flex-direction: column;
     border-radius: 10px;

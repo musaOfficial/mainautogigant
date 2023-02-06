@@ -252,7 +252,7 @@ export default function DealerListContainer() {
     {label: "Autoaufbereitungen", value: "Autoaufbereitungen"},
   ]
 
-  const [selectedHaendlerTyp, setSelectedHaendlerTyp] = useState("Autohändler")
+  const [selectedHaendlerTyp, setSelectedHaendlerTyp] = useState("Fahrzeughändler")
 
   // Nach Land, Region und Stadt filtern
   
@@ -315,26 +315,29 @@ export default function DealerListContainer() {
                   options={haendlertypen}
                   styles={haendlerStyle}
                   className="w-full h-full"
-                  placeholder={"Fahrzeughändler"}
+                  placeholder={"Fahrzeughändler suchen"}
                   onChange={(e) => setSelectedHaendlerTyp(e.value)}
                 />
               </div>
                   <div className="flex flex-col w-full">
-                  <input type={"text"} placeholder={`${selectedHaendlerTyp} suchen`} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} className={classes.suche} />
+                  <div className={`${classes.inputdiv}`}>
+                  <input type={"text"} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} className={`${classes.whiteinput} ${classes.inputdiv}`} placeholder={`${selectedHaendlerTyp} suchen`}/>
+                  <SearchIcon className={classes.searchiconmenu}/>
+                </div>
                   </div>
               </div>
                   <span className="flex items-center"><Menu className={classes.menu} onClick={() => setFilterOpen(d => !d)}/></span>
               </div> : 
               
               <div className={classes.openedfilter}>
-                <div onClick={() => setFilterOpen(false) }>
+                <div className="flex justify-end" onClick={() => setFilterOpen(false) }>
                   <span className="flex items-center"><CloseMenu className={classes.closemenu} /></span>
                 </div>
                 <div className={classes.leftcontainermenu}>
               <div className={classes.searchdealermenu}>
                 <div className={classes.searchdealertext}>{selectedHaendlerTyp} suchen</div>
                 <div className={classes.searchinputdiv}>
-                  <input type={"text"} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} className={classes.whiteinput} placeholder={"Firmenname"}/>
+                  <input type={"text"} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} className={classes.whiteinput} placeholder={`${selectedHaendlerTyp} suchen`}/>
                   <SearchIcon className={classes.searchicon}/>
                 </div>
               </div>
@@ -487,9 +490,8 @@ export default function DealerListContainer() {
                 />
               </div>
               <div className={classes.searchdealer}>
-                <div className={classes.searchdealertext}>{selectedHaendlerTyp} Suchen</div>
                 <div className={classes.searchinputdiv}>
-                  <input type={"text"} onChange={(e) => setFirmenname(e.target.value)} className={classes.whiteinput} placeholder={"Firmenname"}/>
+                  <input type={"text"} onChange={(e) => setFirmenname(e.target.value)} className={classes.whiteinput} placeholder={`${selectedHaendlerTyp} suchen`}/>
                   <SearchIcon className={classes.searchicon}/>
                 </div>
               </div>
