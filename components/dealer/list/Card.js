@@ -12,12 +12,12 @@ export default function ListCard({ hgm, usrname, address, state, rating, fromRat
 
   return (
     <>
-      {gridView == false ? <div className={classes.container} >
+      {gridView == false ? <div className={classes.container} onMouseLeave={() => setHover(false)} >
         <div className={classes.left} onMouseOver={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-          {hover == true && <div className={classes.cardimg}>
+          {hover == false && <div className={classes.cardimg}>
           {bannerimgsrc ? <Image src={bannerimgsrc} layout="fill" objectFit='cover'/> : null}
         </div>}
-          {hover == false && <div className={classes.profileimg}>{profileimgsrc ? <Image src={profileimgsrc} layout="fill" objectFit='cover'/> : null}</div>}
+          {hover == true && <div className={classes.profileimg}>{profileimgsrc ? <Image src={profileimgsrc} layout="fill" objectFit='cover'/> : null}</div>}
         </div>
         <div className={classes.right}>
           <div className='flex flex-col mr-6 w-full '>
@@ -33,7 +33,7 @@ export default function ListCard({ hgm, usrname, address, state, rating, fromRat
         </div>
     </div> :
     
-    <div className={classes.card} >
+    <div className={classes.card} onMouseLeave={() => setHover(false)} >
       <div className={classes.top} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} >
         {hover == true && <div className={classes.cardimage} >
           {bannerimgsrc ? <Image src={bannerimgsrc} layout="fill" objectFit='cover'/> : null}

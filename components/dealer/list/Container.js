@@ -47,13 +47,21 @@ export default function DealerListContainer() {
       border: "none",
       fontSize: '13px',
       borderRadius: '10px',
-      backgroundColor: "rgba(255, 255, 255, 0.75)"
+      width: "100%",
+      cursor: "pointer",
     }),
     option: (styles, state) => ({
       ...styles,
       backgroundColor: state.isSelected ? "#fbb900" : "",
       "&:active": "#fbb90080",
+      "&:hover" : {
+        backgroundColor: "#FFE497"
+      },
+      "&:focus" : {
+        backgroundColor: "#FBB900"
+      },
       fontSize: '13px',
+      cursor: "pointer",
     }),
   };
 
@@ -562,11 +570,10 @@ export default function DealerListContainer() {
                     />
                 </div>
                 <div className={classes.sortierennach}>
-                  Sortieren nach:
                   <Select 
                     styles={style}
                     options={anzahlAnzeigen}
-                    placeholder="Beste Bewertung"
+                    placeholder="Sortieren nach"
                     className="ml-2"
                     onChange={(e) => setSort(e.value)}
                     />

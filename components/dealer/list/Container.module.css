@@ -137,10 +137,11 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
     border-radius: 10px;
     transition: all .1s ease-in;
+    line-height: 15px;
 }
 .delfilter:hover{
     background-color: #FBB900;
@@ -175,9 +176,11 @@
     padding: 20px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     position: relative;
     margin-bottom: 20px;
     font-size: 13px;
+    padding-right: 100px;
 }
 
 .show{
@@ -189,6 +192,7 @@
 .sortierennach{
     display: flex;
     align-items: center;
+    
 }
 
 .gridchanger{
@@ -222,6 +226,13 @@
 .gridviewselected{
     color: #fff;
     cursor: default;
+}
+
+
+.dealerlist{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
 }
 
 .dealergrid{
