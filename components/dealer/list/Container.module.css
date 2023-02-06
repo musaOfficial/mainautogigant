@@ -64,7 +64,7 @@
 .searchdealermenu{
     margin-bottom: 10px;
     width: 100%;
-    background-color: #f1f2f3;
+    background-color: #FFE497;
     border-radius: 10px;
     display: flex;
     padding-top: 20px;
@@ -137,7 +137,7 @@
 .searchwithratemenu{
     height: 250px;
     width: 100%;
-    background-color: #F1F2F3;
+    background-color: #FFE497;
     border-radius: 10px;
     padding-bottom: 20px;
 
@@ -188,7 +188,7 @@
 
 .searchwithcitymenu{
     width: 100%;
-    background-color: #F1F2F3;
+    background-color: #FFE497;
     border-radius: 10px;
     margin-bottom: 20px;
 }
@@ -352,7 +352,7 @@
 }
 
 .closefilter{
-    background-color: #F1F2F3;
+    background-color: #FFE497;
     min-height: 45px;
     width: 100%;
     display: flex;
@@ -368,7 +368,7 @@
 }
 
 .openedfilter{
-    background-color: #F1F2F3;
+    background-color: #FFE497;
     min-height: 45px;
     width: 100%;
     display: flex;
@@ -503,15 +503,5 @@
 }
 
 @media(max-width: 580px){
-    .filrow{
-        display: flex;
-        flex-direction: column;
-    }
 
-    .typhaendlermenu{
-        margin-right: 0;
-        padding-right: 0;
-        width: 100%;
-        margin-bottom: 10px;
-    }
 }

@@ -330,20 +330,22 @@ export default function DealerListContainer() {
               </div> : 
               
               <div className={classes.openedfilter}>
+                <div className="flex items-center">
+                <div className={classes.typhaendlermenu}>
+                  <Select 
+                    options={haendlertypen}
+                    styles={haendlerStyle}
+                    className="w-full h-full"
+                    placeholder={selectedHaendlerTyp}
+                    onChange={(e) => setSelectedHaendlerTyp(e.value)}
+                  />
+                </div>
                 <div className="flex justify-end" onClick={() => setFilterOpen(false) }>
                   <span className="flex items-center"><CloseMenu className={classes.closemenu} /></span>
                 </div>
+                </div>
                 <div className={classes.leftcontainermenu}>
               <div className={classes.searchdealermenu}>
-                <div className={classes.typhaendlermenu}>
-                <Select 
-                  options={haendlertypen}
-                  styles={haendlerStyle}
-                  className="w-full h-full"
-                  placeholder={selectedHaendlerTyp}
-                  onChange={(e) => setSelectedHaendlerTyp(e.value)}
-                />
-              </div>
                 <div className={classes.searchinputdiv}>
                   <input type={"text"} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} className={classes.whiteinput} placeholder={`${selectedHaendlerTyp} suchen`}/>
                   <SearchIcon className={classes.searchicon}/>
