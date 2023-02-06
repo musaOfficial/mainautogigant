@@ -663,7 +663,7 @@ export default function DealerListContainer() {
                   gridView={width <= 882 && true || gridView}
                   state={dealer.state}
                   fromRatingAmount={dealer.fromRatingAmount}
-                />)}
+                /> )}
               </div>
             </div>
           </div>
