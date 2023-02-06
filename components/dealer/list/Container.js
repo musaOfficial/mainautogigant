@@ -12,7 +12,7 @@ import CloseMenu from './../../../public/menuclose.svg';
 import Check from "./../../../public/hackerl.svg";
 import Menu from './../../../public/menu.svg';
 import TopRow from "../../ui/TopRow";
-
+import Up from './../../../public/up.svg';
 
 const useDeviceSize = () => {
 
@@ -49,6 +49,32 @@ export default function DealerListContainer() {
       borderRadius: '10px',
       width: "100%",
       cursor: "pointer",
+    }),
+    option: (styles, state) => ({
+      ...styles,
+      backgroundColor: state.isSelected ? "#fbb900" : "",
+      "&:active": "#fbb90080",
+      "&:hover" : {
+        backgroundColor: "#FFE497"
+      },
+      "&:focus" : {
+        backgroundColor: "#FBB900"
+      },
+      fontSize: '13px',
+      cursor: "pointer",
+    }),
+  };
+
+  const haendlerStyle = {
+    control: (base) => ({
+      ...base,
+      boxShadow: "none",
+      border: "none",
+      fontSize: '13px',
+      borderRadius: '10px',
+      width: "100%",
+      cursor: "pointer",
+      height: "45px",
     }),
     option: (styles, state) => ({
       ...styles,
@@ -216,6 +242,18 @@ export default function DealerListContainer() {
       }
   ]);
 
+
+  const haendlertypen = [
+    {label: "Fahrzeughändler", value: "Fahrzeughändler"},
+    {label: "Kreditvermittler", value: "Kreditvermittler"},
+    {label: "Versicherungsmakler", value: "Versicherungsmakler"},
+    {label: "Zulassungsstellen", value: "Zulassungsstellen"},
+    {label: "Werkstätten", value: "Werkstätten"},
+    {label: "Autoaufbereitungen", value: "Autoaufbereitungen"},
+  ]
+
+  const [selectedHaendlerTyp, setSelectedHaendlerTyp] = useState("Autohändler")
+
   // Nach Land, Region und Stadt filtern
   
   const [citySearch, setCitySearch] = useState("");
@@ -251,6 +289,14 @@ export default function DealerListContainer() {
     
   }, [selectedStates])
 
+  function scrollTop(){
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+}
+
+
   return (
     <div className="bg-theme-gray-10">
       <div className="lg:px-6 md:!px-0">
@@ -259,14 +305,25 @@ export default function DealerListContainer() {
           <div className={classes.contentcontainer}>
           <TopRow />
           {width < 1250 ? 
-          <div className={`relative w-10/12 lg:w-full flex justify-center max-w-ag-container md:!w-full mx-auto flex-col bg-white`}>
+          <div className={`relative w-10/12 lg:w-full flex justify-center max-w-ag-container md:!w-full mx-auto flex-col bg-white w-full`}>
             <div className={classes.filterrow}>
               
               {filterOpen == false ? <div className={classes.closefilter}>
-                  <span className="flex items-center"><Menu className={classes.menu} onClick={() => setFilterOpen(d => !d)}/></span>
+              <div className={classes.filrow}>
+              <div className={classes.typhaendlermenu}>
+                <Select 
+                  options={haendlertypen}
+                  styles={haendlerStyle}
+                  className="w-full h-full"
+                  placeholder={"Fahrzeughändler"}
+                  onChange={(e) => setSelectedHaendlerTyp(e.value)}
+                />
+              </div>
                   <div className="flex flex-col w-full">
-                  <input type={"text"} placeholder={"Händler suchen"} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} className={classes.suche} />
+                  <input type={"text"} placeholder={`${selectedHaendlerTyp} suchen`} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} className={classes.suche} />
                   </div>
+              </div>
+                  <span className="flex items-center"><Menu className={classes.menu} onClick={() => setFilterOpen(d => !d)}/></span>
               </div> : 
               
               <div className={classes.openedfilter}>
@@ -275,7 +332,7 @@ export default function DealerListContainer() {
                 </div>
                 <div className={classes.leftcontainermenu}>
               <div className={classes.searchdealermenu}>
-                <div className={classes.searchdealertext}>Händler suchen</div>
+                <div className={classes.searchdealertext}>{selectedHaendlerTyp} suchen</div>
                 <div className={classes.searchinputdiv}>
                   <input type={"text"} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} className={classes.whiteinput} placeholder={"Firmenname"}/>
                   <SearchIcon className={classes.searchicon}/>
@@ -418,10 +475,19 @@ export default function DealerListContainer() {
             <div className={classes.leftcontainer}>
               <div className={classes.amountDealers}>
                 <div className={classes.heading}>{displayAmountDealers}</div>
-                <div className={classes.text13}>Registrierte Autohändler</div>
+                <div className={classes.text13}>Registrierte {selectedHaendlerTyp}</div>
+              </div>
+              <div className={classes.typhaendlercontainer}>
+                <Select 
+                  options={haendlertypen}
+                  styles={style}
+                  className="w-full"
+                  placeholder={"Fahrzeughändler"}
+                  onChange={(e) => setSelectedHaendlerTyp(e.value)}
+                />
               </div>
               <div className={classes.searchdealer}>
-                <div className={classes.searchdealertext}>Händler Suchen</div>
+                <div className={classes.searchdealertext}>{selectedHaendlerTyp} Suchen</div>
                 <div className={classes.searchinputdiv}>
                   <input type={"text"} onChange={(e) => setFirmenname(e.target.value)} className={classes.whiteinput} placeholder={"Firmenname"}/>
                   <SearchIcon className={classes.searchicon}/>
@@ -557,7 +623,7 @@ export default function DealerListContainer() {
             
             <div className={classes.rightcontainer}>
               {width < 1250 && <div className={classes.counter}>
-                <div className={classes.countertext}><strong>{amountDealers}</strong> Registrierte Autohändler</div>
+                <div className={classes.countertext}><strong>{amountDealers}</strong> Registrierte {selectedHaendlerTyp}</div>
               </div>}
               <div className={classes.layouteditor}>
                 <div className={classes.show}>
@@ -604,6 +670,11 @@ export default function DealerListContainer() {
               PAGINATION
             */}
           <Pagination pagType='no-border' />
+          <div className="bg-white md:bg-white">
+        <div className={` lg:w-full justify-end m-auto flex md:flex-wrap justify-between ${classes.bgcolor}`}>
+    	    <span className={`flex items-center cursor-pointer ${classes.linkgroup}`} onClick={scrollTop}><span>Nach Oben</span> <Up className={classes.up} /> </span>
+        </div>
+      </div>
         </div>
       </div>
     </div>
