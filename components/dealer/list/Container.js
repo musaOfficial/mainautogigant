@@ -315,7 +315,7 @@ export default function DealerListContainer() {
                   options={haendlertypen}
                   styles={haendlerStyle}
                   className="w-full h-full"
-                  placeholder={"Fahrzeughändler suchen"}
+                  placeholder={selectedHaendlerTyp}
                   onChange={(e) => setSelectedHaendlerTyp(e.value)}
                 />
               </div>
@@ -335,7 +335,15 @@ export default function DealerListContainer() {
                 </div>
                 <div className={classes.leftcontainermenu}>
               <div className={classes.searchdealermenu}>
-                <div className={classes.searchdealertext}>{selectedHaendlerTyp} suchen</div>
+                <div className={classes.typhaendlermenu}>
+                <Select 
+                  options={haendlertypen}
+                  styles={haendlerStyle}
+                  className="w-full h-full"
+                  placeholder={selectedHaendlerTyp}
+                  onChange={(e) => setSelectedHaendlerTyp(e.value)}
+                />
+              </div>
                 <div className={classes.searchinputdiv}>
                   <input type={"text"} onChange={(e) => setSuchbegriff(e.target.value)} value={suchbegriff} className={classes.whiteinput} placeholder={`${selectedHaendlerTyp} suchen`}/>
                   <SearchIcon className={classes.searchicon}/>

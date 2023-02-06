@@ -62,7 +62,7 @@
 }
 
 .searchdealermenu{
-    height: 110px;
+    margin-bottom: 10px;
     width: 100%;
     background-color: #f1f2f3;
     border-radius: 10px;
@@ -359,7 +359,7 @@
     padding-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     align-items: center;
     border-radius: 10px;
     margin-bottom: 20px;
