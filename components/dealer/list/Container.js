@@ -263,7 +263,7 @@ export default function DealerListContainer() {
             <div className={classes.filterrow}>
               
               {filterOpen == false ? <div className={classes.closefilter}>
-                  <Menu className={classes.menu} onClick={() => setFilterOpen(d => !d)}/>
+                  <span className="flex items-center"><Menu className={classes.menu} onClick={() => setFilterOpen(d => !d)}/> <span className="font-bold mb-2">Filtern</span></span>
                   <div className="flex flex-col w-full">
                   <div className={classes.counter}>
                     <div className={classes.countertext}><strong>{amountDealers}</strong> Registrierte Autohändler</div>
@@ -274,7 +274,7 @@ export default function DealerListContainer() {
               
               <div className={classes.openedfilter}>
                 <div onClick={() => setFilterOpen(false) }>
-                  <CloseMenu className={classes.closemenu} />
+                  <span className="flex items-center"><CloseMenu className={classes.closemenu} /><span className="font-bold ml-2">Schließen</span></span>
                 </div>
                 <div className={classes.leftcontainermenu}>
               <div className={classes.searchdealermenu}>
