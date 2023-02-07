@@ -307,10 +307,15 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 20px;
 }
 
-.mySwiper .swiper-slide {
-  width: 25%;
-  height: 100%;
-  opacity: 0.4;
+.mySwiperr{
+  box-sizing: border-box;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.swiper-slide{
+  background-color: transparent;
 }
 
 .mySwiper .swiper-slide-thumb-active {
@@ -489,3 +494,5 @@ input[type="range"]::-moz-range-thumb{
     color: #FF0000;
     font-weight: bold;
   }
+  
+

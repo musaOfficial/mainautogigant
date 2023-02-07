@@ -19,16 +19,15 @@
 }
 
 .profileimg{
-    width: 80px;
-    height: 80px;
-    border-radius: 999px;
+    width: 110px;
+    height: 44px;
+    border-radius: 10px;
     background-color: #8d8d8d;
     overflow: hidden;
     cursor: pointer;
     position: absolute;
-    left: 37px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 30px;
+    top: 30px;
 }
 
 .left{
@@ -197,13 +196,12 @@
 }
 
 .profileimage{
-    width: 80px;
-    height: 80px;
+    width: 110px;
+    height: 44px;
     background-color: #C3C3C3;
-    border-radius: 999px;
+    border-radius: 10px;
     cursor: pointer;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 16px;
+    top: 10px;
+    left: 10px;
 }

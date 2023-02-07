@@ -1,6 +1,5 @@
 import Map from "./Map";
 import AdCard from "../../dashboard/overview/AdCard";
-import Pagination from "../list/Pagination";
 import Link from "next/link";
 import Input from '../../ui/Input';
 import Instargram from './../../../public/icons/instagram.svg'
@@ -14,7 +13,12 @@ import Linkedin from './../../../public/Linkedin.svg';
 import Giglogo from './../../../public/gigantlogo.jpg';
 import Image from "next/image";
 import Expand from './../../../public/expand.svg';
+import { Swiper, SwiperSlide } from "swiper/react";
+import Closer from './../../../public/closex.svg';
+// Import Swiper styles
 
+// import required modules
+import { Navigation } from "swiper";
 const useDeviceSize = () => {
 
   const [width, setWidth] = useState(0)
@@ -301,13 +305,18 @@ export default function DPContainer() {
 
   return (
     <div className="bg-theme-gray-10 lg:px-6 md:!px-0">
-      {albumOpen == true && <div className={classes.albumcontainer}>
-        <Expand  className={classes.expandleft} onClick={() => selectedThumb != 0 && setSelectedThumb(d => d - 1)}/>
-        <div className={classes.albumimg}>
-          <Image src={thumbImages[selectedThumb]} layout='fill' objectFit="cover" />
-        </div>  
-        <Expand className={classes.expandright} onClick={() => selectedThumb != 4 && setSelectedThumb(d => d + 1 )} />
-      </div>}
+      {albumOpen == true && <>
+        <div className={classes.albumcontainer}>
+          <div className={classes.albumimg}>
+            <Image src={thumbImages[selectedThumb]} layout='fill' objectFit="cover" />
+          </div>
+          <div className={classes.closer} onClick={() => setAlbumOpen(false)}></div>
+          <Closer className={classes.close} onClick={() => setAlbumOpen(false)} />
+      </div>
+      <div>
+
+      </div>
+      </>}
       {albumOpen == true && <div className={classes.albumcloser} onClick={() => setAlbumOpen(d => !d)}></div>}
       <div className="w-10/12 lg:w-full max-w-ag-container mx-auto flex md:flex-col-reverse">
         <div className={`w-full p-6 bg-white ${classes.profilecontainer}`}>
@@ -499,24 +508,24 @@ export default function DPContainer() {
                   {aboutUs}
                 </p>
               </div>
-              <div className="flex justify-between xl:flex-wrap xl:justify-around p-4 mt-7 text-theme-gray-4 bg-theme-gray-4 rounded-10">
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage1} onClick={() => {
+              <div className={`flex justify-between xl:flex-wrap xl:justify-around p-4 mt-7 text-theme-gray-4 bg-theme-gray-4 md:flex-col rounded-10 ${classes.imagesgrid}`}>
+                <img className={classes.thumbimg} src={thumbImage1} onClick={() => {
                   setSelectedThumb(0);
                   setAlbumOpen(true);
                 } } />
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage2} onClick={() => {
+                <img className={classes.thumbimg} src={thumbImage2} onClick={() => {
                   setSelectedThumb(1);
                   setAlbumOpen(true);
                 }}/>
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage3} onClick={() => {
+                <img className={classes.thumbimg} src={thumbImage3} onClick={() => {
                   setSelectedThumb(2);
                   setAlbumOpen(true);
                 }} />
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage4} onClick={() => {
+                <img className={classes.thumbimg} src={thumbImage4} onClick={() => {
                   setSelectedThumb(3);
                   setAlbumOpen(true);
                 }}/>
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage5} onClick={() => {
+                <img className={classes.thumbimg} src={thumbImage5} onClick={() => {
                   setSelectedThumb(4);
                   setAlbumOpen(true);
                 }} />
@@ -524,12 +533,14 @@ export default function DPContainer() {
               <div className="h-96 w-full mt-7 google-map-container rounded-10 overflow-hidden">
                 <Map />
               </div>
-              <div className="p-4 mt-10 bg-theme-gray-4 rounded-md">
-                <div className="flex justify-between items-center pb-4 border-b border-theme-gray-2 text-theme-gray-4">
-                  <h2 className="text-2xl font-bold md:text-lg">UNSERE FAHRZEUGE</h2>
+              <div className="p-4 mt-10 bg-theme-gray-4 rounded-10">
+                <div className="flex justify-between flex-col  pb-4 border-b  border-theme-gray-2 text-theme-gray-4">
+                  <h2 className="text-2xl font-bold md:text-lg mb-2">Unsere Fahrzeuge</h2>
+                  
                   <div className="flex items-center">
                     <div className="flex items-center text-base">
-                      <p className="mr-3">ANZEIGEN</p>
+              
+                      <p className="mr-3">Anzeigen</p>
                       <div className="relative ml-2 rounded-md bg-theme-gray-8">
                         <select className="ml-2 outline-none appearance-none bg-transparent rounded py-2 pl-6 pr-10 text-white">
                           <option value="12" className="bg-theme-gray-8">12</option>
@@ -577,7 +588,7 @@ export default function DPContainer() {
                   </div>)}
                 </div>
               </div>
-              <Pagination wFull pagType='sm-border' />
+    
             </div>
             <div className="w-250 ml-6 md:w-full md:ml-0 md:mt-6">
               <div className="flex justify-between rounded-10 text-theme-gray-4 text-base md:mt-6">
