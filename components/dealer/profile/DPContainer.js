@@ -585,7 +585,7 @@ export default function DPContainer() {
                       fill="#555"
                     />
                   </svg>
-                  <p className={`ml-4`}>{tel}</p>
+                  <p className={`ml-4 ${classes.link}`}>{tel}</p>
                 </div>
                 <div className="flex items-center mt-2">
                   <svg
