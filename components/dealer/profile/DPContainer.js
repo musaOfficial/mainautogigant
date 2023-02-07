@@ -11,6 +11,7 @@ import classes from './DPContainer.module.css';
 import Angebot from "../../ui/ads/Angebot";
 import { useState, useEffect } from "react";
 import Linkedin from './../../../public/Linkedin.svg';
+import Giglogo from './../../../public/gigantlogo.jpg';
 
 const useDeviceSize = () => {
 
@@ -474,7 +475,7 @@ export default function DPContainer() {
                       <p>{amountStars} / 27 Bewertungen</p>
                     </div>
                     <button className="sm:mb-4 sm:mr-0 mr-2 inline-block px-4 py-1 sm:px-3 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-13 font-bold ease-linear duration-300 hover:bg-theme-yellow-3">
-                      HÄNDLER BEWERTEN
+                      Händler bewerten
                     </button>
                   </div>
                 </div>
@@ -769,12 +770,12 @@ export default function DPContainer() {
                 </button>
               </div> */}
               <div className="mt-6 p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base">
-                <h2 className="text-base font-bold">NACHRICHT SENDEN</h2>
+                <h2 className="text-base font-bold">Nachricht senden</h2>
                 <form className="pt-2 pb-2">
                   <Input placeholder="Vollständiger Name" onChange={(e) => setName(e.target.value)} />
                   <Input placeholder="Ihre E-Mail eingeben" onChange={(e) => setMail(e.target.value)} />
                   <textarea
-                   className="w-full h-36 resize-none rounded-10 text-base p-3 bg-white"
+                   className="w-full h-36 resize-none placeholder:text-13 rounded-10 text-base p-3 bg-white"
                     placeholder="Ihre Nachricht"
                     onChange={(e) => setMessage(e.target.value)}
                   ></textarea>

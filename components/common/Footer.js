@@ -71,28 +71,28 @@ export default function Footer() {
   const [width, height] = useDeviceSize();
 
   const links1 = [
-    { linkTitle: "ANMELDEN", url: "/login" },
-    { linkTitle: "REGISTRIEREN", url: "/registration/dealer" },
-    { linkTitle: "VORTEILE", url: "#" },
-    { linkTitle: "PREISE", url: "#" },
-    { linkTitle: "HILFE", url: "#" },
-    { linkTitle: "WERBUNG", url: "#" },
+    { linkTitle: "Anmelden", url: "/login" },
+    { linkTitle: "Registrieren", url: "/registration/dealer" },
+    { linkTitle: "Vorteile", url: "#" },
+    { linkTitle: "Preise", url: "#" },
+    { linkTitle: "Hilfe", url: "#" },
+    { linkTitle: "Werbung", url: "#" },
   ];
   const links2 = [
-    { linkTitle: "FAHRZEUG HÄNDLER", url: "#" },
-    { linkTitle: "KREDITVERMITTLER", url: "#" },
-    { linkTitle: "VERSICHERUNGSMAKLER", url: "#" },
-    { linkTitle: "ZULASSUNGSSTELLEN", url: "#" },
-    { linkTitle: "WERKSTÄTTEN", url: "#" },
-    { linkTitle: "AUTOAUFBEREITUNG", url: "#" },
+    { linkTitle: "Fahrzeughändler", url: "#" },
+    { linkTitle: "Kreditvermittler", url: "#" },
+    { linkTitle: "Versicherungsmakler", url: "#" },
+    { linkTitle: "Zulassungsstellen", url: "#" },
+    { linkTitle: "Werkstätten", url: "#" },
+    { linkTitle: "Autoaufbereitungen", url: "#" },
   ];
   const links3 = [
-    { linkTitle: "KFZ KAUFVERTRAG", url: "/kaufvertrag" },
-    { linkTitle: "UNFALLBERICHT", url: "#" },
-    { linkTitle: "NOVA RECHNER", url: "#" },
-    { linkTitle: "DIGITALE VIGNETTE", url: "#" },
-    { linkTitle: "FAHRSCHULEN", url: "#" },
-    { linkTitle: "AUTOMARKEN", url: "#" },
+    { linkTitle: "KFZ Kaufvertrag", url: "/kaufvertrag" },
+    { linkTitle: "Unfallbericht", url: "#" },
+    { linkTitle: "Nova Rechner", url: "#" },
+    { linkTitle: "Digitale Vignette", url: "#" },
+    { linkTitle: "Fahrschulen", url: "#" },
+    { linkTitle: "Automarken", url: "#" },
   ];
 
   const [openLanguagesBar, setOpenLanguagesBar] = useState(false);

@@ -22,6 +22,7 @@
 
 .desc{
     margin-bottom: 10px;
+    font-size: 13px;
 }
 .secondcontent{
     width: 100%;
@@ -46,6 +47,7 @@
     margin-bottom: 20px;
     height: 40px;
     padding-left: 20px;
+    font-size: 13px;
 }
 
 .inputfields::-webkit-inner-spin-button,
@@ -65,6 +67,7 @@
     height: 40px;
     border-radius: 10px;
     padding-left: 20px;
+    font-size: 13px;
 }
 
 .b{
@@ -72,6 +75,7 @@
     height: 40px;
     border-radius: 10px;
     padding-left: 20px;
+    font-size: 13px;
 }
 
 .generatekaufvertragbtn{
@@ -180,15 +184,30 @@
 
 .middleinputbottom{
     height: 30px;
-    border-radius: 10px;
+    border-radius: 0 10px 10px 0;
     padding-left: 10px;
     margin-right: 5px;
     margin-bottom: 10px;
+    width: 100%;
+    position: relative;
+
 }
 
 .middleinputbottom:disabled{
     background-color: rgba(255,255,255,0.3);
     cursor: not-allowed;
+}
+
+.inputlabel{
+    width: 30%;
+    margin-bottom: 10px;
+    background-color: #fff;
+    height: 30px;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: rgba(108, 117, 125, 0.5);
 }
 
 .sup{
@@ -227,6 +246,7 @@
     border-radius: 10px;
     padding-left: 20px;
     margin-right: 20px;
+    font-size: 13px;
 }
 
 .second{
@@ -234,6 +254,7 @@
     height: 40px;
     border-radius: 10px;
     padding-left: 20px;
+    font-size: 13px;
 }
 
 .secondcontent{

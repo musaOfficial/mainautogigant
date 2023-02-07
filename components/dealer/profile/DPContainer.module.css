@@ -20,12 +20,13 @@
 }
 
 .profileimg{
-    height: 154px;
-    width: 154px;
-    border-radius: 999px;
+    height: 100px;
+    width: 250px;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 10%;
+    left: 20px;
+    top: 20px;
     object-fit: cover;
+    border-radius: 10px;
+    /* height: 55px;
+    width: 137px; */
 }
