@@ -44,7 +44,7 @@
     width: 100%;
     background-color: #fff;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     height: 40px;
     padding-left: 20px;
     font-size: 13px;
@@ -58,7 +58,7 @@
 .row{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .a{

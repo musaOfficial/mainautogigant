@@ -12,6 +12,8 @@ import Angebot from "../../ui/ads/Angebot";
 import { useState, useEffect } from "react";
 import Linkedin from './../../../public/Linkedin.svg';
 import Giglogo from './../../../public/gigantlogo.jpg';
+import Image from "next/image";
+import Expand from './../../../public/expand.svg';
 
 const useDeviceSize = () => {
 
@@ -274,6 +276,8 @@ export default function DPContainer() {
   const [thumbImage4, setThumbImage4] = useState("/images/dp-thumb-img-4.png");
   const [thumbImage5, setThumbImage5] = useState("/images/dp-thumb-img-5.png");
 
+  const [thumbImages, setThumbImages] = useState([thumbImage1, thumbImage2, thumbImage3, thumbImage4, thumbImage5]);
+
   // Social Media URL's
   const [facebookUrl, setFacebookUrl] = useState("");
   const [instagramUrl, setInstagramUrl] = useState("");
@@ -291,9 +295,20 @@ export default function DPContainer() {
   const [usermail, setUsermail] = useState("");
   const [message, setMessage] = useState("");
 
+  // GALIERIE
+  const [albumOpen, setAlbumOpen] = useState(false);
+  const [selectedThumb, setSelectedThumb] = useState(0);
 
   return (
     <div className="bg-theme-gray-10 lg:px-6 md:!px-0">
+      {albumOpen == true && <div className={classes.albumcontainer}>
+        <Expand  className={classes.expandleft} onClick={() => selectedThumb != 0 && setSelectedThumb(d => d - 1)}/>
+        <div className={classes.albumimg}>
+          <Image src={thumbImages[selectedThumb]} layout='fill' objectFit="cover" />
+        </div>  
+        <Expand className={classes.expandright} onClick={() => selectedThumb != 4 && setSelectedThumb(d => d + 1 )} />
+      </div>}
+      {albumOpen == true && <div className={classes.albumcloser} onClick={() => setAlbumOpen(d => !d)}></div>}
       <div className="w-10/12 lg:w-full max-w-ag-container mx-auto flex md:flex-col-reverse">
         <div className={`w-full p-6 bg-white ${classes.profilecontainer}`}>
           <div className="relative">
@@ -485,11 +500,26 @@ export default function DPContainer() {
                 </p>
               </div>
               <div className="flex justify-between xl:flex-wrap xl:justify-around p-4 mt-7 text-theme-gray-4 bg-theme-gray-4 rounded-10">
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage1} />
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage2}/>
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage3} />
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage4}/>
-                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage5} />
+                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage1} onClick={() => {
+                  setSelectedThumb(0);
+                  setAlbumOpen(true);
+                } } />
+                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage2} onClick={() => {
+                  setSelectedThumb(1);
+                  setAlbumOpen(true);
+                }}/>
+                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage3} onClick={() => {
+                  setSelectedThumb(2);
+                  setAlbumOpen(true);
+                }} />
+                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage4} onClick={() => {
+                  setSelectedThumb(3);
+                  setAlbumOpen(true);
+                }}/>
+                <img className="xl:w-24 lg:w-16  sm:!w-12" src={thumbImage5} onClick={() => {
+                  setSelectedThumb(4);
+                  setAlbumOpen(true);
+                }} />
               </div>
               <div className="h-96 w-full mt-7 google-map-container rounded-10 overflow-hidden">
                 <Map />

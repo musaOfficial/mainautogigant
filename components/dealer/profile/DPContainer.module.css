@@ -30,3 +30,61 @@
     /* height: 55px;
     width: 137px; */
 }
+
+.albumcontainer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.6);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 46;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.albumimg{
+    position: relative;
+    width: 550px;
+    height: 350px;
+    z-index: 50;
+    pointer-events: all;
+    
+}
+
+.expandleft{
+    color: #fff;
+    transform: rotate(90deg);
+    margin-right: 25px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 50;
+    pointer-events: all;
+    margin-left: 30px;
+}
+.expandright{
+    color: #fff;
+    transform: rotate(-90deg);
+    margin-left: 25px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 50;
+    pointer-events: all;
+    margin-right: 30px;
+}
+
+.albumcloser{
+    z-index: 45;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+
+}
+
