@@ -27,8 +27,8 @@ export default function ListCard({ hgm, usrname, address, state, rating, fromRat
             <div className={classes.lastlistitemlist}>{rating} / von {fromRatingAmount} Bewertungen</div>
           </div>
           <div className={classes.buttons}>
-            <button className={classes.halfbtn}>PROFIL BESUCHEN</button>
-            <button className={classes.halfbtnsend}>NACHRICHT SENDEN</button>
+            <button className={classes.halfbtn}>Profil besuchen</button>
+            <button className={classes.halfbtnsend}>Nachricht senden</button>
           </div>
         </div>
     </div> :
