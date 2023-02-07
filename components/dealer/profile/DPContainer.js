@@ -336,14 +336,14 @@ export default function DPContainer() {
             <div className="flex-1">
               <div className={`flex items-center justify-between md:flex-col p-4 rounded-10 bg-theme-gray-4 ${classes.top}`}>
                 <div className="text-theme-gray-4">
-                  <h2 className="text-2xl md:text-lg font-bold">AUDI Österreich GmbH</h2>
+                  <h2 className={`text-2xl md:text-lg font-bold ${classes.mtop}`}>AUDI Österreich GmbH</h2>
                   <p className={`text-base md:text-13 ${classes.address}`}>
                     Musterstrasse 12, 1010 Wien, Österreich
                   </p>
                 </div>
               </div>
               <div className="p-4 mt-7 text-theme-gray-4 bg-theme-gray-4 rounded-10">
-                <div className={`flex items-center justify-between border-b-2 border-theme-gray-2 pb-1 mb-1 ${classes.ueberunscontainer}`}>
+                <div className={`flex items-center justify-between border-b-2 border-white pb-1 mb-1 ${classes.ueberunscontainer}`}>
                   <h2 className="text-2xl font-bold">
                     Über uns
                   </h2>
@@ -570,7 +570,7 @@ export default function DPContainer() {
                 </div>
               </div>
               <div className="p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base mt-7">
-                <p className="font-bold text-base mb-2">KONTAKT</p>
+                <p className="font-bold text-base mb-2">Kontakt</p>
                 <div className="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -585,7 +585,7 @@ export default function DPContainer() {
                       fill="#555"
                     />
                   </svg>
-                  <p className="ml-4">{tel}</p>
+                  <p className={`ml-4`}>{tel}</p>
                 </div>
                 <div className="flex items-center mt-2">
                   <svg
@@ -601,7 +601,7 @@ export default function DPContainer() {
                       fill="#555"
                     />
                   </svg>
-                  <p className="ml-4">{mail}</p>
+                  <p className={`ml-4 ${classes.link}`}>{mail}</p>
                 </div>
                 <div className="flex items-center mt-2">
                   <svg
@@ -617,7 +617,7 @@ export default function DPContainer() {
                       fill="#555"
                     />
                   </svg>
-                  <p className="ml-4">{website}</p>
+                  <p className={`ml-4 ${classes.link}`}>{website}</p>
                 </div>
               </div>
               {/* <div className="text-center mt-6 p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base">
@@ -704,8 +704,8 @@ export default function DPContainer() {
                 </button>
               </div> */}
               <div className="mt-6 p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base">
-              <div className={`flex items-center text-base md:flex-col`}>
-                    <div className={`flex flex-col items-start text-13  md:mr-0 md:mb-3 `}>
+              <div className={`flex items-center text-base md:flex-col ${classes.flexbewertung}`}>
+                    <div className={`flex flex-col items-start text-13  md:mr-0 md:mb-3 ${classes.flexstars} `}>
                       <div className="flex">
                         {amountStars == 0 && <>
                           <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
@@ -815,7 +815,7 @@ export default function DPContainer() {
                       </div>
                       <p className={classes.bewertungtext}>{amountStars} / 27 Bewertungen</p>
                     </div>
-                    <button className={` inline-block px-4 py-1 sm:px-3 sm:text-sm rounded-10 bg-theme-gray-10 text-white text-13 font-bold ease-linear duration-300 hover:bg-theme-yellow-600 ${classes.messagebtn}`}>
+                    <button className={` inline-block px-4 py-1 sm:px-3 sm:text-sm rounded-10 bg-theme-gray-10 text-white text-13 font-bold ease-linear duration-300 hover:bg-theme-yellow-600 ${classes.messagebtn} ${classes.bewerten}`}>
                       Händler bewerten
                     </button>
                   </div>
@@ -830,7 +830,7 @@ export default function DPContainer() {
                     placeholder="Ihre Nachricht"
                     onChange={(e) => setMessage(e.target.value)}
                   ></textarea>
-                  <button className={`w-full inline-block px-2 py-3 mt-4 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3 ${classes.messagebtn}`}>
+                  <button className={`w-full inline-block px-2 py-3 mt-2 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3 ${classes.messagebtn}`}>
                     Nachricht senden
                   </button>
                 </form>

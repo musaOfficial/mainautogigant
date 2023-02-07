@@ -5,7 +5,7 @@ export default function Input({ inputType, sublabel, placeholder, onChange, valu
   const [inType, setInType] = useState(inputType);
 
   return (
-    <div className="mb-6 w-full">
+    <div className="mb-2 w-full">
       {/* <label
         className={`text-sm font-bold inline-block ${sublabel ? "" : "mb-1"}`}
       >
