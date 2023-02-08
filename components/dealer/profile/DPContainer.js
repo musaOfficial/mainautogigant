@@ -1491,43 +1491,11 @@ export default function DPContainer() {
             </div>
           <div className="p-4 bg-theme-gray-4 rounded-10 w-full">
           
-            <div className="flex justify-between flex-col  pb-4 border-b w-full  border-theme-gray-2 text-theme-gray-4">
-              <h2 className="text-2xl font-bold md:text-lg mb-2">
+            <div className="flex justify-between flex-col w-full text-theme-gray-4">
+              <h2 className="text-2xl font-bold md:text-lg -mb-1">
                 Unsere Fahrzeuge
               </h2>
               
-              <div className="flex items-center">
-                <div className="flex items-center text-base">
-                  <p className="mr-3">Anzeigen</p>
-                  <div className="relative ml-2 rounded-md bg-theme-gray-8">
-                    <select className="ml-2 outline-none appearance-none bg-transparent rounded py-2 pl-6 pr-10 text-white">
-                      <option value="12" className="bg-theme-gray-8">
-                        12
-                      </option>
-                      <option value="8" className="bg-theme-gray-8">
-                        8
-                      </option>
-                      <option value="4" className="bg-theme-gray-8">
-                        4
-                      </option>
-                    </select> 
-                    <svg
-                      className="absolute top-4 right-3"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16.678"
-                      height="10"
-                      viewBox="0 0 16.678 10"
-                    >
-                      <path
-                        id="expand_more_FILL0_wght500_GRAD0_opsz48"
-                        d="M20.039,26.3,11.7,17.961,13.361,16.3l6.678,6.712,6.678-6.678,1.661,1.661Z"
-                        transform="translate(-11.7 -16.3)"
-                        fill="#fff"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
             </div>
             <div className="flex w-full">
               <div className={classes.grid}>
