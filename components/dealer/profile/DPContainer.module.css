@@ -245,7 +245,7 @@
 .searchcontainer{
     width: 100%;
     background-color: #F1F2F3;
-    padding: 20px;
+    padding: 16px;
     border-radius: 10px;
 }
 
@@ -258,6 +258,18 @@
     margin-bottom: 20px;
 }
 
+.lasthalfselect{
+    display: flex;
+    align-items: center;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    font-size: 13px;
+}
+
+.ourcarsheading{
+    font-size: 20px;
+    line-height: 30px;
+}
 
 .searchheading{
     font-weight: bold;

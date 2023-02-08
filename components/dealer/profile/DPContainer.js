@@ -1458,7 +1458,7 @@ export default function DPContainer() {
                   <Select className={classes.halfselect2} options={erstzulassungen} styles={halfSelectStyle2} placeholder="Bis" onChange={(e) => setKilometerstandBis(e)}/>
               </div>
               <label className={classes.smalltext}>Preis</label>
-              <div className={`${classes.halfselect}`}>
+              <div className={`${classes.lasthalfselect}`}>
                   <Select className={classes.halfselect1} options={preise} styles={halfSelectStyle1} placeholder="Von"  onChange={(e) => setKilometerstandVon(e)} />
                   <Select className={classes.halfselect2} options={preise} styles={halfSelectStyle2} placeholder="Bis" onChange={(e) => setKilometerstandBis(e)}/>
               </div>
@@ -1492,7 +1492,7 @@ export default function DPContainer() {
           <div className="p-4 bg-theme-gray-4 rounded-10 w-full">
           
             <div className="flex justify-between flex-col w-full text-theme-gray-4">
-              <h2 className="text-2xl font-bold md:text-lg -mb-1">
+              <h2 className={`text-2xl font-bold md:text-lg -mb-1 ${classes.ourcarsheading}`}>
                 Unsere Fahrzeuge
               </h2>
               
