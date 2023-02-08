@@ -435,7 +435,7 @@ export default function DPContainer() {
                 </div>
               </div>
               <div className={`p-4 text-theme-gray-4 bg-theme-gray-4 ${classes.bordercontainer}`}>
-                <p className="text-base text-13">
+                <p className="text-base text-14">
                   {aboutUs}
                 </p>
               </div>
