@@ -528,6 +528,15 @@ export default function DPContainer() {
 
   const [gridView, setGridView] = useState(true);
 
+  const anzeigen = [
+    {label: "12", value: 12},
+    {label: "16", value: 16},
+    {label: "20", value: 20},
+    {label: "24", value: 24},
+  ]
+
+  const [anzeige, setAnzeige] = useState();
+
   return (
     <div className="bg-theme-gray-10 lg:px-6 md:!px-0">
       {albumOpen == true && (
@@ -1422,7 +1431,7 @@ export default function DPContainer() {
         <div className={classes.c1r1}>
             <div className={classes.centeritems1}>
                 <h3 className={classes.anzahlAngeboteNummer}>{displayAnzahlAngebote}</h3>
-                <div className={classes.anzahlAngeboteText}>Angebote für Ihre Suche</div>
+                <div className={classes.anzahlAngeboteText}>Fahrzeuge online</div>
             </div>
         </div>
         <div className={classes.filtersearchcontainer}>
@@ -1522,6 +1531,9 @@ export default function DPContainer() {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className={classes.anzeigen}>
+              <Select styles={style} options={anzeigen} onChange={(e) => setAnzeige(e.label)} placeholder="Anzeigen" />
             </div>
           </div>
           </div>

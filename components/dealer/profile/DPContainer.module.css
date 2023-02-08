@@ -318,6 +318,13 @@
     line-height: 18px;
 }
 
+.anzeigen{
+    width: 10%;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
+
 .anzahlAngeboteNummer{
     font-weight: bold;
 }
