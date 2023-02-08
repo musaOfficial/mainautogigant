@@ -1154,8 +1154,8 @@ function SearchResults(){
                             }} className={classes.delx}/></div>)}
                         </div>
                         <div>
-                            <button className={classes.delfilters}>FILTER LÖSCHEN</button>
-                            <button className={classes.savesearch}>SUCHE SPEICHERN</button>
+                            <button className={classes.delfilters}>Filter löschen</button>
+                            <button className={classes.savesearch}>Suche speichern</button>
                         </div>
                     </div>
                     <div className={classes.filterrow3}>

@@ -18,6 +18,8 @@ import Closer from "./../../../public/closex.svg";
 import FavSvg from "./../../../public/fav.svg";
 import ShaSvg from "./../../../public/sha.svg";
 import Clock from "./../../../public/clock.svg";
+import GridView from './../../../public/gridview.svg';
+import ListView from './../../../public/listview.svg';
 import Select from 'react-select'
 // Import Swiper styles
 
@@ -517,6 +519,15 @@ export default function DPContainer() {
   const [kilometerstandVon, setKilometerstandVon] = useState();
   const [kilometerstandBis, setKilometerstandBis] = useState();
 
+
+  // Anzahl der veröffentlichten Inserate
+
+  const anzahlAngebote = 5000;
+  const displayAnzahlAngebote = anzahlAngebote.toLocaleString();
+
+
+  const [gridView, setGridView] = useState(true);
+
   return (
     <div className="bg-theme-gray-10 lg:px-6 md:!px-0">
       {albumOpen == true && (
@@ -548,7 +559,7 @@ export default function DPContainer() {
         ></div>
       )}
       <div className="w-10/12 lg:w-full max-w-ag-container mx-auto flex md:flex-col-reverse">
-        <div className={`w-full p-6 bg-white ${classes.profilecontainer}`}>
+        <div className={`w-full p-6 pb-4 bg-white ${classes.profilecontainer}`}>
           <TopRow />
           <div className="relative">
             <img className={classes.bannerimg} src={bannerImgSrc} />
@@ -1336,7 +1347,7 @@ export default function DPContainer() {
                   </button>
                 </form>
               </div>
-              <div className="p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base mt-4">
+              <div className={`p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base mt-4 ${classes.socialmediacontainer}`}>
                 <div className={`flex ${classes.links}`}>
                   <a
                     href={facebookUrl}
@@ -1406,15 +1417,17 @@ export default function DPContainer() {
       </div>
       <div className="bg-theme-gray-10 lg:px-6 md:!px-0">
         <div className="w-10/12 lg:w-full max-w-ag-container bg-white mx-auto pl-6 pr-6 pb-6 flex md:flex-col-reverse">
+          
+        <div className="">
+        <div className={classes.c1r1}>
+            <div className={classes.centeritems1}>
+                <h3 className={classes.anzahlAngeboteNummer}>{displayAnzahlAngebote}</h3>
+                <div className={classes.anzahlAngeboteText}>Angebote für Ihre Suche</div>
+            </div>
+        </div>
         <div className={classes.filtersearchcontainer}>
             <div className={classes.searchcontainer}>
               <div className={classes.searchheading}>Suchen nach</div>
-              <Select 
-                styles={style}
-                options={bodyStyles}
-                placeholder={"Karroserieform"}
-                onChange={(e) => setSelectedBodyStyle(e.label)}
-              />
               <Select 
                 styles={style}
                 options={brands}
@@ -1428,6 +1441,12 @@ export default function DPContainer() {
                 onChange={(e) => setSelectedModel(e.label)}
               />
 
+              <Select 
+                styles={style}
+                options={bodyStyles}
+                placeholder={"Karroserieform"}
+                onChange={(e) => setSelectedBodyStyle(e.label)}
+              />
               <label className={classes.smalltext}>Kilometerstand</label>
               <div className={`${classes.halfselect}`}>
                   <Select className={classes.halfselect1} options={mileageRanges} styles={halfSelectStyle1} placeholder="Von"  onChange={(e) => setKilometerstandVon(e)} />
@@ -1446,12 +1465,37 @@ export default function DPContainer() {
             </div>
             
           </div>
+          
+        </div>
+      
+          <div className="w-full">
+          <div className={classes.c2r1}>
+            <div className={classes.c2r1bottom}>
+                <div className={classes.direktsuchecontainer}>
+                    <input type={"text"} className={classes.direktsuche} placeholder="Direktsuche" />
+                    <button className={classes.suchenbtn}>Suchen</button>
+                </div>
+                <div className={classes.sortierungcontainer}>
+                  <Select 
+                      styles={style}
+                      options={mileageRanges}
+                      placeholder="Erweiterte Sortierung"
+                      className={classes.erweitertselect}
+                    />
+                  </div>
+                </div>
+                {width >= 1250 && <div className={classes.view}>
+                    <ListView className={`${classes.listview} ${gridView == true && classes.viewactive} ${"mr-4"}`} onClick={() => setGridView(true)}/>
+                    <GridView className={` ${classes.gridview} ${gridView == false && classes.viewactive} `} onClick={() => setGridView(false)}/>
+                </div>}
+            </div>
           <div className="p-4 bg-theme-gray-4 rounded-10 w-full">
+          
             <div className="flex justify-between flex-col  pb-4 border-b w-full  border-theme-gray-2 text-theme-gray-4">
               <h2 className="text-2xl font-bold md:text-lg mb-2">
                 Unsere Fahrzeuge
               </h2>
-
+              
               <div className="flex items-center">
                 <div className="flex items-center text-base">
                   <p className="mr-3">Anzeigen</p>
@@ -1466,7 +1510,7 @@ export default function DPContainer() {
                       <option value="4" className="bg-theme-gray-8">
                         4
                       </option>
-                    </select>
+                    </select> 
                     <svg
                       className="absolute top-4 right-3"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1485,7 +1529,7 @@ export default function DPContainer() {
                 </div>
               </div>
             </div>
-            <div className="flex">
+            <div className="flex w-full">
               <div className={classes.grid}>
                 {angebote.map((fav, index) => (
                   <div key={index} className={width >= 1250 && classes.adprop}>
@@ -1511,6 +1555,7 @@ export default function DPContainer() {
                 ))}
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>

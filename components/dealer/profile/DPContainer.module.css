@@ -270,6 +270,7 @@
     width: 100%;
     margin-right: 20px;
 }
+
 .halfselect2{
     width: 100%;
 }
@@ -279,6 +280,271 @@
     font-weight: bold;
 
 }
+
+.socialmediacontainer{
+    height: 85px;
+    display: flex;
+    align-items: center;
+}
+
+.c1r1{
+    height: 70px;
+    width: 250px;
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.viewactive{
+    color: #fff !important;
+}
+
+.centeritems1{
+    margin-left: 20px;
+    line-height: 18px;
+}
+
+.anzahlAngeboteNummer{
+    font-weight: bold;
+}
+
+.anzahlAngeboteText{
+    font-size: 16px;
+}
+
+/* Search-Results Design */
+.c2r1{
+    background-color: #F1F2F3;
+    height: 70px;
+    border-radius: 10px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.c2r1top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.c2r1top div{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.c2r1bottom{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+/* C2R2 RESPONSIVE */
+
+.erweitertselect{
+    min-width: 50%;
+    width: 250px;
+    margin-right: 20px;
+    height: 40px;
+}
+
+@media(max-width: 1322px){
+    .c2r1{
+        flex-direction: row;
+        justify-content: unset;
+        height: unset;
+    }
+    .c2r1bottom{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-self: flex-start;
+    }
+
+    .direktsuchecontainer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .sortierungcontainer{
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        font-size: 13px;
+    }
+
+
+    .view{
+        position: absolute;
+        height: 140px;
+    }
+
+}
+
+/* C2R2 RESPONSIVE */
+
+.backarrow{
+    color: #0067B8;
+    transform: rotate(90deg);
+    margin-bottom: 5px;
+}
+
+.backarrowtext{
+    margin-left: 10px;
+    color: #0067B8;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.question{
+    margin-bottom: 5px;
+}
+
+.questiontext{
+    margin-left: 10px;
+    color: #0067B8;
+    text-decoration: underline;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.direktsuchecontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+.direktsuche{
+    padding-left: 10px;
+    height: 40px;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 13px;
+    
+}
+
+
+.suchenbtn{
+    background-color: #6C757D;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    width: 25%;
+    max-width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    height: 40px;
+    transition: all .1s ease-in;
+    margin-left: 10px;
+}
+
+.suchenbtn:hover{
+    background-color: #FBB900;
+}
+
+.searchicon{
+    margin-right: 10px;
+}
+
+.sortierungcontainer{
+    display: flex;
+    align-items: center;
+}
+
+.gridview{
+    height: 20px;
+    width: 20px;
+    color: #FFE497;
+    z-index: 10;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.listview{
+    height: 20px;
+    width: 20px;
+    color: #FFE497;
+    z-index: 10;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.view{
+    display: flex;
+    background-color: #FFB900;
+    align-items: center;
+    min-height: 70px;
+    min-width: 90px;
+    justify-content: center;
+    position: relative;
+    border-radius: 0px 10px 10px 0px;
+    transition: all .1 ease-in;
+}
+
+.viewtype{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    background-color: rgb(108, 117, 125);
+    left: 12px;
+    transition: all 1s ease-in !important;
+    -moz-transition: background 0.5s linear; /* Firefox 4 */
+    -webkit-transition: background 0.5s linear; /* Safari and Chrome */
+    -o-transition: background 0.5s linear; /* Opera */
+    -ms-transition: background 0.5s linear; /* Explorer 10 */
+}
+
+.viewleft{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    background-color: #6C757D;
+    left: 12px;
+    transition: all 1s ease-in !important;
+    -moz-transition: background 0.5s linear; /* Firefox 4 */
+    -webkit-transition: background 0.5s linear; /* Safari and Chrome */
+    -o-transition: background 0.5s linear; /* Opera */
+    -ms-transition: background 0.5s linear; /* Explorer 10 */
+}
+
+.viewright{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    background-color: #6C757D;
+    right: 12px;
+    transition: all 1s ease-in !important;
+    -moz-transition: background 0.5s linear; /* Firefox 4 */
+    -webkit-transition: background 0.5s linear; /* Safari and Chrome */
+    -o-transition: background 0.5s linear; /* Opera */
+    -ms-transition: background 0.5s linear; /* Explorer 10 */
+}
+/* Search-Results Design */
+
 
 @media(max-width: 1080px){
     .imagesgrid{
