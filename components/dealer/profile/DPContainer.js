@@ -435,7 +435,7 @@ export default function DPContainer() {
                 </div>
               </div>
               <div className={`p-4 text-theme-gray-4 bg-theme-gray-4 ${classes.bordercontainer}`}>
-                <p className="text-base text-15">
+                <p className="text-base text-13">
                   {aboutUs}
                 </p>
               </div>
@@ -695,9 +695,9 @@ export default function DPContainer() {
                   <p className={`ml-4 ${classes.link}`}>{website}</p>
                 </div>
               </div>
-              <div className="mt-4 p-4 rounded-10 w-full bg-theme-gray-4 text-theme-gray-4 text-base">
+              <div className="mt-4 rounded-10 pb-4 w-full bg-theme-gray-4 text-theme-gray-4 text-base">
                     <div className={classes.oeffnungszeiten}>Öffnungszeiten:</div>
-                    <div className={`${classes.oeffnungszeitenrow} ${today == "monday" && "font-bold"}`}>
+                    <div className={`${classes.oeffnungszeitenrow} ${today == "monday" && classes.markday}`}>
                         <div className={classes.tag}>Montag</div>
                         <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
                     </div>
@@ -705,7 +705,7 @@ export default function DPContainer() {
                         <div className={classes.tag}>Dienstag</div>
                         <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
                     </div>
-                    <div className={`${classes.oeffnungszeitenrow} ${today == "wednesday" && "font-bold"}`}>
+                    <div className={`${classes.oeffnungszeitenrow} ${today == "wednesday" && classes.markday}`}>
                         <div className={classes.tag}>Mittwoch</div>
                         <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
                     </div>
@@ -719,9 +719,11 @@ export default function DPContainer() {
                     <div className={`${classes.oeffnungszeitenrow} ${today == "saturday" && "font-bold"}`}>
                         <div className={classes.tag}>Samstag</div>
                     </div>
+                    <div className="pl-4 pr-4">
                     <div className={`${classes.closed} ${classes.open} ${companyOpen == true ? classes.open : classes.closed}`}>
                       <Clock className={classes.clock} />
                       {companyOpen == true ? "Jetzt geöffnet" : "Geschlossen"}
+                    </div>
                     </div>
               </div>
               <div className="mt-4 p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base">

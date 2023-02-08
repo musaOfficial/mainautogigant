@@ -107,6 +107,8 @@
     font-size: 15px;
     font-weight: bold;
     width: 100%;
+    padding-left: 20px;
+    padding-top: 20px;
 }
 
 .oeffnungszeitenrow{
@@ -115,6 +117,8 @@
     font-size: 13px;
     width: 100%;
     justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .closer{
@@ -168,6 +172,10 @@
     border-radius: 10px;
 }
 
+.markday{
+    background-color: #FFE497;
+}
+
 .imagesgrid{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -181,8 +189,7 @@
 
 .flexstars{
     padding-bottom: 10px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #fff;
+
 }
 
 .bewerten{
@@ -207,8 +214,9 @@
 }
 
 .bewertungtext{
-    line-height: 13px;
+    line-height: 15px;
     margin-top: 4px;
+    font-size: 15px;
 }
 
 .address{
