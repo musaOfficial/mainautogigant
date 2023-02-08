@@ -334,8 +334,8 @@ export default function DPContainer() {
               src={profileImgSrc}
             />
           </div>
-          <div className="flex mt-6 md:flex-col">
-            <div className="flex-1">
+          <div className="flex mt-4 md:flex-col">
+            <div className="flex-1 -mr-2">
               <div className={`flex items-center justify-between md:flex-col p-4 rounded-10 bg-theme-gray-4 ${classes.top}`}>
                 <div className="text-theme-gray-4">
                   <h2 className={`text-2xl md:text-lg font-bold ${classes.mtop}`}>AUDI Österreich GmbH</h2>
@@ -401,7 +401,7 @@ export default function DPContainer() {
                 </div>
                 </div>
               </div>
-              <div className="p-4 mt-7 text-theme-gray-4 bg-theme-gray-4 rounded-10">
+              <div className="p-4 mt-4 text-theme-gray-4 bg-theme-gray-4 rounded-10">
                 <div className={`flex items-center justify-between border-b-2 border-white pb-1 mb-1 ${classes.ueberunscontainer}`}>
                   <h2 className="text-2xl font-bold">
                     Über uns
@@ -412,7 +412,7 @@ export default function DPContainer() {
                   {aboutUs}
                 </p>
               </div>
-              <div className={`flex justify-between xl:flex-wrap xl:justify-around p-4 mt-7 text-theme-gray-4 bg-theme-gray-4 md:flex-col rounded-10 ${classes.imagesgrid}`}>
+              <div className={`flex justify-between xl:flex-wrap xl:justify-around p-4 mt-4 text-theme-gray-4 bg-theme-gray-4 md:flex-col rounded-10 ${classes.imagesgrid}`}>
                 <img className={classes.thumbimg} src={thumbImage1} onClick={() => {
                   setSelectedThumb(0);
                   setAlbumOpen(true);
@@ -499,7 +499,7 @@ export default function DPContainer() {
     
             </div>
             
-            <div className="w-250 ml-6 md:w-full md:ml-0 md:mt-6">
+            <div className="w-250 ml-6 md:w-full md:ml-0 md:mt-4">
             <div className="p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base">
                 <p className="font-bold text-base mb-2">Kontakt</p>
                 <div className="flex items-center">
@@ -551,7 +551,22 @@ export default function DPContainer() {
                   <p className={`ml-4 ${classes.link}`}>{website}</p>
                 </div>
               </div>
-              <div className="p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base mt-7">
+              <div className="mt-4 p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base">
+                <h2 className="text-base font-bold">Nachricht senden</h2>
+                <form className="pt-2 pb-2">
+                  <Input placeholder="Vollständiger Name" onChange={(e) => setName(e.target.value)} />
+                  <Input placeholder="Ihre E-Mail eingeben" onChange={(e) => setMail(e.target.value)} />
+                  <textarea
+                   className="w-full h-36 resize-none placeholder:text-13 rounded-10 text-base p-3 bg-white"
+                    placeholder="Ihre Nachricht"
+                    onChange={(e) => setMessage(e.target.value)}
+                  ></textarea>
+                  <button className={`w-full inline-block px-2 py-3 mt-2 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3 ${classes.messagebtn}`}>
+                    Nachricht senden
+                  </button>
+                </form>
+              </div>
+              <div className="p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base mt-4">
               <div className={`flex ${classes.links}`}>
                   <a
                     href={facebookUrl}
@@ -595,7 +610,7 @@ export default function DPContainer() {
                   </a>
                 </div>
               </div>
-              <div className="mt-6 p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base">
+              <div className="mt-4 p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base">
               <div className={`flex items-center text-base md:flex-col ${classes.flexbewertung}`}>
                     <div className={`flex flex-col items-start text-13  md:mr-0 md:mb-3 ${classes.flexstars} `}>
                       <div className="flex">
@@ -712,25 +727,10 @@ export default function DPContainer() {
                     </button>
                   </div>
               </div>
-              <div className="mt-6 p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base">
-                <h2 className="text-base font-bold">Nachricht senden</h2>
-                <form className="pt-2 pb-2">
-                  <Input placeholder="Vollständiger Name" onChange={(e) => setName(e.target.value)} />
-                  <Input placeholder="Ihre E-Mail eingeben" onChange={(e) => setMail(e.target.value)} />
-                  <textarea
-                   className="w-full h-36 resize-none placeholder:text-13 rounded-10 text-base p-3 bg-white"
-                    placeholder="Ihre Nachricht"
-                    onChange={(e) => setMessage(e.target.value)}
-                  ></textarea>
-                  <button className={`w-full inline-block px-2 py-3 mt-2 sm:text-sm rounded-10 bg-theme-yellow-2 text-white text-base font-bold ease-linear duration-300 hover:bg-theme-yellow-3 ${classes.messagebtn}`}>
-                    Nachricht senden
-                  </button>
-                </form>
-              </div>
-              <div className="mt-6">
+              <div className="mt-4">
                 <img className="md:w-full" src="/images/dealer-profile-sidebar-1.png" />
               </div>
-              <div className="mt-6">
+              <div className="mt-4">
                 <img className="md:w-full" src="/images/dealer-profile-sidebar-1.png" />
               </div>
               {/* <div className="flex w-full rounded-10 bg-theme-gray-6 mt-6 shadow-md">
