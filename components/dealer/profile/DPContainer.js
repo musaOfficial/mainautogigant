@@ -380,16 +380,16 @@ export default function DPContainer() {
                   <div className={`flex items-center relative p-4 mx-0.5 justify-center group cursor-pointer ease-linear duration-100 hover:text-theme-yellow-2 bg-theme-gray-4 ${classes.iconcon}`}>
                   <FavSvg className={classes.icon} />
                   <Link href='/'>
-                    <a className='hidden group-hover:block absolute -bottom-3 hover:underline z-20 right-0 text-theme-blue text-13 bg-white rounded-10 px-2 py-px shadow-md whitespace-nowrap' target='_blank' rel="noreferrer">
+                    <a className='hidden group-hover:block absolute -bottom-4 hover:underline z-20 -right-6 text-theme-blue text-13 bg-white rounded-10 px-2 py-px shadow-md whitespace-nowrap' target='_blank' rel="noreferrer">
                       Händler merken
-                      <span className="absolute h-4 w-4 -z-10 right-6 -top-1 rotate-45 bg-white"></span>
+                      <span className="absolute h-4 w-4 -z-10 right-12 -top-1 rotate-45 bg-white"></span>
                     </a>
                   </Link>
                 </div> 
                 <div className={`flex items-center relative p-4 mr-0.5 justify-center group cursor-pointer ease-linear duration-100 hover:text-theme-yellow-2 bg-theme-gray-4 ${classes.iconcon}`}>
                   <ShaSvg className={classes.icon} />
-                    <div className='cursor-pointer hidden group-hover:block absolute top-14 mt-px z-20 right-0 text-theme-blue text-13 bg-white rounded-10 px-2 py-px shadow-md whitespace-nowrap'>
-                      <span className="absolute h-4 w-4 -z-10 right-6 -top-1 rotate-45 bg-white"></span>
+                    <div className='cursor-pointer hidden group-hover:block absolute top-14 mt-px z-20 -right-9 text-theme-blue text-13 bg-white rounded-10 px-2 py-px shadow-md whitespace-nowrap'>
+                      <span className="absolute h-4 w-4 -z-10 right-14 -top-1 rotate-45 bg-white"></span>
                       <div className="text-theme-gray-4 px-1 py-px">
                         <Link href='/'>
                           <a className="flex items-center ease-linear duration-200 hover:text-theme-yellow-2 text-theme-blue py-1" target='_blank' rel="noreferrer">
