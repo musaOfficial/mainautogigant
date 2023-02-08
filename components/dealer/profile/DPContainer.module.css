@@ -20,6 +20,7 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
     margin-top: 20px;
+    width: 100%;
 }
 
 .top{
@@ -232,6 +233,51 @@
 
 .messagebtn:hover{
     background-color: #FBB900;
+}
+
+.filtersearchcontainer{
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    margin-right: 20px;
+}
+
+.searchcontainer{
+    width: 100%;
+    background-color: #F1F2F3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.halfselect{
+    display: flex;
+    align-items: center;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+
+.searchheading{
+    border-bottom: 1px solid #fff;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.halfselect1{
+    width: 100%;
+    margin-right: 20px;
+}
+.halfselect2{
+    width: 100%;
+}
+
+.smalltext{
+    font-size: 13px;
+    font-weight: bold;
+
 }
 
 @media(max-width: 1080px){
