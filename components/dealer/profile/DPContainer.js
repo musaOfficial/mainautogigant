@@ -438,10 +438,10 @@ export default function DPContainer() {
                   setAlbumOpen(true);
                 }} />
               </div>
-              <div className="h-96 w-full mt-7 google-map-container rounded-10 overflow-hidden">
-                <Map />
+              <div className="h-96 w-full bg-theme-gray-4 flex items-center justify-center radius-10 mt-4 google-map-container rounded-10 overflow-hidden">
+                 Maps
               </div>
-              <div className="p-4 mt-10 bg-theme-gray-4 rounded-10">
+              <div className="p-4 mt-4 bg-theme-gray-4 rounded-10">
                 <div className="flex justify-between flex-col  pb-4 border-b  border-theme-gray-2 text-theme-gray-4">
                   <h2 className="text-2xl font-bold md:text-lg mb-2">Unsere Fahrzeuge</h2>
                   
