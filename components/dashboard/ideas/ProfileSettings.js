@@ -762,7 +762,7 @@ export default function ProfileSettings(){
                 </div>
                 {/* ÖFFNUNGSZEITEN */}
                 <div className={classes.oeffnungszeiten}>
-                    <div className={classes.sectionheading}>ÖFFNUNGSZEITEN</div>
+                    <div className={classes.sectionheading}>Öffnungszeiten</div>
                     <br/>
                     <div className={classes.tag}>
                         <div className={classes.tagchecker}>

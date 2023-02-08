@@ -17,6 +17,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Closer from './../../../public/closex.svg';
 import FavSvg from './../../../public/fav.svg';
 import ShaSvg from './../../../public/sha.svg';
+import Clock from './../../../public/clock.svg';
 // Import Swiper styles
 
 // import required modules
@@ -274,7 +275,7 @@ export default function DPContainer() {
   const [bannerImgSrc, setBannerImgSrc] = useState("/images/reg-car.png");
   const [profileImgSrc, setProfileImgSrc] = useState("/images/dealer-profile-breadcrumb-img.png");
   const [amountStars, setAmountStars] = useState(7);
-  const [aboutUs, setAboutUs] = useState("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae modi tempora odit explicabo dicta qui, blanditiis incidunt possimus natus a adipisci laborum fugit quaerat perspiciatis reprehenderit expedita magni rerum voluptatum numquam? Unde eius consectetur quaerat expedita deserunt quis blanditiis ipsa, corporis mollitia vero modi adipisci ratione voluptate enim voluptas, numquam totam perspiciatis iure? Necessitatibus voluptates quod, velit in voluptas possimus accusamus.");
+  const [aboutUs, setAboutUs] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod, leo at dapibus placerat, odio risus bibendum nulla, sit amet tincidunt massa nibh non risus. Aenean feugiat lacus a sapien tincidunt, id congue lacus suscipit. In hac habitasse platea dictumst. Nullam vitae lacus in nulla tincidunt pharetra eu eu tellus. Nunc aliquam elit vitae nisi commodo, in semper velit tincidunt. Integer aliquet ex vel felis pellentesque, vel blandit libero viverra. Sed ac suscipit libero, id tristique risus. Nam euismod suscipit enim, eu iaculis magna convallis in. Nam eget malesuada elit, eu pellentesque eros. Nulla auctor, odio id fringilla congue, quam erat suscipit odio, quis consectetur velit leo vel dolor.");
 
   // Variablen für die 5 Fotos unter dem Über Uns Text
   const [thumbImage1, setThumbImage1] = useState("/images/dp-thumb-img-1.png");
@@ -306,6 +307,38 @@ export default function DPContainer() {
   const [albumOpen, setAlbumOpen] = useState(false);
   const [selectedThumb, setSelectedThumb] = useState(0);
 
+
+  // ÖFFNUNGSZEITEN
+  var today = new Date().getDay();
+  switch(today){
+      case 0:
+          today = "sunday";
+          break;
+      case 1:
+          today = "monday";
+          break;
+      case 2:
+          today = "tuesday";
+          break;
+      case 3:
+          today = "wednesday";
+          break;
+      case 4:
+          today = "thursday";
+          break;
+      case 5:
+          today = "friday";
+          break;
+      case 6:
+          today = "saturday";
+          break;
+      case err:
+          console.log(err);
+  }
+
+    // JETZT GESCHLOSSEN || JETZT GEÖFFNET
+    const companyOpen = false; // Jetzt geöffnet
+
   return (
     <div className="bg-theme-gray-10 lg:px-6 md:!px-0">
       {albumOpen == true && <>
@@ -336,7 +369,7 @@ export default function DPContainer() {
           </div>
           <div className="flex mt-4 md:flex-col">
             <div className="flex-1 -mr-2">
-              <div className={`flex items-center justify-between md:flex-col p-4 rounded-10 bg-theme-gray-4 ${classes.top}`}>
+              <div className={`flex items-center justify-between md:flex-col p-4 pb-1 rounded-tl-10 rounded-tr-10 bg-theme-gray-4 ${classes.top}`}>
                 <div className="text-theme-gray-4">
                   <h2 className={`text-2xl md:text-lg font-bold ${classes.mtop}`}>AUDI Österreich GmbH</h2>
                   <p className={`text-base md:text-13 ${classes.address}`}>
@@ -401,16 +434,127 @@ export default function DPContainer() {
                 </div>
                 </div>
               </div>
-              <div className="p-4 mt-4 text-theme-gray-4 bg-theme-gray-4 rounded-10">
-                <div className={`flex items-center justify-between border-b-2 border-white pb-1 mb-1 ${classes.ueberunscontainer}`}>
-                  <h2 className="text-2xl font-bold">
-                    Über uns
-                  </h2>
-                </div>
-
+              <div className={`p-4 text-theme-gray-4 bg-theme-gray-4 ${classes.bordercontainer}`}>
                 <p className="text-base text-15">
                   {aboutUs}
                 </p>
+              </div>
+              <div className={`${classes.ratecontainer} w-full`}>
+              <div className={`flex items-center w-full text-base md:flex-col ${classes.flexbewertung}`}>
+                    <div className={`flex flex-col items-center text-13 w-full  md:mr-0 md:mb-3 ${classes.flexstars} `}>
+                      <div className="flex">
+                        {amountStars == 0 && <>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        </>}
+                        {amountStars <= 1 && amountStars > 0 && <>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        </>}
+                        {amountStars <= 2 && amountStars > 1 && <>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        </>}
+                        {amountStars <= 3 && amountStars > 2 && <>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        </>}
+
+                        {amountStars <= 4 && amountStars > 3 && <>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
+                        </svg>
+                        </>}
+                        {amountStars > 4 && <>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
+                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
+                        </svg>
+                        </>}
+
+                        
+                      </div>
+                      <p className={classes.bewertungtext}>{amountStars} / 27 Bewertungen</p>
+                    </div>
+                    <button className={` inline-block px-4 py-1 sm:px-3 sm:text-sm rounded-10 bg-theme-gray-10 text-white text-13 font-bold ease-linear duration-300 hover:bg-theme-yellow-600 ${classes.messagebtn} ${classes.bewerten}`}>
+                      Händler bewerten
+                    </button>
+                  </div>
               </div>
               <div className={`flex justify-between xl:flex-wrap xl:justify-around p-4 mt-4 text-theme-gray-4 bg-theme-gray-4 md:flex-col rounded-10 ${classes.imagesgrid}`}>
                 <img className={classes.thumbimg} src={thumbImage1} onClick={() => {
@@ -551,6 +695,35 @@ export default function DPContainer() {
                   <p className={`ml-4 ${classes.link}`}>{website}</p>
                 </div>
               </div>
+              <div className="mt-4 p-4 rounded-10 w-full bg-theme-gray-4 text-theme-gray-4 text-base">
+                    <div className={classes.oeffnungszeiten}>Öffnungszeiten:</div>
+                    <div className={`${classes.oeffnungszeitenrow} ${today == "monday" && "font-bold"}`}>
+                        <div className={classes.tag}>Montag</div>
+                        <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
+                    </div>
+                    <div className={`${classes.oeffnungszeitenrow} ${today == "tuesday" && "font-bold"}`}>
+                        <div className={classes.tag}>Dienstag</div>
+                        <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
+                    </div>
+                    <div className={`${classes.oeffnungszeitenrow} ${today == "wednesday" && "font-bold"}`}>
+                        <div className={classes.tag}>Mittwoch</div>
+                        <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
+                    </div>
+                    <div className={`${classes.oeffnungszeitenrow} ${today == "thursday" && "font-bold"}`}>
+                        <div className={classes.tag}>Donnerstag</div>
+                        <div className={classes.timespan}>07:30 - 17:00 Uhr</div>
+                    </div>
+                    <div className={`${classes.oeffnungszeitenrow} ${today == "friday" && "font-bold"}`}>
+                        <div className={classes.tag}>Freitag</div>
+                    </div>
+                    <div className={`${classes.oeffnungszeitenrow} ${today == "saturday" && "font-bold"}`}>
+                        <div className={classes.tag}>Samstag</div>
+                    </div>
+                    <div className={`${classes.closed} ${classes.open} ${companyOpen == true ? classes.open : classes.closed}`}>
+                      <Clock className={classes.clock} />
+                      {companyOpen == true ? "Jetzt geöffnet" : "Geschlossen"}
+                    </div>
+              </div>
               <div className="mt-4 p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base">
                 <h2 className="text-base font-bold">Nachricht senden</h2>
                 <form className="pt-2 pb-2">
@@ -609,123 +782,6 @@ export default function DPContainer() {
                     <Tiktok className={classes.instagram} />
                   </a>
                 </div>
-              </div>
-              <div className="mt-4 p-4 rounded-10 bg-theme-gray-4 text-theme-gray-4 text-base">
-              <div className={`flex items-center text-base md:flex-col ${classes.flexbewertung}`}>
-                    <div className={`flex flex-col items-start text-13  md:mr-0 md:mb-3 ${classes.flexstars} `}>
-                      <div className="flex">
-                        {amountStars == 0 && <>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        </>}
-                        {amountStars <= 1 && amountStars > 0 && <>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        </>}
-                        {amountStars <= 2 && amountStars > 1 && <>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        </>}
-                        {amountStars <= 3 && amountStars > 2 && <>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        </>}
-
-                        {amountStars <= 4 && amountStars > 3 && <>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#c3c3c3" />
-                        </svg>
-                        </>}
-                        {amountStars > 4 && <>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="12.505" viewBox="0 0 12.52 12.505">
-                          <path id="star_FILL0_wght500_GRAD0_opsz48" d="M5.894,15.955l1.449-4.743L3.5,8.452H8.243l1.51-5,1.51,5H16.02l-3.858,2.76,1.449,4.743L9.752,13.027Z" transform="translate(-3.5 -3.45)" fill="#fbb900" />
-                        </svg>
-                        </>}
-
-                        
-                      </div>
-                      <p className={classes.bewertungtext}>{amountStars} / 27 Bewertungen</p>
-                    </div>
-                    <button className={` inline-block px-4 py-1 sm:px-3 sm:text-sm rounded-10 bg-theme-gray-10 text-white text-13 font-bold ease-linear duration-300 hover:bg-theme-yellow-600 ${classes.messagebtn} ${classes.bewerten}`}>
-                      Händler bewerten
-                    </button>
-                  </div>
               </div>
               <div className="mt-4">
                 <img className="md:w-full" src="/images/dealer-profile-sidebar-1.png" />
