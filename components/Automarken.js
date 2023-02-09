@@ -279,7 +279,7 @@ function Automarken() {
           </Link>
         </div>
         <div className={classes.brandcontainer}>
-            {brands.map((brand, index) => <Link href={{pathname: "/car-brands/model", query: brand}}>
+            {brands.map((brand, index) => <Link key={index} href={{pathname: "/car-brands/model", query: brand}}>
                 <div className={classes.brand}>
                     {brand.svg != null && "SVG"}
                     <div className={classes.brandname}>{brand.name}</div>
