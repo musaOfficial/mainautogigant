@@ -84,8 +84,8 @@ function Model(){
                     </Link>
                 </div>
                 <div className={classes.brandcontainer}>
-                {models.map((brand, index) => 
-                    <div className={classes.brandcontainer}>
+                {models.map((brand, indexr) => 
+                    <div key={indexr} className={classes.brandcontainer}>
                         {brand.map((modelbrand, index) =>  <div key={index} className={classes.brand}>
                         <div className={classes.brandname}>{modelbrand.modelName}</div>
                         </div>)}
