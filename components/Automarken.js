@@ -3,6 +3,7 @@ import Select from "react-select";
 import { useState } from "react";
 import SearchIcon from "./../public/searchicon.svg";
 import Link from "next/link";
+import brands from "./data/brands";
 
 function Automarken() {
   const style = {
@@ -49,208 +50,34 @@ function Automarken() {
 
   const [sortVariant, setSortVariant] = useState();
 
+  const sortedBrands = [...brands];
 
-  const brands = [
-    {
-        name: "VW",
-        description: "This is the description of VWW",
-        svg: null,
-        models: [
-            {
-                name: "Golf",
-                description: "",
-                svg: null,
-            },
-            {
-                name: "Beetle",
-                description: "",
-                svg: null,
-            },
-            {
-                name: "Passat",
-                description: "",
-                svg: null,
-            },
-            {
-                name: "Jetta",
-                description: "",
-                svg: null,
-            },
-        ]
-    },
-    {
-        name: "Audi",
-        svg: null,
-    },
-    {
-        name: "BMW",
-        svg: null,
-    },
-    {
-        name: "Mercedes",
-        svg: null,
-    },
-    {
-        name: "VW",
-        svg: null,
-    },
-    {
-        name: "Audi",
-        svg: null,
-    },
-    {
-        name: "BMW",
-        svg: null,
-    },
-    {
-        name: "Mercedes",
-        svg: null,
-    },
-    {
-        name: "VW",
-        svg: null,
-    },
-    {
-        name: "Audi",
-        svg: null,
-    },
-    {
-        name: "BMW",
-        svg: null,
-    },
-    {
-        name: "Mercedes",
-        svg: null,
-    },
-    {
-        name: "VW",
-        svg: null,
-    },
-    {
-        name: "Audi",
-        svg: null,
-    },
-    {
-        name: "BMW",
-        svg: null,
-    },
-    {
-        name: "Mercedes",
-        svg: null,
-    },
-    {
-        name: "VW",
-        svg: null,
-    },
-    {
-        name: "Audi",
-        svg: null,
-    },
-    {
-        name: "BMW",
-        svg: null,
-    },
-    {
-        name: "Mercedes",
-        svg: null,
-    },
-    {
-        name: "VW",
-        svg: null,
-    },
-    {
-        name: "Audi",
-        svg: null,
-    },
-    {
-        name: "BMW",
-        svg: null,
-    },
-    {
-        name: "Mercedes",
-        svg: null,
-    },
-    {
-        name: "VW",
-        svg: null,
-    },
-    {
-        name: "Audi",
-        svg: null,
-    },
-    {
-        name: "BMW",
-        svg: null,
-    },
-    {
-        name: "Mercedes",
-        svg: null,
-    },
-    {
-        name: "VW",
-        svg: null,
-    },
-    {
-        name: "Audi",
-        svg: null,
-    },
-    {
-        name: "BMW",
-        svg: null,
-    },
-    {
-        name: "Mercedes",
-        svg: null,
-    },
-    {
-        name: "VW",
-        svg: null,
-    },
-    {
-        name: "Audi",
-        svg: null,
-    },
-    {
-        name: "BMW",
-        svg: null,
-    },
-    {
-        name: "Mercedes",
-        svg: null,
-    },
-    {
-        name: "VW",
-        svg: null,
-    },
-    {
-        name: "Audi",
-        svg: null,
-    },
-    {
-        name: "BMW",
-        svg: null,
-    },
-    {
-        name: "Mercedes",
-        svg: null,
-    },
-    {
-        name: "VW",
-        svg: null,
-    },
-    {
-        name: "Audi",
-        svg: null,
-    },
-    {
-        name: "BMW",
-        svg: null,
-    },
-    {
-        name: "Mercedes",
-        svg: null,
-    },
-  ]
+    if (sortVariant) {
+    switch (sortVariant.value) {
+        case "alphabetic":
+        sortedBrands.sort((a, b) => {
+            if (a.name < b.name) return -1;
+            if (a.name > b.name) return 1;
+            return 0;
+        });
+        break;
+        case "alphabetic-reversed":
+        sortedBrands.sort((a, b) => {
+            if (a.name < b.name) return 1;
+            if (a.name > b.name) return -1;
+            return 0;
+        });
+        break;
+        case "brandsbyapproval-descending":
+        // Add logic for sorting by brands by approval in descending order
+        break;
+        case "brandsbyapproval-ascending":
+        // Add logic for sorting by brands by approval in ascending order
+        break;
+        default:
+        break;
+    }
+    }
 
   return (
     <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0">
