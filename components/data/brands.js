@@ -202,8 +202,118 @@ const brands = [
         svg: <AudiLogo className={classes.logo} />,
         models: [
             {
-                modelName: "",
-                modelDesignation: "",
+                modelName: "100",
+                modelDesignation: "6 Generationen",
+                img: null,
+            },
+            {
+                modelName: "200",
+                modelDesignation: "3 Generationen",
+                img: null,
+            },
+            {
+                modelName: "50",
+                modelDesignation: "1 Generation",
+                img: null,
+            },
+            {
+                modelName: "80",
+                modelDesignation: "6 Generationen",
+                img: null,
+            },
+            {
+                modelName: "90",
+                modelDesignation: "2 Generationen",
+                img: null,
+            },
+            {
+                modelName: "A1",
+                modelDesignation: "3 Generationen",
+                img: null,
+            },
+            {
+                modelName: "A2",
+                modelDesignation: "1 Generation",
+                img: null,
+            },
+            {
+                modelName: "A3",
+                modelDesignation: "8 Generationen",
+                img: null,
+            },
+            {
+                modelName: "A4",
+                modelDesignation: "9 Generationen",
+                img: null,
+            },
+            {
+                modelName: "A5",
+                modelDesignation: "4 Generationen",
+                img: null,
+            },
+            {
+                modelName: "A6",
+                modelDesignation: "8 Generationen",
+                img: null,
+            },
+            {
+                modelName: "A7",
+                modelDesignation: "3 Generationen",
+                img: null,
+            },
+            {
+                modelName: "A8",
+                modelDesignation: "8 Generationen",
+                img: null,
+            },
+            {
+                modelName: "e-tron GT",
+                modelDesignation: "1 Generation",
+                img: null,
+            },
+            {
+                modelName: "Q2",
+                modelDesignation: "2 Generationen",
+                img: null,
+            },
+            {
+                modelName: "Q3",
+                modelDesignation: "3 Generationen",
+                img: null,
+            },
+            {
+                modelName: "Q4 e-tron",
+                modelDesignation: "1 Generation",
+                img: null,
+            },
+            {
+                modelName: "Q5",
+                modelDesignation: "4 Generationen",
+                img: null,
+            },
+            {
+                modelName: "Q7",
+                modelDesignation: "4 Generationen",
+                img: null,
+            },
+            {
+                modelName: "Q8",
+                modelDesignation: "1 Generation",
+                img: null,
+            },
+            {
+                modelName: "Q8 e-tron",
+                modelDesignation: "1 Generation",
+                img: null,
+            },
+            {
+                modelName: "R8",
+                modelDesignation: "4 Generationen",
+                img: null,
+            },
+            {
+                modelName: "TT",
+                modelDesignation: "5 Generationen",
                 img: null,
             },
         ]

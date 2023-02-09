@@ -4,6 +4,7 @@ import { useState } from "react";
 import SearchIcon from "./../public/searchicon.svg";
 import Link from "next/link";
 import brands from "./data/brands";
+import TopRow from "./ui/TopRow";
 
 function Automarken() {
   const style = {
@@ -84,6 +85,7 @@ function Automarken() {
       <div
         className={` ${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex flex-col bg-white p-6`}
       >
+        <TopRow />
         <div className={classes.heading}>Automarken & Modelle</div>
         <div className={classes.description}>
           Diese Liste von Automarken bietet Ihnen einen übersichtlichen Zugang

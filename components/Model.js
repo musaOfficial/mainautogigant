@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import SearchIcon from "./../public/searchicon.svg";
 import brands from './data/brands';
-
+import TopRow from './ui/TopRow';
 function Model(){
     const style = {
         control: (base) => ({
@@ -39,7 +39,6 @@ function Model(){
     const router = useRouter();
     const pageProperties = router.query;
 
-
     const sortVariants = [
         { label: "Alphabetisch (A-Z)", value: "alphabetic" },
         { label: "Alphabetisch (Z-A)", value: "alphabetic-reversed" },
@@ -56,27 +55,38 @@ function Model(){
     const [sortVariant, setSortVariant] = useState();
     
     var models = []
+    var scvg;
 
     for(let i = 0; i < brands.length; i++){
         if(brands[i].id == pageProperties.id){
             models.push(brands[i].models);
+            scvg = brands[i].svg;
         }
+
     }
 
     return (
         <div className="bg-theme-gray-10 overflow-hidden lg:px-6 md:!px-0">
             <div className={` ${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex flex-col bg-white p-6`}>
-                <div className={classes.heading}>{pageProperties.name}</div>
-                <div className={classes.description}>{pageProperties.description}</div>
-                <div className={classes.sortandsearch}>
-                    <Select
-                        styles={style}
-                        options={sortVariants}
-                        placeholder={"Sortieren nach:"}
-                        onChange={(e) => setSortVariant(e.label)}
-                        className="w-full"
-                    />
+                <TopRow />
+                <div className={classes.topcontainer}>
+                <div className={classes.container}>
+                    <span className={classes.logocontainer}>{scvg}</span>
+                    <div>
+                        <div className={classes.heading}>{pageProperties.name}</div>
+                        <div className={classes.description}>{pageProperties.description}</div>
+                    </div>
                 </div>
+                </div>
+                <div className={classes.sortandsearch}>
+                            <Select
+                                styles={style}
+                                options={sortVariants}
+                                placeholder={"Sortieren nach:"}
+                                onChange={(e) => setSortVariant(e.label)}
+                                className="w-full"
+                            />
+                        </div>
                 <div className={classes.brandcontainer}>
                 {models.map((brand, indexr) => 
                     <div key={indexr} className={classes.brandcontainer}>
