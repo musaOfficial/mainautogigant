@@ -93,12 +93,13 @@ function Automarken() {
           Modelle und Baureihen auf dem deutschen Markt.
         </div>
         <div className={classes.sortandsearch}>
+          <div className={`flex items-center ${classes.sortsearch}`}>
           <Select
             styles={style}
             options={sortVariants}
             placeholder={"Sortieren nach:"}
             onChange={(e) => setSortVariant(e.label)}
-            className="w-full"
+            className={classes.select}
           />
           <Link href={{pathname: "/search-details", query: {easySearchOn: true}}}>
             <div className={classes.searchbtn}>
@@ -106,6 +107,7 @@ function Automarken() {
                 <span className="">Zur Autosuche</span>
             </div>
           </Link>
+          </div>
         </div>
         <div className={classes.brandcontainer}>
             {brands.map((brand, index) => <Link key={index} href={{pathname: "/car-brands/model", query: brand}}>
