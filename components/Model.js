@@ -16,7 +16,7 @@ function Model(){
           borderRadius: "10px",
           width: "100%",
           cursor: "pointer",
-          height: "40px",
+          height: "30px",
           backgroundColor: "#F1F2F3",
           width: "100%",
           height: "50px",
@@ -84,7 +84,7 @@ function Model(){
                                 options={sortVariants}
                                 placeholder={"Sortieren nach:"}
                                 onChange={(e) => setSortVariant(e.label)}
-                                className="w-full"
+                                className={classes.select}
                             />
                         </div>
                 <div className={classes.brandcontainer}>
