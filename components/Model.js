@@ -43,11 +43,11 @@ function Model(){
         { label: "Alphabetisch (A-Z)", value: "alphabetic" },
         { label: "Alphabetisch (Z-A)", value: "alphabetic-reversed" },
         {
-          label: "Marken nach Zulassung (absteigend)",
+          label: "Modelle nach Zulassung (absteigend)",
           value: "brandsbyapproval-descending",
         },
         {
-          label: "Marken nach Zulassung (aufsteigend)",
+          label: "Modelle nach Zulassung (aufsteigend)",
           value: "brandsbyapproval-ascending",
         },
       ];
