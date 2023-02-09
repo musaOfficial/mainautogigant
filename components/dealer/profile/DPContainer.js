@@ -1286,7 +1286,7 @@ export default function DPContainer() {
                 </div>
                 <div
                   className={`${classes.oeffnungszeitenrow} ${
-                    today == "tuesday" && "font-bold"
+                    today == "tuesday" && classes.markday
                   }`}
                 >
                   <div className={classes.tag}>Dienstag</div>
@@ -1302,7 +1302,7 @@ export default function DPContainer() {
                 </div>
                 <div
                   className={`${classes.oeffnungszeitenrow} ${
-                    today == "thursday" && "font-bold"
+                    today == "thursday" && classes.markday
                   }`}
                 >
                   <div className={classes.tag}>Donnerstag</div>
@@ -1310,14 +1310,14 @@ export default function DPContainer() {
                 </div>
                 <div
                   className={`${classes.oeffnungszeitenrow} ${
-                    today == "friday" && "font-bold"
+                    today == "friday" && classes.markday
                   }`}
                 >
                   <div className={classes.tag}>Freitag</div>
                 </div>
                 <div
                   className={`${classes.oeffnungszeitenrow} ${
-                    today == "saturday" && "font-bold"
+                    today == "saturday" && classes.markday
                   }`}
                 >
                   <div className={classes.tag}>Samstag</div>
@@ -1431,7 +1431,7 @@ export default function DPContainer() {
         <div className={classes.c1r1}>
             <div className={classes.centeritems1}>
                 <h3 className={classes.anzahlAngeboteNummer}>{displayAnzahlAngebote}</h3>
-                <div className={classes.anzahlAngeboteText}>Fahrzeuge online</div>
+                <div className={classes.anzahlAngeboteText}>Fahrzeuge verfügbar</div>
             </div>
         </div>
         <div className={classes.filtersearchcontainer}>
@@ -1533,7 +1533,7 @@ export default function DPContainer() {
               </div>
             </div>
             <div className={classes.anzeigen}>
-              <Select styles={style} options={anzeigen} onChange={(e) => setAnzeige(e.label)} placeholder="Anzeigen" />
+              <Select styles={style} options={anzeigen} onChange={(e) => setAnzeige(e.label)} defaultInputValue={anzeigen[0]} />
             </div>
           </div>
           </div>
