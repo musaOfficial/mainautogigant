@@ -53,7 +53,30 @@ function Automarken() {
   const brands = [
     {
         name: "VW",
+        description: "This is the description of VWW",
         svg: null,
+        models: [
+            {
+                name: "Golf",
+                description: "",
+                svg: null,
+            },
+            {
+                name: "Beetle",
+                description: "",
+                svg: null,
+            },
+            {
+                name: "Passat",
+                description: "",
+                svg: null,
+            },
+            {
+                name: "Jetta",
+                description: "",
+                svg: null,
+            },
+        ]
     },
     {
         name: "Audi",
@@ -256,10 +279,12 @@ function Automarken() {
           </Link>
         </div>
         <div className={classes.brandcontainer}>
-            {brands.map((brand, index) => <div className={classes.brand}>
-                {brand.svg != null && "SVG"}
-                <div className={classes.brandname}>{brand.name}</div>
-            </div>)}
+            {brands.map((brand, index) => <Link href={{pathname: "/car-brands/model", query: brand}}>
+                <div className={classes.brand}>
+                    {brand.svg != null && "SVG"}
+                    <div className={classes.brandname}>{brand.name}</div>
+                </div>
+            </Link>)}
         </div>
       </div>
     </div>

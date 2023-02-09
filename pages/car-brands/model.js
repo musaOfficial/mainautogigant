@@ -1,9 +1,8 @@
 import Head from "next/head";
-import Header from "../components/common/Header";
-import Footer from "../components/common/Footer";
-import Automarken from "../components/Automarken";
-
-function AutomarkenPage(){
+import Header from "../../components/common/Header";
+import Footer from "../../components/common/Footer";
+import Model from "../../components/Model";
+function ModelPage(){
     return (
         <div>
         <Head>
@@ -13,10 +12,10 @@ function AutomarkenPage(){
           <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         </Head>
         <Header />
-            <Automarken />
+            <Model />
         <Footer/>
       </div>
     )
 }
 
-export default AutomarkenPage;
+export default ModelPage;
