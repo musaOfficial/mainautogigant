@@ -79,14 +79,14 @@ function Model(){
                 </div>
                 </div>
                 <div className={classes.sortandsearch}>
-                            <Select
-                                styles={style}
-                                options={sortVariants}
-                                placeholder={"Sortieren nach:"}
-                                onChange={(e) => setSortVariant(e.label)}
-                                className={classes.select}
-                            />
-                        </div>
+                    <Select
+                        styles={style}
+                        options={sortVariants}
+                        placeholder={"Sortieren nach:"}
+                        onChange={(e) => setSortVariant(e.label)}
+                        className={classes.select}
+                    />
+                </div>
                 <div className={classes.brandcontainer}>
                 {models.map((brand, indexr) => 
                     <div key={indexr} className={classes.brandcontainer}>
