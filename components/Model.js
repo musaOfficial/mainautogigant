@@ -76,18 +76,15 @@ function Model(){
                         onChange={(e) => setSortVariant(e.label)}
                         className="w-full"
                     />
-                    <Link href={{pathname: "/search-details", query: {easySearchOn: true}}}>
-                        <div className={classes.searchbtn}>
-                            <SearchIcon className={classes.searchicon} />
-                            <span className="">Zur Autosuche</span>
-                        </div>
-                    </Link>
                 </div>
                 <div className={classes.brandcontainer}>
                 {models.map((brand, indexr) => 
                     <div key={indexr} className={classes.brandcontainer}>
                         {brand.map((modelbrand, index) =>  <div key={index} className={classes.brand}>
-                        <div className={classes.brandname}>{modelbrand.modelName}</div>
+                            <div className={classes.brandname}>
+                                {modelbrand.modelName}
+                                <span className={classes.modeldesignation}>{modelbrand.modelDesignation}</span>
+                            </div>
                         </div>)}
                     </div>
                 )}

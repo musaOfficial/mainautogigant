@@ -61,6 +61,13 @@
 
 .brandname{
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modeldesignation{
+    font-size: 13px;
 }
 
 .searchicon{
