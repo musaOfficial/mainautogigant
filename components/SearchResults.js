@@ -1744,10 +1744,6 @@ function SearchResults(){
             <div className={`${classes.contentcontainer} relative w-10/12 lg:w-full flex justify-center max-w-ag-container md:!w-full mx-auto flex-col bg-white p-6`}>
                 <div className={classes.c2r1top}>
                     <div>
-                        <Expand className={classes.backarrow} />
-                        <span className={classes.backarrowtext}>zurück zur Startseite</span>
-                    </div>
-                    <div>
                         <Question className={classes.question} />
                         <span className={classes.questiontext}>{width >= 458 && "Infos zur Reihung der Anzeigen"}</span>
                     </div>
@@ -1768,8 +1764,8 @@ function SearchResults(){
                             }} className={classes.delx}/></div>)}
                         </div>
                         <div>
-                            <button className={classes.delfilters}>FILTER LÖSCHEN</button>
-                            <button className={classes.savesearch}>SUCHE SPEICHERN</button>
+                            <button className={classes.delfilters}>Filter löschen</button>
+                            <button className={classes.savesearch}>Suche speichern</button>
                         </div>
                     </div>
                     <div className={classes.c1r3}>
