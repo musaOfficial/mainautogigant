@@ -1533,7 +1533,7 @@ export default function DPContainer() {
               </div>
             </div>
             <div className={classes.anzeigen}>
-              <Select styles={style} options={anzeigen} onChange={(e) => setAnzeige(e.label)} defaultInputValue={anzeigen[0]} />
+              <Select styles={style} options={anzeigen} onChange={(e) => setAnzeige(e.label)} placeholder={anzeigen[0].label} />
             </div>
           </div>
           </div>

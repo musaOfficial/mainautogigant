@@ -18,6 +18,7 @@ import Coupe from './../../public/acar/coupe.svg';
 import Cabrio from './../../public/acar/cabrio.svg';
 import Kleinbus from './../../public/acar/kleinbus.svg';
 import Check from './../../public/hackerl.svg';
+import { useRouter } from 'next/router';
 
 import {
   marke1,
@@ -70,6 +71,9 @@ const useDeviceSize = () => {
 
 export default function SearchDetail() {
 
+  const router = useRouter();
+  const pageSelector = router.query;
+
   const [width, height] = useDeviceSize();
 
   const [markeOpen, setMarkeOpen] = useState(false);
@@ -79,7 +83,7 @@ export default function SearchDetail() {
   const [ausstattungOpen, setAusstattungOpen] = useState(false);
   const [standortOpen, setStandortOpen] = useState(false);
 
-  const [easybtnOpen, setEasybtnOpen] = useState(false);
+  const [easybtnOpen, setEasybtnOpen] = useState(pageSelector.easySearchOn || false);
 
   const [anzahlTreffer, setAnzahlTreffer] = useState(117);
 
@@ -1272,7 +1276,7 @@ export default function SearchDetail() {
             </div>
         </div>}
       {/* AUSTATTUNGEN */}
-      <div className={`w-10/12 lg:w-full max-w-ag-container mx-auto flex md:flex-col-reverse ${classes.contentcontainer} ${easybtnOpen == true && classes.contentpadding}`}>
+      <div className={`w-10/12 lg:w-full max-w-ag-container mx-auto flex p-6 pt-0 md:flex-col-reverse ${classes.contentcontainer} ${easybtnOpen == true && classes.contentpadding}`}>
         <div className={`${classes.top_row} ${easybtnOpen == false && classes.contentpadding}`}>
           <span className={classes.leftrow}><BackHome className={classes.backhome} /> ../Detailsuche</span>
           <div className={classes.rightrow}>
