@@ -60,7 +60,11 @@ function ListCard({
         <Image src={img} layout="fill" objectFit="cover" />
       </div>
       <div className={`${classes.about} ${colorad == true && classes.colorad}`}>
-
+        {width <= 540 && <div className={classes.icons}>
+            <div className={`${classes.i} ${classes.b}`}><FavoriteIcon className={classes.icon} /></div>
+            <div className={`${classes.i} ${classes.b}`}><ShareIcon className={classes.icon} /></div>
+            <div className={`${classes.i} ${classes.b} ${classes.lasticon}`}><EyeIcon className={classes.icon} /></div>
+        </div>}
         <div className={`${classes.title} ${width <= 800 && classes.responsivetitle}`}>{title}{width >= 737 && <span>{width <= 800 && <div className={classes.description}>{displayDescription}</div>}</span>}</div>
         {width > 800 && <div className={classes.description}>{displayDescription}</div>}
         <div className={classes.details}>
@@ -75,11 +79,11 @@ function ListCard({
             <CompanyLocation className={classes.svg} />
             {location}
           </span>
-          <div className={classes.icons}>
+          { width > 540 && <div className={classes.icons}>
             <div className={`${classes.i} ${classes.b}`}><FavoriteIcon className={classes.icon} /></div>
             <div className={`${classes.i} ${classes.b}`}><ShareIcon className={classes.icon} /></div>
             <div className={`${classes.i} ${classes.b} ${classes.lasticon}`}><EyeIcon className={classes.icon} /></div>
-        </div>
+        </div>}
         </div>
       </div>
       <div className={classes.price}>€ {displayPrice},-</div>
