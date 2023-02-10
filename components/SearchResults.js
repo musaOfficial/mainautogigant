@@ -80,6 +80,7 @@ function SearchResults(){
         {
             id: "sköafjasökldc",
             preis: 500,
+
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
@@ -104,13 +105,15 @@ function SearchResults(){
     const [angebote, setAngebote] = useState([
         {
             id: "sköafjasökldc",
+            seller: "Privat",
             preis: 500,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
-            location: "Österreich, 2700 Wiener Neustadt",
+            state: "2700 Wiener Neustadt",
+            country: "Österreich",
             description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
             companyname: "Gigant Group Teknoloji A.S",
             baujahr: "01/2022",
@@ -123,13 +126,15 @@ function SearchResults(){
         },
         {
             id: "sköafjasökldc",
+            seller: "Händler",
             preis: 50000000,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
-            location: "Österreich, 2700 Wiener Neustadt",
+            state: "2700 Wiener Neustadt",
+            country: "Österreich",
             description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
             companyname: "Gigant Group Teknoloji A.S",
             baujahr: "01/2022",
@@ -153,9 +158,8 @@ function SearchResults(){
             ps: 120,
             kmStand: 412000,
             getriebe: "Automatik",
-
-
-            location: "Österreich, 2700 Wiener Neustadt",
+            state: "2700 Wiener Neustadt",
+            country: "Österreich",
             gigalabel: true,
             colorad: true,
         },
@@ -2224,6 +2228,9 @@ function SearchResults(){
                                         ps={fav.ps}
                                         getriebe={fav.getriebe}
                                         treibstoff={fav.treibstoff}
+                                        seller={fav.seller}
+                                        state={fav.state}
+                                        country={fav.country}
                                     />
                                 </div>)}       
                             </div>

@@ -35,7 +35,8 @@ function ListCard({
   price,
   title,
   img,
-  location,
+  state,
+  country,
   gigalabel,
   colorad,
   description,
@@ -44,7 +45,8 @@ function ListCard({
   getriebe,
   ps,
   kmStand,
-  treibstoff
+  treibstoff,
+  seller,
 }) {
 
   const [width, height] = useDeviceSize();
@@ -55,38 +57,59 @@ function ListCard({
   var displayKmStand = kmStand.toLocaleString() + " KM";
 
   return (
-    <div className={classes.container}>
+    <div className={classes.wrapper}>
+        <div className={classes.container}>
       <div className={classes.img}>
         <Image src={img} layout="fill" objectFit="cover" />
       </div>
       <div className={`${classes.about} ${colorad == true && classes.colorad}`}>
-        {width <= 540 && <div className={classes.icons}>
-            <div className={`${classes.i} ${classes.b}`}><FavoriteIcon className={classes.icon} /></div>
-            <div className={`${classes.i} ${classes.b}`}><ShareIcon className={classes.icon} /></div>
-            <div className={`${classes.i} ${classes.b} ${classes.lasticon}`}><EyeIcon className={classes.icon} /></div>
-        </div>}
         <div className={`${classes.title} ${width <= 800 && classes.responsivetitle}`}>{title}{width >= 737 && <span>{width <= 800 && <div className={classes.description}>{displayDescription}</div>}</span>}</div>
         {width > 800 && <div className={classes.description}>{displayDescription}</div>}
         <div className={classes.details}>
           <div className={classes.detail}>{baujahr}</div>
           {width > 900 && <div className={classes.detail}>{treibstoff}</div>}
-          <div className={classes.detail}>{displayPs}</div>
-          <div className={classes.detail}>{displayKmStand}</div>
-          <div className={classes.lastdetail}>{getriebe}</div>
+          <div className={classes.detail}>{getriebe}</div>
+          
+          {width > 530 && <div className={classes.detail}>{displayKmStand}</div>}
+          {width > 530 && <div className={classes.lastdetail}>{displayPs}</div>}
         </div>
+        {width <= 530 && <div className={classes.lastdetails}>
+          <div className={classes.detail}>{displayKmStand}</div>
+          <div className={classes.lastdetail}>{displayPs}</div>
+        </div>}
+        {width <= 530 && <div className={classes.lastdetails}>
+            <div className={classes.detail} >{seller}</div>
+            <div className={classes.lastdetail}>{treibstoff}</div>
+        </div>}
         <div className={classes.interactions}>
-          <span className={classes.location}>
+          {width > 530 && <span className={classes.location}>
             <CompanyLocation className={classes.svg} />
-            {location}
-          </span>
-          { width > 540 && <div className={classes.icons}>
+            <span className={classes.locationtext}>{state}{width > 530 && ", " + country}</span>
+          </span>}
+          {width > 530 && <div className={classes.icons}>
             <div className={`${classes.i} ${classes.b}`}><FavoriteIcon className={classes.icon} /></div>
             <div className={`${classes.i} ${classes.b}`}><ShareIcon className={classes.icon} /></div>
             <div className={`${classes.i} ${classes.b} ${classes.lasticon}`}><EyeIcon className={classes.icon} /></div>
         </div>}
         </div>
+        <div className={classes.price}>€ {displayPrice},-</div>
       </div>
-      <div className={classes.price}>€ {displayPrice},-</div>
+    </div>
+    {width <= 530 && <div className={classes.smallcontainer}>
+        <div className={classes.belowimg}>
+            <div className={classes.responsiveicons}>
+                <div className={`${classes.firstt} ${classes.r}`}><FavoriteIcon className={classes.icon} /></div>
+                <div className={`${classes.t} ${classes.r}`}><ShareIcon className={classes.icon} /></div>
+                <div className={`${classes.t} ${classes.r} ${classes.lasticon}`}><EyeIcon className={classes.icon} /></div>
+            </div>
+        </div>
+        <div className={`${classes.belowabout} ${colorad == true && classes.belowaboutcolorad}`}>
+            {width <= 530 && <span className={classes.location}>
+            <CompanyLocation className={classes.svg} />
+            <span className={classes.locationtext}>{state}{width > 530 && ", " + country}</span>
+          </span>}
+        </div>
+    </div>}
     </div>
   );
 }
