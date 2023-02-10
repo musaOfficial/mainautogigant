@@ -114,6 +114,7 @@ function SearchResults(){
             description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
             companyname: "Gigant Group Teknoloji A.S",
             baujahr: "01/2022",
+            treibstoff: "Benzin",
             ps: 120,
             kmStand: 412000,
             getriebe: "Automatik",
@@ -129,6 +130,7 @@ function SearchResults(){
             imgSrc: "/images/draft-card-img-car-1.png",
             description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
             baujahr: "01/2022",
+            treibstoff: "Benzin",
             ps: 120,
             kmStand: 412000,
             getriebe: "Automatik",
@@ -2203,6 +2205,7 @@ function SearchResults(){
                                             kmStand={fav.kmStand}
                                             ps={fav.ps}
                                             getriebe={fav.getriebe}
+                                            treibstoff={fav.treibstoff}
                                         />
                                     </div>)}
                                 </div>

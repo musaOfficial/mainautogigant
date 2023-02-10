@@ -21,6 +21,7 @@ function ListCard({
   getriebe,
   ps,
   kmStand,
+  treibstoff
 }) {
   var displayPrice = price.toLocaleString();
   var displayDescription = description.substring(0, 35) + "...";
@@ -33,22 +34,26 @@ function ListCard({
         <Image src={img} layout="fill" objectFit="cover" />
       </div>
       <div className={`${classes.about} ${colorad == true && classes.colorad}`}>
-        <div className={classes.icons}>
-            <div className={`${classes.i} ${classes.b}`}><FavoriteIcon className={classes.icon} /></div>
-            <div className={`${classes.i} ${classes.b}`}><ShareIcon className={classes.icon} /></div>
-            <div className={`${classes.i} ${classes.b}`}><EyeIcon className={classes.icon} /></div>
-        </div>
+
         <div className={classes.title}>{title}</div>
         <div className={classes.description}>{displayDescription}</div>
         <div className={classes.details}>
           <div className={classes.detail}>{baujahr}</div>
+          <div className={classes.detail}>{treibstoff}</div>
           <div className={classes.detail}>{displayPs}</div>
           <div className={classes.detail}>{displayKmStand}</div>
           <div className={classes.lastdetail}>{getriebe}</div>
         </div>
-        <div className={classes.location}>
-          <CompanyLocation className={classes.svg} />
-          {location}
+        <div className={classes.interactions}>
+          <span className={classes.location}>
+            <CompanyLocation className={classes.svg} />
+            {location}
+          </span>
+          <div className={classes.icons}>
+            <div className={`${classes.i} ${classes.b}`}><FavoriteIcon className={classes.icon} /></div>
+            <div className={`${classes.i} ${classes.b}`}><ShareIcon className={classes.icon} /></div>
+            <div className={`${classes.i} ${classes.b}`}><EyeIcon className={classes.icon} /></div>
+        </div>
         </div>
       </div>
       <div className={classes.price}>€ {displayPrice},-</div>

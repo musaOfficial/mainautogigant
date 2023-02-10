@@ -1,6 +1,6 @@
 .container{
     width: 100%;
-    height: 195px;
+    height: 150px;
     background-color: #fff;
     border-radius: 10px;
     display: flex;
@@ -10,7 +10,7 @@
 .img{
     position: relative;
     height: 100%;
-    width: 325px;
+    width: 275px;
     border-radius: 10px 0 0 10px;
     overflow: hidden;
 }
@@ -83,16 +83,18 @@
 
 .location{
     display: flex;
-    margin-top: 15px;
     color: #0067B8;
+    width: 100%;
     line-height: 20px;
+    font-size: 15px;
+    align-items: center;
 }
 
 .icons{
-    height: 25px;
     display: flex;
-    width: calc(100% - 195px);
-    margin-bottom: 20px;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .icon{
@@ -136,4 +138,12 @@
     border-top: 2px solid #FBB900;
     border-right: 2px solid #FBB900;
     border-bottom: 2px solid #FBB900;
+}
+
+.interactions{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: center;
 }
