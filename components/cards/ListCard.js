@@ -32,11 +32,11 @@ function ListCard({
       <div className={classes.img}>
         <Image src={img} layout="fill" objectFit="cover" />
       </div>
-      <div className={classes.about}>
+      <div className={`${classes.about} ${colorad == true && classes.colorad}`}>
         <div className={classes.icons}>
-            <div className={classes.i}><FavoriteIcon className={classes.icon} /></div>
-            <div className={classes.i}><ShareIcon className={classes.icon} /></div>
-            <div className={classes.i}><EyeIcon className={classes.icon} /></div>
+            <div className={`${classes.i} ${classes.b}`}><FavoriteIcon className={classes.icon} /></div>
+            <div className={`${classes.i} ${classes.b}`}><ShareIcon className={classes.icon} /></div>
+            <div className={`${classes.i} ${classes.b}`}><EyeIcon className={classes.icon} /></div>
         </div>
         <div className={classes.title}>{title}</div>
         <div className={classes.description}>{displayDescription}</div>

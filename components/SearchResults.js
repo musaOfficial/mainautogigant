@@ -117,8 +117,8 @@ function SearchResults(){
             ps: 120,
             kmStand: 412000,
             getriebe: "Automatik",
-            gigalabel: true,
-            colorad: true,
+            gigalabel: false,
+            colorad: false,
         },
         {
             id: "sköafjasökldc",
