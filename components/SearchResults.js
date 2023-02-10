@@ -48,6 +48,7 @@ import {
   } from "./search/selectOptions";
 import Angebot from './ui/ads/Angebot';
 import Page from './pagesearch/PageSearch';
+import ListCard from './cards/ListCard';
 
 const useDeviceSize = () => {
 
@@ -109,215 +110,31 @@ function SearchResults(){
             start: "01/01/2020",
             end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Halbautomatik",
-                seller: true,
-            },
             location: "Österreich, 2700 Wiener Neustadt",
+            description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
             companyname: "Gigant Group Teknoloji A.S",
+            baujahr: "01/2022",
+            ps: 120,
+            kmStand: 412000,
+            getriebe: "Automatik",
             gigalabel: true,
             colorad: true,
         },
         {
             id: "sköafjasökldc",
+            seller: "Händler",
             preis: 213520,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
             imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1230,
-                fahrzeugzustand: "Neu",
-                getriebe: "Automatik",
-                seller: false,
-            },
+            description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
+            baujahr: "01/2022",
+            ps: 120,
+            kmStand: 412000,
+            getriebe: "Automatik",
+
+
             location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 2120,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Schaltgetriebe",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 500,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Halbautomatik",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1230,
-                fahrzeugzustand: "Neu",
-                getriebe: "Automatik",
-                seller: false,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 2120,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Schaltgetriebe",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 500,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Halbautomatik",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1230,
-                fahrzeugzustand: "Neu",
-                getriebe: "Automatik",
-                seller: false,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 2120,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Schaltgetriebe",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 2120,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Schaltgetriebe",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
             gigalabel: true,
             colorad: true,
         },
@@ -2370,49 +2187,23 @@ function SearchResults(){
                     </div>
                     <div className={`${classes.c2r2}`}>
                             <div className={`${gridView == true ? classes.carlistcontainer : classes.gridlayout} `}>
-                                {bezahlteAngebote.map((fav, index) => <div key={index} className={gridView == true ? classes.sponsored : classes.sponsorcard}>
-                                    <div className={width < 1250 && classes.cardlength}>
-                                        <Angebot 
-                                            key={index}
-                                            id={fav.id}
-                                            title={fav.title} 
-                                            price={fav.preis} 
-                                            adNo={fav.adNo} 
-                                            start={fav.start}  
-                                            end={fav.end}
-                                            imgSrc={fav.imgSrc}
-                                            description={"This is a description"}
-                                            details={fav.details}
-                                            cardView={width >= 1250 ? true : false}
-                                            location={fav.location}
-                                            companyname={fav.companyname}
-                                            onClick={() => handleDel(index)}
-                                            gigalabel={fav.gigalabel}
-                                            colorad={fav.colorad}  
-                                        />
-                                    </div>
-                                    <div className={gridView == true ? classes.werbeanzeige : classes.werbeanzeigecard}>Werbeanzeige</div >
-                                </div>)}
                                 <div className={width < 1250 && classes.adgrid}>
                                     {angebote.map((fav, index) => <div key={index} className={width >= 1250 && classes.adprop}>
-                                        <Angebot
-                                        key={index}
-                                        id={fav.id}
-                                        title={fav.title} 
-                                        price={fav.preis} 
-                                        adNo={fav.adNo} 
-                                        start={fav.start}  
-                                        end={fav.end}
-                                        imgSrc={fav.imgSrc}
-                                        description={"This is a description"}
-                                        details={fav.details}
-                                        cardView={width >= 1250 ? true : false}
-                                        location={fav.location}
-                                        companyname={fav.companyname}
-                                        onClick={() => handleDel(index)}
-                                        gigalabel={fav.gigalabel}
-                                        colorad={fav.colorad}       
-                                    />
+                                        <ListCard 
+                                            id={fav.id}
+                                            adNo={fav.adNo}
+                                            price={fav.preis}
+                                            title={fav.title}
+                                            img={fav.imgSrc}
+                                            location={fav.location}
+                                            gigalabel={fav.gigalabel}
+                                            colorad={fav.colorad}
+                                            description={fav.description}
+                                            baujahr={fav.baujahr}
+                                            kmStand={fav.kmStand}
+                                            ps={fav.ps}
+                                            getriebe={fav.getriebe}
+                                        />
                                     </div>)}
                                 </div>
                             </div>
