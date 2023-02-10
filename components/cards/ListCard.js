@@ -61,7 +61,7 @@ function ListCard({
       </div>
       <div className={`${classes.about} ${colorad == true && classes.colorad}`}>
 
-        <div className={`${classes.title} ${width <= 800 && classes.responsivetitle}`}>{title}{width <= 800 && <div className={classes.description}>{displayDescription}</div>}</div>
+        <div className={`${classes.title} ${width <= 800 && classes.responsivetitle}`}>{title}{width >= 737 && <span>{width <= 800 && <div className={classes.description}>{displayDescription}</div>}</span>}</div>
         {width > 800 && <div className={classes.description}>{displayDescription}</div>}
         <div className={classes.details}>
           <div className={classes.detail}>{baujahr}</div>
