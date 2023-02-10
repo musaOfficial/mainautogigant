@@ -64,10 +64,6 @@
     height: 368.5px;
 }
 
-.adprop{
-    margin-bottom: 20px;
-}
-
 .werbeanzeige{
     position: absolute;
     right: 0;
@@ -1046,6 +1042,9 @@
 /* CAR LIST CONTAINER */
 
 .carlistcontainer{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
     margin-top: 20px;
     border-radius: 10px;
 }
@@ -1057,13 +1056,10 @@
 
 .gridlayout{
     display: grid;
-    background-color: blue;
     margin-top: 20px;
-    background-color: #F1F2F3;
-    grid-template-columns: repeat(3, 1fr);
     border-radius: 10px;
-    place-items: center;
-    padding-top: 40px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
 }
 
 @media(max-width: 1232px){

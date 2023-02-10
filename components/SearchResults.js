@@ -2188,27 +2188,25 @@ function SearchResults(){
                         </div>}
                     </div>
                     <div className={`${classes.c2r2}`}>
-                            <div className={`${gridView == true ? classes.carlistcontainer : classes.gridlayout} `}>
-                                <div className={width < 1250 && classes.adgrid}>
-                                    {angebote.map((fav, index) => <div key={index} className={width >= 1250 && classes.adprop}>
-                                        <ListCard 
-                                            id={fav.id}
-                                            adNo={fav.adNo}
-                                            price={fav.preis}
-                                            title={fav.title}
-                                            img={fav.imgSrc}
-                                            location={fav.location}
-                                            gigalabel={fav.gigalabel}
-                                            colorad={fav.colorad}
-                                            description={fav.description}
-                                            baujahr={fav.baujahr}
-                                            kmStand={fav.kmStand}
-                                            ps={fav.ps}
-                                            getriebe={fav.getriebe}
-                                            treibstoff={fav.treibstoff}
-                                        />
-                                    </div>)}
-                                </div>
+                            <div className={`${gridView == true ? classes.carlistcontainer : classes.gridlayout} `}>             
+                                {angebote.map((fav, index) => <div key={index} className={width >= 1250 && classes.adprop}>
+                                    <ListCard 
+                                        id={fav.id}
+                                        adNo={fav.adNo}
+                                        price={fav.preis}
+                                        title={fav.title}
+                                        img={fav.imgSrc}
+                                        location={fav.location}
+                                        gigalabel={fav.gigalabel}
+                                        colorad={fav.colorad}
+                                        description={fav.description}
+                                        baujahr={fav.baujahr}
+                                        kmStand={fav.kmStand}
+                                        ps={fav.ps}
+                                        getriebe={fav.getriebe}
+                                        treibstoff={fav.treibstoff}
+                                    />
+                                </div>)}       
                             </div>
                     </div>
                     {/* <div className={classes.c2r3}>
