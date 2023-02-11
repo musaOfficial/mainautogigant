@@ -16,15 +16,21 @@
     position: relative;
     display: flex;
     align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .k{
-    width: 40px;
+    width: 30px;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all .1s ease-in;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    padding: 8px;
+    margin: 5px;
 }
 
 .k:hover .whiteicon{
@@ -376,7 +382,7 @@
     }
 
     .container{
-        height: 130px;
+        height: 120px;
     }
 
     .details{
@@ -464,6 +470,7 @@
 
     .location{
         font-size: 12px !important;
+        transform: translateY(-5px);
     }
 
     .interactions{
