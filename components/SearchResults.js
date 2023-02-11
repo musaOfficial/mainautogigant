@@ -547,6 +547,10 @@ function SearchResults(){
     
     const [filterOpen, setFilterOpen] = useState(false);
 
+    function DeleteAllFilters(arr){
+        setFilters(arr);
+    }
+
     return (
         <div className={`${classes.container} ${openAusstattung == true && "overflow-y-hidden"}`}>
                 {openAusstattung == true && <div className={classes.ausstattungContainer} >
@@ -1080,7 +1084,9 @@ function SearchResults(){
                             }} className={classes.delx}/></div>)}
                         </div>
                         <div>
-                            <button className={classes.delfilters}>Filter löschen</button>
+                            <button className={classes.delfilters} onClick={() => {
+                                DeleteAllFilters([]);
+                            }}>Filter löschen</button>
                             <button className={classes.savesearch}>Suche speichern</button>
                         </div>
                     </div>
@@ -1100,7 +1106,8 @@ function SearchResults(){
                             </div>
                             {openBasisdaten == true && <div className={classes.basiscontainer}>
                                 <div className={`${classes.inputrowgiga} ${classes.marginbottom}`}>
-                                    <input id='gigacheckbox' className={classes.checkboxgiga} type={"checkbox"} />
+                                <input id='gigacheckbox' className={classes.checkboxgiga} type={"checkbox"} />
+                                
                                     <label className='cursor-pointer' htmlFor='gigacheckbox'>
                                      <img className={classes.gigadraftimg} src={"/images/draft-card-giga-logo.png"} />
                                     </label>
@@ -1690,7 +1697,9 @@ function SearchResults(){
                             }} className={classes.delx}/></div>)}
                         </div>
                         <div>
-                            <button className={classes.delfilters}>Filter löschen</button>
+                            <button className={classes.delfilters} onClick={() => {
+                                DeleteAllFilters([]);
+                            }}>Filter löschen</button>
                             <button className={classes.savesearch}>Suche speichern</button>
                         </div>
                     </div>
