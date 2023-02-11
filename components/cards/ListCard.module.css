@@ -12,7 +12,7 @@
     height: 30px;
     width: 100%;
     border-radius: 10px 10px 0 0;
-    background-color: rgba(108, 117, 125, 0.75);
+    background-color: #c8cbce;
     position: relative;
     display: flex;
     align-items: center;
@@ -21,16 +21,32 @@
 }
 
 .k{
-    width: 20px;
-    height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all .1s ease-in;
     border-radius: 5px;
-    border: 1px solid #c9cccf;
-    padding: 3px;
     margin: 5px;
+}
+
+.u{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 0 0 0;
+    border-right: 1px solid #6C757D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.e{
+    height: 100%;
+    height: 30px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #c9cccf;
+    justify-content: center;
 }
 
 .firstk{
@@ -43,6 +59,8 @@
 
 .whiteicon{
     color: #fff;
+    height: 20px;
+    width: 20px;
 }
 
 .coloradabove{
