@@ -33,7 +33,7 @@
     height: 100%;
     width: 100%;
     border-radius: 10px 0 0 0;
-    border-right: 1px solid #6C757D;
+    border-right: 1px solid #888c8f;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +46,7 @@
     display: flex;
     align-items: center;
     
-    border-right: 1px solid #F1F2F3;
+    border-right: 1px solid #c3ccd4;
     justify-content: center;
 }
 
