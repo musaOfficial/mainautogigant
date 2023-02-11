@@ -1274,6 +1274,9 @@ export default function DPContainer() {
                   <p className={`ml-4 ${classes.link}`}>{website}</p>
                 </div>
               </div>
+              <div className="p-4 rounded-10 mt-4 bg-theme-gray-4 text-theme-gray-4 text-base">
+                <div className={classes.chatbtn}>Chat starten</div>
+              </div>
               <div className="mt-4 rounded-10 pb-4 w-full bg-theme-gray-4 text-theme-gray-4 text-base">
                 <div className={classes.oeffnungszeiten}>Öffnungszeiten:</div>
                 <div

@@ -329,7 +329,7 @@ function CarDetails(){
                                     <div className={classes.l}><span className={classes.liner}><span className={`${classes.greyback}`}>Finanzierung berechnen</span></span></div>
                                     <div className={classes.l}><span className={classes.linerb}><span className={`${classes.greyback}`}>Versicherung berechnen</span></span></div>
                                     <div className={classes.whiteback}>
-                                        <button className={classes.sendmail}>E-mail senden</button>
+                                        <button className={classes.sendmail}>Chat starten</button>
                                         <button className={classes.call}>+43 (0) 699 19778899</button>
                                     </div>
                                 </div>

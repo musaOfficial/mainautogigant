@@ -460,6 +460,25 @@
     
 }
 
+.chatbtn{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6C757D;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all .1s ease-in;
+    cursor: pointer;
+}
+
+.chatbtn:hover{
+    background-color: #FBB900;
+}
+
 
 .suchenbtn{
     background-color: #6C757D;

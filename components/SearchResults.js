@@ -50,6 +50,7 @@ import Angebot from "./ui/ads/Angebot";
 import Page from "./pagesearch/PageSearch";
 import ListCard from "./cards/ListCard";
 import ControlledCheckbox from "./ui/ControlledCheckbox";
+import TopRow from "./ui/TopRow";
 
 const useDeviceSize = () => {
   const [width, setWidth] = useState(0);
@@ -683,6 +684,9 @@ function SearchResults() {
   {label: "Slowenien", value: "Slowenien"},
   {label: "Spanien", value: "Spanien"},
     ]
+
+
+    const [infoOpen, setInfoOpen] = useState(false);
 
   return (
     <div
@@ -1654,14 +1658,7 @@ function SearchResults() {
       <div
         className={`${classes.contentcontainer} relative w-10/12 lg:w-full flex justify-center max-w-ag-container md:!w-full mx-auto flex-col bg-white p-6`}
       >
-        <div className={classes.c2r1top}>
-          <div>
-            <Question className={classes.question} />
-            <span className={classes.questiontext}>
-              {width >= 458 && "Infos zur Reihung der Anzeigen"}
-            </span>
-          </div>
-        </div>
+        <TopRow />
         <div className={classes.row}>
           {width >= 1250 && (
             <div className={classes.c1}>
@@ -2896,8 +2893,8 @@ function SearchResults() {
             </div>
           )}
           <div className={classes.c2}>
-            <div className={classes.c2r1}>
-              <div className={classes.c2r1bottom}>
+          { width >= 621 &&<div className={classes.c2r1}>
+               <div className={classes.c2r1bottom}>
                 <div className={classes.direktsuchecontainer}>
                   <input
                     type={"text"}
@@ -2914,6 +2911,21 @@ function SearchResults() {
                     className={classes.erweitertselect}
                   />
                 </div>
+                <div className={classes.questioncontainer}>
+                <img
+                    src={"/images/info.svg"}
+                    onMouseOver={() => setInfoOpen(true)}
+                    onMouseLeave={() => setInfoOpen(false)}
+                    className={classes.infosvg}
+
+                />
+                                        {infoOpen == true && (
+                          <div className={classes.infoexplanation}>
+                            <div className={classes.triangle}></div>
+                            Lorem ipsum dolor sit Amet, InsecteturLorem
+                          </div>
+                        )}
+          </div>
               </div>
               {width >= 1250 && (
                 <div className={classes.view}>
@@ -2931,7 +2943,7 @@ function SearchResults() {
                   />
                 </div>
               )}
-            </div>
+            </div>}
             <div className={`${classes.c2r2}`}>
               <div
                 className={`${

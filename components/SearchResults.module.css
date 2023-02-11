@@ -355,12 +355,22 @@
     font-size: 13px;
 }
 
+.infotext{
+    font-size: 13px;
+    line-height: 20px;
+}
+
 .halfselect1{
     width: 100%;
     margin-right: 10px;
 }
 .halfselect2{
     width: 100%;
+}
+
+.infosvg{
+    height: 20px;
+    width: 20px;
 }
 
 .smalltext{
@@ -370,6 +380,15 @@
 .mgb{
     margin-bottom: 10px;
     font-size: 13px;
+}
+
+.questioncontainer{
+    display: flex;
+    flex-direction: column;
+    min-width: 40px;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
 }
 
 .mgb label{
@@ -713,6 +732,19 @@
     width: 200px;
     height: 70px;
     right: -100px;
+    top: -80px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.infoexplanation{
+    position: absolute;
+    background-color: white;
+    width: 200px;
+    height: 70px;
+    right: -150px;
     top: -80px;
     padding: 10px;
     border-radius: 10px;
@@ -1267,5 +1299,9 @@
 
     .sortierungcontainer{
         padding-left: 20px;
+    }
+
+    .c2{
+        margin-top: -15px;
     }
   }
