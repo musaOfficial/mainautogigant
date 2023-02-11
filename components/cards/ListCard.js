@@ -6,6 +6,7 @@ import ShareIcon from './../../public/sha.svg';
 import EyeIcon from './../../public/eye.svg';
 import { useState } from "react";
 import { useEffect } from "react";
+import Automatik from './../../public/listcard/automatik.svg';
 
 const useDeviceSize = () => {
 
@@ -74,12 +75,13 @@ function ListCard({
         {width > 800 && <div className={classes.description}>{displayDescription}</div>}
         <div className={classes.details}>
           <div className={classes.detail}>{baujahr}</div>
-          {width > 900 && <div className={classes.detail}>{treibstoff}</div>}
-          <div className={classes.lastdetail}>{getriebe}</div>
-          
           {width > 530 && <div className={classes.detail}>{displayKmStand}</div>}
-          {width > 530 && <div className={classes.detail}>{displayPs}</div>}
-          {width > 530 && <div className={classes.lastdetail}>{seller}</div>}
+          {width > 900 && <div className={classes.detail}>{treibstoff}</div>}
+          <div className={classes.detail}><Automatik className={classes.svg} />{getriebe}</div>
+          
+          
+          {width > 530 && <div className={classes.lastdetail}>{displayPs}</div>}
+          {/* {width > 530 && <div className={classes.lastdetail}>{seller}</div>} */}
         </div>
         {width <= 530 && <div className={classes.lastdetails}>
           <div className={classes.detail}>{displayKmStand}</div>
@@ -87,7 +89,7 @@ function ListCard({
         </div>}
         {width <= 530 && <div className={classes.lastdetails}>
             <div className={classes.detail}>{treibstoff}</div>
-            <div className={classes.lastdetail} >{seller}</div>
+            <div className={classes.lastdetail} >{seller}</div> 
         </div>}
         <div className={classes.interactions}>
           {width > 530 && <span className={classes.location}>

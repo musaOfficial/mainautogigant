@@ -272,6 +272,8 @@
 
 .gigadraftimg{
     margin-right: 20px;
+    pointer-events: none;
+    user-select: none;
 }
 
 .selectcar{
@@ -350,11 +352,15 @@
 .halfselect{
     display: flex;
     align-items: center;
-    min-width: 100% !important;
-    max-width: 100% !important;
-    justify-content: space-between;
-    margin-bottom: -18px;
     font-size: 13px;
+}
+
+.halfselect1{
+    width: 100%;
+    margin-right: 10px;
+}
+.halfselect2{
+    width: 100%;
 }
 
 .smalltext{
@@ -776,10 +782,10 @@
     font-weight: normal !important;
 }
 
-.marginbottom{
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #fff;
+.carbodytypes{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #fff;
 }
 
 .sectioncontainerclosed2{

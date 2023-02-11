@@ -68,6 +68,11 @@
     background-color: #FBB900;
 }
 
+.svg{
+    height: 15px;
+    width: auto;
+}
+
 .aboveprice{
     height: 20px;
     font-weight: bold;
@@ -167,6 +172,7 @@
     border-bottom: 1px solid #fff;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     line-height: 12px;
     font-size: 12px;
     margin: 0;

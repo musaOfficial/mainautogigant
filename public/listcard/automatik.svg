@@ -1,0 +1,49 @@
+<svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #6c757d;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #6c757d;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #cfc9c8;
+      }
+
+      .cls-3, .cls-5 {
+        fill: none;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Oval" class="cls-1" transform="translate(0 0)">
+    <ellipse class="cls-4" cx="2" cy="2.264" rx="2" ry="2.264"/>
+    <ellipse class="cls-5" cx="2" cy="2.264" rx="1.5" ry="1.764"/>
+  </g>
+  <g id="Oval-2" data-name="Oval" class="cls-1" transform="translate(6 0)">
+    <ellipse class="cls-4" cx="2" cy="2.264" rx="2" ry="2.264"/>
+    <ellipse class="cls-5" cx="2" cy="2.264" rx="1.5" ry="1.764"/>
+  </g>
+  <g id="Oval-3" data-name="Oval" class="cls-1" transform="translate(12 0)">
+    <ellipse class="cls-4" cx="2" cy="2.264" rx="2" ry="2.264"/>
+    <ellipse class="cls-5" cx="2" cy="2.264" rx="1.5" ry="1.764"/>
+  </g>
+  <g id="Oval-4" data-name="Oval" class="cls-1" transform="translate(6 15.472)">
+    <ellipse class="cls-4" cx="2" cy="2.264" rx="2" ry="2.264"/>
+    <ellipse class="cls-5" cx="2" cy="2.264" rx="1.5" ry="1.764"/>
+  </g>
+  <g id="Oval-5" data-name="Oval" class="cls-1" transform="translate(0 15.472)">
+    <ellipse class="cls-4" cx="2" cy="2.264" rx="2" ry="2.264"/>
+    <ellipse class="cls-5" cx="2" cy="2.264" rx="1.5" ry="1.764"/>
+  </g>
+  <path id="Path_2" data-name="Path 2" class="cls-2" d="M.167,0V15.472" transform="translate(1.833 2.264)"/>
+  <path id="Path_3" data-name="Path 3" class="cls-2" d="M.167,0V15.472" transform="translate(7.833 2.264)"/>
+  <path id="Path_4" data-name="Path 4" class="cls-3" d="M12,0V7.736H0" transform="translate(2 2.264)"/>
+</svg>
