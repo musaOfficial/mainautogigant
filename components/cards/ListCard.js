@@ -58,12 +58,18 @@ function ListCard({
 
   return (
     <div className={classes.wrapper}>
+        {width <= 530 && <div className={`${classes.above} ${colorad == true && classes.coloradabove}`}>
+            <div className={classes.k}><EyeIcon className={classes.whiteicon} /></div>
+            <div className={classes.k}><FavoriteIcon className={classes.whiteicon} /></div>
+            <div className={classes.k}><ShareIcon className={classes.whiteicon} /></div>
+            <div className={classes.aboveprice}>€ {displayPrice},-</div>
+        </div>}
         <div className={classes.container}>
       <div className={classes.img}>
         <Image src={img} layout="fill" objectFit="cover" />
       </div>
       <div className={`${classes.about} ${colorad == true && classes.colorad}`}>
-        <div className={`${classes.title} ${width <= 800 && classes.responsivetitle}`}>{title}{width >= 737 && <span>{width <= 800 && <div className={classes.description}>{displayDescription}</div>}</span>}</div>
+        <div className={`${classes.title} ${width <= 800 && classes.responsivetitle} ${width <= 530 && classes.titledistance}`}>{title}{width >= 737 && <span>{width <= 800 && <div className={classes.description}>{displayDescription}</div>}</span>}</div>
         {width > 800 && <div className={classes.description}>{displayDescription}</div>}
         <div className={classes.details}>
           <div className={classes.detail}>{baujahr}</div>
@@ -78,8 +84,8 @@ function ListCard({
           <div className={classes.lastdetail}>{displayPs}</div>
         </div>}
         {width <= 530 && <div className={classes.lastdetails}>
-            <div className={classes.detail} >{seller}</div>
-            <div className={classes.lastdetail}>{treibstoff}</div>
+            <div className={classes.detail}>{treibstoff}</div>
+            <div className={classes.lastdetail} >{seller}</div>
         </div>}
         <div className={classes.interactions}>
           {width > 530 && <span className={classes.location}>
@@ -92,24 +98,13 @@ function ListCard({
             <div className={`${classes.i} ${classes.b} ${classes.lasticon}`}><EyeIcon className={classes.icon} /></div>
         </div>}
         </div>
-        <div className={classes.price}>€ {displayPrice},-</div>
-      </div>
-    </div>
-    {width <= 530 && <div className={classes.smallcontainer}>
-        <div className={classes.belowimg}>
-            <div className={classes.responsiveicons}>
-                <div className={`${classes.firstt} ${classes.r}`}><FavoriteIcon className={classes.icon} /></div>
-                <div className={`${classes.t} ${classes.r}`}><ShareIcon className={classes.icon} /></div>
-                <div className={`${classes.t} ${classes.r} ${classes.lasticon}`}><EyeIcon className={classes.icon} /></div>
-            </div>
-        </div>
-        <div className={`${classes.belowabout} ${colorad == true && classes.belowaboutcolorad}`}>
-            {width <= 530 && <span className={classes.location}>
+       { width <= 530 && <span className={classes.location}>
             <CompanyLocation className={classes.svg} />
             <span className={classes.locationtext}>{state}{width > 530 && ", " + country}</span>
-          </span>}
-        </div>
-    </div>}
+        </span>}
+        {width > 530 && <div className={classes.price}>€ {displayPrice},-</div>}
+      </div>
+    </div>
     </div>
   );
 }
