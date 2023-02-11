@@ -74,7 +74,7 @@ function ListCard({
         <div className={classes.details}>
           <div className={classes.detail}>{baujahr}</div>
           {width > 900 && <div className={classes.detail}>{treibstoff}</div>}
-          <div className={classes.detail}>{getriebe}</div>
+          <div className={classes.lastdetail}>{getriebe}</div>
           
           {width > 530 && <div className={classes.detail}>{displayKmStand}</div>}
           {width > 530 && <div className={classes.detail}>{displayPs}</div>}
