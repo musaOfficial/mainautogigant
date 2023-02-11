@@ -59,7 +59,7 @@ function ListCard({
   return (
     <div className={classes.wrapper}>
         {width <= 530 && <div className={`${classes.above} ${colorad == true && classes.coloradabove}`}>
-            <div className={classes.k}><EyeIcon className={classes.whiteicon} /></div>
+            <div className={`${classes.k} ${classes.firstk}`}><EyeIcon className={classes.whiteicon} /></div>
             <div className={classes.k}><FavoriteIcon className={classes.whiteicon} /></div>
             <div className={classes.k}><ShareIcon className={classes.whiteicon} /></div>
             <div className={classes.aboveprice}>€ {displayPrice},-</div>
