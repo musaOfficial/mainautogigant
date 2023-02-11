@@ -95,6 +95,7 @@
     min-height: 40px;
 }
 
+
 .belowaboutcolorad{
     background-color: #FFE497;
     border-right: 2px solid #FBB900;
@@ -176,6 +177,18 @@
     line-height: 12px;
     font-size: 12px;
     margin: 0;
+}
+
+.colorade{
+    border-right: 1px solid #b68909;
+}
+
+.coloradu{
+    border-right: 1px solid #FFe497;
+}
+
+.coloradwrapper{
+    background-color: #FBB900;
 }
 
 .detail{
@@ -516,4 +529,9 @@
     .titledistance{
         margin-top: -5px !important;
     }
+
+    
+.coloradcontainer{
+    background-color: #FBB900;
+}
 }

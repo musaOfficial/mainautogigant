@@ -58,15 +58,15 @@ function ListCard({
   var displayKmStand = kmStand.toLocaleString() + " KM";
 
   return (
-    <div className={classes.wrapper}>
+    <div className={`${classes.wrapper} ${colorad == true && classes.coloradwrapper}`}>
         {width <= 530 && <div className={`${classes.above} ${colorad == true && classes.coloradabove}`}>
-            <div className={classes.e}><div className={classes.u}><div className={`${classes.k} ${classes.firstk}`}><EyeIcon className={classes.whiteicon} /></div></div></div>
-            <div className={classes.e}><div className={classes.u}><div className={`${classes.k} ${classes.firstk}`}><FavoriteIcon className={classes.whiteicon} /></div></div></div>
-            <div className={classes.e}><div className={classes.u}><div className={`${classes.k} ${classes.firstk}`}><ShareIcon className={classes.whiteicon} /></div></div></div>
+            <div className={`${classes.e} ${colorad == true && classes.colorade}`}><div className={`${classes.u} ${colorad == true && classes.coloradu}`}><div className={`${classes.k} ${classes.firstk}`}><EyeIcon className={classes.whiteicon} /></div></div></div>
+            <div className={`${classes.e} ${colorad == true && classes.colorade}`}><div className={`${classes.u} ${colorad == true && classes.coloradu}`}><div className={`${classes.k} ${classes.firstk}`}><FavoriteIcon className={classes.whiteicon} /></div></div></div>
+            <div className={`${classes.e} ${colorad == true && classes.colorade}`}><div className={`${classes.u} ${colorad == true && classes.coloradu}`}><div className={`${classes.k} ${classes.firstk}`}><ShareIcon className={classes.whiteicon} /></div></div></div>
             
             <div className={classes.aboveprice}>€ {displayPrice},-</div>
         </div>}
-        <div className={classes.container}>
+        <div className={`${classes.container} ${colorad == true && classes.coloradcontainer}`}>
       <div className={classes.img}>
         <Image src={img} layout="fill" objectFit="cover" />
       </div>
