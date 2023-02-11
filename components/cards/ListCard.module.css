@@ -12,7 +12,7 @@
     height: 30px;
     width: 100%;
     border-radius: 10px 10px 0 0;
-    background-color: #c8cbce;
+    background-color: #a6adb3;
     position: relative;
     display: flex;
     align-items: center;
@@ -406,7 +406,7 @@
 
     .container{
         height: 120px;
-        background-color: #c8cbce;
+        background-color: #a6adb3;
     }
 
     .details{
@@ -471,7 +471,7 @@
     }
 
     .container{
-        border-radius: 0 0 10px 10px;
+        border-radius:  0 0 10px 10px;
 
     }
     
