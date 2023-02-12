@@ -9,6 +9,7 @@
     border: 2px solid #F1F2F3;
     color: #fff;
     cursor: pointer;
+    margin-right: 10px;
 }
 
 .whitecheck{
@@ -17,4 +18,8 @@
 
 .blackcheck{
     color: #000;
+}
+
+.typlabel{
+    font-size: 13px;
 }

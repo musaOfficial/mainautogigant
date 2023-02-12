@@ -428,32 +428,31 @@
 }
 .numvonbis{
     height: 38px;
-    min-width: 50px !important;
-    max-width: 50px !important;
     padding-left: 10px !important;
-    box-sizing: border-box;
     border-radius: 5px;
+    width: 100%;
     
 }
 
 .numvonbis:focus{
     height: 38px;
-    min-width: 50px !important;
-    max-width: 50px !important;
     padding-left: 10px !important;
-    box-sizing: border-box;
     border-radius: 5px;
+    width: 100%;
 }
+
+
 
 .vonbisps{
     display: flex;
-    justify-content: space-between;
     font-size: 13px;
+    width: 100%;
 }
 
 .block{
     display: block;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .checkcenter{

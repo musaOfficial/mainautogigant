@@ -260,17 +260,18 @@ function SearchResults() {
       height: "40px",
     }),
     option: (styles, state) => ({
-      ...styles,
-      backgroundColor: state.isSelected ? "#fbb900" : "",
-      "&:active": "#fbb90080",
-      "&:hover": {
-        backgroundColor: "#FFE497",
-      },
-      "&:focus": {
-        backgroundColor: "#FBB900",
-      },
-      fontSize: "13px",
-      cursor: "pointer",
+        ...styles,
+        borderLeft: state.isDisabled ? "10px solid #FBB900" : "10px solid #FBB900",
+        backgroundColor: state.isSelected ? "#fbb900" : "",
+        "&:active": "#fbb90080",
+        "&:hover": {
+            backgroundColor: "#FFE497",
+        },
+        "&:focus": {
+            backgroundColor: "#FBB900",
+        },
+        fontSize: "13px",
+        cursor: "pointer",
     }),
   };
 
@@ -328,6 +329,15 @@ function SearchResults() {
   const [gigaChecked, setGigaChecked] = useState();
   const [stadt, setStadt] = useState();
   const [grenz, setGrenz] = useState();
+  const [kilometerVon, setKilometerVon] = useState();
+  const [kilometerBis, setKilometerBis] = useState();
+  const [isNichtraucherfahrzeug, setIsNichtraucherfahrzeug] = useState(false);
+  const [isGarantie, setIsGarantie] = useState(false);
+  const [isScheckhaftgepflegt, setIsScheckhaftgepflegt] = useState(false);
+  const [isHerstellerzertifizierung, setIsHerstellerzertifizierung] = useState(false);
+  const [isRusspartikelfilter, setIsRusspartikelfilter] = useState(false);
+  const [isMwStAusweisbar, setIsMwStAusweisbar] = useState(false);
+
   // Filter - Area
   const [expanded, setExpanded] = useState(true);
   const [brandName, setBrandName] = useState({});
@@ -1722,7 +1732,7 @@ function SearchResults() {
                     }}
                   >
                     <div className={classes.sectionheading}>
-                      BASISDATEN & STANDORT
+                      Basisdaten & Standort
                     </div>
                     <Expand
                       className={
@@ -1910,33 +1920,30 @@ function SearchResults() {
                             onChange={(e) => setUmkreis(e.value)}
                           />
                           </div>
-                        <div  className="mt-2 mb-2">
+                        <div  className="mt-2">
                         <ControlledCheckbox onUpdate={val => {
                             setGrenz(val);
                         }} label={"Grenzübergreifend"} />
                         </div>
-                        <div className={`${classes.marginbottom}`}>
-                          <label>Kilometerstand</label>
-                          <div className={`${classes.halfselect} mt-1`}>
+                          <label className="font-bold -mb-1 mt-2">Kilometerstand</label>
+                          <div className={`${classes.halfselect} mt-1 mb-2`}>
                             <Select
                               className={classes.halfselect1}
-                              options={van1}
+                              options={mileageRanges}
                               styles={halfSelectStyle1}
                               placeholder="Von"
+                              onChange={(e) => setKilometerVon(e.value)}
                             />
                             <Select
                               className={classes.halfselect2}
-                              options={van2}
+                              options={mileageRanges}
                               styles={halfSelectStyle2}
                               placeholder="Bis"
+                              onChange={(e) => setKilometerBis(e.value)}
                             />
                           </div>
-                        </div>
-                        <div
-                          className={`${classes.flex} ${classes.marginbottom}`}
-                        >
-                          <div className={classes.flex1}>
-                            <label className="font-bold">Leistung</label>
+                        <div>
+                            <label className="font-bold -mb-1 mt-2">Leistung</label>
                             <Select
                               options={van1}
                               styles={style}
@@ -1950,11 +1957,11 @@ function SearchResults() {
                                   : marke1[0].label
                               }
                               placeholder={"Alle"}
-                              className="mt-1 mb-1"
+                              className=""
                             />
                           </div>
                           <div className={`${classes.vonbisps}`}>
-                            <div className={classes.flex2}>
+                            <div className={"w-full mr-2.5"}>
                               <label className={classes.block}>Von</label>
                               <input
                                 type={"number"}
@@ -1962,7 +1969,7 @@ function SearchResults() {
                                 placeholder="PS"
                               />
                             </div>
-                            <div>
+                            <div className="w-full">
                               <label className={classes.block}>Bis</label>
                               <input
                                 type={"number"}
@@ -1971,86 +1978,28 @@ function SearchResults() {
                               />
                             </div>
                           </div>
-                        </div>
-                        <div className={`${classes.marginbottom}`}>
-                          <label>Getriebe</label>
+                        <div className={`mt-2`}>
                           <Select
                             styles={style}
                             options={getri}
                             placeholder="Getriebe"
-                            className="mt-1 mb-1"
+                            className=""
                           />
                         </div>
                         <div
                           className={`${classes.anzahltuerencontainer} ${classes.marginbottom}`}
                         >
-                          <label className={classes.block}>Anzahl Türen</label>
-                          <div className={`${classes.flexverkaeuferart} mt-1`}>
-                            <div className={classes.verkaeuferart}>
-                              <div className={classes.checkcenter}>
-                                <input
-                                  id="turalle"
-                                  type={"checkbox"}
-                                  className={classes.varientinputsmaller}
-                                />
-                                <label
-                                  className="!font-normal cursor-pointer"
-                                  htmlFor="turalle"
-                                >
-                                  Alle
-                                </label>
-                              </div>
-                            </div>
-                            <div className={classes.verkaeuferart}>
-                              <div className={classes.checkcenter}>
-                                <input
-                                  id="tur23"
-                                  type={"checkbox"}
-                                  className={classes.varientinputsmaller}
-                                />
-                                <label
-                                  className="!font-normal cursor-pointer"
-                                  htmlFor="tur23"
-                                >
-                                  2/3
-                                </label>
-                              </div>
-                            </div>
-                            <div className={classes.verkaeuferart}>
-                              <div className={classes.checkcenter}>
-                                <input
-                                  id="tur45"
-                                  type={"checkbox"}
-                                  className={classes.varientinputsmaller}
-                                />
-                                <label
-                                  className="!font-normal cursor-pointer"
-                                  htmlFor="tur45"
-                                >
-                                  4/5
-                                </label>
-                              </div>
-                            </div>
-                            <div className={classes.verkaeuferart}>
-                              <div className={classes.checkcenter}>
-                                <input
-                                  id="tur67"
-                                  type={"checkbox"}
-                                  className={classes.varientinputsmaller}
-                                />
-                                <label
-                                  className="!font-normal cursor-pointer"
-                                  htmlFor="tur67"
-                                >
-                                  6/7
-                                </label>
-                              </div>
-                            </div>
+                          <div className={`${classes.flexverkaeuferart}`}>
+                              <Select 
+                                styles={style}
+                                options={van1}
+                                placeholder={"Anzahl Türen"}
+                                className={"mt-2 w-full"}
+                              />
                           </div>
                         </div>
-                        <div className={classes.marginbottom}>
-                          <label>Sitzplätze</label>
-                          <div className={`${classes.halfselect} mt-1`}>
+                          <label className="font-bold mt-2">Sitzplätze</label>
+                          <div className={`${classes.halfselect}`}>
                             <Select
                               className={classes.halfselect1}
                               options={van1}
@@ -2064,126 +2013,21 @@ function SearchResults() {
                               placeholder="Bis"
                             />
                           </div>
-                        </div>
-                        <div
-                          className={`${classes.mgb} ${classes.marginbottom}`}
-                        >
-                          <label className={classes.block}>Verkäufer</label>
                           <div className={classes.flexverkaeuferart}>
-                            <div className={classes.verkaeuferart}>
-                              <div className={classes.checkcenter}>
-                                <input
-                                  id="veralle"
-                                  type={"checkbox"}
-                                  className={classes.varientinputsmaller}
-                                />
-                                <label
-                                  className={`${classes.spantransformation} !font-normal text-sm ml-1 cursor-pointer`}
-                                  htmlFor="veralle"
-                                >
-                                  Alle
-                                </label>
-                              </div>
-                            </div>
-                            <div className={classes.verkaeuferart}>
-                              <div className={classes.checkcenter}>
-                                <input
-                                  id="verhaendler"
-                                  type={"checkbox"}
-                                  className={classes.varientinputsmaller}
-                                />
-                                <label
-                                  className={`${classes.spantransformation} !font-normal text-sm ml-1 cursor-pointer`}
-                                  htmlFor="verhaendler"
-                                >
-                                  Händler
-                                </label>
-                              </div>
-                            </div>
-                            <div className={classes.verkaeuferart}>
-                              <div className={classes.checkcenter}>
-                                <input
-                                  id="verprivat"
-                                  type={"checkbox"}
-                                  className={classes.varientinputsmaller}
-                                />
-                                <label
-                                  className={`${classes.spantransformation} !font-normal text-sm ml-1 cursor-pointer`}
-                                  htmlFor="verprivat"
-                                >
-                                  Privat
-                                </label>
-                              </div>
-                            </div>
+                              <Select 
+                                styles={style}
+                                options={van1}
+                                placeholder="Verkäuferart"
+                                className="w-full mt-2"
+                              />
                           </div>
-                        </div>
                         <div className={`${classes.fahrzeugzustandcontainer}`}>
-                          <label className="font-bold">Fahrzeugzustand</label>
-                          <div>
-                            <input
-                              id="fahalle"
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}
-                            />
-                            <label
-                              className={`text-sm ml-1 cursor-pointer`}
-                              htmlFor="fahalle"
-                            >
-                              Alle
-                            </label>
-                          </div>
-                          <div>
-                            <input
-                              id="fahgeb"
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}
-                            />
-                            <label
-                              className="text-sm ml-1 cursor-pointer"
-                              htmlFor="fahgeb"
-                            >
-                              Gebraucht
-                            </label>
-                          </div>
-                          <div>
-                            <input
-                              id="fahjah"
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}
-                            />
-                            <label
-                              className="text-sm ml-1 cursor-pointer"
-                              htmlFor="fahjah"
-                            >
-                              Jahreswagen
-                            </label>
-                          </div>
-                          <div>
-                            <input
-                              id="fahvor"
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}
-                            />
-                            <label
-                              className="text-sm ml-1 cursor-pointer"
-                              htmlFor="fahvor"
-                            >
-                              Vorführwagen
-                            </label>
-                          </div>
-                          <div>
-                            <input
-                              id="fahtag"
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.transformtocenter} mb-2`}
-                            />
-                            <label
-                              className="text-sm ml-1 cursor-pointer"
-                              htmlFor="fahtag"
-                            >
-                              Tageszulassung
-                            </label>
-                          </div>
+                          <Select 
+                            styles={style}
+                            options={van1}
+                            placeholder={"Fahrzeugzustand"}
+                            className="mt-2"
+                          />
                         </div>
                       </div>
                     </div>
@@ -2194,7 +2038,7 @@ function SearchResults() {
                   className={classes.ausstattung}
                   onClick={() => setOpenAusstattung(true)}
                 >
-                  <span className="">AUSSTATTUNG</span>
+                  <span className="">Ausstattung</span>
                   <PlusIcon className={classes.plusicon} />
                 </div>
                 {/* FARBE */}
@@ -2218,7 +2062,7 @@ function SearchResults() {
                       }
                     }}
                   >
-                    <div className={classes.sectionheading}>FARBE</div>
+                    <div className={classes.sectionheading}>Farbe</div>
                     <Expand
                       className={
                         openFarbe == false
@@ -2230,208 +2074,22 @@ function SearchResults() {
                   {openFarbe == true && (
                     <div className={classes.basiscontainer}>
                       <div>
-                        <label
-                          className={`${classes.fontsize13} font-semibold`}
-                        >
-                          Außenfarbe
-                        </label>
-                        <div className={classes.farben}>
-                          <div className={classes.farbencolumn}>
-                            <div>
-                              <input
-                                id="farsch"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.schwarz}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="farsch"
-                              >
-                                Schwarz
-                              </label>
-                            </div>
-                            <div>
-                              <input
-                                id="farbei"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.beige}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="farbei"
-                              >
-                                Beige
-                              </label>
-                            </div>
-                            <div>
-                              <input
-                                id="fargol"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.gold}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="fargol"
-                              >
-                                Gold
-                              </label>
-                            </div>
-                            <div>
-                              <input
-                                id="fargra"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.grau}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="fargra"
-                              >
-                                Grau
-                              </label>
-                            </div>
-                            <div>
-                              <input
-                                id="fargel"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.gelb}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="fargel"
-                              >
-                                Gelb
-                              </label>
-                            </div>
-                            <div>
-                              <input
-                                id="farrot"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.rot}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="farrot"
-                              >
-                                Rot
-                              </label>
-                            </div>
-                            <div>
-                              <input
-                                id="farsil"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.silber}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="farsil"
-                              >
-                                Silber
-                              </label>
-                            </div>
-                          </div>
-                          <div className={classes.farbencolumn2}>
-                            <div>
-                              <input
-                                id="farwei"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.weiss}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="farwei"
-                              >
-                                Weiss
-                              </label>
-                            </div>
-                            <div>
-                              <input
-                                id="farbla"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.blau}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="farbla"
-                              >
-                                Blau
-                              </label>
-                            </div>
-                            <div>
-                              <input
-                                id="farbra"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.braun}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="farbra"
-                              >
-                                Braun
-                              </label>
-                            </div>
-                            <div>
-                              <input
-                                id="farora"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.orange}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="farora"
-                              >
-                                Orange
-                              </label>
-                            </div>
-                            <div>
-                              <input
-                                id="farvio"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.violett}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="farvio"
-                              >
-                                Violett
-                              </label>
-                            </div>
-                            <div>
-                              <input
-                                id="fargru"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.gruen}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="fargru"
-                              >
-                                Grün
-                              </label>
-                            </div>
-                            <div>
-                              <input
-                                id="farbro"
-                                type={"checkbox"}
-                                className={`${classes.varientinputsmaller} ${classes.bronze}`}
-                              />
-                              <label
-                                className={classes.colortext1}
-                                htmlFor="farbro"
-                              >
-                                Bronze
-                              </label>
-                            </div>
-                          </div>
-                        </div>
+                            <Select 
+                                styles={style}
+                                options={van1}
+                                className={"w-full mb-2"}
+                                placeholder={"Außenfarbe"}
+                            />
                         <label className="text-sm font-semibold">
                           Lackierungsart
                         </label>
                         <div className={classes.colorrow}>
-                          <input
-                            type={"checkbox"}
-                            className={`${classes.varientinputsmaller} ${classes.weiss}`}
+                          <ControlledCheckbox 
+                            onUpdate={val => {
+                                setMetalliclackierung(val);
+                            }}
+                            label={" Metallic"}
                           />
-                          <span className={classes.fontsize13}>Metallic</span>
                         </div>
                       </div>
                     </div>
@@ -2458,7 +2116,7 @@ function SearchResults() {
                       }
                     }}
                   >
-                    <div className={classes.sectionheading}>POLSTERFARBE</div>
+                    <div className={classes.sectionheading}>Polsterfarbe</div>
                     <Expand
                       className={
                         openPolsterFarbe == false
@@ -2469,172 +2127,17 @@ function SearchResults() {
                   </div>
                   {openPolsterFarbe == true && (
                     <div className={classes.basiscontainer}>
-                      <div className={classes.polsterfarben}>
-                        <div className={classes.farbecol1}>
-                          <div>
-                            <input
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.beige}`}
-                            />
-                            <label>Beige</label>
-                          </div>
-                          <div>
-                            <input
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.weiss}`}
-                            />
-                            <label>Weiß</label>
-                          </div>
-                          <div>
-                            <input
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.braun}`}
-                            />
-                            <label>Braun</label>
-                          </div>
-                          <div className={classes.marginbottomnone}>
-                            <input
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.gruen}`}
-                            />
-                            <label>Grün</label>
-                          </div>
-                        </div>
-                        <div className={classes.farbecol2}>
-                          <div>
-                            <input
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.blau}`}
-                            />
-                            <label>Blau</label>
-                          </div>
-                          <div>
-                            <input
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.schwarz}`}
-                            />
-                            <label>Schwarz</label>
-                          </div>
-                          <div>
-                            <input
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.grau}`}
-                            />
-                            <label>Grau</label>
-                          </div>
-                          <div className={classes.marginbottomnone}>
-                            <input
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.gelb}`}
-                            />
-                            <label>Gelb</label>
-                          </div>
-                        </div>
-                        <div className={classes.farbecol3}>
-                          <div>
-                            <input
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.orange}`}
-                            />
-                            <label>Orange</label>
-                          </div>
-                          <div>
-                            <input
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller} ${classes.rot}`}
-                            />
-                            <label>Rot</label>
-                          </div>
-                          <div className={classes.marginbottomnone}>
-                            <input
-                              type={"checkbox"}
-                              className={`${classes.varientinputsmaller}`}
-                            />
-                            <label>Sonstiges</label>
-                          </div>
-                        </div>
-                      </div>
-                      <label className={classes.materiallabel}>Material</label>
-                      <div className={classes.materialcontainer}>
-                        <div>
-                          <input
-                            id="matalc"
-                            type={"checkbox"}
-                            className={classes.varientinputsmaller}
-                          />
-                          <label
-                            className="text-sm ml-1 cursor-pointer"
-                            htmlFor="matalc"
-                          >
-                            Alcantara
-                          </label>
-                        </div>
-                        <div>
-                          <input
-                            id="matsto"
-                            type={"checkbox"}
-                            className={classes.varientinputsmaller}
-                          />
-                          <label
-                            className="text-sm ml-1 cursor-pointer"
-                            htmlFor="matsto"
-                          >
-                            Stoff
-                          </label>
-                        </div>
-                        <div>
-                          <input
-                            id="matvol"
-                            type={"checkbox"}
-                            className={classes.varientinputsmaller}
-                          />
-                          <label
-                            className="text-sm ml-1 cursor-pointer"
-                            htmlFor="matvol"
-                          >
-                            Vollleder
-                          </label>
-                        </div>
-                        <div>
-                          <input
-                            id="mattei"
-                            type={"checkbox"}
-                            className={classes.varientinputsmaller}
-                          />
-                          <label
-                            className="text-sm ml-1 cursor-pointer"
-                            htmlFor="mattei"
-                          >
-                            Teilleder
-                          </label>
-                        </div>
-                        <div>
-                          <input
-                            id="matvel"
-                            type={"checkbox"}
-                            className={classes.varientinputsmaller}
-                          />
-                          <label
-                            className="text-sm ml-1 cursor-pointer"
-                            htmlFor="matvel"
-                          >
-                            Velours
-                          </label>
-                        </div>
-                        <div>
-                          <input
-                            id="matson"
-                            type={"checkbox"}
-                            className={classes.varientinputsmaller}
-                          />
-                          <label
-                            className="text-sm ml-1 cursor-pointer"
-                            htmlFor="matson"
-                          >
-                            Sonstiges
-                          </label>
-                        </div>
-                      </div>
+                      <Select 
+                        styles={style}
+                        options={van1}
+                        placeholder="Polsterfarbe"
+                      />
+                      <Select 
+                        styles={style}
+                        options={van1}
+                        placeholder="Material"
+                        className="mt-2"
+                      />
                     </div>
                   )}
                 </div>
@@ -2660,7 +2163,7 @@ function SearchResults() {
                     }}
                   >
                     <div className={classes.sectionheading}>
-                      FAHRZEUGZUSTAND
+                      Fahrzeugzustand
                     </div>
                     <Expand
                       className={
@@ -2700,59 +2203,31 @@ function SearchResults() {
                       </div>
                       <div className={`${classes.materialcontainer}`}>
                         <div>
-                          <input
-                            id="matnic"
-                            type={"checkbox"}
-                            className={classes.varientinputsmaller}
-                          />
-                          <label
-                            className="ml-1 text-sm cursor-pointer"
-                            htmlFor="matnic"
-                          >
-                            Nichtraucherfahrzeug
-                          </label>
+                          <ControlledCheckbox onUpdate={val => {
+                            setIsNichtraucherfahrzeug(val);
+                          }} label="Nichtraucherfahrzeug" />
                         </div>
                         <div>
-                          <input
-                            id="matgar"
-                            type={"checkbox"}
-                            className={classes.varientinputsmaller}
+                          <ControlledCheckbox 
+                          onUpdate={val => {
+                            setIsGarantie(val);
+                          }}
+                          label="Garantie"
                           />
-                          <label
-                            className="ml-1 text-sm cursor-pointer"
-                            htmlFor="matgar"
-                          >
-                            Garantie
-                          </label>
                         </div>
                         <div>
-                          <input
-                            id="matsch"
-                            type={"checkbox"}
-                            className={classes.varientinputsmaller}
-                          />
-                          <label
-                            className="ml-1 text-sm cursor-pointer"
-                            htmlFor="matsch"
-                          >
-                            Scheckhaftgepflegt
-                          </label>
+                          <ControlledCheckbox onUpdate={val => {
+                            setIsScheckhaftgepflegt(val);
+                          }} label="Scheckhaftgepflegt" />
                         </div>
                         <div>
-                          <input
-                            id="mather"
-                            type={"checkbox"}
-                            className={classes.varientinputsmaller}
-                          />
-                          <label
-                            className="ml-1 text-sm cursor-pointer"
-                            htmlFor="mather"
-                          >
-                            Herstellerzertifizerung
+                          <ControlledCheckbox onUpdate={val => {
+                            setIsHerstellerzertifizierung(val);
+                          }} label="Herstellerzertifizierung" />
                             <div className={classes.belowtext}>
                               (Technisch geprüfte{"\n"}Fahrzeuge mit Garantie)
                             </div>
-                          </label>
+                        
                         </div>
                       </div>
                     </div>
@@ -2779,7 +2254,7 @@ function SearchResults() {
                       }
                     }}
                   >
-                    <div className={classes.sectionheading}>UMWELT</div>
+                    <div className={classes.sectionheading}>Umwelt</div>
                     <Expand
                       className={
                         openUmwelt == false
@@ -2814,17 +2289,9 @@ function SearchResults() {
                       </div>
                       <div className={`${classes.materialcontainer}`}>
                         <div>
-                          <input
-                            id="matruss"
-                            type={"checkbox"}
-                            className={classes.varientinputsmaller}
-                          />
-                          <label
-                            className="!font-normal text-sm ml-1 cursor-pointer"
-                            htmlFor="matruss"
-                          >
-                            Rußpartikelfilter
-                          </label>
+                          <ControlledCheckbox onUpdate={val => {
+                            setIsRusspartikelfilter(val);
+                          }} label="Rußpartikelfilter" />
                         </div>
                       </div>
                     </div>
@@ -2851,7 +2318,7 @@ function SearchResults() {
                       }
                     }}
                   >
-                    <div className={classes.sectionheading}>ANGEBOTDETAILS</div>
+                    <div className={classes.sectionheading}>Angebotdetails</div>
                     <Expand
                       className={
                         openAngebotDetails == false
@@ -2873,17 +2340,9 @@ function SearchResults() {
                       </div>
                       <div className={`${classes.materialcontainer} mt-2`}>
                         <div>
-                          <input
-                            id="matmwst"
-                            type={"checkbox"}
-                            className={classes.varientinputsmaller}
-                          />
-                          <label
-                            className="text-sm ml-1 cursor-pointer"
-                            htmlFor="matmwst"
-                          >
-                            MwST. ausweisbar
-                          </label>
+                            <ControlledCheckbox onUpdate={val => {
+                                setIsMwStAusweisbar(val);
+                            }} label="MwSt. ausweisbar" />
                         </div>
                       </div>
                     </div>
