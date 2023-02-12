@@ -253,28 +253,26 @@ function SearchResults() {
       ...base,
       boxShadow: "none",
       border: "none",
-      fontSize: "13px",
-      borderRadius: "10px",
+      fontSize: '13px',
+      borderRadius: '10px',
       width: "100%",
       cursor: "pointer",
-      height: "40px",
+      height: "40px !important",
     }),
     option: (styles, state) => ({
-        ...styles,
-        borderLeft: state.isDisabled ? "10px solid #FBB900" : "10px solid #FBB900",
-        backgroundColor: state.isSelected ? "#fbb900" : "",
-        "&:active": "#fbb90080",
-        "&:hover": {
-            backgroundColor: "#FFE497",
-        },
-        "&:focus": {
-            backgroundColor: "#FBB900",
-        },
-        fontSize: "13px",
-        cursor: "pointer",
+      ...styles,
+      backgroundColor: state.isSelected ? "#fbb900" : "",
+      "&:active": "#fbb90080",
+      "&:hover" : {
+        backgroundColor: "#FFE497"
+      },
+      "&:focus" : {
+        backgroundColor: "#FBB900"
+      },
+      fontSize: '13px',
+      cursor: "pointer",
     }),
   };
-
   const halfSelectStyle1 = {
     control: (base) => ({
       ...base,
@@ -284,7 +282,7 @@ function SearchResults() {
       borderRadius: "10px",
       fontSize: "13px",
       borderRadius: "10px 0px 0px 10px",
-      height: "40px",
+      height: "0px",
       width: "100%",
     }),
     menu: (styles, state) => ({
@@ -309,7 +307,7 @@ function SearchResults() {
       borderRadius: "10px",
       fontSize: "13px",
       borderRadius: "0 10px 10px 0",
-      height: "40px",
+      height: "0px",
       width: "100%",
     }),
     menu: (styles, state) => ({
@@ -324,6 +322,8 @@ function SearchResults() {
       fontSize: "13px",
     }),
   };
+
+  const [waehrung, setWaehrung] = useState("€");
 
   // Filter - Area
   const [gigaChecked, setGigaChecked] = useState();
@@ -1645,7 +1645,7 @@ function SearchResults() {
                     styles={style}
                     placeholder={"Sortieren"}
                     onChange={(e) => setSortOption(e.value)}
-                    className={"w-full"}
+                    className={"w-full h-10"}
                   />
                 </div>
               </div>
@@ -1809,7 +1809,7 @@ function SearchResults() {
                             value={modelName || marke1[0].label}
                             name={"Modell"}
                             isDisabled={!brandSelected}
-                            className="mt-1"
+                            className={`mt-1 ${classes.brand}`}
                           ></Select>
                         </div>
                         <div>
@@ -1836,32 +1836,25 @@ function SearchResults() {
                             options={carBodyTypes}
                             styles={style}
                             onChange={(e) => {
-                              setInputKarosserieform(e.value);
-                              setInputKarosserieformChanged(true);
+                                setInputKarosserieform(e.value);
+                                setInputKarosserieformChanged(true);
                             }}
                             value={
-                              inputKarosserieformChanged == false
+                                inputKarosserieformChanged == false
                                 ? brandName
                                 : marke1[0].label
                             }
                             placeholder={"Karroserieform"}
-                            className="mt-1 mb-2"
+                            className="mt-1"
                           />
                         </div>
-                        <div>
-                        <Select
-                          options={fuelTypes}
-                          styles={style}
-                          onChange={(e) => {
-                            setInputKraftstoff(e.value);
-                            setInputKraftstoffChanged(true);
-                          }}
-                          placeholder={"Kraftstoff"}
-                          className="mb-2"
-                        />
-                        </div>
-                        
-                          <label className={`font-bold`}>
+                            <Select 
+                              styles={style}
+                              options={van1}
+                              placeholder={`Preis in (${waehrung})`}
+                              className="mt-2"
+                            />
+                            <label className={`font-bold mt-1`}>
                             Erstzulassung
                           </label>
                           <div className={`${classes.halfselect}`}>
@@ -1882,21 +1875,18 @@ function SearchResults() {
                                 />
                             </div>
                           </div>
-                          <label className="font-bold -mb-1 mt-2">Preis</label>
-                          <div className={`${classes.halfselect} mt-1`}>
-                            <Select
-                              className={classes.halfselect1}
-                              options={priceRanges}
-                              styles={halfSelectStyle1}
-                              placeholder="Von"
-                            />
-                            <Select
-                              className={classes.halfselect2}
-                              options={priceRanges}
-                              styles={halfSelectStyle2}
-                              placeholder="Bis"
-                            />
-                          </div>
+                        <div>
+                        <Select
+                          options={fuelTypes}
+                          styles={style}
+                          onChange={(e) => {
+                            setInputKraftstoff(e.value);
+                            setInputKraftstoffChanged(true);
+                          }}
+                          placeholder={"Kraftstoff"}
+                          className={`mb-2 mt-2 ${classes.kraftstoffstyle}`}
+                        />
+                        </div>
                           <Select
                             styles={style}
                             options={countries}
@@ -1942,42 +1932,12 @@ function SearchResults() {
                               onChange={(e) => setKilometerBis(e.value)}
                             />
                           </div>
-                        <div>
-                            <label className="font-bold -mb-1 mt-2">Leistung</label>
-                            <Select
-                              options={van1}
-                              styles={style}
-                              onChange={(e) => {
-                                setInputKraftstoff(e.value);
-                                setInputKraftstoffChanged(true);
-                              }}
-                              value={
-                                inputKraftstoffChanged == false
-                                  ? brandName
-                                  : marke1[0].label
-                              }
-                              placeholder={"Alle"}
-                              className=""
-                            />
-                          </div>
-                          <div className={`${classes.vonbisps}`}>
-                            <div className={"w-full mr-2.5"}>
-                              <label className={classes.block}>Von</label>
-                              <input
-                                type={"number"}
-                                className={classes.numvonbis}
-                                placeholder="PS"
-                              />
-                            </div>
-                            <div className="w-full">
-                              <label className={classes.block}>Bis</label>
-                              <input
-                                type={"number"}
-                                className={classes.numvonbis}
-                                placeholder="PS"
-                              />
-                            </div>
-                          </div>
+                        <Select 
+                            styles={style}
+                            options={getri}
+                            placeholder="Leistung"
+                            className="mt-2"
+                        />
                         <div className={`mt-2`}>
                           <Select
                             styles={style}
@@ -1998,21 +1958,12 @@ function SearchResults() {
                               />
                           </div>
                         </div>
-                          <label className="font-bold mt-2">Sitzplätze</label>
-                          <div className={`${classes.halfselect}`}>
-                            <Select
-                              className={classes.halfselect1}
-                              options={van1}
-                              styles={halfSelectStyle1}
-                              placeholder="Von"
+                            <Select 
+                                styles={style}
+                                options={van1}
+                                placeholder="Sitzplätze"
+                                className="w-full mt-2"
                             />
-                            <Select
-                              className={classes.halfselect2}
-                              options={van2}
-                              styles={halfSelectStyle2}
-                              placeholder="Bis"
-                            />
-                          </div>
                           <div className={classes.flexverkaeuferart}>
                               <Select 
                                 styles={style}
