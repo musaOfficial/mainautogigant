@@ -1884,7 +1884,7 @@ function SearchResults() {
                             setInputKraftstoffChanged(true);
                           }}
                           placeholder={"Kraftstoff"}
-                          className={`mb-2 mt-2 ${classes.kraftstoffstyle}`}
+                          className={` mt-2 ${classes.kraftstoffstyle}`}
                         />
                         </div>
                           <Select
@@ -1915,23 +1915,12 @@ function SearchResults() {
                             setGrenz(val);
                         }} label={"Grenzübergreifend"} />
                         </div>
-                          <label className="font-bold -mb-1 mt-2">Kilometerstand</label>
-                          <div className={`${classes.halfselect} mt-1 mb-2`}>
-                            <Select
-                              className={classes.halfselect1}
-                              options={mileageRanges}
-                              styles={halfSelectStyle1}
-                              placeholder="Von"
-                              onChange={(e) => setKilometerVon(e.value)}
-                            />
-                            <Select
-                              className={classes.halfselect2}
-                              options={mileageRanges}
-                              styles={halfSelectStyle2}
-                              placeholder="Bis"
-                              onChange={(e) => setKilometerBis(e.value)}
-                            />
-                          </div>
+                        <Select 
+                            styles={style}
+                            options={getri}
+                            placeholder="Kilometerstand"
+                            className="mt-2"
+                        />
                         <Select 
                             styles={style}
                             options={getri}
