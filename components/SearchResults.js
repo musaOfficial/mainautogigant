@@ -49,8 +49,9 @@ import {
 import Angebot from "./ui/ads/Angebot";
 import Page from "./pagesearch/PageSearch";
 import ListCard from "./cards/ListCard";
-import ControlledCheckbox from "./ui/ControlledCheckbox";
 import TopRow from "./ui/TopRow";
+import ControlledCheckbox from "./ui/ControlledCheckbox";
+import X from "./../public/x.svg";
 
 const useDeviceSize = () => {
   const [width, setWidth] = useState(0);
@@ -253,8 +254,8 @@ function SearchResults() {
       ...base,
       boxShadow: "none",
       border: "none",
-      fontSize: '13px',
-      borderRadius: '10px',
+      fontSize: "13px",
+      borderRadius: "10px",
       width: "100%",
       cursor: "pointer",
       height: "40px !important",
@@ -263,13 +264,13 @@ function SearchResults() {
       ...styles,
       backgroundColor: state.isSelected ? "#fbb900" : "",
       "&:active": "#fbb90080",
-      "&:hover" : {
-        backgroundColor: "#FFE497"
+      "&:hover": {
+        backgroundColor: "#FFE497",
       },
-      "&:focus" : {
-        backgroundColor: "#FBB900"
+      "&:focus": {
+        backgroundColor: "#FBB900",
       },
-      fontSize: '13px',
+      fontSize: "13px",
       cursor: "pointer",
     }),
   };
@@ -334,7 +335,8 @@ function SearchResults() {
   const [isNichtraucherfahrzeug, setIsNichtraucherfahrzeug] = useState(false);
   const [isGarantie, setIsGarantie] = useState(false);
   const [isScheckhaftgepflegt, setIsScheckhaftgepflegt] = useState(false);
-  const [isHerstellerzertifizierung, setIsHerstellerzertifizierung] = useState(false);
+  const [isHerstellerzertifizierung, setIsHerstellerzertifizierung] =
+    useState(false);
   const [isRusspartikelfilter, setIsRusspartikelfilter] = useState(false);
   const [isMwStAusweisbar, setIsMwStAusweisbar] = useState(false);
 
@@ -354,12 +356,7 @@ function SearchResults() {
   const displayAnzahlAngebote = anzahlAngebote.toLocaleString();
 
   const [filters, setFilters] = useState([
-    "Österreich",
-    "Mercedes",
-    "CLS 320",
-    "Österreichh",
-    "Mercedess",
-    "CLS 3200",
+    { name: "Kraftstoff", value: "Benzin" },
   ]);
 
   const [openBasisdaten, setOpenBasisdaten] = useState(false);
@@ -385,177 +382,18 @@ function SearchResults() {
   const [gigaInfoOpen, setGigaInfoOpen] = useState(false);
   const [gridView, setGridView] = useState(true);
 
-  const [zweizonenKlima, setZweizonenKlima] = useState(false);
-  const [dreizonenKlima, setDreizonenKlima] = useState(false);
-  const [drei60kamera, setDrei60kamera] = useState(false);
-  const [vierzonenKlima, setVierzonenKlima] = useState(false);
-  const [ABS, setABS] = useState(false);
-  const [abstandsTempomat, setAbstandsTempomat] = useState(false);
-  const [abstandsWarner, setAbstandsWarner] = useState(false);
-  const [airbagHinten, setAirbagHinten] = useState(false);
-  const [alarmanlage, setAlarmanlage] = useState(false);
-  const [allrad, setAllrad] = useState(false);
-  const [allwetterReifen, setAllwetterReifen] = useState(false);
-  const [alufelgen, setAlufelgen] = useState(false);
-  const [ambientebeleuchtung, setAmbientebeleuchtung] = useState(false);
-  const [androidauto, setAndroidauto] = useState(false);
-  const [anhaengerkupplung, setAnhaengerkupplung] = useState(false);
-  const [applecarplay, setApplecarplay] = useState(false);
-  const [armlehne, setArmlehne] = useState(false);
-  const [beheizbareFrontscheibe, setBeheizbareFrontscheibe] = useState(false);
-  const [beheizbaresLenkrad, setBeheizbaresLenkrad] = useState(false);
-  const [behindertenGerecht, setBehindertenGerecht] = useState(false);
-  const [beifahrerairbag, setBeifahrerairbag] = useState(false);
-  const [berganfahrassistent, setBerganfahrassistent] = useState(false);
-  const [bixenonscheinwerfer, setBixenonscheinwerfer] = useState(false);
-  const [biodieselumruestung, setBiodieselumruestung] = useState(false);
-  const [blendfreiesFernlicht, setBlendfreiesFernlicht] = useState(false);
-  const [bluethoot, setBluethoot] = useState(false);
-  const [bordcomputer, setBordcomputer] = useState(false);
-  const [cd, setCd] = useState(false);
-  const [dabradio, setDabradio] = useState(false);
-  const [dachreling, setDachreling] = useState(false);
-  const [ezehngeeignet, setEzehngeeignet] = useState(false);
-  const [einparkhilfe, setEinparkhilfe] = useState(false);
-  const [einparkhilfeKamera, setEinparkhilfeKamera] = useState(false);
-  const [einparkhilfeSelbst, setEinparkhilfeSelbst] = useState(false);
-  const [einparkhilfeSensorenVorne, setEinparkhilfeSensorenVorne] =
-    useState(false);
-  const [einparkhilfeSensorenHinten, setEinparkhilfeSensorenHinten] =
-    useState(false);
-  const [elektrfensterheber, setElektrfensterheber] = useState(false);
-  const [elektrsitzhinten, setElektrsitzhinten] = useState(false);
-  const [elektrheckklappe, setElektrheckklappe] = useState(false);
-  const [elektrseitenspiegel, setElektrseitenspiegel] = useState(false);
-  const [elektrsitze, setElektrsitze] = useState(false);
-  const [elektrparkbremse, setElektrparkbremse] = useState(false);
-  const [esp, setEsp] = useState(false);
-  const [fahrerairbag, setFahrerairbag] = useState(false);
-  const [fernlichassistent, setFernlichassistent] = useState(false);
-  const [freisprecheinrichtung, setFreisprecheinrichtung] = useState(false);
-  const [gepaeckraum, setGepaeckraum] = useState(false);
-  const [geschwindigkeitsbegrenz, setGeschwindigkeitsbegrenz] = useState(false);
-  const [getonteScheiben, setGetonteScheiben] = useState(false);
-  const [headupDisplay, setHeadupDisplay] = useState(false);
-  const [induktionsladen, setInduktionsladen] = useState(false);
-  const [innenspiegelauto, setInnenspiegelauto] = useState(false);
-  const [isofix, setIsofix] = useState(false);
-  const [katalysator, setKatalysator] = useState(false);
-  const [klimaanlage, setKlimaanlage] = useState(false);
-  const [klimaautomatik, setKlimaautomatik] = useState(false);
-  const [kopfairbag, setKopfairbag] = useState(false);
-  const [kurvenlicht, setKurvenlicht] = useState(false);
-  const [laserlicht, setLaserlicht] = useState(false);
-  const [ledscheinwerfer, setLedscheinwerfer] = useState(false);
-  const [ledtagfahrlicht, setLedtagfahrlicht] = useState(false);
-  const [lederausstattung, setLederausstattung] = useState(false);
-  const [lederlenkrad, setLederlenkrad] = useState(false);
-  const [lichtsensor, setLichtsensor] = useState(false);
-  const [lordosenstuetze, setLordoesenstuetze] = useState(false);
-  const [luftfederung, setLuftfederung] = useState(false);
-  const [markise, setMarkise] = useState(false);
-  const [massageSitze, setMassageSitze] = useState(false);
-  const [mp3, setMp3] = useState(false);
-  const [muedigkeitswarn, setMuedigkeitswarn] = useState(false);
-  const [multifunktionslenkrad, setMultifunktionslenkrad] = useState(false);
-  const [musikstreamingIntegriert, setMusikstreamingIntegriert] =
-    useState(false);
-  const [nachtsichtAssistent, setNachtsichtAssistent] = useState(false);
-  const [navigationssystem, setNavigationssystem] = useState(false);
-  const [nebelscheinwerfer, setNebelscheinwerfer] = useState(false);
-  const [notbremsassistent, setNotbremsassistent] = useState(false);
-  const [notrad, setNotrad] = useState(false);
-  const [notrufsystem, setNotrufsystem] = useState(false);
-  const [pannenkit, setPannenkit] = useState(false);
-  const [panoramadach, setPanoramadach] = useState(false);
-  const [radio, setRadio] = useState(false);
-  const [raucherpaket, setRaucherpaket] = useState(false);
-  const [rechtslenker, setRechtslenker] = useState(false);
-  const [regensensor, setRegensensor] = useState(false);
-  const [reichweitenverlaengerer, setReichweitenverlaengerer] = useState(false);
-  const [reifendruckkontrollsystem, setReifendruckkontrollsystem] =
-    useState(false);
-  const [reserverad, setReserverad] = useState(false);
-  const [schaltwippen, setSchaltwippen] = useState(false);
-  const [scheinwerferreinigung, setScheinwerferreinigung] = useState(false);
-  const [schiebedach, setSchiebedach] = useState(false);
-  const [schiebetuer, setSchiebetuer] = useState(false);
-  const [schieblinks, setSchieblinks] = useState(false);
-  const [schiebrechts, setSchiebrechts] = useState(false);
-  const [schluessellose, setSchluessellose] = useState(false);
-  const [seitenairbag, setSeitenairbag] = useState(false);
-  const [servolenkung, setServolenkung] = useState(false);
-  const [sitzbelueftung, setSitzbelueftung] = useState(false);
-  const [sitzheizung, setSitzheizung] = useState(false);
-  const [skisack, setSkisack] = useState(false);
-  const [sommerreifen, setSommerreifen] = useState(false);
-  const [soundsystem, setSoundsystem] = useState(false);
-  const [spoiler, setSpoiler] = useState(false);
-  const [sportfahrwerk, setSportfahrwerk] = useState(false);
-  const [sportpaket, setSportpaket] = useState(false);
-  const [sportsitze, setSportsitze] = useState(false);
-  const [sprachsteuerung, setSprachsteuerung] = useState(false);
-  const [spurhalteassistent, setSpurhalteassistent] = useState(false);
-  const [stahlfelgen, setStahlfelgen] = useState(false);
-  const [standheizung, setStandheizung] = useState(false);
-  const [startstopauto, setStartstopauto] = useState(false);
-  const [tagfahrlicht, setTagfahrlicht] = useState(false);
-  const [taximietwage, setTaximietwagen] = useState(false);
-  const [teilbruecksitzbank, setTeilbruecksitzbank] = useState(false);
-  const [tempomat, setTempomat] = useState(false);
-  const [totwinkelAssistent, setTotwinkelAssitent] = useState(false);
-  const [touchscreen, setTouchscreen] = useState(false);
-  const [traktionskontrolle, setTraktionskontrolle] = useState(false);
-  const [tuning, setTuning] = useState(false);
-  const [tv, setTv] = useState(false);
-  const [umklappbeifahrer, setUmklappbeifahrer] = useState(false);
-  const [usb, setUsb] = useState(false);
-  const [verkehrszeichenErkennung, setVerkehrszeichenErkennung] =
-    useState(false);
-  const [vollledscheinwerfer, setVollledscheinwerfer] = useState(false);
-  const [volldigitalesKombiinstrument, setVolldigitalesKombiinstrument] =
-    useState(false);
-  const [wlan, setWlan] = useState(false);
-  const [wegfahrsperre, setWegfahrsperre] = useState(false);
-  const [windschott, setWindschott] = useState(false);
-  const [winterpaket, setWinterpaket] = useState(false);
-  const [winterreifen, setWinterreifen] = useState(false);
-  const [xenonscheinwerfer, setXenonscheinwerfer] = useState(false);
-  const [zentralverriegelung, setZentralverriegelung] = useState(false);
-  const [zentralFunkfern, setZentralFunkfern] = useState(false);
-  const [achtFachBereift, setAchtFachBereift] = useState(false);
-  const [kollisionsWarner, setKollisionsWarner] = useState(false);
-  const [komfortFahrwerk, setKomfortFahrwerk] = useState(false);
-  const [rueckfahrkamera, setRueckfahrkamera] = useState(false);
-  const [asr, setAsr] = useState(false);
-  const [leasingfaehigkeit, setLeasingfaehigkeit] = useState(false);
-  const [schisack, setSchisack] = useState(false);
-  const [automatischeHeckklappe, setAutomatischeHeckklappe] = useState(false);
-  const [serviceGepflegt, setServiceGepflegt] = useState(false);
-  const [lenkradheizung, setLenkradheizung] = useState(false);
-  const [sperrdifferential, setSperrdifferential] = useState(false);
-  const [dachgepaecktraeger, setDachgepaecktraeger] = useState(false);
-  const [metallicLackierung, setMetalliclackierung] = useState(false);
-  const [mittelarmlehne, setMittelarmlehne] = useState(false);
-  const [stabilitaetsprogramme, setStabilitaetsprogramme] = useState(false);
-  const [mwstAusweisbar, setMwstAusweisbar] = useState(false);
-  const [teilAutonomesFahren, setTeilAutonomesFahren] = useState(false);
-  const [nichtraucherfahrzeug, setNichtraucherFahrzeug] = useState(false);
-  const [parkhilfesensorenHintenUndVorne, setParkhilfesensorenHintenUndVorne] =
-    useState(false);
-
   const addModel = () => {
     setModelItems([
       ...modelItems,
       {
-        brandName: brandName.value,
-        modelName: modelName.value,
+        brandName: brandName,
+        modelName: modelName,
         varient: varient,
       },
     ]);
-    setBrandName({ value: "", label: "" });
+    setBrandName("");
     setVarient("");
-    setModelName({ value: "", label: "" });
+    setModelName("");
     setBrandNameInputValue("");
     setBrandSelected(false);
   };
@@ -642,61 +480,180 @@ function SearchResults() {
   ];
 
   const firstRegistrationRanges = [
-    {label: "2020", value: 2020},
-    {label: "2015", value: 2015},
-    {label: "2010", value: 2010},
-    {label: "2005", value: 2005},
-    {label: "2000", value: 2000},
-    {label: "1990", value: 1990},
-    {label: "1980", value: 1980}
+    { label: "2020", value: 2020 },
+    { label: "2015", value: 2015 },
+    { label: "2010", value: 2010 },
+    { label: "2005", value: 2005 },
+    { label: "2000", value: 2000 },
+    { label: "1990", value: 1990 },
+    { label: "1980", value: 1980 },
   ];
 
   const priceRanges = [
-    {label: "500 €", value: 500},
-    {label: "1000 €", value: 1000},
-    {label: "5000 €", value: 5000},
-    {label: "10000 €", value: 10000},
-    {label: "20000 €", value: 20000},
-    {label: "50000 €", value: 50000},
-    {label: "100000 €", value: 100000}
+    { label: "500 €", value: 500 },
+    { label: "1000 €", value: 1000 },
+    { label: "5000 €", value: 5000 },
+    { label: "10000 €", value: 10000 },
+    { label: "20000 €", value: 20000 },
+    { label: "50000 €", value: 50000 },
+    { label: "100000 €", value: 100000 },
   ];
 
   const countries = [
-    {label: "Österreich", value: "Österreich"},
-    {label: "Deutschland", value: "Deutschland"},
-    {label: "Türkei", value: "Türkei"},
-    {label: "Qatar", value: "Qatar"},
-    {label: "Schweiz", value: "Schweiz"},
-    {label: "Albanien", value: "Albanien"},
-    {label: "Belgien", value: "Belgien"},
-    {label: "Bulgarien", value: "Bulgarien"},
-    {label: "Dänemark", value: "Dänemark"},
-    {label: "Estland", value: "Estland"},
-    {label: "Finnland", value: "Finnland"},
-    {label: "Frankreich", value: "Frankreich"},
-    {label: "Griechenland", value: "Griechenland"},
+    { label: "Österreich", value: "Österreich" },
+    { label: "Deutschland", value: "Deutschland" },
+    { label: "Türkei", value: "Türkei" },
+    { label: "Qatar", value: "Qatar" },
+    { label: "Schweiz", value: "Schweiz" },
+    { label: "Albanien", value: "Albanien" },
+    { label: "Belgien", value: "Belgien" },
+    { label: "Bulgarien", value: "Bulgarien" },
+    { label: "Dänemark", value: "Dänemark" },
+    { label: "Estland", value: "Estland" },
+    { label: "Finnland", value: "Finnland" },
+    { label: "Frankreich", value: "Frankreich" },
+    { label: "Griechenland", value: "Griechenland" },
     {
-  label: "Ungarn", value: "Ungarn"},
-  {label: "Irland", value: "Irland"},
-  {label: "Italien", value: "Italien"},
-  {label: "Kroatien", value: "Kroatien"},
-  {label: "Lettland", value: "Lettland"},
-  {label: "Litauen", value: "Litauen"},
-  {label: "Luxemburg", value: "Luxemburg"},
-  {label: "Malta", value: "Malta"},
-  {label: "Niederlande", value: "Niederlande"},
-  {label: "Norwegen", value: "Norwegen"},
-  {label: "Polen", value: "Polen"},
-  {label: "Portugal", value: "Portugal"},
-  {label: "Rumänien", value: "Rumänien"},
-  {label: "Schweden", value: "Schweden"},
-  {label: "Slowakei", value: "Slowakei"},
-  {label: "Slowenien", value: "Slowenien"},
-  {label: "Spanien", value: "Spanien"},
-    ]
+      label: "Ungarn",
+      value: "Ungarn",
+    },
+    { label: "Irland", value: "Irland" },
+    { label: "Italien", value: "Italien" },
+    { label: "Kroatien", value: "Kroatien" },
+    { label: "Lettland", value: "Lettland" },
+    { label: "Litauen", value: "Litauen" },
+    { label: "Luxemburg", value: "Luxemburg" },
+    { label: "Malta", value: "Malta" },
+    { label: "Niederlande", value: "Niederlande" },
+    { label: "Norwegen", value: "Norwegen" },
+    { label: "Polen", value: "Polen" },
+    { label: "Portugal", value: "Portugal" },
+    { label: "Rumänien", value: "Rumänien" },
+    { label: "Schweden", value: "Schweden" },
+    { label: "Slowakei", value: "Slowakei" },
+    { label: "Slowenien", value: "Slowenien" },
+    { label: "Spanien", value: "Spanien" },
+  ];
 
+  const [infoOpen, setInfoOpen] = useState(false);
 
-    const [infoOpen, setInfoOpen] = useState(false);
+  // Ausstattungen UNTEN
+  const [selectedFeatures, setSelectedFeatures] = useState([]);
+  const [visibility, setVisibility] = useState(true);
+
+  const featuresKomfort = [
+    { id: 1, name: "Aut. Heckklappe" },
+    { id: 2, name: "Bordcomputer" },
+    { id: 3, name: "elektr. Fensterheber" },
+    { id: 4, name: "elektr. Sitze" },
+    { id: 5, name: "elektr. Spiegel" },
+    { id: 6, name: "Frontscheibenheizung" },
+    { id: 7, name: "Head-Up-Display" },
+    { id: 8, name: "ISOFIX" },
+    { id: 9, name: "Keyless entry" },
+    { id: 10, name: "Klimaanlage" },
+    { id: 11, name: "Klimaautomatik" },
+    { id: 12, name: "Lederausstattung" },
+    { id: 13, name: "Lederlenkrad" },
+    { id: 14, name: "Lenkradheizung" },
+    { id: 15, name: "Lordosenstütze" },
+    { id: 16, name: "Mittelarmlehne" },
+    { id: 17, name: "Multifunktionslenkrad" },
+    { id: 18, name: "Schisack" },
+    { id: 19, name: "Servolenkung" },
+    { id: 20, name: "Sitzheizung" },
+    { id: 21, name: "Sportsitze" },
+    { id: 22, name: "Zentralverriegelung" },
+  ];
+  const featuresInfotainment = [
+    { id: 23, name: "Android Auto" },
+    { id: 24, name: "Apple CarPlay" },
+    { id: 25, name: "Bluethoot / USB" },
+    { id: 26, name: "CD Player" },
+    { id: 27, name: "Freisprecheinrichtung" },
+    { id: 28, name: "Handy induktiv laden" },
+    { id: 29, name: "Media-Interface / mp3" },
+    { id: 30, name: "Navigationssystem" },
+    { id: 31, name: "Radio" },
+  ];
+  const featuresSicherheit = [
+    { id: 32, name: "ABS" },
+    { id: 33, name: "Alarmanlage" },
+    { id: 34, name: "Antriebsschlupfregelung (ASR)" },
+    { id: 35, name: "Beifahrerairbags" },
+    { id: 36, name: "Fahrerairbag" },
+    { id: 37, name: "Kopfairbags" },
+    { id: 38, name: "Lichtsensor" },
+    { id: 39, name: "Notrufsystem" },
+    { id: 40, name: "Parksensor hinten" },
+    { id: 41, name: "Parksensor vorne & hinten" },
+    { id: 42, name: "Regensensor" },
+    { id: 43, name: "Reifendrucksensor" },
+    { id: 44, name: "Seitenairbags" },
+    { id: 45, name: "Sperrdifferential" },
+    { id: 46, name: "Stabilitätsprogramme (ESP)" },
+  ];
+  const featuresFahrassistenzsysteme = [
+    { id: 47, name: "Abstandstempomat" },
+    { id: 48, name: "Einparkhilfe" },
+    { id: 49, name: "Fernlichtassistent" },
+    { id: 50, name: "Rückfahrkamera" },
+    { id: 51, name: "Spurhalteassistent" },
+    { id: 52, name: "Teilautonomes Fahren" },
+    { id: 53, name: "Tempomat" },
+    { id: 54, name: "Totwinkelassistent" },
+  ];
+  const featuresScheinwerfer = [
+    { id: 55, name: "Kurvenfahrlicht" },
+    { id: 56, name: "Laserlicht" },
+    { id: 57, name: "LED-Scheinwerfer" },
+    { id: 58, name: "Nebelscheinwerfer" },
+    { id: 59, name: "Tagfahrlicht" },
+    { id: 60, name: "Xenon" },
+  ];
+  const featuresExtras = [
+    { id: 61, name: "8-fach Bereift" },
+    { id: 62, name: "Anhängerkupplung" },
+    { id: 63, name: "Behindertengerecht" },
+    { id: 64, name: "Dachgepäckträger" },
+    { id: 65, name: "Dachreling" },
+    { id: 66, name: "Komfortfahrwerk" },
+    { id: 67, name: "Leasingfähig" },
+    { id: 68, name: "Leichtmetall-/Alufelgen" },
+    { id: 69, name: "Metallic-Lackierung" },
+    { id: 70, name: "MwSt. ausweisbar" },
+    { id: 71, name: "Nichtraucherfahrzeug" },
+    { id: 72, name: "Panoramadach" },
+    { id: 73, name: "Schaltwippen" },
+    { id: 74, name: "Schiebedach" },
+    { id: 75, name: "Servicegepflegt" },
+    { id: 76, name: "Sportfahrwerk" },
+    { id: 77, name: "Sportpaket" },
+    { id: 78, name: "Standheizung" },
+    { id: 79, name: "Start/Stopp-Automatik" },
+    { id: 80, name: "Winterpaket" },
+  ];
+
+  const handleFeatureSelect = (feature) => {
+    const index = selectedFeatures.findIndex((f) => f.id === feature.id);
+    if (index !== -1) {
+      setSelectedFeatures(selectedFeatures.filter((f, i) => i !== index));
+    } else {
+      setSelectedFeatures([...selectedFeatures, feature]);
+    }
+  };
+
+  useEffect(() => {
+    console.log(selectedFeatures);
+  }, [selectedFeatures]);
+
+  // Ausstattungen OBEN
+
+  useEffect(() => {
+    console.log(brandName);
+    console.log(modelName);
+    console.log(varient);
+  }, [brandName, modelName, varient]);
 
   return (
     <div
@@ -711,904 +668,121 @@ function SearchResults() {
             onClick={() => setOpenAusstattung(false)}
           />
           <div className={classes.ausstattungencon}>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={achtFachBereift}
-                onChange={() => setAchtFachBereift((d) => !d)}
-                className="mr-2"
-              />
-              8-fach Bereift
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={klimaanlage}
-                onChange={() => setKlimaanlage((d) => !d)}
-                className="mr-2"
-              />
-              Klimaanlage
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={parkhilfesensorenHintenUndVorne}
-                onChange={() => {
-                  setParkhilfesensorenHintenUndVorne((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Parksensor vorne & hinten
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={ABS}
-                onChange={() => {
-                  setABS((d) => !d);
-                }}
-                className="mr-2"
-              />
-              ABS
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={klimaautomatik}
-                onChange={() => {
-                  setKlimaautomatik((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Klimaautomatik
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={radio}
-                onChange={() => {
-                  setRadio((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Radio
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={abstandsTempomat}
-                onChange={() => {
-                  setAbstandsTempomat((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Abstandstempomat
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={kollisionsWarner}
-                onChange={() => {
-                  setKollisionsWarner((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Kollisionswarner
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={regensensor}
-                onChange={() => {
-                  setRegensensor((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Regensensor
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={alarmanlage}
-                onChange={() => {
-                  setAlarmanlage((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Alarmanlage
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={komfortFahrwerk}
-                onChange={() => {
-                  setKomfortFahrwerk((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Komfortfahrwerk
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={reifendruckkontrollsystem}
-                onChange={() => {
-                  setReifendruckkontrollsystem((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Reifendrucksensor
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={androidauto}
-                onChange={() => {
-                  setAndroidauto((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Android Auto
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={kopfairbag}
-                onChange={() => {
-                  setKopfairbag((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Kopfairbags
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={rueckfahrkamera}
-                onChange={() => {
-                  setRueckfahrkamera((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Rückfahrkamera
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={anhaengerkupplung}
-                onChange={() => {
-                  setAnhaengerkupplung((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Anhängerkupplung
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={kurvenlicht}
-                onChange={() => {
-                  setKurvenlicht((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Kurvenfahrlicht
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={schaltwippen}
-                onChange={() => {
-                  setSchaltwippen((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Schaltwippen
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={asr}
-                onChange={() => {
-                  setAsr((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Antriebsschlupfregelung(ASR)
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={laserlicht}
-                onChange={() => {
-                  setLaserlicht((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Laserlicht
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={schiebedach}
-                onChange={() => {
-                  setSchiebedach((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Schiebedach
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={applecarplay}
-                onChange={() => {
-                  setApplecarplay((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Apple CarPlay
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={leasingfaehigkeit}
-                onChange={() => {
-                  setLeasingfaehigkeit((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Leasingfähigkeit
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={schisack}
-                onChange={() => {
-                  setSchisack((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Schisack
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={automatischeHeckklappe}
-                onChange={() => {
-                  setAutomatischeHeckklappe((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Aut. Heckklappe
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={ledscheinwerfer}
-                onChange={() => {
-                  setLedscheinwerfer((d) => !d);
-                }}
-                className="mr-2"
-              />
-              LED-Scheinwerfer
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={seitenairbag}
-                onChange={() => {
-                  setSeitenairbag((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Seitenairbags
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={behindertenGerecht}
-                onChange={() => {
-                  setBehindertenGerecht((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Behindertengerecht
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={lederausstattung}
-                onChange={() => {
-                  setLederausstattung((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Lederausstattung
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={serviceGepflegt}
-                onChange={() => {
-                  setServiceGepflegt((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Servicegepflegt
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={beifahrerairbag}
-                onChange={() => {
-                  setBeifahrerairbag((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Beifahrerairbags
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={lederlenkrad}
-                onChange={() => {
-                  setLederlenkrad((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Lederlenkrad
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={servolenkung}
-                onChange={() => {
-                  setServolenkung((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Servolenkung
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={bluethoot}
-                onChange={() => {
-                  setBluethoot((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Bluethoot / USB
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={alufelgen}
-                onChange={() => {
-                  setAlufelgen((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Leichtmetall-/Alufelgen
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={sitzheizung}
-                onChange={() => {
-                  setSitzheizung((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Sitzheizung
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={bordcomputer}
-                onChange={() => {
-                  setBordcomputer((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Bordcomputer
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={lenkradheizung}
-                onChange={() => {
-                  setLenkradheizung((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Lenkradheizung
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={sperrdifferential}
-                onChange={() => {
-                  setSperrdifferential((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Sperrdifferential
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={cd}
-                onChange={() => {
-                  setCd((d) => !d);
-                }}
-                className="mr-2"
-              />
-              CD Player
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={lichtsensor}
-                onChange={() => {
-                  setLichtsensor((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Lichtsensor
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={sportfahrwerk}
-                onChange={() => {
-                  setSportfahrwerk((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Sportfahrwerk
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={dachgepaecktraeger}
-                onChange={() => {
-                  setDachgepaecktraeger((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Dachgepäckträger
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={lordosenstuetze}
-                onChange={() => {
-                  setLordoesenstuetze((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Lordosenstütze
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={sportpaket}
-                onChange={() => {
-                  setSportpaket((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Sportpaket
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={dachreling}
-                onChange={() => {
-                  setDachreling((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Dachreling
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={mp3}
-                onChange={() => {
-                  setMp3((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Media-Interface / mp3
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={sportsitze}
-                onChange={() => {
-                  setSportsitze((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Sportsitze
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={einparkhilfe}
-                onChange={() => {
-                  setEinparkhilfe((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Einparkhilfe
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={metallicLackierung}
-                onChange={() => {
-                  setMetalliclackierung((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Metallic-Lackierung
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={spurhalteassistent}
-                onChange={() => {
-                  setSpurhalteassistent((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Spurhalteassistent
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={elektrfensterheber}
-                onChange={() => {
-                  setElektrfensterheber((d) => !d);
-                }}
-                className="mr-2"
-              />
-              elektr. Fensterheber
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={mittelarmlehne}
-                onChange={() => {
-                  setMittelarmlehne((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Mittelarmlehne
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={stabilitaetsprogramme}
-                onChange={() => {
-                  setStabilitaetsprogramme((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Stabilitätsprogramme
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={elektrsitze}
-                onChange={() => {
-                  setElektrsitze((d) => !d);
-                }}
-                className="mr-2"
-              />
-              elektr. Sitze
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={multifunktionslenkrad}
-                onChange={() => {
-                  setMultifunktionslenkrad((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Multifunktionslenkrad
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={standheizung}
-                onChange={() => {
-                  setStandheizung((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Standheizung
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={elektrseitenspiegel}
-                onChange={() => {
-                  setElektrseitenspiegel((d) => !d);
-                }}
-                className="mr-2"
-              />
-              elektr. Spiegel
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={mwstAusweisbar}
-                onChange={() => {
-                  setMwstAusweisbar((d) => !d);
-                }}
-                className="mr-2"
-              />
-              MwSt. ausweisbar
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={startstopauto}
-                onChange={() => {
-                  setStartstopauto((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Start/Stopp-Automatik
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={fahrerairbag}
-                onChange={() => {
-                  setFahrerairbag((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Fahrerairbag
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={navigationssystem}
-                onChange={() => {
-                  setNavigationssystem((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Navigationssystem
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={tagfahrlicht}
-                onChange={() => {
-                  setTagfahrlicht((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Tagfahrlicht
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={fernlichassistent}
-                onChange={() => {
-                  setFernlichassistent((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Fernlichtassistent
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={nebelscheinwerfer}
-                onChange={() => {
-                  setNebelscheinwerfer((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Nebelscheinwerfer
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={teilAutonomesFahren}
-                onChange={() => {
-                  setTeilAutonomesFahren((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Teilautonomes Fahren
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={freisprecheinrichtung}
-                onChange={() => {
-                  setFreisprecheinrichtung((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Freisprecheinrichtung
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={nichtraucherfahrzeug}
-                onChange={() => {
-                  setNichtraucherFahrzeug((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Nichtraucherfahrzeug
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={tempomat}
-                onChange={() => {
-                  setTempomat((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Tempomat
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={beheizbareFrontscheibe}
-                onChange={() => {
-                  setBeheizbareFrontscheibe((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Frontscheibenheizung
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={notbremsassistent}
-                onChange={() => {
-                  setNotbremsassistent((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Notbremsassistent
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={totwinkelAssistent}
-                onChange={() => {
-                  setTotwinkelAssitent((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Totwinkelassistent
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={induktionsladen}
-                onChange={() => {
-                  setInduktionsladen((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Handy induktiv laden
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={notrufsystem}
-                onChange={() => {
-                  setNotrufsystem((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Notrufsystem
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={winterpaket}
-                onChange={() => {
-                  setWinterpaket((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Winterpaket
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={headupDisplay}
-                onChange={() => {
-                  setHeadupDisplay((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Head-Up-Display
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={panoramadach}
-                onChange={() => {
-                  setPanoramadach((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Panoramadach
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={xenonscheinwerfer}
-                onChange={() => {
-                  setXenonscheinwerfer((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Xenon
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={isofix}
-                onChange={() => {
-                  setIsofix((d) => !d);
-                }}
-                className="mr-2"
-              />
-              ISOFIX
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={einparkhilfeSensorenHinten}
-                onChange={() => {
-                  setEinparkhilfeSensorenHinten((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Parksensor hinten
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={zentralverriegelung}
-                onChange={() => {
-                  setZentralverriegelung((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Zentralverriegelung
-            </label>
-            <label className={classes.checkboxname}>
-              <input
-                type={"checkbox"}
-                checked={schluessellose}
-                onChange={() => {
-                  setSchluessellose((d) => !d);
-                }}
-                className="mr-2"
-              />
-              Keyless entry
-            </label>
+            <div className={classes.ausstattungtop}>Ausstattung</div>
+            <div className={classes.itemcontainer}>
+              <div className={classes.itemsection}>
+                <div className={classes.itemheading}>
+                  Innenausstattung & Komfort
+                </div>
+                <div className={classes.items}>
+                  {featuresKomfort.map((feature) => (
+                    <ControlledCheckbox
+                      key={feature.id}
+                      label={feature.name}
+                      onUpdate={() => {
+                        handleFeatureSelect(feature);
+                      }}
+                      checked={selectedFeatures.some(
+                        (feat) => feat.id === feature.id
+                      )}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className={classes.itemsection}>
+                <div className={classes.itemheading}>
+                  Infotainment & Konnektivität
+                </div>
+                <div className={classes.items}>
+                  {featuresInfotainment.map((feature) => (
+                    <ControlledCheckbox
+                      key={feature.id}
+                      label={feature.name}
+                      onUpdate={() => handleFeatureSelect(feature)}
+                      checked={selectedFeatures.some(
+                        (feat) => feat.id === feature.id
+                      )}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className={classes.itemsection}>
+                <div className={classes.itemheading}>Sicherheit & Sensoren</div>
+                <div className={classes.items}>
+                  {featuresSicherheit.map((feature) => (
+                    <ControlledCheckbox
+                      key={feature.id}
+                      label={feature.name}
+                      onUpdate={() => handleFeatureSelect(feature)}
+                      checked={selectedFeatures.some(
+                        (feat) => feat.id === feature.id
+                      )}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className={classes.itemsection}>
+                <div className={classes.itemheading}>Fahrassistenzsysteme</div>
+                <div className={classes.items}>
+                  {featuresFahrassistenzsysteme.map((feature) => (
+                    <ControlledCheckbox
+                      key={feature.id}
+                      label={feature.name}
+                      onUpdate={() => handleFeatureSelect(feature)}
+                      checked={selectedFeatures.some(
+                        (feat) => feat.id === feature.id
+                      )}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className={classes.itemsection}>
+                <div className={classes.itemheading}>Scheinwerfer</div>
+                <div className={classes.items}>
+                  {featuresScheinwerfer.map((feature) => (
+                    <ControlledCheckbox
+                      key={feature.id}
+                      label={feature.name}
+                      onUpdate={() => handleFeatureSelect(feature)}
+                      checked={selectedFeatures.some(
+                        (feat) => feat.id === feature.id
+                      )}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className={classes.itemsection}>
+                <div className={classes.itemheading}>Extras</div>
+                <div className={classes.items}>
+                  {featuresExtras.map((feature) => (
+                    <ControlledCheckbox
+                      key={feature.id}
+                      label={feature.name}
+                      onUpdate={() => handleFeatureSelect(feature)}
+                      checked={selectedFeatures.some(
+                        (feat) => feat.id === feature.id
+                      )}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className={classes.ausstattungbottom}>
+              <div
+                className={classes.abbrechen}
+                onClick={() => setOpenAusstattung(false)}
+              >
+                Abbrechen
+              </div>
+              <div
+                className={classes.fertig}
+                onClick={() => {
+                  setOpenAusstattung(false);
+                }}
+              >
+                Fertig
+              </div>
+            </div>
           </div>
         </div>
       )}
@@ -1655,10 +829,6 @@ function SearchResults() {
                   <div onClick={() => setFilterOpen(false)}>
                     <CloseMenu className={classes.closemenu} />
                   </div>
-                 
-                    
-               
-                
                 </div>
               </div>
             )}
@@ -1686,13 +856,11 @@ function SearchResults() {
                 <div className={classes.centeritems2}>
                   {filters.map((filter, index) => (
                     <div key={index} className={classes.filter}>
-                      {filter}
-                      <DelX
-                        onClick={(e) => {
-                          handleDeleteFilter(index);
-                        }}
-                        className={classes.delx}
+                      <X
+                        className={classes.x}
+                        onClick={() => handleDeleteFilter(index)}
                       />
+                      {filter.name}: {filter.value}
                     </div>
                   ))}
                 </div>
@@ -1775,157 +943,165 @@ function SearchResults() {
                           </div>
                         )}
                       </div>
+
+                      {modelItems.map((item, index) => (
+                        <div key={index} className={classes.modelitem}>
+                          <span className={classes.el}>{item.brandName}</span>
+                          <span className={classes.el}>{item.modelName}</span>
+                          <span>{item.varient}</span>
+                        </div>
+                      ))}
                       <div className={classes.selectcar}>
-                        <div>
-                          <label className="font-bold">Marke</label>
-                          <Select
-                            options={marke1}
-                            styles={style}
-                            onChange={(e) => {
-                              setBrandSelected(true);
-                              setInputMarkeChanged(true);
-                              if (e.value == "alle") {
-                                setBrandSelected(false);
-                              }
-                              setBrandName(e);
-                            }}
-                            value={
-                              inputMarkeChanged == true
-                                ? brandName
-                                : marke1[0].label
-                            }
-                            placeholder={"Alle"}
-                            className="mt-1"
-                          ></Select>
-                        </div>
-                        <div className={classes.selectmodel}>
-                          <label className="font-bold">Modell</label>
-                          <Select
-                            options={marke2}
-                            styles={style}
-                            onChange={(e) => {
-                              setModelName(e);
-                            }}
-                            value={modelName || marke1[0].label}
-                            name={"Modell"}
-                            isDisabled={!brandSelected}
-                            className={`mt-1 ${classes.brand}`}
-                          ></Select>
-                        </div>
-                        <div>
-                          <p className="mb-1 font-bold">Variante</p>
-                          <input
-                            className={classes.varientinput}
-                            onChange={(e) => setVarient(e.target.value)}
-                            placeholder="z.B CLS 320, E 220, usw."
-                          />
-                        </div>
-                        <div
-                          className={`${classes.addmodal} ${classes.marginbottom}`}
-                          onClick={addModel}
-                        >
-                          <AddCircle className={classes.addmodalsvg} />{" "}
-                          <span className={classes.addmodaltext}>
-                            Weitere Marken/
-                            <br />
-                            Modelle hinzufügen
-                          </span>
-                        </div>
+                        {/* Here the code for the brand and model function. Check variables at top first */}
+                        {modelItems.length != 5 && (
+                          <div
+                            className={`${classes.addmodal} ${classes.marginbottom}`}
+                            onClick={addModel}
+                          >
+                            <AddCircle className={classes.addmodalsvg} />{" "}
+                            <span className={classes.addmodaltext}>
+                              Weitere Marken/
+                              <br />
+                              Modelle hinzufügen
+                            </span>
+                          </div>
+                        )}
                         <div className={classes.carbodytypes}>
                           <Select
                             options={carBodyTypes}
                             styles={style}
                             onChange={(e) => {
-                                setInputKarosserieform(e.value);
-                                setInputKarosserieformChanged(true);
+                              setInputKarosserieform(e.value);
+                              setFilters([
+                                ...filters,
+                                { name: "Karosserieform", value: e.value },
+                              ]);
                             }}
-                            value={
-                                inputKarosserieformChanged == false
-                                ? brandName
-                                : marke1[0].label
-                            }
                             placeholder={"Karroserieform"}
                             className="mt-1"
                           />
                         </div>
-                            <Select 
-                              styles={style}
-                              options={van1}
-                              placeholder={`Preis in (${waehrung})`}
-                              className="mt-2"
-                            />
-                            <label className={`font-bold mt-1`}>
-                            Erstzulassung
-                          </label>
-                          <div className={`${classes.halfselect}`}>
-                            <div className="w-full mr-2">
-                                <Select
-                                className={classes.halfselect1}
-                                options={firstRegistrationRanges}
-                                styles={halfSelectStyle1}
-                                placeholder="Von"
-                                />
-                            </div>
-                            <div className="w-full">
-                                <Select
-                                className={classes.halfselect2}
-                                options={firstRegistrationRanges}
-                                styles={halfSelectStyle2}
-                                placeholder="Bis"
-                                />
-                            </div>
-                          </div>
-                        <div>
                         <Select
-                          options={fuelTypes}
                           styles={style}
+                          options={van1}
+                          placeholder={`Preis in (${waehrung})`}
+                          className="mt-2"
                           onChange={(e) => {
-                            setInputKraftstoff(e.value);
-                            setInputKraftstoffChanged(true);
+                            setFilters([
+                              ...filters,
+                              { name: "Preis", value: e.value },
+                            ]);
                           }}
-                          placeholder={"Kraftstoff"}
-                          className={` mt-2 ${classes.kraftstoffstyle}`}
                         />
-                        </div>
-                          <Select
-                            styles={style}
-                            options={countries}
-                            placeholder="Land"
-                            className="mt-2"
-                          />
-                          <div className={`${classes.locdiv} mt-2`}>
-                            <input
-                              className={classes.varientinput}
-                              placeholder="Stadt/PLZ"
-                              onChange={(e) => setStadt(e.target.value)}
+                        <label className={`font-bold mt-1`}>
+                          Erstzulassung
+                        </label>
+                        <div className={`${classes.halfselect}`}>
+                          <div className="w-full mr-2">
+                            <Select
+                              className={classes.halfselect1}
+                              options={firstRegistrationRanges}
+                              styles={halfSelectStyle1}
+                              placeholder="Von"
+                              onChange={(e) => {
+                                setFilters([
+                                  ...filters,
+                                  { name: "EZ von", value: e.value },
+                                ]);
+                              }}
                             />
-                            <MyLocation className={classes.mylocation} />
                           </div>
-                          <div>
+                          <div className="w-full">
+                            <Select
+                              className={classes.halfselect2}
+                              options={firstRegistrationRanges}
+                              styles={halfSelectStyle2}
+                              placeholder="Bis"
+                              onChange={(e) => {
+                                setFilters([
+                                  ...filters,
+                                  { name: "EZ bis", value: e.value },
+                                ]);
+                              }}
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <Select
+                            options={fuelTypes}
+                            styles={style}
+                            onChange={(e) => {
+                              setInputKraftstoff(e.value);
+                              setInputKraftstoffChanged(true);
+                              setFilters([
+                                ...filters,
+                                { name: "Kraftstoff", value: e.value },
+                              ]);
+                            }}
+                            placeholder={"Kraftstoff"}
+                            className={` mt-2 ${classes.kraftstoffstyle}`}
+                          />
+                        </div>
+                        <Select
+                          styles={style}
+                          options={countries}
+                          placeholder="Land"
+                          className="mt-2"
+                          onChange={(e) => {
+                            setFilters([
+                              ...filters,
+                              { name: "Land", value: e.value },
+                            ]);
+                          }}
+                        />
+                        <div className={`${classes.locdiv} mt-2`}>
+                          <input
+                            className={classes.varientinput}
+                            placeholder="Stadt/PLZ"
+                            onChange={(e) => {
+                              setStadt(e.target.value);
+                            }}
+                          />
+                          <MyLocation className={classes.mylocation} />
+                        </div>
+                        <div>
                           <Select
                             styles={style}
                             options={radiusRanges}
                             placeholder="Umkreis (km)"
                             className="mt-2"
-                            onChange={(e) => setUmkreis(e.value)}
+                            onChange={(e) => {
+                              setUmkreis(e.value);
+                              setFilters([
+                                ...filters,
+                                { name: "Umkreis", value: e.value },
+                              ]);
+                            }}
                           />
-                          </div>
-                        <div  className="mt-2">
-                        <ControlledCheckbox onUpdate={val => {
-                            setGrenz(val);
-                        }} label={"Grenzübergreifend"} />
                         </div>
-                        <Select 
-                            styles={style}
-                            options={getri}
-                            placeholder="Kilometerstand"
-                            className="mt-2"
+                        <Select
+                          styles={style}
+                          options={getri}
+                          placeholder="Kilometerstand"
+                          className="mt-2"
+                          onChange={(e) => {
+                            setFilters([
+                              ...filters,
+                              { name: "Kilometerstand", value: e.value },
+                            ]);
+                          }}
                         />
-                        <Select 
-                            styles={style}
-                            options={getri}
-                            placeholder="Leistung"
-                            className="mt-2"
+                        <Select
+                          styles={style}
+                          options={getri}
+                          placeholder="Leistung"
+                          className="mt-2"
+                          onChange={(e) => {
+                            setFilters([
+                              ...filters,
+                              { name: "Leistung", value: e.value },
+                            ]);
+                          }}
                         />
                         <div className={`mt-2`}>
                           <Select
@@ -1933,40 +1109,70 @@ function SearchResults() {
                             options={getri}
                             placeholder="Getriebe"
                             className=""
+                            onChange={(e) => {
+                              setFilters([
+                                ...filters,
+                                { name: "Getriebe", value: e.value },
+                              ]);
+                            }}
                           />
                         </div>
                         <div
                           className={`${classes.anzahltuerencontainer} ${classes.marginbottom}`}
                         >
                           <div className={`${classes.flexverkaeuferart}`}>
-                              <Select 
-                                styles={style}
-                                options={van1}
-                                placeholder={"Anzahl Türen"}
-                                className={"mt-2 w-full"}
-                              />
+                            <Select
+                              styles={style}
+                              options={van1}
+                              placeholder={"Anzahl Türen"}
+                              className={"mt-2 w-full"}
+                              onChange={(e) => {
+                                setFilters([
+                                  ...filters,
+                                  { name: "Anzahl Türen", value: e.value },
+                                ]);
+                              }}
+                            />
                           </div>
                         </div>
-                            <Select 
-                                styles={style}
-                                options={van1}
-                                placeholder="Sitzplätze"
-                                className="w-full mt-2"
-                            />
-                          <div className={classes.flexverkaeuferart}>
-                              <Select 
-                                styles={style}
-                                options={van1}
-                                placeholder="Verkäuferart"
-                                className="w-full mt-2"
-                              />
-                          </div>
+                        <Select
+                          styles={style}
+                          options={van1}
+                          placeholder="Sitzplätze"
+                          className="w-full mt-2"
+                          onChange={(e) => {
+                            setFilters([
+                              ...filters,
+                              { name: "Sitzplätze", value: e.value },
+                            ]);
+                          }}
+                        />
+                        <div className={classes.flexverkaeuferart}>
+                          <Select
+                            styles={style}
+                            options={van1}
+                            placeholder="Verkäuferart"
+                            className="w-full mt-2"
+                            onChange={(e) => {
+                              setFilters([
+                                ...filters,
+                                { name: "Verkäuferart", value: e.value },
+                              ]);
+                            }}
+                          />
+                        </div>
                         <div className={`${classes.fahrzeugzustandcontainer}`}>
-                          <Select 
+                          <Select
                             styles={style}
                             options={van1}
                             placeholder={"Fahrzeugzustand"}
                             className="mt-2"
+                            onChange={(e) => {
+                              setFilters([
+                                ...filters,
+                                { name: "Fahrzeugzustand", value: e.value },
+                              ]);
+                            }}
                           />
                         </div>
                       </div>
@@ -2014,19 +1220,25 @@ function SearchResults() {
                   {openFarbe == true && (
                     <div className={classes.basiscontainer}>
                       <div>
-                            <Select 
-                                styles={style}
-                                options={van1}
-                                className={"w-full mb-2"}
-                                placeholder={"Außenfarbe"}
-                            />
+                        <Select
+                          styles={style}
+                          options={van1}
+                          className={"w-full mb-2"}
+                          placeholder={"Außenfarbe"}
+                          onChange={(e) => {
+                            setFilters([
+                              ...filters,
+                              { name: "Außenfarbe", value: e.value },
+                            ]);
+                          }}
+                        />
                         <label className="text-sm font-semibold">
                           Lackierungsart
                         </label>
                         <div className={classes.colorrow}>
-                          <ControlledCheckbox 
-                            onUpdate={val => {
-                                setMetalliclackierung(val);
+                          <ControlledCheckbox
+                            onUpdate={(val) => {
+                              setMetalliclackierung(val);
                             }}
                             label={" Metallic"}
                           />
@@ -2067,16 +1279,28 @@ function SearchResults() {
                   </div>
                   {openPolsterFarbe == true && (
                     <div className={classes.basiscontainer}>
-                      <Select 
+                      <Select
                         styles={style}
                         options={van1}
                         placeholder="Polsterfarbe"
+                        onChange={(e) => {
+                          setFilters([
+                            ...filters,
+                            { name: "Polsterfarbe", value: e.value },
+                          ]);
+                        }}
                       />
-                      <Select 
+                      <Select
                         styles={style}
                         options={van1}
                         placeholder="Material"
                         className="mt-2"
+                        onChange={(e) => {
+                          setFilters([
+                            ...filters,
+                            { name: "Material", value: e.value },
+                          ]);
+                        }}
                       />
                     </div>
                   )}
@@ -2116,58 +1340,69 @@ function SearchResults() {
                   {openFahrzeugzustand == true && (
                     <div className={classes.basiscontainer}>
                       <div className={classes.marginbottom}>
-                        <label
-                          htmlFor="selfahrz"
-                          className={`${classes.fontsize13} ${classes.label}`}
-                        >
-                          Fahrzeughalter (max.)
-                        </label>
                         <Select
                           styles={style}
                           options={fahrz}
-                          placeholder="Nicht anzeigen"
+                          placeholder="Fahrzeughalter (.mind)"
                           className="mt-1 mb-1"
+                          onChange={(e) => {
+                            setFilters([
+                              ...filters,
+                              { name: "Fahrzeughalter", value: e.value },
+                            ]);
+                          }}
                           id="selfahrz"
                         />
                       </div>
                       <div className={classes.marginbottom}>
-                        <label className={classes.fontsize13}>
-                          Unfallfahrzeug
-                        </label>
                         <Select
                           styles={style}
                           options={unfall}
-                          placeholder="Nicht anzeigen"
+                          placeholder="Unfallfahrzeug"
+                          onChange={(e) => {
+                            setFilters([
+                              ...filters,
+                              { name: "Unfallfahrzeug", value: e.value },
+                            ]);
+                          }}
                           className="mt-1 mb-1"
                         />
                       </div>
                       <div className={`${classes.materialcontainer}`}>
                         <div>
-                          <ControlledCheckbox onUpdate={val => {
-                            setIsNichtraucherfahrzeug(val);
-                          }} label="Nichtraucherfahrzeug" />
-                        </div>
-                        <div>
-                          <ControlledCheckbox 
-                          onUpdate={val => {
-                            setIsGarantie(val);
-                          }}
-                          label="Garantie"
+                          <ControlledCheckbox
+                            onUpdate={(val) => {
+                              setIsNichtraucherfahrzeug(val);
+                            }}
+                            label="Nichtraucherfahrzeug"
                           />
                         </div>
                         <div>
-                          <ControlledCheckbox onUpdate={val => {
-                            setIsScheckhaftgepflegt(val);
-                          }} label="Scheckhaftgepflegt" />
+                          <ControlledCheckbox
+                            onUpdate={(val) => {
+                              setIsGarantie(val);
+                            }}
+                            label="Garantie"
+                          />
                         </div>
                         <div>
-                          <ControlledCheckbox onUpdate={val => {
-                            setIsHerstellerzertifizierung(val);
-                          }} label="Herstellerzertifizierung" />
-                            <div className={classes.belowtext}>
-                              (Technisch geprüfte{"\n"}Fahrzeuge mit Garantie)
-                            </div>
-                        
+                          <ControlledCheckbox
+                            onUpdate={(val) => {
+                              setIsScheckhaftgepflegt(val);
+                            }}
+                            label="Scheckhaftgepflegt"
+                          />
+                        </div>
+                        <div>
+                          <ControlledCheckbox
+                            onUpdate={(val) => {
+                              setIsHerstellerzertifizierung(val);
+                            }}
+                            label="Herstellerzertifizierung"
+                          />
+                          <div className={classes.belowtext}>
+                            (Technisch geprüfte{"\n"}Fahrzeuge mit Garantie)
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -2214,6 +1449,12 @@ function SearchResults() {
                           options={schads}
                           placeholder="Alle"
                           className="mt-1 mb-1"
+                          onChange={(e) => {
+                            setFilters([
+                              ...filters,
+                              { name: "Schadstoffklasse", value: e.value },
+                            ]);
+                          }}
                         />
                       </div>
                       <div className={classes.marginbottom}>
@@ -2225,13 +1466,22 @@ function SearchResults() {
                           options={fahrz}
                           placeholder="Alle"
                           className="mt-1 mb-1"
+                          onChange={(e) => {
+                            setFilters([
+                              ...filters,
+                              { name: "Feinstaubplakette", value: e.value },
+                            ]);
+                          }}
                         />
                       </div>
                       <div className={`${classes.materialcontainer}`}>
                         <div>
-                          <ControlledCheckbox onUpdate={val => {
-                            setIsRusspartikelfilter(val);
-                          }} label="Rußpartikelfilter" />
+                          <ControlledCheckbox
+                            onUpdate={(val) => {
+                              setIsRusspartikelfilter(val);
+                            }}
+                            label="Rußpartikelfilter"
+                          />
                         </div>
                       </div>
                     </div>
@@ -2270,19 +1520,35 @@ function SearchResults() {
                   {openAngebotDetails == true && (
                     <div className={classes.basiscontainer}>
                       <div>
-                        <label className="text-sm font-bold">Online seit</label>
                         <Select
                           styles={style}
                           options={schads}
-                          placeholder="Alle"
+                          placeholder="Online seit"
                           className="mt-1 mb-1"
+                          onChange={(e) => {
+                            setFilters([
+                              ...filters,
+                              { name: "Online seit", value: e.value },
+                            ]);
+                          }}
                         />
                       </div>
                       <div className={`${classes.materialcontainer} mt-2`}>
                         <div>
-                            <ControlledCheckbox onUpdate={val => {
-                                setIsMwStAusweisbar(val);
-                            }} label="MwSt. ausweisbar" />
+                          <ControlledCheckbox
+                            onUpdate={(val) => {
+                              setIsMwStAusweisbar(val);
+                            }}
+                            label="MwSt. ausweisbar"
+                          />
+                        </div>
+                        <div className="mt-2">
+                          <ControlledCheckbox
+                            onUpdate={(val) => {
+                              setGrenz(val);
+                            }}
+                            label={"Grenzübergreifend"}
+                          />
                         </div>
                       </div>
                     </div>
@@ -2292,57 +1558,58 @@ function SearchResults() {
             </div>
           )}
           <div className={classes.c2}>
-          { width >= 621 &&<div className={classes.c2r1}>
-               <div className={classes.c2r1bottom}>
-                <div className={classes.direktsuchecontainer}>
-                  <input
-                    type={"text"}
-                    className={classes.direktsuche}
-                    placeholder="Direktsuche"
-                  />
-                  <button className={classes.suchenbtn}>Suchen</button>
+            {width >= 621 && (
+              <div className={classes.c2r1}>
+                <div className={classes.c2r1bottom}>
+                  <div className={classes.direktsuchecontainer}>
+                    <input
+                      type={"text"}
+                      className={classes.direktsuche}
+                      placeholder="Direktsuche"
+                    />
+                    <button className={classes.suchenbtn}>Suchen</button>
+                  </div>
+                  <div className={classes.sortierungcontainer}>
+                    <Select
+                      styles={style}
+                      options={land}
+                      placeholder="Erweiterte Sortierung"
+                      className={classes.erweitertselect}
+                    />
+                  </div>
+                  <div className={classes.questioncontainer}>
+                    <img
+                      src={"/images/info.svg"}
+                      onMouseOver={() => setInfoOpen(true)}
+                      onMouseLeave={() => setInfoOpen(false)}
+                      className={classes.infosvg}
+                    />
+                    {infoOpen == true && (
+                      <div className={classes.infoexplanation}>
+                        <div className={classes.triangle}></div>
+                        Lorem ipsum dolor sit Amet, InsecteturLorem
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div className={classes.sortierungcontainer}>
-                  <Select
-                    styles={style}
-                    options={land}
-                    placeholder="Erweiterte Sortierung"
-                    className={classes.erweitertselect}
-                  />
-                </div>
-                <div className={classes.questioncontainer}>
-                <img
-                    src={"/images/info.svg"}
-                    onMouseOver={() => setInfoOpen(true)}
-                    onMouseLeave={() => setInfoOpen(false)}
-                    className={classes.infosvg}
-
-                />
-                                        {infoOpen == true && (
-                          <div className={classes.infoexplanation}>
-                            <div className={classes.triangle}></div>
-                            Lorem ipsum dolor sit Amet, InsecteturLorem
-                          </div>
-                        )}
-          </div>
+                {width >= 1250 && (
+                  <div className={classes.view}>
+                    <ListView
+                      className={`${classes.listview} ${
+                        gridView == true && classes.viewactive
+                      } ${"mr-4"}`}
+                      onClick={() => setGridView(true)}
+                    />
+                    <GridView
+                      className={` ${classes.gridview} ${
+                        gridView == false && classes.viewactive
+                      } `}
+                      onClick={() => setGridView(false)}
+                    />
+                  </div>
+                )}
               </div>
-              {width >= 1250 && (
-                <div className={classes.view}>
-                  <ListView
-                    className={`${classes.listview} ${
-                      gridView == true && classes.viewactive
-                    } ${"mr-4"}`}
-                    onClick={() => setGridView(true)}
-                  />
-                  <GridView
-                    className={` ${classes.gridview} ${
-                      gridView == false && classes.viewactive
-                    } `}
-                    onClick={() => setGridView(false)}
-                  />
-                </div>
-              )}
-            </div>}
+            )}
             <div className={`${classes.c2r2}`}>
               <div
                 className={`${
