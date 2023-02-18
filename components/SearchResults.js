@@ -22,6 +22,7 @@ import Menu from "./../public/menu.svg";
 import Pen from './../public/pen.svg';
 import Bin from './../public/bin.svg';
 import { useEffect } from "react";
+import SelectCheckbox from "./ui/SelectCheckbox";
 import {
   marke1,
   marke2,
@@ -260,7 +261,6 @@ function SearchResults() {
       borderRadius: "10px",
       width: "100%",
       cursor: "pointer",
-      height: "40px !important",
     }),
     option: (styles, state) => ({
       ...styles,
@@ -341,7 +341,148 @@ function SearchResults() {
   const [isRusspartikelfilter, setIsRusspartikelfilter] = useState(false);
   const [isMwStAusweisbar, setIsMwStAusweisbar] = useState(false);
 
-  // Filter - Area
+  // Selekt-Inputs
+  const [selectedKarroserrieformen, setSelectedKarroserrieformen] = useState([]);
+  const handleSelectedKarroserieformenChange = (newSelectedOptions) => {
+    setSelectedKarroserrieformen(newSelectedOptions);
+    // Map the selected options to filter objects
+    const newFilters = newSelectedOptions.map((option) => {
+      return {
+        name: 'Karroserrieform',
+        value: option.label
+      };
+    });
+    // Remove any existing Karroserrieform filters from the filter list
+    const filtersWithoutKarroserrieform = filters.filter((filter) => filter.name !== 'Karroserrieform');
+    // Add the new Karroserrieform filters to the list
+    const updatedFilters = [...filtersWithoutKarroserrieform, ...newFilters];
+    setFilters(updatedFilters);
+  };
+
+  const [selectedKraftstoffe, setSelectedKraftstoffe] = useState([]);
+  const handleSelectedKraftstoffe = (newSelectedOptions) => {
+    setSelectedKraftstoffe(newSelectedOptions);
+    // Map the selected options to filter objects
+    const newFilters = newSelectedOptions.map((option) => {
+      return {
+        name: 'Kraftstoff',
+        value: option.label
+      };
+    });
+    // Remove any existing Karroserrieform filters from the filter list
+    const filtersWithoutKarroserrieform = filters.filter((filter) => filter.name !== 'Kraftstoff');
+    // Add the new Karroserrieform filters to the list
+    const updatedFilters = [...filtersWithoutKarroserrieform, ...newFilters];
+    setFilters(updatedFilters);
+  };
+
+  const [selectedGetriebe, setSelectedGetriebe] = useState([]);
+  const handleSelectedGetriebe = (newSelectedOptions) => {
+    setSelectedGetriebe(newSelectedOptions);
+    // Map the selected options to filter objects
+    const newFilters = newSelectedOptions.map((option) => {
+      return {
+        name: 'Getriebe',
+        value: option.label
+      };
+    });
+    // Remove any existing Getriebe filters from the filter list
+    const filtersWithoutGetriebe = filters.filter((filter) => filter.name !== 'Getriebe');
+    // Add the new Getriebe filters to the list
+    const updatedFilters = [...filtersWithoutGetriebe, ...newFilters];
+    setFilters(updatedFilters);
+  };
+
+  const [selectedFahrzeugzustand, setSelectedFahrzeugzustand] = useState([]);
+  const handleSelectedFahrzeugzustand = (newSelectedOptions) => {
+    setSelectedFahrzeugzustand(newSelectedOptions);
+    // Map the selected options to filter objects
+    const newFilters = newSelectedOptions.map((option) => {
+      return {
+        name: 'Fahrzeugzustand',
+        value: option.label
+      };
+    });
+    // Remove any existing Fahrzeugzustand filters from the filter list
+    const filtersWithoutFahrzeugzustand = filters.filter((filter) => filter.name !== 'Fahrzeugzustand');
+    // Add the new Fahrzeugzustand filters to the list
+    const updatedFilters = [...filtersWithoutFahrzeugzustand, ...newFilters];
+    setFilters(updatedFilters);
+  };
+
+  const [selectedAussenfarben, setSelectedAussenfarben] = useState([]);
+const handleSelectedAussenfarben = (newSelectedOptions) => {
+  setSelectedAussenfarben(newSelectedOptions);
+  // Map the selected options to filter objects
+  const newFilters = newSelectedOptions.map((option) => {
+    return {
+      name: 'Aussenfarbe',
+      value: option.label
+    };
+  });
+  // Remove any existing Aussenfarbe filters from the filter list
+  const filtersWithoutAussenfarbe = filters.filter((filter) => filter.name !== 'Aussenfarbe');
+  // Add the new Aussenfarbe filters to the list
+  const updatedFilters = [...filtersWithoutAussenfarbe, ...newFilters];
+  setFilters(updatedFilters);
+};
+
+const [selectedPolsterfarben, setSelectedPolsterfarben] = useState([]);
+const handleSelectedPolsterfarben = (newSelectedOptions) => {
+setSelectedPolsterfarben(newSelectedOptions);
+// Map the selected options to filter objects
+const newFilters = newSelectedOptions.map((option) => {
+return {
+name: 'Polsterfarbe',
+value: option.label
+};
+});
+// Remove any existing Polsterfarbe filters from the filter list
+const filtersWithoutPolsterfarbe = filters.filter((filter) => filter.name !== 'Polsterfarbe');
+// Add the new Polsterfarbe filters to the list
+const updatedFilters = [...filtersWithoutPolsterfarbe, ...newFilters];
+setFilters(updatedFilters);
+};
+
+
+const [selectedMaterial, setSelectedMaterial] = useState([]);
+const handleSelectedMaterial = (newSelectedOptions) => {
+setSelectedMaterial(newSelectedOptions);
+// Map the selected options to filter objects
+const newFilters = newSelectedOptions.map((option) => {
+return {
+name: 'Material',
+value: option.label
+};
+});
+// Remove any existing Material filters from the filter list
+const filtersWithoutMaterial = filters.filter((filter) => filter.name !== 'Material');
+// Add the new Material filters to the list
+const updatedFilters = [...filtersWithoutMaterial, ...newFilters];
+setFilters(updatedFilters);
+};
+
+const [selectedUnfallfahrzeug, setSelectedUnfallfahrzeug] = useState([]);
+const handleSelectedUnfallfahrzeug = (newSelectedOptions) => {
+setSelectedUnfallfahrzeug(newSelectedOptions);
+// Map the selected options to filter objects
+const newFilters = newSelectedOptions.map((option) => {
+return {
+name: 'Unfallfahrzeug',
+value: option.label
+};
+});
+// Remove any existing Unfallfahrzeug filters from the filter list
+const filtersWithoutUnfallfahrzeug = filters.filter((filter) => filter.name !== 'Unfallfahrzeug');
+// Add the new Unfallfahrzeug filters to the list
+const updatedFilters = [...filtersWithoutUnfallfahrzeug, ...newFilters];
+setFilters(updatedFilters);
+};
+
+
+
+
+  // --------------------------------------------------
   const [expanded, setExpanded] = useState(true);
   const [brandName, setBrandName] = useState({});
   const [varient, setVarient] = useState("");
@@ -405,14 +546,7 @@ function SearchResults() {
 
   function handleAddFilter(filter) {
     // Check if filter is already in the list
-    const existingIndex = filters.findIndex(f => f.name === filter.name);
-    if (existingIndex >= 0) {
-      const updatedFilters = [...filters];
-      updatedFilters[existingIndex].value = filter.value;
-      setFilters(updatedFilters);
-    } else {
-      setFilters([...filters, filter]);
-    }
+    setFilters([...filters, filter]);
   }
   // Suchbegriff ist der Suchinput
   const [suchbegriff, setSuchbegriff] = useState();
@@ -801,6 +935,8 @@ const onlineSince = [
     data: [{ id: 0, active: true, brand: "Alle", model: "Alle", variant: "" }],
   });
 
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
   function SetModalBrand(e, index) {
     setModals((prevState) => {
       const newModals = [...prevState.data];
@@ -897,6 +1033,14 @@ const onlineSince = [
     setIsMwStAusweisbar(false);
     setGrenzuebergreifend(false)
   }
+
+  useEffect(() => {
+    console.log(filters)
+  }, [filters])
+
+
+  
+  
 
   return (
     <div
@@ -1103,7 +1247,7 @@ const onlineSince = [
                         <X
                           className={classes.x}
                         />
-                        {filter.name}: {filter.value.label.length >= 10 ? filter.value.label.substring(0, 11) + "..." : filter.value.label}
+                        {filter.name}: {filter.value}
                       </div>
                     ))}
                   </div>
@@ -1240,15 +1384,11 @@ const onlineSince = [
                         </div>}
 
                         <div className={classes.carbodytypes}>
-                          <Select
-                            options={carBodyTypes}
-                            styles={style}
-                            onChange={(e) => {
-                              setInputKarosserieform(e.value);
-                              handleAddFilter({index: filters.length ,name: "Karosserieform", value: e });
-                            }}
-                            placeholder={"Karroserieform"}
-                            className="mt-1"
+                          <SelectCheckbox 
+                            options={carBodyTypes} 
+                            placeholder={"Karroserrieform"} 
+                            selectedOptions={selectedKarroserrieformen}
+                            onSelectedOptionsChange={handleSelectedKarroserieformenChange}
                           />
                         </div>
                         <Select
@@ -1296,20 +1436,12 @@ const onlineSince = [
                             />
                           </div>
                         </div>
-                        <div>
-                          <Select
+                        <div className="mt-2">
+                          <SelectCheckbox
                             options={fuelTypes}
-                            styles={style}
-                            onChange={(e) => {
-                              setInputKraftstoff(e.value);
-                              setInputKraftstoffChanged(true);
-                              setFilters([
-                                ...filters,
-                                { name: "Kraftstoff", value: e },
-                              ]);
-                            }}
                             placeholder={"Kraftstoff"}
-                            className={` mt-2 ${classes.kraftstoffstyle}`}
+                            selectedOptions={selectedKraftstoffe}
+                            onSelectedOptionsChange={handleSelectedKraftstoffe}
                           />
                         </div>
                         <Select
@@ -1374,18 +1506,12 @@ const onlineSince = [
                           }}
                         />
                         <div className={`mt-2`}>
-                          <Select
-                            styles={style}
-                            options={transmissionOptions}
-                            placeholder="Getriebe"
-                            className=""
-                            onChange={(e) => {
-                              setFilters([
-                                ...filters,
-                                { name: "Getriebe", value: e },
-                              ]);
-                            }}
-                          />
+                        <SelectCheckbox 
+                          options={transmissionOptions} 
+                          placeholder={"Getriebe"} 
+                          selectedOptions={selectedGetriebe}
+                          onSelectedOptionsChange={handleSelectedGetriebe}
+                        />
                         </div>
                         <div
                           className={`${classes.anzahltuerencontainer} ${classes.marginbottom}`}
@@ -1431,19 +1557,13 @@ const onlineSince = [
                             }}
                           />
                         </div>
-                        <div className={`${classes.fahrzeugzustandcontainer}`}>
-                          <Select
-                            styles={style}
-                            options={fahrzeugzustaende}
-                            placeholder={"Fahrzeugzustand"}
-                            className="mt-2"
-                            onChange={(e) => {
-                              setFilters([
-                                ...filters,
-                                { name: "Fahrzeugzustand", value: e },
-                              ]);
-                            }}
-                          />
+                        <div className={`${classes.fahrzeugzustandcontainer} mt-2`}>
+                        <SelectCheckbox
+                          options={fahrzeugzustaende}
+                          placeholder="Fahrzeugzustand"
+                          selectedOptions={selectedFahrzeugzustand}
+                          onSelectedOptionsChange={handleSelectedFahrzeugzustand}
+                        />
                         </div>
                       </div>
                     </div>
@@ -1489,19 +1609,15 @@ const onlineSince = [
                   </div>
                   {openFarbe == true && (
                     <div className={classes.basiscontainer}>
-                      <div>
-                        <Select
-                          styles={style}
-                          options={colorOptions}
-                          className={"w-full mb-2"}
-                          placeholder={"Außenfarbe"}
-                          onChange={(e) => {
-                            setFilters([
-                              ...filters,
-                              { name: "Außenfarbe", value: e },
-                            ]);
-                          }}
-                        />
+                      <div className="text-13">
+                      <div className="mb-2">
+                      <SelectCheckbox 
+                        options={colorOptions} 
+                        placeholder={"Aussenfarbe"} 
+                        selectedOptions={selectedAussenfarben}
+                        onSelectedOptionsChange={handleSelectedAussenfarben}
+                      />
+                      </div>
                         <label className="text-sm font-semibold">
                           Lackierungsart
                         </label>
@@ -1550,29 +1666,22 @@ const onlineSince = [
                   </div>
                   {openPolsterFarbe == true && (
                     <div className={classes.basiscontainer}>
-                      <Select
-                        styles={style}
+                      <div className="mb-2 text-13">
+                      <SelectCheckbox
                         options={polsterfarben}
-                        placeholder="Polsterfarbe"
-                        onChange={(e) => {
-                          setFilters([
-                            ...filters,
-                            { name: "Polsterfarbe", value: e },
-                          ]);
-                        }}
-                      />
-                      <Select
-                        styles={style}
+                        placeholder={"Polsterfarbe"}
+                        selectedOptions={selectedPolsterfarben}
+                        onSelectedOptionsChange={handleSelectedPolsterfarben}
+                        />
+                      </div>
+                      <div className="text-13">
+                      <SelectCheckbox
                         options={materials}
-                        placeholder="Material"
-                        className="mt-2"
-                        onChange={(e) => {
-                          setFilters([
-                            ...filters,
-                            { name: "Material", value: e },
-                          ]);
-                        }}
+                        placeholder={"Material"}
+                        selectedOptions={selectedMaterial}
+                        onSelectedOptionsChange={handleSelectedMaterial}
                       />
+                      </div>
                     </div>
                   )}
                 </div>
@@ -1626,18 +1735,14 @@ const onlineSince = [
                         />
                       </div>
                       <div className={classes.marginbottom}>
-                        <Select
-                          styles={style}
-                          options={conditionOptions}
-                          placeholder="Unfallfahrzeug"
-                          onChange={(e) => {
-                            setFilters([
-                              ...filters,
-                              { name: "Unfallfahrzeug", value: e },
-                            ]);
-                          }}
-                          className="mt-1 mb-1"
+                      <div className="mb-2">
+                      <SelectCheckbox
+                        options={conditionOptions}
+                        placeholder={"Unfallfahrzeug"}
+                        selectedOptions={selectedUnfallfahrzeug}
+                        onSelectedOptionsChange={handleSelectedUnfallfahrzeug}
                         />
+                      </div>
                       </div>
                       <div className={`${classes.materialcontainer}`}>
                         <div>

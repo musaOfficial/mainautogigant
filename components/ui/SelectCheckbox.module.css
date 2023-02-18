@@ -1,0 +1,36 @@
+.container{
+    min-height: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.selectheading{
+    cursor: pointer;
+    min-height: 40px;
+    display: flex;
+    padding-left: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.expand{
+    color: lightgray;
+    width: 15px;
+    min-height: 30px;
+}
+
+.border{
+    height: 24px;
+    width: 1px;
+    background-color: lightgray;
+    margin-right: 10px;
+}
+
+.options{
+    padding-left: 10px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+}
