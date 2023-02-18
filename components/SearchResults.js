@@ -331,14 +331,13 @@ function SearchResults() {
   // Filter - Area
   const [gigaChecked, setGigaChecked] = useState();
   const [stadt, setStadt] = useState();
-  const [grenz, setGrenz] = useState();
-  const [kilometerVon, setKilometerVon] = useState();
-  const [kilometerBis, setKilometerBis] = useState();
+  const [grenzuebergreifend, setGrenzuebergreifend] = useState();
   const [isNichtraucherfahrzeug, setIsNichtraucherfahrzeug] = useState(false);
   const [isGarantie, setIsGarantie] = useState(false);
   const [isScheckhaftgepflegt, setIsScheckhaftgepflegt] = useState(false);
   const [isHerstellerzertifizierung, setIsHerstellerzertifizierung] =
     useState(false);
+  const [metalliclackierung, setMetalliclackierung] = useState(false);
   const [isRusspartikelfilter, setIsRusspartikelfilter] = useState(false);
   const [isMwStAusweisbar, setIsMwStAusweisbar] = useState(false);
 
@@ -404,6 +403,17 @@ function SearchResults() {
     setFilters(reducedFilters);
   }
 
+  function handleAddFilter(filter) {
+    // Check if filter is already in the list
+    const existingIndex = filters.findIndex(f => f.name === filter.name);
+    if (existingIndex >= 0) {
+      const updatedFilters = [...filters];
+      updatedFilters[existingIndex].value = filter.value;
+      setFilters(updatedFilters);
+    } else {
+      setFilters([...filters, filter]);
+    }
+  }
   // Suchbegriff ist der Suchinput
   const [suchbegriff, setSuchbegriff] = useState();
 
@@ -419,10 +429,6 @@ function SearchResults() {
   const [sortOption, setSortOption] = useState();
 
   const [filterOpen, setFilterOpen] = useState(false);
-
-  useEffect(() => {
-    console.log(gigaChecked);
-  }, [gigaChecked]);
 
   let carBodyTypes = [
     { value: "Sedan", label: "Sedan" },
@@ -775,18 +781,9 @@ const onlineSince = [
     }
   };
 
-  useEffect(() => {
-    console.log(selectedFeatures);
-  }, [selectedFeatures]);
-
   // Ausstattungen OBEN
 
-  useEffect(() => {
-    console.log(brandName);
-    console.log(modelName);
-    console.log(varient);
-  }, [brandName, modelName, varient]);
-
+ 
   // WEITERE MARKEN & MODELLE FUNKTION
 
   const brands = [
@@ -890,6 +887,15 @@ const onlineSince = [
       const newModals = [{ ...lastModal }];
       return { data: newModals };
     });
+    setGigaChecked(false);
+    setIsNichtraucherfahrzeug(false);
+    setIsGarantie(false);
+    setIsScheckhaftgepflegt(false);
+    setIsHerstellerzertifizierung(false)
+    setMetalliclackierung(false)
+    setIsRusspartikelfilter(false);
+    setIsMwStAusweisbar(false);
+    setGrenzuebergreifend(false)
   }
 
   return (
@@ -1074,7 +1080,7 @@ const onlineSince = [
       )}
       <div
         className={`${classes.contentcontainer} relative w-10/12 lg:w-full flex justify-center max-w-ag-container md:!w-full mx-auto flex-col bg-white p-6`}
-      >
+      >setA
         <TopRow />
         <div className={classes.row}>
           {width >= 1250 && (
@@ -1112,6 +1118,7 @@ const onlineSince = [
                       onUpdate={(val) => {
                         setGigaChecked(val);
                       }}
+                      checked={gigaChecked}
                     />
                   </span>
                   <label className="cursor-pointer" htmlFor="gigacheckbox">
@@ -1238,10 +1245,7 @@ const onlineSince = [
                             styles={style}
                             onChange={(e) => {
                               setInputKarosserieform(e.value);
-                              setFilters([
-                                ...filters,
-                                { name: "Karosserieform", value: e },
-                              ]);
+                              handleAddFilter({index: filters.length ,name: "Karosserieform", value: e });
                             }}
                             placeholder={"Karroserieform"}
                             className="mt-1"
@@ -1506,6 +1510,7 @@ const onlineSince = [
                             onUpdate={(val) => {
                               setMetalliclackierung(val);
                             }}
+                            checked={metalliclackierung}
                             label={" Metallic"}
                           />
                         </div>
@@ -1640,6 +1645,7 @@ const onlineSince = [
                             onUpdate={(val) => {
                               setIsNichtraucherfahrzeug(val);
                             }}
+                            checked={isNichtraucherfahrzeug}
                             label="Nichtraucherfahrzeug"
                           />
                         </div>
@@ -1648,6 +1654,7 @@ const onlineSince = [
                             onUpdate={(val) => {
                               setIsGarantie(val);
                             }}
+                            checked={isGarantie}
                             label="Garantie"
                           />
                         </div>
@@ -1656,6 +1663,7 @@ const onlineSince = [
                             onUpdate={(val) => {
                               setIsScheckhaftgepflegt(val);
                             }}
+                            checked={isScheckhaftgepflegt}
                             label="Scheckhaftgepflegt"
                           />
                         </div>
@@ -1664,6 +1672,7 @@ const onlineSince = [
                             onUpdate={(val) => {
                               setIsHerstellerzertifizierung(val);
                             }}
+                            checked={isHerstellerzertifizierung}
                             label="Herstellerzertifizierung"
                           />
                           <div className={classes.belowtext}>
@@ -1746,6 +1755,7 @@ const onlineSince = [
                             onUpdate={(val) => {
                               setIsRusspartikelfilter(val);
                             }}
+                            checked={isRusspartikelfilter}
                             label="Rußpartikelfilter"
                           />
                         </div>
@@ -1805,14 +1815,16 @@ const onlineSince = [
                             onUpdate={(val) => {
                               setIsMwStAusweisbar(val);
                             }}
+                            checked={isMwStAusweisbar}
                             label="MwSt. ausweisbar"
                           />
                         </div>
                         <div className="mt-2">
                           <ControlledCheckbox
                             onUpdate={(val) => {
-                              setGrenz(val);
+                              setGrenzuebergreifend(val);
                             }}
+                            checked={grenzuebergreifend}
                             label={"Grenzübergreifend"}
                           />
                         </div>

@@ -13,7 +13,10 @@ function ControlledCheckbox({ onUpdate, label, checked }){
         if(checked == true){
             setValue(true);
         }
-    }, [])
+        if(checked == false){
+            setValue(false)
+        }
+    }, [checked])
 
     return (
         <div className='flex items-center'>
