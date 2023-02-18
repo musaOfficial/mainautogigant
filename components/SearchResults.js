@@ -420,10 +420,6 @@ function SearchResults() {
 
   const [filterOpen, setFilterOpen] = useState(false);
 
-  function DeleteAllFilters(arr) {
-    setFilters(arr);
-  }
-
   useEffect(() => {
     console.log(gigaChecked);
   }, [gigaChecked]);
@@ -816,7 +812,6 @@ const onlineSince = [
       newModals[index].variant = "";
       if (e.label === "Alle") {
         setDisabled(true);
-        setModels([{ label: "Alle", value: "alle" }]);
       } else {
         setDisabled(false);
       }
@@ -879,6 +874,17 @@ const onlineSince = [
         return modal;
       });
       return { data: newData };
+    });
+  }
+
+  // Zurücksetzen
+
+  function ResetAll(){
+    setFilters([]);
+    setModals((prevState) => {
+      const lastModal = prevState.data[prevState.data.length - 1];
+      const newModals = [{ ...lastModal }];
+      return { data: newModals };
     });
   }
 
@@ -1087,7 +1093,7 @@ const onlineSince = [
                         <X
                           className={classes.x}
                         />
-                        {filter.name}: {filter.value.label.length >= 10 ? filter.value.label.substring(0, 11) + "..." : filter.value.label.length}
+                        {filter.name}: {filter.value.label.length >= 10 ? filter.value.label.substring(0, 11) + "..." : filter.value.label}
                       </div>
                     ))}
                   </div>
@@ -1815,7 +1821,7 @@ const onlineSince = [
                     <button
                       className={classes.delfilters}
                       onClick={() => {
-                        DeleteAllFilters([]);
+                        ResetAll();
                       }}
                     >
                       Zurücksetzen
