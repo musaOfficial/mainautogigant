@@ -843,12 +843,16 @@ const onlineSince = [
     setModals((prevState) => {
       const newModal = {
         id: prevState.data.length,
-        active: false,
+        active: true, // set the active property of the new modal to true
         brand: "Alle",
         model: "Alle",
         variant: "",
       };
-      const newData = [...prevState.data, newModal];
+      const newData = prevState.data.map((modal) => {
+        modal.active = false; // set the active property of all existing modals to false
+        return modal;
+      });
+      newData.push(newModal);
       return { data: newData };
     });
   }

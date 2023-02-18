@@ -1432,6 +1432,7 @@
     height: 15px;
     width: auto;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .pen:hover{
