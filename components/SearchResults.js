@@ -19,6 +19,8 @@ import PageSearch from "./pagesearch/PageSearch";
 import HomeMenu from "./../public/homemenu.svg";
 import CloseMenu from "./../public/menuclose.svg";
 import Menu from "./../public/menu.svg";
+import Pen from './../public/pen.svg';
+import Bin from './../public/bin.svg';
 import { useEffect } from "react";
 import {
   marke1,
@@ -355,9 +357,7 @@ function SearchResults() {
   const anzahlAngebote = 5000;
   const displayAnzahlAngebote = anzahlAngebote.toLocaleString();
 
-  const [filters, setFilters] = useState([
-    { name: "Kraftstoff", value: "Benzin" },
-  ]);
+  const [filters, setFilters] = useState([]);
 
   const [openBasisdaten, setOpenBasisdaten] = useState(false);
   const [openAusstattung, setOpenAusstattung] = useState(false);
@@ -446,20 +446,6 @@ function SearchResults() {
     { value: "Plug-in Hybrid", label: "Plug-in Hybrid" },
   ];
 
-  const mileageRanges = [
-    { label: "5000", value: 5000 },
-    { label: "10000", value: 10000 },
-    { label: "20000", value: 20000 },
-    { label: "30000", value: 30000 },
-    { label: "40000", value: 40000 },
-    { label: "50000", value: 50000 },
-    { label: "100000", value: 100000 },
-    { label: "200000", value: 200000 },
-    { label: "300000", value: 300000 },
-    { label: "400000", value: 400000 },
-    { label: "500000", value: 500000 },
-  ];
-
   const radiusRanges = [
     { label: "5 km", value: 5 },
     { label: "10 km", value: 10 },
@@ -479,6 +465,17 @@ function SearchResults() {
     { label: "Wasserstoff", value: "Wasserstoff" },
   ];
 
+  const polsterfarben = [
+    {label: "Schwarz", value: "schwarz"},
+    {label: "Grau", value: "grau"},
+    {label: "Beige", value: "beige"},
+    {label: "Braun", value: "braun"},
+    {label: "Weiß", value: "weiß"},
+    {label: "Rot", value: "rot"},
+    {label: "Blau", value: "blau"},
+    {label: "Grün", value: "grün"}
+  ];
+
   const firstRegistrationRanges = [
     { label: "2020", value: 2020 },
     { label: "2015", value: 2015 },
@@ -487,16 +484,6 @@ function SearchResults() {
     { label: "2000", value: 2000 },
     { label: "1990", value: 1990 },
     { label: "1980", value: 1980 },
-  ];
-
-  const priceRanges = [
-    { label: "500 €", value: 500 },
-    { label: "1000 €", value: 1000 },
-    { label: "5000 €", value: 5000 },
-    { label: "10000 €", value: 10000 },
-    { label: "20000 €", value: 20000 },
-    { label: "50000 €", value: 50000 },
-    { label: "100000 €", value: 100000 },
   ];
 
   const countries = [
@@ -534,6 +521,135 @@ function SearchResults() {
     { label: "Slowenien", value: "Slowenien" },
     { label: "Spanien", value: "Spanien" },
   ];
+
+  const powerOptions = [
+    {label: '50 PS (37 kW) oder weniger', value: '0-50'},
+    {label: '51 - 100 PS (38 - 75 kW)', value: '51-100'},
+    {label: '101 - 150 PS (76 - 110 kW)', value: '101-150'},
+    {label: '151 - 200 PS (111 - 147 kW)', value: '151-200'},
+    {label: '201 - 300 PS (148 - 221 kW)', value: '201-300'},
+    {label: 'Über 300 PS (Über 221 kW)', value: '300+'}
+];
+
+const transmissionOptions = [
+  {label: 'Schaltgetriebe', value: 'manual'},
+  {label: 'Automatik', value: 'automatic'},
+  {label: 'Halbautomatik', value: 'semiautomatic'}
+];
+
+const doorOptions = [
+  {label: '2 Türen', value: '2'},
+  {label: '3 Türen', value: '3'},
+  {label: '4 Türen', value: '4'},
+  {label: '5 Türen', value: '5'},
+  {label: '6 Türen oder mehr', value: '6+'}
+];
+
+const sellerTypes = [
+  {label: 'Privat', value: 'private'},
+  {label: 'Händler', value: 'commercial'}
+];
+
+const conditionOptions = [
+  {label: 'Neuwertig', value: 'as_new'},
+  {label: 'Gebraucht', value: 'used'},
+  {label: 'Unfallfrei', value: 'accident_free'},
+  {label: 'Unfallwagen', value: 'damaged'},
+  {label: 'Nicht fahrbereit', value: 'non_runable'}
+];
+
+const colorOptions = [
+  {label: 'Beige', value: 'beige'},
+  {label: 'Blau', value: 'blue'},
+  {label: 'Braun', value: 'brown'},
+  {label: 'Gelb', value: 'yellow'},
+  {label: 'Gold', value: 'gold'},
+  {label: 'Grau', value: 'grey'},
+  {label: 'Grün', value: 'green'},
+  {label: 'Orange', value: 'orange'},
+  {label: 'Rot', value: 'red'},
+  {label: 'Schwarz', value: 'black'},
+  {label: 'Silber', value: 'silver'},
+  {label: 'Violett', value: 'purple'},
+  {label: 'Weiß', value: 'white'}
+];
+
+  const priceRanges = [
+    {label: '0 - 5000', value: '0-5000'},
+    {label: '5000 - 10000', value: '5000-10000'},
+    {label: '10000 - 20000', value: '10000-20000'},
+    {label: '20000 - 50000', value: '20000-50000'},
+    {label: '50000 - 100000', value: '50000-100000'},
+    {label: 'Über 100000', value: '100000+'}
+];
+
+const mileageRanges = [
+  {label: '0 - 10.000 km', value: '0-10000'},
+  {label: '10.000 - 50.000 km', value: '10000-50000'},
+  {label: '50.000 - 100.000 km', value: '50000-100000'},
+  {label: '100.000 - 150.000 km', value: '100000-150000'},
+  {label: '150.000 - 200.000 km', value: '150000-200000'},
+  {label: 'Über 200.000 km', value: '200000+'}
+];
+
+const materials = [
+  {label: "Baumwolle", value: "Baumwolle"},
+  {label: "Leinen", value: "Leinen"},
+  {label: "Wolle", value: "Wolle"},
+  {label: "Seide", value: "Seide"},
+  {label: "Polyester", value: "Polyester"},
+  {label: "Nylon", value: "Nylon"},
+  {label: "Leder", value: "Leder"},
+  {label: "Pelz", value: "Pelz"},
+  {label: "Denim", value: "Denim"},
+  {label: "Gummi", value: "Gummi"},
+  {label: "Metall", value: "Metall"},
+  {label: "Kunststoff", value: "Kunststoff"},
+];
+
+const vehicleOwners = [
+  {label: "1 Vorbesitzer", value: "1"},
+  {label: "2 Vorbesitzer", value: "2"},
+  {label: "3 Vorbesitzer", value: "3"},
+  {label: "4 Vorbesitzer", value: "4"},
+  {label: "5 Vorbesitzer", value: "5"},
+  {label: "6 Vorbesitzer", value: "6"},
+  {label: "7 Vorbesitzer", value: "7"},
+  {label: "8 Vorbesitzer", value: "8"},
+  {label: "9 Vorbesitzer", value: "9"},
+  {label: "10 Vorbesitzer", value: "10"},
+  {label: "mehr als 10 Vorbesitzer", value: "11+"},
+];
+
+const accidentStatus = [
+  {label: "Unfallfrei", value: "unfallfrei"},
+  {label: "Unfallwagen", value: "unfallwagen"},
+];
+
+const emissions = [
+  {label: "Euro 1", value: "1"},
+  {label: "Euro 2", value: "2"},
+  {label: "Euro 3", value: "3"},
+  {label: "Euro 4", value: "4"},
+  {label: "Euro 5", value: "5"},
+  {label: "Euro 6", value: "6"},
+];
+
+const particulateMatter = [
+  {label: "Keine Plakette", value: "none"},
+  {label: "Grüne Plakette", value: "green"},
+  {label: "Gelbe Plakette", value: "yellow"},
+  {label: "Rote Plakette", value: "red"},
+  {label: "Blaue Plakette", value: "blue"}
+];
+
+const onlineSince = [
+  {label: "Heute", value: new Date()},
+  {label: "Gestern", value: new Date("2023-02-07")},
+  {label: "Letzte 7 Tage", value: new Date("2023-02-02")},
+  {label: "Letzte 30 Tage", value: new Date("2023-01-10")},
+  {label: "Letzte 90 Tage", value: new Date("2022-11-10")}
+];
 
   const [infoOpen, setInfoOpen] = useState(false);
 
@@ -634,6 +750,26 @@ function SearchResults() {
     { id: 80, name: "Winterpaket" },
   ];
 
+  const sitzplaetze = [
+    {label: "2 Sitze", value: "2"},
+    {label: "3 Sitze", value: "3"},
+    {label: "4 Sitze", value: "4"},
+    {label: "5 Sitze", value: "5"},
+    {label: "6 Sitze", value: "6"},
+    {label: "7 Sitze", value: "7"},
+    {label: "8 Sitze", value: "8"},
+    {label: "9 Sitze", value: "9"},
+    {label: "10+ Sitze", value: "10+"}
+  ];
+
+  const fahrzeugzustaende = [
+    {label: "Neuwertig", value: "neuwertig"},
+    {label: "Gebraucht", value: "gebraucht"},
+    {label: "Unfallfrei", value: "unfallfrei"},
+    {label: "Beschädigt", value: "beschädigt"},
+    {label: "Defekt", value: "defekt"}
+  ];
+
   const handleFeatureSelect = (feature) => {
     const index = selectedFeatures.findIndex((f) => f.id === feature.id);
     if (index !== -1) {
@@ -654,6 +790,97 @@ function SearchResults() {
     console.log(modelName);
     console.log(varient);
   }, [brandName, modelName, varient]);
+
+  // WEITERE MARKEN & MODELLE FUNKTION
+
+  const brands = [
+    { label: "Alle", value: "alle" },
+    { label: "BMW", value: "bmw" },
+    { label: "Audi", value: "Audi" },
+  ];
+
+  const [models, setModels] = useState([
+    { label: "Alle", value: "alle" },
+    { label: "R8", value: "R8" },
+  ]);
+
+  const [modals, setModals] = useState({
+    data: [{ id: 0, active: true, brand: "Alle", model: "Alle", variant: "" }],
+  });
+
+  function SetModalBrand(e, index) {
+    setModals((prevState) => {
+      const newModals = [...prevState.data];
+      newModals[index].brand = e.value;
+      newModals[index].model = "Alle";
+      newModals[index].variant = "";
+      if (e.label === "Alle") {
+        setDisabled(true);
+        setModels([{ label: "Alle", value: "alle" }]);
+      } else {
+        setDisabled(false);
+      }
+      return { data: newModals };
+    });
+  }
+
+  function SetModalModel(e, index) {
+    setModals((prevState) => {
+      const newModals = [...prevState.data];
+      newModals[index].model = e.value;
+      return { data: newModals };
+    });
+  }
+
+  function SetModalVariant(e, index) {
+    setModals((prevState) => {
+      const newModals = [...prevState.data];
+      newModals[index].variant = e.target.value;
+      return { data: newModals };
+    });
+  }
+
+  const [variante, setVariante] = useState("");
+
+  const [disabled, setDisabled] = useState(true);
+
+  function AddModal() {
+    setModals((prevState) => {
+      const newModal = {
+        id: prevState.data.length,
+        active: false,
+        brand: "Alle",
+        model: "Alle",
+        variant: "",
+      };
+      const newData = [...prevState.data, newModal];
+      return { data: newData };
+    });
+  }
+
+  function deleteModal(index) {
+    setModals((prevState) => {
+      const newData = [...prevState.data].filter((modal, i) => i !== index);
+      if (newData.length === 1) {
+        newData[0].active = true;
+      }
+      return { data: newData };
+    });
+  }
+
+  function activateModal(index) {
+    setModals((prevState) => {
+      const newData = [...prevState.data].map((modal, i) => {
+        if (i === index) {
+          modal.active = true;
+        } else {
+          modal.active = false;
+        }
+        return modal;
+      });
+      return { data: newData };
+    });
+  }
 
   return (
     <div
@@ -767,7 +994,8 @@ function SearchResults() {
                 </div>
               </div>
             </div>
-            <div className={classes.ausstattungbottom}>
+          </div>
+          <div className={classes.ausstattungbottom}>
               <div
                 className={classes.abbrechen}
                 onClick={() => setOpenAusstattung(false)}
@@ -783,7 +1011,6 @@ function SearchResults() {
                 Fertig
               </div>
             </div>
-          </div>
         </div>
       )}
       {width <= 1249 && (
@@ -852,30 +1079,48 @@ function SearchResults() {
                   </div>
                 </div>
               </div>
-              <div className={classes.c1r2}>
-                <div className={classes.centeritems2}>
-                  {filters.map((filter, index) => (
-                    <div key={index} className={classes.filter}>
-                      <X
-                        className={classes.x}
-                        onClick={() => handleDeleteFilter(index)}
-                      />
-                      {filter.name}: {filter.value}
-                    </div>
-                  ))}
+              {filters.length != 0 && (
+                <div className={classes.c1r2}>
+                  <div className={classes.centeritems2}>
+                    {filters.map((filter, index) => (
+                      <div key={index} className={classes.filter} onClick={() => handleDeleteFilter(index)}>
+                        <X
+                          className={classes.x}
+                        />
+                        {filter.name}: {filter.value.label.length >= 10 ? filter.value.label.substring(0, 11) + "..." : filter.value.label.length}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div>
-                  <button
-                    className={classes.delfilters}
-                    onClick={() => {
-                      DeleteAllFilters([]);
-                    }}
-                  >
-                    Filter löschen
-                  </button>
-                  <button className={classes.savesearch}>
-                    Suche speichern
-                  </button>
+              )}
+              <div className={classes.c1r2}>
+                <div
+                  className={`${classes.inputrowgiga} ${classes.marginbottom}`}
+                >
+                  <span className="mr-2">
+                    <ControlledCheckbox
+                      onUpdate={(val) => {
+                        setGigaChecked(val);
+                      }}
+                    />
+                  </span>
+                  <label className="cursor-pointer" htmlFor="gigacheckbox">
+                    <img
+                      className={classes.gigadraftimg}
+                      src={"/images/draft-card-giga-logo.png"}
+                    />
+                  </label>
+                  <img
+                    src={"/images/info.svg"}
+                    onMouseOver={() => setGigaInfoOpen(true)}
+                    onMouseLeave={() => setGigaInfoOpen(false)}
+                  />
+                  {gigaInfoOpen == true && (
+                    <div className={classes.gigaexplanation}>
+                      <div className={classes.triangle}></div>
+                      Lorem ipsum dolor sit Amet, InsecteturLorem
+                    </div>
+                  )}
                 </div>
               </div>
               <div className={classes.c1r3}>
@@ -912,60 +1157,71 @@ function SearchResults() {
                   </div>
                   {openBasisdaten == true && (
                     <div className={classes.basiscontainer}>
-                      <div
-                        className={`${classes.inputrowgiga} ${classes.marginbottom}`}
-                      >
-                        <span className="mr-2">
-                          <ControlledCheckbox
-                            onUpdate={(val) => {
-                              setGigaChecked(val);
-                            }}
-                          />
-                        </span>
-                        <label
-                          className="cursor-pointer"
-                          htmlFor="gigacheckbox"
-                        >
-                          <img
-                            className={classes.gigadraftimg}
-                            src={"/images/draft-card-giga-logo.png"}
-                          />
-                        </label>
-                        <img
-                          src={"/images/info.svg"}
-                          onMouseOver={() => setGigaInfoOpen(true)}
-                          onMouseLeave={() => setGigaInfoOpen(false)}
-                        />
-                        {gigaInfoOpen == true && (
-                          <div className={classes.gigaexplanation}>
-                            <div className={classes.triangle}></div>
-                            Lorem ipsum dolor sit Amet, InsecteturLorem
-                          </div>
-                        )}
-                      </div>
-
-                      {modelItems.map((item, index) => (
-                        <div key={index} className={classes.modelitem}>
-                          <span className={classes.el}>{item.brandName}</span>
-                          <span className={classes.el}>{item.modelName}</span>
-                          <span>{item.varient}</span>
-                        </div>
-                      ))}
                       <div className={classes.selectcar}>
                         {/* Here the code for the brand and model function. Check variables at top first */}
-                        {modelItems.length != 5 && (
-                          <div
-                            className={`${classes.addmodal} ${classes.marginbottom}`}
-                            onClick={addModel}
-                          >
-                            <AddCircle className={classes.addmodalsvg} />{" "}
-                            <span className={classes.addmodaltext}>
-                              Weitere Marken/
-                              <br />
-                              Modelle hinzufügen
-                            </span>
+
+                        {modals.data.map((item, index) => (
+                          <div key={index}>
+                            {modals.data.length != 1 && <div className={`${classes.modaltop} ${item.active == false && classes.modaltopborderbottom}`}>
+                              <div className={classes.modaltopleft}>
+                              <div className={classes.modalid}>
+                                {index + 1}.
+                              </div>
+                              <div className={classes.modalbrand}>
+                                {item.brand}
+                              </div>
+                              <div className={classes.modalmodel}>
+                                {item.model}
+                              </div>
+                              </div>
+                              {modals.data.length != 1 && <div className={classes.modaltopleft}>
+                                <Pen className={classes.pen} onClick={() => activateModal(index)}/>
+                                <Bin className={classes.bin} onClick={() => deleteModal(index)} />
+                              </div>}
+                            </div>}
+                            {item.active == true && (
+                              <div className={`${classes.modalbottom} `}>
+                                <Select
+                                  options={brands}
+                                  styles={style}
+                                  onChange={(e) => {
+                                    SetModalBrand(e, index);
+                                  }}
+                                  placeholder={"Marke"}
+                                  className={"mb-2"}
+                                />
+                                <Select
+                                  options={models}
+                                  styles={style}
+                                  onChange={(e) => SetModalModel(e, index)}
+                                  placeholder={"Modell"}
+                                  className={`mb-2`}
+                                  isDisabled={disabled}
+                    
+                                />
+                                <input
+                                  type={"text"}
+                                  onChange={(e) => SetModalVariant(e, index)}
+                                  className={classes.variantinput}
+                                  placeholder="Variante"
+                                />
+                              </div>
+                            )}
                           </div>
-                        )}
+                        ))}
+
+                        {modals.data.length != 3 && <div
+                          className={`${classes.addmodal} ${classes.marginbottom}`}
+                          onClick={AddModal}
+                        >
+                          <AddCircle className={classes.addmodalsvg} />{" "}
+                          <span className={classes.addmodaltext}>
+                            Weitere Marken/
+                            <br />
+                            Modelle hinzufügen
+                          </span>
+                        </div>}
+
                         <div className={classes.carbodytypes}>
                           <Select
                             options={carBodyTypes}
@@ -974,7 +1230,7 @@ function SearchResults() {
                               setInputKarosserieform(e.value);
                               setFilters([
                                 ...filters,
-                                { name: "Karosserieform", value: e.value },
+                                { name: "Karosserieform", value: e },
                               ]);
                             }}
                             placeholder={"Karroserieform"}
@@ -983,13 +1239,13 @@ function SearchResults() {
                         </div>
                         <Select
                           styles={style}
-                          options={van1}
+                          options={priceRanges}
                           placeholder={`Preis in (${waehrung})`}
                           className="mt-2"
                           onChange={(e) => {
                             setFilters([
                               ...filters,
-                              { name: "Preis", value: e.value },
+                              { name: "Preis", value: e },
                             ]);
                           }}
                         />
@@ -1006,7 +1262,7 @@ function SearchResults() {
                               onChange={(e) => {
                                 setFilters([
                                   ...filters,
-                                  { name: "EZ von", value: e.value },
+                                  { name: "EZ von", value: e },
                                 ]);
                               }}
                             />
@@ -1020,7 +1276,7 @@ function SearchResults() {
                               onChange={(e) => {
                                 setFilters([
                                   ...filters,
-                                  { name: "EZ bis", value: e.value },
+                                  { name: "EZ bis", value: e },
                                 ]);
                               }}
                             />
@@ -1035,7 +1291,7 @@ function SearchResults() {
                               setInputKraftstoffChanged(true);
                               setFilters([
                                 ...filters,
-                                { name: "Kraftstoff", value: e.value },
+                                { name: "Kraftstoff", value: e },
                               ]);
                             }}
                             placeholder={"Kraftstoff"}
@@ -1050,7 +1306,7 @@ function SearchResults() {
                           onChange={(e) => {
                             setFilters([
                               ...filters,
-                              { name: "Land", value: e.value },
+                              { name: "Land", value: e },
                             ]);
                           }}
                         />
@@ -1074,45 +1330,45 @@ function SearchResults() {
                               setUmkreis(e.value);
                               setFilters([
                                 ...filters,
-                                { name: "Umkreis", value: e.value },
+                                { name: "Umkreis", value: e },
                               ]);
                             }}
                           />
                         </div>
                         <Select
                           styles={style}
-                          options={getri}
+                          options={mileageRanges}
                           placeholder="Kilometerstand"
                           className="mt-2"
                           onChange={(e) => {
                             setFilters([
                               ...filters,
-                              { name: "Kilometerstand", value: e.value },
+                              { name: "Kilometerstand", value: e },
                             ]);
                           }}
                         />
                         <Select
                           styles={style}
-                          options={getri}
+                          options={powerOptions}
                           placeholder="Leistung"
                           className="mt-2"
                           onChange={(e) => {
                             setFilters([
                               ...filters,
-                              { name: "Leistung", value: e.value },
+                              { name: "Leistung", value: e },
                             ]);
                           }}
                         />
                         <div className={`mt-2`}>
                           <Select
                             styles={style}
-                            options={getri}
+                            options={transmissionOptions}
                             placeholder="Getriebe"
                             className=""
                             onChange={(e) => {
                               setFilters([
                                 ...filters,
-                                { name: "Getriebe", value: e.value },
+                                { name: "Getriebe", value: e },
                               ]);
                             }}
                           />
@@ -1123,13 +1379,13 @@ function SearchResults() {
                           <div className={`${classes.flexverkaeuferart}`}>
                             <Select
                               styles={style}
-                              options={van1}
+                              options={doorOptions}
                               placeholder={"Anzahl Türen"}
                               className={"mt-2 w-full"}
                               onChange={(e) => {
                                 setFilters([
                                   ...filters,
-                                  { name: "Anzahl Türen", value: e.value },
+                                  { name: "Anzahl Türen", value: e },
                                 ]);
                               }}
                             />
@@ -1137,26 +1393,26 @@ function SearchResults() {
                         </div>
                         <Select
                           styles={style}
-                          options={van1}
+                          options={sitzplaetze}
                           placeholder="Sitzplätze"
                           className="w-full mt-2"
                           onChange={(e) => {
                             setFilters([
                               ...filters,
-                              { name: "Sitzplätze", value: e.value },
+                              { name: "Sitzplätze", value: e },
                             ]);
                           }}
                         />
                         <div className={classes.flexverkaeuferart}>
                           <Select
                             styles={style}
-                            options={van1}
+                            options={sellerTypes}
                             placeholder="Verkäuferart"
                             className="w-full mt-2"
                             onChange={(e) => {
                               setFilters([
                                 ...filters,
-                                { name: "Verkäuferart", value: e.value },
+                                { name: "Verkäuferart", value: e },
                               ]);
                             }}
                           />
@@ -1164,13 +1420,13 @@ function SearchResults() {
                         <div className={`${classes.fahrzeugzustandcontainer}`}>
                           <Select
                             styles={style}
-                            options={van1}
+                            options={fahrzeugzustaende}
                             placeholder={"Fahrzeugzustand"}
                             className="mt-2"
                             onChange={(e) => {
                               setFilters([
                                 ...filters,
-                                { name: "Fahrzeugzustand", value: e.value },
+                                { name: "Fahrzeugzustand", value: e },
                               ]);
                             }}
                           />
@@ -1222,13 +1478,13 @@ function SearchResults() {
                       <div>
                         <Select
                           styles={style}
-                          options={van1}
+                          options={colorOptions}
                           className={"w-full mb-2"}
                           placeholder={"Außenfarbe"}
                           onChange={(e) => {
                             setFilters([
                               ...filters,
-                              { name: "Außenfarbe", value: e.value },
+                              { name: "Außenfarbe", value: e },
                             ]);
                           }}
                         />
@@ -1281,24 +1537,24 @@ function SearchResults() {
                     <div className={classes.basiscontainer}>
                       <Select
                         styles={style}
-                        options={van1}
+                        options={polsterfarben}
                         placeholder="Polsterfarbe"
                         onChange={(e) => {
                           setFilters([
                             ...filters,
-                            { name: "Polsterfarbe", value: e.value },
+                            { name: "Polsterfarbe", value: e },
                           ]);
                         }}
                       />
                       <Select
                         styles={style}
-                        options={van1}
+                        options={materials}
                         placeholder="Material"
                         className="mt-2"
                         onChange={(e) => {
                           setFilters([
                             ...filters,
-                            { name: "Material", value: e.value },
+                            { name: "Material", value: e },
                           ]);
                         }}
                       />
@@ -1342,13 +1598,13 @@ function SearchResults() {
                       <div className={classes.marginbottom}>
                         <Select
                           styles={style}
-                          options={fahrz}
+                          options={vehicleOwners}
                           placeholder="Fahrzeughalter (.mind)"
                           className="mt-1 mb-1"
                           onChange={(e) => {
                             setFilters([
                               ...filters,
-                              { name: "Fahrzeughalter", value: e.value },
+                              { name: "Fahrzeughalter", value: e },
                             ]);
                           }}
                           id="selfahrz"
@@ -1357,12 +1613,12 @@ function SearchResults() {
                       <div className={classes.marginbottom}>
                         <Select
                           styles={style}
-                          options={unfall}
+                          options={conditionOptions}
                           placeholder="Unfallfahrzeug"
                           onChange={(e) => {
                             setFilters([
                               ...filters,
-                              { name: "Unfallfahrzeug", value: e.value },
+                              { name: "Unfallfahrzeug", value: e },
                             ]);
                           }}
                           className="mt-1 mb-1"
@@ -1446,13 +1702,13 @@ function SearchResults() {
                         </label>
                         <Select
                           styles={style}
-                          options={schads}
+                          options={emissions}
                           placeholder="Alle"
                           className="mt-1 mb-1"
                           onChange={(e) => {
                             setFilters([
                               ...filters,
-                              { name: "Schadstoffklasse", value: e.value },
+                              { name: "Schadstoffklasse", value: e },
                             ]);
                           }}
                         />
@@ -1463,13 +1719,13 @@ function SearchResults() {
                         </label>
                         <Select
                           styles={style}
-                          options={fahrz}
+                          options={particulateMatter}
                           placeholder="Alle"
                           className="mt-1 mb-1"
                           onChange={(e) => {
                             setFilters([
                               ...filters,
-                              { name: "Feinstaubplakette", value: e.value },
+                              { name: "Feinstaubplakette", value: e },
                             ]);
                           }}
                         />
@@ -1522,13 +1778,13 @@ function SearchResults() {
                       <div>
                         <Select
                           styles={style}
-                          options={schads}
+                          options={onlineSince}
                           placeholder="Online seit"
                           className="mt-1 mb-1"
                           onChange={(e) => {
                             setFilters([
                               ...filters,
-                              { name: "Online seit", value: e.value },
+                              { name: "Online seit", value: e },
                             ]);
                           }}
                         />
@@ -1553,6 +1809,21 @@ function SearchResults() {
                       </div>
                     </div>
                   )}
+                </div>
+                <div>
+                  <div className={classes.filtersrow}>
+                    <button
+                      className={classes.delfilters}
+                      onClick={() => {
+                        DeleteAllFilters([]);
+                      }}
+                    >
+                      Zurücksetzen
+                    </button>
+                    <button className={classes.savesearch}>
+                      Suche speichern
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
