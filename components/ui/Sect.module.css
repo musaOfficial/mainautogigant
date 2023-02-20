@@ -1,0 +1,36 @@
+.section{
+    height: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #6C757D;
+    padding-top: 10px;
+    line-height: 25px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.sectionheading{
+    font-size: 15px;
+    color: #0067B8;
+}
+
+.unrotated{
+    transform: rotate(0deg);
+    color: #0067B8;
+    transition: all .1s ease-in;
+}
+
+.rotated{
+    transform: rotate(180deg);
+    transition: all .1s ease-in;
+    color: #0067B8;
+}
+
+.text{
+    font-size: 13px;
+    border-bottom: 1px solid #6C757D;
+    padding-bottom: 10px;
+    font-weight: normal;
+}

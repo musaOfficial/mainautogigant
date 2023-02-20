@@ -3,8 +3,21 @@ import classes from "./Kaufvertrag.module.css";
 import Link from "next/link";
 import BackHome from "./../public/home.svg";
 import Check from "./../public/hackerl.svg";
+import FileIcon from "./../public/file.svg";
+import Expand from "./../public/expand.svg";
+import TopRow from "./ui/TopRow";
+import ControlledCheckbox from "./ui/ControlledCheckbox";
+import Sect from "./ui/Sect";
 
 function KFZKaufvertrag() {
+  const [impressumOpen, setImpressumOpen] = useState(true);
+  const [verbaucherAgbOpen, setVerbraucherAgbOpen] = useState(false);
+  const [haendlerAgb, setHaendlerAgb] = useState(false);
+  const [datenschutzOpen, setDatenschutzOpen] = useState(false);
+  const [gestaltungOpen, setGestaltungOpen] = useState(false);
+  const [datenschutzeinwilligungOpen, setDatenschutzeinwilligungOpen] =
+    useState(false);
+
   // KÄUFER
   const [purchaserFirstName, setPurchaserFirstName] = useState();
   const [purchaserLastName, setPurchaserLastName] = useState();
@@ -13,7 +26,7 @@ function KFZKaufvertrag() {
   const [purchaserPLZ, setPurchaserPLZ] = useState();
   const [purchaserOrt, setPurchaserOrt] = useState();
   const [purchaserLand, setPurchaserLand] = useState();
-  const [purchaserSteuernummer, setPurchaserSteuernummer] = useState();
+  const [purchaserPersonalausweis, setPurchaserPersonalausweis] = useState();
   const [purchaserTelefonnummer, setPurchaserTelefonnummer] = useState();
 
   // VERKÄUFER
@@ -24,7 +37,7 @@ function KFZKaufvertrag() {
   const [sellerPLZ, setSellerPLZ] = useState();
   const [sellerOrt, setSellerOrt] = useState();
   const [sellerLand, setSellerLand] = useState();
-  const [sellerSteuernummer, setSellerSteuernummer] = useState();
+  const [sellerPersonalausweis, setSellerPersonalausweis] = useState();
   const [sellerTelefonnummer, setSellerTelefonnummer] = useState();
 
   // KRAFTFAHRZEUG
@@ -38,9 +51,16 @@ function KFZKaufvertrag() {
   const [purchaserDate, setPurchaserDate] = useState();
   const [sellerDate, setSellerDate] = useState();
 
-  const [anzahlVorbesitzer, setAnzahlVorbesitzer] = useState();
   const [erstzulassung, setErstzulassung] = useState();
   const [kilometerStand, setKilometerStand] = useState();
+  const [amtlichesKennzeichen, setAmtlichesKennzeichen] = useState();
+  const [gesamtpreis, setGesamtpreis] = useState();
+  const [gesamtpreisInWorten, setGesamtpreisInWorten] = useState();
+  const [
+    nummerDerZulassungsbescheinigung,
+    setNummerDerZulassungsbescheinigung,
+  ] = useState();
+  const [naechsteHauptuntersuchung, setNaechsteHauptuntersuchung] = useState();
 
   // PREIS
   const [verkaufspreis, setVerkaufspreis] = useState();
@@ -113,6 +133,41 @@ function KFZKaufvertrag() {
   // ANMERKUNGEN
   const [anmerkungen, setAnmerkungen] = useState();
 
+  // Garantien des Verkäufers
+  const [unfallfrei, setUnfallfrei] = useState();
+  const [keineSchaden, setKeineSchaden] = useState();
+  const [nurFolgenderUnfall, setNurFolgenderUnfall] = useState();
+  const [keinImportfahrzeug, setKeinImportfahrzeug] = useState();
+  const [einImportfahrzeug, setEinImportfahrzeug] = useState();
+  const [ausgestattetOriginalmotor, setAusgestattetOriginalmotor] = useState();
+  const [ausgestattetAustausch, setAusgestattetAustausch] = useState();
+  const [nachfolgendeLaufleistung, setNachfolgendeLaufleistung] = useState();
+
+  const [laufleistung, setLaufleistung] = useState();
+
+  const [abgeleseneKilometerstand, setAbgeleseneKilometerstand] = useState();
+  const [anzahlVorbesitzer, setAnzahlVorbesitzer] = useState();
+  const [anzahlVorbesitzerChecked, setAnzahlVorbesitzerChecked] = useState();
+  const [unfalltext, setUnfalltext] = useState();
+
+  // Checkboxen
+  const [zulassungsbescheinigungTeil1Vorhanden, setZulassungsBescheinigungTeil1Vorhanden] = useState();
+  const [zulassungsbescheinigungTeil2Vorhanden, setZulassungsBescheinigungTeil2Vorhanden] = useState();
+  const [schluesselAnzahlVorhanden, setSchluesselAnzahlVorhanden] = useState();
+  const [schluesselAnzahl, setSchluesselAnzahl] = useState();
+  const [huBescheinigung, setHuBescheinigung] = useState();
+  const [stilllegungsbescheinigung, setStilllegungsbescheinigung] = useState();
+  const [amtlichesKennzeichenVorhanden, setAmtlichesKennzeichenVorhanden] = useState();
+  const [cocBescheinigung, setCocBescheinigung] = useState();
+
+  // Fahrzeugübergabe
+  const [EURO, setEURO] = useState();
+  const [ort, setOrt] = useState();
+  const [datum, setDatum] = useState();
+  const [uhrzeit, setUhrzeit] = useState();
+  const [sellerSignature, setSellerSignature] = useState();
+  const [purchaserSignature, setPurchaserSignature] = useState();
+
   const handleSubmit = () => {};
 
   return (
@@ -120,755 +175,538 @@ function KFZKaufvertrag() {
       <div
         className={`${classes.contentcontainer} relative w-10/12 lg:w-full max-w-ag-container md:!w-full mx-auto flex flex-col lg:flex-col bg-white p-6`}
       >
-        <div className={`${classes.top_row}`}>
-          <span className={classes.leftrow}>
-            <Link href={"/"}>
-              <BackHome className={classes.backhome} />
-            </Link>
-          </span>
+        <TopRow />
+        <div className={classes.helprow}>
+          <div className={classes.left}>
+            <div
+              className={`${classes.sectionheader} ${
+                impressumOpen == true && classes.sectionheaderopen
+              }`}
+              onClick={() => {
+                setImpressumOpen((d) => !d);
+                setVerbraucherAgbOpen(false);
+                setHaendlerAgb(false);
+                setDatenschutzOpen(false);
+                setGestaltungOpen(false);
+                setDatenschutzeinwilligungOpen(false);
+              }}
+            >
+              <div className={classes.leftpart}>
+                <FileIcon className={classes.fileicon} />
+                <span className={classes.filetext}>Impressum</span>
+              </div>
+              <Expand
+                className={`${classes.unrotated} ${
+                  impressumOpen == true && classes.rotated
+                }`}
+              />
+            </div>
+            <div
+              className={`${classes.sectionheader} ${
+                verbaucherAgbOpen == true && classes.sectionheaderopen
+              }`}
+              onClick={() => {
+                setVerbraucherAgbOpen((d) => !d);
+                setImpressumOpen(false);
+                setHaendlerAgb(false);
+                setDatenschutzOpen(false);
+                setGestaltungOpen(false);
+                setDatenschutzeinwilligungOpen(false);
+              }}
+            >
+              <div className={classes.leftpart}>
+                <FileIcon className={classes.fileicon} />
+                <span className={classes.filetext}>Verbaucher-AGB</span>
+              </div>
+              <Expand
+                className={`${classes.unrotated} ${
+                  verbaucherAgbOpen == true && classes.rotated
+                }`}
+              />
+            </div>
+            <div
+              className={`${classes.sectionheader} ${
+                haendlerAgb == true && classes.sectionheaderopen
+              }`}
+              onClick={() => {
+                setHaendlerAgb((d) => !d);
+                setVerbraucherAgbOpen(false);
+                setImpressumOpen(false);
+                setDatenschutzOpen(false);
+                setGestaltungOpen(false);
+                setDatenschutzeinwilligungOpen(false);
+              }}
+            >
+              <div className={classes.leftpart}>
+                <FileIcon className={classes.fileicon} />
+                <span className={classes.filetext}>Händler-AGB</span>
+              </div>
+              <Expand
+                className={`${classes.unrotated} ${
+                  haendlerAgb == true && classes.rotated
+                }`}
+              />
+            </div>
+            <div
+              className={`${classes.sectionheader} ${
+                datenschutzOpen == true && classes.sectionheaderopen
+              }`}
+              onClick={() => {
+                setDatenschutzOpen((d) => !d);
+                setGestaltungOpen(false);
+                setDatenschutzeinwilligungOpen(false);
+                setVerbraucherAgbOpen(false);
+                setImpressumOpen(false);
+                setHaendlerAgb(false);
+              }}
+            >
+              <div className={classes.leftpart}>
+                <FileIcon className={classes.fileicon} />
+                <span className={classes.filetext}>Datenschutz</span>
+              </div>
+              <Expand
+                className={`${classes.unrotated} ${
+                  datenschutzOpen == true && classes.rotated
+                }`}
+              />
+            </div>
+            <div
+              className={`${classes.sectionheader} ${
+                gestaltungOpen == true && classes.sectionheaderopen
+              }`}
+              onClick={() => {
+                setGestaltungOpen((d) => !d);
+                setDatenschutzOpen(false);
+                setDatenschutzeinwilligungOpen(false);
+                setVerbraucherAgbOpen(false);
+                setImpressumOpen(false);
+                setHaendlerAgb(false);
+              }}
+            >
+              <div className={classes.leftpart}>
+                <FileIcon className={classes.fileicon} />
+                <span className={classes.filetext}>
+                  Gestaltung von Anzeigen
+                </span>
+              </div>
+              <Expand
+                className={`${classes.unrotated} ${
+                  gestaltungOpen == true && classes.rotated
+                }`}
+              />
+            </div>
+            <div
+              className={`${classes.sectionheader} ${
+                datenschutzeinwilligungOpen == true && classes.sectionheaderopen
+              }`}
+              onClick={() => {
+                setDatenschutzeinwilligungOpen((d) => !d);
+                setGestaltungOpen(false);
+                setDatenschutzOpen(false);
+                setVerbraucherAgbOpen(false);
+                setImpressumOpen(false);
+                setHaendlerAgb(false);
+              }}
+            >
+              <div className={classes.leftpart}>
+                <FileIcon className={classes.fileicon} />
+                <span className={classes.filetext}>
+                  Datenschutzeinwilligung
+                </span>
+              </div>
+              <Expand
+                className={`${classes.unrotated} ${
+                  datenschutzeinwilligungOpen == true && classes.rotated
+                }`}
+              />
+            </div>
+          </div>
+          <div className="flex w-full flex-col-reverse">
+            <div className={classes.secondcontent}>
+              <h1 className={classes.secondcontentheading}>Kfz-Kaufvertrag</h1>
+              <h2 className={classes.secondcontentsubheading}>
+                Für ein gebrauchtes Fahrzeug von privat.
+                <div className={"text-13 font-normal"}>
+                Im Kaufvertrag sollten die wichtigsten Punkte in Bezug auf das zum Kauf stehende Auto schwarz auf weiß festgehalten werden. Ganz einfach geht das, wenn du dafür unseren Muster-Kaufvertrag nutzen.
+                </div>
+                <Sect heading={"Kfz-Kaufvertrag"} text={"Im Fahrzeugkaufvertrag sollten neben den standardmäßigen rechtlichen Regelungen auch individuelle Vereinbarungen und Angaben berücksichtigt werden. Der Vertrag sollte nur unterschrieben werden, wenn alle Angaben korrekt sind. Es wird empfohlen, zwei identische Exemplare des Kaufvertrags anzufertigen - eines für den Käufer und eines für den Verkäufer, beide unterschrieben. Wenn der Verkäufer minderjährig und somit nicht voll geschäftsfähig ist, sollte eine schriftliche Verkaufsvollmacht verlangt werden."} />
+                <Sect heading={"Fahrzeugangaben"} text={"Zur eindeutigen Identifizierung eines Fahrzeugs sind die Fahrzeug-Identifikationsnummer sowie die Nummer des Fahrzeugscheins oder der Zulassungsbescheinigung II unerlässlich. Weitere wesentliche Angaben, die im Kaufvertrag nicht fehlen sollten, sind das Datum der Erstzulassung, der Kilometerstand, die Anzahl der Vorbesitzer und der nächste Termin für die Haupt- und Abgasuntersuchung."} />
+                <Sect heading={"Unfallfrei?"} text={"Es ist ratsam, sich vom Verkäufer bestätigen zu lassen, dass das Fahrzeug unfallfrei ist. Sollte es doch zu Schäden gekommen sein, sollten Art des Schadens und die Art der Reparatur so genau wie möglich beschrieben werden. Zusätzlich sollten vom Käufer alle vorhandenen Gutachten und Rechnungen eingeholt und dem Kaufvertrag als Anlage beigefügt werden."} />
+                <Sect heading={"Gewerbliche Einsätze"} text={"Es sollte im Kaufvertrag vermerkt werden, dass das Fahrzeug nicht gewerblich genutzt wurde, wie zum Beispiel als Miet- oder Fahrschulwagen. Wenn es sich um ein Import-Fahrzeug handelt, ist es besonders wichtig darauf hinzuweisen."} />
+                <Sect heading={"Größere Reparaturen"} text={"Falls das Fahrzeug mit einem Austauschmotor oder einem neuen Getriebe ausgestattet wurde, sollten diese Informationen im Kaufvertrag vermerkt werden. Es ist ebenfalls ratsam, im Falle von größeren Reparaturen, die durchgeführt wurden, die Laufleistung der neuen Aggregate zu erwähnen."} />
+                <Sect heading={"Gewerbliche Einsätze"} text={"Es sollte im Kaufvertrag vermerkt werden, dass das Fahrzeug nicht gewerblich genutzt wurde, wie zum Beispiel als Miet- oder Fahrschulwagen. Wenn es sich um ein Import-Fahrzeug handelt, ist es besonders wichtig darauf hinzuweisen."} />
+                <Sect heading={"Größere Reparaturen"} text={"Falls das Fahrzeug mit einem Austauschmotor oder einem neuen Getriebe ausgestattet wurde, sollten diese Informationen im Kaufvertrag vermerkt werden. Es ist ebenfalls ratsam, im Falle von größeren Reparaturen, die durchgeführt wurden, die Laufleistung der neuen Aggregate zu erwähnen."} />
+                <Sect heading={"Mängel"} text={"Falls das gewünschte Fahrzeug Mängel aufweist, sollten diese im Kaufvertrag möglichst genau beschrieben werden. Hierbei sollten Angaben zu Art, Zeitpunkt und Reparatur des Mangels gemacht werden."} />
+                <Sect heading={"Preis"} text={"Im Kaufvertrag wird üblicherweise auch der Kaufpreis vereinbart. Der Verkäufer bestätigt in der Regel mit seiner Unterschrift, dass er die vereinbarte Summe erhalten hat. Als Käufer quittieren Sie den Erhalt des Fahrzeugs, der Schlüssel und der dazugehörigen Dokumente."} />
+                <div className="flex items-center text-13 mb-2 mt-4">
+                  <span className="font-bold mr-2">Empfehlung:</span>
+                  <span>Verwenden Sie einen Kfz-Kaufvertrag und achten Sie darauf:</span>
+                </div>
+                <div className={"text-13"}>
+                Jede Partei erhält eine identische Ausfertigung.
+Schriftliche Festlegung aller Absprachen und Vereinbarungen im Kaufvertrag.
+Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
+                </div>
+
+              </h2>
+              <button className={classes.downloadtemplate}>
+                Kaufvertrag Vorlage herunterladen
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="flex w-full lg:flex-col">
-          <div className={classes.content}>
-            <form onSubmit={handleSubmit}>
-              <h1 className={classes.heading}>KFZ Kaufvertrag</h1>
-              <p className={classes.desc}>
-                Einfach Kfz Kaufvertrag ausfüllen und kostenlos herunterladen,
-                <br /> und schon haben Sie das notwendige Dokument für die
-                Anmeldung des Fahrzeuges.
-              </p>
-              <h2 className={classes.sectionheading}>Käufer</h2>
-              <div className={classes.row}>
-                <input
-                  className={classes.first}
-                  placeholder={"Vorname"}
-                  onChange={(e) => setPurchaserFirstName(e.target.value)}
-                ></input>
-                <input
-                  className={classes.second}
-                  placeholder={"Nachname"}
-                  onChange={(e) => setPurchaserLastName(e.target.value)}
-                ></input>
+        <div className={classes.content}>
+          <form onSubmit={handleSubmit}>
+            <h1 className={classes.heading}>KFZ Kaufvertrag</h1>
+            <p className={classes.desc}>
+              Einfach Kfz Kaufvertrag ausfüllen und kostenlos herunterladen,
+              <br /> und schon haben Sie das notwendige Dokument für die
+              Anmeldung des Fahrzeuges.
+            </p>
+            <div className={classes.sellerpurchaserrow}>
+              <div>
+                <h2 className={classes.sectionheading}>Käufer</h2>
+                <div className={classes.row}>
+                  <input
+                    className={classes.first}
+                    placeholder={"Vorname"}
+                    onChange={(e) => setPurchaserFirstName(e.target.value)}
+                  ></input>
+                  <input
+                    className={classes.second}
+                    placeholder={"Nachname"}
+                    onChange={(e) => setPurchaserLastName(e.target.value)}
+                  ></input>
+                </div>
+                <div className={classes.row}>
+                  <input
+                    className={classes.first}
+                    placeholder={"Strasse"}
+                    onChange={(e) => setPurchaserStrasse(e.target.value)}
+                  ></input>
+                  <input
+                    className={classes.second}
+                    placeholder={"Hausnummer"}
+                    onChange={(e) => setPurchaserHausnummer(e.target.value)}
+                  ></input>
+                </div>
+                <div className={classes.row}>
+                  <input
+                    className={classes.first}
+                    placeholder={"PLZ"}
+                    onChange={(e) => setPurchaserPLZ(e.target.value)}
+                  ></input>
+                  <input
+                    className={classes.second}
+                    placeholder={"Ort"}
+                    onChange={(e) => setPurchaserOrt(e.target.value)}
+                  ></input>
+                </div>
+                <div className={classes.row}>
+                  <input
+                    className={classes.first}
+                    placeholder={"Land"}
+                    onChange={(e) => setPurchaserLand(e.target.value)}
+                  ></input>
+                  <input
+                    className={classes.second}
+                    placeholder={"Telefonnummer"}
+                    onChange={(e) => setPurchaserTelefonnummer(e.target.value)}
+                  ></input>
+                </div>
+                <div className={classes.row}>
+                  <input
+                    className={classes.second}
+                    placeholder={
+                      "Personalausweis- / Reisepassnummer und ausstellende Behörde"
+                    }
+                    onChange={(e) =>
+                      setPurchaserPersonalausweis(e.target.value)
+                    }
+                  ></input>
+                </div>
               </div>
-              <div className={classes.row}>
-                <input
-                  className={classes.first}
-                  placeholder={"Strasse"}
-                  onChange={(e) => setPurchaserStrasse(e.target.value)}
-                ></input>
-                <input
-                  className={classes.second}
-                  placeholder={"Hausnummer"}
-                  onChange={(e) => setPurchaserHausnummer(e.target.value)}
-                ></input>
+              <div className={classes.sellercontainer}>
+                <h2 className={classes.sectionheading}>
+                  Verkäufer (Privatverkauf)
+                </h2>
+                <div className={classes.row}>
+                  <input
+                    className={classes.first}
+                    placeholder={"Vorname"}
+                    onChange={(e) => setSellerFirstName(e.target.value)}
+                  ></input>
+                  <input
+                    className={classes.second}
+                    placeholder={"Nachname"}
+                    onChange={(e) => setSellerLastName(e.target.value)}
+                  ></input>
+                </div>
+                <div className={classes.row}>
+                  <input
+                    className={classes.first}
+                    placeholder={"Strasse"}
+                    onChange={(e) => setSellerStrasse(e.target.value)}
+                  ></input>
+                  <input
+                    className={classes.second}
+                    placeholder={"Hausnummer"}
+                    onChange={(e) => setSellerHausnummer(e.target.value)}
+                  ></input>
+                </div>
+                <div className={classes.row}>
+                  <input
+                    className={classes.first}
+                    placeholder={"PLZ"}
+                    onChange={(e) => setSellerPLZ(e.target.value)}
+                  ></input>
+                  <input
+                    className={classes.second}
+                    placeholder={"Ort"}
+                    onChange={(e) => setSellerOrt(e.target.value)}
+                  ></input>
+                </div>
+                <div className={classes.row}>
+                  <input
+                    className={classes.first}
+                    placeholder={"Land"}
+                    onChange={(e) => setSellerLand(e.target.value)}
+                  ></input>
+                  <input
+                    className={classes.second}
+                    placeholder={"Telefonnummer"}
+                    onChange={(e) => setSellerTelefonnummer(e.target.value)}
+                  ></input>
+                </div>
+                <div className={classes.row}>
+                  <input
+                    className={classes.second}
+                    placeholder={
+                      "Personalausweis- / Reisepassnummer und ausstellende Behörde"
+                    }
+                    onChange={(e) => setSellerPersonalausweis(e.target.value)}
+                  ></input>
+                </div>
               </div>
-              <div className={classes.row}>
-                <input
-                  className={classes.first}
-                  placeholder={"PLZ"}
-                  onChange={(e) => setPurchaserPLZ(e.target.value)}
-                ></input>
-                <input
-                  className={classes.second}
-                  placeholder={"Ort"}
-                  onChange={(e) => setPurchaserOrt(e.target.value)}
-                ></input>
-              </div>
-              <div className={classes.row}>
-                <input
-                  className={classes.first}
-                  placeholder={"Land"}
-                  onChange={(e) => setPurchaserLand(e.target.value)}
-                ></input>
-                <input
-                  className={classes.second}
-                  placeholder={"Steuernummer"}
-                  onChange={(e) => setPurchaserSteuernummer(e.target.value)}
-                ></input>
-              </div>
-              <div className={classes.row}>
-                <input
-                  className={classes.first}
-                  placeholder={"Telefonnummer"}
-                  onChange={(e) => setPurchaserTelefonnummer(e.target.value)}
-                ></input>
-                <div className={classes.second}></div>
-              </div>
-              <h2 className={classes.sectionheading}>Verkäufer</h2>
-              <div className={classes.row}>
-                <input
-                  className={classes.first}
-                  placeholder={"Vorname"}
-                  onChange={(e) => setSellerFirstName(e.target.value)}
-                ></input>
-                <input
-                  className={classes.second}
-                  placeholder={"Nachname"}
-                  onChange={(e) => setSellerLastName(e.target.value)}
-                ></input>
-              </div>
-              <div className={classes.row}>
-                <input
-                  className={classes.first}
-                  placeholder={"Strasse"}
-                  onChange={(e) => setSellerStrasse(e.target.value)}
-                ></input>
-                <input
-                  className={classes.second}
-                  placeholder={"Hausnummer"}
-                  onChange={(e) => setSellerHausnummer(e.target.value)}
-                ></input>
-              </div>
-              <div className={classes.row}>
-                <input
-                  className={classes.first}
-                  placeholder={"PLZ"}
-                  onChange={(e) => setSellerPLZ(e.target.value)}
-                ></input>
-                <input
-                  className={classes.second}
-                  placeholder={"Ort"}
-                  onChange={(e) => setSellerOrt(e.target.value)}
-                ></input>
-              </div>
-              <div className={classes.row}>
-                <input
-                  className={classes.first}
-                  placeholder={"Land"}
-                  onChange={(e) => setSellerLand(e.target.value)}
-                ></input>
-                <input
-                  className={classes.second}
-                  placeholder={"Steuernummer"}
-                  onChange={(e) => setSellerSteuernummer(e.target.value)}
-                ></input>
-              </div>
-              <div className={classes.row}>
-                <input
-                  className={classes.first}
-                  placeholder={"Telefonnummer"}
-                  onChange={(e) => setSellerTelefonnummer(e.target.value)}
-                ></input>
-                <div className={classes.second}></div>
-              </div>
-              <h2 className={classes.sectionheading}>Fahrzeug</h2>
+            </div>
+            <h2 className={classes.sectionheading}>Fahrzeug</h2>
+            <div className={classes.eighterinput}>
               <input
-                className={classes.inputfields}
+                className={`${classes.inputfields} ${classes.one}`}
                 placeholder={"Marke"}
                 onChange={(e) => setBrandName(e.target.value)}
               />
               <input
-                className={classes.inputfields}
+                className={`${classes.inputfields} ${classes.two}`}
                 placeholder={"Modell"}
                 onChange={(e) => setModelName(e.target.value)}
               />
               <input
-                className={classes.inputfields}
-                placeholder={"Baujahr"}
-                onChange={(e) => setYearOfManifacture(e.target.value)}
+                className={`${classes.inputfields} ${classes.three}`}
+                placeholder={"Amtliches Kennzeichen"}
+                onChange={(e) => setAmtlichesKennzeichen(e.target.value)}
               />
               <input
-                className={classes.inputfields}
+                className={`${classes.inputfields} ${classes.four}`}
+                placeholder={erstzulassung == null && "Erstzulassung (MM/JJ)"}
+                onChange={(e) => setErstzulassung(e.target.value)}
+                type={erstzulassung == null ? 'text' : 'date'}
+
+              />
+              <input
+                className={`${classes.inputfields} ${classes.five}`}
                 placeholder={"Fahrzeugidentifikationsnummer"}
                 onChange={(e) => setChassisNumber(e.target.value)}
               />
               <input
-                className={classes.inputfields}
-                placeholder={"Motonummer"}
-                onChange={(e) => setEngineNumber(e.target.value)}
-              />
-              <input
-                className={classes.inputfields}
+                className={`${classes.inputfields} ${classes.eight}`}
                 placeholder={"Zahl der Vorbesitzer"}
                 onChange={(e) => setAnzahlVorbesitzer(e.target.value)}
               />
               <input
-                className={classes.inputfields}
-                placeholder={"Erstzulassung"}
-                onChange={(e) => setErstzulassung(e.target.value)}
-              />
-              <input
-                className={classes.inputfields}
-                placeholder={"Km-Stand"}
+                className={`${classes.inputfields} ${classes.ten}`}
+                placeholder={"Kilometerstand"}
                 onChange={(e) => setKilometerStand(e.target.value)}
               />
-              <h2 className={classes.sectionheading}>Verkaufspreis</h2>
               <input
-                className={classes.inputfields}
-                placeholder={"Verkaufspreis in €"}
-                type="number"
-                onChange={(e) => setVerkaufspreis(e.target.value)}
-              ></input>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setPreis1((d) => !d)}
-                >
-                  {preis1 == true && <Check className={classes.blackcheck} />}
-                </div>
-                <label>
-                  Kaufüberprüfung wurde am{" "}
-                  <input
-                    type={"text"}
-                    className={classes.middleinput}
-                    disabled={preis1 == false}
-                    onChange={(e) => setPreis1Datum(e.target.value)}
-                  />{" "}
-                  vorgenommen <sup className={classes.sup}>2)</sup>
-                </label>
-              </div>
-              <div className="flex text-13  -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setPreis2((d) => !d)}
-                >
-                  {preis2 == true && <Check className={classes.blackcheck} />}
-                </div>
-                <label>
-                  Der Kaufvertrag kommt nur unter der Bedingung einer positiven
-                  Kaufüberprüfung zustande.{" "}
-                  <sup className={classes.sup}>3)</sup>
-                </label>
-              </div>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setPreis3((d) => !d)}
-                >
-                  {preis3 == true && <Check className={classes.blackcheck} />}
-                </div>
-                <label>
-                  Die NoVA (Normverbrauchsabgabe) wurde bereits entrichtet.{" "}
-                  <sup className={classes.sup}>4)</sup>
-                </label>
-              </div>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setPreis4((d) => !d)}
-                >
-                  {preis4 == true && <Check className={classes.blackcheck} />}
-                </div>
-                <label>
-                  Barzahlung bzw. Überweisung vor Übernahme{" "}
-                  <sup className={classes.sup}>5, 14)</sup>
-                </label>
-              </div>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setPreis5((d) => !d)}
-                >
-                  {preis5 == true && <Check className={classes.blackcheck} />}
-                </div>
-                <label>
-                  Ratenzahlung <sup className={classes.sup}>5, 14)</sup>
-                </label>
-              </div>
-              <div className="flex text-13 -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setPreis6((d) => !d)}
-                >
-                  {preis6 == true && <Check className={classes.blackcheck} />}
-                </div>
-                <label>
-                  <span className="font-bold text-13">
-                    Die Gewährleistung, also die Haftung für Mängel, ist{" "}
-                    <input
-                      type={"text"}
-                      disabled={preis6 == false}
-                      className={`${classes.middleinputleft}`}
-                    />{" "}
-                    ausgeschlossen
-                  </span>{" "}
-                  (evtl. "NICHT" einfügen)<sup className={classes.sup}>6)</sup>
-                </label>
-              </div>
-              <div className="flex text-13 -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setPreis7((d) => !d)}
-                >
-                  {preis7 == true && <Check className={classes.blackcheck} />}
-                </div>
-                <label>
-                  <span className="font-bold text-13">
-                    Derzeit bestehende Ansprüche aus Gewährleistung und/ oder
-                    Garantie werden
-                    <input
-                      type={"text"}
-                      disabled={preis7 == false}
-                      className={`${classes.middleinputleft}`}
-                    />{" "}
-                    auf den Käufer übertragen
-                  </span>{" "}
-                  (evtl. "NICHT" einfügen)<sup className={classes.sup}>7)</sup>
-                </label>
-              </div>
-              <div className={classes.row}>
-                <input
-                  className={classes.a}
-                  placeholder={"Ort, Datum"}
-                  onChange={(e) => setPurchaserDate(e.target.value)}
-                ></input>
-                <input
-                  className={classes.b}
-                  placeholder={"Unterschrift Käufer"}
-                  readOnly={true}
-                ></input>
-              </div>
-              <div className={classes.row}>
-                <input
-                  className={classes.a}
-                  placeholder={"Ort, Datum"}
-                  onChange={(e) => setSellerDate(e.target.value)}
-                ></input>
-                <input
-                  className={classes.b}
-                  placeholder={"Unterschrift Verkäufer"}
-                  readOnly={true}
-                ></input>
-              </div>
-              <h2 className={classes.sectionheading}>
-                Zusicherungen des Verkäufers
-              </h2>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setZusicherung1((d) => !d)}
-                >
-                  {zusicherung1 == true && (
-                    <Check className={classes.blackcheck} />
-                  )}
-                </div>
-                <label>
-                  Das Fahrzeug ist mein alleiniges und{" "}
-                  <span className="font-bold">unbelastetes Eigentum</span>{" "}
-                  <sup className={classes.sup}>8)</sup>
-                </label>
-              </div>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setZusicherung2((d) => !d)}
-                >
-                  {zusicherung2 == true && (
-                    <Check className={classes.blackcheck} />
-                  )}
-                </div>
-                <label>
-                  Das Fahrzeug ist{" "}
-                  <span className="font-bold">
-                    verkehrs- und betriebssicher
-                  </span>{" "}
-                  <sup className={classes.sup}>9)</sup>
-                </label>
-              </div>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setZusicherung3((d) => !d)}
-                >
-                  {zusicherung3 == true && (
-                    <Check className={classes.blackcheck} />
-                  )}
-                </div>
-                <label>
-                  Ich habe alle fälligen{" "}
-                  <span className="font-bold">
-                    Steuer- und Versicherungsbeträge
-                  </span>{" "}
-                  entrichtet. <sup className={classes.sup}></sup>
-                </label>
-              </div>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setZusicherung4((d) => !d)}
-                >
-                  {zusicherung4 == true && (
-                    <Check className={classes.blackcheck} />
-                  )}
-                </div>
-                <label>
-                  Alle <span className="font-bold">Änderungen</span> am Fahrzeug
-                  sind zulässig bzw. genehmigt.
-                  <sup className={classes.sup}>10)</sup>
-                </label>
-              </div>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setZusicherung5((d) => !d)}
-                >
-                  {zusicherung5 == true && (
-                    <Check className={classes.blackcheck} />
-                  )}
-                </div>
-                <label>
-                  Ich garantiere den oben genannten{" "}
-                  <span className="font-bold">Kilometerstand</span>
-                  <sup className={classes.sup}>11)</sup>
-                </label>
-              </div>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setZusicherung6((d) => !d)}
-                >
-                  {zusicherung6 == true && (
-                    <Check className={classes.blackcheck} />
-                  )}
-                </div>
-                <label>
-                  Es sind <span className="font-bold">keine Vorschäden</span>{" "}
-                  vorhanden.<sup className={classes.sup}>12)</sup>
-                </label>
-              </div>
-
-              <h2 className={classes.sectionheading}>Übergabe</h2>
-              <div className={classes.row}>
-                <input
-                  className={classes.first}
-                  placeholder={"Übergabedatum"}
-                  onChange={(e) => setUebergabeDatum(e.target.value)}
-                ></input>
-                <input
-                  className={classes.second}
-                  placeholder={"Anzahl der Kfz-Schlüssel"}
-                  onChange={(e) => setAnzKfzSchluessel(e.target.value)}
-                ></input>
-              </div>
-              <textarea
-                className={classes.textarea}
-                placeholder="Anmerkungen"
-                onChange={(e) => setVerbleibendesZubehoer(e.target.value)}
-              ></textarea>
-              <h2 className={classes.sectionheading}>Mit Fahrzeug übergeben</h2>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setMit1((d) => !d)}
-                >
-                  {mit1 == true && <Check className={classes.blackcheck} />}
-                </div>
-                <label>
-                  Letzter <span className="font-bold">Prüfbericht</span> nach §
-                  57a KFG, gültige Plakette, aufgeklebt
-                </label>
-              </div>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setMit2((d) => !d)}
-                >
-                  {mit2 == true && <Check className={classes.blackcheck} />}
-                </div>
-                <label>
-                  <span className="font-bold">Serviceheft</span>
-                </label>
-              </div>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setMit3((d) => !d)}
-                >
-                  {mit3 == true && <Check className={classes.blackcheck} />}
-                </div>
-                <label>
-                  <span className="font-bold">Genehmigungsnachweis</span> (z.B.
-                  Typenschein)<sup className={classes.sup}>13)</sup>
-                </label>
-              </div>
-              <div className="flex text-13 items-center -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setMit4((d) => !d)}
-                >
-                  {mit4 == true && <Check className={classes.blackcheck} />}
-                </div>
-                <label>
-                  Autobahn-Vignette, gültig bis{" "}
-                  <input
-                    type={"text"}
-                    disabled={mit4 == false}
-                    className={classes.middleinput}
-                    onChange={(e) => setMit4Datum(e.target.value)}
-                  />
-                </label>
-              </div>
-              <h2 className={classes.sectionheading}>
-                Zahlungsbedingungen<sup className={classes.sup}>15)</sup>
-              </h2>
-              <div className="flex text-13 -mt-2 mb-3">
-                <div
-                  className={`${classes.weiss} mt-1.5`}
-                  onClick={() => setZahlungsbedingungen1((d) => !d)}
-                >
-                  {zahlungsbedingungen1 == true && (
-                    <Check className={classes.blackcheck} />
-                  )}
-                </div>
-                <label className="flex w-full flex-col">
-                    <label htmlFor="1a">
-                    <div>
-                        <span className="relative flex items-center">
-                        <span className={classes.inputlabel}>Anzahlung € </span>
-                        <input
-                        type={"text"}
-                        disabled={zahlungsbedingungen1 == false}
-                        className={classes.middleinputbottom}
-                        id="1a"
-                        onChange={(e) =>
-                            setZahlungsbedingungen1Anzahlung(e.target.value)
-                        }
-                        />
-                        </span>
-                    </div>
-                    </label>
-                    <label htmlFor="1b">
-                    <div>
-                        <span className="relative flex items-center">
-                        <span className={classes.inputlabel}>Restzahlung € </span>
-                        <input
-                        type={"text"}
-                        disabled={zahlungsbedingungen1 == false}
-                        className={classes.middleinputbottom}
-                        id="1b"
-                        onChange={(e) =>
-                            setZahlungsbedingungen1Restzahlung(e.target.value)
-                        }
-                        />
-                        </span>
-                    </div>
-                    </label>
-                    <label htmlFor="1c">
-                    <div>
-                        <span className="relative flex items-center">
-                        <span className={classes.inputlabel}>Fällig am </span>
-                        <input
-                        type={"date"}
-                        disabled={zahlungsbedingungen1 == false}
-                        id="1c"
-                        className={classes.middleinputbottom}
-                        onChange={(e) =>
-                            setZahlungsbedingungen1Faelligkeitsdatum(e.target.value)
-                        }
-                        />
-                        </span>
-                    </div>
-                    </label>
-
-                </label>
-              </div>
-              <div className="flex text-13 -mt-2 mb-3">
-                <div
-                  className={`${classes.weiss} mt-1.5`}
-                  onClick={() => setZahlungsbedingungen2((d) => !d)}
-                >
-                  {zahlungsbedingungen2 == true && (
-                    <Check className={classes.blackcheck} />
-                  )}
-                </div>
-                <label className="flex w-full flex-col">
-                    <label htmlFor="1">
-                        <div>
-                        <span className="relative flex items-center">
-                        <span className={classes.inputlabel}>Anzahlung € </span>
-                        <input
-                        type={"text"}
-                        disabled={zahlungsbedingungen1 == false}
-                        className={classes.middleinputbottom}
-                        id="1"
-                        onChange={(e) =>
-                            setZahlungsbedingungen2Anzahlung(e.target.value)
-                        }
-                        />
-                        </span>
-                        </div>
-                    </label>
-                    <label htmlFor="2">
-                    <div>
-                        <span className="relative flex items-center">
-                        <span className={classes.inputlabel}>Fällig am</span>
-                        <input
-                        type={"date"}
-                        disabled={zahlungsbedingungen1 == false}
-                        className={classes.middleinputbottom}
-                        id="2"
-                        onChange={(e) =>
-                            setZahlungsbedingungen2Faelligkeitsdatum(e.target.value)
-                        }
-                        />
-                        </span>
-                    </div>
-                    </label>
-                    <label htmlFor="3">
-                    <div>
-                        <span className="relative flex items-center">
-                        <span className={classes.inputlabel}>Raten zu je €</span>
-                        <input
-                        type={"text"}
-                        disabled={zahlungsbedingungen1 == false}
-                        className={classes.middleinputbottom}
-                        id="3"
-                        onChange={(e) =>
-                            setZahlungsbedingungen2Raten(e.target.value)
-                        }
-                        />
-                        </span>
-                    </div>
-                    </label>
-                    <label className="4">
-                    <div>
-                        <span className="relative flex items-center">
-                        <span className={classes.inputlabel}>Fällig jeweils am</span>
-                        <input
-                        type={"text"}
-                        disabled={zahlungsbedingungen1 == false}
-                        className={classes.middleinputbottom}
-                        id="4"
-                        onChange={(e) =>
-                            setZahlungsbedingungen2FaelligJeweils(e.target.value)
-                        }
-                        />
-                        </span>
-                    </div>
-                    </label>
-                  
-                </label>
-              </div>
-              <h2 className={classes.sectionheading}>
-                Zahlungssicherung<sup className={classes.sup}>16)</sup>
-              </h2>
-              <div className="flex text-13 -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setZahlungssicherung1((d) => !d)}
-                >
-                  {zahlungssicherung1 == true && (
-                    <Check className={classes.blackcheck} />
-                  )}
-                </div>
-                <label>
-                  <span className="font-bold">Genehmigungsnachweis</span> (z.B.
-                  Typenschein) bleibt bis zur Bezahlung des gesamten Kaufpreises
-                  beim Verkäufer
-                </label>
-              </div>
-              <h2 className={classes.sectionheading}>
-                Rücktritt und Storno<sup className={classes.sup}>17)</sup>
-              </h2>
-              <div className="flex text-13 -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setStorno((d) => !d)}
-                >
-                  {storno == true && <Check className={classes.blackcheck} />}
-                </div>
-                <label>
-                  Erfüllt ein Vertragspartner ohne wichtigen Grund seine
-                  Verpflichtungen<br></br>bis zum{" "}
-                  <input
-                    type={"text"}
-                    disabled={storno == false}
-                    className={classes.middleinputleft}
-                    onChange={(e) => setStorno1(e.target.value)}
-                  />{" "}
-                  nicht, so kann der andere <strong>anstelle</strong> der
-                  Erfüllung und/oder eines Schadenersatzes eine{" "}
-                  <strong>Stornogebühr</strong>
-                  <br></br>von{" "}
-                  <input
-                    type={"text"}
-                    className={classes.middleinputleft}
-                    disabled={storno == false}
-                    onChange={(e) => setStorno2(e.target.value)}
-                  />{" "}
-                  % des Kaufpreises verlangen.^
-                </label>
-              </div>
-              <h2 className={classes.sectionheading}>
-                Gewährleistung, Leistungsbeschreibung
-                <sup className={classes.sup}>18)</sup>
-              </h2>
-              <div className="flex text-13 -mt-2 mb-3">
-                <div
-                  className={classes.weiss}
-                  onClick={() => setGewaehrleistung((d) => !d)}
-                >
-                  {gewaehrleistung == true && (
-                    <Check className={classes.blackcheck} />
-                  )}
-                </div>
-                <label>
-                  Der Verkäufer schränkt seine Gewährleistungspflichten auf
-                  Eigenschaften gemäß einer Leistungsbeschreibung (s. unten)
-                  ein.
-                </label>
-              </div>
-              <h2 className={classes.sectionheading}>Anmerkungen</h2>
-              <div className="text-13">
-                An dieser Stelle können auch sonstige wichtige Anmerkungen
-                formuliert werden.
-              </div>
-              <textarea
-                className={classes.textarea}
-                rows={6}
-                placeholder="Anmerkungen"
-                onChange={(e) => setAnmerkungen(e.target.value)}
-              ></textarea>
-              <button type="submit" className={classes.generatekaufvertragbtn}>
-                Kaufvertrag generieren
-              </button>
-            </form>
-          </div>
-          <div className={classes.secondcontent}>
-            <div className={classes.img}>
-              <div
-                className={`relative w-full lg:w-auto lg:ml-0 lg:mt-4 ml-3 ${classes.border} `}
-              >
-                <p
-                  className={`px-2 table text-blackn  bg-theme-yellow-2 font-bold ${classes.text}`}
-                >
-                  Mehr
-                </p>
-                <p
-                  className={`px-2 table mt-1 text-black  bg-theme-yellow-2 font-bold ${classes.text}`}
-                >
-                  als nur eine
-                </p>
-                <p
-                  className={`px-2 table mt-1 text-black  bg-theme-yellow-2 font-bold ${classes.text}`}
-                >
-                  Auto Suchmaschine.
-                </p>
+                className={`${classes.inputfields} ${classes.six}`}
+                placeholder={"Nummer der Zulassungsbescheinigung Teil 2 (Kfz-Brief)"}
+                onChange={(e) =>
+                  setNummerDerZulassungsbescheinigung(e.target.value)
+                }
+              />
+              <input
+                className={`${classes.inputfields} ${classes.seven}`}
+                placeholder={"Nächste Hauptuntersuchung (MM/JJ)"}
+                onChange={(e) => setNaechsteHauptuntersuchung(e.target.value)}
+              />
+              <input
+                className={`${classes.inputfields} ${classes.eleven}`}
+                placeholder={"Gesamtpreis in €"}
+                onChange={(e) => setGesamtpreis(e.target.value)}
+              />
+              <input
+                className={`${classes.inputfields} ${classes.twelve}`}
+                placeholder={"Gesamtpreis in Worten"}
+                onChange={(e) => setGesamtpreisInWorten(e.target.value)}
+              />
+              <div className={classes.l}>
+                 <div className="font-bold text-13">Ausschluss der Gewährleistung (nur für Privatverkäufe, nicht für Unternehmer im Sinne des § 1 Abs. 1 Nr. 1 Konsumentenschutzgesetz):</div>
+                 <div className="text-13 mt-2 mb-2">Das Fahrzeug wird ohne Gewährleistung verkauft, es sei denn, der Verkäufer gibt untenstehende Zusicherungen ab. Der Ausschluss der Gewährleistung gilt nicht im Falle von Vorsatz, grober Fahrlässigkeit oder bei Verletzung von Leben, Körper oder Gesundheit.</div>
+                 <div className="text-13 mb-2 font-bold">Garantien des Verkäufers:</div>
+                 <div className="text-13 mb-2">Der Verkäufer garantiert, dass er uneingeschränkter Eigentümer des Fahrzeugs ist und es frei von Rechten Dritter ist. Außerdem garantiert er, dass das Fahrzeug während seiner Besitzzeit und, soweit ihm bekannt, auch früher:</div>
+                 <div className="text-13">
+<ControlledCheckbox onUpdate={val => {
+  setUnfallfrei(val);
+}} label={"unfallfrei war"} />
+<ControlledCheckbox onUpdate={val => {
+  setKeineSchaden(val);
+}} label={"keine sonstigen Schäden hatte"} />
+<div className="flex items-center"><ControlledCheckbox onUpdate={val => {
+  setNurFolgenderUnfall(val);
+}} label={"nur die folgenden Unfallschäden oder erheblichen Schäden (Zahl, Art, Umfang) erlitten hat"} />
+<input type={"text"} className={classes.input} placeholder={"Zahl, Art, Umfang"} onChange={(e) => setUnfalltext(e.target.value)} disabled={!nurFolgenderUnfall} /></div>
+<ControlledCheckbox onUpdate={val => {
+  setKeinImportfahrzeug(val);
+}} label={"kein Importfahrzeug ist"} />
+<ControlledCheckbox onUpdate={val => {
+  setEinImportfahrzeug(val);
+}} label={"ein EU- oder Parallelimport ist"} />
+<ControlledCheckbox onUpdate={val => {
+  setAusgestattetOriginalmotor(val);
+}} label={"das Fahrzeug mit dem Originalmotor ausgestattet ist"} />
+<div className="flex items-center"><ControlledCheckbox onUpdate={val => {
+  setAusgestattetAustausch(val);
+}} label={`mit einem Austausch- oder gebrauchten Ersatzmotor ausgerüstet ist, der eine Laufleistung von`} /><input type={"text"} disabled={!ausgestattetAustausch} className={classes.input} placeholder={"Laufleistung"} onChange={(e) => setLaufleistung(e.target.value)} /> aufweist</div>
+<ControlledCheckbox onUpdate={val => {
+  setAbgeleseneKilometerstand(val);
+}} label={"der abgelesene Kilometerstand der Gesamtlaufleistung des Fahrzeugs entspricht"} />
+<div className="flex items-center"><ControlledCheckbox onUpdate={val => {
+  setAnzahlVorbesitzerChecked(val)
+}} label={"das Fahrzeug eine Anzahl von"}/> <input type={"number"} disabled={!anzahlVorbesitzerChecked} onChange={(e) => setAnzahlVorbesitzer(e.target.value)} className={classes.input} placeholder={"Anzahl Vorbesitzer"} /> Vorbesitzern hatte.</div></div>
               </div>
             </div>
-            <p className={classes.scdesc}>
-              Im gebrauchten Zustand, wie besichtigt und Probe gefahren,
-              <br />
-              ohne jede Gewährleistung.
-            </p>
-            <p className={classes.scdesc}>
-              Der Kaufpreis wurde bei der Übergabe des Wagens bezahlt
-              <br />
-              und der Empfang hiermit bestätigt.
-            </p>
-            <p className={classes.scdesc}>
-              Für die Richtigkeit und Echtheit der Motor- und Fahrgestellnummer
-              <br /> sowie der Fahrzeugpapiere haftet der Verkäufer.
-            </p>
-            <p className={classes.scdesc}>
-              Er bestätigt, dass das Fahrzeug sein alleiniges Eigentum ist und
-              von
-              <br />
-              keiner Seite irgendwelche Forderungen an denselben bestehen.
-            </p>
-            <button className={classes.downloadtemplate}>
-              Kaufvertrag Vorlage herunterladen
+          
+            <div className={classes.sectionheading}>Erklärung des Käufers</div>
+            <ol className="font-bold text-13">
+              <li>1. Der Käufer meldet das Kfz unverzüglich um.</li>
+              <li>2. Der Käufer erkennt an, dass das Kfz bis zur vollständigen Bezahlung des Kaufpreises Eigentum des Verkäufers bleibt.</li>
+            </ol>
+            <div className={classes.explanationcontainer}>
+              <input
+                  className={`${classes.inputfields} ${classes.a1}`}
+                  placeholder={"Sondervereinbarung"}
+                  onChange={(e) => setGesamtpreis(e.target.value)}
+              />
+              <input
+                className={`${classes.inputfields} ${classes.b1}`}
+                placeholder={"Ort"}
+                onChange={(e) => setGesamtpreisInWorten(e.target.value)}
+              />
+              <input
+                  className={`${classes.inputfields} ${classes.c1}`}
+                  placeholder={"Datum"}
+                  onChange={(e) => setGesamtpreis(e.target.value)}
+              />
+              <input
+                className={`${classes.inputfields} ${classes.d1}`}
+                placeholder={"Ort"}
+                onChange={(e) => setGesamtpreisInWorten(e.target.value)}
+              />
+              <input
+                  className={`${classes.inputfields} ${classes.e1}`}
+                  placeholder={"Datum"}
+                  onChange={(e) => setGesamtpreis(e.target.value)}
+              />
+              <input
+                className={`${classes.inputfields} ${classes.f1}`}
+                placeholder={"Verkäufer: Name und Unterschrift"}
+                onChange={(e) => setGesamtpreisInWorten(e.target.value)}
+              />
+              <input
+                className={`${classes.inputfields} ${classes.g1}`}
+                placeholder={"Käufer: Name und Unterschrift"}
+                onChange={(e) => setGesamtpreisInWorten(e.target.value)}
+              />
+            </div>
+            <h1 className={classes.sectionheading}>Fahrzeugübergabe <div className={classes.smallsectionheading}>Der Käufer bestätigt den Erhalt von:</div></h1>
+            <div className={classes.checkboxes}>
+              <div className={classes.a2}>
+                <ControlledCheckbox onUpdate={val => {
+                  setZulassungsBescheinigungTeil1Vorhanden(val);
+                }} label={"Zulassungsbescheinigung Teil 1 (Kfz-Schein)"} />
+              </div>
+              <div className={classes.b2}>
+                <ControlledCheckbox onUpdate={val => {
+                  setZulassungsBescheinigungTeil2Vorhanden(val);
+                }} label={"Zulassungsbescheinigung Teil 2 (Kfz-Brief)"} />
+              </div>
+              <div className={classes.c2}>
+                <ControlledCheckbox onUpdate={val => {
+                  setSchluesselAnzahlVorhanden(val);
+                }} label={"Schlüsselanzahl"} />
+                <input type={"number"} onChange={(e) => setSchluesselAnzahl(e.target.value)} className={classes.input} />
+              </div>
+              <div className={classes.d2}>
+                <ControlledCheckbox onUpdate={val => {
+                  setHuBescheinigung(val);
+                }} label={"HU-Bescheinigung"} />
+              </div>
+              <div className={classes.e2}>
+                <ControlledCheckbox onUpdate={val => {
+                  setStilllegungsbescheinigung(val);
+                }} label={"Stilllegungsbescheinigung"} />
+              </div>
+              <div className={classes.f2}>
+                <ControlledCheckbox onUpdate={val => {
+                  setAmtlichesKennzeichenVorhanden(val);
+                }} label={"Amtliches Kennzeichen"} />
+              </div>
+              <div className={classes.g2}>
+                <ControlledCheckbox onUpdate={val => {
+                  setCocBescheinigung(val);
+                }} label={"CoC-Bescheinigung (bei EU- oder Parallelimport)"} />
+              </div>
+            </div>
+            <div className="text-13 font-bold">Der Verkäufer bestätigt den Erhalt von:</div>
+            <div className={classes.sellerinputcontainer}>
+              <input
+                className={`${classes.inputfields} ${classes.b1}`}
+                placeholder={"EURO"}
+                onChange={(e) => setEURO(e.target.value)}
+              />
+              <input
+                  className={`${classes.inputfields} ${classes.c1}`}
+                  placeholder={"Ort"}
+                  onChange={(e) => setOrt(e.target.value)}
+              />
+              <input
+                className={`${classes.inputfields} ${classes.d1}`}
+                placeholder={datum == null && "Datum"}
+                onChange={(e) => setDatum(e.target.value)}
+                type={datum == null ? 'text' : 'date'}
+              />
+              <input
+                  className={`${classes.inputfields} ${classes.e1}`}
+                  placeholder={uhrzeit == null && "Uhrzeit"}
+                  onChange={(e) => setUhrzeit(e.target.value)}
+                  type={uhrzeit == null ? 'text' : 'time'}
+              />
+              <input
+                className={`${classes.inputfields} ${classes.f1}`}
+                placeholder={"Verkäufer: Name und Unterschrift"}
+                onChange={(e) => setSellerSignature(e.target.value)}
+              />
+              <input
+                className={`${classes.inputfields} ${classes.g1}`}
+                placeholder={"Käufer: Name und Unterschrift"}
+                onChange={(e) => setPurchaserSignature(e.target.value)}
+              />
+            </div>
+            <button type="submit" className={classes.generatekaufvertragbtn}>
+              Kaufvertrag generieren
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </div>

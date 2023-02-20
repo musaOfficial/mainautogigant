@@ -7,15 +7,11 @@ function SelectCheckbox({ options, placeholder, selectedOptions = [], onSelected
   const [showOptions, setShowOptions] = useState(false);
 
   const handleOptionClick = (option) => {
-    const selectedOptionIndex = selectedOptions.findIndex(
-      (selectedOption) => selectedOption.value === option.value
-    );
-
-    if (selectedOptionIndex === -1) {
-      onSelectedOptionsChange([...selectedOptions, option]);
-    } else {
-      onSelectedOptionsChange(selectedOptions.filter((o) => o.value !== option.value));
-    }
+    const isSelected = selectedOptions.some((selectedOption) => selectedOption.value === option.value);
+    const updatedOptions = isSelected
+      ? selectedOptions.filter((o) => o.value !== option.value)
+      : [...selectedOptions, option];
+    onSelectedOptionsChange(updatedOptions);
   };
 
   return (

@@ -19,8 +19,8 @@ import PageSearch from "./pagesearch/PageSearch";
 import HomeMenu from "./../public/homemenu.svg";
 import CloseMenu from "./../public/menuclose.svg";
 import Menu from "./../public/menu.svg";
-import Pen from './../public/pen.svg';
-import Bin from './../public/bin.svg';
+import Pen from "./../public/pen.svg";
+import Bin from "./../public/bin.svg";
 import { useEffect } from "react";
 import SelectCheckbox from "./ui/SelectCheckbox";
 import {
@@ -342,18 +342,22 @@ function SearchResults() {
   const [isMwStAusweisbar, setIsMwStAusweisbar] = useState(false);
 
   // Selekt-Inputs
-  const [selectedKarroserrieformen, setSelectedKarroserrieformen] = useState([]);
+  const [selectedKarroserrieformen, setSelectedKarroserrieformen] = useState(
+    []
+  );
   const handleSelectedKarroserieformenChange = (newSelectedOptions) => {
     setSelectedKarroserrieformen(newSelectedOptions);
     // Map the selected options to filter objects
     const newFilters = newSelectedOptions.map((option) => {
       return {
-        name: 'Karroserrieform',
-        value: option.label
+        name: "Karroserrieform",
+        value: option.label,
       };
     });
     // Remove any existing Karroserrieform filters from the filter list
-    const filtersWithoutKarroserrieform = filters.filter((filter) => filter.name !== 'Karroserrieform');
+    const filtersWithoutKarroserrieform = filters.filter(
+      (filter) => filter.name !== "Karroserrieform"
+    );
     // Add the new Karroserrieform filters to the list
     const updatedFilters = [...filtersWithoutKarroserrieform, ...newFilters];
     setFilters(updatedFilters);
@@ -365,12 +369,14 @@ function SearchResults() {
     // Map the selected options to filter objects
     const newFilters = newSelectedOptions.map((option) => {
       return {
-        name: 'Kraftstoff',
-        value: option.label
+        name: "Kraftstoff",
+        value: option.label,
       };
     });
     // Remove any existing Karroserrieform filters from the filter list
-    const filtersWithoutKarroserrieform = filters.filter((filter) => filter.name !== 'Kraftstoff');
+    const filtersWithoutKarroserrieform = filters.filter(
+      (filter) => filter.name !== "Kraftstoff"
+    );
     // Add the new Karroserrieform filters to the list
     const updatedFilters = [...filtersWithoutKarroserrieform, ...newFilters];
     setFilters(updatedFilters);
@@ -382,12 +388,14 @@ function SearchResults() {
     // Map the selected options to filter objects
     const newFilters = newSelectedOptions.map((option) => {
       return {
-        name: 'Getriebe',
-        value: option.label
+        name: "Getriebe",
+        value: option.label,
       };
     });
     // Remove any existing Getriebe filters from the filter list
-    const filtersWithoutGetriebe = filters.filter((filter) => filter.name !== 'Getriebe');
+    const filtersWithoutGetriebe = filters.filter(
+      (filter) => filter.name !== "Getriebe"
+    );
     // Add the new Getriebe filters to the list
     const updatedFilters = [...filtersWithoutGetriebe, ...newFilters];
     setFilters(updatedFilters);
@@ -399,88 +407,94 @@ function SearchResults() {
     // Map the selected options to filter objects
     const newFilters = newSelectedOptions.map((option) => {
       return {
-        name: 'Fahrzeugzustand',
-        value: option.label
+        name: "Fahrzeugzustand",
+        value: option.label,
       };
     });
     // Remove any existing Fahrzeugzustand filters from the filter list
-    const filtersWithoutFahrzeugzustand = filters.filter((filter) => filter.name !== 'Fahrzeugzustand');
+    const filtersWithoutFahrzeugzustand = filters.filter(
+      (filter) => filter.name !== "Fahrzeugzustand"
+    );
     // Add the new Fahrzeugzustand filters to the list
     const updatedFilters = [...filtersWithoutFahrzeugzustand, ...newFilters];
     setFilters(updatedFilters);
   };
 
   const [selectedAussenfarben, setSelectedAussenfarben] = useState([]);
-const handleSelectedAussenfarben = (newSelectedOptions) => {
-  setSelectedAussenfarben(newSelectedOptions);
-  // Map the selected options to filter objects
-  const newFilters = newSelectedOptions.map((option) => {
-    return {
-      name: 'Aussenfarbe',
-      value: option.label
-    };
-  });
-  // Remove any existing Aussenfarbe filters from the filter list
-  const filtersWithoutAussenfarbe = filters.filter((filter) => filter.name !== 'Aussenfarbe');
-  // Add the new Aussenfarbe filters to the list
-  const updatedFilters = [...filtersWithoutAussenfarbe, ...newFilters];
-  setFilters(updatedFilters);
-};
+  const handleSelectedAussenfarben = (newSelectedOptions) => {
+    setSelectedAussenfarben(newSelectedOptions);
+    // Map the selected options to filter objects
+    const newFilters = newSelectedOptions.map((option) => {
+      return {
+        name: "Aussenfarbe",
+        value: option.label,
+      };
+    });
+    // Remove any existing Aussenfarbe filters from the filter list
+    const filtersWithoutAussenfarbe = filters.filter(
+      (filter) => filter.name !== "Aussenfarbe"
+    );
+    // Add the new Aussenfarbe filters to the list
+    const updatedFilters = [...filtersWithoutAussenfarbe, ...newFilters];
+    setFilters(updatedFilters);
+  };
 
-const [selectedPolsterfarben, setSelectedPolsterfarben] = useState([]);
-const handleSelectedPolsterfarben = (newSelectedOptions) => {
-setSelectedPolsterfarben(newSelectedOptions);
-// Map the selected options to filter objects
-const newFilters = newSelectedOptions.map((option) => {
-return {
-name: 'Polsterfarbe',
-value: option.label
-};
-});
-// Remove any existing Polsterfarbe filters from the filter list
-const filtersWithoutPolsterfarbe = filters.filter((filter) => filter.name !== 'Polsterfarbe');
-// Add the new Polsterfarbe filters to the list
-const updatedFilters = [...filtersWithoutPolsterfarbe, ...newFilters];
-setFilters(updatedFilters);
-};
+  const [selectedPolsterfarben, setSelectedPolsterfarben] = useState([]);
+  const handleSelectedPolsterfarben = (newSelectedOptions) => {
+    setSelectedPolsterfarben(newSelectedOptions);
+    // Map the selected options to filter objects
+    const newFilters = newSelectedOptions.map((option) => {
+      return {
+        name: "Polsterfarbe",
+        value: option.label,
+      };
+    });
+    // Remove any existing Polsterfarbe filters from the filter list
+    const filtersWithoutPolsterfarbe = filters.filter(
+      (filter) => filter.name !== "Polsterfarbe"
+    );
+    // Add the new Polsterfarbe filters to the list
+    const updatedFilters = [...filtersWithoutPolsterfarbe, ...newFilters];
+    setFilters(updatedFilters);
+  };
 
+  const [selectedMaterial, setSelectedMaterial] = useState([]);
+  const handleSelectedMaterial = (newSelectedOptions) => {
+    setSelectedMaterial(newSelectedOptions);
+    // Map the selected options to filter objects
+    const newFilters = newSelectedOptions.map((option) => {
+      return {
+        name: "Material",
+        value: option.label,
+      };
+    });
+    // Remove any existing Material filters from the filter list
+    const filtersWithoutMaterial = filters.filter(
+      (filter) => filter.name !== "Material"
+    );
+    // Add the new Material filters to the list
+    const updatedFilters = [...filtersWithoutMaterial, ...newFilters];
+    setFilters(updatedFilters);
+  };
 
-const [selectedMaterial, setSelectedMaterial] = useState([]);
-const handleSelectedMaterial = (newSelectedOptions) => {
-setSelectedMaterial(newSelectedOptions);
-// Map the selected options to filter objects
-const newFilters = newSelectedOptions.map((option) => {
-return {
-name: 'Material',
-value: option.label
-};
-});
-// Remove any existing Material filters from the filter list
-const filtersWithoutMaterial = filters.filter((filter) => filter.name !== 'Material');
-// Add the new Material filters to the list
-const updatedFilters = [...filtersWithoutMaterial, ...newFilters];
-setFilters(updatedFilters);
-};
-
-const [selectedUnfallfahrzeug, setSelectedUnfallfahrzeug] = useState([]);
-const handleSelectedUnfallfahrzeug = (newSelectedOptions) => {
-setSelectedUnfallfahrzeug(newSelectedOptions);
-// Map the selected options to filter objects
-const newFilters = newSelectedOptions.map((option) => {
-return {
-name: 'Unfallfahrzeug',
-value: option.label
-};
-});
-// Remove any existing Unfallfahrzeug filters from the filter list
-const filtersWithoutUnfallfahrzeug = filters.filter((filter) => filter.name !== 'Unfallfahrzeug');
-// Add the new Unfallfahrzeug filters to the list
-const updatedFilters = [...filtersWithoutUnfallfahrzeug, ...newFilters];
-setFilters(updatedFilters);
-};
-
-
-
+  const [selectedUnfallfahrzeug, setSelectedUnfallfahrzeug] = useState([]);
+  const handleSelectedUnfallfahrzeug = (newSelectedOptions) => {
+    setSelectedUnfallfahrzeug(newSelectedOptions);
+    // Map the selected options to filter objects
+    const newFilters = newSelectedOptions.map((option) => {
+      return {
+        name: "Unfallfahrzeug",
+        value: option.label,
+      };
+    });
+    // Remove any existing Unfallfahrzeug filters from the filter list
+    const filtersWithoutUnfallfahrzeug = filters.filter(
+      (filter) => filter.name !== "Unfallfahrzeug"
+    );
+    // Add the new Unfallfahrzeug filters to the list
+    const updatedFilters = [...filtersWithoutUnfallfahrzeug, ...newFilters];
+    setFilters(updatedFilters);
+  };
 
   // --------------------------------------------------
   const [expanded, setExpanded] = useState(true);
@@ -538,10 +552,49 @@ setFilters(updatedFilters);
     setBrandSelected(false);
   };
 
+  function handleDeselectOption(option, setSelectedOptions) {
+    setSelectedOptions((prevOptions) =>
+      prevOptions.filter((prevOption) => prevOption.value !== option.value)
+    );
+  }
+
   function handleDeleteFilter(index) {
-    var reducedFilters = [...filters];
-    reducedFilters.splice(index, 1);
+    const reducedFilters = filters.filter((_, i) => i !== index);
     setFilters(reducedFilters);
+
+    // Call handleDeselectOption for each SelectCheckbox
+    handleDeselectOption(
+      { name: filters[index].name, value: filters[index].value },
+      setSelectedGetriebe
+    );
+    handleDeselectOption(
+      { name: filters[index].name, value: filters[index].value },
+      setSelectedKraftstoffe
+    );
+    handleDeselectOption(
+      { name: filters[index].name, value: filters[index].value },
+      setSelectedKarroserrieformen
+    );
+    handleDeselectOption(
+      { name: filters[index].name, value: filters[index].value },
+      setSelectedFahrzeugzustand
+    );
+    handleDeselectOption(
+      { name: filters[index].name, value: filters[index].value },
+      setSelectedMaterial
+    );
+    handleDeselectOption(
+      { name: filters[index].name, value: filters[index].value },
+      setSelectedPolsterfarben
+    );
+    handleDeselectOption(
+      { name: filters[index].name, value: filters[index].value },
+      setSelectedAussenfarben
+    );
+    handleDeselectOption(
+      { name: filters[index].name, value: filters[index].value },
+      setSelectedUnfallfahrzeug
+    );
   }
 
   function handleAddFilter(filter) {
@@ -602,14 +655,14 @@ setFilters(updatedFilters);
   ];
 
   const polsterfarben = [
-    {label: "Schwarz", value: "schwarz"},
-    {label: "Grau", value: "grau"},
-    {label: "Beige", value: "beige"},
-    {label: "Braun", value: "braun"},
-    {label: "Weiß", value: "weiß"},
-    {label: "Rot", value: "rot"},
-    {label: "Blau", value: "blau"},
-    {label: "Grün", value: "grün"}
+    { label: "Schwarz", value: "schwarz" },
+    { label: "Grau", value: "grau" },
+    { label: "Beige", value: "beige" },
+    { label: "Braun", value: "braun" },
+    { label: "Weiß", value: "weiß" },
+    { label: "Rot", value: "rot" },
+    { label: "Blau", value: "blau" },
+    { label: "Grün", value: "grün" },
   ];
 
   const firstRegistrationRanges = [
@@ -659,133 +712,134 @@ setFilters(updatedFilters);
   ];
 
   const powerOptions = [
-    {label: '50 PS (37 kW) oder weniger', value: '0-50'},
-    {label: '51 - 100 PS (38 - 75 kW)', value: '51-100'},
-    {label: '101 - 150 PS (76 - 110 kW)', value: '101-150'},
-    {label: '151 - 200 PS (111 - 147 kW)', value: '151-200'},
-    {label: '201 - 300 PS (148 - 221 kW)', value: '201-300'},
-    {label: 'Über 300 PS (Über 221 kW)', value: '300+'}
-];
+    { label: "50 PS (37 kW) oder weniger", value: "0-50" },
+    { label: "51 - 100 PS (38 - 75 kW)", value: "51-100" },
+    { label: "101 - 150 PS (76 - 110 kW)", value: "101-150" },
+    { label: "151 - 200 PS (111 - 147 kW)", value: "151-200" },
+    { label: "201 - 300 PS (148 - 221 kW)", value: "201-300" },
+    { label: "Über 300 PS (Über 221 kW)", value: "300+" },
+  ];
 
-const transmissionOptions = [
-  {label: 'Schaltgetriebe', value: 'manual'},
-  {label: 'Automatik', value: 'automatic'},
-  {label: 'Halbautomatik', value: 'semiautomatic'}
-];
+  const transmissionOptions = [
+    { label: "Schaltgetriebe", value: "manual" },
+    { label: "Automatik", value: "automatic" },
+    { label: "Halbautomatik", value: "semiautomatic" },
+  ];
 
-const doorOptions = [
-  {label: '2 Türen', value: '2'},
-  {label: '3 Türen', value: '3'},
-  {label: '4 Türen', value: '4'},
-  {label: '5 Türen', value: '5'},
-  {label: '6 Türen oder mehr', value: '6+'}
-];
+  const doorOptions = [
+    { label: "2 Türen", value: "2" },
+    { label: "3 Türen", value: "3" },
+    { label: "4 Türen", value: "4" },
+    { label: "5 Türen", value: "5" },
+    { label: "6 Türen oder mehr", value: "6+" },
+  ];
 
-const sellerTypes = [
-  {label: 'Privat', value: 'private'},
-  {label: 'Händler', value: 'commercial'}
-];
+  const sellerTypes = [
+    { label: "Alle", value: "alle" },
+    { label: "Privat", value: "private" },
+    { label: "Händler", value: "commercial" },
+  ];
 
-const conditionOptions = [
-  {label: 'Neuwertig', value: 'as_new'},
-  {label: 'Gebraucht', value: 'used'},
-  {label: 'Unfallfrei', value: 'accident_free'},
-  {label: 'Unfallwagen', value: 'damaged'},
-  {label: 'Nicht fahrbereit', value: 'non_runable'}
-];
+  const conditionOptions = [
+    { label: "Neuwertig", value: "as_new" },
+    { label: "Gebraucht", value: "used" },
+    { label: "Unfallfrei", value: "accident_free" },
+    { label: "Unfallwagen", value: "damaged" },
+    { label: "Nicht fahrbereit", value: "non_runable" },
+  ];
 
-const colorOptions = [
-  {label: 'Beige', value: 'beige'},
-  {label: 'Blau', value: 'blue'},
-  {label: 'Braun', value: 'brown'},
-  {label: 'Gelb', value: 'yellow'},
-  {label: 'Gold', value: 'gold'},
-  {label: 'Grau', value: 'grey'},
-  {label: 'Grün', value: 'green'},
-  {label: 'Orange', value: 'orange'},
-  {label: 'Rot', value: 'red'},
-  {label: 'Schwarz', value: 'black'},
-  {label: 'Silber', value: 'silver'},
-  {label: 'Violett', value: 'purple'},
-  {label: 'Weiß', value: 'white'}
-];
+  const colorOptions = [
+    { label: "Beige", value: "beige" },
+    { label: "Blau", value: "blue" },
+    { label: "Braun", value: "brown" },
+    { label: "Gelb", value: "yellow" },
+    { label: "Gold", value: "gold" },
+    { label: "Grau", value: "grey" },
+    { label: "Grün", value: "green" },
+    { label: "Orange", value: "orange" },
+    { label: "Rot", value: "red" },
+    { label: "Schwarz", value: "black" },
+    { label: "Silber", value: "silver" },
+    { label: "Violett", value: "purple" },
+    { label: "Weiß", value: "white" },
+  ];
 
   const priceRanges = [
-    {label: '0 - 5000', value: '0-5000'},
-    {label: '5000 - 10000', value: '5000-10000'},
-    {label: '10000 - 20000', value: '10000-20000'},
-    {label: '20000 - 50000', value: '20000-50000'},
-    {label: '50000 - 100000', value: '50000-100000'},
-    {label: 'Über 100000', value: '100000+'}
-];
+    { label: "0 - 5000", value: "0-5000" },
+    { label: "5000 - 10000", value: "5000-10000" },
+    { label: "10000 - 20000", value: "10000-20000" },
+    { label: "20000 - 50000", value: "20000-50000" },
+    { label: "50000 - 100000", value: "50000-100000" },
+    { label: "Über 100000", value: "100000+" },
+  ];
 
-const mileageRanges = [
-  {label: '0 - 10.000 km', value: '0-10000'},
-  {label: '10.000 - 50.000 km', value: '10000-50000'},
-  {label: '50.000 - 100.000 km', value: '50000-100000'},
-  {label: '100.000 - 150.000 km', value: '100000-150000'},
-  {label: '150.000 - 200.000 km', value: '150000-200000'},
-  {label: 'Über 200.000 km', value: '200000+'}
-];
+  const mileageRanges = [
+    { label: "0 - 10.000 km", value: "0-10000" },
+    { label: "10.000 - 50.000 km", value: "10000-50000" },
+    { label: "50.000 - 100.000 km", value: "50000-100000" },
+    { label: "100.000 - 150.000 km", value: "100000-150000" },
+    { label: "150.000 - 200.000 km", value: "150000-200000" },
+    { label: "Über 200.000 km", value: "200000+" },
+  ];
 
-const materials = [
-  {label: "Baumwolle", value: "Baumwolle"},
-  {label: "Leinen", value: "Leinen"},
-  {label: "Wolle", value: "Wolle"},
-  {label: "Seide", value: "Seide"},
-  {label: "Polyester", value: "Polyester"},
-  {label: "Nylon", value: "Nylon"},
-  {label: "Leder", value: "Leder"},
-  {label: "Pelz", value: "Pelz"},
-  {label: "Denim", value: "Denim"},
-  {label: "Gummi", value: "Gummi"},
-  {label: "Metall", value: "Metall"},
-  {label: "Kunststoff", value: "Kunststoff"},
-];
+  const materials = [
+    { label: "Baumwolle", value: "Baumwolle" },
+    { label: "Leinen", value: "Leinen" },
+    { label: "Wolle", value: "Wolle" },
+    { label: "Seide", value: "Seide" },
+    { label: "Polyester", value: "Polyester" },
+    { label: "Nylon", value: "Nylon" },
+    { label: "Leder", value: "Leder" },
+    { label: "Pelz", value: "Pelz" },
+    { label: "Denim", value: "Denim" },
+    { label: "Gummi", value: "Gummi" },
+    { label: "Metall", value: "Metall" },
+    { label: "Kunststoff", value: "Kunststoff" },
+  ];
 
-const vehicleOwners = [
-  {label: "1 Vorbesitzer", value: "1"},
-  {label: "2 Vorbesitzer", value: "2"},
-  {label: "3 Vorbesitzer", value: "3"},
-  {label: "4 Vorbesitzer", value: "4"},
-  {label: "5 Vorbesitzer", value: "5"},
-  {label: "6 Vorbesitzer", value: "6"},
-  {label: "7 Vorbesitzer", value: "7"},
-  {label: "8 Vorbesitzer", value: "8"},
-  {label: "9 Vorbesitzer", value: "9"},
-  {label: "10 Vorbesitzer", value: "10"},
-  {label: "mehr als 10 Vorbesitzer", value: "11+"},
-];
+  const vehicleOwners = [
+    { label: "1 Vorbesitzer", value: "1" },
+    { label: "2 Vorbesitzer", value: "2" },
+    { label: "3 Vorbesitzer", value: "3" },
+    { label: "4 Vorbesitzer", value: "4" },
+    { label: "5 Vorbesitzer", value: "5" },
+    { label: "6 Vorbesitzer", value: "6" },
+    { label: "7 Vorbesitzer", value: "7" },
+    { label: "8 Vorbesitzer", value: "8" },
+    { label: "9 Vorbesitzer", value: "9" },
+    { label: "10 Vorbesitzer", value: "10" },
+    { label: "mehr als 10 Vorbesitzer", value: "11+" },
+  ];
 
-const accidentStatus = [
-  {label: "Unfallfrei", value: "unfallfrei"},
-  {label: "Unfallwagen", value: "unfallwagen"},
-];
+  const accidentStatus = [
+    { label: "Unfallfrei", value: "unfallfrei" },
+    { label: "Unfallwagen", value: "unfallwagen" },
+  ];
 
-const emissions = [
-  {label: "Euro 1", value: "1"},
-  {label: "Euro 2", value: "2"},
-  {label: "Euro 3", value: "3"},
-  {label: "Euro 4", value: "4"},
-  {label: "Euro 5", value: "5"},
-  {label: "Euro 6", value: "6"},
-];
+  const emissions = [
+    { label: "Euro 1", value: "1" },
+    { label: "Euro 2", value: "2" },
+    { label: "Euro 3", value: "3" },
+    { label: "Euro 4", value: "4" },
+    { label: "Euro 5", value: "5" },
+    { label: "Euro 6", value: "6" },
+  ];
 
-const particulateMatter = [
-  {label: "Keine Plakette", value: "none"},
-  {label: "Grüne Plakette", value: "green"},
-  {label: "Gelbe Plakette", value: "yellow"},
-  {label: "Rote Plakette", value: "red"},
-  {label: "Blaue Plakette", value: "blue"}
-];
+  const particulateMatter = [
+    { label: "Keine Plakette", value: "none" },
+    { label: "Grüne Plakette", value: "green" },
+    { label: "Gelbe Plakette", value: "yellow" },
+    { label: "Rote Plakette", value: "red" },
+    { label: "Blaue Plakette", value: "blue" },
+  ];
 
-const onlineSince = [
-  {label: "Heute", value: new Date()},
-  {label: "Gestern", value: new Date("2023-02-07")},
-  {label: "Letzte 7 Tage", value: new Date("2023-02-02")},
-  {label: "Letzte 30 Tage", value: new Date("2023-01-10")},
-  {label: "Letzte 90 Tage", value: new Date("2022-11-10")}
-];
+  const onlineSince = [
+    { label: "Heute", value: new Date() },
+    { label: "Gestern", value: new Date("2023-02-07") },
+    { label: "Letzte 7 Tage", value: new Date("2023-02-02") },
+    { label: "Letzte 30 Tage", value: new Date("2023-01-10") },
+    { label: "Letzte 90 Tage", value: new Date("2022-11-10") },
+  ];
 
   const [infoOpen, setInfoOpen] = useState(false);
 
@@ -887,23 +941,23 @@ const onlineSince = [
   ];
 
   const sitzplaetze = [
-    {label: "2 Sitze", value: "2"},
-    {label: "3 Sitze", value: "3"},
-    {label: "4 Sitze", value: "4"},
-    {label: "5 Sitze", value: "5"},
-    {label: "6 Sitze", value: "6"},
-    {label: "7 Sitze", value: "7"},
-    {label: "8 Sitze", value: "8"},
-    {label: "9 Sitze", value: "9"},
-    {label: "10+ Sitze", value: "10+"}
+    { label: "2 Sitze", value: "2" },
+    { label: "3 Sitze", value: "3" },
+    { label: "4 Sitze", value: "4" },
+    { label: "5 Sitze", value: "5" },
+    { label: "6 Sitze", value: "6" },
+    { label: "7 Sitze", value: "7" },
+    { label: "8 Sitze", value: "8" },
+    { label: "9 Sitze", value: "9" },
+    { label: "10+ Sitze", value: "10+" },
   ];
 
   const fahrzeugzustaende = [
-    {label: "Neuwertig", value: "neuwertig"},
-    {label: "Gebraucht", value: "gebraucht"},
-    {label: "Unfallfrei", value: "unfallfrei"},
-    {label: "Beschädigt", value: "beschädigt"},
-    {label: "Defekt", value: "defekt"}
+    { label: "Neuwertig", value: "neuwertig" },
+    { label: "Gebraucht", value: "gebraucht" },
+    { label: "Unfallfrei", value: "unfallfrei" },
+    { label: "Beschädigt", value: "beschädigt" },
+    { label: "Defekt", value: "defekt" },
   ];
 
   const handleFeatureSelect = (feature) => {
@@ -917,7 +971,6 @@ const onlineSince = [
 
   // Ausstattungen OBEN
 
- 
   // WEITERE MARKEN & MODELLE FUNKTION
 
   const brands = [
@@ -1016,7 +1069,7 @@ const onlineSince = [
 
   // Zurücksetzen
 
-  function ResetAll(){
+  function ResetAll() {
     setFilters([]);
     setModals((prevState) => {
       const lastModal = prevState.data[prevState.data.length - 1];
@@ -1027,20 +1080,16 @@ const onlineSince = [
     setIsNichtraucherfahrzeug(false);
     setIsGarantie(false);
     setIsScheckhaftgepflegt(false);
-    setIsHerstellerzertifizierung(false)
-    setMetalliclackierung(false)
+    setIsHerstellerzertifizierung(false);
+    setMetalliclackierung(false);
     setIsRusspartikelfilter(false);
     setIsMwStAusweisbar(false);
-    setGrenzuebergreifend(false)
+    setGrenzuebergreifend(false);
   }
 
   useEffect(() => {
-    console.log(filters)
-  }, [filters])
-
-
-  
-  
+    console.log(filters);
+  }, [filters]);
 
   return (
     <div
@@ -1156,21 +1205,21 @@ const onlineSince = [
             </div>
           </div>
           <div className={classes.ausstattungbottom}>
-              <div
-                className={classes.abbrechen}
-                onClick={() => setOpenAusstattung(false)}
-              >
-                Abbrechen
-              </div>
-              <div
-                className={classes.fertig}
-                onClick={() => {
-                  setOpenAusstattung(false);
-                }}
-              >
-                Fertig
-              </div>
+            <div
+              className={classes.abbrechen}
+              onClick={() => setOpenAusstattung(false)}
+            >
+              Abbrechen
             </div>
+            <div
+              className={classes.fertig}
+              onClick={() => {
+                setOpenAusstattung(false);
+              }}
+            >
+              Fertig
+            </div>
+          </div>
         </div>
       )}
       {width <= 1249 && (
@@ -1224,7 +1273,7 @@ const onlineSince = [
       )}
       <div
         className={`${classes.contentcontainer} relative w-10/12 lg:w-full flex justify-center max-w-ag-container md:!w-full mx-auto flex-col bg-white p-6`}
-      >setA
+      >
         <TopRow />
         <div className={classes.row}>
           {width >= 1250 && (
@@ -1243,11 +1292,13 @@ const onlineSince = [
                 <div className={classes.c1r2}>
                   <div className={classes.centeritems2}>
                     {filters.map((filter, index) => (
-                      <div key={index} className={classes.filter} onClick={() => handleDeleteFilter(index)}>
-                        <X
-                          className={classes.x}
-                        />
-                        {filter.name}: {filter.value}
+                      <div
+                        key={index}
+                        className={classes.filter}
+                        onClick={() => handleDeleteFilter(index)}
+                      >
+                        <X className={classes.x} />
+                        {filter.name}: {filter.value.length >= 10 ? filter.value.substring(0, 10) + "..." : filter.value}
                       </div>
                     ))}
                   </div>
@@ -1323,23 +1374,38 @@ const onlineSince = [
 
                         {modals.data.map((item, index) => (
                           <div key={index}>
-                            {modals.data.length != 1 && <div className={`${classes.modaltop} ${item.active == false && classes.modaltopborderbottom}`}>
-                              <div className={classes.modaltopleft}>
-                              <div className={classes.modalid}>
-                                {index + 1}.
+                            {modals.data.length != 1 && (
+                              <div
+                                className={`${classes.modaltop} ${
+                                  item.active == false &&
+                                  classes.modaltopborderbottom
+                                }`}
+                              >
+                                <div className={classes.modaltopleft}>
+                                  <div className={classes.modalid}>
+                                    {index + 1}.
+                                  </div>
+                                  <div className={classes.modalbrand}>
+                                    {item.brand}
+                                  </div>
+                                  <div className={classes.modalmodel}>
+                                    {item.model}
+                                  </div>
+                                </div>
+                                {modals.data.length != 1 && (
+                                  <div className={classes.modaltopleft}>
+                                    <Pen
+                                      className={classes.pen}
+                                      onClick={() => activateModal(index)}
+                                    />
+                                    <Bin
+                                      className={classes.bin}
+                                      onClick={() => deleteModal(index)}
+                                    />
+                                  </div>
+                                )}
                               </div>
-                              <div className={classes.modalbrand}>
-                                {item.brand}
-                              </div>
-                              <div className={classes.modalmodel}>
-                                {item.model}
-                              </div>
-                              </div>
-                              {modals.data.length != 1 && <div className={classes.modaltopleft}>
-                                <Pen className={classes.pen} onClick={() => activateModal(index)}/>
-                                <Bin className={classes.bin} onClick={() => deleteModal(index)} />
-                              </div>}
-                            </div>}
+                            )}
                             {item.active == true && (
                               <div className={`${classes.modalbottom} `}>
                                 <Select
@@ -1358,7 +1424,6 @@ const onlineSince = [
                                   placeholder={"Modell"}
                                   className={`mb-2`}
                                   isDisabled={disabled}
-                    
                                 />
                                 <input
                                   type={"text"}
@@ -1371,24 +1436,29 @@ const onlineSince = [
                           </div>
                         ))}
 
-                        {modals.data.length != 3 && <div
-                          className={`${classes.addmodal} ${classes.marginbottom}`}
-                          onClick={AddModal}
-                        >
-                          <AddCircle className={classes.addmodalsvg} />{" "}
-                          <span className={classes.addmodaltext}>
-                            Weitere Marken/
-                            <br />
-                            Modelle hinzufügen
-                          </span>
-                        </div>}
+                        {modals.data.length != 3 && (
+                          <div
+                            className={`${classes.addmodal} ${classes.marginbottom}`}
+                            onClick={AddModal}
+                          >
+                            <AddCircle className={classes.addmodalsvg} />{" "}
+                            <span className={classes.addmodaltext}>
+                              Weitere Marken/
+                              <br />
+                              Modelle hinzufügen
+                            </span>
+                          </div>
+                        )}
 
                         <div className={classes.carbodytypes}>
-                          <SelectCheckbox 
-                            options={carBodyTypes} 
-                            placeholder={"Karroserrieform"} 
+                          <SelectCheckbox
+                          
+                            options={carBodyTypes}
+                            placeholder={"Karroserrieform"}
                             selectedOptions={selectedKarroserrieformen}
-                            onSelectedOptionsChange={handleSelectedKarroserieformenChange}
+                            onSelectedOptionsChange={
+                              handleSelectedKarroserieformenChange
+                            }
                           />
                         </div>
                         <Select
@@ -1397,10 +1467,13 @@ const onlineSince = [
                           placeholder={`Preis in (${waehrung})`}
                           className="mt-2"
                           onChange={(e) => {
-                            setFilters([
-                              ...filters,
-                              { name: "Preis", value: e },
-                            ]);
+                            setFilters(prevFilters => {
+                              const newFilters = prevFilters.filter(f => f.name !== "Preis");
+                              return [
+                                ...newFilters,
+                                { name: "Preis", value: e.label }
+                              ];
+                            });
                           }}
                         />
                         <label className={`font-bold mt-1`}>
@@ -1408,32 +1481,32 @@ const onlineSince = [
                         </label>
                         <div className={`${classes.halfselect}`}>
                           <div className="w-full mr-2">
-                            <Select
-                              className={classes.halfselect1}
-                              options={firstRegistrationRanges}
-                              styles={halfSelectStyle1}
-                              placeholder="Von"
-                              onChange={(e) => {
-                                setFilters([
-                                  ...filters,
-                                  { name: "EZ von", value: e },
-                                ]);
-                              }}
-                            />
+                          <Select
+  className={classes.halfselect1}
+  options={firstRegistrationRanges}
+  styles={halfSelectStyle1}
+  placeholder="Von"
+  onChange={(e) => {
+    setFilters(filters => {
+      const filteredArray = filters.filter((filter) => filter.name !== "EZ von");
+      return [...filteredArray, { name: "EZ von", value: e.label }];
+    });
+  }}
+/>
                           </div>
                           <div className="w-full">
-                            <Select
-                              className={classes.halfselect2}
-                              options={firstRegistrationRanges}
-                              styles={halfSelectStyle2}
-                              placeholder="Bis"
-                              onChange={(e) => {
-                                setFilters([
-                                  ...filters,
-                                  { name: "EZ bis", value: e },
-                                ]);
-                              }}
-                            />
+                          <Select
+  className={classes.halfselect2}
+  options={firstRegistrationRanges}
+  styles={halfSelectStyle2}
+  placeholder="Bis"
+  onChange={(e) => {
+    setFilters(filters => {
+      const filteredArray = filters.filter((filter) => filter.name !== "EZ bis");
+      return [...filteredArray, { name: "EZ bis", value: e.label }];
+    });
+  }}
+/>
                           </div>
                         </div>
                         <div className="mt-2">
@@ -1451,8 +1524,8 @@ const onlineSince = [
                           className="mt-2"
                           onChange={(e) => {
                             setFilters([
-                              ...filters,
-                              { name: "Land", value: e },
+                              ...filters.filter((f) => f.name !== "Land"),
+                              { name: "Land", value: e.label },
                             ]);
                           }}
                         />
@@ -1467,32 +1540,31 @@ const onlineSince = [
                           <MyLocation className={classes.mylocation} />
                         </div>
                         <div>
-                          <Select
-                            styles={style}
-                            options={radiusRanges}
-                            placeholder="Umkreis (km)"
-                            className="mt-2"
-                            onChange={(e) => {
-                              setUmkreis(e.value);
-                              setFilters([
-                                ...filters,
-                                { name: "Umkreis", value: e },
-                              ]);
-                            }}
-                          />
+                        <Select
+  styles={style}
+  options={radiusRanges}
+  placeholder="Umkreis (km)"
+  className="mt-2"
+  onChange={(e) => {
+    setFilters([
+      ...filters.filter((f) => f.name !== "Umkreis"),
+      { name: "Umkreis", value: e.label },
+    ]);
+  }}
+/>
                         </div>
                         <Select
-                          styles={style}
-                          options={mileageRanges}
-                          placeholder="Kilometerstand"
-                          className="mt-2"
-                          onChange={(e) => {
-                            setFilters([
-                              ...filters,
-                              { name: "Kilometerstand", value: e },
-                            ]);
-                          }}
-                        />
+  styles={style}
+  options={mileageRanges}
+  placeholder="Kilometerstand"
+  className="mt-2"
+  onChange={(e) => {
+    setFilters([
+      ...filters.filter((f) => f.name !== "Kilometerstand"),
+      { name: "Kilometerstand", value: e.label },
+    ]);
+  }}
+/>
                         <Select
                           styles={style}
                           options={powerOptions}
@@ -1500,18 +1572,18 @@ const onlineSince = [
                           className="mt-2"
                           onChange={(e) => {
                             setFilters([
-                              ...filters,
-                              { name: "Leistung", value: e },
+                              ...filters.filter((f) => f.name !== "Leistung"),
+                              { name: "Leistung", value: e.label },
                             ]);
                           }}
                         />
                         <div className={`mt-2`}>
-                        <SelectCheckbox 
-                          options={transmissionOptions} 
-                          placeholder={"Getriebe"} 
-                          selectedOptions={selectedGetriebe}
-                          onSelectedOptionsChange={handleSelectedGetriebe}
-                        />
+                          <SelectCheckbox
+                            options={transmissionOptions}
+                            placeholder={"Getriebe"}
+                            selectedOptions={selectedGetriebe}
+                            onSelectedOptionsChange={handleSelectedGetriebe}
+                          />
                         </div>
                         <div
                           className={`${classes.anzahltuerencontainer} ${classes.marginbottom}`}
@@ -1524,8 +1596,8 @@ const onlineSince = [
                               className={"mt-2 w-full"}
                               onChange={(e) => {
                                 setFilters([
-                                  ...filters,
-                                  { name: "Anzahl Türen", value: e },
+                                  ...filters.filter((f) => f.name !== "Anzahl Türen"),
+                                  { name: "Anzahl Türen", value: e.label },
                                 ]);
                               }}
                             />
@@ -1538,8 +1610,8 @@ const onlineSince = [
                           className="w-full mt-2"
                           onChange={(e) => {
                             setFilters([
-                              ...filters,
-                              { name: "Sitzplätze", value: e },
+                              ...filters.filter((f) => f.name !== "Sitzplätze"),
+                              { name: "Sitzplätze", value: e.label },
                             ]);
                           }}
                         />
@@ -1551,19 +1623,23 @@ const onlineSince = [
                             className="w-full mt-2"
                             onChange={(e) => {
                               setFilters([
-                                ...filters,
-                                { name: "Verkäuferart", value: e },
+                                ...filters.filter((f) => f.name !== "Verkäuferart"),
+                                { name: "Verkäuferart", value: e.label },
                               ]);
                             }}
                           />
                         </div>
-                        <div className={`${classes.fahrzeugzustandcontainer} mt-2`}>
-                        <SelectCheckbox
-                          options={fahrzeugzustaende}
-                          placeholder="Fahrzeugzustand"
-                          selectedOptions={selectedFahrzeugzustand}
-                          onSelectedOptionsChange={handleSelectedFahrzeugzustand}
-                        />
+                        <div
+                          className={`${classes.fahrzeugzustandcontainer} mt-2`}
+                        >
+                          <SelectCheckbox
+                            options={fahrzeugzustaende}
+                            placeholder="Fahrzeugzustand"
+                            selectedOptions={selectedFahrzeugzustand}
+                            onSelectedOptionsChange={
+                              handleSelectedFahrzeugzustand
+                            }
+                          />
                         </div>
                       </div>
                     </div>
@@ -1610,14 +1686,14 @@ const onlineSince = [
                   {openFarbe == true && (
                     <div className={classes.basiscontainer}>
                       <div className="text-13">
-                      <div className="mb-2">
-                      <SelectCheckbox 
-                        options={colorOptions} 
-                        placeholder={"Aussenfarbe"} 
-                        selectedOptions={selectedAussenfarben}
-                        onSelectedOptionsChange={handleSelectedAussenfarben}
-                      />
-                      </div>
+                        <div className="mb-2">
+                          <SelectCheckbox
+                            options={colorOptions}
+                            placeholder={"Außenfarbe"}
+                            selectedOptions={selectedAussenfarben}
+                            onSelectedOptionsChange={handleSelectedAussenfarben}
+                          />
+                        </div>
                         <label className="text-sm font-semibold">
                           Lackierungsart
                         </label>
@@ -1667,20 +1743,20 @@ const onlineSince = [
                   {openPolsterFarbe == true && (
                     <div className={classes.basiscontainer}>
                       <div className="mb-2 text-13">
-                      <SelectCheckbox
-                        options={polsterfarben}
-                        placeholder={"Polsterfarbe"}
-                        selectedOptions={selectedPolsterfarben}
-                        onSelectedOptionsChange={handleSelectedPolsterfarben}
+                        <SelectCheckbox
+                          options={polsterfarben}
+                          placeholder={"Polsterfarbe"}
+                          selectedOptions={selectedPolsterfarben}
+                          onSelectedOptionsChange={handleSelectedPolsterfarben}
                         />
                       </div>
                       <div className="text-13">
-                      <SelectCheckbox
-                        options={materials}
-                        placeholder={"Material"}
-                        selectedOptions={selectedMaterial}
-                        onSelectedOptionsChange={handleSelectedMaterial}
-                      />
+                        <SelectCheckbox
+                          options={materials}
+                          placeholder={"Material"}
+                          selectedOptions={selectedMaterial}
+                          onSelectedOptionsChange={handleSelectedMaterial}
+                        />
                       </div>
                     </div>
                   )}
@@ -1727,22 +1803,24 @@ const onlineSince = [
                           className="mt-1 mb-1"
                           onChange={(e) => {
                             setFilters([
-                              ...filters,
-                              { name: "Fahrzeughalter", value: e },
+                              ...filters.filter((f) => f.name !== "Fahrzeughalter"),
+                              { name: "Fahrzeughalter", value: e.label },
                             ]);
                           }}
                           id="selfahrz"
                         />
                       </div>
                       <div className={classes.marginbottom}>
-                      <div className="mb-2">
-                      <SelectCheckbox
-                        options={conditionOptions}
-                        placeholder={"Unfallfahrzeug"}
-                        selectedOptions={selectedUnfallfahrzeug}
-                        onSelectedOptionsChange={handleSelectedUnfallfahrzeug}
-                        />
-                      </div>
+                        <div className="mb-2">
+                          <SelectCheckbox
+                            options={conditionOptions}
+                            placeholder={"Unfallfahrzeug"}
+                            selectedOptions={selectedUnfallfahrzeug}
+                            onSelectedOptionsChange={
+                              handleSelectedUnfallfahrzeug
+                            }
+                          />
+                        </div>
                       </div>
                       <div className={`${classes.materialcontainer}`}>
                         <div>
@@ -1831,8 +1909,8 @@ const onlineSince = [
                           className="mt-1 mb-1"
                           onChange={(e) => {
                             setFilters([
-                              ...filters,
-                              { name: "Schadstoffklasse", value: e },
+                              ...filters.filter((f) => f.name !== "Schadstoffklasse"),
+                              { name: "Schadstoffklasse", value: e.label },
                             ]);
                           }}
                         />
@@ -1848,8 +1926,8 @@ const onlineSince = [
                           className="mt-1 mb-1"
                           onChange={(e) => {
                             setFilters([
-                              ...filters,
-                              { name: "Feinstaubplakette", value: e },
+                              ...filters.filter((f) => f.name !== "Feinstaubplakette"),
+                              { name: "Feinstaubplakette", value: e.label },
                             ]);
                           }}
                         />
@@ -1908,8 +1986,8 @@ const onlineSince = [
                           className="mt-1 mb-1"
                           onChange={(e) => {
                             setFilters([
-                              ...filters,
-                              { name: "Online seit", value: e },
+                              ...filters.filter((f) => f.name !== "Online seit"),
+                              { name: "Online seit", value: e.label },
                             ]);
                           }}
                         />
