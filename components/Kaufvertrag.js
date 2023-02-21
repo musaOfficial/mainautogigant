@@ -9,6 +9,7 @@ import TopRow from "./ui/TopRow";
 import ControlledCheckbox from "./ui/ControlledCheckbox";
 import Sect from "./ui/Sect";
 import Info from './../public/info.svg';
+import Download from './../public/download.svg';
 
 function KFZKaufvertrag() {
   const [impressumOpen, setImpressumOpen] = useState(true);
@@ -329,10 +330,10 @@ function KFZKaufvertrag() {
                 Für ein gebrauchtes Fahrzeug von privat.</h2>
               <button className={classes.downloadtemplate}>
                 {/* Kaufvertrag Vorlage herunterladen */}
-                <div>Vorlage für einen Kfz-Kaufvertrag zum Herunterladen:
+                <div className={classes.downloadleft}>Vorlage für einen Kfz-Kaufvertrag zum Herunterladen:
                 "Wir bieten Ihnen hier eine kostenlose Vorlage für einen Kfz-Kaufvertrag zum Download an. Dieser Vertrag ist speziell auf den Kauf eines Fahrzeugs zugeschnitten und enthält alle notwendigen Angaben und Vereinbarungen. Bitte beachten Sie, dass dieser Vertrag als allgemeine Vorlage gedacht ist und gegebenenfalls an Ihre individuellen Anforderungen und Bedürfnisse angepasst werden sollte."</div>
-                <div>
-
+                <div className={classes.download}>
+                  <Download className={classes.downloadicon} />
                 </div>
               </button>
               <div className="flex items-center text-13 mb-2 mt-4">
@@ -494,11 +495,6 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
                 onChange={(e) => setModelName(e.target.value)}
               />
               <input
-                className={`${classes.inputfields} ${classes.three}`}
-                placeholder={"Amtliches Kennzeichen"}
-                onChange={(e) => setAmtlichesKennzeichen(e.target.value)}
-              />
-              <input
                 className={`${classes.inputfields} ${classes.four}`}
                 placeholder={erstzulassung == null && "Erstzulassung (MM/JJ)"}
                 onChange={(e) => setErstzulassung(e.target.value)}
@@ -506,14 +502,14 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
 
               />
               <input
-                className={`${classes.inputfields} ${classes.five}`}
-                placeholder={"Fahrzeugidentifikationsnummer"}
-                onChange={(e) => setChassisNumber(e.target.value)}
-              />
-              <input
                 className={`${classes.inputfields} ${classes.eight}`}
                 placeholder={"Zahl der Vorbesitzer"}
                 onChange={(e) => setAnzahlVorbesitzer(e.target.value)}
+              />
+              <input
+                className={`${classes.inputfields} ${classes.five}`}
+                placeholder={"Fahrzeugidentifikationsnummer"}
+                onChange={(e) => setChassisNumber(e.target.value)}
               />
               <input
                 className={`${classes.inputfields} ${classes.ten}`}
