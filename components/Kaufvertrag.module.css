@@ -342,10 +342,6 @@
     margin-bottom: 20px;
 }
 
-.a1::placeholder{
-    font-weight: bold;
-}
-
 .a1{
     grid-row: 0;
     grid-column: 1 / 5;
@@ -358,18 +354,14 @@
     height: 80px;
 }
 
-.f1::placeholder{
-}
-
-
 .g1{
     grid-row: 3;
     grid-column: 3 / 5;
     height: 80px;
 }
 
-.g1::placeholder{
-    
+.twentypxtop{
+    margin-top: 10px;
 }
 
 .six{

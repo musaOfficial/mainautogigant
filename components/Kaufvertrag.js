@@ -326,12 +326,16 @@ function KFZKaufvertrag() {
             <div className={classes.secondcontent}>
               <h1 className={classes.secondcontentheading}>Kfz-Kaufvertrag</h1>
               <h2 className={classes.secondcontentsubheading}>
-                Für ein gebrauchtes Fahrzeug von privat.
-                <div className={"text-13 font-normal"}>
-                Im Kaufvertrag sollten die wichtigsten Punkte in Bezug auf das zum Kauf stehende Auto schwarz auf weiß festgehalten werden. Ganz einfach geht das, wenn du dafür unseren Muster-Kaufvertrag nutzen.
-                </div>
+                Für ein gebrauchtes Fahrzeug von privat.</h2>
+              <button className={classes.downloadtemplate}>
+                {/* Kaufvertrag Vorlage herunterladen */}
+                <div>Vorlage für einen Kfz-Kaufvertrag zum Herunterladen:
+                "Wir bieten Ihnen hier eine kostenlose Vorlage für einen Kfz-Kaufvertrag zum Download an. Dieser Vertrag ist speziell auf den Kauf eines Fahrzeugs zugeschnitten und enthält alle notwendigen Angaben und Vereinbarungen. Bitte beachten Sie, dass dieser Vertrag als allgemeine Vorlage gedacht ist und gegebenenfalls an Ihre individuellen Anforderungen und Bedürfnisse angepasst werden sollte."</div>
+                <div>
 
-                <div className="flex items-center text-13 mb-2 mt-4">
+                </div>
+              </button>
+              <div className="flex items-center text-13 mb-2 mt-4">
                   <span className="font-bold mr-2">Empfehlung:</span>
                   <span>Verwenden Sie einen Kfz-Kaufvertrag und achten Sie darauf:</span>
                 </div>
@@ -340,16 +344,6 @@ function KFZKaufvertrag() {
 Schriftliche Festlegung aller Absprachen und Vereinbarungen im Kaufvertrag.
 Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
                 </div>
-
-              </h2>
-              <button className={classes.downloadtemplate}>
-                {/* Kaufvertrag Vorlage herunterladen */}
-                <div>Vorlage für einen Kfz-Kaufvertrag zum Herunterladen:
-                "Wir bieten Ihnen hier eine kostenlose Vorlage für einen Kfz-Kaufvertrag zum Download an. Dieser Vertrag ist speziell auf den Kauf eines Fahrzeugs zugeschnitten und enthält alle notwendigen Angaben und Vereinbarungen. Bitte beachten Sie, dass dieser Vertrag als allgemeine Vorlage gedacht ist und gegebenenfalls an Ihre individuellen Anforderungen und Bedürfnisse angepasst werden sollte."</div>
-                <div>
-                  
-                </div>
-              </button>
             </div>
           </div>
         </div>
@@ -590,6 +584,10 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
               <li>1. Der Käufer meldet das Kfz unverzüglich um.</li>
               <li>2. Der Käufer erkennt an, dass das Kfz bis zur vollständigen Bezahlung des Kaufpreises Eigentum des Verkäufers bleibt.</li>
             </ol>
+            <div className={classes.twentypxtop}></div>
+            <div className={classes.bluetext}>
+              <Info className={classes.info} /> In dem Abschnitt für Sondervereinbarungen haben Sie die Möglichkeit, individuelle Vereinbarungen zu ergänzen, die über den Rahmen dieses Kaufvertrags hinausgehen. Bitte beachten Sie, dass dieser Abschnitt nicht ausgefüllt werden muss, wenn keine besonderen Vereinbarungen getroffen werden.
+            </div>
             <div className={classes.explanationcontainer}>
               <input
                   className={`${classes.inputfields} ${classes.a1}`}
@@ -648,12 +646,12 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
               <div className={classes.d2}>
                 <ControlledCheckbox onUpdate={val => {
                   setHuBescheinigung(val);
-                }} label={"HU-Bescheinigung"} />
+                }} label={"Pickerl-Gutachten"} />
               </div>
               <div className={classes.e2}>
                 <ControlledCheckbox onUpdate={val => {
                   setStilllegungsbescheinigung(val);
-                }} label={"Stilllegungsbescheinigung"} />
+                }} label={"Abmeldebestätigung"} />
               </div>
               <div className={classes.f2}>
                 <ControlledCheckbox onUpdate={val => {
