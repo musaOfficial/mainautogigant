@@ -1,13 +1,12 @@
 .section{
-    height: 25px;
+    height: 30px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid #6C757D;
+    border-top: 2px solid #F1F2F3;
     padding-top: 10px;
-    line-height: 25px;
-    margin-top: 10px;
+    line-height: 30px;
     cursor: pointer;
 }
 
@@ -30,7 +29,6 @@
 
 .text{
     font-size: 13px;
-    border-bottom: 1px solid #6C757D;
     padding-bottom: 10px;
     font-weight: normal;
 }
