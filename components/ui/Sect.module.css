@@ -8,11 +8,14 @@
     padding-top: 10px;
     line-height: 30px;
     cursor: pointer;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 .sectionheading{
     font-size: 15px;
     color: #0067B8;
+    font-weight: bold;
 }
 
 .unrotated{
