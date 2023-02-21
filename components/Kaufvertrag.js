@@ -351,9 +351,7 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
           <form onSubmit={handleSubmit}>
             <h1 className={classes.heading}>KFZ Kaufvertrag</h1>
             <p className={classes.desc}>
-              Einfach Kfz Kaufvertrag ausfüllen und kostenlos herunterladen,
-              <br /> und schon haben Sie das notwendige Dokument für die
-              Anmeldung des Fahrzeuges.
+            Um einen Kaufvertrag zu generieren, schreiben Sie bitte Ihren Namen und Vornamen in Großbuchstaben<br></br> und klicken Sie dann auf die Schaltfläche "Kaufvertrag generieren". Dadurch wird <br></br>ein PDF-Dokument erstellt, das Sie ausdrucken und unterschreiben können.
             </p>
             <div className={classes.sellerpurchaserrow}>
               <div>
