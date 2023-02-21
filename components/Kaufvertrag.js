@@ -8,6 +8,7 @@ import Expand from "./../public/expand.svg";
 import TopRow from "./ui/TopRow";
 import ControlledCheckbox from "./ui/ControlledCheckbox";
 import Sect from "./ui/Sect";
+import Info from './../public/info.svg';
 
 function KFZKaufvertrag() {
   const [impressumOpen, setImpressumOpen] = useState(true);
@@ -351,7 +352,9 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
           <form onSubmit={handleSubmit}>
             <h1 className={classes.heading}>KFZ Kaufvertrag</h1>
             <p className={classes.desc}>
-            Um einen Kaufvertrag zu generieren, schreiben Sie bitte Ihren Namen und Vornamen in Großbuchstaben<br></br> und klicken Sie dann auf die Schaltfläche "Kaufvertrag generieren". Dadurch wird <br></br>ein PDF-Dokument erstellt, das Sie ausdrucken und unterschreiben können.
+              Einfach Kfz Kaufvertrag ausfüllen und kostenlos herunterladen,
+              <br /> und schon haben Sie das notwendige Dokument für die
+              Anmeldung des Fahrzeuges.
             </p>
             <div className={classes.sellerpurchaserrow}>
               <div>
@@ -610,12 +613,12 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
               />
               <input
                 className={`${classes.inputfields} ${classes.f1}`}
-                placeholder={"Verkäufer: Name und Unterschrift"}
+                placeholder={"Name und Vorname des Verkäufers (in Blockbuchstaben)"}
                 onChange={(e) => setGesamtpreisInWorten(e.target.value)}
               />
               <input
                 className={`${classes.inputfields} ${classes.g1}`}
-                placeholder={"Käufer: Name und Unterschrift"}
+                placeholder={"Name und Vorname des Käufers (in Blockbuchstaben)"}
                 onChange={(e) => setGesamtpreisInWorten(e.target.value)}
               />
             </div>
@@ -682,14 +685,17 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
                   onChange={(e) => setUhrzeit(e.target.value)}
                   type={uhrzeit == null ? 'text' : 'time'}
               />
+              <div className={classes.bluetext}>
+              <Info className={classes.info} /> Um einen Kaufvertrag zu generieren, schreiben Sie bitte Ihren Namen und Vornamen in Großbuchstaben und klicken Sie dann auf die Schaltfläche "Kaufvertrag generieren". Dadurch wird ein PDF-Dokument erstellt, das Sie ausdrucken und unterschreiben können.
+              </div>
               <input
                 className={`${classes.inputfields} ${classes.f1}`}
-                placeholder={"Verkäufer: Name und Unterschrift"}
+                placeholder={"Name und Vorname des Verkäufers (in Blockbuchstaben)"}
                 onChange={(e) => setSellerSignature(e.target.value)}
               />
               <input
                 className={`${classes.inputfields} ${classes.g1}`}
-                placeholder={"Käufer: Name und Unterschrift"}
+                placeholder={"Name und Vorname des Käufers (in Blockbuchstaben)"}
                 onChange={(e) => setPurchaserSignature(e.target.value)}
               />
             </div>

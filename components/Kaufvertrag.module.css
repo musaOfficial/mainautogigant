@@ -21,6 +21,20 @@
     margin-top: 20px;
 }
 
+.info{
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.bluetext{
+    color: #0067B8;
+    font-size: 13px;
+    grid-column: 1 / 5;
+    display: flex;
+    align-items: center;
+}
+
 .desc{
     margin-bottom: 10px;
     font-size: 13px;
@@ -350,7 +364,6 @@
 }
 
 .f1::placeholder{
-    font-weight: bold;
 }
 
 
@@ -361,7 +374,7 @@
 }
 
 .g1::placeholder{
-    font-weight: bold;
+    
 }
 
 .six{
