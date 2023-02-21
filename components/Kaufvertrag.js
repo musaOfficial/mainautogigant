@@ -343,7 +343,12 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
 
               </h2>
               <button className={classes.downloadtemplate}>
-                Kaufvertrag Vorlage herunterladen
+                {/* Kaufvertrag Vorlage herunterladen */}
+                <div>Vorlage für einen Kfz-Kaufvertrag zum Herunterladen:
+                "Wir bieten Ihnen hier eine kostenlose Vorlage für einen Kfz-Kaufvertrag zum Download an. Dieser Vertrag ist speziell auf den Kauf eines Fahrzeugs zugeschnitten und enthält alle notwendigen Angaben und Vereinbarungen. Bitte beachten Sie, dass dieser Vertrag als allgemeine Vorlage gedacht ist und gegebenenfalls an Ihre individuellen Anforderungen und Bedürfnisse angepasst werden sollte."</div>
+                <div>
+                  
+                </div>
               </button>
             </div>
           </div>

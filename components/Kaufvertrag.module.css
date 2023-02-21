@@ -33,6 +33,7 @@
     grid-column: 1 / 5;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .desc{
@@ -153,16 +154,13 @@
 }
 
 .downloadtemplate{
-    height: 40px;
-    background-color: #6C757D;
-    width: 100%;
+    background-color: #F1F2F3;
     border-radius: 10px;
-    margin-top: 20px;
-    font-size: 16px;
     font-weight: bold;
-    color: #fff;
-    cursor: pointer;
-    transition: all .1s ease-in;
+    padding: 20px;
+    text-align: start;
+    display: grid;
+    grid-template-columns: 2fr, 1fr;
 }
 
 .border{
@@ -170,9 +168,6 @@
     overflow: hidden;
 }
 
-.downloadtemplate:hover{
-    background-color: #FBB900;
-}
 
 .half{
     width: 50%;
