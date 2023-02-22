@@ -35,6 +35,13 @@
     align-items: center;
     margin-bottom: 10px;
 }
+
+.downloadtext{
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 15px;
+}
+
 .b1{
     padding-left: 40px !important;
 }
@@ -168,13 +175,15 @@
     width: 100%;
     border-right: 1px solid #fff;
     padding-right: 20px;
+    line-height: 20px;
+    height: 100%;
+    margin-left: 20px;
 }
 
 .downloadtemplate{
     background-color: #F1F2F3;
     border-radius: 10px;
     font-weight: bold;
-    padding: 20px;
     text-align: start;
     display: flex;
     align-items: center;
@@ -184,7 +193,7 @@
 }
 
 .download{
-    width: 100%;
+    width: 70%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -196,6 +205,7 @@
     height: 100%;
     width: 200px;
     transition: all .1s ease-in;
+    padding: 20px;
 }
 
 .downloadicon:hover{

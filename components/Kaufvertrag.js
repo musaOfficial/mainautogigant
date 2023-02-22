@@ -331,7 +331,7 @@ function KFZKaufvertrag() {
               <button className={classes.downloadtemplate}>
                 {/* Kaufvertrag Vorlage herunterladen */}
                 <div className={classes.downloadleft}>Vorlage für einen Kfz-Kaufvertrag zum Herunterladen:
-                "Wir bieten Ihnen hier eine kostenlose Vorlage für einen Kfz-Kaufvertrag zum Download an. Dieser Vertrag ist speziell auf den Kauf eines Fahrzeugs zugeschnitten und enthält alle notwendigen Angaben und Vereinbarungen. Bitte beachten Sie, dass dieser Vertrag als allgemeine Vorlage gedacht ist und gegebenenfalls an Ihre individuellen Anforderungen und Bedürfnisse angepasst werden sollte."</div>
+                <span className={classes.downloadtext}> Wir bieten Ihnen hier eine kostenlose Vorlage für einen Kfz-Kaufvertrag zum Download an. Dieser Vertrag ist speziell auf den Kauf eines Fahrzeugs zugeschnitten und enthält alle notwendigen Angaben und Vereinbarungen. Bitte beachten Sie, dass dieser Vertrag als allgemeine Vorlage gedacht ist und gegebenenfalls an Ihre individuellen Anforderungen und Bedürfnisse angepasst werden sollte.</span></div>
                 <div className={classes.download}>
                   <Download className={classes.downloadicon} />
                 </div>
@@ -525,7 +525,7 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
               />
               <input
                 className={`${classes.inputfields} ${classes.seven}`}
-                placeholder={"Nächste Hauptuntersuchung (MM/JJ)"}
+                placeholder={"§ 57a-Pickerl gültig bis (MM/JJ)"}
                 onChange={(e) => setNaechsteHauptuntersuchung(e.target.value)}
               />
               <input
