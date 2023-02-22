@@ -662,11 +662,14 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
             </div>
             <div className="text-13 font-bold">Der Verkäufer bestätigt den Erhalt von:</div>
             <div className={classes.sellerinputcontainer}>
+              <div className="relative">
+                <div className={classes.euro}>€</div>
               <input
                 className={`${classes.inputfields} ${classes.b1}`}
                 placeholder={"EURO"}
                 onChange={(e) => setEURO(e.target.value)}
               />
+              </div>
               <input
                   className={`${classes.inputfields} ${classes.c1}`}
                   placeholder={"Ort"}

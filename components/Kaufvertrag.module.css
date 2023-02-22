@@ -35,6 +35,17 @@
     align-items: center;
     margin-bottom: 10px;
 }
+.b1{
+    padding-left: 40px !important;
+}
+
+.euro{
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    color: rgba(108, 117, 125, 0.7);
+    font-size: 15px;
+}
 
 .desc{
     margin-bottom: 10px;
