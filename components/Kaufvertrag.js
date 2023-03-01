@@ -236,8 +236,9 @@ function KFZKaufvertrag() {
                 </div>
               </button>
                 <div className={classes.recommend}>
-                <div className="flex items-center text-13 mt-2">
-                    <span className="font-bold mr-2 text-15">Empfehlung:</span>
+                <div className="flex items-center text-13 mt-2 mb-1">
+                  <Info className={classes.icon} />
+                    <div className={classes.blueboldtext}>Empfehlung:</div>
                     
                   </div>
                 <div className={"text-13"}>

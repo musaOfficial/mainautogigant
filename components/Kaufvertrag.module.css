@@ -207,6 +207,18 @@
     padding-top: 20px;
 }
 
+.icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+}
+
+.blueboldtext{
+    font-weight: bold;
+    color: #0067B8;
+    font-size: 15px;
+}
+
 .downloadtemplate{
     background-color: #F1F2F3;
     border-radius: 0 0 10px 10px;
