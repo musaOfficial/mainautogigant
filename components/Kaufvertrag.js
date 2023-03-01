@@ -609,6 +609,7 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
           </form>
         </div>
         <div className="mt-6"></div>
+          <div className={classes.graybackground}>
           <Sect point={"1."} heading={"Kfz-Kaufvertrag"} text={"Im Fahrzeugkaufvertrag sollten neben den standardmäßigen rechtlichen Regelungen auch individuelle Vereinbarungen und Angaben berücksichtigt werden. Der Vertrag sollte nur unterschrieben werden, wenn alle Angaben korrekt sind. Es wird empfohlen, zwei identische Exemplare des Kaufvertrags anzufertigen - eines für den Käufer und eines für den Verkäufer, beide unterschrieben. Wenn der Verkäufer minderjährig und somit nicht voll geschäftsfähig ist, sollte eine schriftliche Verkaufsvollmacht verlangt werden."} />
           <Sect point={"2."} heading={"Fahrzeugangaben"} text={"Zur eindeutigen Identifizierung eines Fahrzeugs sind die Fahrzeug-Identifikationsnummer sowie die Nummer des Fahrzeugscheins oder der Zulassungsbescheinigung II unerlässlich. Weitere wesentliche Angaben, die im Kaufvertrag nicht fehlen sollten, sind das Datum der Erstzulassung, der Kilometerstand, die Anzahl der Vorbesitzer und der nächste Termin für die Haupt- und Abgasuntersuchung."} />
           <Sect point={"3."} heading={"Unfallfrei?"} text={"Es ist ratsam, sich vom Verkäufer bestätigen zu lassen, dass das Fahrzeug unfallfrei ist. Sollte es doch zu Schäden gekommen sein, sollten Art des Schadens und die Art der Reparatur so genau wie möglich beschrieben werden. Zusätzlich sollten vom Käufer alle vorhandenen Gutachten und Rechnungen eingeholt und dem Kaufvertrag als Anlage beigefügt werden."} />
@@ -618,6 +619,7 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
           <Sect point={"7."} heading={"Größere Reparaturen"} text={"Falls das Fahrzeug mit einem Austauschmotor oder einem neuen Getriebe ausgestattet wurde, sollten diese Informationen im Kaufvertrag vermerkt werden. Es ist ebenfalls ratsam, im Falle von größeren Reparaturen, die durchgeführt wurden, die Laufleistung der neuen Aggregate zu erwähnen."} />
           <Sect point={"8."} heading={"Mängel"} text={"Falls das gewünschte Fahrzeug Mängel aufweist, sollten diese im Kaufvertrag möglichst genau beschrieben werden. Hierbei sollten Angaben zu Art, Zeitpunkt und Reparatur des Mangels gemacht werden."} />
           <Sect point={"9."} heading={"Preis"} text={"Im Kaufvertrag wird üblicherweise auch der Kaufpreis vereinbart. Der Verkäufer bestätigt in der Regel mit seiner Unterschrift, dass er die vereinbarte Summe erhalten hat. Als Käufer quittieren Sie den Erhalt des Fahrzeugs, der Schlüssel und der dazugehörigen Dokumente."} />
+          </div>
       </div>
     </div>
   );

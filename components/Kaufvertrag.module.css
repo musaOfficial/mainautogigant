@@ -200,6 +200,12 @@
 
 }
 
+.graybackground{
+    background-color: #F1F2F3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
 .downloadtemplate{
     background-color: #F1F2F3;
     border-radius: 0 0 10px 10px;
