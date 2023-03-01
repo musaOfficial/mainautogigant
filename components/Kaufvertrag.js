@@ -241,7 +241,7 @@ function KFZKaufvertrag() {
                     <div className={classes.blueboldtext}>Empfehlung:</div>
                     
                   </div>
-                <div className={"text-13"}>
+                <div className={classes.blue}>
                 <div>Verwenden Sie einen Kfz-Kaufvertrag und achten Sie darauf:</div>
                 Jede Partei erhält eine identische Ausfertigung.
 Schriftliche Festlegung aller Absprachen und Vereinbarungen im Kaufvertrag.
