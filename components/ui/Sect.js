@@ -2,7 +2,7 @@ import Expand from './../../public/expand.svg';
 import { useEffect, useState } from 'react';
 import classes from './Sect.module.css';
 
-function Sect({ heading, text, close, point}){
+function Sect({ heading, text, close, point, nobordertop}){
     const [open, setOpen] = useState(false)
 
     useEffect(() => {
@@ -13,7 +13,7 @@ function Sect({ heading, text, close, point}){
 
     return (
         <>
-            <div className={classes.question} onClick={() => setOpen(d => !d)}>
+            <div className={`${classes.question} ${nobordertop == true && classes.nobordertop}`} onClick={() => setOpen(d => !d)}>
                 <div className='flex'>
                     <span className={classes.point}>{point}</span>
                     <span>{heading}</span>

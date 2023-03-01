@@ -255,7 +255,7 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
             <h1 className={classes.heading}>KFZ Kaufvertrag</h1>
             <p className={classes.desc}>
               Einfach Kfz Kaufvertrag ausfüllen und kostenlos herunterladen,
-              <br /> und schon haben Sie das notwendige Dokument für die
+              und schon haben Sie das notwendige Dokument für die
               Anmeldung des Fahrzeuges.
             </p>
             <div className={classes.sellerpurchaserrow}>
@@ -610,7 +610,7 @@ Unterschreiben Sie erst, wenn alle Fragen einvernehmlich geklärt sind.
         </div>
         <div className="mt-6"></div>
           <div className={classes.graybackground}>
-          <Sect point={"1."} heading={"Kfz-Kaufvertrag"} text={"Im Fahrzeugkaufvertrag sollten neben den standardmäßigen rechtlichen Regelungen auch individuelle Vereinbarungen und Angaben berücksichtigt werden. Der Vertrag sollte nur unterschrieben werden, wenn alle Angaben korrekt sind. Es wird empfohlen, zwei identische Exemplare des Kaufvertrags anzufertigen - eines für den Käufer und eines für den Verkäufer, beide unterschrieben. Wenn der Verkäufer minderjährig und somit nicht voll geschäftsfähig ist, sollte eine schriftliche Verkaufsvollmacht verlangt werden."} />
+          <Sect nobordertop={true} point={"1."} heading={"Kfz-Kaufvertrag"} text={"Im Fahrzeugkaufvertrag sollten neben den standardmäßigen rechtlichen Regelungen auch individuelle Vereinbarungen und Angaben berücksichtigt werden. Der Vertrag sollte nur unterschrieben werden, wenn alle Angaben korrekt sind. Es wird empfohlen, zwei identische Exemplare des Kaufvertrags anzufertigen - eines für den Käufer und eines für den Verkäufer, beide unterschrieben. Wenn der Verkäufer minderjährig und somit nicht voll geschäftsfähig ist, sollte eine schriftliche Verkaufsvollmacht verlangt werden."} />
           <Sect point={"2."} heading={"Fahrzeugangaben"} text={"Zur eindeutigen Identifizierung eines Fahrzeugs sind die Fahrzeug-Identifikationsnummer sowie die Nummer des Fahrzeugscheins oder der Zulassungsbescheinigung II unerlässlich. Weitere wesentliche Angaben, die im Kaufvertrag nicht fehlen sollten, sind das Datum der Erstzulassung, der Kilometerstand, die Anzahl der Vorbesitzer und der nächste Termin für die Haupt- und Abgasuntersuchung."} />
           <Sect point={"3."} heading={"Unfallfrei?"} text={"Es ist ratsam, sich vom Verkäufer bestätigen zu lassen, dass das Fahrzeug unfallfrei ist. Sollte es doch zu Schäden gekommen sein, sollten Art des Schadens und die Art der Reparatur so genau wie möglich beschrieben werden. Zusätzlich sollten vom Käufer alle vorhandenen Gutachten und Rechnungen eingeholt und dem Kaufvertrag als Anlage beigefügt werden."} />
           <Sect point={"4."} heading={"Gewerbliche Einsätze"} text={"Es sollte im Kaufvertrag vermerkt werden, dass das Fahrzeug nicht gewerblich genutzt wurde, wie zum Beispiel als Miet- oder Fahrschulwagen. Wenn es sich um ein Import-Fahrzeug handelt, ist es besonders wichtig darauf hinzuweisen."} />

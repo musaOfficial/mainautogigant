@@ -25,7 +25,9 @@
     justify-self: flex-start;
 }
 
-
+.nobordertop{
+    border-top: 0;
+}
 
 .unexpandor{
     transform: rotate(180deg);
