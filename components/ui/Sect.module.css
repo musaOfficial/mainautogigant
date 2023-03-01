@@ -40,3 +40,8 @@
 .link:hover{
     text-decoration: underline;
 }
+
+.description{
+    font-size: 15px;
+    margin-bottom: 40px;
+}

@@ -180,9 +180,29 @@
     margin-left: 20px;
 }
 
+.abovedownloadtemplate{
+    background-color: #F1F2F3;
+    border-radius: 10px 10px 0px 0px;
+    font-weight: bold;
+    text-align: start;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    padding: 12px;
+    cursor: pointer;
+    padding-left: 32px;
+    margin-bottom: -30px;
+}
+
+.expandopen{
+    transform: translateY(-4px);
+
+}
+
 .downloadtemplate{
     background-color: #F1F2F3;
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     font-weight: bold;
     text-align: start;
     display: flex;

@@ -12,14 +12,6 @@ import Info from './../public/info.svg';
 import Download from './../public/download.svg';
 
 function KFZKaufvertrag() {
-  const [impressumOpen, setImpressumOpen] = useState(true);
-  const [verbaucherAgbOpen, setVerbraucherAgbOpen] = useState(false);
-  const [haendlerAgb, setHaendlerAgb] = useState(false);
-  const [datenschutzOpen, setDatenschutzOpen] = useState(false);
-  const [gestaltungOpen, setGestaltungOpen] = useState(false);
-  const [datenschutzeinwilligungOpen, setDatenschutzeinwilligungOpen] =
-    useState(false);
-
   // KÄUFER
   const [purchaserFirstName, setPurchaserFirstName] = useState();
   const [purchaserLastName, setPurchaserLastName] = useState();
@@ -180,154 +172,60 @@ function KFZKaufvertrag() {
         <TopRow />
         <div className={classes.helprow}>
           <div className={classes.left}>
-            <div
-              className={`${classes.sectionheader} ${
-                impressumOpen == true && classes.sectionheaderopen
-              }`}
-              onClick={() => {
-                setImpressumOpen((d) => !d);
-                setVerbraucherAgbOpen(false);
-                setHaendlerAgb(false);
-                setDatenschutzOpen(false);
-                setGestaltungOpen(false);
-                setDatenschutzeinwilligungOpen(false);
-              }}
-            >
+            <div className={`${classes.sectionheader} ${classes.sectionheaderopen}`}>
               <div className={classes.leftpart}>
                 <FileIcon className={classes.fileicon} />
-                <span className={classes.filetext}>Impressum</span>
+                <span className={classes.filetext}>KFZ Kaufvertrag</span>
               </div>
-              <Expand
-                className={`${classes.unrotated} ${
-                  impressumOpen == true && classes.rotated
-                }`}
-              />
+              <Expand className={ `${classes.expandopen} ${classes.rotated}`}/>
             </div>
-            <div
-              className={`${classes.sectionheader} ${
-                verbaucherAgbOpen == true && classes.sectionheaderopen
-              }`}
-              onClick={() => {
-                setVerbraucherAgbOpen((d) => !d);
-                setImpressumOpen(false);
-                setHaendlerAgb(false);
-                setDatenschutzOpen(false);
-                setGestaltungOpen(false);
-                setDatenschutzeinwilligungOpen(false);
-              }}
-            >
+            <div className={classes.sectionheader}>
               <div className={classes.leftpart}>
                 <FileIcon className={classes.fileicon} />
                 <span className={classes.filetext}>Verbaucher-AGB</span>
               </div>
-              <Expand
-                className={`${classes.unrotated} ${
-                  verbaucherAgbOpen == true && classes.rotated
-                }`}
-              />
+              <Expand/>
             </div>
-            <div
-              className={`${classes.sectionheader} ${
-                haendlerAgb == true && classes.sectionheaderopen
-              }`}
-              onClick={() => {
-                setHaendlerAgb((d) => !d);
-                setVerbraucherAgbOpen(false);
-                setImpressumOpen(false);
-                setDatenschutzOpen(false);
-                setGestaltungOpen(false);
-                setDatenschutzeinwilligungOpen(false);
-              }}
-            >
+            <div className={classes.sectionheader}>
               <div className={classes.leftpart}>
                 <FileIcon className={classes.fileicon} />
                 <span className={classes.filetext}>Händler-AGB</span>
               </div>
-              <Expand
-                className={`${classes.unrotated} ${
-                  haendlerAgb == true && classes.rotated
-                }`}
-              />
+              <Expand/>
             </div>
-            <div
-              className={`${classes.sectionheader} ${
-                datenschutzOpen == true && classes.sectionheaderopen
-              }`}
-              onClick={() => {
-                setDatenschutzOpen((d) => !d);
-                setGestaltungOpen(false);
-                setDatenschutzeinwilligungOpen(false);
-                setVerbraucherAgbOpen(false);
-                setImpressumOpen(false);
-                setHaendlerAgb(false);
-              }}
-            >
+            <div className={classes.sectionheader}>
               <div className={classes.leftpart}>
                 <FileIcon className={classes.fileicon} />
                 <span className={classes.filetext}>Datenschutz</span>
               </div>
-              <Expand
-                className={`${classes.unrotated} ${
-                  datenschutzOpen == true && classes.rotated
-                }`}
-              />
+              <Expand/>
             </div>
-            <div
-              className={`${classes.sectionheader} ${
-                gestaltungOpen == true && classes.sectionheaderopen
-              }`}
-              onClick={() => {
-                setGestaltungOpen((d) => !d);
-                setDatenschutzOpen(false);
-                setDatenschutzeinwilligungOpen(false);
-                setVerbraucherAgbOpen(false);
-                setImpressumOpen(false);
-                setHaendlerAgb(false);
-              }}
-            >
+            <div className={classes.sectionheader}>
               <div className={classes.leftpart}>
                 <FileIcon className={classes.fileicon} />
                 <span className={classes.filetext}>
                   Gestaltung von Anzeigen
                 </span>
               </div>
-              <Expand
-                className={`${classes.unrotated} ${
-                  gestaltungOpen == true && classes.rotated
-                }`}
-              />
+              <Expand/>
             </div>
-            <div
-              className={`${classes.sectionheader} ${
-                datenschutzeinwilligungOpen == true && classes.sectionheaderopen
-              }`}
-              onClick={() => {
-                setDatenschutzeinwilligungOpen((d) => !d);
-                setGestaltungOpen(false);
-                setDatenschutzOpen(false);
-                setVerbraucherAgbOpen(false);
-                setImpressumOpen(false);
-                setHaendlerAgb(false);
-              }}
-            >
+            <div className={classes.sectionheader}>
               <div className={classes.leftpart}>
                 <FileIcon className={classes.fileicon} />
                 <span className={classes.filetext}>
                   Datenschutzeinwilligung
                 </span>
               </div>
-              <Expand
-                className={`${classes.unrotated} ${
-                  datenschutzeinwilligungOpen == true && classes.rotated
-                }`}
-              />
+              <Expand/>
             </div>
           </div>
           <div className="flex w-full flex-col-reverse">
             <div className={classes.secondcontent}>
+              <div className={classes.abovedownloadtemplate}>
               <h1 className={classes.secondcontentheading}>Kfz-Kaufvertrag</h1>
               <h2 className={classes.secondcontentsubheading}>
                 Für ein gebrauchtes Fahrzeug von privat.</h2>
+              </div>
               <button className={classes.downloadtemplate}>
                 {/* Kaufvertrag Vorlage herunterladen */}
                 <div className={classes.downloadleft}>Vorlage für einen Kfz-Kaufvertrag zum Herunterladen:

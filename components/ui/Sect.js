@@ -20,7 +20,7 @@ function Sect({ heading, text, close, point}){
                 </div>
                 <Expand className={`${classes.expandor} ${open == true && classes.unexpandor}`} />
             </div>
-            {open == true && <div className={classes.basiscontainer}>{text}</div>}
+            {open == true && <div className={classes.description}>{text}</div>}
         </>
     )
 }
