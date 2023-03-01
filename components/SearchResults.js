@@ -79,6 +79,7 @@ const useDeviceSize = () => {
 function SearchResults() {
   const [width, height] = useDeviceSize();
 
+
   const [bezahlteAngebote, setBezahlteAngebote] = useState([
     {
       id: "sköafjasökldc",
@@ -382,82 +383,6 @@ function SearchResults() {
     setFilters(updatedFilters);
   };
 
-  const [selectedGetriebe, setSelectedGetriebe] = useState([]);
-  const handleSelectedGetriebe = (newSelectedOptions) => {
-    setSelectedGetriebe(newSelectedOptions);
-    // Map the selected options to filter objects
-    const newFilters = newSelectedOptions.map((option) => {
-      return {
-        name: "Getriebe",
-        value: option.label,
-      };
-    });
-    // Remove any existing Getriebe filters from the filter list
-    const filtersWithoutGetriebe = filters.filter(
-      (filter) => filter.name !== "Getriebe"
-    );
-    // Add the new Getriebe filters to the list
-    const updatedFilters = [...filtersWithoutGetriebe, ...newFilters];
-    setFilters(updatedFilters);
-  };
-
-  const [selectedFahrzeugzustand, setSelectedFahrzeugzustand] = useState([]);
-  const handleSelectedFahrzeugzustand = (newSelectedOptions) => {
-    setSelectedFahrzeugzustand(newSelectedOptions);
-    // Map the selected options to filter objects
-    const newFilters = newSelectedOptions.map((option) => {
-      return {
-        name: "Fahrzeugzustand",
-        value: option.label,
-      };
-    });
-    // Remove any existing Fahrzeugzustand filters from the filter list
-    const filtersWithoutFahrzeugzustand = filters.filter(
-      (filter) => filter.name !== "Fahrzeugzustand"
-    );
-    // Add the new Fahrzeugzustand filters to the list
-    const updatedFilters = [...filtersWithoutFahrzeugzustand, ...newFilters];
-    setFilters(updatedFilters);
-  };
-
-  const [selectedAussenfarben, setSelectedAussenfarben] = useState([]);
-  const handleSelectedAussenfarben = (newSelectedOptions) => {
-    setSelectedAussenfarben(newSelectedOptions);
-    // Map the selected options to filter objects
-    const newFilters = newSelectedOptions.map((option) => {
-      return {
-        name: "Aussenfarbe",
-        value: option.label,
-      };
-    });
-    // Remove any existing Aussenfarbe filters from the filter list
-    const filtersWithoutAussenfarbe = filters.filter(
-      (filter) => filter.name !== "Aussenfarbe"
-    );
-    // Add the new Aussenfarbe filters to the list
-    const updatedFilters = [...filtersWithoutAussenfarbe, ...newFilters];
-    setFilters(updatedFilters);
-  };
-
-  const [selectedPolsterfarben, setSelectedPolsterfarben] = useState([]);
-  const handleSelectedPolsterfarben = (newSelectedOptions) => {
-    setSelectedPolsterfarben(newSelectedOptions);
-    // Map the selected options to filter objects
-    const newFilters = newSelectedOptions.map((option) => {
-      return {
-        name: "Polsterfarbe",
-        value: option.label,
-      };
-    });
-    // Remove any existing Polsterfarbe filters from the filter list
-    const filtersWithoutPolsterfarbe = filters.filter(
-      (filter) => filter.name !== "Polsterfarbe"
-    );
-    // Add the new Polsterfarbe filters to the list
-    const updatedFilters = [...filtersWithoutPolsterfarbe, ...newFilters];
-    setFilters(updatedFilters);
-  };
-
   const [selectedMaterial, setSelectedMaterial] = useState([]);
   const handleSelectedMaterial = (newSelectedOptions) => {
     setSelectedMaterial(newSelectedOptions);
@@ -477,24 +402,50 @@ function SearchResults() {
     setFilters(updatedFilters);
   };
 
-  const [selectedUnfallfahrzeug, setSelectedUnfallfahrzeug] = useState([]);
-  const handleSelectedUnfallfahrzeug = (newSelectedOptions) => {
-    setSelectedUnfallfahrzeug(newSelectedOptions);
-    // Map the selected options to filter objects
-    const newFilters = newSelectedOptions.map((option) => {
-      return {
-        name: "Unfallfahrzeug",
-        value: option.label,
-      };
-    });
-    // Remove any existing Unfallfahrzeug filters from the filter list
-    const filtersWithoutUnfallfahrzeug = filters.filter(
-      (filter) => filter.name !== "Unfallfahrzeug"
-    );
-    // Add the new Unfallfahrzeug filters to the list
-    const updatedFilters = [...filtersWithoutUnfallfahrzeug, ...newFilters];
-    setFilters(updatedFilters);
-  };
+  const [selectedPolsterfarben, setSelectedPolsterfarben] = useState([]);
+
+  const handleSelectedPolsterfarbe = (newSelectedOption) => {
+    const optionIndex = selectedPolsterfarben.findIndex(option => option.value === newSelectedOption.value);
+    if (optionIndex !== -1) {
+      // If the option is already selected, remove it
+      setSelectedPolsterfarben(prevSelectedOptions => {
+        const updatedSelectedOptions = [...prevSelectedOptions];
+        updatedSelectedOptions.splice(optionIndex, 1);
+        return updatedSelectedOptions;
+      });
+    } else {
+      // If the option is not selected, add it
+      setSelectedPolsterfarben(prevSelectedOptions => [...prevSelectedOptions, newSelectedOption]);
+    }
+
+    if (optionIndex !== -1) {
+      // If the option is already selected, remove it
+      setSelectedPolsterfarben(prevSelectedOptions => {
+        const updatedSelectedOptions = [...prevSelectedOptions];
+        updatedSelectedOptions.splice(optionIndex, 1);
+        return updatedSelectedOptions;
+      });
+    } else {
+      // If the option is not selected, add it
+      setSelectedPolsterfarben(prevSelectedOptions => [...prevSelectedOptions, newSelectedOption]);
+    
+      // Create new filters based on all selected options
+      const allSelectedOptions = [
+        ...selectedKraftstoffe,
+        ...selectedMaterial,
+        ...selectedPolsterfarben
+      ];
+      const newFilters = allSelectedOptions.map(option => {
+        return {
+          name: "Polsterfarbe",
+          value: option.label
+        }
+      });
+    
+      // Update the filter list with the new filters
+      setFilters(newFilters);
+    }
+  }
 
   // --------------------------------------------------
   const [expanded, setExpanded] = useState(true);
@@ -521,36 +472,8 @@ function SearchResults() {
   const [openUmwelt, setOpenUmwelt] = useState(false);
   const [openAngebotDetails, setOpenAngebotDetails] = useState(false);
 
-  const [inputMarkeChanged, setInputMarkeChanged] = useState(false);
-
-  const [inputKarosserieform, setInputKarosserieform] = useState();
-  const [inputKarosserieformChanged, setInputKarosserieformChanged] =
-    useState();
-
-  const [inputKraftstoff, setInputKraftstoff] = useState();
-  const [inputKraftstoffChanged, setInputKraftstoffChanged] = useState();
-
-  const [ausstattungsKriterienOpen, setAusstattungsKriterienOpen] =
-    useState(false);
-
   const [gigaInfoOpen, setGigaInfoOpen] = useState(false);
   const [gridView, setGridView] = useState(true);
-
-  const addModel = () => {
-    setModelItems([
-      ...modelItems,
-      {
-        brandName: brandName,
-        modelName: modelName,
-        varient: varient,
-      },
-    ]);
-    setBrandName("");
-    setVarient("");
-    setModelName("");
-    setBrandNameInputValue("");
-    setBrandSelected(false);
-  };
 
   function handleDeselectOption(option, setSelectedOptions) {
     setSelectedOptions((prevOptions) =>
@@ -559,14 +482,13 @@ function SearchResults() {
   }
 
   function handleDeleteFilter(index) {
+    const removedFilter = filters[index];
     const reducedFilters = filters.filter((_, i) => i !== index);
-    setFilters(reducedFilters);
-
+    
+    const selectedOptionsWithoutFilter = selectedPolsterfarben.filter(option => option.value !== removedFilter.value);
+    setSelectedPolsterfarben(selectedOptionsWithoutFilter);
+  
     // Call handleDeselectOption for each SelectCheckbox
-    handleDeselectOption(
-      { name: filters[index].name, value: filters[index].value },
-      setSelectedGetriebe
-    );
     handleDeselectOption(
       { name: filters[index].name, value: filters[index].value },
       setSelectedKraftstoffe
@@ -575,32 +497,19 @@ function SearchResults() {
       { name: filters[index].name, value: filters[index].value },
       setSelectedKarroserrieformen
     );
-    handleDeselectOption(
-      { name: filters[index].name, value: filters[index].value },
-      setSelectedFahrzeugzustand
-    );
+  
     handleDeselectOption(
       { name: filters[index].name, value: filters[index].value },
       setSelectedMaterial
     );
-    handleDeselectOption(
-      { name: filters[index].name, value: filters[index].value },
-      setSelectedPolsterfarben
+  
+    const filtersWithoutPolsterfarbe = reducedFilters.filter(
+      (filter) => filter.name !== "Polsterfarbe"
     );
-    handleDeselectOption(
-      { name: filters[index].name, value: filters[index].value },
-      setSelectedAussenfarben
-    );
-    handleDeselectOption(
-      { name: filters[index].name, value: filters[index].value },
-      setSelectedUnfallfahrzeug
-    );
+    const updatedFilters = [...filtersWithoutPolsterfarbe, ...newFilters];
+    setFilters(updatedFilters);
   }
-
-  function handleAddFilter(filter) {
-    // Check if filter is already in the list
-    setFilters([...filters, filter]);
-  }
+  
   // Suchbegriff ist der Suchinput
   const [suchbegriff, setSuchbegriff] = useState();
 
@@ -1089,7 +998,9 @@ function SearchResults() {
 
   useEffect(() => {
     console.log(filters);
-  }, [filters]);
+    console.log(selectedPolsterfarben)
+  }, [filters, handleSelectedPolsterfarbe])
+
 
   return (
     <div
@@ -1451,8 +1362,7 @@ function SearchResults() {
                         )}
 
                         <div className={classes.carbodytypes}>
-                          <SelectCheckbox
-                          
+                          <SelectCheckbox                     
                             options={carBodyTypes}
                             placeholder={"Karroserrieform"}
                             selectedOptions={selectedKarroserrieformen}
@@ -1578,12 +1488,12 @@ function SearchResults() {
                           }}
                         />
                         <div className={`mt-2`}>
-                          <SelectCheckbox
+                          {/* <SelectCheckbox
                             options={transmissionOptions}
                             placeholder={"Getriebe"}
                             selectedOptions={selectedGetriebe}
                             onSelectedOptionsChange={handleSelectedGetriebe}
-                          />
+                          /> */} 
                         </div>
                         <div
                           className={`${classes.anzahltuerencontainer} ${classes.marginbottom}`}
@@ -1632,14 +1542,14 @@ function SearchResults() {
                         <div
                           className={`${classes.fahrzeugzustandcontainer} mt-2`}
                         >
-                          <SelectCheckbox
+                          {/* <SelectCheckbox
                             options={fahrzeugzustaende}
                             placeholder="Fahrzeugzustand"
                             selectedOptions={selectedFahrzeugzustand}
                             onSelectedOptionsChange={
                               handleSelectedFahrzeugzustand
                             }
-                          />
+                          /> */}
                         </div>
                       </div>
                     </div>
@@ -1687,12 +1597,12 @@ function SearchResults() {
                     <div className={classes.basiscontainer}>
                       <div className="text-13">
                         <div className="mb-2">
-                          <SelectCheckbox
+                          {/* <SelectCheckbox
                             options={colorOptions}
                             placeholder={"Außenfarbe"}
                             selectedOptions={selectedAussenfarben}
                             onSelectedOptionsChange={handleSelectedAussenfarben}
-                          />
+                          /> */}
                         </div>
                         <label className="text-sm font-semibold">
                           Lackierungsart
@@ -1743,11 +1653,11 @@ function SearchResults() {
                   {openPolsterFarbe == true && (
                     <div className={classes.basiscontainer}>
                       <div className="mb-2 text-13">
-                        <SelectCheckbox
+                      <SelectCheckbox
                           options={polsterfarben}
                           placeholder={"Polsterfarbe"}
                           selectedOptions={selectedPolsterfarben}
-                          onSelectedOptionsChange={handleSelectedPolsterfarben}
+                          onSelectedOptionsChange={handleSelectedPolsterfarbe}
                         />
                       </div>
                       <div className="text-13">
@@ -1812,14 +1722,14 @@ function SearchResults() {
                       </div>
                       <div className={classes.marginbottom}>
                         <div className="mb-2">
-                          <SelectCheckbox
+                          {/* <SelectCheckbox
                             options={conditionOptions}
                             placeholder={"Unfallfahrzeug"}
                             selectedOptions={selectedUnfallfahrzeug}
                             onSelectedOptionsChange={
                               handleSelectedUnfallfahrzeug
                             }
-                          />
+                          /> */}
                         </div>
                       </div>
                       <div className={`${classes.materialcontainer}`}>
