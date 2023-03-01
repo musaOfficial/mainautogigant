@@ -447,6 +447,24 @@ function SearchResults() {
     }
   }
 
+  const [selectedGetriebe, setSelectedGetriebe] = useState([]);
+  const handleSelectedGetriebe = (newSelectedOptions) => {
+    setSelectedGetriebe(newSelectedOptions);
+    // Map the selected options to filter objects
+    const newFilters = newSelectedOptions.map((option) => {
+      return {
+        name: "Getriebe",
+        value: option.label,
+      };
+    });
+    // Remove any existing Karroserrieform filters from the filter list
+    const filtersWithoutKarroserrieform = filters.filter(
+      (filter) => filter.name !== "Getriebe"
+    );
+    // Add the new Karroserrieform filters to the list
+    const updatedFilters = [...filtersWithoutKarroserrieform, ...newFilters];
+    setFilters(updatedFilters);
+  };
   // --------------------------------------------------
   const [expanded, setExpanded] = useState(true);
   const [brandName, setBrandName] = useState({});
@@ -482,13 +500,14 @@ function SearchResults() {
   }
 
   function handleDeleteFilter(index) {
-    const removedFilter = filters[index];
     const reducedFilters = filters.filter((_, i) => i !== index);
-    
-    const selectedOptionsWithoutFilter = selectedPolsterfarben.filter(option => option.value !== removedFilter.value);
-    setSelectedPolsterfarben(selectedOptionsWithoutFilter);
-  
-    // Call handleDeselectOption for each SelectCheckbox
+    setFilters(reducedFilters);
+
+    //  Call handleDeselectOption for each SelectCheckbox
+     handleDeselectOption(
+       { name: filters[index].name, value: filters[index].value },
+       setSelectedGetriebe
+     );
     handleDeselectOption(
       { name: filters[index].name, value: filters[index].value },
       setSelectedKraftstoffe
@@ -497,17 +516,26 @@ function SearchResults() {
       { name: filters[index].name, value: filters[index].value },
       setSelectedKarroserrieformen
     );
-  
+    // handleDeselectOption(
+    //   { name: filters[index].name, value: filters[index].value },
+    //   setSelectedFahrzeugzustand
+    // );
     handleDeselectOption(
       { name: filters[index].name, value: filters[index].value },
       setSelectedMaterial
     );
-  
-    const filtersWithoutPolsterfarbe = reducedFilters.filter(
-      (filter) => filter.name !== "Polsterfarbe"
+    handleDeselectOption(
+      { name: filters[index].name, value: filters[index].value },
+      setSelectedPolsterfarben
     );
-    const updatedFilters = [...filtersWithoutPolsterfarbe, ...newFilters];
-    setFilters(updatedFilters);
+    // handleDeselectOption(
+    //   { name: filters[index].name, value: filters[index].value },
+    //   setSelectedAussenfarben
+    // );
+    // handleDeselectOption(
+    //   { name: filters[index].name, value: filters[index].value },
+    //   setSelectedUnfallfahrzeug
+    // );
   }
   
   // Suchbegriff ist der Suchinput
@@ -1366,9 +1394,7 @@ function SearchResults() {
                             options={carBodyTypes}
                             placeholder={"Karroserrieform"}
                             selectedOptions={selectedKarroserrieformen}
-                            onSelectedOptionsChange={
-                              handleSelectedKarroserieformenChange
-                            }
+                            onSelectedOptionsChange={handleSelectedKarroserieformenChange}
                           />
                         </div>
                         <Select
@@ -1488,12 +1514,12 @@ function SearchResults() {
                           }}
                         />
                         <div className={`mt-2`}>
-                          {/* <SelectCheckbox
+                           <SelectCheckbox
                             options={transmissionOptions}
                             placeholder={"Getriebe"}
                             selectedOptions={selectedGetriebe}
                             onSelectedOptionsChange={handleSelectedGetriebe}
-                          /> */} 
+                          /> 
                         </div>
                         <div
                           className={`${classes.anzahltuerencontainer} ${classes.marginbottom}`}

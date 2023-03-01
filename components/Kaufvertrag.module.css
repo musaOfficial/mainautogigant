@@ -191,8 +191,8 @@
     width: 100%;
     padding: 12px;
     cursor: pointer;
-    padding-left: 32px;
-    margin-bottom: -30px;
+    padding-left: 20px;
+    margin-bottom: -14px;
 }
 
 .expandopen{
@@ -209,6 +209,8 @@
     align-items: center;
     width: 100%;
     padding: 12px;
+    padding-left: 0px;
+    padding-bottom: 0;
     justify-content: space-between;
     cursor: pointer;
 }
@@ -239,7 +241,7 @@
     width: 100%;
     background-color: #FFE497;
     padding-bottom: 20px;
-    padding-left: 32px;
+    padding-left: 20px;
     padding-right: 32px;
     padding-top: 10px;
     margin-top: 20px;
