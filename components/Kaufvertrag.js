@@ -182,21 +182,21 @@ function KFZKaufvertrag() {
             <div className={classes.sectionheader}>
               <div className={classes.leftpart}>
                 <FileIcon className={classes.fileicon} />
-                <span className={classes.filetext}>Verbaucher-AGB</span>
+                <span className={classes.filetext}>Unfallbericht</span>
               </div>
               <Expand/>
             </div>
             <div className={classes.sectionheader}>
               <div className={classes.leftpart}>
                 <FileIcon className={classes.fileicon} />
-                <span className={classes.filetext}>Händler-AGB</span>
+                <span className={classes.filetext}>Nova Rechner</span>
               </div>
               <Expand/>
             </div>
             <div className={classes.sectionheader}>
               <div className={classes.leftpart}>
                 <FileIcon className={classes.fileicon} />
-                <span className={classes.filetext}>Datenschutz</span>
+                <span className={classes.filetext}>Digitale Vignette</span>
               </div>
               <Expand/>
             </div>
@@ -204,7 +204,7 @@ function KFZKaufvertrag() {
               <div className={classes.leftpart}>
                 <FileIcon className={classes.fileicon} />
                 <span className={classes.filetext}>
-                  Gestaltung von Anzeigen
+                  Fahrschulen
                 </span>
               </div>
               <Expand/>
@@ -213,7 +213,7 @@ function KFZKaufvertrag() {
               <div className={classes.leftpart}>
                 <FileIcon className={classes.fileicon} />
                 <span className={classes.filetext}>
-                  Datenschutzeinwilligung
+                  Automarken
                 </span>
               </div>
               <Expand/>
