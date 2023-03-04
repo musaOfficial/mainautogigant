@@ -1489,6 +1489,40 @@
     cursor: pointer;
 }
 
+.comparebuttoncontainer{
+    position: absolute;
+    position: fixed;
+    right: 50px;
+    bottom: 40px;
+    background-origin: 100px;
+    width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    background-color: #F1F2F3;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.comparebuttonheading{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.comparebutton{
+    height: 40px;
+    background-color: #6C757D;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.comparebutton:hover{
+    background-color: #FBB900;
+}
+
 @media (max-width: 600px) {
     /* Make the container and rows take up the full width of the viewport */
     .container,

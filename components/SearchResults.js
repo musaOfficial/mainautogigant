@@ -127,11 +127,23 @@ function SearchResults() {
       getriebe: "Automatik",
       gigalabel: false,
       colorad: false,
+      brand: "Audi",
+      model: "R8",
+      bodyType: "Cabrio",
+      transmissionType: "Schaltgetriebe",
+      conditionOption: "Gebrauchtwagen",
+      performance: "177 PS (130kW)",
+      exteriourColour: "Weiß",
+      upholstery: "Stoff",
+      fuelType: "Diesel",
+      pollutantClass: "Euro 5",
+      seats: "5",
+      doors: "4"
     },
     {
-      id: "sköafjasökldc",
-      seller: "Händler",
-      preis: 500000,
+      id: "sköafjasöklasdfasddc",
+      seller: "Privat",
+      preis: 500,
       title: "Mercedes AMG GT",
       adNo: "#294873205",
       start: "01/01/2020",
@@ -148,11 +160,23 @@ function SearchResults() {
       getriebe: "Automatik",
       gigalabel: false,
       colorad: false,
+      brand: "Audi",
+      model: "R8",
+      bodyType: "Cabrio",
+      transmissionType: "Schaltgetriebe",
+      conditionOption: "Gebrauchtwagen",
+      performance: "177 PS (130kW)",
+      exteriourColour: "Weiß",
+      upholstery: "Stoff",
+      fuelType: "Diesel",
+      pollutantClass: "Euro 5",
+      seats: "5",
+      doors: "4"
     },
     {
-      id: "sköafjasökldc",
-      seller: "Händler",
-      preis: 50000,
+      id: "sköafjasökasdfasdfldc",
+      seller: "Privat",
+      preis: 500,
       title: "Mercedes AMG GT",
       adNo: "#294873205",
       start: "01/01/2020",
@@ -169,11 +193,23 @@ function SearchResults() {
       getriebe: "Automatik",
       gigalabel: false,
       colorad: false,
+      brand: "Audi",
+      model: "R8",
+      bodyType: "Cabrio",
+      transmissionType: "Schaltgetriebe",
+      conditionOption: "Gebrauchtwagen",
+      performance: "177 PS (130kW)",
+      exteriourColour: "Weiß",
+      upholstery: "Stoff",
+      fuelType: "Diesel",
+      pollutantClass: "Euro 5",
+      seats: "5",
+      doors: "4"
     },
     {
-      id: "sköafjasökldc",
-      seller: "Händler",
-      preis: 28100,
+      id: "sköafjasasdfasdfökldc",
+      seller: "Privat",
+      preis: 500,
       title: "Mercedes AMG GT",
       adNo: "#294873205",
       start: "01/01/2020",
@@ -190,11 +226,23 @@ function SearchResults() {
       getriebe: "Automatik",
       gigalabel: false,
       colorad: false,
+      brand: "Audi",
+      model: "R8",
+      bodyType: "Cabrio",
+      transmissionType: "Schaltgetriebe",
+      conditionOption: "Gebrauchtwagen",
+      performance: "177 PS (130kW)",
+      exteriourColour: "Weiß",
+      upholstery: "Stoff",
+      fuelType: "Diesel",
+      pollutantClass: "Euro 5",
+      seats: "5",
+      doors: "4"
     },
     {
-      id: "sköafjasökldc",
-      seller: "Händler",
-      preis: 1900,
+      id: "sköafjasöasdfasdfasdfkldc",
+      seller: "Privat",
+      preis: 500,
       title: "Mercedes AMG GT",
       adNo: "#294873205",
       start: "01/01/2020",
@@ -211,11 +259,23 @@ function SearchResults() {
       getriebe: "Automatik",
       gigalabel: false,
       colorad: false,
+      brand: "Audi",
+      model: "R8",
+      bodyType: "Cabrio",
+      transmissionType: "Schaltgetriebe",
+      conditionOption: "Gebrauchtwagen",
+      performance: "177 PS (130kW)",
+      exteriourColour: "Weiß",
+      upholstery: "Stoff",
+      fuelType: "Diesel",
+      pollutantClass: "Euro 5",
+      seats: "5",
+      doors: "4"
     },
     {
-      id: "sköafjasökldc",
-      seller: "Händler",
-      preis: 22500,
+      id: "sköafjasökldfdasfdgsdfc",
+      seller: "Privat",
+      preis: 500,
       title: "Mercedes AMG GT",
       adNo: "#294873205",
       start: "01/01/2020",
@@ -232,25 +292,53 @@ function SearchResults() {
       getriebe: "Automatik",
       gigalabel: false,
       colorad: false,
+      brand: "Audi",
+      model: "R8",
+      bodyType: "Cabrio",
+      transmissionType: "Schaltgetriebe",
+      conditionOption: "Gebrauchtwagen",
+      performance: "177 PS (130kW)",
+      exteriourColour: "Weiß",
+      upholstery: "Stoff",
+      fuelType: "Diesel",
+      pollutantClass: "Euro 5",
+      seats: "5",
+      doors: "4"
     },
     {
-      id: "sköafjasökldc",
-      seller: "Händler",
-      preis: 12900,
+      id: "sköafjasöklgfhjfgdc",
+      seller: "Privat",
+      preis: 500,
       title: "Mercedes AMG GT",
       adNo: "#294873205",
-      imgSrc: "/images/draft-card-img-car-1.png",
+      start: "01/01/2020",
+      end: "01/01/2022",
+      imgSrc: "/car-images/testcar.jpg",
+      state: "2700 Wiener Neustadt",
+      country: "Österreich",
       description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
+      companyname: "Gigant Group Teknoloji A.S",
       baujahr: "01/2022",
       treibstoff: "Benzin",
       ps: 120,
       kmStand: 412000,
       getriebe: "Automatik",
-      state: "2700 Wiener Neustadt",
-      country: "Österreich",
-      gigalabel: true,
-      colorad: true,
+      gigalabel: false,
+      colorad: false,
+      brand: "Audi",
+      model: "R8",
+      bodyType: "Cabrio",
+      transmissionType: "Schaltgetriebe",
+      conditionOption: "Gebrauchtwagen",
+      performance: "177 PS (130kW)",
+      exteriourColour: "Weiß",
+      upholstery: "Stoff",
+      fuelType: "Diesel",
+      pollutantClass: "Euro 5",
+      seats: "5",
+      doors: "4"
     },
+
   ]);
 
   const style = {
@@ -1025,9 +1113,21 @@ function SearchResults() {
   }
 
   useEffect(() => {
-    console.log(filters);
-    console.log(selectedPolsterfarben)
+
   }, [filters, handleSelectedPolsterfarbe])
+
+
+  // Vergleichsfunktion
+  const [compare, setCompare] = useState([]);
+  const [openCompare, setOpenCompare] = useState(false);
+
+  useEffect(() => {
+    console.log(compare.length);
+  }, [compare.length])
+
+  const addOrUpdateCompare = (newObj) => {
+    
+  }
 
 
   return (
@@ -1036,6 +1136,22 @@ function SearchResults() {
         openAusstattung == true && "overflow-y-hidden"
       }`}
     >
+    
+      {openCompare == true && <div className={classes.comparecontainer}>
+        <div className={classes.compareheading}>Fahrzeuge vergleichen</div>
+        <div className={classes.comparecontent}>
+          <div className={classes.comparebar}>Bar</div>
+          {compare.map((comp, index) => <div key={index} className={classes.compareitem}>
+
+          </div>)}
+        </div>
+      </div>}
+
+     <div className={classes.comparebuttoncontainer}>
+        <div className={classes.comparebuttonheading}>{compare.length} Fahrzeuge</div>
+        <div className={classes.comparebutton}>Vergleichen</div>
+      </div>
+
       {openAusstattung == true && (
         <div className={classes.ausstattungContainer}>
           <Closex
@@ -2050,6 +2166,20 @@ function SearchResults() {
                       seller={fav.seller}
                       state={fav.state}
                       country={fav.country}
+
+                      brand={fav.brand}
+                      model={fav.model}
+                      bodyType={fav.bodyType}
+                      transmissionType={fav.transmissionType}
+                      conditionOption={fav.conditionOption}
+                      performance={fav.performance}
+                      exteriourColour={fav.exteriourColour}
+                      upholstery={fav.upholstery}
+                      fuelType={fav.fuelType}
+                      pollutantClass={fav.pollutantClass}
+                      seats={fav.seats}
+                      doors={fav.doors}
+                      onAddCompare={e => addOrUpdateCompare(e)}
                     />
                   </div>
                 ))}

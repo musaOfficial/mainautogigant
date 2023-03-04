@@ -265,6 +265,11 @@
 
 .b:hover{
     background-color: #FBB900;
+    border: 1px solid transparent;
+}
+
+.comp{
+    background-color: #FBB900;
 }
 
 .b:hover .icon{

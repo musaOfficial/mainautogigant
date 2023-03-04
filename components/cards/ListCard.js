@@ -7,7 +7,11 @@ import EyeIcon from './../../public/eye.svg';
 import { useState } from "react";
 import { useEffect } from "react";
 import Automatik from './../../public/listcard/automatik.svg';
-
+import PsIcon from './../../public/ps.svg';
+import BenzinIcon from './../../public/benzin.svg';
+import KilometerstandIcon from './../../public/kilometerstand.svg';
+import BaujahrIcon from './../../public/bj.svg';
+import CompareIcon from './../../public/compare.svg';
 const useDeviceSize = () => {
 
     const [width, setWidth] = useState(0)
@@ -48,6 +52,19 @@ function ListCard({
   kmStand,
   treibstoff,
   seller,
+  onAddCompare,
+  brand,
+  model,
+  bodyType,
+  transmissionType,
+  conditionOption,
+  performance,
+  exteriourColour,
+  upholstery,
+  fuelType,
+  pollutantClass,
+  seats,
+  doors,
 }) {
 
   const [width, height] = useDeviceSize();
@@ -56,6 +73,60 @@ function ListCard({
   var displayDescription = description.substring(0, 35) + "...";
   var displayPs = ps.toLocaleString() + " PS";
   var displayKmStand = kmStand.toLocaleString() + " KM";
+
+  // bodyType={fav.bodyType}
+  // transmissionType={fav.transmissionType}
+  // conditionOption={fav.conditionOption}
+  // performance={fav.performance}
+  // exteriourColour={fav.exteriourColour}
+  // upholstery={fav.upholstery}
+  // fuelType={fav.fuelType}
+  // pollutantClass={fav.pollutantClass}
+  // seats={fav.seats}
+  // doors={fav.doors}
+  const [value, setValue] = useState(null)
+  function handleCompare(){
+    onAddCompare({ 
+          id: id,
+          preis: price,
+          erstzulassung: baujahr,
+          marke: brand,
+          modell: model,
+          karosserieform: bodyType,
+          kilometer: kmStand,
+          getriebe: transmissionType,
+          fahrzeugzustand: conditionOption,
+          leistung: performance,
+          aussenfarbe: exteriourColour,
+          polsterfarbe: upholstery,
+          treibstoff: fuelType,
+          schadstoffklasse: pollutantClass,
+          sitze: seats,
+          tuere: doors,
+    })
+    if(value == null){
+      setValue("3");
+    } else {
+      setValue(null);
+      onAddCompare({ 
+        preis: price,
+        erstzulassung: baujahr,
+        marke: brand,
+        modell: model,
+        karosserieform: bodyType,
+        kilometer: kmStand,
+        getriebe: transmissionType,
+        fahrzeugzustand: conditionOption,
+        leistung: performance,
+        aussenfarbe: exteriourColour,
+        polsterfarbe: upholstery,
+        treibstoff: fuelType,
+        schadstoffklasse: pollutantClass,
+        sitze: seats,
+        tuere: doors,
+  })
+    }
+  }
 
   return (
     <div className={`${classes.wrapper} ${colorad == true && classes.coloradwrapper}`}>
@@ -74,13 +145,13 @@ function ListCard({
         <div className={`${classes.title} ${width <= 800 && classes.responsivetitle} ${width <= 530 && classes.titledistance}`}>{title}{width >= 737 && <span>{width <= 800 && <div className={classes.description}>{displayDescription}</div>}</span>}</div>
         {width > 800 && <div className={classes.description}>{displayDescription}</div>}
         <div className={classes.details}>
-          <div className={classes.detail}>{baujahr}</div>
-          {width > 530 && <div className={classes.detail}>{displayKmStand}</div>}
-          {width > 900 && <div className={classes.detail}>{treibstoff}</div>}
+          <div className={classes.detail}><BaujahrIcon className={classes.svg} />{baujahr}</div>
+          {width > 530 && <div className={classes.detail}><KilometerstandIcon className={classes.svg} />{displayKmStand}</div>}
+          {width > 900 && <div className={classes.detail}><BenzinIcon className={classes.svg} />{treibstoff}</div>}
           <div className={classes.detail}><Automatik className={classes.svg} />{getriebe}</div>
           
           
-          {width > 530 && <div className={classes.lastdetail}>{displayPs}</div>}
+          {width > 530 && <div className={classes.lastdetail}><PsIcon className={classes.svg} />{displayPs}</div>}
           {/* {width > 530 && <div className={classes.lastdetail}>{seller}</div>} */}
         </div>
         {width <= 530 && <div className={classes.lastdetails}>
@@ -97,6 +168,7 @@ function ListCard({
             <span className={classes.locationtext}>{state}{width > 530 && ", " + country}</span>
           </span>}
           {width > 530 && <div className={classes.icons}>
+            <div className={`${classes.i} ${classes.b} ${value != null && classes.comp}`} onClick={handleCompare}><CompareIcon className={classes.icon} /></div>
             <div className={`${classes.i} ${classes.b}`}><FavoriteIcon className={classes.icon} /></div>
             <div className={`${classes.i} ${classes.b}`}><ShareIcon className={classes.icon} /></div>
             <div className={`${classes.i} ${classes.b} ${classes.lasticon}`}><EyeIcon className={classes.icon} /></div>

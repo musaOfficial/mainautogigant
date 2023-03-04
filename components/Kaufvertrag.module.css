@@ -678,6 +678,15 @@
     margin-bottom: 10px;
 }
 
+.highleft{
+    margin-right: 20px;
+    height: 80px;
+}
+
+.highright{
+    height: 80px;
+}
+
 @media(max-width: 400px){
     .text{
         font-size: 25px;

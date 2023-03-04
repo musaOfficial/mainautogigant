@@ -783,22 +783,24 @@ function KFZKaufvertrag() {
                 generieren, schreiben Sie bitte Ihren Namen und Vornamen in
                 Großbuchstaben und klicken Sie dann auf die Schaltfläche
                 "Kaufvertrag generieren". Dadurch wird ein PDF-Dokument
-                erstellt, das Sie ausdrucken und unterschreiben können.
+                erstellt, das Sie ausdrucken und unterschreiben können.
               </div>
+              <div className="flex">
               <input
-                className={`${classes.inputfields} ${classes.f1}`}
+                className={`${classes.inputfields} ${classes.highleft}`}
                 placeholder={
                   "Name und Vorname des Verkäufers (in Blockbuchstaben)"
                 }
                 onChange={(e) => setSellerSignature(e.target.value)}
               />
               <input
-                className={`${classes.inputfields} ${classes.g1}`}
+                className={`${classes.inputfields} ${classes.highright}`}
                 placeholder={
                   "Name und Vorname des Käufers (in Blockbuchstaben)"
                 }
                 onChange={(e) => setPurchaserSignature(e.target.value)}
               />
+              </div>
             </div>
             <button type="submit" className={classes.generatekaufvertragbtn}>
               Kaufvertrag generieren
