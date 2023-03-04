@@ -639,7 +639,8 @@ function KFZKaufvertrag() {
                 placeholder={"Sondervereinbarung"}
                 onChange={(e) => setGesamtpreis(e.target.value)}
               />
-              <input
+              <div className={classes.smallgridleft}>
+                <input
                 className={`${classes.inputfields}  ${classes.br1}`}
                 placeholder={"Ort"}
                 onChange={(e) => setGesamtpreisInWorten(e.target.value)}
@@ -649,6 +650,15 @@ function KFZKaufvertrag() {
                 placeholder={"Datum"}
                 onChange={(e) => setGesamtpreis(e.target.value)}
               />
+                <input
+                  className={`${classes.inputfields} ${classes.f1}`}
+                  placeholder={
+                    "Name und Vorname des Verkäufers (in Blockbuchstaben)"
+                  }
+                  onChange={(e) => setGesamtpreisInWorten(e.target.value)}
+                />
+              </div>
+              <div className={classes.smallgridright}>
               <input
                 className={`${classes.inputfields} ${classes.d1}`}
                 placeholder={"Ort"}
@@ -660,19 +670,13 @@ function KFZKaufvertrag() {
                 onChange={(e) => setGesamtpreis(e.target.value)}
               />
               <input
-                className={`${classes.inputfields} ${classes.f1}`}
-                placeholder={
-                  "Name und Vorname des Verkäufers (in Blockbuchstaben)"
-                }
-                onChange={(e) => setGesamtpreisInWorten(e.target.value)}
-              />
-              <input
                 className={`${classes.inputfields} ${classes.g1}`}
                 placeholder={
                   "Name und Vorname des Käufers (in Blockbuchstaben)"
                 }
                 onChange={(e) => setGesamtpreisInWorten(e.target.value)}
               />
+              </div>
             </div>
             <h1 className={classes.sectionheading}>
               Fahrzeugübergabe{" "}
