@@ -437,7 +437,7 @@ function SearchResults() {
   const handleSelectedKarroserieformenChange = (newSelectedOptions) => {
     setSelectedKarroserrieformen(newSelectedOptions);
     // Map the selected options to filter objects
-    const newFilters = newSelectedOptions.map((option) => {
+    const newFilters = newSelectedOptions.map((option, index) => {
       return {
         name: "Karroserrieform",
         value: option.label,
@@ -1217,7 +1217,7 @@ function SearchResults() {
             var displayPs = comp.leistung.toLocaleString();
             var displayKmStand = comp.kilometer.toLocaleString() + " KM";
 
-            return (<div className={classes.comparebar}>
+            return (<div className={classes.comparebar} key={index}>
             <div className={classes.secondbaritem}><div className="w-full h-full relative"><Image src={comp.img} layout='fill' objectFit="cover" /></div></div>
             <div className={classes.baritem}>{displayPrice}</div>
             <div className={classes.baritem}>{comp.erstzulassung}</div>
