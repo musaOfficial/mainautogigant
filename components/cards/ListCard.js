@@ -7,7 +7,7 @@ import EyeIcon from './../../public/eye.svg';
 import { useState } from "react";
 import { useEffect } from "react";
 import Automatik from './../../public/listcard/automatik.svg';
-import PsIcon from './../../public/ps.svg';
+import PsIcon from './../../public/horsepower.svg';
 import BenzinIcon from './../../public/benzin.svg';
 import KilometerstandIcon from './../../public/kilometerstand.svg';
 import BaujahrIcon from './../../public/bj.svg';
@@ -65,6 +65,7 @@ function ListCard({
   pollutantClass,
   seats,
   doors,
+  valueChanger
 }) {
 
   const [width, height] = useDeviceSize();
@@ -87,44 +88,29 @@ function ListCard({
   const [value, setValue] = useState(null)
   function handleCompare(){
     onAddCompare({ 
-          id: id,
-          preis: price,
-          erstzulassung: baujahr,
-          marke: brand,
-          modell: model,
-          karosserieform: bodyType,
-          kilometer: kmStand,
-          getriebe: transmissionType,
-          fahrzeugzustand: conditionOption,
-          leistung: performance,
-          aussenfarbe: exteriourColour,
-          polsterfarbe: upholstery,
-          treibstoff: fuelType,
-          schadstoffklasse: pollutantClass,
-          sitze: seats,
-          tuere: doors,
-    })
+      id: id,
+      preis: price,
+      erstzulassung: baujahr,
+      marke: brand,
+      modell: model,
+      karosserieform: bodyType,
+      kilometer: kmStand,
+      getriebe: transmissionType,
+      fahrzeugzustand: conditionOption,
+      leistung: performance,
+      aussenfarbe: exteriourColour,
+      polsterfarbe: upholstery,
+      treibstoff: fuelType,
+      schadstoffklasse: pollutantClass,
+      sitze: seats,
+      tuere: doors,
+      img: img,
+})
     if(value == null){
+
       setValue("3");
     } else {
       setValue(null);
-      onAddCompare({ 
-        preis: price,
-        erstzulassung: baujahr,
-        marke: brand,
-        modell: model,
-        karosserieform: bodyType,
-        kilometer: kmStand,
-        getriebe: transmissionType,
-        fahrzeugzustand: conditionOption,
-        leistung: performance,
-        aussenfarbe: exteriourColour,
-        polsterfarbe: upholstery,
-        treibstoff: fuelType,
-        schadstoffklasse: pollutantClass,
-        sitze: seats,
-        tuere: doors,
-  })
     }
   }
 
@@ -154,13 +140,13 @@ function ListCard({
           {width > 530 && <div className={classes.lastdetail}><PsIcon className={classes.svg} />{displayPs}</div>}
           {/* {width > 530 && <div className={classes.lastdetail}>{seller}</div>} */}
         </div>
-        {width <= 530 && <div className={classes.lastdetails}>
-          <div className={classes.detail}>{displayKmStand}</div>
-          <div className={classes.lastdetail}>{displayPs}</div>
+        {width <= 530 && <div className={classes.details}>
+          <div className={classes.detail}><KilometerstandIcon className={classes.svg} />{displayKmStand}</div>
+          <div className={classes.lastdetail}><PsIcon className={classes.svg} />{displayPs}</div>
         </div>}
-        {width <= 530 && <div className={classes.lastdetails}>
-            <div className={classes.detail}>{treibstoff}</div>
-            <div className={classes.lastdetail} >{seller}</div> 
+        {width <= 530 && <div className={classes.details}>
+            <div className={classes.detail}><BenzinIcon className={classes.svg} />{treibstoff}</div>
+            <div className={classes.lastdetail}>{seller}</div> 
         </div>}
         <div className={classes.interactions}>
           {width > 530 && <span className={classes.location}>

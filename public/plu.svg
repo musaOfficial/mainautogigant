@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="19.983" viewBox="0 0 20 19.983">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: currentColor;
+      }
+    </style>
+  </defs>
+  <path id="Op_component_1" data-name="Op component 1" class="cls-1" d="M708.865,6558.857a1.7,1.7,0,0,1,1.7,1.7v6.6h6.6a1.7,1.7,0,1,1,0,3.4h-6.6v6.6a1.7,1.7,0,0,1-3.4,0v-6.6h-6.6a1.7,1.7,0,1,1,0-3.4h6.6v-6.6A1.7,1.7,0,0,1,708.865,6558.857Z" transform="translate(-698.865 -6558.857)"/>
+</svg>

@@ -108,7 +108,7 @@ function SearchResults() {
 
   const [angebote, setAngebote] = useState([
     {
-      id: "sköafjasökldc",
+      id: 0,
       seller: "Privat",
       preis: 500,
       title: "Mercedes AMG GT",
@@ -141,7 +141,7 @@ function SearchResults() {
       doors: "4"
     },
     {
-      id: "sköafjasöklasdfasddc",
+      id: 1,
       seller: "Privat",
       preis: 500,
       title: "Mercedes AMG GT",
@@ -174,7 +174,7 @@ function SearchResults() {
       doors: "4"
     },
     {
-      id: "sköafjasökasdfasdfldc",
+      id: 2,
       seller: "Privat",
       preis: 500,
       title: "Mercedes AMG GT",
@@ -207,7 +207,7 @@ function SearchResults() {
       doors: "4"
     },
     {
-      id: "sköafjasasdfasdfökldc",
+      id: 3,
       seller: "Privat",
       preis: 500,
       title: "Mercedes AMG GT",
@@ -240,7 +240,7 @@ function SearchResults() {
       doors: "4"
     },
     {
-      id: "sköafjasöasdfasdfasdfkldc",
+      id: 4,
       seller: "Privat",
       preis: 500,
       title: "Mercedes AMG GT",
@@ -273,7 +273,7 @@ function SearchResults() {
       doors: "4"
     },
     {
-      id: "sköafjasökldfdasfdgsdfc",
+      id: 5,
       seller: "Privat",
       preis: 500,
       title: "Mercedes AMG GT",
@@ -306,7 +306,7 @@ function SearchResults() {
       doors: "4"
     },
     {
-      id: "sköafjasöklgfhjfgdc",
+      id: 6,
       seller: "Privat",
       preis: 500,
       title: "Mercedes AMG GT",
@@ -1118,17 +1118,50 @@ function SearchResults() {
 
 
   // Vergleichsfunktion
+  const [valueChanger, setValueChanger] = useState(false);
   const [compare, setCompare] = useState([]);
   const [openCompare, setOpenCompare] = useState(false);
+  const [compareShow, setCompareShow] = useState(false);
 
-  useEffect(() => {
-    console.log(compare.length);
-  }, [compare.length])
-
-  const addOrUpdateCompare = (newObj) => {
-    
+  function addOrUpdateCompare(newObj) {
+    if(compare.length != 5){
+      if(compare.some(obj => obj.id === newObj.id)){
+        const index = compare.findIndex((obj) => obj.id === newObj.id);
+        const reducedCompare = [...compare];
+        reducedCompare.splice(index, 1);
+        setCompare([...reducedCompare]);
+      } else {
+        setCompare([...compare, newObj]);
+      }
+    }
   }
 
+  function handleDeleteCompare(index){
+    var reducedCompare = [...compare];
+    reducedCompare.splice(index, 1);
+    setCompare(reducedCompare);
+    if(compare.length == 1){
+      setOpenCompare(false);
+    }
+  }
+
+  useEffect(() => {
+    if(compareShow == true){
+      setCompareShow(false);
+    }
+  }, [compare])
+
+  useEffect(() => {
+    if(width <= 530){
+      setValueChanger(false);
+      setOpenCompare(false);
+      setCompareShow(false);
+    }
+  }, [width])
+
+  useEffect(() => {
+    setValueChanger(e => !e)
+  }, [setOpenCompare])
 
   return (
     <div
@@ -1136,21 +1169,90 @@ function SearchResults() {
         openAusstattung == true && "overflow-y-hidden"
       }`}
     >
+            {/* id: id,
+      preis: price,
+      erstzulassung: baujahr,
+      marke: brand,
+      modell: model,
+      karosserieform: bodyType,
+      kilometer: kmStand,
+      getriebe: transmissionType,
+      fahrzeugzustand: conditionOption,
+      leistung: performance,
+      aussenfarbe: exteriourColour,
+      polsterfarbe: upholstery,
+      treibstoff: fuelType,
+      schadstoffklasse: pollutantClass,
+      sitze: seats,
+      tuere: doors, */}
     
-      {openCompare == true && <div className={classes.comparecontainer}>
+      {openCompare == true && width > 530 && <div className={classes.comparecon}>
+        <div className={classes.compareconcloser} onClick={() => setOpenCompare(false)}></div>
+        <div className={classes.comparecontainer}>
+          <X className={classes.rightcloser} onClick={() => setOpenCompare(false)} />
         <div className={classes.compareheading}>Fahrzeuge vergleichen</div>
         <div className={classes.comparecontent}>
-          <div className={classes.comparebar}>Bar</div>
-          {compare.map((comp, index) => <div key={index} className={classes.compareitem}>
+          <div className={classes.comparebar}>
+            <div className={classes.secondbaritem}></div>
+            <div className={classes.baritem}>Preis</div>
+            <div className={classes.baritem}>Erstzulassung</div>
+            <div className={classes.baritem}>Marke</div>
+            <div className={classes.baritem}>Modell</div>
+            <div className={classes.baritem}>Karosserieform</div>
+            <div className={classes.baritem}>Kilometer</div>
+            <div className={classes.baritem}>Getriebe</div>
+            <div className={classes.baritem}>Fahrzeugzustand</div>
+            <div className={classes.baritem}>Leistung</div>
+            <div className={classes.baritem}>Außenfarbe</div>
+            <div className={classes.baritem}>Polsterfarbe</div>
+            <div className={classes.baritem}>Treibstoff</div>
+            <div className={classes.baritem}>Schadstoffklasse</div>
+            <div className={classes.baritem}>Anzahl Sitze</div>
+            <div className={classes.baritem}>Anzahl Türe</div>
+          </div>
+          {compare.map((comp, index) => {
 
-          </div>)}
+            
+            var displayPrice = comp.preis.toLocaleString() + " €";
+            var displayPs = comp.leistung.toLocaleString();
+            var displayKmStand = comp.kilometer.toLocaleString() + " KM";
+
+            return (<div className={classes.comparebar}>
+            <div className={classes.secondbaritem}><div className="w-full h-full relative"><Image src={comp.img} layout='fill' objectFit="cover" /></div></div>
+            <div className={classes.baritem}>{displayPrice}</div>
+            <div className={classes.baritem}>{comp.erstzulassung}</div>
+            <div className={classes.baritem}>{comp.marke}</div>
+            <div className={classes.baritem}>{comp.modell}</div>
+            <div className={classes.baritem}>{comp.karosserieform}</div>
+            <div className={classes.baritem}>{displayKmStand}</div>
+            <div className={classes.baritem}>{comp.getriebe}</div>
+            <div className={classes.baritem}>{comp.fahrzeugzustand}</div>
+            <div className={classes.baritem}>{displayPs}</div>
+            <div className={classes.baritem}>{comp.aussenfarbe}</div>
+            <div className={classes.baritem}>{comp.polsterfarbe}</div>
+            <div className={classes.baritem}>{comp.treibstoff}</div>
+            <div className={classes.baritem}>{comp.schadstoffklasse}</div>
+            <div className={classes.baritem}>{comp.sitze}</div>
+            <div className={classes.baritem}>{comp.tuere}</div>
+          </div>)
+          })}
         </div>
+      </div>
       </div>}
 
-     <div className={classes.comparebuttoncontainer}>
+     {compare.length >= 2 && openCompare == false && compareShow == false && width > 530 && <div className={classes.compareplaceholder}>
+        <div className="w-full h-full relative">
+          <div className={classes.comparebuttoncontainer}>
+          <X className={classes.comparex} onClick={() => {
+            setCompareShow(true);
+          }} />
+
         <div className={classes.comparebuttonheading}>{compare.length} Fahrzeuge</div>
-        <div className={classes.comparebutton}>Vergleichen</div>
-      </div>
+        <div className={classes.comparebutton} onClick={() => {
+          setOpenCompare(true);
+        }}>Vergleichen</div>
+      </div></div>
+      </div>}
 
       {openAusstattung == true && (
         <div className={classes.ausstattungContainer}>
@@ -2149,7 +2251,7 @@ function SearchResults() {
                 {angebote.map((fav, index) => (
                   <div key={index} className={width >= 1250 && classes.adprop}>
                     <ListCard
-                      id={fav.id}
+                      id={index}
                       adNo={fav.adNo}
                       price={fav.preis}
                       title={fav.title}
@@ -2166,7 +2268,7 @@ function SearchResults() {
                       seller={fav.seller}
                       state={fav.state}
                       country={fav.country}
-
+                      valueChanger={valueChanger}
                       brand={fav.brand}
                       model={fav.model}
                       bodyType={fav.bodyType}

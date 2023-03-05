@@ -71,35 +71,6 @@ export default function Header() {
         </Link>
         <div className={`flex items-center ${classes.margintop}`}>
           <div className={`flex md:ml-6 lg:mr-0 ${classes.threeicons}`}>
-            {width >= 615 && <>
-            
-              <button className="mr-4">
-              {width >= 950 && <div className="container">
-                <div className={`row ${classes.searchhover}`}>
-                  <input type={"text"} className="in" placeholder={"Suchen"} />
-                  <div className="icon w-8 md:w-6 mr-4">
-                    <i><SearchIcon className={` ${classes.search} text-theme-yellow fa fa-search searchicon`} /></i>
-                    <i><SearchIcon className={` ${classes.search} text-theme-yellow fa-solid fa-xmark searchicon`} /></i>
-                  </div>
-                </div>
-              </div>}
-            {width < 950 && <SearchIcon className={classes.searchiconf} onClick={() => {
-              setOpenTextarea(d => !d);
-            }} />}
-            </button>
-            </>}
-            {width >= 615 &&   <>
-              <Link href={"/dashboard/notifications"}>
-              <button className="w-8 md:w-6 mr-4">
-                <NotificationsIcon className={classes.headericon}/>
-              </button>
-            </Link>
-            <Link href={"/dashboard/favourites"}>
-              <button className="w-8 md:w-6 mr-4">
-                <FavoriteIcon className={classes.headericon}/>
-              </button>
-            </Link>
-            </>}
           </div>
           <div className={`w-60 ${classes.widthauto} ${classes.headerbtn} relative group flex items-center justify-end md:flex-1 h-14 rounded-tl-20 rounded-tr-20 hover:bg-theme-gray-10 px-2 pb-2 pb-0 `}>
             <button className="inline-flex justify-end">
