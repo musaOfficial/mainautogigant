@@ -1,0 +1,536 @@
+
+.container{
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    transition: all .1s ease-in;
+}
+
+.above{
+    height: 30px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    background-color: #a6adb3;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.k{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .1s ease-in;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.u{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 0 0 0;
+    border-right: 1px solid #888c8f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.e{
+    height: 100%;
+    height: 30px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    
+    border-right: 1px solid #c3ccd4;
+    justify-content: center;
+}
+
+.firstk{
+    border-radius: 5px 5px 5px 0;
+}
+
+.k:hover .whiteicon{
+    color: #FBB900;
+}
+
+.whiteicon{
+    color: #fff;
+    height: 20px;
+    width: 20px;
+}
+
+.coloradabove{
+    background-color: #FBB900;
+}
+
+.svg{
+    height: 15px;
+    width: auto;
+}
+
+.aboveprice{
+    height: 20px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    line-height: 20px;
+    font-size: 18px;
+}
+
+.wrapper{
+    border-radius: 10px;
+}
+
+.smallcontainer{
+    width: 100%;
+    display: flex;
+    min-height: 40px;
+}
+
+
+.belowaboutcolorad{
+    background-color: #FFE497;
+    border-right: 2px solid #FBB900;
+    border-bottom: 2px solid #FBB900;
+    border-top: 2px solid #FBB900;
+}
+
+@media(min-width: 530px){
+    .container:hover{
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.314);
+        cursor: pointer;
+    }
+
+    .colorad{
+        border-top: 2px solid #FBB900;
+    }
+    
+}
+
+.img{
+    position: relative;
+    height: 100%;
+    width: 275px;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+}
+
+.price{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0 10px 0 10px;
+    background-color: #FBB900;
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    width: 155px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    background-color: #F1F2F3;
+    border-radius: 0 10px 10px 0;
+    position: relative;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+.description{
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.details{
+    margin-top: 10px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.lastdetails{
+    margin-top: 0px;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 12px;
+    font-size: 12px;
+    margin: 0;
+}
+
+.colorade{
+    border-right: 1px solid #b68909;
+}
+
+.coloradu{
+    border-right: 1px solid #FFe497;
+}
+
+.coloradwrapper{
+    background-color: #FBB900;
+}
+
+.detail{
+    border-right: 1px solid #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    line-height: 30px;
+}
+
+.lastdetail{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    line-height: 30px;
+}
+
+.svg{
+    margin-right: 3px;
+}
+
+.location{
+    display: flex;
+    color: #0067B8;
+    width: 100%;
+    line-height: 20px;
+    font-size: 15px;
+    align-items: center;
+}
+
+.icons{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon{
+    height: 20px;
+    width: 20px;
+    color: #6C757D;
+    transition: all .1s ease-in;
+}
+
+.lasticon{
+    margin-right: 0 !important;
+}
+
+.i{
+    height: 30px;
+    width: 30px;
+    border: 1px solid #6C757D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.b .icon{
+    color: #6C757D ;
+}
+
+.b{
+    border: 1px solid #6C757D ;
+}
+
+.b:hover{
+    background-color: #FBB900;
+    border: 1px solid transparent;
+}
+
+.comp{
+    background-color: #FBB900;
+}
+
+.b:hover .icon{
+    color: #fff;
+}
+
+.colorad{
+    background-color: #FFE497;
+    border-right: 2px solid #FBB900;
+    border-bottom: 2px solid #FBB900;
+}
+
+.interactions{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.responsiveicons{
+    width: 100%;
+    background-color: rgba(108, 117, 125, 0.5);
+    display: flex;
+    height: 100%;
+    border-radius: 0 0 0 10px;
+}
+
+.t{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    height: 100px;
+}
+
+.img{
+    width: 200px;
+}
+
+.title{
+    font-size: 15px;
+    width: 100%;
+}
+
+.description{
+    font-size: 12px;
+}
+
+.details{
+    font-size: 12px;
+}
+
+.detailsrow{
+    font-size: 12px;
+}
+
+.title{
+    display: flex;
+    align-items: flex-end;
+    line-height: 18px;
+}
+
+.description{
+    font-size: 12px;
+    font-weight: normal;
+    margin-left: 2px;
+}
+
+.location{
+    font-size: 12px;
+    margin-top: 0px;
+}
+
+.interactions{
+    margin-top: 6.7px;
+}
+
+.i{
+    height: 20px;
+    width: 20px;
+    padding: 1.8px;
+}
+
+.details{
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.price{
+    width: 125px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.details{
+    border: 1px solid #fff;
+    border-right: 0;
+    border-left: 0;
+}
+
+.detail{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.lastdetail{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.details{
+    width: 100%;
+}
+
+.detail{
+    max-width: fit-content;
+    margin-right: 2px;
+    padding-right: 4px;
+}
+
+.lastdetail{
+    padding-left: 2px;
+    max-width: fit-content;
+}
+
+.icons{
+    margin-bottom: 10px;
+}
+
+.container{
+
+    width: 100%;
+}
+
+.img{
+    width: 200px;
+}
+
+.i{
+    border: none;
+}
+
+.wrapper{
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.314);
+}
+
+.container{
+    height: 126px;
+    background-color: #a6adb3;
+}
+
+.details{
+    margin-top: 0px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    justify-content: flex-start;
+}
+.detailsrow{
+    margin-top: 0px;
+    display: flex;
+    justify-content: flex-start;
+}
+.img{
+    width: 100%;
+}
+
+.about{
+    width: 100%;
+    border-radius: 0 10px 10px 0px;
+}
+
+.title{
+    margin-top: 20px;
+}
+
+.price{
+    width: 100%;
+    border-radius: 0 10px 0 0;
+}
+
+.linkicons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 10px 0 0 0;
+}
+
+.r{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.r:hover{
+    background-color: #FBB900;
+}
+
+.firstt{
+    border-radius: 0px 0 0 10px;
+}
+
+.r:hover .icon{
+    color: #fff;
+}
+
+.container{
+    border-radius:  0 0 10px 10px;
+
+}
+
+
+.img{
+    border-radius: -4px 0 0 10px ;
+    overflow: hidden;
+}
+
+.belowabout{
+    font-size: 12px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.seller{
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+.location{
+    font-size: 12px !important;
+    transform: translateY(-5px);
+}
+
+.interactions{
+    font-size: 12px !important;
+}
+
+.locationtext{
+    font-size: 12px !important;
+}
+
+.titledistance{
+    margin-top: -5px !important;
+}
+
+
+.coloradcontainer{
+background-color: #FBB900;
+}

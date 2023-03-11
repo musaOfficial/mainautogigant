@@ -27,6 +27,7 @@
     transition: all .1s ease-in;
     border-radius: 5px;
     margin: 5px;
+    cursor: pointer;
 }
 
 .u{

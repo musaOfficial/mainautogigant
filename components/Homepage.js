@@ -16,6 +16,7 @@ import OwlSlider from './ui/OwlCarousel';
 import FrontImg from './../public/fronting.svg';
 import FrontPic from './../public/front.png';
 import Input from './ui/Input'
+import GridCard from './cards/GridCard';
 
 function ControlledInput({ onUpdate, placeholder, inputType, className }){
     const [value, setValue] = useState();
@@ -89,542 +90,305 @@ function Homepage(){
     const [anzahlGefundeneFahrzeuge, setAnzahlGefundeneFahrzeuge] = useState(21158);
     var displayAnzahlGefundeneFahrzeuge = anzahlGefundeneFahrzeuge.toLocaleString();
 
-    const angeboteFirstRow = [
+    const [angebote, setAngebote] = useState([
         {
-            id: "sköafjasökldc",
+          id: 0,
+          seller: "Privat",
+          preis: 500,
+          title: "Mercedes AMG GT",
+          adNo: "#294873205",
+          start: "01/01/2020",
+          end: "01/01/2022",
+          imgSrc: "/car-images/testcar.jpg",
+          state: "2700 Wiener Neustadt",
+          country: "Österreich",
+          description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
+          companyname: "Gigant Group Teknoloji A.S",
+          baujahr: "01/2022",
+          treibstoff: "Benzin",
+          ps: 120,
+          kmStand: 412000,
+          getriebe: "Automatik",
+          gigalabel: false,
+          colorad: false,
+          brand: "Audi",
+          model: "R8",
+          bodyType: "Cabrio",
+          transmissionType: "Schaltgetriebe",
+          conditionOption: "Gebrauchtwagen",
+          performance: "177 PS (130kW)",
+          exteriourColour: "Weiß",
+          upholstery: "Stoff",
+          fuelType: "Diesel",
+          pollutantClass: "Euro 5",
+          seats: "5",
+          doors: "4"
+        },
+        {
+          id: 1,
+          seller: "Privat",
+          preis: 500,
+          title: "Mercedes AMG GT",
+          adNo: "#294873205",
+          start: "01/01/2020",
+          end: "01/01/2022",
+          imgSrc: "/car-images/testcar2.jpg",
+          state: "2700 Wiener Neustadt",
+          country: "Österreich",
+          description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
+          companyname: "Gigant Group Teknoloji A.S",
+          baujahr: "01/2022",
+          treibstoff: "Benzin",
+          ps: 120,
+          kmStand: 412000,
+          getriebe: "Automatik",
+          gigalabel: false,
+          colorad: false,
+          brand: "Audi",
+          model: "R8",
+          bodyType: "Cabrio",
+          transmissionType: "Schaltgetriebe",
+          conditionOption: "Gebrauchtwagen",
+          performance: "177 PS (130kW)",
+          exteriourColour: "Weiß",
+          upholstery: "Stoff",
+          fuelType: "Diesel",
+          pollutantClass: "Euro 5",
+          seats: "5",
+          doors: "4"
+        },
+        {
+          id: 2,
+          seller: "Privat",
+          preis: 500,
+          title: "Mercedes AMG GT",
+          adNo: "#294873205",
+          start: "01/01/2020",
+          end: "01/01/2022",
+          imgSrc: "/car-images/testcar3.jpg",
+          state: "2700 Wiener Neustadt",
+          country: "Österreich",
+          description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
+          companyname: "Gigant Group Teknoloji A.S",
+          baujahr: "01/2022",
+          treibstoff: "Benzin",
+          ps: 120,
+          kmStand: 412000,
+          getriebe: "Automatik",
+          gigalabel: false,
+          colorad: false,
+          brand: "Audi",
+          model: "R8",
+          bodyType: "Cabrio",
+          transmissionType: "Schaltgetriebe",
+          conditionOption: "Gebrauchtwagen",
+          performance: "177 PS (130kW)",
+          exteriourColour: "Weiß",
+          upholstery: "Stoff",
+          fuelType: "Diesel",
+          pollutantClass: "Euro 5",
+          seats: "5",
+          doors: "4"
+        },
+        {
+          id: 3,
+          seller: "Privat",
+          preis: 500,
+          title: "Mercedes AMG GT",
+          adNo: "#294873205",
+          start: "01/01/2020",
+          end: "01/01/2022",
+          imgSrc: "/car-images/testcar4.jpg",
+          state: "2700 Wiener Neustadt",
+          country: "Österreich",
+          description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
+          companyname: "Gigant Group Teknoloji A.S",
+          baujahr: "01/2022",
+          treibstoff: "Benzin",
+          ps: 120,
+          kmStand: 412000,
+          getriebe: "Automatik",
+          gigalabel: false,
+          colorad: false,
+          brand: "Audi",
+          model: "R8",
+          bodyType: "Cabrio",
+          transmissionType: "Schaltgetriebe",
+          conditionOption: "Gebrauchtwagen",
+          performance: "177 PS (130kW)",
+          exteriourColour: "Weiß",
+          upholstery: "Stoff",
+          fuelType: "Diesel",
+          pollutantClass: "Euro 5",
+          seats: "5",
+          doors: "4"
+        },
+        {
+          id: 4,
+          seller: "Privat",
+          preis: 500,
+          title: "Mercedes AMG GT",
+          adNo: "#294873205",
+          start: "01/01/2020",
+          end: "01/01/2022",
+          imgSrc: "/car-images/testcar5.jpg",
+          state: "2700 Wiener Neustadt",
+          country: "Österreich",
+          description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
+          companyname: "Gigant Group Teknoloji A.S",
+          baujahr: "01/2022",
+          treibstoff: "Benzin",
+          ps: 120,
+          kmStand: 412000,
+          getriebe: "Automatik",
+          gigalabel: false,
+          colorad: false,
+          brand: "Audi",
+          model: "R8",
+          bodyType: "Cabrio",
+          transmissionType: "Schaltgetriebe",
+          conditionOption: "Gebrauchtwagen",
+          performance: "177 PS (130kW)",
+          exteriourColour: "Weiß",
+          upholstery: "Stoff",
+          fuelType: "Diesel",
+          pollutantClass: "Euro 5",
+          seats: "5",
+          doors: "4"
+        },
+        {
+          id: 5,
+          seller: "Privat",
+          preis: 500,
+          title: "Mercedes AMG GT",
+          adNo: "#294873205",
+          start: "01/01/2020",
+          end: "01/01/2022",
+          imgSrc: "/car-images/testcar6.jpg",
+          state: "2700 Wiener Neustadt",
+          country: "Österreich",
+          description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
+          companyname: "Gigant Group Teknoloji A.S",
+          baujahr: "01/2022",
+          treibstoff: "Benzin",
+          ps: 120,
+          kmStand: 412000,
+          getriebe: "Automatik",
+          gigalabel: false,
+          colorad: false,
+          brand: "Audi",
+          model: "R8",
+          bodyType: "Cabrio",
+          transmissionType: "Schaltgetriebe",
+          conditionOption: "Gebrauchtwagen",
+          performance: "177 PS (130kW)",
+          exteriourColour: "Weiß",
+          upholstery: "Stoff",
+          fuelType: "Diesel",
+          pollutantClass: "Euro 5",
+          seats: "5",
+          doors: "4"
+        },
+        {
+          id: 6,
+          seller: "Privat",
+          preis: 500,
+          title: "Mercedes AMG GT",
+          adNo: "#294873205",
+          start: "01/01/2020",
+          end: "01/01/2022",
+          imgSrc: "/car-images/testcar.jpg",
+          state: "2700 Wiener Neustadt",
+          country: "Österreich",
+          description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
+          companyname: "Gigant Group Teknoloji A.S",
+          baujahr: "01/2022",
+          treibstoff: "Benzin",
+          ps: 120,
+          kmStand: 412000,
+          getriebe: "Automatik",
+          gigalabel: false,
+          colorad: false,
+          brand: "Audi",
+          model: "R8",
+          bodyType: "Cabrio",
+          transmissionType: "Schaltgetriebe",
+          conditionOption: "Gebrauchtwagen",
+          performance: "177 PS (130kW)",
+          exteriourColour: "Weiß",
+          upholstery: "Stoff",
+          fuelType: "Diesel",
+          pollutantClass: "Euro 5",
+          seats: "5",
+          doors: "4"
+        },
+        {
+            id: 3,
+            seller: "Privat",
             preis: 500,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Halbautomatik",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
+            imgSrc: "/car-images/testcar4.jpg",
+            state: "2700 Wiener Neustadt",
+            country: "Österreich",
+            description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
             companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1230,
-                fahrzeugzustand: "Neu",
-                getriebe: "Automatik",
-                seller: false,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 2120,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Schaltgetriebe",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
+            baujahr: "01/2022",
+            treibstoff: "Benzin",
+            ps: 120,
+            kmStand: 412000,
+            getriebe: "Automatik",
+            gigalabel: false,
+            colorad: false,
+            brand: "Audi",
+            model: "R8",
+            bodyType: "Cabrio",
+            transmissionType: "Schaltgetriebe",
+            conditionOption: "Gebrauchtwagen",
+            performance: "177 PS (130kW)",
+            exteriourColour: "Weiß",
+            upholstery: "Stoff",
+            fuelType: "Diesel",
+            pollutantClass: "Euro 5",
+            seats: "5",
+            doors: "4"
+          },
+          {
+            id: 0,
+            seller: "Privat",
             preis: 500,
             title: "Mercedes AMG GT",
             adNo: "#294873205",
             start: "01/01/2020",
             end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Halbautomatik",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
+            imgSrc: "/car-images/testcar.jpg",
+            state: "2700 Wiener Neustadt",
+            country: "Österreich",
+            description: "4.2 FSI quattro * ABT KOMPRESSOR, 20",
             companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1230,
-                fahrzeugzustand: "Neu",
-                getriebe: "Automatik",
-                seller: false,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 2120,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Schaltgetriebe",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-    ]
-    const angeboteSecondRow = [
-        {
-            id: "sköafjasökldc",
-            preis: 500,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Halbautomatik",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1230,
-                fahrzeugzustand: "Neu",
-                getriebe: "Automatik",
-                seller: false,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 2120,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Schaltgetriebe",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 500,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Halbautomatik",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1230,
-                fahrzeugzustand: "Neu",
-                getriebe: "Automatik",
-                seller: false,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 2120,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Schaltgetriebe",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-    ]
-    const angeboteThirdRow = [
-        {
-            id: "sköafjasökldc",
-            preis: 500,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Halbautomatik",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1230,
-                fahrzeugzustand: "Neu",
-                getriebe: "Automatik",
-                seller: false,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 2120,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Schaltgetriebe",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 500,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Halbautomatik",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1230,
-                fahrzeugzustand: "Neu",
-                getriebe: "Automatik",
-                seller: false,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 2120,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Schaltgetriebe",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-    ]
-    const angeboteFourthRow = [
-        {
-            id: "sköafjasökldc",
-            preis: 500,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Halbautomatik",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1230,
-                fahrzeugzustand: "Neu",
-                getriebe: "Automatik",
-                seller: false,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 2120,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Schaltgetriebe",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 500,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Halbautomatik",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 213520,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1230,
-                fahrzeugzustand: "Neu",
-                getriebe: "Automatik",
-                seller: false,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-        {
-            id: "sköafjasökldc",
-            preis: 2120,
-            title: "Mercedes AMG GT",
-            adNo: "#294873205",
-            start: "01/01/2020",
-            end: "01/01/2022",
-            imgSrc: "/images/draft-card-img-car-1.png",
-            details: {
-                erstzulassung: "11.04.2018",
-                kraftstoff: "Diesel",
-                leistung: "200 PS",
-                kilometerstand: 1200,
-                fahrzeugzustand: "Neu",
-                getriebe: "Schaltgetriebe",
-                seller: true,
-            },
-            location: "Österreich, 2700 Wiener Neustadt",
-            companyname: "Gigant Group Teknoloji A.S",
-            gigalabel: true,
-            colorad: true,
-        },
-    ]
+            baujahr: "01/2022",
+            treibstoff: "Benzin",
+            ps: 120,
+            kmStand: 412000,
+            getriebe: "Automatik",
+            gigalabel: false,
+            colorad: false,
+            brand: "Audi",
+            model: "R8",
+            bodyType: "Cabrio",
+            transmissionType: "Schaltgetriebe",
+            conditionOption: "Gebrauchtwagen",
+            performance: "177 PS (130kW)",
+            exteriourColour: "Weiß",
+            upholstery: "Stoff",
+            fuelType: "Diesel",
+            pollutantClass: "Euro 5",
+            seats: "5",
+            doors: "4"
+          },
+      ]);
 
     const [row, setRow] = useState(0);
 
@@ -737,97 +501,41 @@ function Homepage(){
                     </div>
                    {/* CONTINUE HERE */}
                    <div className={classes.swiperarea}>
-                        <div className={classes.distanceoptimizer}>
-                        <OwlSlider>
-                            {angeboteFirstRow.map((fav, index) => <HomeAngebot 
-                                key={index}
-                                id={fav.id}
-                                title={fav.title} 
-                                price={fav.preis} 
-                                adNo={fav.adNo} 
-                                start={fav.start}  
-                                end={fav.end}
-                                imgSrc={fav.imgSrc}
-                                description={"This is a description"}
-                                details={fav.details}
-                                cardView={false}
-                                location={fav.location}
-                                companyname={fav.companyname}
-                                onClick={() => handleDel(index)}
-                                gigalabel={fav.gigalabel}
-                                colorad={fav.colorad}    
-                            />)}
-                        </OwlSlider>
-                        </div>
-                        <div className={classes.distanceoptimizer}>
-                        <OwlSlider>
-                            {angeboteSecondRow.map((fav, index) => <HomeAngebot 
-                                key={index}
-                                id={fav.id}
-                                title={fav.title} 
-                                price={fav.preis} 
-                                adNo={fav.adNo} 
-                                start={fav.start}  
-                                end={fav.end}
-                                imgSrc={fav.imgSrc}
-                                description={"This is a description"}
-                                details={fav.details}
-                                cardView={false}
-                                location={fav.location}
-                                companyname={fav.companyname}
-                                onClick={() => handleDel(index)}
-                                gigalabel={fav.gigalabel}
-                                colorad={fav.colorad}    
-                            />)}
-                        </OwlSlider>
-                        </div>
-                       { row >= 1 &&  <div className={classes.distanceoptimizer}> <OwlSlider>
-                            {angeboteThirdRow.map((fav, index) => <HomeAngebot 
-                                key={index}
-                                id={fav.id}
-                                title={fav.title} 
-                                price={fav.preis} 
-                                adNo={fav.adNo} 
-                                start={fav.start}  
-                                end={fav.end}
-                                imgSrc={fav.imgSrc}
-                                description={"This is a description"}
-                                details={fav.details}
-                                cardView={false}
-                                location={fav.location}
-                                companyname={fav.companyname}
-                                onClick={() => handleDel(index)}
-                                gigalabel={fav.gigalabel}
-                                colorad={fav.colorad}    
-                            />)}
-                        </OwlSlider> </div>}
-                        
-                        {row >= 2 && <div className={classes.distanceoptimizer}> <OwlSlider>
-                            {angeboteFourthRow.map((fav, index) => <HomeAngebot 
-                            key={index}
-                            id={fav.id}
-                            title={fav.title} 
-                            price={fav.preis} 
-                            adNo={fav.adNo} 
-                            start={fav.start}  
-                            end={fav.end}
-                            imgSrc={fav.imgSrc}
-                            description={"This is a description"}
-                            details={fav.details}
-                            cardView={false}
+                        {angebote.map((fav, index) => (
+                        <div key={index}>
+                            <GridCard
+                            id={index}
+                            adNo={fav.adNo}
+                            price={fav.preis}
+                            title={fav.title}
+                            img={fav.imgSrc}
                             location={fav.location}
-                            companyname={fav.companyname}
-                            onClick={() => handleDel(index)}
                             gigalabel={fav.gigalabel}
-                            colorad={fav.colorad}    
-                        />)}
-                    </OwlSlider> </div>}
-                        
-                        <div className={classes.row}>
-                        {row < 2 && <button className={classes.weiterebtn} onClick={() => setRow(d => d + 1)}>
-                            + Weitere Fahrzeuge
-                        </button>}
+                            colorad={fav.colorad}
+                            description={fav.description}
+                            baujahr={fav.baujahr}
+                            kmStand={fav.kmStand}
+                            ps={fav.ps}
+                            getriebe={fav.getriebe}
+                            treibstoff={fav.treibstoff}
+                            seller={fav.seller}
+                            state={fav.state}
+                            country={fav.country}
+                            brand={fav.brand}
+                            model={fav.model}
+                            bodyType={fav.bodyType}
+                            transmissionType={fav.transmissionType}
+                            conditionOption={fav.conditionOption}
+                            performance={fav.performance}
+                            exteriourColour={fav.exteriourColour}
+                            upholstery={fav.upholstery}
+                            fuelType={fav.fuelType}
+                            pollutantClass={fav.pollutantClass}
+                            seats={fav.seats}
+                            doors={fav.doors}
+                            />
                         </div>
+                        ))}
                     </div>
                     <div className={classes.lastarea}>
                         <div className={classes.bigtext}>Wir bieten eine große Auswahl an beliebten Modellen, Marken und Autohäusern.</div>
